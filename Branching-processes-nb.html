@@ -1,0 +1,866 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Branching Processes &#8212; Evolving active matter</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Branching-processes-nb';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Traveling waves" href="Traveling-Waves-nb.html" />
+    <link rel="prev" title="Lecture Notes on Proliferating Active Matter" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/PAM-logo4.png" class="logo__image only-light" alt="Evolving active matter - Home"/>
+    <script>document.write(`<img src="_static/PAM-logo4.png" class="logo__image only-dark" alt="Evolving active matter - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Lecture Notes on Proliferating Active Matter
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Branching Processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Traveling-Waves-nb.html">Traveling waves</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Hallatscheklab/PAM/blob/master/Branching-processes-nb.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/PAM" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/PAM/issues/new?title=Issue%20on%20page%20%2FBranching-processes-nb.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Branching-processes-nb.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Branching Processes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survival-probability">Survival probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-population-size-distribution">Appendix: Population size distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="branching-processes">
+<h1>Branching Processes<a class="headerlink" href="#branching-processes" title="Permalink to this heading">#</a></h1>
+<p>When we think about populations, one of the most basic questions is how a population grows over time from a single cell. Deterministically, we expect growth to occur if a cell is expected to produce more of itself before it dies. The expected number of offspring – the famous <span class="math notranslate nohighlight">\(R_0\)</span> in the context of epidemiology – has to be larger than one.</p>
+<p>Although teproduction and death rates generally depend on age and how many offspring have already been produced, a lot of useful and generic insights can be gained by ignoring any memory. Deterministic growth then occurs when the rate <span class="math notranslate nohighlight">\(a\)</span> of birth exceeds the rate <span class="math notranslate nohighlight">\(b\)</span> of death. In fact, it is a useful excercise to show that <span class="math notranslate nohighlight">\(R_0=a/b\)</span>, using the fact that <span class="math notranslate nohighlight">\(a/(a+b)\)</span> is the probability to give birth before one dies.</p>
+<p>In many cases, birth and death rates are similar, for example in an epidemic situation where <span class="math notranslate nohighlight">\(R_0\)</span> is about 1, or for a slightly beneficial mutation slowly spreading in a population over time. In these near critical cases, it is not obvious whether a population survives rather than goes extinct by chance and, if it survives, what population size distribution on might expect.</p>
+<p>N.B.: A very nice presentation of the key features of branching processes can be found in reference <span id="id1">[<a class="reference internal" href="Traveling-Waves-nb.html#id6" title="Michael M Desai and Daniel S Fisher. Beneficial mutation–selection balance and the effect of linkage on positive selection. Genetics, 176(3):1759–1798, 2007.">DF07</a>]</span>.</p>
+<section id="survival-probability">
+<h2>Survival probability<a class="headerlink" href="#survival-probability" title="Permalink to this heading">#</a></h2>
+<p>To answer this question, let’s first focus on the probability <span class="math notranslate nohighlight">\(u(t|\tau)\)</span> that an individual present at time <span class="math notranslate nohighlight">\(\tau\)</span> leaves some descendants at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Suppose, we already know <span class="math notranslate nohighlight">\(u(t|\tau)\)</span> and would like to estimate <span class="math notranslate nohighlight">\(u(t|\tau-\epsilon)\)</span>, i.e. pushing the initial condition further back in time. Then, if the time slice <span class="math notranslate nohighlight">\(\epsilon\)</span> is sufficiently small, we only have to consider two possible events, birth with probability <span class="math notranslate nohighlight">\(\epsilon a\)</span>, or death with probability <span class="math notranslate nohighlight">\(\epsilon b\)</span>, as the probability of double events is of order <span class="math notranslate nohighlight">\(\epsilon^2\)</span>. Thus, we can estimate</p>
+<div class="math notranslate nohighlight" id="equation-br-process-1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-br-process-1" title="Permalink to this equation">#</a></span>\[ 
+u(t|\tau-\epsilon)=\left[1-\epsilon (a+b)\right] u(t|\tau)+\epsilon a \left[1-(1-u(t|\tau))^2\right] 
+\]</div>
+<p>Here, the first term on the right hand side simply says that, conditional on no death or birth event occurs within the time span <span class="math notranslate nohighlight">\(\epsilon\)</span>, the probability of survival remains unchanged.</p>
+<div class="math notranslate nohighlight">
+\[ 
+-\partial_\tau u = (a-b) u - a u^2. 
+\]</div>
+<p>Notice that, if the birth and death rates are time dependent, they have to be evaluated at the initial time <span class="math notranslate nohighlight">\(\tau\)</span>.
+For simplicity, we assume the relative growth rate difference <span class="math notranslate nohighlight">\(s\equiv (a-b)/a\ll1\)</span> is constant and small.</p>
+<p>If we further measure time in generations, <span class="math notranslate nohighlight">\(\tau\to \tau/a\)</span>, we obtain</p>
+<div class="math notranslate nohighlight" id="equation-logistic-eqn">
+<span class="eqno">(2)<a class="headerlink" href="#equation-logistic-eqn" title="Permalink to this equation">#</a></span>\[ 
+-\partial_\tau u = s u - u^2. 
+\]</div>
+<p>The resulting equation <a class="reference internal" href="#equation-logistic-eqn">(2)</a> is a logistic differential equation. Although seemingly non-linear, this equation reveals its linear nature after the following substituting <span class="math notranslate nohighlight">\(u(\tau)=\frac {s }{1-q(\tau)^{-1}}\)</span>, upon which we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+-\partial_\tau q(\tau)=s q(\tau) \;.
+\]</div>
+<p>This linear equation for the fraction <span class="math notranslate nohighlight">\(q(t)\equiv \frac u{u-s}\)</span> has the solution <span class="math notranslate nohighlight">\(q(\tau)=q(t)e^{s(t-\tau)}\)</span>. Using the initial condition <span class="math notranslate nohighlight">\(q(t)=\frac 1{1-s}\)</span>, we obtain for the survival probability</p>
+<div class="math notranslate nohighlight">
+\[
+u(t|\tau)=\frac{s}{1-(1-s)e^{s(\tau-t)}}=u(t-\tau)\;.
+\]</div>
+<p>Note, that our final result only depends on the time difference, provided that birth and death rates are time-dependent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The long-term survival probability of a super critical branching process is given by the relative growth rate difference between birth and death rate, <span class="math notranslate nohighlight">\(s=(a-b)/a\)</span>.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># allow TeX</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">tmax</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">))</span> 
+
+<span class="c1"># Add title and axis names</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Time-dependent survival probability for selective advantage $s = 0.1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t- \tau $&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$u(t-\tau)$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">s</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span> <span class="mi">0</span> <span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">tmax</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/d9e04b557a390cb524bc6e13595dfa03a7fd020bbf0c3559328ae786dd0b566a.png" src="_images/d9e04b557a390cb524bc6e13595dfa03a7fd020bbf0c3559328ae786dd0b566a.png" />
+</div>
+</div>
+<p>From the linear first moment equation, <span class="math notranslate nohighlight">\(\partial_t \langle N(t)\rangle=s \langle N(t)\rangle\)</span>, it is clear that the expectation of the abundance as a function of time is a simple exponential, <span class="math notranslate nohighlight">\(\langle N(t) \rangle =e^{st}\)</span>, which is the solution to the averaged.</p>
+<p>But now, with the survival probability at hand, we can also predict the expected abundance given survival, because <span class="math notranslate nohighlight">\(\langle N(t)\rangle=u(t)\langle N(t)|\text{survival} \rangle\)</span>, or</p>
+<div class="math notranslate nohighlight" id="equation-mean-abundance">
+<span class="eqno">(6)<a class="headerlink" href="#equation-mean-abundance" title="Permalink to this equation">#</a></span>\[
+    \langle N(t)|N(t)\geq1 \rangle =\frac{e^{st}}{u(t)}=1+\frac{e^{s t}-1}{s}
+\]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># allow TeX</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">tmax</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">tmax</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">s</span> 
+
+<span class="n">yapprox</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">s</span> 
+
+
+<span class="c1"># Add title and axis names</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Expected Growth conditional on survival for selective advantage $s = 0.1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$t $&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\langle N(t)|N(t)\geq1 \rangle $&#39;</span><span class="p">)</span>
+
+<span class="c1">#plt.hlines(y = 1/s, xmin= 0 , xmax=tmax, colors=&#39;purple&#39;, linestyles=&#39;--&#39;, lw=2, label=&#39;s&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">yapprox</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/56ff1f82ca1205f67b220620087f82cf876badc8741aed89437b3e404e5cddb2.png" src="_images/56ff1f82ca1205f67b220620087f82cf876badc8741aed89437b3e404e5cddb2.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Given survival, the asymptotic exponential growth, <span class="math notranslate nohighlight">\(s^{-1}e^{s t}\)</span>, looks as if proliferation started with <span class="math notranslate nohighlight">\(s^{-1}\)</span> individuals in the beginning (or earlier). This is due to accelerated growth in the beginning. Conditioned on survival, the population has to initially grow much faster than exponential, namely like <span class="math notranslate nohighlight">\(1+t\)</span> for a time <span class="math notranslate nohighlight">\(s^{-1}\)</span>, to run away from the absorbing boundary.</p>
+</div>
+</section>
+<section id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h2>
+<p>Let’s finally simulate a branching process and compare</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">def</span> <span class="nf">simulate_branching_process</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">replicates</span><span class="p">,</span> <span class="n">time_period</span><span class="p">):</span>
+    <span class="n">population_sizes</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">replicates</span><span class="p">):</span>
+        <span class="n">population</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Start with one particle at time 0</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="n">time_period</span><span class="p">:</span>
+            <span class="n">new_population_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="n">population</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_population_size</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">population_sizes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">population_sizes</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">replicates</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">time_period</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">population_sizes</span> <span class="o">=</span> <span class="n">simulate_branching_process</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">replicates</span><span class="p">,</span> <span class="n">time_period</span><span class="p">)</span>
+
+<span class="c1"># Plotting the results</span>
+<span class="n">time_points</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">time_period</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">population</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">population_sizes</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_points</span><span class="p">,</span> <span class="n">population</span><span class="p">)</span>
+
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">time_period</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">s</span> 
+
+<span class="n">yapprox</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="n">s</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">yapprox</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Population Size&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/846d33581bf57773a90a35d95417c8ee3db50431c983106bdfcea57f1a7195a4.png" src="_images/846d33581bf57773a90a35d95417c8ee3db50431c983106bdfcea57f1a7195a4.png" />
+</div>
+</div>
+<p>Clearly, we capture the coarse features of the process, but there are a lot of fluctuations around the expectations, even for large times.</p>
+</section>
+<section id="appendix-population-size-distribution">
+<h2>Appendix: Population size distribution<a class="headerlink" href="#appendix-population-size-distribution" title="Permalink to this heading">#</a></h2>
+<p>Thus far, we have derived the survival probability of the birth-death process, but we do not know the full probability distribution <span class="math notranslate nohighlight">\(p_n(t|\tau)\)</span> that the population consists of <span class="math notranslate nohighlight">\(n\)</span> individuals at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>But it turns out that an equation similar to the logistic equation can be derived for the moment generating function,</p>
+<div class="math notranslate nohighlight">
+\[
+G_x(t|\tau)\equiv \sum_{n=0}^{\infty} p_n(t|\tau) x^n \;,
+\]</div>
+<p>satisfies a logistic equation very similar to the survival probability.</p>
+<p>Retracing the steps from above, one can deduce that <span class="math notranslate nohighlight">\(G_x(t|\tau)\)</span> in terms of <span class="math notranslate nohighlight">\(G_x(t|\tau-\epsilon)\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-generating-fct">
+<span class="eqno">(4)<a class="headerlink" href="#equation-generating-fct" title="Permalink to this equation">#</a></span>\[ 
+G_x(t|\tau-\epsilon)=\left[1-\epsilon (a+b)\right] G_x(t|\tau)+\epsilon b +\epsilon a G_x(t|\tau)^2 \;. 
+\]</div>
+<p>To explain the last term on the RHS, notice that, upon birth, we have two particles and that the two-particle generating function is just the square of the one particle generating function:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=0}^{\infty} \sum_{m=0}^{n} z^{m} p_m(t|\tau) z^{n-m} p_{n-m}(t|\tau) =  \sum_{m=0}^{\infty} z^{m} p_m(t|\tau) \sum_{n-m=0}^{\infty} z^{n-m} p_{n-m}(t|\tau) =G_x(t|\tau)^2 \;.
+\]</div>
+<p>In the second step, we defined <span class="math notranslate nohighlight">\(p_{&lt;0}(t|\tau)=0\)</span>.</p>
+<p>In the continuous limit and after rescaling time, we find</p>
+<div class="math notranslate nohighlight">
+\[
+-\partial_\tau G_x = -(2-s) G_x + G_x^2 +1-s
+\]</div>
+<p>First notice that we have a special solution <span class="math notranslate nohighlight">\(G_x^\infty\equiv G_x(t-\tau\to\infty)=(1-s)\)</span>, which simply corresponds to the fact that with probability <span class="math notranslate nohighlight">\((1-s)\)</span> the process goes extinct (<span class="math notranslate nohighlight">\(N(t)=0\)</span>).</p>
+<p>Substituting <span class="math notranslate nohighlight">\(G_x(t)=G_x^\infty+g_x(t)\)</span>, we have to solve a logistic equation (again!)</p>
+<div class="math notranslate nohighlight">
+\[
+-\partial_\tau g_x = -s g_x + g_x^2
+\]</div>
+<p>subject to final condition <span class="math notranslate nohighlight">\(x=G_x(t)=g_x(t)+1-s\)</span>, i.e., <span class="math notranslate nohighlight">\(g_x(t)=s+x-1\)</span>, and the long-time limit <span class="math notranslate nohighlight">\(g_x(-\infty)=0\)</span>.</p>
+<p>This logistic differential equation can be solved for <span class="math notranslate nohighlight">\(x\leq 1\)</span> (indicating the radius of convergence) as above, yielding</p>
+<div class="math notranslate nohighlight">
+\[
+G_x(t) = 1-s+\frac{s}{1+e^{s(t-\tau)}\frac{1-x}{s+x-1}}\;.
+\]</div>
+<p>A power series expansion returns the sought after abundance distribution, which for <span class="math notranslate nohighlight">\(\tau=0\)</span> is given by</p>
+<div class="math notranslate nohighlight" id="equation-abundance-pdf">
+<span class="eqno">(5)<a class="headerlink" href="#equation-abundance-pdf" title="Permalink to this equation">#</a></span>\[\begin{split}
+    p_n(t)=\left\{\begin{array}{cc}
+  &amp; 
+\begin{array}{cc}
+ \frac{s^2 e^{s t}}{(e^{st}+s-1)(e^{st}-1)} \left(\frac{1-e^{-s t}}{1-(1-s)e^{-s t}}\right)^{n}  &amp; n\geq 1 \\
+ \frac{(1-s) \left(e^{s t}-1\right)}{e^{s t}+s-1} &amp; n=0 \\
+\end{array}
+ \\
+\end{array}\right.
+\end{split}\]</div>
+<p>Notice that <span class="math notranslate nohighlight">\(p_0(t)=1-u(t)\)</span> as expected.</p>
+<p>Since the distribution is quite broad, one would like to know some characteristic features. The mean is given by</p>
+<div class="math notranslate nohighlight" id="equation-mean-abundance">
+<span class="eqno">(6)<a class="headerlink" href="#equation-mean-abundance" title="Permalink to this equation">#</a></span>\[
+    \langle N(t) \rangle =\partial_x|_{x=1} G_x(t)=e^{st}
+\]</div>
+<p>which again is a sanity check.</p>
+<p>From this result, we can now compute the probability distribution, given survival. This quantity is particularly relevant for <span class="math notranslate nohighlight">\(s t\ll 1\)</span>, where the population has established (with probability s or is extinct. In this limit, we find</p>
+<div class="math notranslate nohighlight" id="equation-conditioned-pdf">
+<span class="eqno">(7)<a class="headerlink" href="#equation-conditioned-pdf" title="Permalink to this equation">#</a></span>\[
+\Pr[N(t)=n|\text{survival}]=s^{-1}p_n(t)\sim s e^{-st-ns e^{-st}} 
+\]</div>
+<p>This result is better interpreted by expressing the population size <span class="math notranslate nohighlight">\(n\equiv s^{-1} e^{s(t-\Delta)}\)</span> in terms of an effective delay time <span class="math notranslate nohighlight">\(\Delta\)</span> of the exponential growth period. The distribution <a class="reference internal" href="#equation-conditioned-pdf">(7)</a> implies that this delay time follows a universal extreme value distribution,</p>
+<div class="math notranslate nohighlight">
+\[
+\Pr[\Delta]\propto e^{-s\Delta- e^{s\Delta}} \;, 
+\]</div>
+<p>the Gumbel distribution.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># allow TeX</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span> 
+
+<span class="c1"># Add title and axis names</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Gumbeldistribution for delay time $\Delta$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$s \Delta$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Pr[\Delta|$survival$]$&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/fb77aa292f80211d808442dfee7253ae19e66b159232a25175eae3eee20a2d2d.png" src="_images/fb77aa292f80211d808442dfee7253ae19e66b159232a25175eae3eee20a2d2d.png" />
+</div>
+</div>
+</section>
+<section id="citations">
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
+<div class="docutils container" id="id2">
+<div class="citation" id="id4" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>BHK18<span class="fn-bracket">]</span></span>
+<p>Gabriel Birzu, Oskar Hallatschek, and Kirill S Korolev. Fluctuations uncover a distinct class of traveling waves. <em>Proceedings of the National Academy of Sciences</em>, 115(16):E3645–E3654, 2018.</p>
+</div>
+<div class="citation" id="id3" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">DF07</a><span class="fn-bracket">]</span></span>
+<p>Michael M Desai and Daniel S Fisher. Beneficial mutation–selection balance and the effect of linkage on positive selection. <em>Genetics</em>, 176(3):1759–1798, 2007.</p>
+</div>
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Hal11<span class="fn-bracket">]</span></span>
+<p>Oskar Hallatschek. The noisy edge of traveling waves. <em>Proceedings of the National Academy of Sciences</em>, 108(5):1783–1787, 2011.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>HG16<span class="fn-bracket">]</span></span>
+<p>Oskar Hallatschek and Lukas Geyrhofer. Collective fluctuations in the dynamics of adaptation and other traveling waves. <em>Genetics</em>, 202(3):1201–1227, 2016.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture Notes on Proliferating Active Matter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Traveling-Waves-nb.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Traveling waves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#survival-probability">Survival probability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-population-size-distribution">Appendix: Population size distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oskar Hallatschek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
