@@ -406,7 +406,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping-n-times">Coin flipping  <span class="math notranslate nohighlight">\(N\)</span> times</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping">Coin flipping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a></li>
 </ul>
 </li>
@@ -436,8 +436,8 @@ document.write(`
 <li><p>Arovas, Ch. 1</p></li>
 <li><p>Kardar, Ch. 2</p></li>
 </ul>
-<section id="coin-flipping-n-times">
-<h2>Coin flipping  <span class="math notranslate nohighlight">\(N\)</span> times<a class="headerlink" href="#coin-flipping-n-times" title="Permalink to this heading">#</a></h2>
+<section id="coin-flipping">
+<h2>Coin flipping<a class="headerlink" href="#coin-flipping" title="Permalink to this heading">#</a></h2>
 <p>We will use the simple example of the repeated flipping a generally biased coin (outcome Heads or Tails) a warm-up excercise to illustrate key concepts in statistical physics.</p>
 <p>Coin flipping in many context:</p>
 <ul class="simple">
@@ -445,8 +445,10 @@ document.write(`
 <li><p>time series of left- or right steps in a random walk or a polymer (1D freely jointed chain)</p></li>
 </ul>
 <p>We assume that the coin is flipped <span class="math notranslate nohighlight">\(N\)</span> times (~”volume” of spin chain) and describe the outcome of the coin flip <span class="math notranslate nohighlight">\(i\)</span> as <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span>.</p>
-<p><span class="math notranslate nohighlight">\(P\left(\sigma_{i}\right)=\left\{\begin{array}{l}p \;, \quad\sigma=1 \\ q=1-p\;, \quad \sigma=-1\end{array}\right.\)</span></p>
-<p><span class="math notranslate nohighlight">\(\left(P\left(\sigma_{i}\right)=p \cdot \delta_{i 1}+q \delta_{i 0} \quad\right.\)</span> sometimes useful. <span class="math notranslate nohighlight">\()\)</span></p>
+<p>For a single coin flip, the probabilities of heads and tails are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P\left(\sigma_{i}\right)=\left\{\begin{array}{l}p \;, \quad\sigma=1 \\ q=1-p\;, \quad \sigma=-1\end{array}\right.\;,\end{split}\]</div>
+<p>which can also be concisely expressed as <span class="math notranslate nohighlight">\(P\left(\sigma_{i}\right)=p \cdot \delta_{i 1}+q \delta_{i 0}\)</span>, which is sometimes useful.</p>
 <p>Since coin flips are uncorrelated (by assumption), the probability of observing a particular configuration is given by</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -455,12 +457,16 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 &amp; \text { (uncorrelated spins) }
 \end{aligned}
 \end{split}\]</div>
+<p>In principle, everything one can say about the statistics of coin flips follows from this expression.</p>
 <p><em>Question:</em> Compare</p>
-<p>\begin{aligned}
-&amp; A={++–+++-+-+++—+++-+-++-+} \
-&amp; B={++++++++++++++++++++++++++} \
-&amp; C={+-+-+-+-+-+-+-+-+-+-+-+-+-}
-\end{aligned}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; A=\{++--+++-+-+++---+++-+-++-+\} \\
+&amp; B=\{++++++++++++++++++++++++++\} \\
+&amp; C=\{+-+-+-+-+-+-+-+-+-+-+-+-+-\}
+\end{aligned}
+\end{split}\]</div>
 <p>If <span class="math notranslate nohighlight">\(p=q=\frac{1}{2}, P(A)=P(B)=P(C)\)</span>. So, why does <span class="math notranslate nohighlight">\(B\)</span> (and <span class="math notranslate nohighlight">\(C\)</span>?) look exceptional?</p>
 <section id="coarse-graining">
 <h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h3>
@@ -612,8 +618,8 @@ P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(x-(x))^{2}}{4 P q}+O\left(\frac{1}{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2d2db90051782d261a435782ae5c8de97ea5e4acdf18e90759c954cc5da3a186.png" src="_images/2d2db90051782d261a435782ae5c8de97ea5e4acdf18e90759c954cc5da3a186.png" />
-<img alt="_images/ee5623aec598fdb30bec8ac81ddfaf96d1600e9cdd71732913705f74143d0332.png" src="_images/ee5623aec598fdb30bec8ac81ddfaf96d1600e9cdd71732913705f74143d0332.png" />
+<img alt="_images/4ae6b158cfcd2b6c236327278f1b01310968b8ae131cecea5bce5c9f58f61d6f.png" src="_images/4ae6b158cfcd2b6c236327278f1b01310968b8ae131cecea5bce5c9f58f61d6f.png" />
+<img alt="_images/15ee90df81b768f94125658bd16fea6838fcc4f27dc16d7533174b2ce5cc2de1.png" src="_images/15ee90df81b768f94125658bd16fea6838fcc4f27dc16d7533174b2ce5cc2de1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -644,7 +650,7 @@ P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(x-(x))^{2}}{4 P q}+O\left(\frac{1}{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c42787e7a5332303bc84033f7749dc850010f2069d3f9cf67703942075931901.png" src="_images/c42787e7a5332303bc84033f7749dc850010f2069d3f9cf67703942075931901.png" />
+<img alt="_images/c923b5a7c114587b590dcfe40777b8d3f18e3cf5a1b3e11f71847c1247ee9a13.png" src="_images/c923b5a7c114587b590dcfe40777b8d3f18e3cf5a1b3e11f71847c1247ee9a13.png" />
 </div>
 </div>
 </section>
@@ -706,7 +712,7 @@ P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(x-(x))^{2}}{4 P q}+O\left(\frac{1}{
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping-n-times">Coin flipping  <span class="math notranslate nohighlight">\(N\)</span> times</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping">Coin flipping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a></li>
 </ul>
 </li>

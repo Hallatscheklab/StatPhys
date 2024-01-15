@@ -22,7 +22,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/Hallatscheklab/PAM  
+  url: https://github.com/Hallatscheklab/StatPhys  
   # Online location of your book
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
