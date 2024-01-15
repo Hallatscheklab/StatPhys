@@ -1,4 +1,6 @@
-## PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024
+## Course Information
+
+### PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024
 
 ```
 UNIVERSITY OF CALIFORNIA, BERKELEY DEPARTMENT OF PHYSICS
@@ -24,11 +26,11 @@ Drop Deadline: Feb 10.
 
 **Prerequisites:** Physics 112, 137A/B or equivalents.
 
-Texts:
+**Texts:**
 
 - M. Kardar, Statistical Physics of Particles. The paper copy is nice, but UC Library has an online version. This is the primary resource for the course.
 - D. Arovas, Thermodynamics and Statistical Mechanics. You can find Dan Arovas’ stat-mech notes on his UCSD page, or here phys.libretexts.org
-- J. Sethna, Entropy, Order Parameters, and Complexity. The 2nd edition, which I'll use, is available online [here] (https://sethna.lassp.cornell.edu/StatMech/)
+- J. Sethna, Entropy, Order Parameters, and Complexity. The 2nd edition, which I'll use, is available online [here](https://sethna.lassp.cornell.edu/StatMech/)
 - [MacKay, Information Theory](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi2mNTQhdeDAxWaRzABHTfNAEAQFnoECA8QAQ&url=https%3A%2F%2Fwww.inference.org.uk%2Fitprnn%2Fbook.pdf&usg=AOvVaw2U9u5mdeY0yzjLEbxfO3LW&opi=89978449) has lots of interesting connections between statistical physics and information theory. 
 - I'll provide reading guidelines at the beginning of each chapter. 
 

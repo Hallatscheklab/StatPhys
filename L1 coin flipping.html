@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Course Information &#8212; Evolving active matter</title>
+    <title>Coin flipping \(N\) times &#8212; Evolving active matter</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Course-Info-211-2024';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'L1 coin flipping';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Coin flipping" href="Coin-flipping.html" />
-    <link rel="prev" title="Lecture Notes on Proliferating Active Matter" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,13 +172,13 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Lecture Notes on Proliferating Active Matter
+                    Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Course Information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Coin flipping</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
 </ul>
 
     </div>
@@ -250,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/PAM/issues/new?title=Issue%20on%20page%20%2FCourse-Info-211-2024.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/PAM/issues/new?title=Issue%20on%20page%20%2FL1 coin flipping.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Course-Info-211-2024.md" target="_blank"
+      <li><a href="_sources/L1 coin flipping.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +364,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Course Information</h1>
+    <h1>Coin flipping  N times</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,7 +374,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-211-equilibrium-statistical-physics-spring-2024">PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-calculation-of-expectation-value">Warm-Up: Calculation of Expectation Value</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -386,63 +389,146 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="course-information">
-<h1>Course Information<a class="headerlink" href="#course-information" title="Permalink to this heading">#</a></h1>
-<section id="physics-211-equilibrium-statistical-physics-spring-2024">
-<h2>PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024<a class="headerlink" href="#physics-211-equilibrium-statistical-physics-spring-2024" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UNIVERSITY</span> <span class="n">OF</span> <span class="n">CALIFORNIA</span><span class="p">,</span> <span class="n">BERKELEY</span> <span class="n">DEPARTMENT</span> <span class="n">OF</span> <span class="n">PHYSICS</span>
-</pre></div>
-</div>
-<p><strong>Instructor</strong>: Prof. Oskar Hallatschek (he/his), <em>Office</em>: 274D Stanley Hall, <em>Email</em>: <a class="reference external" href="mailto:ohallats&#37;&#52;&#48;berkeley&#46;edu">ohallats<span>&#64;</span>berkeley<span>&#46;</span>edu</a></p>
-<p><strong>Teaching assistant</strong>: Irian D’Andrea (she/her), <em>Email</em>: <a class="reference external" href="mailto:mariosdandrea&#37;&#52;&#48;berkeley&#46;edu">mariosdandrea<span>&#64;</span>berkeley<span>&#46;</span>edu</a></p>
-<p><strong>Lecture info</strong>: Tu, Th 3:30 - 5:00PM, Room: 105 - North Gate.
-I’ll lecture live and post a recording to bCourses afterwards for those that can’t make it. If you have a question you’d like answered, but can’t make it to the lecture, send a note and I’ll answer it at the beginning of lecture and you can catch my answer on the recording.</p>
-<p><strong>Discussion sections:</strong> will be a mixture of problem solving, python computer experiments and interesting stat-mech applications.<br />
-W 5:00PM - 6:00PM, Room: B56 - Hidebrand <br />
-F 3:00PM - 3:59PM, Room: 109 - Dwinelle</p>
-<p><strong>Office hours:</strong> <br />
-Prof. H: T 5:00 - 6:00PM<br />
-Irian: (TBD)</p>
-<p>Drop Deadline: Feb 10.</p>
-<p><strong>Course Webpage:</strong> here <a class="reference external" href="http://bcourses.berkeley.edu">bcourses.berkeley.edu</a></p>
-<p><strong>Prerequisites:</strong> Physics 112, 137A/B or equivalents.</p>
-<p><strong>Texts:</strong></p>
+  <p>LI Coin flipping</p>
+<p>Agenda:</p>
 <ul class="simple">
-<li><p>M. Kardar, Statistical Physics of Particles. The paper copy is nice, but UC Library has an online version. This is the primary resource for the course.</p></li>
-<li><p>D. Arovas, Thermodynamics and Statistical Mechanics. You can find Dan Arovas’ stat-mech notes on his UCSD page, or here <a class="reference external" href="http://phys.libretexts.org">phys.libretexts.org</a></p></li>
-<li><p>J. Sethna, Entropy, Order Parameters, and Complexity. The 2nd edition, which I’ll use, is available online <a class="reference external" href="https://sethna.lassp.cornell.edu/StatMech/">here</a></p></li>
-<li><p><a class="reference external" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwi2mNTQhdeDAxWaRzABHTfNAEAQFnoECA8QAQ&amp;url=https%3A%2F%2Fwww.inference.org.uk%2Fitprnn%2Fbook.pdf&amp;usg=AOvVaw2U9u5mdeY0yzjLEbxfO3LW&amp;opi=89978449">MacKay, Information Theory</a> has lots of interesting connections between statistical physics and information theory.</p></li>
-<li><p>I’ll provide reading guidelines at the beginning of each chapter.</p></li>
+<li><p>microctates us macros.</p></li>
+<li><p>emerging collective behavior</p></li>
+<li><p>universality (CLT)</p></li>
+<li><p>entropy us energy</p></li>
+<li><p>probability recap</p></li>
 </ul>
-<p><strong>Exams and grades:</strong> There will be one midterm and a final exam. Both will be 24-hour take home exams on the dates
-below.</p>
+<p>Reading:</p>
 <ul class="simple">
-<li><p>Midterm, Tue, Mar 9 (24 hours)</p></li>
-<li><p>Final, Fri, May 10, 7PM - 9PM
-Grades will be determined from a weighting of all the elements of the course as follows:</p></li>
-<li><p>Midterm, 20 %</p></li>
-<li><p>Final, 40 %</p></li>
-<li><p>Homework, 40 %</p></li>
-<li><p><em>extra credit:</em> participation, 5 %</p></li>
+<li><p>Atovas, Ch.</p></li>
+<li><p>Kardar, Ch. 2</p></li>
 </ul>
-<p><strong>Homework:</strong> Homework will be posted approximately weekly and due Fridays at 5:00PM via Gradescope.</p>
-<p><strong>Late / missed homework policy:</strong> We will drop your lowest homework score. We will usually not accept late homework unless there are extenuating circumstances (e.g. sickness, family emergencies, natural desasters, accidents but also prepping for March meeting). If you expect to be ill or unable to do homework for more than a week, let us know.</p>
-<p><strong>Conflicts:</strong> Let me know of any exam conflicts at least two weeks before the exam. If circumstances make it impossible
-for you to take the midterm, we’ll shift its weight to the final.</p>
-<p><strong>Accommodations:</strong> If you need disability-related accommodations in this class, if you have emergency medical information you wish to share with the instructor, or if you need special arrangements in case the building must be evacuated
-should we return to campus, please inform Prof. Hallatschek immediately.</p>
-<p><strong>For your moral compass:</strong> <br />
-<em>Collaboration and Independence:</em> Reflecting the collaborative nature of science, I expect you to work on the problem
-sets together. But if you turn a problem in you should feel comfortable in your ability to explain it to me at the blackboard.
-Do not use online solution sets.</p>
-<p><em>Cheating:</em> Anyone caught cheating on an exam in this course will receive a failing grade on the relevant exam prob-
-lem(s), and will also be reported to the University Center for Student Conduct.</p>
-<p><em>Plagiarism:</em> To copy text or ideas from another source without appropriate reference is plagiarism and will result in a failing grade for your assignment and usually further disciplinary action. This includes copying solutions from printed
-or online, published or unpublished sources. Translation for grad school: don’t use online solution sets, and it’s good practice to cite things.</p>
-<hr class="docutils" />
-<p>All above provisions listed in the course info sheet are subject to change at the instructor’s discretion. Changes may
-happen to address problems and to improve the smooth running of the class and/or discussion sections.</p>
-<hr class="docutils" />
+<section id="coin-flipping-n-times">
+<h1>Coin flipping  <span class="math notranslate nohighlight">\(N\)</span> times<a class="headerlink" href="#coin-flipping-n-times" title="Permalink to this heading">#</a></h1>
+<p>We will use the simple example of the repeated flipping a generally biased coin (outcome Heads or Tails) a warm-up excercise to illustrate key concepts in statistical physics.</p>
+<p>Coin flipping in many context:</p>
+<ul class="simple">
+<li><p>spatial configuration of magnetic moments: spin up or down</p></li>
+<li><p>time series of left- or right steps in a random walk or a polymer (1D freely jointed chain)</p></li>
+</ul>
+<p>We assume that the coin is flipped <span class="math notranslate nohighlight">\(N\)</span> times (~”volume” of spin chain) and describe the outcome of the coin flip <span class="math notranslate nohighlight">\(i\)</span> as <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(P\left(\sigma_{i}\right)=\left\{\begin{array}{l}p \;, \quad\sigma=1 \\ q=1-p\;, \quad \sigma=-1\end{array}\right.\)</span></p>
+<p><span class="math notranslate nohighlight">\(\left(P\left(\sigma_{i}\right)=p \cdot \delta_{i 1}+q \delta_{i 0} \quad\right.\)</span> sometimes useful. <span class="math notranslate nohighlight">\()\)</span></p>
+<p>Since coin flips are uncorrelated (by assumption), the probability of observing a particular configuration is given by
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}\right) \\
+&amp; \text { (uncorrelated spins) }
+\end{aligned}
+\)</span>$</p>
+<p><em>Question:</em> Compare
+\begin{aligned}
+&amp; A={++–+++-+-+++—+++-+-++-+} \
+&amp; B={++++++++++++++++++++++++++} \
+&amp; C={+-+-+-+-+-+-+-+-+-+-+-+-+-}
+\end{aligned}</p>
+<p>If <span class="math notranslate nohighlight">\(p=q=\frac{1}{2}, P(A)=P(B)=P(C)\)</span>. So, why does <span class="math notranslate nohighlight">\(B\)</span> (and <span class="math notranslate nohighlight">\(C\)</span>?) look exceptional?</p>
+<section id="coarse-graining">
+<h2>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h2>
+<p>In the realm of statistical physics, the concept of <strong>coarse-graining</strong> plays a pivotal role in understanding the transition from microscopic to macroscopic descriptions. The entire configuration of a system, denoted by <span class="math notranslate nohighlight">\(\{\sigma\} = \left\{\sigma_{1}, \sigma_{2}, \ldots\right\}\)</span>, represents the <strong>micro-state</strong>. The set of all micro-states encompasses all possible configurations at the most fundamental level.</p>
+<p>But, usually, we cannot directly observe all degrees of freedom of a microstate. Instead, we measure certain observables that have the same value for many microstates. For example, we typically cannot measure all spins in a magnet but just a sum over all spins. In a magnet, for instance, we care about the magnetization, $<span class="math notranslate nohighlight">\(X \equiv \sum_{j=1}^{N} \sigma_{j}\;,\)</span><span class="math notranslate nohighlight">\(
+which is the difference \)</span>X=N_+-N_-$ between up- and down-spins. (Likewise, when we stare at a coin flip series of 1’s and 0’s our brains tend to quickly notice if there’s a mismatch between 1’s and 0’s.)</p>
+<p>Since <span class="math notranslate nohighlight">\(\{\sigma\} \rightarrow X\)</span> is a many-to-one mapping, we call <span class="math notranslate nohighlight">\(X\)</span> a macroscopic observable. By fixing the value of <span class="math notranslate nohighlight">\(X\)</span>, we effectively define what is known as a <strong>macro-state</strong>.</p>
+<p>A typical objective in statistical physics is to transition from the probability distribution of micro-states, <span class="math notranslate nohighlight">\(P(\{\sigma\})\)</span>, to that of macro-states, <span class="math notranslate nohighlight">\(P(X)\)</span>. What generically happens during this transition is a fundamental aspect that we will explore now,  using coin flipping.</p>
+<p>The probability of <span class="math notranslate nohighlight">\(X\)</span> is naturally represented as a product of the number <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> of possible microstates (aka microscopic configurations) and the probability <span class="math notranslate nohighlight">\(p^{N_{+}}q^{N_{-}}\)</span> to observe anyone of the microstates. We thus obtain the binomial distribution
+$<span class="math notranslate nohighlight">\(
+P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \underbrace{p^{N_{+}}q^{N_{-}}}_{\equiv e^{-E(X)}}
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+P(X)= e^{S(X)}e^{-E(X)}
+\)</span><span class="math notranslate nohighlight">\(
+Here, we introduced \)</span>S(X)<span class="math notranslate nohighlight">\( as the log of the microstates \)</span>E(X)$ as the log-probability of the microstates. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; S=\ln (N !)-\ln \left(N_{+} !\right)-\ln \left(N_{-} !\right)
+\end{aligned}
+\]</div>
+<p>Stirling: <span class="math notranslate nohighlight">\(\ln N !=N(\ln N-1)+O(\ln N)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+S \approx-N\left(\frac{1+x}{2} \ln \left(\frac{1+x}{2}\right)+\frac{1-x}{2} \ln \left(\frac{1-x}{2}\right)\right)
+\]</div>
+<p>Where we introduced the specific magnetization <span class="math notranslate nohighlight">\(x=X/N\)</span>.</p>
+<p>Notice that, for large <span class="math notranslate nohighlight">\(N\)</span>, the entropy <span class="math notranslate nohighlight">\(S\propto N\)</span> has a very simple, linear dependence on <span class="math notranslate nohighlight">\(N\)</span>. Macroscopic observables that grow linearly with the system size are called <strong>extensive</strong>. These are in contrast to <strong>intensive</strong> quanitites, which approach a constant in the thermodynamic limit of large systems, for example <span class="math notranslate nohighlight">\(x=X/N\)</span> which is bounded between -1 and 1.</p>
+<p>There are more configurations for <span class="math notranslate nohighlight">\(x \approx 0\)</span> than <span class="math notranslate nohighlight">\(X \approx N\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \\
+&amp; =-N\left[\frac{1+x}{2} \ln p+\frac{1-x}{2} \ln q\right] \\
+&amp; =-\frac{N}{2}\left[\ln (p q)+x \ln \frac{p}{q}\right]
+\end{aligned}
+\end{split}\]</div>
+<p>“Low energy” higher probab.</p>
+<p><span class="math notranslate nohighlight">\(\langle x\rangle\)</span> is set by competition between <span class="math notranslate nohighlight">\(S(x)\)</span> and <span class="math notranslate nohighlight">\(E(x)\)</span></p>
+<p>Taylor expanding <span class="math notranslate nohighlight">\(S(x)-E(x)\)</span> to <span class="math notranslate nohighlight">\(O\left[(x-\langle x\rangle)^{2}\right]\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(x-(x))^{2}}{4 P q}+O\left(\frac{1}{N}\right)\right]}
+\]</div>
+<p>So, as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span></p>
+<p>Deterministic behavior emerges from <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> limit.</p>
+<section id="warm-up-calculation-of-expectation-value">
+<h3>Warm-Up: Calculation of Expectation Value<a class="headerlink" href="#warm-up-calculation-of-expectation-value" title="Permalink to this heading">#</a></h3>
+<p>But first a warm-up:</p>
+<p>Expectation value</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle x\rangle &amp; =\sum_{\{\sigma\}} P(\{\sigma\}) x(\{\sigma\})= \\
+&amp; =\sum_{\{\sigma\}}\left[\prod_{j} P\left(\sigma_{j}\right)\right]\left[\sum_{i} \sigma_{i}\right] \\
+&amp; =\sum_{j} \sum_{\sigma_{j}} P\left(\sigma_{j}\right) \cdot \sigma_{j} \\
+&amp; =\sum_{j}(p-q)=N(p-q)
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\langle X\rangle \propto N\)</span> is “<strong>extensive</strong>”.</p>
+<p>Also define specific magnetisation <span class="math notranslate nohighlight">\(\langle x\rangle \equiv \frac{\langle X\rangle}{N}=p-q\)</span> is “<strong>intensive</strong>”.</p>
+<p>Of course, a particular realization will (usually!) not have <span class="math notranslate nohighlight">\(x=\langle x\rangle\)</span>.</p>
+<p>One measure of spread is variance</p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{var}(x) \equiv\langle\underbrace{(x-\langle x\rangle)^{2}}_{\equiv \Delta x^2}\rangle=\left\langle x^{2}\right\rangle-\langle x\rangle^{2} .
+\]</div>
+<p>To compute <span class="math notranslate nohighlight">\(\left\langle x^{2} \right\rangle\)</span>
+:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \left\langle x^{2}\right\rangle=\sum_{\{\sigma\}} P(\{\sigma\}) x^{2}(\{\sigma\}) \\
+&amp; =\sum_{\{ \sigma \}} P(\{\sigma\}) \sum_{i, j} \sigma_{i} \cdot \sigma_{j}=\sum_{i, j}\left\langle\sigma_{i} \sigma_{j}\right\rangle \\
+&amp; i=j: \sigma_{i} \cdot \sigma_{i}=1 \text {, so }\left\langle\sigma_{i} \cdot \sigma_{i}\right\rangle=1
+\end{aligned}
+\end{split}\]</div>
+<p>if j: <span class="math notranslate nohighlight">\(\left\langle\sigma_{i} \sigma_{j}\right\rangle=\left\langle\sigma_{i}\right\rangle\left\langle\sigma_{i}\right\rangle=(p-q)^{2}\)</span></p>
+<p>So <span class="math notranslate nohighlight">\(\left\langle x^{2}\right\rangle=N+N(N-1)(p-q)^{2}\)</span>
+v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^{2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left\langle x^{2}\right\rangle-\langle x\rangle^{2} &amp; =N\left(1-(p-q)^{2}\right) . \\
+\operatorname{var}(x) &amp; =4 \mathrm{Npq} .
+\end{aligned}
+\end{split}\]</div>
+<p>Note: <span class="math notranslate nohighlight">\(\quad \Delta x \sim \sqrt{N} 4 \mathrm{pq}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\langle x\rangle-N(p-q)
+\]</div>
+<p>so, as <span class="math notranslate nohighlight">\(N \rightarrow \infty, \frac{\Delta x}{\langle x\rangle} \rightarrow 0(p \neq q)\)</span></p>
+<p>The <span class="math notranslate nohighlight">\(\sqrt{N^{\prime}}\)</span> is <span class="math notranslate nohighlight">\(N\)</span> scaling is a general consequence of the C.L.T. we provelater.</p>
+<p>So for, we have computed</p>
+<div class="math notranslate nohighlight">
+\[
+\langle x\rangle,\left\langle x^{2}\right\rangle
+\]</div>
+<p>but instructive to compute</p>
+</section>
 </section>
 </section>
 
@@ -476,24 +562,6 @@ happen to address problems and to improve the smooth running of the class and/or
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lecture Notes on Proliferating Active Matter</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Coin-flipping.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Coin flipping</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -510,7 +578,10 @@ happen to address problems and to improve the smooth running of the class and/or
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-211-equilibrium-statistical-physics-spring-2024">PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-calculation-of-expectation-value">Warm-Up: Calculation of Expectation Value</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -67,7 +67,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Traveling-Waves-nb';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Branching Processes" href="Branching-processes-nb.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,9 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Branching-processes-nb.html">Branching Processes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Traveling waves</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Coin flipping</a></li>
 </ul>
 
     </div>
@@ -471,7 +470,7 @@ j(x,t)=-D \partial_x c \;.
 <h2>Ignoring non-linearities<a class="headerlink" href="#ignoring-non-linearities" title="Permalink to this heading">#</a></h2>
 <p>If we ignore the non-linear population control and assume the growth rate <span class="math notranslate nohighlight">\(s\)</span> is strictly constant,</p>
 <div class="math notranslate nohighlight" id="equation-mean-branching-random-walk">
-<span class="eqno">(8)<a class="headerlink" href="#equation-mean-branching-random-walk" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-mean-branching-random-walk" title="Permalink to this equation">#</a></span>\[
 \partial_t c=D\partial_x^2 c+ s c\;,
 \]</div>
 <p>we can easily solve the ensuing reaction-diffusion equation. Namely, by substituting <span class="math notranslate nohighlight">\(c(c,t)=\psi(c,t)e^{st}\)</span>, we can get rid of the reaction term and obtain a simple diffusion equation,</p>
@@ -493,10 +492,10 @@ v_F=2\sqrt{Ds}\;.
 </section>
 <section id="including-population-control">
 <h2>Including population control<a class="headerlink" href="#including-population-control" title="Permalink to this heading">#</a></h2>
-<p>By estimating the most advanced individual, we have just estimated an effect of the discreteness of the particles: There’s always a leading edge. Our answer for the asymptotic velocity of that leading edge is is even the asymptotically correct result for a branching random walk, whose  first moment equation is linear and exactly given by <a class="reference internal" href="#equation-mean-branching-random-walk">(8)</a>.</p>
+<p>By estimating the most advanced individual, we have just estimated an effect of the discreteness of the particles: There’s always a leading edge. Our answer for the asymptotic velocity of that leading edge is is even the asymptotically correct result for a branching random walk, whose  first moment equation is linear and exactly given by <a class="reference internal" href="#equation-mean-branching-random-walk">()</a>.</p>
 <p>However, the linearized model  has the unrealistic feature of an bulk population that grows without bound. To limit growth, we will now re-introduce non-linear logistic control, which yields the so-called Fisher-Kolmogorov equation,</p>
 <div class="math notranslate nohighlight" id="equation-fkpp-eq">
-<span class="eqno">(9)<a class="headerlink" href="#equation-fkpp-eq" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-fkpp-eq" title="Permalink to this equation">#</a></span>\[
 \partial_t c=D\partial_x^2 c+s c \left(1-\frac cK\right) \;.
 \]</div>
 <p>Under this model, the population develops, after some relaxation time, a steadily moving wave train. In the co-moving frame, the population profile becomes steady,</p>
@@ -509,7 +508,7 @@ v_F=2\sqrt{Ds}\;.
 <figure class="align-default" id="rolling-balls">
 <a class="reference internal image-reference" href="../images/FKPP-rolling-ball-analogy.jpg"><img alt="../images/FKPP-rolling-ball-analogy.jpg" src="../images/FKPP-rolling-ball-analogy.jpg" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Rolling ball analogy for the steady state equation describing the FKPP wave profile</span><a class="headerlink" href="#rolling-balls" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Rolling ball analogy for the steady state equation describing the FKPP wave profile</span><a class="headerlink" href="#rolling-balls" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-different-types-of-traveling-waves admonition">
@@ -521,7 +520,7 @@ v_F=2\sqrt{Ds}\;.
 <h2>Effects of discreteness<a class="headerlink" href="#effects-of-discreteness" title="Permalink to this heading">#</a></h2>
 <p>Our discussion of traveling waves ignored the fact that individuals are discrete. An exponentially decaying density can only make sense in an average sense when the density drops below one and that then implies the existence of fluctuations. It turns out these fluctuations crucial influence the behavior of waves.</p>
 <p>One can show that the correct noisy version of the above dynamics requires to leading order on the right hand side of the FKPP equation a noise term of the form <span class="math notranslate nohighlight">\( \eta(x,t)\sqrt{c}\)</span> where the <span class="math notranslate nohighlight">\(\eta\)</span> is uncorrelated white noise, <span class="math notranslate nohighlight">\(\eta(x,t)\eta(x',t')=\delta(x-x')\delta(t-t')\)</span>.</p>
-<p>The FKPP equation <a class="reference internal" href="#equation-fkpp-eq">(9)</a> amounts to approximating <span class="math notranslate nohighlight">\(\langle c^2\rangle=\langle c\rangle^2\)</span>. It turns out that this mean-field approximation is problematic. The velocity is reduced by a singular correction that cannot be obtained through perturbation analysis. More serious are the consequences for models of adaptation, which do not even have a finite wave speed in the mean-field approximation, and for the genealogical structures generated by these waves.</p>
+<p>The FKPP equation <a class="reference internal" href="#equation-fkpp-eq">()</a> amounts to approximating <span class="math notranslate nohighlight">\(\langle c^2\rangle=\langle c\rangle^2\)</span>. It turns out that this mean-field approximation is problematic. The velocity is reduced by a singular correction that cannot be obtained through perturbation analysis. More serious are the consequences for models of adaptation, which do not even have a finite wave speed in the mean-field approximation, and for the genealogical structures generated by these waves.</p>
 <p>A lot of work has been done to implement the consequences of discreteness, most of them being adhoc at some level. Below I present an adhoc recipe that has given correct answers to leading order for many cases.</p>
 <p>This method requires us to first extend our understanding of branching processes to space and introduce the concept of gene surfing.</p>
 <section id="simple-code-to-simulate-fkpp-waves">
@@ -619,7 +618,7 @@ v_*(\xi,\tau)=2 D \partial_\xi\ln[c(\xi,\tau)]
 \]</div>
 <p>which predicts that the steady state distribution <span class="math notranslate nohighlight">\(G(\xi)\)</span> of the common ancestors is given by</p>
 <div class="math notranslate nohighlight" id="equation-pdf-ancestors">
-<span class="eqno">(10)<a class="headerlink" href="#equation-pdf-ancestors" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-pdf-ancestors" title="Permalink to this equation">#</a></span>\[
 G\propto c^2 e^{v \xi/D}
 \]</div>
 <p>where the pre-factor is fixed by the normalization condition, <span class="math notranslate nohighlight">\(\int_\xi G=1\)</span>.</p>
@@ -627,10 +626,10 @@ G\propto c^2 e^{v \xi/D}
 <figure class="align-default" id="doca">
 <a class="reference internal image-reference" href="../images/Distribution-of-common-ancestors.jpg"><img alt="../images/Distribution-of-common-ancestors.jpg" src="../images/Distribution-of-common-ancestors.jpg" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Measured bell-shaped distribution <span class="math notranslate nohighlight">\(G_\infty(\xi)\)</span> as function of position <span class="math notranslate nohighlight">\(\xi\)</span> relative to the FKPP wave front (sigmoidal lines) for varying carrying capacities <span class="math notranslate nohighlight">\(N\)</span>.</span><a class="headerlink" href="#doca" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Measured bell-shaped distribution <span class="math notranslate nohighlight">\(G_\infty(\xi)\)</span> as function of position <span class="math notranslate nohighlight">\(\xi\)</span> relative to the FKPP wave front (sigmoidal lines) for varying carrying capacities <span class="math notranslate nohighlight">\(N\)</span>.</span><a class="headerlink" href="#doca" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>But simulations of stochastic traveling waves show that this steady state distribution is a bell-like shape in the wave tip, see <a class="reference internal" href="#doca"><span class="std std-numref">Fig. 2</span></a>. Another hint that the mean-field solution to the number density is incorrect, in fact completely off.</p>
+<p>But simulations of stochastic traveling waves show that this steady state distribution is a bell-like shape in the wave tip, see <code class="xref std std-numref docutils literal notranslate"><span class="pre">Doca</span></code>. Another hint that the mean-field solution to the number density is incorrect, in fact completely off.</p>
 </section>
 <section id="branching-random-walks">
 <h2>Branching Random Walks<a class="headerlink" href="#branching-random-walks" title="Permalink to this heading">#</a></h2>
@@ -642,24 +641,24 @@ G\propto c^2 e^{v \xi/D}
 \]</div>
 <p>Generalizing this equation to the case of diffusion and spatially varying growth rates <span class="math notranslate nohighlight">\(s(\xi,\tau)\)</span>, one obtains</p>
 <div class="math notranslate nohighlight" id="equation-u-fkpp">
-<span class="eqno">(12)<a class="headerlink" href="#equation-u-fkpp" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-u-fkpp" title="Permalink to this equation">#</a></span>\[
 -\partial_\tau u (x,t|\xi,\tau)=D\partial_\xi u^2+s(\xi,\tau) u- u^2 \;.
 \]</div>
-<p>Deriving this equation is a useful exercise, for which one has to retrace the same steps as for the non-spatial equation with the addition that one needs to account for the rates of dispersal. Notice that <a class="reference internal" href="#equation-u-fkpp">(12)</a> has a similar shape as the FKPP equation.</p>
+<p>Deriving this equation is a useful exercise, for which one has to retrace the same steps as for the non-spatial equation with the addition that one needs to account for the rates of dispersal. Notice that <a class="reference internal" href="#equation-u-fkpp">()</a> has a similar shape as the FKPP equation.</p>
 <p>In the frame co-moving with the wave traveling in the <span class="math notranslate nohighlight">\(-x\)</span> direction backward in time, we have</p>
 <div class="math notranslate nohighlight" id="equation-u-fkpp">
-<span class="eqno">(12)<a class="headerlink" href="#equation-u-fkpp" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-u-fkpp" title="Permalink to this equation">#</a></span>\[
  0 =D\partial_\xi u+ v \partial_\xi u+s(\xi) u- u^2 \;,
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(s(\xi)=1-c(\xi)\)</span> is given in terms of the density. To close this equation, we need an expression for the number density <span class="math notranslate nohighlight">\(c\)</span> in terms of the survival probability <span class="math notranslate nohighlight">\(u\)</span>. Such a connection is provided by equation <a class="reference internal" href="#equation-pdf-ancestors">(10)</a> for the distribution of common ancestors, once we recognize that</p>
+<p>where <span class="math notranslate nohighlight">\(s(\xi)=1-c(\xi)\)</span> is given in terms of the density. To close this equation, we need an expression for the number density <span class="math notranslate nohighlight">\(c\)</span> in terms of the survival probability <span class="math notranslate nohighlight">\(u\)</span>. Such a connection is provided by equation <a class="reference internal" href="#equation-pdf-ancestors">()</a> for the distribution of common ancestors, once we recognize that</p>
 <div class="math notranslate nohighlight" id="equation-g-u-c">
-<span class="eqno">(13)<a class="headerlink" href="#equation-g-u-c" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-g-u-c" title="Permalink to this equation">#</a></span>\[
 G(x,\infty|\xi,\tau)=u(\xi,\tau) c(\xi,\tau) \;.
 \]</div>
-<p>To see <a class="reference internal" href="#equation-g-u-c">(13)</a>, notice that the probability that, at time <span class="math notranslate nohighlight">\(\tau\)</span>, the common ancestor of future generations is at <span class="math notranslate nohighlight">\(\xi\)</span> is the same as the probability that any particle at <span class="math notranslate nohighlight">\(\xi\)</span> is going to survive forever, which is given by <span class="math notranslate nohighlight">\(u c\)</span>.</p>
-<p>Combining Eq.s <a class="reference internal" href="#equation-u-fkpp">(12)</a>, <a class="reference internal" href="#equation-pdf-ancestors">(10)</a> and <a class="reference internal" href="#equation-g-u-c">(13)</a>, we obtain</p>
+<p>To see <a class="reference internal" href="#equation-g-u-c">()</a>, notice that the probability that, at time <span class="math notranslate nohighlight">\(\tau\)</span>, the common ancestor of future generations is at <span class="math notranslate nohighlight">\(\xi\)</span> is the same as the probability that any particle at <span class="math notranslate nohighlight">\(\xi\)</span> is going to survive forever, which is given by <span class="math notranslate nohighlight">\(u c\)</span>.</p>
+<p>Combining Eq.s <a class="reference internal" href="#equation-u-fkpp">()</a>, <a class="reference internal" href="#equation-pdf-ancestors">()</a> and <a class="reference internal" href="#equation-g-u-c">()</a>, we obtain</p>
 <div class="math notranslate nohighlight" id="equation-c-cutoff">
-<span class="eqno">(14)<a class="headerlink" href="#equation-c-cutoff" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-c-cutoff" title="Permalink to this equation">#</a></span>\[
  0 =D\partial_x c^2+ v \partial_x c+r c(1-c)- \frac{c^2 e^{v x/D}}{\int_x c^2 e^{v x/D}}\;.
 \]</div>
 <p>The third term on the right-hand side furnishes the major difference to the naive mean-field approach. One might think, at first sight, that this non-linear term can be ignored in the tip of the wave, where the density decays to 0 and <span class="math notranslate nohighlight">\(c^2\ll c\)</span>. But the exponential amplification factor ensures that this factor becomes a leading order term sufficiently far out in the tip of the wave.</p>
@@ -670,27 +669,27 @@ G(x,\infty|\xi,\tau)=u(\xi,\tau) c(\xi,\tau) \;.
 <h3>FKPP waves<a class="headerlink" href="#fkpp-waves" title="Permalink to this heading">#</a></h3>
 <p>Assuming an overall decay <span class="math notranslate nohighlight">\(c \sim N e^{-v x/(2 D)}\)</span>, it is easy to see that the quadratic cut-off term becomes of comparable to the first order terms when <span class="math notranslate nohighlight">\(x_c \sim 2\ln(N)D/v\)</span>. For <span class="math notranslate nohighlight">\(x&gt;x_c\)</span>, the density decays faster, <span class="math notranslate nohighlight">\(c\sim e^{-v x/D}\)</span>, just as if there is no growth beyond <span class="math notranslate nohighlight">\(x_c\)</span>. I.e. the leading order effect of the fluctuation-induced term is to introduce a growth cutoff at <span class="math notranslate nohighlight">\(x_c\)</span>. Therefore, the linearized equation</p>
 <div class="math notranslate nohighlight" id="equation-fkpp-linear">
-<span class="eqno">(15)<a class="headerlink" href="#equation-fkpp-linear" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-fkpp-linear" title="Permalink to this equation">#</a></span>\[
 \partial_t c =D\partial_x^2 c+ v \partial_x c+r c 
 \]</div>
 <p>has to be solved between <span class="math notranslate nohighlight">\(x=0\)</span> and <span class="math notranslate nohighlight">\(x=x_c\)</span>. To do this, it is convenient to introduce the variable transform</p>
 <div class="math notranslate nohighlight" id="equation-var-trafo">
-<span class="eqno">(16)<a class="headerlink" href="#equation-var-trafo" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-var-trafo" title="Permalink to this equation">#</a></span>\[
 c(x,t)=\phi(x,t) e^{-\frac{vx}{2D}}
 \]</div>
-<p>through which <a class="reference internal" href="#equation-fkpp-linear">(15)</a> is transformed into</p>
+<p>through which <a class="reference internal" href="#equation-fkpp-linear">()</a> is transformed into</p>
 <div class="math notranslate nohighlight" id="equation-fkpp-linear-trafo">
-<span class="eqno">(17)<a class="headerlink" href="#equation-fkpp-linear-trafo" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-fkpp-linear-trafo" title="Permalink to this equation">#</a></span>\[
 \partial_t \phi =D\partial_x^2 \phi+ \left(r-\frac{v^2}{4D} \right) \phi\;,
 \]</div>
-<p>which has a <em>Hermitian</em> operator on the RHS. <a class="reference internal" href="#equation-fkpp-linear-trafo">(17)</a> has the shape of a Schroedinger equation in imaginary time. The non-linearities of the original equation <a class="reference internal" href="#equation-c-cutoff">(14)</a> effectively generate two absorbing boundary conditions for <span class="math notranslate nohighlight">\(\phi(x)\)</span>, one at <span class="math notranslate nohighlight">\(x=O(\ln N)\)</span> and one at <span class="math notranslate nohighlight">\(x=O(1)\)</span>.</p>
-<p>We can solve equation <a class="reference internal" href="#equation-fkpp-linear-trafo">(17)</a> subject to these boundary conditions in terms of normal modes. To ensure a steady state in the co-moving frame, we have to demand that the ground state (lowest mode) has vanishing energy. All higher modes have higher energy, and therefore decay over time. The higher the mode number (the more nodes the eigen function has / the more rapidly it varies in space) the faster its relaxation to 0. Since the growth rate is constant between the two absorbing boundaries, we essentially have the mode spectrum of a particle in a 1D-box, which are cosine modes.</p>
+<p>which has a <em>Hermitian</em> operator on the RHS. <a class="reference internal" href="#equation-fkpp-linear-trafo">()</a> has the shape of a Schroedinger equation in imaginary time. The non-linearities of the original equation <a class="reference internal" href="#equation-c-cutoff">()</a> effectively generate two absorbing boundary conditions for <span class="math notranslate nohighlight">\(\phi(x)\)</span>, one at <span class="math notranslate nohighlight">\(x=O(\ln N)\)</span> and one at <span class="math notranslate nohighlight">\(x=O(1)\)</span>.</p>
+<p>We can solve equation <a class="reference internal" href="#equation-fkpp-linear-trafo">()</a> subject to these boundary conditions in terms of normal modes. To ensure a steady state in the co-moving frame, we have to demand that the ground state (lowest mode) has vanishing energy. All higher modes have higher energy, and therefore decay over time. The higher the mode number (the more nodes the eigen function has / the more rapidly it varies in space) the faster its relaxation to 0. Since the growth rate is constant between the two absorbing boundaries, we essentially have the mode spectrum of a particle in a 1D-box, which are cosine modes.</p>
 <p>To fix the wave speed, we focus on the ground state,</p>
 <div class="math notranslate nohighlight">
 \[
 \phi_0(x)\sim \sin\left(\frac{\pi x}{x_c}\right)
 \]</div>
-<p>which solves <a class="reference internal" href="#equation-fkpp-linear-trafo">(17)</a> at steady state (<span class="math notranslate nohighlight">\(\partial_t \phi=0\)</span>) if</p>
+<p>which solves <a class="reference internal" href="#equation-fkpp-linear-trafo">()</a> at steady state (<span class="math notranslate nohighlight">\(\partial_t \phi=0\)</span>) if</p>
 <div class="math notranslate nohighlight">
 \[
 0=-D\left(\frac{\pi }{x_c}\right)^2 + \left(r-\frac{v^2}{4D}\right) 
@@ -714,14 +713,14 @@ v = v_F\left(1-\frac{\pi^2 }{\ln(N)^2 }\right) \;.
 <p>Traveling waves  not only occur in real space. They are often used to describe how the distribution of a trait, such as growth rate, height, strength etc. across a population shifts over time in response to a changing environment or in response to self-organization. The most classical of these waves is a wave of adaptation, where growth rate, or fitness, shifts towards larger values in response to the occurrence of fitter types (due to mutations) and their take over within the population.</p>
 <p>A simple model to describe this situation is</p>
 <div class="math notranslate nohighlight" id="equation-eq-staircase">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eq-staircase" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-eq-staircase" title="Permalink to this equation">#</a></span>\[
 \partial_t c_n = U \left(c_{n-1}-c_{n}\right)+ s(n-\overline{n})c + \eta \sqrt{c_n} \;,
 \]</div>
 <p>where it is assumed that beneficial mutations  all beneficial mutations have the same fitness effect <span class="math notranslate nohighlight">\(s\)</span> and occur at rate <span class="math notranslate nohighlight">\(U\)</span>. The overline represents the population mean, <span class="math notranslate nohighlight">\(\overline{f_n}\equiv \sum_n c_n f_n\)</span>, so that <span class="math notranslate nohighlight">\(s\overline{n}\)</span> is the mean fitness.</p>
 <p>Two simple arguments constrain the leading order speed of these waves.</p>
 <section id="adaptation-speed-depends-on-fitness-variance">
 <h3>Adaptation speed depends on fitness variance<a class="headerlink" href="#adaptation-speed-depends-on-fitness-variance" title="Permalink to this heading">#</a></h3>
-<p>Multiplying <a class="reference internal" href="#equation-eq-staircase">(18)</a> with <span class="math notranslate nohighlight">\(s(n-\overline{n})\)</span>, integrating over <span class="math notranslate nohighlight">\(n\)</span> and averaging over the noise yields</p>
+<p>Multiplying <a class="reference internal" href="#equation-eq-staircase">()</a> with <span class="math notranslate nohighlight">\(s(n-\overline{n})\)</span>, integrating over <span class="math notranslate nohighlight">\(n\)</span> and averaging over the noise yields</p>
 <div class="math notranslate nohighlight">
 \[
  s \partial_t\overline n(t) = s^2\overline{ (n-\overline{n})^2} \;,
@@ -819,7 +818,7 @@ v\sim 2 s^2 \frac{\ln N }{\ln^2{U}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/58ea58cbb789894a12dbfe62aa61fcf357e559465f53cde2f6fd3189170a723c.png" src="_images/58ea58cbb789894a12dbfe62aa61fcf357e559465f53cde2f6fd3189170a723c.png" />
+<img alt="_images/cfd4e474e612ed51ace8d56b8f72942c679fc7ae38731bb2856f916811f57ca3.png" src="_images/cfd4e474e612ed51ace8d56b8f72942c679fc7ae38731bb2856f916811f57ca3.png" />
 </div>
 </div>
 <div class="admonition-speed-of-adaptation admonition">
@@ -898,15 +897,6 @@ v\sim 2 s^2 \frac{\ln N }{\ln^2{U}}
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Branching-processes-nb.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Branching Processes</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
