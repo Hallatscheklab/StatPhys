@@ -4,5 +4,5 @@
 format: jb-book
 root: intro
 chapters:
-- file: Branching-processes-nb
-- file: Traveling-Waves-nb
+- file: Course-Info-211-2024
+- file: Coin-flipping

@@ -1,10 +1,39 @@
-# Lecture Notes on Proliferating Active Matter
+# Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
 
-These lecture notes are a brief summary of four lectures given in the first week of the 2023 Les Houches workshop on Proliferating Active Matter, broadly interpreted.
 
-Active Matter is concerned matter that is constantly pushed out of equilibrium by local injection of energy. Energy injection is usually implemented by some kind of mechanical engine converting available (chemical) free energy into mechanical energy. For example, motors or janus particles actuated by light.  
+```
+UNIVERSITY OF CALIFORNIA, BERKELEY DEPARTMENT OF PHYSICS
+```
+**Instructor**: Prof. Oskar Hallatschek (he/his), *Office*: 274D Stanley Hall, *Email*: ohallats@berkeley.edu
 
-These types of active matter break time reversal symmetry, but conserve particle numbers. However, a special kind of activity is replication and its flipside death, which are a hallmark of life. Here, we focus on some of the major consequences of replication, as it breaks particle conservation, injects mutations fueling evolutionary processes, within simple models. After an introduction to the different types of PAM, we discuss general patterns present even in toy models, which one could write down without getting out of your armchair. In later parts, we increase realism somewhat by considering the actual physics of soft matter systems. While we only need few biolgical facts, the reader is strongly encouraged to get inspired by thy actual dynamics of living and growing systems, as captured for example in the amazing time-lapse movies of [Wim van Egmond](https://www.wimvanegmond.com). 
+
+The following lecture notes are designed to complement the Berkeley Physics course 211 material covered in the spring of 2024. Special thanks to Mike Zalatel and Dunghai Lee for their invaluable lecture notes, which have partially influenced my own.
+
+The course structure is adapted and reordered from Kardar's textbook.
+- Probability & information entropy (2-3 lectures)
+    - Referencing: Kardar 2, Arovas 1
+- Fundamentals of thermodynamics via molecular perspective - ensemble theory (3-4 lectures)
+    - Referencing: Kardar 4, Arovas 4
+- Dynamics of interacting particles (6 lectures)
+    - Referencing: Kardar 5, Arovas 6
+- Techniques in computational statistical physics (1-2 lectures)
+    - Sources: Zalatel lecture notes, MacKay, Additional TBD
+- Study of Hamiltonian dynamics and ergodicity
+    - Referencing: Arovas 3, Kardar 3.1, 3.2
+- Quantum statistical mechanics (7 lectures)
+    - Referencing: Kardar 6+7, Arovas 5
+- Exploration of mean field and Landau theory (4 lectures)
+    - Referencing: Arovas 7
+
+Important Notes:
+- Undergraduate level thermodynamics, a prerequisite for this course, will not be covered. Students are encouraged to review this material independently if needed.
+- A brief overview of probabilistic reasoning will be provided (in class and discussions); however, extensive time cannot be dedicated to this. Students are advised to actively revise these concepts on their own.
+- The syllabus is subject to modifications, aiming to incorporate advanced topics relevant to current research in active matter, (quantum) information theory, and machine learning. As this is my first time teaching this course, the extent of these topics' inclusion is yet to be determined.
+
+Syllabus Updates:
+The syllabus will be updated throughout the course.
+
+
 
 ```{tableofcontents}
 ```
