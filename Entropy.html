@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Course Information &#8212; Equilibrium Statistical Physics</title>
+    <title>Entropy + Information. &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Course-Info-211-2024';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Entropy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Probability and information entropy" href="Coin-flipping.html" />
-    <link rel="prev" title="Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,8 +176,8 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Course Information</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
 </ul>
 
@@ -250,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FCourse-Info-211-2024.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FEntropy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,7 +280,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Course-Info-211-2024.md" target="_blank"
+      <li><a href="_sources/Entropy.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,9 +351,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -364,19 +362,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Course Information</h1>
+    <h1>Entropy + Information.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-211-equilibrium-statistical-physics-spring-2024">PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -386,69 +376,106 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="course-information">
-<h1>Course Information<a class="headerlink" href="#course-information" title="Permalink to this heading">#</a></h1>
-<section id="physics-211-equilibrium-statistical-physics-spring-2024">
-<h2>PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024<a class="headerlink" href="#physics-211-equilibrium-statistical-physics-spring-2024" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">UNIVERSITY</span> <span class="n">OF</span> <span class="n">CALIFORNIA</span><span class="p">,</span> <span class="n">BERKELEY</span> <span class="n">DEPARTMENT</span> <span class="n">OF</span> <span class="n">PHYSICS</span>
-</pre></div>
-</div>
-<p><strong>Instructor</strong>: Prof. Oskar Hallatschek (he/his), <em>Office</em>: 274D Stanley Hall, <em>Email</em>: <a class="reference external" href="mailto:ohallats&#37;&#52;&#48;berkeley&#46;edu">ohallats<span>&#64;</span>berkeley<span>&#46;</span>edu</a></p>
-<p><strong>Teaching assistant</strong>: Irian D’Andrea (she/her), <em>Email</em>: <a class="reference external" href="mailto:mariosdandrea&#37;&#52;&#48;berkeley&#46;edu">mariosdandrea<span>&#64;</span>berkeley<span>&#46;</span>edu</a></p>
-<p><strong>Lecture info</strong>: Tu, Th 3:30 - 5:00PM, Room: 105 - North Gate.</p>
-<p>I’ll lecture live and post a recording to bCourses afterwards for those who can’t make it. If you have a question you’d like answered, but can’t make it to the lecture, send a note and I’ll answer it at the beginning of lecture and you can catch my answer on the recording.</p>
-<p><strong>Discussion sections:</strong> will be a mixture of problem solving, python computer experiments and interesting stat-mech applications.<br />
-W 5:00PM - 6:00PM, Room: B56 - Hidebrand <br />
-F 3:00PM - 3:59PM, Room: 109 - Dwinelle</p>
-<p><strong>Office hours:</strong> <br />
-Prof. H: T 5:00 - 6:00PM in 274D Stanley Hall<br />
-Irian: W 2:00 - 4:00PM in 420J Physics</p>
-<p>Drop Deadline: Feb 10.</p>
-<p><strong>Course Webpage:</strong> here <a class="reference external" href="http://bcourses.berkeley.edu">bcourses.berkeley.edu</a></p>
-<p><strong>Prerequisites:</strong> Physics 112, 137A/B or equivalents.</p>
-<p><strong>Texts:</strong></p>
-<ul class="simple">
-<li><p>M. Kardar, Statistical Physics of Particles. The paper copy is nice, but UC Library has an online version. This is the primary resource for the course.</p></li>
-<li><p>D. Arovas, Thermodynamics and Statistical Mechanics. You can find Dan Arovas’ stat-mech notes on his <a class="reference external" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwjo4KDQsOKDAxXNSDABHbPdArgQFnoECBEQAQ&amp;url=https%3A%2F%2Fcourses.physics.ucsd.edu%2F2010%2FSpring%2Fphysics210a%2FLECTURES%2F210_COURSE.pdf&amp;usg=AOvVaw0R9iSEgaPJOCgsJF7sWy-m&amp;opi=89978449">UCSD page</a></p></li>
-<li><p>J. Sethna, Entropy, Order Parameters, and Complexity. The 2nd edition, which I’ll use, is available online <a class="reference external" href="https://sethna.lassp.cornell.edu/StatMech/">here</a></p></li>
-<li><p><a class="reference external" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwi2mNTQhdeDAxWaRzABHTfNAEAQFnoECA8QAQ&amp;url=https%3A%2F%2Fwww.inference.org.uk%2Fitprnn%2Fbook.pdf&amp;usg=AOvVaw2U9u5mdeY0yzjLEbxfO3LW&amp;opi=89978449">MacKay, Information Theory</a> has lots of interesting connections between statistical physics and information theory.</p></li>
-<li><p>I’ll provide reading guidelines at the beginning of each chapter.</p></li>
-</ul>
-<p><strong>Lecture notes:</strong> I’ll develop my own lecture notes as a jupyter book, which allows me to include Python code. You will be able to use Google Colab (merely requires a Google account) to open any page of the jupyter book, and play with the content, for example, to run variations of the code.</p>
-<p>These notes will almost certainly have to go through various editorial iterations until they reach a steady state. Therefore, <strong>please send me info on typos or other kinds of suggested edits.</strong> You could do this, for example, by opening any page on Google Colab, modify the jupyter notebook (text, references, code etc.) and send the modified notebook myway.</p>
-<p>The notes are hosted on github pages at <a class="reference external" href="https://hallatscheklab.github.io/StatPhys/intro.html">https://hallatscheklab.github.io/StatPhys/intro.html</a>.</p>
-<p><strong>Exams and grades:</strong> There will be one midterm and a final exam. Both will be 24-hour take home exams on the dates
-below.</p>
-<ul class="simple">
-<li><p>Midterm, TBD</p></li>
-<li><p>Final, Fri, May 10, 7PM - 9PM</p></li>
-</ul>
-<p>Grades will be determined from a weighting of all the elements of the course as follows:</p>
-<ul class="simple">
-<li><p>Midterm, 20 %</p></li>
-<li><p>Final, 40 %</p></li>
-<li><p>Homework, 40 %</p></li>
-<li><p><em>extra credit:</em> participation, 5 %</p></li>
-</ul>
-<p><strong>Homework:</strong> Homework will be posted approximately weekly and due Fridays at 5:00PM via Gradescope.</p>
-<p><strong>Late / missed homework policy:</strong> We will drop your lowest homework score. We will not accept late homework submission unless there are extenuating circumstances (e.g. sickness, family emergencies, natural desasters, accidents but also prepping for March meeting). If you expect to be ill or unable to do homework for more than a week, let us know.</p>
-<p><strong>Conflicts:</strong> Let me know of any exam conflicts at least two weeks before the exam. If circumstances make it impossible
-for you to take the midterm, we’ll shift its weight to the final.</p>
-<p><strong>Accommodations:</strong> If you need disability-related accommodations in this class, if you have emergency medical information you wish to share with the instructor, or if you need special arrangements in case the building must be evacuated
-should we return to campus, please inform Prof. Hallatschek immediately.</p>
-<p><strong>For your moral compass:</strong> <br />
-<em>Collaboration and Independence:</em> Reflecting the collaborative nature of science, I expect you to work on the problem
-sets together. But if you turn a problem in you should feel comfortable in your ability to explain it to me at the blackboard.
-Do not use online solution sets.</p>
-<p><em>Cheating:</em> Anyone caught cheating on an exam in this course will receive a failing grade on the relevant exam prob-
-lem(s), and will also be reported to the University Center for Student Conduct.</p>
-<p><em>Plagiarism:</em> To copy text or ideas from another source without appropriate reference is plagiarism and will result in a failing grade for your assignment and usually further disciplinary action. This includes copying solutions from printed
-or online, published or unpublished sources. Translation for grad school: don’t use online solution sets, and it’s good practice to cite things.</p>
-<hr class="docutils" />
-<p>All above provisions listed in the course info sheet are subject to change at the instructor’s discretion. Changes may
-happen to address problems and to improve the smooth running of the class and/or discussion sections.</p>
-<hr class="docutils" />
-</section>
+  <section id="entropy-information">
+<h1>Entropy + Information.<a class="headerlink" href="#entropy-information" title="Permalink to this heading">#</a></h1>
+<p>In the previous discussion we defined</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+e^{S} &amp; =\# \text { of configurations }=\Omega \\
+S &amp; =\ln \Omega
+\end{aligned}
+\end{split}\]</div>
+<p>This is appropriate when all configurations are equally likely, <span class="math notranslate nohighlight">\(p_{i}=\frac{1}{\Omega}\)</span>.</p>
+<p>More generally, we define Shannon Entropy</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; S(\{p\}) \equiv-\sum_{i} p_{i} \ln p_{i}=-\langle\ln p_{i}\rangle \\
+&amp; \left(\text{&quot;nats&quot;}; \quad \ln n \rightarrow \log 2\quad  \text{&quot;bits&quot;}\right)
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(p_{i}=\frac{1}{\Omega}\)</span> is a special case however.</p>
+<p>Where does this come from?</p>
+<p>Shannon gave an operational meaning to <span class="math notranslate nohighlight">\(S\)</span> in terms of “information” and the resources required to communicate an ensemble of messages drawn from <span class="math notranslate nohighlight">\(p_i\)</span>. Note if <span class="math notranslate nohighlight">\(p_{i}=\frac{1}{\Omega}=\frac{1}{2^{N}}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+S=\log _{2}\left(2^{N}\right)=N .
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(S\)</span> is obviously the number of bits required to encode the message.</p>
+<p>But suppose instead we have a set of messages <span class="math notranslate nohighlight">\(\{i\}=\Omega\)</span> which occur with probability pi. You can think of <span class="math notranslate nohighlight">\(\Omega\)</span> as spanning 8-byte intervals of text, for example, with <span class="math notranslate nohighlight">\(p_{i} \neq 2^{-64}\)</span> because some character combinations are more frequent</p>
+<p>We then send a long sequence of <span class="math notranslate nohighlight">\(M_{i} \in \Omega\)</span> over a (lossless) digital channel, If you allow for encoding of the messages, what is the minimal bit rate required per message?</p>
+<div class="math notranslate nohighlight">
+\[
+\left\{M_{1}, M_{2}, M_{3}, \cdots\right\}
+\]</div>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_01_16_964940924692a65476a3g-10.jpg?height=359&amp;width=572&amp;top_left_y=1475&amp;top_left_x=253" /></p>
+<p>encode</p>
+<p>Shannon proved it is <span class="math notranslate nohighlight">\(S\left(p_{i}\right) \leq \log _{2}(\mid \Omega)\)</span></p>
+<p>Heuristic arguement following Kardar</p>
+<p>In the limit of many (N) messages, we expect message “i” will be communicated</p>
+<div class="math notranslate nohighlight">
+\[
+N_{i}=N \cdot p_{i} \text { times. Define a &quot;typical&quot; }
+\]</div>
+<p><span class="math notranslate nohighlight">\(\left\{M_{1}, M_{2}, \cdots\right\}\)</span> to be one which satisfies this exactly. There are still many of them because of the orderings:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+g &amp; \equiv\left(\begin{array}{l}
+N \\
+N_{1}
+\end{array}\right) \cdot\left(\begin{array}{c}
+N-N_{1} \\
+N_{2}
+\end{array}\right) \cdot\left(\begin{array}{c}
+N-N_{1}-N_{2} \\
+N_{3}
+\end{array}\right) \cdots \\
+&amp; =\frac{(N !)^{N}}{\left(N_{1} !\right)\left(N_{2} !\right)\left(N_{3} !\right) \cdots}
+\end{aligned}
+\end{split}\]</div>
+<p>Now <span class="math notranslate nohighlight">\(\operatorname{lng}=N \ln (N !)-\sum \ln \left(N_{i} !\right)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \approx N\left(N \ln N-N-\sum N_{i} \ln N_{i}-N_{i}\right) \\
+&amp; =N\left(N \ln N-N \sum p_{i} \ln \left(p_{i} N\right)\right) \\
+&amp; =-N S\left(p_{i}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>So if we simply enumerate only the g “typical” messages we achieve the desired rate, of course this isn’t proof; need to analyze deviations from typicality. I4 works because of C.L.T./ measure concentration, as we saw for <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p>
+<p>Max - en.</p>
+<p>Often in life we encounter situations where we know some thing, but not everything</p>
+<p>For example, suppose we know some average property ” <span class="math notranslate nohighlight">\(x\)</span> ” of distribution,</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{x}=\sum_{i} p_{i} x(i) \text {, but not }\left\{p_{i}\right\} \text {. }
+\]</div>
+<p>A humble guess for <span class="math notranslate nohighlight">\(p_{i}\)</span> is to maximize <span class="math notranslate nohighlight">\(S\left(p_{i}\right)\)</span> subject to <span class="math notranslate nohighlight">\(\bar{x}\)</span> (and normalization) Without <span class="math notranslate nohighlight">\(\bar{x}, \quad i+\)</span> is easy to see <span class="math notranslate nohighlight">\(p_{i}=\frac{1}{\Omega}\)</span> maximizes S. With <span class="math notranslate nohighlight">\(\bar{x}\)</span>, “objective” is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+S^{*} &amp; =-\sum p_{i} \ln p_{i}-\lambda_{0}\left(\sum p_{i}-1\right)-\lambda_{1}\left(\sum p_{i} x_{i}-\bar{x}\right) \\
+\frac{\delta s^{*}}{\delta p_{i}} &amp; =-\ln p_{i}-1-\lambda_{0}-\lambda_{1} x_{i} \\
+&amp; \rightarrow p_{i}^{*}=e^{-\left(1+\lambda_{0}+\lambda_{1} x_{i}\right)}=\frac{1}{z} e^{-\lambda_{1} x_{i}}
+\end{aligned}
+\end{split}\]</div>
+<p>We then adjust <span class="math notranslate nohighlight">\(\lambda_{0}, \lambda_{1}\)</span> so as to satisfy constraints. This form is of course familiar from <span class="math notranslate nohighlight">\(p_{i}=\frac{1}{z} e^{-\beta E_{i}}\)</span> : Boltzmann <span class="math notranslate nohighlight">\(=\)</span> max <span class="math notranslate nohighlight">\(-e n+\)</span> subject to <span class="math notranslate nohighlight">\(\langle H\rangle=E\)</span>.</p>
+<p>Note that this does not mean {pis is <span class="math notranslate nohighlight">\(p_{i}^{*}\)</span>. Multiple <span class="math notranslate nohighlight">\(\left\{p_{i}\right\}\)</span> may give same <span class="math notranslate nohighlight">\(\langle x\rangle\)</span> (see Arovas). In principle one can continue give more observables: <span class="math notranslate nohighlight">\(\langle x\rangle,\langle y\rangle,\langle z\rangle \ldots\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\hookrightarrow \quad p_{i} \propto e^{-\lambda_{1} x_{i}-\lambda_{2} Y_{i}} \ldots \\
+x=\sum_{i} \sigma_{i}
+\end{gathered}
+\end{split}\]</div>
+<p>For example, perhaps <span class="math notranslate nohighlight">\(\gamma=\sum_{i} \sigma_{i} \cdot \sigma_{i+1}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\rho_{i} \sim e^{-\lambda \cdot \sum_{1} \sigma_{i}-\lambda_{2} \sum_{i} \sigma_{i} \cdot \sigma_{i+1}}
+\]</div>
+<p>Interesting question: Max-ent and Bayes Theorem are both ways of updating a model as additional info comes in. What is the relation between them?</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -481,24 +508,6 @@ happen to address problems and to improve the smooth running of the class and/or
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intro.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Coin-flipping.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Probability and information entropy</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -506,20 +515,7 @@ happen to address problems and to improve the smooth running of the class and/or
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#physics-211-equilibrium-statistical-physics-spring-2024">PHYSICS 211, EQUILIBRIUM STATISTICAL PHYSICS, SPRING 2024</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>

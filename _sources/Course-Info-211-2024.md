@@ -10,15 +10,16 @@ UNIVERSITY OF CALIFORNIA, BERKELEY DEPARTMENT OF PHYSICS
 **Teaching assistant**: Irian D'Andrea (she/her), *Email*: mariosdandrea@berkeley.edu 
 
 **Lecture info**: Tu, Th 3:30 - 5:00PM, Room: 105 - North Gate. 
-I’ll lecture live and post a recording to bCourses afterwards for those that can’t make it. If you have a question you’d like answered, but can’t make it to the lecture, send a note and I’ll answer it at the beginning of lecture and you can catch my answer on the recording.
+
+I’ll lecture live and post a recording to bCourses afterwards for those who can’t make it. If you have a question you’d like answered, but can’t make it to the lecture, send a note and I’ll answer it at the beginning of lecture and you can catch my answer on the recording.
 
 **Discussion sections:** will be a mixture of problem solving, python computer experiments and interesting stat-mech applications.\
 W 5:00PM - 6:00PM, Room: B56 - Hidebrand \
 F 3:00PM - 3:59PM, Room: 109 - Dwinelle
 
 **Office hours:** \
-Prof. H: T 5:00 - 6:00PM\
-Irian: (TBD)
+Prof. H: T 5:00 - 6:00PM in 274D Stanley Hall\
+Irian: W 2:00 - 4:00PM in 420J Physics
 
 Drop Deadline: Feb 10.
 
@@ -29,16 +30,24 @@ Drop Deadline: Feb 10.
 **Texts:**
 
 - M. Kardar, Statistical Physics of Particles. The paper copy is nice, but UC Library has an online version. This is the primary resource for the course.
-- D. Arovas, Thermodynamics and Statistical Mechanics. You can find Dan Arovas’ stat-mech notes on his UCSD page, or here phys.libretexts.org
+- D. Arovas, Thermodynamics and Statistical Mechanics. You can find Dan Arovas’ stat-mech notes on his [UCSD page](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjo4KDQsOKDAxXNSDABHbPdArgQFnoECBEQAQ&url=https%3A%2F%2Fcourses.physics.ucsd.edu%2F2010%2FSpring%2Fphysics210a%2FLECTURES%2F210_COURSE.pdf&usg=AOvVaw0R9iSEgaPJOCgsJF7sWy-m&opi=89978449)
 - J. Sethna, Entropy, Order Parameters, and Complexity. The 2nd edition, which I'll use, is available online [here](https://sethna.lassp.cornell.edu/StatMech/)
 - [MacKay, Information Theory](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi2mNTQhdeDAxWaRzABHTfNAEAQFnoECA8QAQ&url=https%3A%2F%2Fwww.inference.org.uk%2Fitprnn%2Fbook.pdf&usg=AOvVaw2U9u5mdeY0yzjLEbxfO3LW&opi=89978449) has lots of interesting connections between statistical physics and information theory. 
 - I'll provide reading guidelines at the beginning of each chapter. 
 
+**Lecture notes:** I'll develop my own lecture notes as a jupyter book, which allows me to include Python code. You will be able to use Google Colab (merely requires a Google account) to open any page of the jupyter book, and play with the content, for example, to run variations of the code. 
+
+These notes will almost certainly have to go through various editorial iterations until they reach a steady state. Therefore, **please send me info on typos or other kinds of suggested edits.** You could do this, for example, by opening any page on Google Colab, modify the jupyter notebook (text, references, code etc.) and send the modified notebook myway.
+
+The notes are hosted on github pages at [https://hallatscheklab.github.io/StatPhys/intro.html](https://hallatscheklab.github.io/StatPhys/intro.html).
+
 **Exams and grades:** There will be one midterm and a final exam. Both will be 24-hour take home exams on the dates
 below.
-- Midterm, Tue, Mar 9 (24 hours)
+- Midterm, TBD 
 - Final, Fri, May 10, 7PM - 9PM
+
 Grades will be determined from a weighting of all the elements of the course as follows:
+
 - Midterm, 20 %
 - Final, 40 %
 - Homework, 40 %
@@ -46,7 +55,7 @@ Grades will be determined from a weighting of all the elements of the course as 
 
 **Homework:** Homework will be posted approximately weekly and due Fridays at 5:00PM via Gradescope.
 
-**Late / missed homework policy:** We will drop your lowest homework score. We will usually not accept late homework unless there are extenuating circumstances (e.g. sickness, family emergencies, natural desasters, accidents but also prepping for March meeting). If you expect to be ill or unable to do homework for more than a week, let us know.
+**Late / missed homework policy:** We will drop your lowest homework score. We will not accept late homework submission unless there are extenuating circumstances (e.g. sickness, family emergencies, natural desasters, accidents but also prepping for March meeting). If you expect to be ill or unable to do homework for more than a week, let us know.
 
 **Conflicts:** Let me know of any exam conflicts at least two weeks before the exam. If circumstances make it impossible
 for you to take the midterm, we’ll shift its weight to the final.
