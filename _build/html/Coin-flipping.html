@@ -407,6 +407,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping">Coin flipping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-first-and-second-moment">Calculation of first and second moment</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation value</a></li>
@@ -415,9 +416,9 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coin-flips">Simulating coin-flips</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coin-flips">Simulating coin-flips</a></li>
 </ul>
             </nav>
         </div>
@@ -446,13 +447,15 @@ document.write(`
 </ul>
 <section id="coin-flipping">
 <h2>Coin flipping<a class="headerlink" href="#coin-flipping" title="Permalink to this heading">#</a></h2>
-<p>We will use the simple example of the repeated flipping a generally biased coin (outcome Heads or Tails) a warm-up excercise to illustrate key concepts in statistical physics.</p>
-<p>Coin flipping in many context:</p>
+<p>We will use the simple example of repeatedly flipping a biased coin as a warm-up excercise to illustrate key concepts in statistical physics.</p>
+<p>Coin flipping arises in many context:</p>
 <ul class="simple">
-<li><p>spatial configuration of magnetic moments: spin up or down</p></li>
+<li><p>spatial configuration of magnetic moments: 1D Ising spin chain</p></li>
 <li><p>time series of left- or right steps in a random walk or a polymer (1D freely jointed chain)</p></li>
 </ul>
-<p>We assume that the coin is flipped <span class="math notranslate nohighlight">\(N\)</span> times (~”volume” of spin chain) and describe the outcome of the coin flip <span class="math notranslate nohighlight">\(i\)</span> as <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span>.</p>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h3>
+<p>We assume that the coin is flipped <span class="math notranslate nohighlight">\(N\)</span> times (~”volume” of spin chain) and describe the outcome of coin flip <span class="math notranslate nohighlight">\(i\)</span> as <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span>.</p>
 <p>For a single coin flip, the probabilities of heads and tails are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}P\left(\sigma_{i}\right)=\left\{\begin{array}{l}p \;, \quad\sigma=1 \\ q=1-p\;, \quad \sigma=-1\end{array}\right.\;,\end{split}\]</div>
@@ -476,6 +479,7 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 \end{aligned}
 \end{split}\]</div>
 <p>If <span class="math notranslate nohighlight">\(p=q=\frac{1}{2}, P(A)=P(B)=P(C)\)</span>. So, why does <span class="math notranslate nohighlight">\(B\)</span> (and <span class="math notranslate nohighlight">\(C\)</span>?) look exceptional?</p>
+</section>
 <section id="coarse-graining">
 <h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h3>
 <p>In the realm of statistical physics, the concept of <strong>coarse-graining</strong> plays a pivotal role in understanding the transition from microscopic to macroscopic descriptions. The entire configuration of a system, denoted by <span class="math notranslate nohighlight">\(\{\sigma\} = \left\{\sigma_{1}, \sigma_{2}, \ldots\right\}\)</span>, represents the <strong>micro-state</strong>. The set of all micro-states encompasses all possible configurations at the most fundamental level.</p>
@@ -492,7 +496,7 @@ P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \u
 \[
 P(X)= e^{S(X)}e^{-E(X)}
 \]</div>
-<p>Here, we introduced <span class="math notranslate nohighlight">\(S(X)\)</span> as the log of the microstates <span class="math notranslate nohighlight">\(E(X)\)</span> as the log-probability of the microstates. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
+<p>Here, we introduced the quantities <span class="math notranslate nohighlight">\(S(X)\)</span> as the log of the number of microstates and <span class="math notranslate nohighlight">\(E(X)\)</span> as the log-probability of the microstates. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
@@ -517,6 +521,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For large <span class="math notranslate nohighlight">\(N\)</span>, both entropy <span class="math notranslate nohighlight">\(S\propto N\)</span> and energy <span class="math notranslate nohighlight">\(S\propto N\)</span> have a very simple, linear dependence on <span class="math notranslate nohighlight">\(N\)</span>. Macroscopic observables that grow linearly with the system size are called <strong>extensive</strong>. These are in contrast to <strong>intensive</strong> quanitites, which approach a constant in the thermodynamic limit of large systems, for example <span class="math notranslate nohighlight">\(x=X/N\)</span> which is bounded between -1 and 1.</p>
+<p><strong>Throughout this course, we use capital/lower case letters to indicate extensive/intensive quantities.</strong></p>
 </div>
 <p>Let’s have a look at their competition:</p>
 <div class="cell tag_hide-input docutils container">
@@ -563,7 +568,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_sum</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Difference of $s(x)$ and $e(x)$, which is $\ln P(x)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Values&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Plot of s(x), e(x), and Their Sum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Plot of s(x), e(x), and their sum; p=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; q=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
@@ -572,7 +577,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/047d3d507d61a7f19722cf55d84772a650a3a916a3978e4a4674dfa2cfce09c6.png" src="_images/047d3d507d61a7f19722cf55d84772a650a3a916a3978e4a4674dfa2cfce09c6.png" />
+<img alt="_images/bc28e19ffb2d721d8758e5c177f75ba40c2166c78bdccc91a0a0937fce563886.png" src="_images/bc28e19ffb2d721d8758e5c177f75ba40c2166c78bdccc91a0a0937fce563886.png" />
 </div>
 </div>
 <p>Notice:</p>
@@ -601,6 +606,7 @@ P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(\Delta x)^{2}}{2 \langle \Delta x \
 </div>
 <section id="calculation-of-first-and-second-moment">
 <h4>Calculation of first and second moment<a class="headerlink" href="#calculation-of-first-and-second-moment" title="Permalink to this heading">#</a></h4>
+<p>The <span class="math notranslate nohighlight">\(n^\text{th}\)</span> moment of a random variable X is <span class="math notranslate nohighlight">\(\langle X^n\rangle\)</span>. The first and second moment of a distribution can often be computed analytically, and those are needed in the context of the CLT. Higher order moments are often more challenging to obtain.</p>
 <section id="expectation-value">
 <h5>Expectation value<a class="headerlink" href="#expectation-value" title="Permalink to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
@@ -623,13 +629,13 @@ P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(\Delta x)^{2}}{2 \langle \Delta x \
 \operatorname{var}(X) \equiv\langle\underbrace{(X-\langle X\rangle)^{2}}_{\equiv \Delta X^2}\rangle=\left\langle X^{2}\right\rangle-\langle X\rangle^{2} .
 \]</div>
 <p>To compute <span class="math notranslate nohighlight">\(\left\langle X^{2} \right\rangle\)</span>:</p>
-<p>sqq
-$<span class="math notranslate nohighlight">\(
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{aligned}
 &amp; \left\langle X^{2}\right\rangle=\sum_{\{\sigma\}} P(\{\sigma\}) X^{2}(\{\sigma\}) \\
 &amp; =\sum_{\{ \sigma \}} P(\{\sigma\}) \sum_{i, j} \sigma_{i} \cdot \sigma_{j}=\sum_{i, j}\left\langle\sigma_{i} \sigma_{j}\right\rangle 
 \end{aligned}
-\)</span>$</p>
+\end{split}\]</div>
 <p>if <span class="math notranslate nohighlight">\(i=j: \sigma_{i} \cdot \sigma_{i}=1 \text {, so }\left\langle\sigma_{i} \cdot \sigma_{i}\right\rangle=1\)</span></p>
 <p>if <span class="math notranslate nohighlight">\(j\neq j: \left\langle\sigma_{i} \sigma_{j}\right\rangle=\left\langle\sigma_{i}\right\rangle\left\langle\sigma_{i}\right\rangle=(p-q)^{2}\)</span></p>
 <p>So, <span class="math notranslate nohighlight">\(\left\langle X^{2}\right\rangle=N+N(N-1)(p-q)^{2}\)</span>
@@ -646,9 +652,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </section>
 </section>
 </section>
-</section>
 <section id="simulating-coin-flips">
-<h2>Simulating coin-flips<a class="headerlink" href="#simulating-coin-flips" title="Permalink to this heading">#</a></h2>
+<h3>Simulating coin-flips<a class="headerlink" href="#simulating-coin-flips" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
@@ -684,8 +689,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07e6769c414db0828ceba40819dc32c3a54f5d9ba6ae8818cd9c5447d12e2555.png" src="_images/07e6769c414db0828ceba40819dc32c3a54f5d9ba6ae8818cd9c5447d12e2555.png" />
-<img alt="_images/0db794c2e00b213e545ebfe195d8098aa9b7a5d3a96fcd34f86d413f5dbf42f8.png" src="_images/0db794c2e00b213e545ebfe195d8098aa9b7a5d3a96fcd34f86d413f5dbf42f8.png" />
+<img alt="_images/901a406e364c69ad3af38a9ba1fa7dd21fe75013a0c7a793a266711682d32763.png" src="_images/901a406e364c69ad3af38a9ba1fa7dd21fe75013a0c7a793a266711682d32763.png" />
+<img alt="_images/b84cafa49b9a2dc1bfd0688ba860d3cff78d4e1bb274e0ae1bad43039efe533e.png" src="_images/b84cafa49b9a2dc1bfd0688ba860d3cff78d4e1bb274e0ae1bad43039efe533e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -716,9 +721,10 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f9aef436f7034cf8a5180b4e714c72a4e0864592ae39140f798a3b9bc1145800.png" src="_images/f9aef436f7034cf8a5180b4e714c72a4e0864592ae39140f798a3b9bc1145800.png" />
+<img alt="_images/3ddfc3b47dc7b34b1694cd8d69a9c79a9dbedb779502558a07c238a2fc5b5f6d.png" src="_images/3ddfc3b47dc7b34b1694cd8d69a9c79a9dbedb779502558a07c238a2fc5b5f6d.png" />
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -778,6 +784,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping">Coin flipping</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-first-and-second-moment">Calculation of first and second moment</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation value</a></li>
@@ -786,9 +793,9 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coin-flips">Simulating coin-flips</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coin-flips">Simulating coin-flips</a></li>
 </ul>
   </nav></div>
 

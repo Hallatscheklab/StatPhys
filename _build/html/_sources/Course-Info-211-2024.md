@@ -18,8 +18,8 @@ W 5:00PM - 6:00PM, Room: B56 - Hidebrand \
 F 3:00PM - 3:59PM, Room: 109 - Dwinelle
 
 **Office hours:** \
-Prof. H: T 5:00 - 6:00PM\
-Irian: (TBD)
+Prof. H: T 5:00 - 6:00PM in 274D Stanley Hall\
+Irian: W 2:00 - 4:00PM in 420J Physics
 
 Drop Deadline: Feb 10.
 
@@ -45,7 +45,9 @@ The notes are hosted on github pages at [https://hallatscheklab.github.io/StatPh
 below.
 - Midterm, TBD 
 - Final, Fri, May 10, 7PM - 9PM
+
 Grades will be determined from a weighting of all the elements of the course as follows:
+
 - Midterm, 20 %
 - Final, 40 %
 - Homework, 40 %
