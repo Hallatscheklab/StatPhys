@@ -11,19 +11,19 @@ The following lecture notes are designed to complement the Berkeley Physics cour
 
 The course structure is adapted and reordered from Kardar's textbook.
 - Probability & information entropy (2-3 lectures)
-    - Referencing: Kardar 2, Arovas 1
+    - Kardar 2, Arovas 1
 - Fundamentals of thermodynamics via molecular perspective - ensemble theory (3-4 lectures)
-    - Referencing: Kardar 4, Arovas 4
+    - Kardar 4, Arovas 4
 - Dynamics of interacting particles (6 lectures)
-    - Referencing: Kardar 5, Arovas 6
+    - Kardar 5, Arovas 6
 - Techniques in computational statistical physics (1-2 lectures)
-    - Sources: Zalatel lecture notes, MacKay, Additional TBD
+    - Zalatel lecture notes, MacKay, TBD sources
 - Study of Hamiltonian dynamics and ergodicity
-    - Referencing: Arovas 3, Kardar 3.1, 3.2
+    - Arovas 3, Kardar 3.1, 3.2
 - Quantum statistical mechanics (7 lectures)
-    - Referencing: Kardar 6+7, Arovas 5
+    - Kardar 6+7, Arovas 5
 - Exploration of mean field and Landau theory (4 lectures)
-    - Referencing: Arovas 7
+    - Arovas 7
 
 Important Notes:
 - Undergraduate level thermodynamics, a prerequisite for this course, will not be covered. Students are encouraged to review this material independently if needed.
