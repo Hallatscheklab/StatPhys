@@ -408,7 +408,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping">Coin flipping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-expectation-value">Calculation of Expectation Value</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-first-and-second-moment">Calculation of first and second moment</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation value</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -568,7 +572,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/d80d99009f611b9c4fc3a4f54d617d625a114371086ce914fe16f10f6deb0996.png" src="_images/d80d99009f611b9c4fc3a4f54d617d625a114371086ce914fe16f10f6deb0996.png" />
+<img alt="_images/047d3d507d61a7f19722cf55d84772a650a3a916a3978e4a4674dfa2cfce09c6.png" src="_images/047d3d507d61a7f19722cf55d84772a650a3a916a3978e4a4674dfa2cfce09c6.png" />
 </div>
 </div>
 <p>Notice:</p>
@@ -595,53 +599,51 @@ P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(\Delta x)^{2}}{2 \langle \Delta x \
 <p class="admonition-title">Note</p>
 <p>One can show that, quite generally, large sums of random variables tend to Gaussians if correlations are short ranged. This is a consequence of the Central Limit Theorem. The Gaussian is completely fixed by knowing the first and second moment of the distribution. Since the first two moments can often be determined quite easily (see below), this is a great advantage for calculations. The fact that the limiting distribution is independent of the higher order details of the distributions of individual random numbers is a first example of <strong>universality</strong>.</p>
 </div>
-<section id="calculation-of-expectation-value">
-<h4>Calculation of Expectation Value<a class="headerlink" href="#calculation-of-expectation-value" title="Permalink to this heading">#</a></h4>
-<p>Expectation value</p>
+<section id="calculation-of-first-and-second-moment">
+<h4>Calculation of first and second moment<a class="headerlink" href="#calculation-of-first-and-second-moment" title="Permalink to this heading">#</a></h4>
+<section id="expectation-value">
+<h5>Expectation value<a class="headerlink" href="#expectation-value" title="Permalink to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\langle x\rangle &amp; =\sum_{\{\sigma\}} P(\{\sigma\}) x(\{\sigma\})= \\
+\langle X\rangle &amp; =\sum_{\{\sigma\}} P(\{\sigma\}) X(\{\sigma\})= \\
 &amp; =\sum_{\{\sigma\}}\left[\prod_{j} P\left(\sigma_{j}\right)\right]\left[\sum_{i} \sigma_{i}\right] \\
 &amp; =\sum_{j} \sum_{\sigma_{j}} P\left(\sigma_{j}\right) \cdot \sigma_{j} \\
 &amp; =\sum_{j}(p-q)=N(p-q)
 \end{aligned}
 \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\langle X\rangle \propto N\)</span> is “<strong>extensive</strong>”.</p>
-<p>Also define specific magnetisation <span class="math notranslate nohighlight">\(\langle x\rangle \equiv \frac{\langle X\rangle}{N}=p-q\)</span> is “<strong>intensive</strong>”.</p>
-<p>Of course, a particular realization will (usually!) not have <span class="math notranslate nohighlight">\(x=\langle x\rangle\)</span>.</p>
-<p>One measure of spread is variance</p>
+<p>So, we see that the expectation value of X is an <strong>extensive</strong> quantity.</p>
+<p>Of course, a particular realization will (usually!) not have <span class="math notranslate nohighlight">\(X=\langle X\rangle\)</span>.</p>
+<p>One measure of spread is the</p>
+</section>
+<section id="variance">
+<h5>Variance<a class="headerlink" href="#variance" title="Permalink to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
 \[
-\operatorname{var}(x) \equiv\langle\underbrace{(x-\langle x\rangle)^{2}}_{\equiv \Delta x^2}\rangle=\left\langle x^{2}\right\rangle-\langle x\rangle^{2} .
+\operatorname{var}(X) \equiv\langle\underbrace{(X-\langle X\rangle)^{2}}_{\equiv \Delta X^2}\rangle=\left\langle X^{2}\right\rangle-\langle X\rangle^{2} .
 \]</div>
-<p>To compute <span class="math notranslate nohighlight">\(\left\langle x^{2} \right\rangle\)</span>
-:</p>
+<p>To compute <span class="math notranslate nohighlight">\(\left\langle X^{2} \right\rangle\)</span>:</p>
+<p>sqq
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+&amp; \left\langle X^{2}\right\rangle=\sum_{\{\sigma\}} P(\{\sigma\}) X^{2}(\{\sigma\}) \\
+&amp; =\sum_{\{ \sigma \}} P(\{\sigma\}) \sum_{i, j} \sigma_{i} \cdot \sigma_{j}=\sum_{i, j}\left\langle\sigma_{i} \sigma_{j}\right\rangle 
+\end{aligned}
+\)</span>$</p>
+<p>if <span class="math notranslate nohighlight">\(i=j: \sigma_{i} \cdot \sigma_{i}=1 \text {, so }\left\langle\sigma_{i} \cdot \sigma_{i}\right\rangle=1\)</span></p>
+<p>if <span class="math notranslate nohighlight">\(j\neq j: \left\langle\sigma_{i} \sigma_{j}\right\rangle=\left\langle\sigma_{i}\right\rangle\left\langle\sigma_{i}\right\rangle=(p-q)^{2}\)</span></p>
+<p>So, <span class="math notranslate nohighlight">\(\left\langle X^{2}\right\rangle=N+N(N-1)(p-q)^{2}\)</span>
+v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^{2}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; \left\langle x^{2}\right\rangle=\sum_{\{\sigma\}} P(\{\sigma\}) x^{2}(\{\sigma\}) \\
-&amp; =\sum_{\{ \sigma \}} P(\{\sigma\}) \sum_{i, j} \sigma_{i} \cdot \sigma_{j}=\sum_{i, j}\left\langle\sigma_{i} \sigma_{j}\right\rangle \\
-&amp; i=j: \sigma_{i} \cdot \sigma_{i}=1 \text {, so }\left\langle\sigma_{i} \cdot \sigma_{i}\right\rangle=1
+\left\langle X^{2}\right\rangle-\langle X\rangle^{2} &amp; =N\left(1-(p-q)^{2}\right) . \\
+\operatorname{var}(X) &amp; =4 \mathrm{Npq} .
 \end{aligned}
 \end{split}\]</div>
-<p>if j: <span class="math notranslate nohighlight">\(\left\langle\sigma_{i} \sigma_{j}\right\rangle=\left\langle\sigma_{i}\right\rangle\left\langle\sigma_{i}\right\rangle=(p-q)^{2}\)</span></p>
-<p>So <span class="math notranslate nohighlight">\(\left\langle x^{2}\right\rangle=N+N(N-1)(p-q)^{2}\)</span>
-v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^{2}\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\left\langle x^{2}\right\rangle-\langle x\rangle^{2} &amp; =N\left(1-(p-q)^{2}\right) . \\
-\operatorname{var}(x) &amp; =4 \mathrm{Npq} .
-\end{aligned}
-\end{split}\]</div>
-<p>Note: <span class="math notranslate nohighlight">\(\quad \Delta x \sim \sqrt{N} 4 \mathrm{pq}\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-\langle x\rangle-N(p-q)
-\]</div>
-<p>so, as <span class="math notranslate nohighlight">\(N \rightarrow \infty, \frac{\Delta x}{\langle x\rangle} \rightarrow 0(p \neq q)\)</span></p>
-<p>The <span class="math notranslate nohighlight">\(\sqrt{N^{\prime}}\)</span> is <span class="math notranslate nohighlight">\(N\)</span> scaling is a general consequence of the C.L.T..</p>
+<p>Note: Since <span class="math notranslate nohighlight">\(\Delta X \propto \sqrt{N}\)</span> but <span class="math notranslate nohighlight">\(\langle X\rangle\propto N\)</span>, we have <span class="math notranslate nohighlight">\(\frac{\Delta x}{\langle x\rangle} \sim N^{-1/2}\rightarrow 0\)</span> for <span class="math notranslate nohighlight">\(p \neq q\)</span> as <span class="math notranslate nohighlight">\(N\to \infty\)</span>.</p>
+<p>The <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> scaling is a general consequence of the C.L.T..</p>
+</section>
 </section>
 </section>
 </section>
@@ -682,8 +684,8 @@ v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6bd4702e2a7ddc0ce493b7db2e7539127d257bab5458c33e9e1ca5c87ddc54b2.png" src="_images/6bd4702e2a7ddc0ce493b7db2e7539127d257bab5458c33e9e1ca5c87ddc54b2.png" />
-<img alt="_images/3fe5bea9c4ce3a743f30ffccc87f9cf2c9dec57cd6d3df3e7c3e815e82cc66ab.png" src="_images/3fe5bea9c4ce3a743f30ffccc87f9cf2c9dec57cd6d3df3e7c3e815e82cc66ab.png" />
+<img alt="_images/07e6769c414db0828ceba40819dc32c3a54f5d9ba6ae8818cd9c5447d12e2555.png" src="_images/07e6769c414db0828ceba40819dc32c3a54f5d9ba6ae8818cd9c5447d12e2555.png" />
+<img alt="_images/0db794c2e00b213e545ebfe195d8098aa9b7a5d3a96fcd34f86d413f5dbf42f8.png" src="_images/0db794c2e00b213e545ebfe195d8098aa9b7a5d3a96fcd34f86d413f5dbf42f8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -714,7 +716,7 @@ v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9fc9c21aad9ba4432aa0ec45d742b74d0530f42a1d9c8e07eb24d517f407876b.png" src="_images/9fc9c21aad9ba4432aa0ec45d742b74d0530f42a1d9c8e07eb24d517f407876b.png" />
+<img alt="_images/f9aef436f7034cf8a5180b4e714c72a4e0864592ae39140f798a3b9bc1145800.png" src="_images/f9aef436f7034cf8a5180b4e714c72a4e0864592ae39140f798a3b9bc1145800.png" />
 </div>
 </div>
 </section>
@@ -777,7 +779,11 @@ v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coin-flipping">Coin flipping</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coarse-graining">Coarse-graining</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-expectation-value">Calculation of Expectation Value</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-first-and-second-moment">Calculation of first and second moment</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value">Expectation value</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
