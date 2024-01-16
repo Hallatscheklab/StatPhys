@@ -413,6 +413,7 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coin-flips">Simulating coin-flips</a></li>
 </ul>
             </nav>
         </div>
@@ -516,7 +517,11 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <p>Let’s have a look at their competition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;hide-input&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -558,7 +563,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Plot of s(x), e(x), and Their Sum&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -636,7 +641,12 @@ v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^
 \langle x\rangle-N(p-q)
 \]</div>
 <p>so, as <span class="math notranslate nohighlight">\(N \rightarrow \infty, \frac{\Delta x}{\langle x\rangle} \rightarrow 0(p \neq q)\)</span></p>
-<p>The <span class="math notranslate nohighlight">\(\sqrt{N^{\prime}}\)</span> is <span class="math notranslate nohighlight">\(N\)</span> scaling is a general consequence of the C.L.T. we provelater.</p>
+<p>The <span class="math notranslate nohighlight">\(\sqrt{N^{\prime}}\)</span> is <span class="math notranslate nohighlight">\(N\)</span> scaling is a general consequence of the C.L.T..</p>
+</section>
+</section>
+</section>
+<section id="simulating-coin-flips">
+<h2>Simulating coin-flips<a class="headerlink" href="#simulating-coin-flips" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
@@ -672,8 +682,8 @@ v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b4de87bbd431a664d3e6d5bd4d13d2b4e77d4e565cb6a397e38683ac83ec0a2d.png" src="_images/b4de87bbd431a664d3e6d5bd4d13d2b4e77d4e565cb6a397e38683ac83ec0a2d.png" />
-<img alt="_images/57b6ffa13756d91bf36a64fc41e02059175774eba6eb161d710748c451d33d0c.png" src="_images/57b6ffa13756d91bf36a64fc41e02059175774eba6eb161d710748c451d33d0c.png" />
+<img alt="_images/257b13ecacca7a500f3323e6cc78215223b58c77b9a877c9dd5151a5442f3a7e.png" src="_images/257b13ecacca7a500f3323e6cc78215223b58c77b9a877c9dd5151a5442f3a7e.png" />
+<img alt="_images/9a9d62d6a01e55dea839fea7c84072daf5da9c8b0e09b6f4bdabdf5be7a14b89.png" src="_images/9a9d62d6a01e55dea839fea7c84072daf5da9c8b0e09b6f4bdabdf5be7a14b89.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -704,11 +714,9 @@ v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8838475644378a88eb4dbf52802f2994267f0ed3bb44375d4ef0b81ed081f57f.png" src="_images/8838475644378a88eb4dbf52802f2994267f0ed3bb44375d4ef0b81ed081f57f.png" />
+<img alt="_images/8889746c5509cec325c3bb29b71833a6f46e6634a426e8cf0ebf1763327343a4.png" src="_images/8889746c5509cec325c3bb29b71833a6f46e6634a426e8cf0ebf1763327343a4.png" />
 </div>
 </div>
-</section>
-</section>
 </section>
 </section>
 
@@ -774,6 +782,7 @@ v. <span class="math notranslate nohighlight">\(\langle x\rangle^{2}=N^{2}(p-q)^
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coin-flips">Simulating coin-flips</a></li>
 </ul>
   </nav></div>
 
