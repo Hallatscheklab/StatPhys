@@ -483,8 +483,10 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 <section id="coarse-graining">
 <h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h3>
 <p>In the realm of statistical physics, the concept of <strong>coarse-graining</strong> plays a pivotal role in understanding the transition from microscopic to macroscopic descriptions. The entire configuration of a system, denoted by <span class="math notranslate nohighlight">\(\{\sigma\} = \left\{\sigma_{1}, \sigma_{2}, \ldots\right\}\)</span>, represents the <strong>micro-state</strong>. The set of all micro-states encompasses all possible configurations at the most fundamental level.</p>
-<p>But, usually, we cannot directly observe all degrees of freedom of a microstate. Instead, we measure certain observables that have the same value for many microstates. For example, we typically cannot measure all spins in a magnet but just a sum over all spins. In a magnet, for instance, we care about the magnetization, $<span class="math notranslate nohighlight">\(X \equiv \sum_{j=1}^{N} \sigma_{j}\;,\)</span><span class="math notranslate nohighlight">\(
-which is the difference \)</span>X=N_+-N_-$ between up- and down-spins. (Likewise, when we stare at a coin flip series of 1’s and 0’s our brains tend to quickly notice if there’s a mismatch between 1’s and 0’s.)</p>
+<p>But, usually, we cannot directly observe all degrees of freedom of a microstate. Instead, we measure certain observables that have the same value for many microstates. For example, we typically cannot measure all spins in a magnet but just a sum over all spins. In a magnet, for instance, we care about the magnetization,</p>
+<div class="math notranslate nohighlight">
+\[X \equiv \sum_{j=1}^{N} \sigma_{j}\;,\]</div>
+<p>which is the difference <span class="math notranslate nohighlight">\(X=N_+-N_-\)</span> between up- and down-spins. (Likewise, when we stare at a coin flip series of 1’s and 0’s our brains tend to quickly notice if there’s a mismatch between 1’s and 0’s.)</p>
 <p>Since <span class="math notranslate nohighlight">\(\{\sigma\} \rightarrow X\)</span> is a many-to-one mapping, we call <span class="math notranslate nohighlight">\(X\)</span> a macroscopic observable. By fixing the value of <span class="math notranslate nohighlight">\(X\)</span>, we effectively define what is known as a <strong>macro-state</strong>.</p>
 <p>A typical objective in statistical physics is to transition from the probability distribution of micro-states, <span class="math notranslate nohighlight">\(P(\{\sigma\})\)</span>, to that of macro-states, <span class="math notranslate nohighlight">\(P(X)\)</span>. What generically happens during this transition is a fundamental aspect that we will explore now,  using coin flipping.</p>
 <p>The probability of <span class="math notranslate nohighlight">\(X\)</span> is naturally represented as a product of the number <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> of possible microstates (aka microscopic configurations) and the probability <span class="math notranslate nohighlight">\(p^{N_{+}}q^{N_{-}}\)</span> to observe anyone of the microstates. We thus obtain the binomial distribution</p>
@@ -561,14 +563,14 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <span class="c1"># Compute the sum of s(x) and e(x)</span>
 <span class="n">y_sum</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_e</span>
 
-<span class="c1"># Create the plot with s(x), e(x), and their sum</span>
+<span class="c1"># Create the plot with s(x), e(x), and their difference</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$s(x)=-\left(\frac{1+x}</span><span class="si">{2}</span><span class="s1"> \ln \left(\frac{1+x}</span><span class="si">{2}</span><span class="s1">\right)+\frac{1-x}</span><span class="si">{2}</span><span class="s1"> \ln \left(\frac{1-x}</span><span class="si">{2}</span><span class="s1">\right)\right)$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_e</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$e(x)=-\frac</span><span class="si">{1}{2}</span><span class="s1">\left[\ln (pq)+x \ln \frac</span><span class="si">{p}{q}</span><span class="s1">\right]$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_sum</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Difference of $s(x)$ and $e(x)$, which is $\ln P(x)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Values&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Plot of s(x), e(x), and their sum; p=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; q=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Plot of s(x), e(x), and their difference; p=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; q=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
@@ -577,7 +579,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/462c44179f06c566d38c4563203c2eb54538619ee36a0ea77ce42d7d8d3e4a78.png" src="_images/462c44179f06c566d38c4563203c2eb54538619ee36a0ea77ce42d7d8d3e4a78.png" />
+<img alt="_images/0b7616cce707c6d823564822704b73981963d4b89765d6ac952feb2c7aa8673c.png" src="_images/0b7616cce707c6d823564822704b73981963d4b89765d6ac952feb2c7aa8673c.png" />
 </div>
 </div>
 <p>Notice:</p>
@@ -589,10 +591,10 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The depicted maximum in <span class="math notranslate nohighlight">\(-f(x)\)</span> does not look very impressive. But, since</p>
+<p>The depicted maximum in <span class="math notranslate nohighlight">\(-f(x)\)</span> does not look very impressive. But, since we have</p>
 <div class="math notranslate nohighlight">
 \[P(x)=e^{-N f(x)}, \]</div>
-<p>we will get a pronounced maximum at <span class="math notranslate nohighlight">\(x=p- q\)</span> (the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span>) for even modestly large <span class="math notranslate nohighlight">\(N\)</span>. Fully deterministic behavior <span class="math notranslate nohighlight">\(x \to p-q\)</span> emerges in the thermodynamic limit, <span class="math notranslate nohighlight">\(N\to \infty\)</span>. The most likely value of <span class="math notranslate nohighlight">\(x\)</span> coincides with the expectation value <span class="math notranslate nohighlight">\(\langle x \rangle = p-q\)</span>, see below.</p>
+<p>a so-called (large deviation principle)[<a class="reference external" href="https://en.wikipedia.org/wiki/Large_deviations_theory">https://en.wikipedia.org/wiki/Large_deviations_theory</a>], we will get a pronounced maximum at <span class="math notranslate nohighlight">\(x=p- q\)</span> (the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span>) for even modestly large <span class="math notranslate nohighlight">\(N\)</span>. Fully deterministic behavior <span class="math notranslate nohighlight">\(x \to p-q\)</span> emerges in the thermodynamic limit, <span class="math notranslate nohighlight">\(N\to \infty\)</span>. The most likely value of <span class="math notranslate nohighlight">\(x\)</span> coincides with the expectation value <span class="math notranslate nohighlight">\(\langle x \rangle = p-q\)</span>, see below.</p>
 </div>
 <p>We can explore the effects of finite <span class="math notranslate nohighlight">\(N\)</span> by Taylor expanding <span class="math notranslate nohighlight">\(S(x)-E(x)\)</span> to <span class="math notranslate nohighlight">\(O(\Delta x^2)\equiv O\left[(x-\langle x\rangle)^{2}\right]\)</span>, we obtain to leading order a Gaussian,</p>
 <div class="math notranslate nohighlight">
@@ -689,8 +691,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d0ae454cc1497a9416a2c152aa98e34b5f1e6dde76fd612266d3678199401996.png" src="_images/d0ae454cc1497a9416a2c152aa98e34b5f1e6dde76fd612266d3678199401996.png" />
-<img alt="_images/0a7a5fed8cf47f096244940001852fe12cb74a6860fc24d8705f25fb7d9aa678.png" src="_images/0a7a5fed8cf47f096244940001852fe12cb74a6860fc24d8705f25fb7d9aa678.png" />
+<img alt="_images/f6bab33521d546c61cfcf649fe43c796bdde89d475376df11bc0efb5c75b2988.png" src="_images/f6bab33521d546c61cfcf649fe43c796bdde89d475376df11bc0efb5c75b2988.png" />
+<img alt="_images/1ec09bb94b3a5b0c399a638aced7230a701cc0fac61bb6e815f4ad4b597a252c.png" src="_images/1ec09bb94b3a5b0c399a638aced7230a701cc0fac61bb6e815f4ad4b597a252c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -721,7 +723,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6c31e32e755a4016ddd16f9f70bfd961cbd348edd8bb6f001a21b22405911af5.png" src="_images/6c31e32e755a4016ddd16f9f70bfd961cbd348edd8bb6f001a21b22405911af5.png" />
+<img alt="_images/04567a6d3cf8a37c97d390239b3e3acac41f0c23b57312ef7518a667e43a8edd.png" src="_images/04567a6d3cf8a37c97d390239b3e3acac41f0c23b57312ef7518a667e43a8edd.png" />
 </div>
 </div>
 </section>
