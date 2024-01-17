@@ -162,8 +162,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/PAM-logo4.png" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
-    <script>document.write(`<img src="_static/PAM-logo4.png" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+    <img src="_static/Entropy-Energy.png" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="_static/Entropy-Energy.png" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
   
   
 </a></div>
@@ -577,7 +577,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/bc28e19ffb2d721d8758e5c177f75ba40c2166c78bdccc91a0a0937fce563886.png" src="_images/bc28e19ffb2d721d8758e5c177f75ba40c2166c78bdccc91a0a0937fce563886.png" />
+<img alt="_images/462c44179f06c566d38c4563203c2eb54538619ee36a0ea77ce42d7d8d3e4a78.png" src="_images/462c44179f06c566d38c4563203c2eb54538619ee36a0ea77ce42d7d8d3e4a78.png" />
 </div>
 </div>
 <p>Notice:</p>
@@ -589,7 +589,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The depicted maximum in <span class="math notranslate nohighlight">\(f(x)\)</span> does not look very impressive. But, since</p>
+<p>The depicted maximum in <span class="math notranslate nohighlight">\(-f(x)\)</span> does not look very impressive. But, since</p>
 <div class="math notranslate nohighlight">
 \[P(x)=e^{-N f(x)}, \]</div>
 <p>we will get a pronounced maximum at <span class="math notranslate nohighlight">\(x=p- q\)</span> (the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span>) for even modestly large <span class="math notranslate nohighlight">\(N\)</span>. Fully deterministic behavior <span class="math notranslate nohighlight">\(x \to p-q\)</span> emerges in the thermodynamic limit, <span class="math notranslate nohighlight">\(N\to \infty\)</span>. The most likely value of <span class="math notranslate nohighlight">\(x\)</span> coincides with the expectation value <span class="math notranslate nohighlight">\(\langle x \rangle = p-q\)</span>, see below.</p>
@@ -597,12 +597,12 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <p>We can explore the effects of finite <span class="math notranslate nohighlight">\(N\)</span> by Taylor expanding <span class="math notranslate nohighlight">\(S(x)-E(x)\)</span> to <span class="math notranslate nohighlight">\(O(\Delta x^2)\equiv O\left[(x-\langle x\rangle)^{2}\right]\)</span>, we obtain to leading order a Gaussian,</p>
 <div class="math notranslate nohighlight">
 \[
-P(x) \approx C e^{-N\left[\frac{1}{2} \frac{(\Delta x)^{2}}{2 \langle \Delta x \rangle^2}+O\left(\frac{1}{N}\right)\right]} \;,
+P(x) \approx C e^{-\left[\frac{(\Delta x)^{2}}{2 \langle \Delta x \rangle^2}+O\left(\frac{1}{N}\right)\right]} \;,
 \]</div>
-<p>whose spread is controled by the variance <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle = 4pq\)</span> and the variance.</p>
+<p>whose spread is controled by the variance <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle = 4pq N^{-1/2}\)</span> and the variance.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>One can show that, quite generally, large sums of random variables tend to Gaussians if correlations are short ranged. This is a consequence of the Central Limit Theorem. The Gaussian is completely fixed by knowing the first and second moment of the distribution. Since the first two moments can often be determined quite easily (see below), this is a great advantage for calculations. The fact that the limiting distribution is independent of the higher order details of the distributions of individual random numbers is a first example of <strong>universality</strong>.</p>
+<p>One can show that, quite generally, large sums of random variables tend to Gaussians if correlations are short ranged. This is a consequence of the Central Limit Theorem. The Gaussian is completely fixed by knowing the first and second moment of the distribution. Since the first two moments can often be determined quite easily (see below), this is a great advantage for calculations. The scaling <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle\sim N^{-1/2}\)</span> and the fact that the limiting distribution is independent of the higher order details of the distributions of individual random numbers is a first example of <strong>universality</strong>.</p>
 </div>
 <section id="calculation-of-first-and-second-moment">
 <h4>Calculation of first and second moment<a class="headerlink" href="#calculation-of-first-and-second-moment" title="Permalink to this heading">#</a></h4>
@@ -689,8 +689,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1f4ea68efa3da71dfb422b8c3b2a85e044cba3ed8d4d1abef633a0e49d315219.png" src="_images/1f4ea68efa3da71dfb422b8c3b2a85e044cba3ed8d4d1abef633a0e49d315219.png" />
-<img alt="_images/d45254b8d82dbdb0a65f56b1d3f930b691f4af5a014208b90e69c0da2a5cf092.png" src="_images/d45254b8d82dbdb0a65f56b1d3f930b691f4af5a014208b90e69c0da2a5cf092.png" />
+<img alt="_images/d0ae454cc1497a9416a2c152aa98e34b5f1e6dde76fd612266d3678199401996.png" src="_images/d0ae454cc1497a9416a2c152aa98e34b5f1e6dde76fd612266d3678199401996.png" />
+<img alt="_images/0a7a5fed8cf47f096244940001852fe12cb74a6860fc24d8705f25fb7d9aa678.png" src="_images/0a7a5fed8cf47f096244940001852fe12cb74a6860fc24d8705f25fb7d9aa678.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -721,7 +721,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5e240598af80fc59ec7c40e6a1aa30a5dfbc4f9f82f9acc00bbe5a976c49172d.png" src="_images/5e240598af80fc59ec7c40e6a1aa30a5dfbc4f9f82f9acc00bbe5a976c49172d.png" />
+<img alt="_images/6c31e32e755a4016ddd16f9f70bfd961cbd348edd8bb6f001a21b22405911af5.png" src="_images/6c31e32e755a4016ddd16f9f70bfd961cbd348edd8bb6f001a21b22405911af5.png" />
 </div>
 </div>
 </section>
