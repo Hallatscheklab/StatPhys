@@ -1,0 +1,12 @@
+Folder contains all files relevant to Physics 211 Jupyter Book 
+
+* Update git and push html to repository. 
+    * Script jpgp executes the following two commands
+    * jupyter-book build ../PAM/
+    * ghp-import -n -p -f _build/html
+* To push the source files (needed so that google Colab points to the correct Jupyter file), do (potentially sudo)
+    * Command gacp executes the following three commands with an optional git message
+    * git add *
+    * git commit -m "adding my first book!"
+    * git push
+

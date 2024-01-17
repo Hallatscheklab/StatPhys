@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Default commit message
+COMMIT_MESSAGE="na"
+
+# Check if a message is provided with -m flag
+while getopts ":m:" opt; do
+  case $opt in
+    m) COMMIT_MESSAGE="$OPTARG"
+    ;;
+    \?) echo "Invalid option -$OPTARG" >&2
+    ;;
+  esac
+done
+
+# Git operations
+git add *
+git commit -m "$COMMIT_MESSAGE"
+sudo git push
+
