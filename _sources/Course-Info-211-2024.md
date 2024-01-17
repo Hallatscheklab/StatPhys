@@ -18,7 +18,7 @@ W 5:00PM - 6:00PM, Room: B56 - Hidebrand \
 F 3:00PM - 3:59PM, Room: 109 - Dwinelle
 
 **Office hours:** \
-Prof. H: T 5:00 - 6:00PM in 274D Stanley Hall\
+Prof. H: Tu 5:00 - 6:00PM in 274D Stanley Hall\
 Irian: W 2:00 - 4:00PM in 420J Physics
 
 Drop Deadline: Feb 10.
