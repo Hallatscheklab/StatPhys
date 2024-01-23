@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Entropy and information (Kardar 2.7) &#8212; Equilibrium Statistical Physics</title>
+    <title>Entropy and information &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Entropy and information (Kardar 2.7)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Entropy and information</a></li>
 </ul>
 
     </div>
@@ -397,7 +397,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Entropy and information (Kardar 2.7)</h1>
+    <h1>Entropy and information</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -407,11 +407,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-entropy">Information entropy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-as-lack-of-knowledge">Interpretation as lack of knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy">Relative entropy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
 </ul>
             </nav>
         </div>
@@ -423,15 +425,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="entropy-and-information-kardar-2-7">
-<h1>Entropy and information (Kardar 2.7)<a class="headerlink" href="#entropy-and-information-kardar-2-7" title="Permalink to this heading">#</a></h1>
-<p>Previously, <span class="math notranslate nohighlight">\(S \equiv \ln [\underbrace{\# \text { of configurations }}_{\Omega}](*)\)</span></p>
-<p>Example: given <span class="math notranslate nohighlight">\(N_{+}, \Omega\left(N_{+}\right)=\left(\begin{array}{c}N \\ N_{+}\end{array}\right)=\frac{N !}{N_{+} N_{-}}\)</span></p>
-<div class="math notranslate nohighlight">
-\[
+  <section id="entropy-and-information">
+<h1>Entropy and information<a class="headerlink" href="#entropy-and-information" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Kardar 2.7</p></li>
+</ul>
+<p>Previously, we defined <span class="math notranslate nohighlight">\(S \equiv \ln [\underbrace{\# \text { of configurations }}_{\Omega}](*)\)</span>. This definition is appropriate if all configurations are equally likely.</p>
+<p>Example: Coin flipping - given <span class="math notranslate nohighlight">\(N_{+}, \Omega\left(N_{+}\right)=\left(\begin{array}{c}N \\ N_{+}\end{array}\right)=\frac{N !}{N_{+} N_{-}}\)</span>. Thus, <span class="math notranslate nohighlight">\(
 \text { or } S\left(N_{+}\right)=N_{+} \ln N_{+} / N+N_{-} \ln N_{-} / N
-\]</div>
-<p><span class="math notranslate nohighlight">\((*)\)</span> is appropriate if all configurations are equally likely, which is the case if we fix <span class="math notranslate nohighlight">\(N_{+}\)</span></p>
+\)</span></p>
 <p>In general <span class="math notranslate nohighlight">\(N_+\)</span> is not fixed but itself a random variable <span class="math notranslate nohighlight">\(\rightarrow P_{S}(S) d S=P\left(N_{+}\right) d N_{+} \)</span>.</p>
 <p>But in the thermodynamic limit, we know</p>
 <div class="math notranslate nohighlight">
@@ -454,38 +456,61 @@ N_{+} \rightarrow\left\langle N_{+}\right\rangle=p N, N_{-}=\left\langle N_{r}\r
 \end{aligned}
 \end{split}\]</div>
 <p>In physics, <span class="math notranslate nohighlight">\((*)\)</span> arises as the entropy change when <span class="math notranslate nohighlight">\(M\)</span> components are mixed together. It is therefore called “entropy of mixing” (also closely related to Gibbs entropy).</p>
-<section id="information-entropy">
-<h2>Information entropy<a class="headerlink" href="#information-entropy" title="Permalink to this heading">#</a></h2>
+<section id="interpretation-as-lack-of-knowledge">
+<h2>Interpretation as lack of knowledge<a class="headerlink" href="#interpretation-as-lack-of-knowledge" title="Permalink to this heading">#</a></h2>
 <p>Shannon realized that the number of possible configurations consistent with our macroscopic constraints can be viewed as a <em>lack of knowledge</em> about the current microstate.</p>
 <p>Examples:</p>
 <ul class="simple">
 <li><p>Suppose we flip coin <span class="math notranslate nohighlight">\(N\)</span> times and we know <span class="math notranslate nohighlight">\(N_+\)</span>. Then, the actual microstate is one of <span class="math notranslate nohighlight">\(e^{S\left(N_{+}\right)}\)</span> micro-states.</p></li>
 <li><p>If we don’t know <span class="math notranslate nohighlight">\(N_+\)</span>, respectively <span class="math notranslate nohighlight">\(N_+\)</span> is not fixed? <span class="math notranslate nohighlight">\(\Rightarrow e^{S}\)</span> typical microstates, <span class="math notranslate nohighlight">\(S=-N \sum_{i} p_{i} \log p_{i}\)</span>. For a coin: <span class="math notranslate nohighlight">\(S=-N (p \log p +q \log q)\)</span>.</p></li>
 </ul>
+</section>
 <section id="consequences">
-<h3>Consequences:<a class="headerlink" href="#consequences" title="Permalink to this heading">#</a></h3>
+<h2>Consequences:<a class="headerlink" href="#consequences" title="Permalink to this heading">#</a></h2>
+<section id="coding">
+<h3>Coding<a class="headerlink" href="#coding" title="Permalink to this heading">#</a></h3>
 <p>Suppose we end up measuring the micro-state, how many bits do we need to store this information?</p>
 <p>For <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, simply enumerate only the <span class="math notranslate nohighlight">\(e^{S}\)</span> typical microstates, all having came probabilities. This needs <span class="math notranslate nohighlight">\(\log _{2}\left(e^{s}\right)=S \cdot \log _{2}(e)\)</span> bits. (of course, this is not a proof, but it works because of CLT induced measure concentration.)</p>
-<p>To simplify notation Shannon introduced the information entropy, which for any probability distribution <span class="math notranslate nohighlight">\(p_{i}\)</span>, is defined as</p>
+<p>Shannon thus gave an operational meaning to <span class="math notranslate nohighlight">\(S\)</span> in terms of “information” and the resources required to communicate an ensemble of messages, in which symbol <span class="math notranslate nohighlight">\(i\)</span> is drawn from <span class="math notranslate nohighlight">\(p_i\)</span>. To simplify notation Shannon introduced the information entropy, which for any probability distribution <span class="math notranslate nohighlight">\(p_{i}\)</span>, is defined as</p>
 <div class="math notranslate nohighlight">
 \[
-s(\{p\})=-\left\langle\log p_{i}\right\rangle=-\sum_{i} p_{i} \log p_{i} \;.
+S(\{p_i\})=-\left\langle\log_2 p_{i}\right\rangle=-\sum_{i} p_{i} \log_2 p_{i} \;.
 \]</div>
-<p><span class="math notranslate nohighlight">\(s(\{p\})\)</span> represents the average bits per word needed to encode a long message of words <span class="math notranslate nohighlight">\(i=1 \ldots M\)</span> drawn form <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Suppose, we would like to communicate a long stream of independent and identically-distributed random variables (i.i.d.), each drawn from the distribution <span class="math notranslate nohighlight">\(p_i\)</span>. Our discussion above suggests that it is impossible to compress such data such that the code rate (average number of bits per symbol) is less than the Entropy of the source distribution, without it being virtually certain that information will be lost. (<a class="reference external" href="https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem">Shannon Source Coding Theorem</a>)</p>
+</div>
 <p>Note:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(s=\log (M)\)</span> if <span class="math notranslate nohighlight">\(p_{i}=\)</span> cont. <span class="math notranslate nohighlight">\(=\frac{1}{M} \quad\)</span> “naive encoding”</p></li>
+<li><p><span class="math notranslate nohighlight">\(S=\log (M)\)</span> if <span class="math notranslate nohighlight">\(p_{i}=\)</span> const. <span class="math notranslate nohighlight">\(=\frac{1}{M} \quad\)</span> “naive encoding”</p></li>
 <li><p>But <span class="math notranslate nohighlight">\(s&lt;\log (M)\)</span> for any non-uniform probability distribution.</p></li>
+<li><p>data compression practically implemented by using shorter codes for symbols that occur more frequently and longer codes for symbols that are less common.</p></li>
+<li><p>For example, in the English language, letters like ‘e’, ‘t’, ‘a’, and ‘o’ are used much more frequently than letters like ‘z’, ‘q’, ‘x’, ‘j’. So, in a text compression scheme, it makes sense to use fewer bits to represent ‘e’ or ‘t’ than ‘z’ or ‘q’. This results in a smaller overall file size compared to using the same number of bits for every character.</p></li>
 <li><p><span class="math notranslate nohighlight">\(I\left[\left\{p_{i}\right\}\right]=\log_{2} (M)-S\)</span> measures information content of the pdf.</p></li>
 </ul>
-</section>
+<p>Concrete data compression example:</p>
+<ul class="simple">
+<li><p>Suppose <span class="math notranslate nohighlight">\(K=4\)</span>, <span class="math notranslate nohighlight">\(\vec p=(\frac 12, \frac 14, \frac 18, \frac 18)^T\)</span></p></li>
+<li><p>We could use a binary representation <span class="math notranslate nohighlight">\(\rightarrow\)</span> need 2 bits for 4 possibilities</p></li>
+<li><p>Better is the code</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(1 \rightarrow 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2 \rightarrow 10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3 \rightarrow 110\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(4 \rightarrow 111\)</span></p></li>
+</ul>
+</li>
+<li><p>note that the code word length <span class="math notranslate nohighlight">\(\ell_i\)</span> for symbol <span class="math notranslate nohighlight">\(i\)</span> is just <span class="math notranslate nohighlight">\(\ell_i=\log_2 p_i\)</span></p></li>
+<li><p>The average code word length per symbol is therefore <span class="math notranslate nohighlight">\(\langle L\rangle/N=-\sum p_i\log_2p_i=S(X)=\frac 74&lt;2\)</span></p></li>
+<li><p>In fact, the above code can be generalized to obtain an optimal code for any source distribution, provided the messages are long enough and consist of uncorrelated symbols.</p></li>
+</ul>
 </section>
 <section id="estimation">
-<h2>Estimation:<a class="headerlink" href="#estimation" title="Permalink to this heading">#</a></h2>
+<h3>Estimation:<a class="headerlink" href="#estimation" title="Permalink to this heading">#</a></h3>
 <p>Suppose we want to estimate a distribution of <span class="math notranslate nohighlight">\(X\)</span>, about which we have some partial information, e.g. we know the value of <span class="math notranslate nohighlight">\(\langle X\rangle=\sum_{i} p_{i} X_{i}\)</span> or <span class="math notranslate nohighlight">\(\operatorname{var}(X)\)</span>, but not <span class="math notranslate nohighlight">\(\left\{p_{i}\right\}\)</span>.</p>
-<p>Then: Least biased probability <a class="reference external" href="http://distribution.is">distribution.is</a> the one that maximises <span class="math notranslate nohighlight">\(s\)</span> given constraints. This is called the MaxEnt approach.</p>
+<p>According to Shannon’s interpretation of entropy, the least <em>biased</em> probability distribution is the one that maximises <span class="math notranslate nohighlight">\(s\)</span> given the constraints. This distribution is called the Maximum Entropy distribution. Any other distribution would pretend to have more information than is actually available (in form of the constraints).</p>
 <p>Example:</p>
-<p>Find MaxEnt distribution under the constraint of a given fixed calue <span class="math notranslate nohighlight">\(\phi\)</span> of <span class="math notranslate nohighlight">\(\langle F(x)\rangle=\sum_{i} p_{i} F\left(x_{i}\right)\)</span>. We always have to ensure the constraint that the probability distribution sums up to one, <span class="math notranslate nohighlight">\(\langle 1\rangle=\sum_{i} p_{i}=1\)</span> always to ne.</p>
+<p>Find the MaxEnt distribution under the constraint of a given fixed calue <span class="math notranslate nohighlight">\(\phi\)</span> of <span class="math notranslate nohighlight">\(\langle F(x)\rangle=\sum_{i} p_{i} F\left(x_{i}\right)\)</span>. It goes without saying that we also have to enforce the probability distribution summing up to one, <span class="math notranslate nohighlight">\(\langle 1\rangle=\sum_{i} p_{i}=1\)</span>.</p>
 <p>To maximize the entropy <span class="math notranslate nohighlight">\(s=-\sum_{i} p_{i} \log p_{i}\)</span> subject to both constraint, we use two Lagrange multipliers <span class="math notranslate nohighlight">\(\alpha, \beta\)</span> and maximize</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -497,19 +522,14 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\frac{\delta S^{*}}{\partial p_{i}} &amp; =-\ln p_{i}^{*}-1-\alpha-\beta F\left(x_{i}\right) \\
+\frac{\delta S^{*}}{\delta p_{i}} &amp; =-\ln p_{i}^{*}-1-\alpha-\beta F\left(x_{i}\right) \\
 &amp; \Rightarrow p_{i}^{*}=e^{-\left(1+\alpha+\beta F\left(x_{i}\right)\right.}=\frac{1}{Z} e^{-\beta F\left(x_{i}\right)}\;
 \end{aligned}
 \end{split}\]</div>
-<p>which is familiar from the Boltzmann distrib.</p>
-<div class="math notranslate nohighlight">
-\[
-\left(\beta=\frac{1}{k_{B} T} ; F=\text { Enasy }\right)
-\]</div>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Boltzmann = Max-Ent subject to <span class="math notranslate nohighlight">\(\langle H\rangle=E\)</span>.</p>
-<p>Note:</p>
+<p>Notes:</p>
 <ul class="simple">
 <li><p>This does not mean <span class="math notranslate nohighlight">\(p\)</span> <strong>is</strong> <span class="math notranslate nohighlight">\(p^{*}\)</span>. Multiple <span class="math notranslate nohighlight">\(\{p_i\}\)</span> may give the same <span class="math notranslate nohighlight">\(\langle F(x)\rangle\)</span></p></li>
+<li><p>the above maps on the Boltzmann distribution if we identify <span class="math notranslate nohighlight">\(\beta\equiv (k_{B} T)^{-1}\)</span> and <span class="math notranslate nohighlight">\(F=\text { Energy }\)</span>. The Boltzmann distribution can, therefore, be viewed as the Maximum Entropy distribution subject to the constraint of a given mean energy <span class="math notranslate nohighlight">\(\langle H\rangle=U\)</span> (also called internal energy).</p></li>
 <li><p>One can add further constaints and update in light of extra knouledge.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
@@ -517,8 +537,71 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
 \rightarrow p_{i} \propto e^{-\beta F_{1}(x)-\gamma F_{2}(x)-\ldots}
 \]</div>
 <ul class="simple">
-<li><p>How does this compare to Bayes?</p></li>
+<li><p>How does this compare to the Bayesian updating rules?</p></li>
 </ul>
+</section>
+<section id="relative-entropy">
+<h3>Relative entropy<a class="headerlink" href="#relative-entropy" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Suppose the symbols <span class="math notranslate nohighlight">\(X\)</span> of a message are drawn from the distribution <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=p_{i}\)</span>. But we think they are drawn from <span class="math notranslate nohighlight">\(\{q_{i}\}\)</span> instead, use correspondingly sized code words and, hence, do not optimally compress the message. Instead there will be discrepancy between the length <span class="math notranslate nohighlight">\(L(N)\)</span> of the number of bits we use, <span class="math notranslate nohighlight">\(L(N)=-N \sum_{i} p_{i} \log q_{i} \)</span> and the minimal number of bits, <span class="math notranslate nohighlight">\(L_min(N)=-N \sum_{i} p_{i} \log p_{i}\)</span>, which is given by the entropy. The relative difference,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\begin{array}{r}
+\frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=D_{K L}(\vec{p} \| \vec{q})
+\end{array}
+\]</div>
+<p>is called Kullback-Leipler (KL) divergence or relative entropxy.</p>
+<ul class="simple">
+<li><p>Suppose we obtain samples <span class="math notranslate nohighlight">\(\left\{X_{i}\right\}\)</span> and want to decide whether they are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> or <span class="math notranslate nohighlight">\(\vec{q}\)</span>. To this end, we compare the log-likelihoods for drawing the samples from either distribution,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\log \left[\frac{P(\text { samples } \mid \vec{p})}{P(\text { samples } \mid \vec{q})}\right]=\sum_{i} n\left(x_{i}\right) \log_2\left(\frac{p_{i}}{q_{i}}\right) \\
+\longrightarrow N \sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=N D_{k L}(\vec{p} \| \vec{q})
+\end{gathered}
+\end{split}\]</div>
+<p>Thus, we need <span class="math notranslate nohighlight">\(\gtrsim D_{K L}^{-1}(\vec{p} \| \vec{q})\)</span> samples to reliably tell that the samples are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> instead of <span class="math notranslate nohighlight">\(\vec{q}\)</span>.</p>
+<p>##### Mutual information</p>
+<p>Recall that we can interpret <span class="math notranslate nohighlight">\(S(X) \cong\)</span> as lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span>. Measurements can reduce our lack of knowledge, but often we cannot measure a particular quantity <span class="math notranslate nohighlight">\(X\)</span> directly but only a qunatity <span class="math notranslate nohighlight">\(Y\)</span> that is correlated with <span class="math notranslate nohighlight">\(X\)</span>. For example, we may be interested in knowing the particular microstate of a 1d spin chain, but we can only measure the magnetization of the spin chain - the difference between up- and down-spins.</p>
+<p>¿By how much does our lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span> decrease when we measure <span class="math notranslate nohighlight">\(Y\)</span>?</p>
+<p>Learning a particular datum <span class="math notranslate nohighlight">\(y\)</span> decreases the entropy by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\Delta S(x)=\text{entropy before}-\text{entropy after learning about y} \\
+= S(X) - S(X|y) \\
+=-\sum_{x} P_{X}(x) \log P_{X}(x)+ \sum_{x} P_{X}(x) \log P(x \mid y) \\
+=\sum_{x} P_X(x) \log \left[\frac{P(x \mid y)}{P_{x}(x)}\right] \\
+=\sum_{x} P_X(x) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right]
+\end{gathered}
+\end{split}\]</div>
+<p>The particular <span class="math notranslate nohighlight">\(y\)</span>–datum that we measure is itself drawn from the probability distribution <span class="math notranslate nohighlight">\(P_Y(y)\)</span>. Averaging the above expression over the <span class="math notranslate nohighlight">\(P_Y\)</span> distribution, we can compute the <em>average</em> entropy reduction</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\Delta S=\text{entropy before}-\text{entropy after} \\
+= S(X) - S(X|Y) \\
+=-\sum_{x} P_{X}(x) \log P_{X}(x)+\sum_{Y} P_{Y}(y) \sum_{x} P_{X}(x) \log P(x \mid y) \\
+=\sum_{x, y} P(x, y) \log \left[\frac{P(y \mid x)}{P_{x}(x)}\right] \\
+=\sum_{x, y} P(x, y) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right]=I(X; Y)
+\end{gathered}
+\end{split}\]</div>
+<p>The resulting expression <span class="math notranslate nohighlight">\(I(X;Y)\)</span> is called mutual information betwen <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. The notation <span class="math notranslate nohighlight">\(&quot;X;Y&quot;\)</span> makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(I (X; Y) \leq S(X)\)</span> and <span class="math notranslate nohighlight">\(I (X; Y) \leq S(Y)\)</span>.</p>
+<p>The mutual information appears is a central quantity in information theory and appears in basic models of information flow:</p>
+<p><img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3e5366c809cb41ab57f4364b475895f13a9dd328" /></p>
+<p><span class="math notranslate nohighlight">\(I(X;Y)\)</span> quantifies how efficiently <span class="math notranslate nohighlight">\(Y\)</span> encodes <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>The maximal rate of information transmission through the channel is given by the channel capacity</p>
+<div class="math notranslate nohighlight">
+\[
+C=\sup_{P_X}I(X;Y)\;.
+\]</div>
+<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs. [from Bialek, William. Biophysics: Searching for Principles (p. 371). Princeton University Press.]</p>
+<p>Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.</p>
+<p>Example: Additive White Gaussian Noise (AWGN)</p>
+</section>
 </section>
 </section>
 
@@ -577,11 +660,13 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-entropy">Information entropy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-as-lack-of-knowledge">Interpretation as lack of knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy">Relative entropy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
 </ul>
   </nav></div>
 
