@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Entropy &#8212; Equilibrium Statistical Physics</title>
+    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information (Kardar 2.7)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
 </ul>
 
     </div>
@@ -365,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Entropy</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,13 +374,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entropy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information-entropy">Information entropy</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
 
             </nav>
@@ -393,8 +387,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="entropy">
-<h1>Entropy<a class="headerlink" href="#entropy" title="Permalink to this heading">#</a></h1>
+  <p>Entropy</p>
 <p>Previously, <span class="math notranslate nohighlight">\(S \equiv \ln [\underbrace{\# \text { of configurations }}_{\Omega}](*)\)</span></p>
 <p>Example: given <span class="math notranslate nohighlight">\(N_{+}, \Omega\left(N_{+}\right)=\left(\begin{array}{c}N \\ N_{+}\end{array}\right)=\frac{N !}{N_{+} N_{-}}\)</span></p>
 <div class="math notranslate nohighlight">
@@ -402,62 +395,72 @@ document.write(`
 \text { or } S\left(N_{+}\right)=N_{+} \ln N_{+} / N+N_{-} \ln N_{-} / N
 \]</div>
 <p><span class="math notranslate nohighlight">\((*)\)</span> is appropriate if all configurations are equally likely, which is the case if we fix <span class="math notranslate nohighlight">\(N_{+}\)</span></p>
-<p>In general <span class="math notranslate nohighlight">\(N_+\)</span> is not fixed but itself a random variable <span class="math notranslate nohighlight">\(\rightarrow P_{S}(S) d S=P\left(N_{+}\right) d N_{+} \)</span>.</p>
-<p>But in the thermodynamic limit, we know</p>
+<p>In general/ <span class="math notranslate nohighlight">\(N_{+}\)</span>is nat fixed but itself a random variable <span class="math notranslate nohighlight">\(\rightarrow p_{S}(S) d S=p\left(N_{+}\right) d N_{+} s\left(N_{+}\right)\)</span>.</p>
+<p>But in the themadyn. limit, we know</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
+&amp; \text { But in the hermann. } \\
 &amp; \begin{array}{c}
 N_{+} \rightarrow\left\langle N_{+}\right\rangle=p N, N_{-}=\left\langle N_{r}\right\rangle=q N . \\
 \Rightarrow S=-N \cdot(p \ln p+q \ln q) .
 \end{array}
 \end{aligned}
 \end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> In the thermodynamic limit <span class="math notranslate nohighlight">\((N \rightarrow \infty)\)</span>, we can only observe “typical” configurations <span class="math notranslate nohighlight">\(\left(N_{+}=p N ; N_{-}=q N\right)\)</span>; there are <span class="math notranslate nohighlight">\(e^{S}\)</span> of them and all of them are equally likely <span class="math notranslate nohighlight">\(P({\sigma_i})=p^{N} \cdot q^{N}\)</span> )</p>
-<p>These observations are easily generalized to a dice with M faces. If rolling the dice results in face <span class="math notranslate nohighlight">\(i\)</span> with probability <span class="math notranslate nohighlight">\(p_{i}\)</span>, we expect face <span class="math notranslate nohighlight">\(i\)</span> to show up exactly <span class="math notranslate nohighlight">\(N p_i\)</span> times in the thermodynamic limit, <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>. The number of typical configurations is therefore</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> In thermadyn. limit <span class="math notranslate nohighlight">\((N \rightarrow \infty)\)</span>, we can only observe typical” configurations <span class="math notranslate nohighlight">\(\left(N_{+}=p N ; N_{-}=q N\right)\)</span>; there are <span class="math notranslate nohighlight">\(e^{S}\)</span> of them and all of them are equally likely <span class="math notranslate nohighlight">\(\left(p^{p^{N}} \cdot q^{q^{N}}\right.\)</span> )</p>
+<p>Generalization</p>
+<p>Consider a dice whIM faces.</p>
+<div class="math notranslate nohighlight">
+\[
+\text { Face } i \longrightarrow p_{i}
+\]</div>
+<p>Thermodynamic limit, <span class="math notranslate nohighlight">\(N \rightarrow \infty ;\)</span></p>
+<p>Face i share up exactly Np times.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\Omega &amp; \equiv\text{nr. of config's}=\frac{N !}{\left(N p_{1}\right) !\left(N p_{2}\right) ! \ldots\left(N p_{n}\right) !} \\
-&amp; S\equiv \log_{2}(\Omega)=N[\log (N)-1]-\sum_{i}\left(N p_{i}\right)\left[\log N p_{i}-1\right] \\
-&amp; =-N \sum_{i=1} p_{i} \log_2 p_{i}.\left({*}\right)
+&amp; =F D^{\prime}=\# \operatorname{con}\left(i g{ }^{\prime}{ }^{\prime}=\frac{N !}{\left(N p_{1}\right) !\left(N p_{2}\right) ! \ldots\left(W p_{n}\right) !}\right. \\
+&amp; S=\log _{z}(\Omega)=N[\log (N)-I]-\sum_{i}\left(N p_{i}\right)\left[\log N p_{i}-1\right] \\
+&amp; =-N \sum_{i=1} p_{i} \log p_{i} \cdot\left(^{*}\right)
 \end{aligned}
 \end{split}\]</div>
-<p>In physics, <span class="math notranslate nohighlight">\((*)\)</span> arises as the entropy change when <span class="math notranslate nohighlight">\(M\)</span> components are mixed together. It is therefore called “entropy of mixing” (also closely related to Gibbs entropy).</p>
-</section>
-<section id="information-entropy">
-<h1>Information entropy<a class="headerlink" href="#information-entropy" title="Permalink to this heading">#</a></h1>
-<p>Shannon realized that the number of possible configurations consistent with our macroscopic constraints can be viewed as a <em>lack of knowledge</em> about the current microstate.</p>
-<p>Examples:</p>
+<p>In physics, <span class="math notranslate nohighlight">\((t)\)</span> is “Entropy of mixing” Me components. (also closely related to Gibbs entropy).</p>
+<p>Information entropy</p>
+<p>Shannon realized: # of configurations given what we know is lack of knowledge about specific microstate.</p>
+<p>Ex: - N coin flips and we know Nt.</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> microstate is ane of <span class="math notranslate nohighlight">\(e^{S\left(N_{+}\right)}\)</span>states.</p>
 <ul class="simple">
-<li><p>Suppose we flip coin <span class="math notranslate nohighlight">\(N\)</span> times and we know <span class="math notranslate nohighlight">\(N_+\)</span>. Then, the actual microstate is one of <span class="math notranslate nohighlight">\(e^{S\left(N_{+}\right)}\)</span> micro-states.</p></li>
-<li><p>If we don’t know <span class="math notranslate nohighlight">\(N_+\)</span>, respectively <span class="math notranslate nohighlight">\(N_+\)</span> is not fixed? <span class="math notranslate nohighlight">\(\Rightarrow e^{S}\)</span> typical microstates, <span class="math notranslate nohighlight">\(S=-N \sum_{i} p_{i} \log p_{i}\)</span>. For a coin: <span class="math notranslate nohighlight">\(S=-N (p \log p +q \log q)\)</span>.</p></li>
+<li><p>If we don’t know N+N+ is not fixed?</p></li>
 </ul>
-<section id="consequences">
-<h2>Consequences:<a class="headerlink" href="#consequences" title="Permalink to this heading">#</a></h2>
-<p>Suppose we end up measuring the micro-state, how many bits do we need to store this information?</p>
-<p>For <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, simply enumerate only the <span class="math notranslate nohighlight">\(e^{S}\)</span> typical microstates, all having came probabilities. This needs <span class="math notranslate nohighlight">\(\log _{2}\left(e^{s}\right)=S \cdot \log _{2}(e)\)</span> bits. (of course, this is not a proof, but it works because of CLT induced measure concentration.)</p>
-<p>To simplify notation Shannon introduced the information entropy, which for any probability distribution <span class="math notranslate nohighlight">\(p_{i}\)</span>, is defined as</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow e^{S}\)</span> typical microstates, <span class="math notranslate nohighlight">\(S=-N \sum_{i} p_{i} \log p_{i}\)</span></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_01_19_b6c94b34fcab4495da5bg-3.jpg?height=289&amp;width=1311&amp;top_left_y=1059&amp;top_left_x=715" /></p>
+<p>Consequences:</p>
+<p>Suppose we end up measuring the microblete, Suppose we end up measuring
+how many bits do we need to
+store this information?</p>
+<p>For <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, simply enumerate only the <span class="math notranslate nohighlight">\(e^{S}\)</span> typical microstates, all having came probes. This needs <span class="math notranslate nohighlight">\(\log _{2}\left(e^{s}\right)=S \cdot \log _{2}(e)\)</span> bits. (not a proof; but work because of CLT <span class="math notranslate nohighlight">\(\rightarrow\)</span> measure concentration.)</p>
+<p>To simplify notation Shannon introduced the information entropy</p>
 <div class="math notranslate nohighlight">
 \[
-s(\{p\})=-\left\langle\log p_{i}\right\rangle=-\sum_{i} p_{i} \log p_{i} \;.
+\mathbb{S}(\{p\})=-\left\langle\log p_{i}\right\rangle=-\sum_{i} p_{i} \log p_{i}
 \]</div>
-<p><span class="math notranslate nohighlight">\(s(\{p\})\)</span> represents the average bits per word needed to encode a long message of words <span class="math notranslate nohighlight">\(i=1 \ldots M\)</span> drawn form <span class="math notranslate nohighlight">\(p\)</span>.</p>
-<p>Note:</p>
+<p>for any distribution <span class="math notranslate nohighlight">\(p_{i}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> represents average bits per bits needed to encode a long message of words <span class="math notranslate nohighlight">\(i=1 . . M\)</span> drawn from <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Note: <span class="math notranslate nohighlight">\(S=\log (M)\)</span> if <span class="math notranslate nohighlight">\(p_{i}=\)</span> cont. <span class="math notranslate nohighlight">\(=\frac{1}{M} \quad\)</span> “naivecucodiny”</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(s=\log (M)\)</span> if <span class="math notranslate nohighlight">\(p_{i}=\)</span> cont. <span class="math notranslate nohighlight">\(=\frac{1}{M} \quad\)</span> “naive encoding”</p></li>
-<li><p>But <span class="math notranslate nohighlight">\(s&lt;\log (M)\)</span> for any non-uniform probability distribution.</p></li>
-<li><p><span class="math notranslate nohighlight">\(I\left[\left\{p_{i}\right\}\right]=\log_{2} (M)-S\)</span> measures information content of the pdf.</p></li>
+<li><p>But <span class="math notranslate nohighlight">\(S&lt;\log (M)\)</span> for any non- uniform <span class="math notranslate nohighlight">\(p \cdot d\)</span>.</p></li>
+<li><p>code rate <span class="math notranslate nohighlight">\(S\)</span> can be achieved by encoding symbol i by codeword of length <span class="math notranslate nohighlight">\(-\log \left(p_{i}\right)\)</span> (problem: discreteness)</p></li>
 </ul>
-</section>
-</section>
-<section id="estimation">
-<h1>Estimation:<a class="headerlink" href="#estimation" title="Permalink to this heading">#</a></h1>
-<p>Suppose we want to estimate a distribution of <span class="math notranslate nohighlight">\(X\)</span>, about which we have some partial information, e.g. we know the value of <span class="math notranslate nohighlight">\(\langle X\rangle=\sum_{i} p_{i} X_{i}\)</span> or <span class="math notranslate nohighlight">\(\operatorname{var}(X)\)</span>, but not <span class="math notranslate nohighlight">\(\left\{p_{i}\right\}\)</span>.</p>
-<p>Then: Least biased probability <a class="reference external" href="http://distribution.is">distribution.is</a> the one that maximises <span class="math notranslate nohighlight">\(s\)</span> given constraints. This is called the MaxEnt approach.</p>
-<p>Example:</p>
-<p>Find MaxEnt distribution under the constraint of a given fixed calue <span class="math notranslate nohighlight">\(\phi\)</span> of <span class="math notranslate nohighlight">\(\langle F(x)\rangle=\sum_{i} p_{i} F\left(x_{i}\right)\)</span>. We always have to ensure the constraint that the probability distribution sums up to one, <span class="math notranslate nohighlight">\(\langle 1\rangle=\sum_{i} p_{i}=1\)</span> always to ne.</p>
-<p>To maximize the entropy <span class="math notranslate nohighlight">\(s=-\sum_{i} p_{i} \log p_{i}\)</span> subject to both constraint, we use two Lagrange multipliers <span class="math notranslate nohighlight">\(\alpha, \beta\)</span> and maximize</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> compline ns symbols. <span class="math notranslate nohighlight">\(n \gg 1\)</span>. <span class="math notranslate nohighlight">\(I\left[\left\{p_{i}\right\}\right]=\ln _{2} M-S: \begin{aligned} &amp; \text { Information content } \\ &amp; \text { of the } p d f .\end{aligned}\)</span></p>
+<p>Estimation:</p>
+<p>Suppose we want to estimate a distribution of <span class="math notranslate nohighlight">\(X\)</span> and that we have some</p>
+<p>partial information, eng. <span class="math notranslate nohighlight">\(\langle x\rangle=\sum_{i} p_{i} x_{i}\)</span> or <span class="math notranslate nohighlight">\(\operatorname{var}(X)\)</span>, but not <span class="math notranslate nohighlight">\(\left\{p_{i}\right\}\)</span>.</p>
+<p>Then: Least biased pod. is the one that maximises <span class="math notranslate nohighlight">\(S\)</span> given constraints. <span class="math notranslate nohighlight">\(\rightarrow\)</span> May En approad.</p>
+<p>Example:
+i) <span class="math notranslate nohighlight">\(\langle F(x)\rangle=\sum_{i} p_{i} F\left(x_{i}\right)\)</span> given</p>
+<p>ii) <span class="math notranslate nohighlight">\(\langle 1\rangle=\sum_{i} p_{i}=1\)</span> always to ne.</p>
+<p><span class="math notranslate nohighlight">\(=D\)</span> Maximize <span class="math notranslate nohighlight">\(S=-\sum_{i} p_{i}\)</span> In <span class="math notranslate nohighlight">\(p_{i}\)</span> subbed to constrains <span class="math notranslate nohighlight">\(\left.i, i i\right)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Use Lagrange multipliers <span class="math notranslate nohighlight">\(\alpha, \beta\)</span> and maximize</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -469,28 +472,67 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
 \[\begin{split}
 \begin{aligned}
 \frac{\delta S^{*}}{\partial p_{i}} &amp; =-\ln p_{i}^{*}-1-\alpha-\beta F\left(x_{i}\right) \\
-&amp; \Rightarrow p_{i}^{*}=e^{-\left(1+\alpha+\beta F\left(x_{i}\right)\right.}=\frac{1}{Z} e^{-\beta F\left(x_{i}\right)}\;
+&amp; \Rightarrow p_{i}^{*}=e^{-\left(1+\alpha+\beta F\left(x_{i}\right)\right.}-\frac{1}{z} e^{-\beta F\left(x_{i}\right)}
 \end{aligned}
 \end{split}\]</div>
-<p>which is familiar from the Boltzmann distrib.</p>
+<p>familiar from Boltzmann distrib.</p>
 <div class="math notranslate nohighlight">
 \[
 \left(\beta=\frac{1}{k_{B} T} ; F=\text { Enasy }\right)
 \]</div>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Boltzmann = Max-Ent subject to <span class="math notranslate nohighlight">\(\langle H\rangle=E\)</span>.</p>
-<p>Note:</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Bettemann = max-ent subiect <span class="math notranslate nohighlight">\(x\langle(1)=t\)</span></p>
+<p>Nate: this akes nat urau <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(p^{*}\)</span>.</p>
+<p>Hultiple }isi} mang give same <span class="math notranslate nohighlight">\(\langle F(x)\rangle\)</span></p>
 <ul class="simple">
-<li><p>This does not mean <span class="math notranslate nohighlight">\(p\)</span> <strong>is</strong> <span class="math notranslate nohighlight">\(p^{*}\)</span>. Multiple <span class="math notranslate nohighlight">\(\{p_i\}\)</span> may give the same <span class="math notranslate nohighlight">\(\langle F(x)\rangle\)</span></p></li>
-<li><p>One can add further constaints and update in light of extra knouledge.</p></li>
+<li><p>cuccons ardd funther constaints/updecte in lidd of extra knouledge.</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
 \rightarrow p_{i} \propto e^{-\beta F_{1}(x)-\gamma F_{2}(x)-\ldots}
 \]</div>
 <ul class="simple">
-<li><p>How does this compare to Bayes?</p></li>
+<li><p>How does His compare to Bayes?</p></li>
 </ul>
-</section>
+<p>Relative entropy II mutual information</p>
+<ul class="simple">
+<li><p>Suppose <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=p_{i}\)</span> but we think it’s from <span class="math notranslate nohighlight">\(q_{i}\)</span> and use correspondingly sized cede words</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r}
+\Rightarrow L(N)=-N \sum_{i} p_{i} \log q_{i} \text { and } \\
+\frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=D_{K L}(\vec{p} \| \vec{q})
+\end{array}
+\end{split}\]</div>
+<p>KL (Rullback-Leibler) divergence.</p>
+<p>Suppose we obtain samples <span class="math notranslate nohighlight">\(\left\{X_{i}\right\}\)</span> and want to decide whetter they are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> or <span class="math notranslate nohighlight">\(\vec{q}\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\log \left[\frac{P(\text { samples } \mid \vec{p})}{P(\text { samples } \mid \vec{q})}\right]=\sum_{i} n\left(x_{i}\right) \log 2\left(\frac{p_{i}}{q_{i}}\right) \\
+\longrightarrow N \sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=N D_{k L}(\vec{p} \| \vec{q})
+\end{gathered}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> We need <span class="math notranslate nohighlight">\(\gtrsim D_{K L}^{-1}(\vec{p} \| \vec{q})\)</span> samples to distinguish between <span class="math notranslate nohighlight">\(\vec{p}\)</span> and <span class="math notranslate nohighlight">\(\vec{q}\)</span>.</p>
+<p>Mutual information</p>
+<p><span class="math notranslate nohighlight">\(S(X) \cong\)</span> lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>Suppose we measure <span class="math notranslate nohighlight">\(Y\)</span>, correlated with <span class="math notranslate nohighlight">\(X_{0}\)</span> ¿ By how much does our lack of knowledge?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+=\int_{\text {entropy before }}(X)^{S} \begin{array}{l}
+S(X \mid Y)= \\
+\text { expected } \\
+\text { entropy after }
+\end{array} \\
+=-\sum_{x} P_{X}(x) \log P_{X}(x)+\sum_{Y} P_{Y}(y) \sum_{x} P_{X}(x) \log P(x \mid y) \\
+=\sum_{x, y} P(x, y) \log \left[\frac{P(y \mid x)}{P_{x}(x)}\right] \\
+=\sum_{x, y} P(x, y) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right]=J(x ; y)
+\end{gathered}
+\end{split}\]</div>
+<p>The mutual information appears in baric models of information flow:</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_01_19_b6c94b34fcab4495da5bg-9.jpg?height=899&amp;width=2093&amp;top_left_y=297&amp;top_left_x=0" /></p>
+<p><span class="math notranslate nohighlight">\(\approx\)</span> maximal rate of in formation transmission</p>
 
     <script type="text/x-thebe-config">
     {
@@ -537,13 +579,7 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entropy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#information-entropy">Information entropy</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
 
   </nav></div>

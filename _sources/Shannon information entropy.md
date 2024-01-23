@@ -1,4 +1,4 @@
-#### Entropy
+Entropy
 
 Previously, $S \equiv \ln [\underbrace{\# \text { of configurations }}_{\Omega}](*)$
 
@@ -10,12 +10,13 @@ $$
 
 $(*)$ is appropriate if all configurations are equally likely, which is the case if we fix $N_{+}$
 
-In general $N_+$ is not fixed but itself a random variable $\rightarrow P_{S}(S) d S=P\left(N_{+}\right) d N_{+} $.
+In general/ $N_{+}$is nat fixed but itself a random variable $\rightarrow p_{S}(S) d S=p\left(N_{+}\right) d N_{+} s\left(N_{+}\right)$.
 
-But in the thermodynamic limit, we know
+But in the themadyn. limit, we know
 
 $$
 \begin{aligned}
+& \text { But in the hermann. } \\
 & \begin{array}{c}
 N_{+} \rightarrow\left\langle N_{+}\right\rangle=p N, N_{-}=\left\langle N_{r}\right\rangle=q N . \\
 \Rightarrow S=-N \cdot(p \ln p+q \ln q) .
@@ -23,60 +24,83 @@ N_{+} \rightarrow\left\langle N_{+}\right\rangle=p N, N_{-}=\left\langle N_{r}\r
 \end{aligned}
 $$
 
-$\Rightarrow$ In the thermodynamic limit $(N \rightarrow \infty)$, we can only observe "typical" configurations $\left(N_{+}=p N ; N_{-}=q N\right)$; there are $e^{S}$ of them and all of them are equally likely $P({\sigma_i})=p^{N} \cdot q^{N}$ )
+$\Rightarrow$ In thermadyn. limit $(N \rightarrow \infty)$, we can only observe typical" configurations $\left(N_{+}=p N ; N_{-}=q N\right)$; there are $e^{S}$ of them and all of them are equally likely $\left(p^{p^{N}} \cdot q^{q^{N}}\right.$ )
 
-These observations are easily generalized to a dice with M faces. If rolling the dice results in face $i$ with probability $p_{i}$, we expect face $i$ to show up exactly $N p_i$ times in the thermodynamic limit, $N \rightarrow \infty$. The number of typical configurations is therefore
+Generalization
+
+Consider a dice whIM faces.
+
+$$
+\text { Face } i \longrightarrow p_{i}
+$$
+
+Thermodynamic limit, $N \rightarrow \infty ;$
+
+Face i share up exactly Np times.
 
 $$
 \begin{aligned}
-\Omega & \equiv\text{nr. of config's}=\frac{N !}{\left(N p_{1}\right) !\left(N p_{2}\right) ! \ldots\left(N p_{n}\right) !} \\
-& S\equiv \log_{2}(\Omega)=N[\log (N)-1]-\sum_{i}\left(N p_{i}\right)\left[\log N p_{i}-1\right] \\
-& =-N \sum_{i=1} p_{i} \log_2 p_{i}.\left({*}\right)
+& =F D^{\prime}=\# \operatorname{con}\left(i g{ }^{\prime}{ }^{\prime}=\frac{N !}{\left(N p_{1}\right) !\left(N p_{2}\right) ! \ldots\left(W p_{n}\right) !}\right. \\
+& S=\log _{z}(\Omega)=N[\log (N)-I]-\sum_{i}\left(N p_{i}\right)\left[\log N p_{i}-1\right] \\
+& =-N \sum_{i=1} p_{i} \log p_{i} \cdot\left(^{*}\right)
 \end{aligned}
 $$
 
-In physics, $(*)$ arises as the entropy change when $M$ components are mixed together. It is therefore called "entropy of mixing" (also closely related to Gibbs entropy).
+In physics, $(t)$ is "Entropy of mixing" Me components. (also closely related to Gibbs entropy).
 
-#### Information entropy
+Information entropy
 
-Shannon realized that the number of possible configurations consistent with our macroscopic constraints can be viewed as a *lack of knowledge* about the current microstate.
+Shannon realized: \# of configurations given what we know is lack of knowledge about specific microstate.
 
-Examples: 
+Ex: - N coin flips and we know Nt.
 
-- Suppose we flip coin $N$ times and we know $N_+$. Then, the actual microstate is one of $e^{S\left(N_{+}\right)}$ micro-states.
-- If we don't know $N_+$, respectively $N_+$ is not fixed? $\Rightarrow e^{S}$ typical microstates, $S=-N \sum_{i} p_{i} \log p_{i}$. For a coin: $S=-N (p \log p +q \log q)$.
+$\Rightarrow$ microstate is ane of $e^{S\left(N_{+}\right)}$states.
+- If we don't know N+N+ is not fixed?
 
+$\Rightarrow e^{S}$ typical microstates, $S=-N \sum_{i} p_{i} \log p_{i}$
 
-##### Consequences:
+![](https://cdn.mathpix.com/cropped/2024_01_19_b6c94b34fcab4495da5bg-3.jpg?height=289&width=1311&top_left_y=1059&top_left_x=715)
 
-Suppose we end up measuring the micro-state, how many bits do we need to store this information?
+Consequences:
 
-For $N \rightarrow \infty$, simply enumerate only the $e^{S}$ typical microstates, all having came probabilities. This needs $\log _{2}\left(e^{s}\right)=S \cdot \log _{2}(e)$ bits. (of course, this is not a proof, but it works because of CLT induced measure concentration.)
+Suppose we end up measuring the microblete, Suppose we end up measuring
+how many bits do we need to
+store this information?
 
-To simplify notation Shannon introduced the information entropy, which for any probability distribution $p_{i}$, is defined as
+For $N \rightarrow \infty$, simply enumerate only the $e^{S}$ typical microstates, all having came probes. This needs $\log _{2}\left(e^{s}\right)=S \cdot \log _{2}(e)$ bits. (not a proof; but work because of CLT $\rightarrow$ measure concentration.)
+
+To simplify notation Shannon introduced the information entropy
 
 $$
-s(\{p\})=-\left\langle\log p_{i}\right\rangle=-\sum_{i} p_{i} \log p_{i} \;.
+\mathbb{S}(\{p\})=-\left\langle\log p_{i}\right\rangle=-\sum_{i} p_{i} \log p_{i}
 $$
 
-$s(\{p\})$ represents the average bits per word needed to encode a long message of words $i=1 \ldots M$ drawn form $p$.
+for any distribution $p_{i}$.
 
-Note: 
-- $s=\log (M)$ if $p_{i}=$ cont. $=\frac{1}{M} \quad$ "naive encoding"
-- But $s<\log (M)$ for any non-uniform probability distribution.
-- $I\left[\left\{p_{i}\right\}\right]=\log_{2} (M)-S$ measures information content of the pdf.
+$\rightarrow$ represents average bits per bits needed to encode a long message of words $i=1 . . M$ drawn from $p$.
 
-#### Estimation:
+Note: $S=\log (M)$ if $p_{i}=$ cont. $=\frac{1}{M} \quad$ "naivecucodiny"
+- But $S<\log (M)$ for any non- uniform $p \cdot d$.
+- code rate $S$ can be achieved by encoding symbol i by codeword of length $-\log \left(p_{i}\right)$ (problem: discreteness)
 
-Suppose we want to estimate a distribution of $X$, about which we have some partial information, e.g. we know the value of $\langle X\rangle=\sum_{i} p_{i} X_{i}$ or $\operatorname{var}(X)$, but not $\left\{p_{i}\right\}$.
+$\rightarrow$ compline ns symbols. $n \gg 1$. $I\left[\left\{p_{i}\right\}\right]=\ln _{2} M-S: \begin{aligned} & \text { Information content } \\ & \text { of the } p d f .\end{aligned}$
 
-Then: Least biased probability distribution.is the one that maximises $s$ given constraints. This is called the MaxEnt approach.
+Estimation:
 
-Example: 
+Suppose we want to estimate a distribution of $X$ and that we have some
 
-Find MaxEnt distribution under the constraint of a given fixed calue $\phi$ of $\langle F(x)\rangle=\sum_{i} p_{i} F\left(x_{i}\right)$. We always have to ensure the constraint that the probability distribution sums up to one, $\langle 1\rangle=\sum_{i} p_{i}=1$ always to ne.
+partial information, eng. $\langle x\rangle=\sum_{i} p_{i} x_{i}$ or $\operatorname{var}(X)$, but not $\left\{p_{i}\right\}$.
 
-To maximize the entropy $s=-\sum_{i} p_{i} \log p_{i}$ subject to both constraint, we use two Lagrange multipliers $\alpha, \beta$ and maximize
+Then: Least biased pod. is the one that maximises $S$ given constraints. $\rightarrow$ May En approad.
+
+Example:
+i) $\langle F(x)\rangle=\sum_{i} p_{i} F\left(x_{i}\right)$ given
+
+ii) $\langle 1\rangle=\sum_{i} p_{i}=1$ always to ne.
+
+$=D$ Maximize $S=-\sum_{i} p_{i}$ In $p_{i}$ subbed to constrains $\left.i, i i\right)$
+
+$\Rightarrow$ Use Lagrange multipliers $\alpha, \beta$ and maximize
 
 $$
 \begin{aligned}
@@ -88,23 +112,72 @@ $$
 $$
 \begin{aligned}
 \frac{\delta S^{*}}{\partial p_{i}} & =-\ln p_{i}^{*}-1-\alpha-\beta F\left(x_{i}\right) \\
-& \Rightarrow p_{i}^{*}=e^{-\left(1+\alpha+\beta F\left(x_{i}\right)\right.}=\frac{1}{Z} e^{-\beta F\left(x_{i}\right)}\;
+& \Rightarrow p_{i}^{*}=e^{-\left(1+\alpha+\beta F\left(x_{i}\right)\right.}-\frac{1}{z} e^{-\beta F\left(x_{i}\right)}
 \end{aligned}
 $$
 
-which is familiar from the Boltzmann distrib.
+familiar from Boltzmann distrib.
 
 $$
 \left(\beta=\frac{1}{k_{B} T} ; F=\text { Enasy }\right)
 $$
 
-$\Rightarrow$ Boltzmann = Max-Ent subject to $\langle H\rangle=E$.
+$\Rightarrow$ Bettemann = max-ent subiect $x\langle(1)=t$
 
-Note: 
-- This does not mean $p$ **is** $p^{*}$. Multiple $\{p_i\}$ may give the same $\langle F(x)\rangle$
-- One can add further constaints and update in light of extra knouledge.
+Nate: this akes nat urau $p$ is $p^{*}$.
+
+Hultiple \}isi\} mang give same $\langle F(x)\rangle$
+- cuccons ardd funther constaints/updecte in lidd of extra knouledge.
 
 $$
 \rightarrow p_{i} \propto e^{-\beta F_{1}(x)-\gamma F_{2}(x)-\ldots}
 $$
-- How does this compare to Bayes?
+- How does His compare to Bayes?
+
+Relative entropy II mutual information
+
+- Suppose $\operatorname{Pr}\left[X=x_{i}\right]=p_{i}$ but we think it's from $q_{i}$ and use correspondingly sized cede words
+
+$$
+\begin{array}{r}
+\Rightarrow L(N)=-N \sum_{i} p_{i} \log q_{i} \text { and } \\
+\frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=D_{K L}(\vec{p} \| \vec{q})
+\end{array}
+$$
+
+KL (Rullback-Leibler) divergence.
+
+Suppose we obtain samples $\left\{X_{i}\right\}$ and want to decide whetter they are drawn from $\vec{p}$ or $\vec{q}$;
+
+$$
+\begin{gathered}
+\log \left[\frac{P(\text { samples } \mid \vec{p})}{P(\text { samples } \mid \vec{q})}\right]=\sum_{i} n\left(x_{i}\right) \log 2\left(\frac{p_{i}}{q_{i}}\right) \\
+\longrightarrow N \sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=N D_{k L}(\vec{p} \| \vec{q})
+\end{gathered}
+$$
+$\Rightarrow$ We need $\gtrsim D_{K L}^{-1}(\vec{p} \| \vec{q})$ samples to distinguish between $\vec{p}$ and $\vec{q}$.
+
+Mutual information
+
+$S(X) \cong$ lack of knowledge about $X$.
+
+Suppose we measure $Y$, correlated with $X_{0}$ ¿ By how much does our lack of knowledge?
+
+$$
+\begin{gathered}
+=\int_{\text {entropy before }}(X)^{S} \begin{array}{l}
+S(X \mid Y)= \\
+\text { expected } \\
+\text { entropy after }
+\end{array} \\
+=-\sum_{x} P_{X}(x) \log P_{X}(x)+\sum_{Y} P_{Y}(y) \sum_{x} P_{X}(x) \log P(x \mid y) \\
+=\sum_{x, y} P(x, y) \log \left[\frac{P(y \mid x)}{P_{x}(x)}\right] \\
+=\sum_{x, y} P(x, y) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right]=J(x ; y)
+\end{gathered}
+$$
+
+The mutual information appears in baric models of information flow:
+
+![](https://cdn.mathpix.com/cropped/2024_01_19_b6c94b34fcab4495da5bg-9.jpg?height=899&width=2093&top_left_y=297&top_left_x=0)
+
+$\approx$ maximal rate of in formation transmission
