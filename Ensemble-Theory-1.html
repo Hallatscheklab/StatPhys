@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Ensemble theory &#8212; Equilibrium Statistical Physics</title>
+    <title>Classical statistical mechanics &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ensemble theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classical statistical mechanics</a></li>
 </ul>
 
     </div>
@@ -399,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ensemble theory</h1>
+    <h1>Classical statistical mechanics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -422,21 +422,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ensemble-theory">
-<h1>Ensemble theory<a class="headerlink" href="#ensemble-theory" title="Permalink to this heading">#</a></h1>
-<p><strong>Why do we need statistical physics?</strong></p>
+  <section id="classical-statistical-mechanics">
+<h1>Classical statistical mechanics<a class="headerlink" href="#classical-statistical-mechanics" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Kardar Ch. 4</p></li>
+</ul>
+<p><strong>Why do we need statistical mechanics?</strong></p>
 <ul class="simple">
 <li><p>Fluctuations cause condensed matter systems to reside in a multitude of microstates, rather than adopting well defined internal energy minima,</p></li>
 <li><p>The set of “typical” microstates of a large system is the thermal equilibrium. Once kicked out of equilibrium, a large system quickly settles back into the same set of microstates.</p></li>
 <li><p>The description of large systems at thermal equilibrium is the focus of equilibrium statistical physics.</p></li>
-<li><p>Note that living systems consume energy to drive irreversible processes and stay away from thermal equilibrium. Nevertheless, they often show seemingly random fluctuations that can even dominate their behavior. It is active topic research how to extend statistical physics to describe such active systems far from equilibrium.</p></li>
+<li><p>Note that living systems consume energy to drive irreversible processes and stay away from thermal equilibrium. Nevertheless, they often show seemingly random fluctuations that can even dominate their behavior. It is active topic research how to extend statistical mechanics to describe such active systems far from equilibrium.</p></li>
 </ul>
 <section id="closed-systems-microcanonical-ensemble">
 <h2>Closed systems – microcanonical ensemble<a class="headerlink" href="#closed-systems-microcanonical-ensemble" title="Permalink to this heading">#</a></h2>
 <p><strong>Basic principle of statistical mechanics:</strong> In an <em>isolated</em> system, all <em>allowed</em> <em>microstates</em> are equally likely.</p>
 <ul class="simple">
 <li><p>An “isolated” system does not transfer energy, matter, volume or other conserved quantities outside its boundaries. A “closed” system can exchange energy, but not matter. “Open” systems typically exchange energy, matter and volume. Example: Biological systems (cells, organisms).</p></li>
-<li><p>In classical physics (=all we care for now), a “microstate” of a system of <span class="math notranslate nohighlight">\(N\)</span> particles is a specific point <span class="math notranslate nohighlight">\(\mu={\vec r, \vec p} in \)</span>6N$–dimensional phase space. It represents the microscopic configuration (positions and momenta) of all particles of the system.</p></li>
+<li><p>In classical physics (=all we care for now), a “microstate” of a system of <span class="math notranslate nohighlight">\(N\)</span> particles is a specific point <span class="math notranslate nohighlight">\(\mu=\{\vec r, \vec p\}\)</span> in <span class="math notranslate nohighlight">\(6N\)</span>–dimensional phase space. It described the positions <span class="math notranslate nohighlight">\(\vec r\)</span> and momenta <span class="math notranslate nohighlight">\(\vec p\)</span> of all particles of the system.</p></li>
 <li><p>All “allowed” microstates have the same energy, volume and number (and type) of particles.</p></li>
 </ul>
 <img src="https://github.com/Hallatscheklab/SoftMatter22-23/blob/main/source/notebooks/L1/img/trail-of-bright-light-in-box-460688633-5966b3605f9b5816183316bb.webp?raw=1" alt="systems" name="systems" class="bg-primary mb-1" width="500px"><p>Let’s define <span class="math notranslate nohighlight">\(\Omega(E,V,N)\)</span> to be the total number of microstates {<span class="math notranslate nohighlight">\(\nu\)</span>} with <span class="math notranslate nohighlight">\(E_\nu=E\)</span>, <span class="math notranslate nohighlight">\(V_\nu=V\)</span> and <span class="math notranslate nohighlight">\(N_\nu=N\)</span>.</p>
@@ -455,7 +458,7 @@ $<span class="math notranslate nohighlight">\(P(\nu_s)=\sum_{\nu_b} P(\nu_s,\nu_
 \)</span><span class="math notranslate nohighlight">\(\boxed{\rightarrow P(\nu_s)\propto \Omega_b(E-E_s)}\)</span>$</p></li>
 </ul>
 <p>Note that <strong>the multiplicity of the bath alone controls the state of the system.</strong> I.e. the more states are available to the bath the more likely a given microstate of the system is. Energy exchange is important only in sofar as it modifies the number of states available to the bath and the system.</p>
-<p>The multiplicity of microstates grows exponentially with its parameters. This can be most easily demonstrated for particle numbers (see example below) but generally holds also for energy and volume. Therefore, it makes sense to introduce the logarithm of the multiplicity. That’s what Ludwig Boltzmann did by introducing what’s now called the <strong>Boltzmann entropy:</strong> $<span class="math notranslate nohighlight">\( S\equiv k_\mathrm{B} \ln \Omega \qquad k_\mathrm{B}=1.38064852 × 10^{-23} {\rm m^2\, kg\, s^{-2}\, K^{-1}}.\)</span>$</p>
+<p>The multiplicity of microstates grows exponentially with its parameters. This can be most easily demonstrated for particle numbers (see example below) but generally holds also for energy and volume. Therefore, it makes sense to introduce the logarithm of the multiplicity. That’s what Ludwig Boltzmann did by introducing what’s now called the <strong>Boltzmann entropy:</strong> $<span class="math notranslate nohighlight">\( S\equiv k_\mathrm{B} \ln \Omega \qquad k_\mathrm{B}=1.38064852 × 10^{-23} {\rm J/ K}.\)</span>$</p>
 <p>Using the Boltzmann entropy, we can write $<span class="math notranslate nohighlight">\(P(\nu_s)\propto e^{k_\mathrm{B}^{-1}S_b(E-E_s)}.\)</span><span class="math notranslate nohighlight">\(
 When the bath is very big (thermodynamic limit), we can Taylor expand the exponent,
 \)</span><span class="math notranslate nohighlight">\( S_s(E-E_s)=S_b(E)+\left(\frac{\partial S}{\partial E}\right)_{V,N}(-E_s)+\cdots \)</span><span class="math notranslate nohighlight">\(

@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Shannon-entropy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Whirlwind recap of (equilibrium) statistical physics" href="Ensemble-Theory-1.html" />
+    <link rel="next" title="Classical statistical mechanics" href="Ensemble-Theory-1.html" />
     <link rel="prev" title="Probability and information entropy" href="Coin-flipping.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Entropy and information</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Whirlwind recap of (equilibrium) statistical physics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 </ul>
 
     </div>
@@ -609,6 +609,11 @@ C=\sup_{P_X}I(X;Y)\;.
 <p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id3" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span>).</p>
 <p>Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.</p>
 <p><img alt="" src="_images/6-5.jpg" /></p>
+<p>The figure below shows</p>
+<div class="math notranslate nohighlight">
+\[ I(\text{Words;Sensory inputs})= S(\text{Words})-\langle S(\text{Words| time in movie}) \rangle_{\text{time}} \]</div>
+<p>vs</p>
+<p>$<span class="math notranslate nohighlight">\(S(\text{Words})\)</span>$.</p>
 <p>The figure below shows that, as the time resolution is varied from 800 ms down to 2 ms,  the information rate follows the entropy rate, with a nearly constant 50% efficiency.  Although we should not generalize too much from one example, this result certainly  suggests that neurons are making use of a significant fraction of their capacity in actually encoding sensory signals. Also, this is true even at millisecond time resolution. The  idea that the entropy of the spike train sets a limit to neural information transmission  emerged almost immediately after Shannon’s work, but it was never clear whether these  limits could be approached by real systems.</p>
 <p><img alt="" src="_images/6-7.jpg" /></p>
 </section>
@@ -669,7 +674,7 @@ C=\sup_{P_X}I(X;Y)\;.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Whirlwind recap of (equilibrium) statistical physics</p>
+        <p class="prev-next-title">Classical statistical mechanics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
