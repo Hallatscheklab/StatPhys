@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Shannon-entropy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Whirlwind recap of (equilibrium) statistical physics" href="Ensemble-Theory-1.html" />
+    <link rel="next" title="Classical statistical mechanics" href="Ensemble-Theory-1.html" />
     <link rel="prev" title="Probability and information entropy" href="Coin-flipping.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Entropy and information</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Whirlwind recap of (equilibrium) statistical physics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 </ul>
 
     </div>
@@ -574,26 +574,49 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
 <p>##### Mutual information</p>
 <p>Recall that we can interpret <span class="math notranslate nohighlight">\(S(X) \cong\)</span> as lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span>. Measurements can reduce our lack of knowledge, but often we cannot measure a particular quantity <span class="math notranslate nohighlight">\(X\)</span> directly but only a qunatity <span class="math notranslate nohighlight">\(Y\)</span> that is correlated with <span class="math notranslate nohighlight">\(X\)</span>. For example, we may be interested in knowing the particular microstate of a 1d spin chain, but we can only measure the magnetization of the spin chain - the difference between up- and down-spins.</p>
 <p>¿By how much does our lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span> decrease when we measure <span class="math notranslate nohighlight">\(Y\)</span>?</p>
-<p>Learning a particular datum <span class="math notranslate nohighlight">\(y\)</span> decreases the entropy by</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In thinking about this question, it’s useful to introduce the following notation</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
-\Delta S(x)=\text{entropy before}-\text{entropy after learning about y} \\
-= S(X) - S(X|y) \\
-=-\sum_{x} P_{X}(x) \log P_{X}(x)+ \sum_{x} P_{X}(x) \log P(x \mid y) \\
-=\sum_{x} P_X(x) \log \left[\frac{P(x \mid y)}{P_{x}(x)}\right] \\
-=\sum_{x} P_X(x) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right]
+P_X(x)\equiv\Pr[X=x] \\
+P_Y(y)\equiv\Pr[Y=y] \\ 
+P(x,y)\equiv\Pr[X=x \,\&amp;\, Y=y]=P(y,x) \qquad {\rm joint \; probability}\\
+P(x|y)\equiv \Pr[X=x|Y=y] \qquad {\rm conditional \; probability}
 \end{gathered}
 \end{split}\]</div>
-<p>The particular <span class="math notranslate nohighlight">\(y\)</span>–datum that we measure is itself drawn from the probability distribution <span class="math notranslate nohighlight">\(P_Y(y)\)</span>. Averaging the above expression over the <span class="math notranslate nohighlight">\(P_Y\)</span> distribution, we can compute the <em>average</em> entropy reduction</p>
+<p>Note that conditional and joint probability are connected via</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{gathered}
+P(x,y) = P(x|y)P_Y(y) = P(y|x)P_X(x)
+\end{gathered}
+\]</div>
+<p>which implies Bayes theorem</p>
+<div class="math notranslate nohighlight">
+\[
+P(x|y)=\frac{P(y|x)P_X(x)}{P_y(y)}
+\]</div>
+</div>
+<p>Returning to the above question, let’s first assume we measure a particular value <span class="math notranslate nohighlight">\(Y=y\)</span>. The fact that we now know the value of <span class="math notranslate nohighlight">\(Y\)</span> changes the entropy of <span class="math notranslate nohighlight">\(X\)</span> from the initial entropy <span class="math notranslate nohighlight">\(S(X)\)</span> of the <span class="math notranslate nohighlight">\(X\)</span> distribution.</p>
+<div class="math notranslate nohighlight">
+\[ S(X)= -\sum_{x} P_{X}(x) \log_2 P_{X}(x)\]</div>
+<p>to the entropy <span class="math notranslate nohighlight">\(S(X|y)\)</span> of the conditional probability distribution <span class="math notranslate nohighlight">\(P(x|y)\)</span> of <span class="math notranslate nohighlight">\(x\)</span> given <span class="math notranslate nohighlight">\(y\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[S(X|y)= -\sum_{x} P(x|y) \log_2 P(x|y). \]</div>
+<p>Note that we do not necessarily have <span class="math notranslate nohighlight">\(S(X|y)&lt;S(X)\)</span>, for example if the particular measurement <span class="math notranslate nohighlight">\(Y=y\)</span> indicates that there is a lot of noise in <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>However, if we average the entropy change over all possible <span class="math notranslate nohighlight">\(y\)</span>’s drawn from <span class="math notranslate nohighlight">\(P_Y\)</span> we obtain an entropy reduction,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
-\Delta S=\text{entropy before}-\text{entropy after} \\
+I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 = S(X) - S(X|Y) \\
+= S(X) - \langle S(X|y)\rangle_y \\
 =-\sum_{x} P_{X}(x) \log P_{X}(x)+\sum_{Y} P_{Y}(y) \sum_{x} P_{X}(x) \log P(x \mid y) \\
 =\sum_{x, y} P(x, y) \log \left[\frac{P(y \mid x)}{P_{x}(x)}\right] \\
-=\sum_{x, y} P(x, y) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right]=I(X; Y)
+=\sum_{x, y} P(x, y) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right] \\
+=D_{KL}(P_{(X,Y)}||P_{X}\otimes P_Y)
 \end{gathered}
 \end{split}\]</div>
 <p>The resulting expression <span class="math notranslate nohighlight">\(I(X;Y)\)</span> is called mutual information betwen <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. The notation <span class="math notranslate nohighlight">\(&quot;X;Y&quot;\)</span> makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
@@ -609,6 +632,11 @@ C=\sup_{P_X}I(X;Y)\;.
 <p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id3" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span>).</p>
 <p>Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.</p>
 <p><img alt="" src="_images/6-5.jpg" /></p>
+<p>The figure below shows</p>
+<div class="math notranslate nohighlight">
+\[ I(\text{Words;Sensory inputs})= S(\text{Words})-\langle S(\text{Words| time in movie}) \rangle_{\text{time}} \]</div>
+<p>vs</p>
+<p>$<span class="math notranslate nohighlight">\(S(\text{Words})\)</span>$.</p>
 <p>The figure below shows that, as the time resolution is varied from 800 ms down to 2 ms,  the information rate follows the entropy rate, with a nearly constant 50% efficiency.  Although we should not generalize too much from one example, this result certainly  suggests that neurons are making use of a significant fraction of their capacity in actually encoding sensory signals. Also, this is true even at millisecond time resolution. The  idea that the entropy of the spike train sets a limit to neural information transmission  emerged almost immediately after Shannon’s work, but it was never clear whether these  limits could be approached by real systems.</p>
 <p><img alt="" src="_images/6-7.jpg" /></p>
 </section>
@@ -669,7 +697,7 @@ C=\sup_{P_X}I(X;Y)\;.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Whirlwind recap of (equilibrium) statistical physics</p>
+        <p class="prev-next-title">Classical statistical mechanics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
