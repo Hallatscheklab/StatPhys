@@ -582,21 +582,21 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
 \begin{gathered}
 P_X(x)\equiv\Pr[X=x] \\
 P_Y(y)\equiv\Pr[Y=y] \\ 
-P(x,y)\equiv\Pr[X=x \,\&amp;\, Y=y]=P(y,x) \qquad {\rm joint \; probability}\\
-P(x|y)\equiv \Pr[X=x|Y=y] \qquad {\rm conditional \; probability}
+P_{(X,Y)}(x,y)\equiv\Pr[X=x \,\&amp;\, Y=y]=P(y,x) \qquad {\rm joint \; probability}\\
+P_{(X|Y)}(x|y)\equiv \Pr[X=x|Y=y] \qquad {\rm conditional \; probability}
 \end{gathered}
 \end{split}\]</div>
 <p>Note that conditional and joint probability are connected via</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{gathered}
-P(x,y) = P(x|y)P_Y(y) = P(y|x)P_X(x)
+P_{(X,Y)}(x,y) = P_{(X|Y)}(x|y)P_Y(y) = P_{(X|Y)}(y|x)P_X(x)
 \end{gathered}
 \]</div>
 <p>which implies Bayes theorem</p>
 <div class="math notranslate nohighlight">
 \[
-P(x|y)=\frac{P(y|x)P_X(x)}{P_y(y)}
+P_{(X|Y)}(x|y)=\frac{P_{(Y|X)}(y|x)P_X(x)}{P_Y(y)}
 \]</div>
 </div>
 <p>Returning to the above question, let’s first assume we measure a particular value <span class="math notranslate nohighlight">\(Y=y\)</span>. The fact that we now know the value of <span class="math notranslate nohighlight">\(Y\)</span> changes the entropy of <span class="math notranslate nohighlight">\(X\)</span> from the initial entropy <span class="math notranslate nohighlight">\(S(X)\)</span> of the <span class="math notranslate nohighlight">\(X\)</span> distribution.</p>
@@ -606,8 +606,9 @@ P(x|y)=\frac{P(y|x)P_X(x)}{P_y(y)}
 <div class="math notranslate nohighlight">
 \[S(X|y)= -\sum_{x} P(x|y) \log_2 P(x|y). \]</div>
 <p>Note that we do not necessarily have <span class="math notranslate nohighlight">\(S(X|y)&lt;S(X)\)</span>, for example if the particular measurement <span class="math notranslate nohighlight">\(Y=y\)</span> indicates that there is a lot of noise in <span class="math notranslate nohighlight">\(X\)</span>.</p>
-<p>However, if we average the negative entropy change over all possible <span class="math notranslate nohighlight">\(y\)</span>’s drawn from <span class="math notranslate nohighlight">\(P_Y\)</span> we obtain a non-negative quantity
-$<span class="math notranslate nohighlight">\(
+<p>However, if we average the negative entropy change over all possible <span class="math notranslate nohighlight">\(y\)</span>’s drawn from <span class="math notranslate nohighlight">\(P_Y\)</span> we obtain a non-negative quantity</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{gathered}
 I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 = S(X) - S(X|Y) \\
@@ -617,9 +618,9 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 =\sum_{x, y} P(x, y) \log \left[\frac{P(x, y)}{P_{x}(x) P_{y}(y)}\right] \\
 =D_{KL}(P_{(X,Y)}||P_{X}\otimes P_Y) \;,
 \end{gathered}
-\)</span><span class="math notranslate nohighlight">\(
-which is called mutual information \)</span>I(X;Y)<span class="math notranslate nohighlight">\( between \)</span>X<span class="math notranslate nohighlight">\( and \)</span>Y$:</p>
-<p>The notation <span class="math notranslate nohighlight">\(&quot;X;Y&quot;\)</span> makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+\end{split}\]</div>
+<p>which is called mutual information <span class="math notranslate nohighlight">\(I(X;Y)\)</span> between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<p>The notation “<span class="math notranslate nohighlight">\(X;Y\)</span>” makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <p>Recalling our discussion of Kullback-Leibler divergence, we  see that the mutual information is a positive quantity unless <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are uncorrelated, <span class="math notranslate nohighlight">\(P_{(X,Y)}=P_{X}\otimes P_Y\)</span>.</p>
 <p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(I (X; Y) \leq S(X)\)</span> and <span class="math notranslate nohighlight">\(I (X; Y) \leq S(Y)\)</span>.</p>
 <p>The mutual information appears is a central quantity in information theory and appears in basic models of information flow:</p>
