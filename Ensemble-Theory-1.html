@@ -484,13 +484,14 @@ document.write(`
 <p>For a continuous phase space, <span class="math notranslate nohighlight">\(\Omega\)</span> is dimensionful. E.g. for an <span class="math notranslate nohighlight">\(N\)</span>-particle system, <span class="math notranslate nohighlight">\(\Omega\)</span> has units of phase space volume per energy,</p>
 <div class="math notranslate nohighlight">
 \[[\Omega]= ([p][q])^{3N} [E]^{-1}\;.\]</div>
-<p>To obtain a sensible definition of an <em>absolute</em> entropy, we should discretize phase space and energy to measure <span class="math notranslate nohighlight">\(\Omega\)</span> in some characteristic unit <span class="math notranslate nohighlight">\([\hat \Omega]\)</span>, so that <span class="math notranslate nohighlight">\(S={\rm k_B}\ln(\Omega/[\hat \Omega])\)</span>. That can be done in quantum mechanics, which provides natural units for phase space volume in terms of Planck’s constant (<span class="math notranslate nohighlight">\(h^N\)</span>) and ensures that energy levels are discretized.</p>
+<p>To obtain a sensible definition of an <em>absolute</em> entropy, we should discretize phase space and energy to measure <span class="math notranslate nohighlight">\(\Omega\)</span> in some characteristic unit <span class="math notranslate nohighlight">\([\hat \Omega]\)</span>, so that <span class="math notranslate nohighlight">\(S={\rm k_B}\ln(\Omega/[\hat \Omega])\)</span>. That happens automatically in quantum mechanics, which provides natural units for phase space volume in terms of Planck’s constant (<span class="math notranslate nohighlight">\(h^{3N}\)</span>) and ensures that energy levels are discretized.</p>
 <p>If we want to define an absolute entropy in classical statistical mechanics, Planck’s constant is often borrowed from quantum mechanics. However, normally, classical statistical mechanics only cares about entropy differences, <span class="math notranslate nohighlight">\(S(E_1)-S(E_2)={\rm k_B}\ln(\Omega_1/\Omega_2)\)</span>, for which the discretization issue does not arise.</p>
 </div>
 </section>
 <section id="thermal-equilibrium">
 <h3>Thermal equilibrium<a class="headerlink" href="#thermal-equilibrium" title="Permalink to this heading">#</a></h3>
-<p>Consider an isolated system <span class="math notranslate nohighlight">\({\mu, E, \bf{x}}\)</span></p>
+<p>Consider an isolated system <span class="math notranslate nohighlight">\({\mu, E, \bf{x}}\)</span> consisting of two subsystem in contact so that they can exchange energy,</p>
+<p><img alt="" src="_images/micro-can-compound-system.jpg" /></p>
 <div class="math notranslate nohighlight">
 \[\mu=\mu_1 \otimes \mu_2\]</div>
 <div class="math notranslate nohighlight">
@@ -535,6 +536,7 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 \[
 \left.\frac{\partial S_{1}(E_1^*)}{\partial E_{1}}\right|_{x_{1}}=\left.\frac{\partial S_{2}(E_2^*=E-E_1^*)}{\partial E_{2}}\right|_{x_{2}}
 \]</div>
+<p><img alt="" src="_images/thermalization-microcanonical.jpg" /></p>
 <p>Employing the <strong>thermodynamic definition of temperature</strong></p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{T}=\left.\frac{\partial S}{\partial E}\right|_{\bf{x}}\;,\]</div>
@@ -558,7 +560,7 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 \[
 \left(\frac{1}{T_{1}}-\frac{1}{T_{2}}\right) \delta E_{1} \geqslant 0 \;,
 \]</div>
-<p>i.e., <span class="math notranslate nohighlight">\(T_2&gt;T_1\)</span> if <span class="math notranslate nohighlight">\(delta E_1&gt;0\)</span> and <span class="math notranslate nohighlight">\(T_1&gt;T_2\)</span> if <span class="math notranslate nohighlight">\(delta E_1&lt;0\)</span>.</p>
+<p>i.e., <span class="math notranslate nohighlight">\(T_2&gt;T_1\)</span> if <span class="math notranslate nohighlight">\(\delta E_1&gt;0\)</span> and <span class="math notranslate nohighlight">\(T_1&gt;T_2\)</span> if <span class="math notranslate nohighlight">\(\delta E_1&lt;0\)</span>.</p>
 <p>Thus, <strong>energy always flows from hot to cold.</strong></p>
 <p><strong>Stability:</strong> Since the point <span class="math notranslate nohighlight">\(\left(E_{1}^{*} E_{2}^{*}\right)\)</span> is a maximum of <span class="math notranslate nohighlight">\(S\left(E_{1}^{*}\right)+S_{2}\left(E-E_{1}^{*}\right)\)</span> we must have</p>
 <div class="math notranslate nohighlight">
@@ -568,7 +570,7 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 <p>Suppose both systems are identical, <span class="math notranslate nohighlight">\(S_{1}=S_{2}\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\left.\Rightarrow \partial_{t}^{2} S\right|_{x} \leq 0 \Rightarrow \text { ** S is concave** }
+\left.\Rightarrow \partial_{E}^{2} S\right|_{x} \leq 0 \Rightarrow \text { \bf S is concave}
 \]</div>
 <p>Also, since <span class="math notranslate nohighlight">\(\left.\partial_{E} S\right|_{x}=T^{-1}\)</span>, we have <span class="math notranslate nohighlight">\(\left.\frac{\partial E}{\partial T}\right|_{x} \geq 0\)</span>.</p>
 <p>I.e., the <strong>specific heat</strong> <span class="math notranslate nohighlight">\(C_{x}\equiv \left.\frac{\partial E}{\partial T}\right|_{x}\)</span> is <strong>non-negative</strong>.</p>
