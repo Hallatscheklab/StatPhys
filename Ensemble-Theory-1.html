@@ -514,17 +514,18 @@ document.write(`
 &amp; =\int d E_{1} \Omega_{1}\left(E_{1}, \bf{x}_1\right) \Omega_{2}\left(E-E_{1}, \bf{x}_2\right)
 \end{aligned}
 \end{split}\]</div>
-<div class="math notranslate nohighlight" id="equation-compound-entropy">
-<span class="eqno">(2)<a class="headerlink" href="#equation-compound-entropy" title="Permalink to this equation">#</a></span>\[
+<div class="math notranslate nohighlight" id="equation-x">
+<span class="eqno">(2)<a class="headerlink" href="#equation-x" title="Permalink to this equation">#</a></span>\[
 e^{S(E) / k_{B}} =\int d E_{1} e^{\left[S_{1}\left(E_{1}, \bf{x}_1\right)+S\left(E-E_{1}, \bf{x}_2\right)\right] / k_{B}}
 \]</div>
+<p>(compound entropy)</p>
 <p><span class="math notranslate nohighlight">\(S_{1}, S_{2}\)</span> extensive and, so,</p>
 <div class="math notranslate nohighlight">
 \[
 S(E,\bf{x})=N s_{1}\left(\frac{E_{1}}{N},\frac{\bf{x}_1}N\right)+N s_{2}\left(\frac{E-E_{1}}{N},\frac{\bf{x}_2}N\right)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> are entropies per particle, which approach a constant as we increase the system sizes.</p>
-<p>Thus, as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, the integral in <code class="xref eq docutils literal notranslate"><span class="pre">compound</span> <span class="pre">entropy</span></code> is deminated by the maximum of the integrand, so that</p>
+<p>Thus, as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, the integral in <a class="reference internal" href="#equation-x">(2)</a> is dominated by the maximum of the integrand, so that</p>
 <div class="math notranslate nohighlight">
 \[
 S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1},\bf{x}_2\right)
@@ -571,7 +572,7 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 \]</div>
 <p>Also, since <span class="math notranslate nohighlight">\(\left.\partial_{E} S\right|_{x}=T^{-1}\)</span>, we have <span class="math notranslate nohighlight">\(\left.\frac{\partial E}{\partial T}\right|_{x} \geq 0\)</span>.</p>
 <p>I.e., the <strong>specific heat</strong> <span class="math notranslate nohighlight">\(C_{x}\equiv \left.\frac{\partial E}{\partial T}\right|_{x}\)</span> is <strong>non-negative</strong>.</p>
-<p><strong>Work</strong></p>
+<p><strong>Work and First Law</strong></p>
 <p>Thus far, we kept the generalized coordinates fixed and studied the redistribution of energy. When we manipulate the generalized coordinates, we do work on the system.</p>
 <p>To analyze this situation, consider first changing <span class="math notranslate nohighlight">\(\bf{x}\to \bf{x}+\bf{\delta x}\)</span> in a slow, <em>reversible</em>, manner. (I.e. we can return to the initial state by reversing the externally applied forces <span class="math notranslate nohighlight">\(\bf{J}\)</span>.)</p>
 <p>Then, the energy will change, <span class="math notranslate nohighlight">\(E\to E+\bf{J} \cdot \bf{\delta x}\)</span>, and so</p>
@@ -584,12 +585,12 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 \]</div>
 <p>Thus, for a reversible transformation, the change in entropy becomes</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{gathered}
-\Rightarrow \delta S=\frac{d E}{T}-\frac{\bf{J} \cdot \bf{\delta x}}{T} \\
+\[
+\Rightarrow \delta S=\frac{d E}{T}-\frac{\bf{J} \cdot \bf{\delta x}}{T} \]</div>
+<p>which implies the <strong>first law of thermodynamics</strong>:
+$<span class="math notranslate nohighlight">\(
 \Rightarrow dE=\underbrace{T d S}_{d Q}+\underbrace{\bf{J} \cdot \bf{\delta x}}_{dW}
-\end{gathered}
-\end{split}\]</div>
+\)</span>$</p>
 </section>
 </section>
 <section id="energy-exchange-canonical-ensemble">
