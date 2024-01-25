@@ -409,7 +409,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closed-systems-microcanonical-ensemble">Closed systems – microcanonical ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closed-systems-microcanonical-ensemble">Closed systems – microcanonical ensemble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ergodicity">Ergodicity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy">Entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-equilibrium">Thermal equilibrium</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-exchange-canonical-ensemble">Energy exchange – canonical ensemble</a></li>
 </ul>
             </nav>
@@ -426,6 +431,8 @@ document.write(`
 <h1>Classical statistical mechanics<a class="headerlink" href="#classical-statistical-mechanics" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Kardar Ch. 4</p></li>
+<li><p>We skipped Ch. 1 because Thermo is a prerequisite for this class, and its principles will soon be rederived from a molecular viewpoint</p></li>
+<li><p>We also skipped Ch. 3, though some of it will come back before we venture into quantum stat mech</p></li>
 </ul>
 <p><strong>Why do we need statistical mechanics?</strong></p>
 <ul class="simple">
@@ -440,11 +447,150 @@ document.write(`
 <ul class="simple">
 <li><p>An “isolated” system does not transfer energy, matter, volume or other conserved quantities outside its boundaries. A “closed” system can exchange energy, but not matter. “Open” systems typically exchange energy, matter and volume. Example: Biological systems (cells, organisms).</p></li>
 <li><p>In classical physics (=all we care for now), a “microstate” of a system of <span class="math notranslate nohighlight">\(N\)</span> particles is a specific point <span class="math notranslate nohighlight">\(\mu=\{\vec r, \vec p\}\)</span> in <span class="math notranslate nohighlight">\(6N\)</span>–dimensional phase space. It described the positions <span class="math notranslate nohighlight">\(\vec r\)</span> and momenta <span class="math notranslate nohighlight">\(\vec p\)</span> of all particles of the system.</p></li>
-<li><p>All “allowed” microstates have the same energy, volume and number (and type) of particles.</p></li>
+<li><p>All “allowed” microstates have the same energy and <em>generalized coordinates</em> <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, which for a particle system typically consist of the volume of the container and the number of particles, i.e. <span class="math notranslate nohighlight">\(\mathbf{x}=(V,N)\)</span>.</p></li>
+<li><p>But the type of generalized coordinates we have to consider depends on the problem.</p>
+<ul>
+<li><p>If the system consists of different particle types, we need <span class="math notranslate nohighlight">\(\mathbf{x}=(V,N_1,N_2, \dots)\)</span>.</p></li>
+<li><p>If we consider magnets, the total magnetization <span class="math notranslate nohighlight">\(M\)</span> is included</p></li>
+<li><p>If we consider polymers, the length <span class="math notranslate nohighlight">\(L\)</span> of the polymer is used.</p></li>
+<li><p>generalized coordinates are always <em>extensive</em>!</p></li>
 </ul>
-<img src="https://github.com/Hallatscheklab/SoftMatter22-23/blob/main/source/notebooks/L1/img/trail-of-bright-light-in-box-460688633-5966b3605f9b5816183316bb.webp?raw=1" alt="systems" name="systems" class="bg-primary mb-1" width="500px"><p>Let’s define <span class="math notranslate nohighlight">\(\Omega(E,V,N)\)</span> to be the total number of microstates {<span class="math notranslate nohighlight">\(\nu\)</span>} with <span class="math notranslate nohighlight">\(E_\nu=E\)</span>, <span class="math notranslate nohighlight">\(V_\nu=V\)</span> and <span class="math notranslate nohighlight">\(N_\nu=N\)</span>.</p>
-<p>Then, based on our “Basic Principle”, we can say that the probability of observing microstate <span class="math notranslate nohighlight">\(\nu\)</span> is given by <span class="math notranslate nohighlight">\(P(\nu)=\Omega(E,V,N)^{-1}\)</span>.</p>
-<p>N.B.: One could imagine measuring <span class="math notranslate nohighlight">\(P(\nu)\)</span> in two ways: 1. Follow a given system for a very long time and determine the fraction of the total time the system is in microstate <span class="math notranslate nohighlight">\(\nu\)</span>. 2. Consider a very large ensemble of identical systems and determine the fraction of replicates that are in state <span class="math notranslate nohighlight">\(\nu\)</span>. We will usually assume that both types of measurements give the same results in the thermodynamic limit (long times and large ensembles). This is called the <em>ergodicity</em> assumption. The breaking of ergodicity is topic of active research. Ergodicity is broken in certain models of glasses it is broken, reflecting the long relaxation times in these systems.</p>
+</li>
+</ul>
+<img src="https://github.com/Hallatscheklab/SoftMatter22-23/blob/main/source/notebooks/L1/img/trail-of-bright-light-in-box-460688633-5966b3605f9b5816183316bb.webp?raw=1" alt="systems" name="systems" class="bg-primary mb-1" width="500px"><p>Then, we can mathematize the basic principle by stating that the equilibrium distribution <span class="math notranslate nohighlight">\(P_{E,\mathbf{x}}(\mu)\)</span> to observe a particular state <span class="math notranslate nohighlight">\(\mu\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[P_{E,\mathbf{x}}(\mu)d\mu=\frac{\delta(E-H(\mu))}{\Omega(E,\mathbf{x})}d\mu \qquad (\text{micro-canonical ensemble})\]</div>
+<p>where the normalization constant</p>
+<div class="math notranslate nohighlight">
+\[\Omega(E,\mathbf{x})\equiv \int \delta(E-H(\mu))\;d\mu \]</div>
+<p>characterizes the total number of microstates {<span class="math notranslate nohighlight">\(\mu\)</span>} with <span class="math notranslate nohighlight">\(H(\mu)=E\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}_\mu=\mathbf{x}\)</span>.</p>
+<p>Note that for discrete set of micro states, e.g., when discussing Ising spins <span class="math notranslate nohighlight">\(\sigma_i=\pm 1\)</span>, replace the integral by a sum, <span class="math notranslate nohighlight">\(\int d\mu\rightarrow \sum_{\mu}\)</span>, and the Dirac delta function by a Kronecker delta, <span class="math notranslate nohighlight">\(\delta(E-H(\mu))\rightarrow \delta_{E,H(\mu)}\)</span></p>
+<section id="ergodicity">
+<h3>Ergodicity<a class="headerlink" href="#ergodicity" title="Permalink to this heading">#</a></h3>
+<p>One can imagine measuring expectation values <span class="math notranslate nohighlight">\(\langle f(\mu)\)</span> in two ways: 1. Follow a given system for a very long time, and determine the time average of <span class="math notranslate nohighlight">\(f\)</span>. 2. Determine the <em>ensemble</em> average of <span class="math notranslate nohighlight">\(f\)</span> over a very large number of system states drawn from the <span class="math notranslate nohighlight">\(P_{E,\mathbf{x}}\)</span>. Our Basic Principles implies that, in the limit, both results give the same answer. Mathematically,</p>
+<div class="math notranslate nohighlight" id="equation-ergodic-hypothesis">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ergodic-hypothesis" title="Permalink to this equation">#</a></span>\[ \langle f\rangle_{E,\mathbf{x}}=\lim_{T\to\infty}\frac 1T \int_0^Tf(\mu(t)) dt=\int d\mu P_{E,\mathbf{x}}(\mu) f(\mu) \]</div>
+<p>The celebrated <a class="reference external" href="https://en.wikipedia.org/wiki/Ergodic_theory#:~:text=The%20concepts%20of%20ergodicity%20and,average%20over%20the%20entire%20space.">ergodicity theorem</a> explains why this equality and, thus, our Basic Principle, is to be expected for typical systems undergoing volume conserving Hamiltonian dynamics (see later in the course). Macroscopic systems, such as ferromagnetic systems below the Curie temperature, can demonstrate ergodicity breaking, where they do not explore all possible states as predicted by the ergodic hypothesis. This results in phenomena like spontaneous magnetization, a form of spontaneous symmetry breaking. Similarly, complex disordered systems like spin glasses and conventional glasses, like window glasses, exhibit more intricate forms of ergodicity breaking. These systems can appear solid over short timescales, like seconds or hours, due to their positive shear modulus, but over very long periods, like millennia, they behave more like liquids, displaying multiple time scales and intermediate plateaus in behavior.</p>
+</section>
+<section id="entropy">
+<h3>Entropy<a class="headerlink" href="#entropy" title="Permalink to this heading">#</a></h3>
+<p>We can also argue for the micro-canonical ensemble to be the most unbiased (maximum entropy) distribution subject to the constraints <span class="math notranslate nohighlight">\(H(\mu)=E\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}_\mu=\mathbf{x}\)</span>. Recall that the entropy of a discrete probability distribution is <span class="math notranslate nohighlight">\(S=-\sum_i P_i \ln(P_i)\)</span>, which is maximized for <span class="math notranslate nohighlight">\(P_i=\)</span>const.<span class="math notranslate nohighlight">\(=\Omega^{-1}(E,\mathbf{x})\)</span>. In that case, <span class="math notranslate nohighlight">\(S=\ln(\Omega(E,\mathbf{x}))\)</span>.</p>
+<p>Historically, Boltzmann defined entropy to be the dimensionful quantity</p>
+<div class="math notranslate nohighlight">
+\[S\equiv {\rm k_B}\ln(\Omega)\]</div>
+<p>with <span class="math notranslate nohighlight">\({\rm k_B}\sim 1.38×10^{−23} {\rm J⋅K^{−1}}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a continuous phase space, <span class="math notranslate nohighlight">\(\Omega\)</span> is dimensionful. E.g. for an <span class="math notranslate nohighlight">\(N\)</span>-particle system, <span class="math notranslate nohighlight">\(\Omega\)</span> has units of phase space volume per energy,</p>
+<div class="math notranslate nohighlight">
+\[[\Omega]= ([p][q])^{3N} [E]^{-1}\;.\]</div>
+<p>To obtain a sensible definition of an <em>absolute</em> entropy, we should discretize phase space and energy to measure <span class="math notranslate nohighlight">\(\Omega\)</span> in some characteristic unit <span class="math notranslate nohighlight">\([\hat \Omega]\)</span>, so that <span class="math notranslate nohighlight">\(S={\rm k_B}\ln(\Omega/[\hat \Omega])\)</span>. That can be done in quantum mechanics, which provides natural units for phase space volume in terms of Planck’s constant (<span class="math notranslate nohighlight">\(h^N\)</span>) and ensures that energy levels are discretized.</p>
+<p>If we want to define an absolute entropy in classical statistical mechanics, Planck’s constant is often borrowed from quantum mechanics. However, normally, classical statistical mechanics only cares about entropy differences, <span class="math notranslate nohighlight">\(S(E_1)-S(E_2)={\rm k_B}\ln(\Omega_1/\Omega_2)\)</span>, for which the discretization issue does not arise.</p>
+</div>
+</section>
+<section id="thermal-equilibrium">
+<h3>Thermal equilibrium<a class="headerlink" href="#thermal-equilibrium" title="Permalink to this heading">#</a></h3>
+<p>Consider an isolated system <span class="math notranslate nohighlight">\({\mu, E, \bf{x}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mu=\mu_1 \otimes \mu_2\]</div>
+<div class="math notranslate nohighlight">
+\[E=E_1+E_2 +\text{higher order surface contribution}\]</div>
+<p>N.B.:</p>
+<ul class="simple">
+<li><p>E_1 and E_2 are extensive, they grow linearly with the subsystem sizes</p></li>
+<li><p>the surface contribution is intensive if the interactions are local.</p></li>
+<li><p>Therefore, the surface contribution is negligible as subsystem sizes are send to infinity (thermodynamic limit)</p></li>
+</ul>
+<p>The probability of observing a particular state <span class="math notranslate nohighlight">\(\mu\)</span> of the compound system is, therefore, given by the microcanonical expression</p>
+<div class="math notranslate nohighlight">
+\[P_{E,\mathbf{x}}(\mu)=\frac{\delta(E-H(\mu))}{\Omega(E,\mathbf{x})} \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[H(\mu)= H_1(\mu_1)+H_2(\mu_2)+\text{h.o.t. surface constribution}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\Omega(E, \bf{x}) &amp; =\int d \mu_{1} d \mu_{2} \delta(E-H(\mu)) \\
+&amp; =\int d E_{1} \Omega_{1}\left(E_{1}, \bf{x}_1\right) \Omega_{2}\left(E-E_{1}, \bf{x}_2\right)
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-compound-entropy">
+<span class="eqno">(2)<a class="headerlink" href="#equation-compound-entropy" title="Permalink to this equation">#</a></span>\[
+e^{S(E) / k_{B}} =\int d E_{1} e^{\left[S_{1}\left(E_{1}, \bf{x}_1\right)+S\left(E-E_{1}, \bf{x}_2\right)\right] / k_{B}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(S_{1}, S_{2}\)</span> extensive and, so,</p>
+<div class="math notranslate nohighlight">
+\[
+S(E,\bf{x})=N s_{1}\left(\frac{E_{1}}{N},\frac{\bf{x}_1}N\right)+N s_{2}\left(\frac{E-E_{1}}{N},\frac{\bf{x}_2}N\right)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> are entropies per particle, which approach a constant as we increase the system sizes.</p>
+<p>Thus, as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, the integral in <code class="xref eq docutils literal notranslate"><span class="pre">compound</span> <span class="pre">entropy</span></code> is deminated by the maximum of the integrand, so that</p>
+<div class="math notranslate nohighlight">
+\[
+S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1},\bf{x}_2\right)
+\]</div>
+<p>where the position of the maximum is obtained by extremizing w.r.t. <span class="math notranslate nohighlight">\(E_1\)</span>, resulting in</p>
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{\partial S_{1}(E_1^*)}{\partial E_{1}}\right|_{x_{1}}=\left.\frac{\partial S_{2}(E_2^*=E-E_1^*)}{\partial E_{2}}\right|_{x_{2}}
+\]</div>
+<p>Employing the <strong>thermodynamic definition of temperature</strong></p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{T}=\left.\frac{\partial S}{\partial E}\right|_{\bf{x}}\;,\]</div>
+<p>the maximum <span class="math notranslate nohighlight">\(E_1^{*}\)</span> is set by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{T_{1}}=\frac{1}{T_{2}}\;.
+\]</div>
+<p>Note:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_1\)</span> (or <span class="math notranslate nohighlight">\(E_2=E-E_1\)</span>) adjusts itself so as to maximize <span class="math notranslate nohighlight">\(S\)</span>.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(S\)</span> is maximized, the temperature of both compartments are identical</p></li>
+</ul>
+<p><strong>Second law:</strong> If we prepare an initial condition where <span class="math notranslate nohighlight">\(E_{1} \neq E_{1}^{*}\)</span>, by ergedicity <span class="math notranslate nohighlight">\(E_{1} \rightarrow E_{1}^{*}\)</span> at long times because <span class="math notranslate nohighlight">\(E_{1}^{*}\)</span> is <em>much more likely</em> (sketch). The entropy increases,</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta S=S_{1}\left(E_{1}^{*}\right)+S_{2}\left(E_{2}^{*}\right)-S\left(E_{1}\right)-S\left(E_{2}\right) \geq 0
+\]</div>
+<p>which, to first order in <span class="math notranslate nohighlight">\(E_{1}^{*}-E_{1}=\delta E_{1}\)</span>, implies</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{1}{T_{1}}-\frac{1}{T_{2}}\right) \delta E_{1} \geqslant 0 \;,
+\]</div>
+<p>i.e., <span class="math notranslate nohighlight">\(T_2&gt;T_1\)</span> if <span class="math notranslate nohighlight">\(delta E_1&gt;0\)</span> and <span class="math notranslate nohighlight">\(T_1&gt;T_2\)</span> if <span class="math notranslate nohighlight">\(delta E_1&lt;0\)</span>.</p>
+<p>Thus, <strong>energy always flows from hot to cold.</strong></p>
+<p><strong>Stability:</strong> Since the point <span class="math notranslate nohighlight">\(\left(E_{1}^{*} E_{2}^{*}\right)\)</span> is a maximum of <span class="math notranslate nohighlight">\(S\left(E_{1}^{*}\right)+S_{2}\left(E-E_{1}^{*}\right)\)</span> we must have</p>
+<div class="math notranslate nohighlight">
+\[
+\left.\frac{\partial^{2} S_{1}}{\partial E^{2}}\right|_{x_{1}}+\left.\frac{\partial^{2} S_{2}}{\partial E_{2}^{2}}\right|_{x_{2}} \leq 0
+\]</div>
+<p>Suppose both systems are identical, <span class="math notranslate nohighlight">\(S_{1}=S_{2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\left.\Rightarrow \partial_{t}^{2} S\right|_{x} \leq 0 \Rightarrow \text { ** S is concave** }
+\]</div>
+<p>Also, since <span class="math notranslate nohighlight">\(\left.\partial_{E} S\right|_{x}=T^{-1}\)</span>, we have <span class="math notranslate nohighlight">\(\left.\frac{\partial E}{\partial T}\right|_{x} \geq 0\)</span>.</p>
+<p>I.e., the <strong>specific heat</strong> <span class="math notranslate nohighlight">\(C_{x}\equiv \left.\frac{\partial E}{\partial T}\right|_{x}\)</span> is <strong>non-negative</strong>.</p>
+<p><strong>Work</strong></p>
+<p>Thus far, we kept the generalized coordinates fixed and studied the redistribution of energy. When we manipulate the generalized coordinates, we do work on the system.</p>
+<p>To analyze this situation, consider first changing <span class="math notranslate nohighlight">\(\bf{x}\to \bf{x}+\bf{\delta x}\)</span> in a slow, <em>reversible</em>, manner. (I.e. we can return to the initial state by reversing the externally applied forces <span class="math notranslate nohighlight">\(\bf{J}\)</span>.)</p>
+<p>Then, the energy will change, <span class="math notranslate nohighlight">\(E\to E+\bf{J} \cdot \bf{\delta x}\)</span>, and so</p>
+<div class="math notranslate nohighlight">
+\[\delta S=S(E+\bf{J} \cdot \bf{dx},\bf{x}+\bf{\delta x})-S(E,\bf{x})=\left. \frac{\partial S}{\partial E}\right|_x(\bf{J} \cdot \bf{\delta x})+\left.\frac{\partial S}{\partial x}\right|_E \bf{\delta x}\geq 0\]</div>
+<p>For a reversible dynamics, we must have the equal sign, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+\left.\Rightarrow \frac{\partial S}{\partial x_{i}}\right|_{E, x_{j\neq i}}=-\frac{J_{i}}{T}
+\]</div>
+<p>Thus, for a reversible transformation, the change in entropy becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\Rightarrow \delta S=\frac{d E}{T}-\frac{\bf{J} \cdot \bf{\delta x}}{T} \\
+\Rightarrow dE=\underbrace{T d S}_{d Q}+\underbrace{\bf{J} \cdot \bf{\delta x}}_{dW}
+\end{gathered}
+\end{split}\]</div>
+</section>
 </section>
 <section id="energy-exchange-canonical-ensemble">
 <h2>Energy exchange – canonical ensemble<a class="headerlink" href="#energy-exchange-canonical-ensemble" title="Permalink to this heading">#</a></h2>
@@ -554,7 +700,12 @@ The energy difference for a nonzero magnetic field is therefore given by</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closed-systems-microcanonical-ensemble">Closed systems – microcanonical ensemble</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#closed-systems-microcanonical-ensemble">Closed systems – microcanonical ensemble</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ergodicity">Ergodicity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy">Entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thermal-equilibrium">Thermal equilibrium</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-exchange-canonical-ensemble">Energy exchange – canonical ensemble</a></li>
 </ul>
   </nav></div>
