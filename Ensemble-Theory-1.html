@@ -602,19 +602,29 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 <ul class="simple">
 <li><p>All states with <span class="math notranslate nohighlight">\(E_s+E_b=E\)</span> are equally likely.</p></li>
 <li><p>To reach a high energy state, s has to “steal” energy from b.
-What’s the probability <span class="math notranslate nohighlight">\(P(\nu_s)\)</span> of system state <span class="math notranslate nohighlight">\(\nu_s\)</span> irrespective of the state of the bath?
-$<span class="math notranslate nohighlight">\(P(\nu_s)=\sum_{\nu_b} P(\nu_s,\nu_b)=\frac{\Omega_b(E-E_s)}{\Omega(E,V,N)}\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\boxed{\rightarrow P(\nu_s)\propto \Omega_b(E-E_s)}\)</span>$</p></li>
+What’s the probability <span class="math notranslate nohighlight">\(P(\nu_s)\)</span> of system state <span class="math notranslate nohighlight">\(\nu_s\)</span> irrespective of the state of the bath?</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[P(\nu_s)=\sum_{\nu_b} P(\nu_s,\nu_b)=\frac{\Omega_b(E-E_s)}{\Omega(E,V,N)}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{\rightarrow P(\nu_s)\propto \Omega_b(E-E_s)}\]</div>
 <p>Note that <strong>the multiplicity of the bath alone controls the state of the system.</strong> I.e. the more states are available to the bath the more likely a given microstate of the system is. Energy exchange is important only in sofar as it modifies the number of states available to the bath and the system.</p>
 <p>The multiplicity of microstates grows exponentially with its parameters. This can be most easily demonstrated for particle numbers (see example below) but generally holds also for energy and volume. Therefore, it makes sense to introduce the logarithm of the multiplicity. That’s what Ludwig Boltzmann did by introducing what’s now called the <strong>Boltzmann entropy:</strong> $<span class="math notranslate nohighlight">\( S\equiv k_\mathrm{B} \ln \Omega \qquad k_\mathrm{B}=1.38064852 × 10^{-23} {\rm J/ K}.\)</span>$</p>
-<p>Using the Boltzmann entropy, we can write $<span class="math notranslate nohighlight">\(P(\nu_s)\propto e^{k_\mathrm{B}^{-1}S_b(E-E_s)}.\)</span><span class="math notranslate nohighlight">\(
-When the bath is very big (thermodynamic limit), we can Taylor expand the exponent,
-\)</span><span class="math notranslate nohighlight">\( S_s(E-E_s)=S_b(E)+\left(\frac{\partial S}{\partial E}\right)_{V,N}(-E_s)+\cdots \)</span><span class="math notranslate nohighlight">\(
-Inserting above yields \)</span><span class="math notranslate nohighlight">\(\boxed{P(\nu_s)\propto \exp\left[\text{const.}-k_B^{-1}\left(\frac{\partial S_b}{\partial E}\right)_{V, N}E_s\right]\propto e^{-b E_s}\;,\qquad \text{where } b\equiv k_B^{-1}\left(\frac{\partial S_b}{\partial E}\right)_{V, N}\;.} \)</span>$</p>
+<p>Using the Boltzmann entropy, we can write $<span class="math notranslate nohighlight">\(P(\nu_s)\propto e^{k_\mathrm{B}^{-1}S_b(E-E_s)}.\)</span>$
+When the bath is very big (thermodynamic limit), we can Taylor expand the exponent,</p>
+<div class="math notranslate nohighlight">
+\[ S_s(E-E_s)=S_b(E)+\left(\frac{\partial S}{\partial E}\right)_{V,N}(-E_s)+\cdots \]</div>
+<p>Inserting above yields</p>
+<div class="math notranslate nohighlight">
+\[\boxed{P(\nu_s)\propto \exp\left[\text{const.}-k_B^{-1}\left(\frac{\partial S_b}{\partial E}\right)_{V, N}E_s\right]\propto e^{-b E_s}\;,\qquad \text{where } b\equiv k_B^{-1}\left(\frac{\partial S_b}{\partial E}\right)_{V, N}\;.} \]</div>
 <p>The factor <span class="math notranslate nohighlight">\(e^{-b E_s}\)</span> is the <strong>Boltzmann factor</strong>, if we identify <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\beta_b\equiv (k_\mathrm{B} T_b)^{-1}\)</span>.</p>
-<p>Thus, $<span class="math notranslate nohighlight">\(\beta_b\equiv \left(\frac{\partial \ln \Omega_b}{\partial E}\right)_{V, N}=\frac 1{k_\mathrm{B}} \left(\frac{\partial S_b}{\partial E}\right)_{V, N}.\)</span>$</p>
-<p>Equivalently, $<span class="math notranslate nohighlight">\(\boxed{T_b\equiv \left(\frac{\partial S_b}{\partial E}\right)_{V, N}^{-1}}\)</span>$ is the  <strong>thermodynamic definition</strong> of the temperature of the bath.</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[\beta_b\equiv \left(\frac{\partial \ln \Omega_b}{\partial E}\right)_{V, N}=\frac 1{k_\mathrm{B}} \left(\frac{\partial S_b}{\partial E}\right)_{V, N}.\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[\boxed{T_b\equiv \left(\frac{\partial S_b}{\partial E}\right)_{V, N}^{-1}}\]</div>
+<p>is the  <strong>thermodynamic definition</strong> of the temperature of the bath.</p>
 <p><strong>Implication: The ratio of probabilities of two microstates is given by the ratio of their Boltzmann factors</strong>
 $<span class="math notranslate nohighlight">\(\frac{P(\nu_s^{(1)})}{P(\nu_s^{(2)})}=e^{-\frac{E_s^{(2)}-E_s^{(1)}}{k_\mathrm{B} T_b}}=e^{-\frac{\Delta E}{k_\mathrm{B} T_b}}\)</span>$</p>
 <div class="alert alert-info">
