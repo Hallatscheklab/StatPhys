@@ -597,37 +597,37 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 </section>
 <section id="energy-exchange-canonical-ensemble">
 <h2>Energy exchange – canonical ensemble<a class="headerlink" href="#energy-exchange-canonical-ensemble" title="Permalink to this heading">#</a></h2>
-<p>Most soft matter systems are closed but not isolated - they trade energy and volume with the environment (a.k.a. <em>bath</em>, <em>sorroundings</em>). What can we say about <span class="math notranslate nohighlight">\(P(\nu_s)\)</span> in those cases?</p>
+<p>Most soft matter systems are closed but not isolated - they trade energy and volume with the environment (a.k.a. <em>reservoir</em>, <em>bath</em>, <em>sorroundings</em>). What can we say about <span class="math notranslate nohighlight">\(P(\nu_s)\)</span> in those cases?</p>
 <p>The combination of System (index s) and Bath (index b) forms an <em>isolated</em> system with fixed <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(N\)</span>. We can therefore apply our “Basic Principle” to conclude</p>
 <ul class="simple">
-<li><p>All states with <span class="math notranslate nohighlight">\(E_s+E_b=E\)</span> are equally likely.</p></li>
+<li><p>All states with <span class="math notranslate nohighlight">\(E_s+E_r=E\)</span> are equally likely.</p></li>
 <li><p>To reach a high energy state, s has to “steal” energy from b.
 What’s the probability <span class="math notranslate nohighlight">\(P(\nu_s)\)</span> of system state <span class="math notranslate nohighlight">\(\nu_s\)</span> irrespective of the state of the bath?</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[P(\nu_s)=\sum_{\nu_b} P(\nu_s,\nu_b)=\frac{\Omega_b(E-E_s)}{\Omega(E,V,N)}\]</div>
+\[P(\nu_s)=\sum_{\nu_r} P(\nu_s,\nu_r)=\frac{\Omega_r(E-E_s)}{\Omega(E,V,N)}\]</div>
 <div class="math notranslate nohighlight">
-\[\boxed{\rightarrow P(\nu_s)\propto \Omega_b(E-E_s)}\]</div>
+\[\boxed{\rightarrow P(\nu_s)\propto \Omega_r(E-E_s)}\]</div>
 <p>Note that <strong>the multiplicity of the bath alone controls the state of the system.</strong> I.e. the more states are available to the bath the more likely a given microstate of the system is. Energy exchange is important only in sofar as it modifies the number of states available to the bath and the system.</p>
 <p>The multiplicity of microstates grows exponentially with its parameters. This can be most easily demonstrated for particle numbers (see example below) but generally holds also for energy and volume. Therefore, it makes sense to introduce the logarithm of the multiplicity. That’s what Ludwig Boltzmann did by introducing what’s now called the <strong>Boltzmann entropy:</strong> $<span class="math notranslate nohighlight">\( S\equiv k_\mathrm{B} \ln \Omega \qquad k_\mathrm{B}=1.38064852 × 10^{-23} {\rm J/ K}.\)</span>$</p>
-<p>Using the Boltzmann entropy, we can write $<span class="math notranslate nohighlight">\(P(\nu_s)\propto e^{k_\mathrm{B}^{-1}S_b(E-E_s)}.\)</span>$
+<p>Using the Boltzmann entropy, we can write $<span class="math notranslate nohighlight">\(P(\nu_s)\propto e^{k_\mathrm{B}^{-1}S_r(E-E_s)}.\)</span>$
 When the bath is very big (thermodynamic limit), we can Taylor expand the exponent,</p>
 <div class="math notranslate nohighlight">
-\[ S_s(E-E_s)=S_b(E)+\left(\frac{\partial S}{\partial E}\right)_{V,N}(-E_s)+\cdots \]</div>
+\[ S_s(E-E_s)=S_r(E)+\left(\frac{\partial S}{\partial E}\right)_{V,N}(-E_s)+\cdots \]</div>
 <p>Inserting above yields</p>
 <div class="math notranslate nohighlight">
-\[\boxed{P(\nu_s)\propto \exp\left[\text{const.}-k_B^{-1}\left(\frac{\partial S_b}{\partial E}\right)_{V, N}E_s\right]\propto e^{-b E_s}\;,\qquad \text{where } b\equiv k_B^{-1}\left(\frac{\partial S_b}{\partial E}\right)_{V, N}\;.} \]</div>
-<p>The factor <span class="math notranslate nohighlight">\(e^{-b E_s}\)</span> is the <strong>Boltzmann factor</strong>, if we identify <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\beta_b\equiv (k_\mathrm{B} T_b)^{-1}\)</span>.</p>
+\[\boxed{P(\nu_s)\propto \exp\left[\text{const.}-k_B^{-1}\left(\frac{\partial S_r}{\partial E}\right)_{V, N}E_s\right]\propto e^{-b E_s}\;,\qquad \text{where } b\equiv k_B^{-1}\left(\frac{\partial S_r}{\partial E}\right)_{V, N}\;.} \]</div>
+<p>The factor <span class="math notranslate nohighlight">\(e^{-b E_s}\)</span> is the <strong>Boltzmann factor</strong>, if we identify <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(\beta_r\equiv (k_\mathrm{B} T_r)^{-1}\)</span>.</p>
 <p>Thus,</p>
 <div class="math notranslate nohighlight">
-\[\beta_b\equiv \left(\frac{\partial \ln \Omega_b}{\partial E}\right)_{V, N}=\frac 1{k_\mathrm{B}} \left(\frac{\partial S_b}{\partial E}\right)_{V, N}.\]</div>
+\[\beta_r\equiv \left(\frac{\partial \ln \Omega_r}{\partial E}\right)_{V, N}=\frac 1{k_\mathrm{B}} \left(\frac{\partial S_r}{\partial E}\right)_{V, N}.\]</div>
 <p>Equivalently,</p>
 <div class="math notranslate nohighlight">
-\[\boxed{T_b\equiv \left(\frac{\partial S_b}{\partial E}\right)_{V, N}^{-1}}\]</div>
+\[\boxed{T_r\equiv \left(\frac{\partial S_r}{\partial E}\right)_{V, N}^{-1}}\]</div>
 <p>is the  <strong>thermodynamic definition</strong> of the temperature of the bath.</p>
 <p><strong>Implication: The ratio of probabilities of two microstates is given by the ratio of their Boltzmann factors</strong></p>
 <div class="math notranslate nohighlight">
-\[\frac{P(\nu_s^{(1)})}{P(\nu_s^{(2)})}=e^{-\frac{E_s^{(2)}-E_s^{(1)}}{k_\mathrm{B} T_b}}=e^{-\frac{\Delta E}{k_\mathrm{B} T_b}}\]</div>
+\[\frac{P(\nu_s^{(1)})}{P(\nu_s^{(2)})}=e^{-\frac{E_s^{(2)}-E_s^{(1)}}{k_\mathrm{B} T_r}}=e^{-\frac{\Delta E}{k_\mathrm{B} T_r}}\]</div>
 <div class="alert alert-info">
 <p><strong>Example: Barometric height formula.</strong></p>
 <p>Consider a constant gravitational force <span class="math notranslate nohighlight">\(F=-mg\)</span> along the <span class="math notranslate nohighlight">\(z\)</span>-direction such that the potential energy is given by <span class="math notranslate nohighlight">\(E=mgz+E_0\)</span> where <span class="math notranslate nohighlight">\(E_0\)</span> is the energy at ground level. For simplicity, we set <span class="math notranslate nohighlight">\(E_0=0\)</span>.</p>
@@ -638,7 +638,7 @@ When the bath is very big (thermodynamic limit), we can Taylor expand the expone
 <div class="alert alert-info">
 <p><strong>Example: Two-level-system</strong></p>
 <p>As another frequent application of Boltzmann’s law are state populations of two state systems, as we find them frequently in physics, e.g., for spin systems. Such two level spin systems are, for example, very important for nuclear magnetic resonance (NMR), which is an important tool to study the structure and dynamics of soft matter.</p>
-<p><img alt="Two Level" src="img/two_level.png" /></p>
+<p><img alt="Two Level" src="_images/two_level.png" /></p>
 <p>Consider the image above, where a single energy level at zero magnetic field (<span class="math notranslate nohighlight">\(B=0\)</span>) splits into two energy levels due to the interaction of a proton spin (red arrow) with the external magnetic field.</p>
 <p>The magnetic moment of the proton spin may take two expectation values in the magnetic field, which are characterized by the magnetic quantum number <span class="math notranslate nohighlight">\(m_Z=\pm 1/2\)</span>. The magnetic moment projected along the magnetic field direction is then</p>
 <div class="math notranslate nohighlight">
