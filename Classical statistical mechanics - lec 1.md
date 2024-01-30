@@ -1,5 +1,7 @@
 Principles of classical statistical mechanics Vardar Ch. 4
 
+<img src="figures/thermalization-microcanonical.jpg" alt="drawing" width="200"/>
+
 Note: We skipped
 
 - Ch I an thermos: pare requisite - ch 3 on kin theory some of
