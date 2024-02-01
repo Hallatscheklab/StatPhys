@@ -1,12 +1,33 @@
-### Gibbs entropy / Partition Function / Free energy
 
-We alluded to intuition to argue that the Helmholtz free energy $F=E_{S}-T_{R} S_{S}$ is minimized in large systems. But in fact, we can easily show that $F$ is minimized even in small systems if we define the entropy as Gibbs entropy
+In large systems, the systems energy is strongly concentrated of
+
+(1) $\arg\max_{E_{S}} k_{\beta}^{-1} S_{S}\left(E_{S}\right)-\beta_{R S}=: E_{S}^{*}=\left\langle E_{S}\right\rangle=U$
+implying
+
+$$
+O=\left|D_{B E S}^{-1}\right|_{x}\left(E_{x}\right)-\beta_{R} \Rightarrow \underset{S}{T_{S}} \underset{\partial_{E} S_{S}^{-1}=T_{R}=\partial S_{E R}^{-1}}{\text { thermalication. }}
+$$
+
+Instead of (D), we can also say that
+
+Es minimizes
+
+$$
+F \equiv E_{S}-T_{R} S_{S} \text {. For energy. }
+$$
+
+- competition between energy and entropy of system 
+- Equivalently, competition between entropy of reservoir and entropy of system
+
+**It's all in the multiplicities**
+
+$F=E_{S}-T_{R} S_{S}$ is maximized even in small systems if we define the entropy as Gibbs entropy
 
 $$
 S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
 $$(Gibbs-Entropy)
 
-To that end, simply recall that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
+Recall that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
 
 $$
 \Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{: A}{T} \;,
@@ -15,7 +36,7 @@ $$
 where $T_{R}^{-1}$ is a Lagrange multiplier, only subject to the normalization constraint $\sum_i p_i=1$.
 
 
-##### So, let's compute the Gibbs entropy:
+#### So, let's compute the Gibbs entropy:
 Expression (Gibbs-Entropy) depends on the probability distribution over energies,
 
 $$

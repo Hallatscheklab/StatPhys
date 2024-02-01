@@ -9,5 +9,5 @@ chapters:
 - file: Shannon-entropy
 - file: Ensemble-Theory-1
 - file: Meaning-of-Equilibrium
-  sections:
-  - file: L5-ensemble-theory-II
+- file: L5-ensemble-theory-II
+- file: Spontaneous-Reactions
