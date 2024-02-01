@@ -417,32 +417,41 @@ document.write(`
   <section id="spontaneous-reactions">
 <h1>Spontaneous Reactions<a class="headerlink" href="#spontaneous-reactions" title="Permalink to this heading">#</a></h1>
 <p>A change in the macrostate of the system is said to happen spontaneously if we do not need to apply a (thermodynamic) driving force to induce the change. It is then clear that spontaneous reactions cannot increase the entropy of the world, <span class="math notranslate nohighlight">\(0\leq\Delta S_{\text{tot}},\)</span> which is one formulation fo the second law.</p>
-<p>The total entropy change can be decomposed into  entropy changes <span class="math notranslate nohighlight">\(\Delta S_S\)</span> and <span class="math notranslate nohighlight">\(\Delta S_R\)</span> of system and bath, respectively. For a large bath, we can Taylor expand the bath entropy change <span class="math notranslate nohighlight">\(\Delta S_R=\Delta E_R/T_R\)</span> in terms of the energy change <span class="math notranslate nohighlight">\(\Delta E_R\)</span> of the bath (just as we did to derive the Boltzmann factor). In terms of the the <em>heat</em> <span class="math notranslate nohighlight">\(Q\equiv-\Delta E_R\)</span> added to the system, we thus have
-$<span class="math notranslate nohighlight">\(0\leq\Delta S_{\text{tot}}=\Delta S_S+\Delta S_R=\Delta S_S-\frac{Q}{T_R}\)</span>$</p>
-<p>Thus, we obtain the <strong>Clausius inequality</strong>
-$<span class="math notranslate nohighlight">\(\boxed{\Delta S_S\geq\frac{Q}{T_R}}\)</span>$</p>
+<p>The total entropy change can be decomposed into  entropy changes <span class="math notranslate nohighlight">\(\Delta S_S\)</span> and <span class="math notranslate nohighlight">\(\Delta S_R\)</span> of system and bath, respectively. For a large bath, we can Taylor expand the bath entropy change <span class="math notranslate nohighlight">\(\Delta S_R=\Delta E_R/T_R\)</span> in terms of the energy change <span class="math notranslate nohighlight">\(\Delta E_R\)</span> of the bath (just as we did to derive the Boltzmann factor). In terms of the the <em>heat</em> <span class="math notranslate nohighlight">\(Q\equiv-\Delta E_R\)</span> added to the system, we thus have</p>
+<div class="math notranslate nohighlight">
+\[0\leq\Delta S_{\text{tot}}=\Delta S_S+\Delta S_R=\Delta S_S-\frac{Q}{T_R}\]</div>
+<p>Thus, we obtain the <strong>Clausius inequality</strong></p>
+<div class="math notranslate nohighlight">
+\[\boxed{\Delta S_S\geq\frac{Q}{T_R}}\]</div>
 <p>where the greater sign applies to <em>spontaneous</em> processes and the equal sign applies to <em>reversible</em> processes, which are the only ones that occur in equilibrium.</p>
-<p>Next, we invoke the first law of thermodynamics,
-$<span class="math notranslate nohighlight">\(U=Q-W \;.\)</span><span class="math notranslate nohighlight">\(
-Here we have, for the first time, introduced work \)</span>W<span class="math notranslate nohighlight">\(, which physcists define as *work done by the system* (Note, chemists define it as work done *on* the sytem). Imagine for instance, our system is a gas pressing against a piston. When the piston is allowed to move, the gas particles do \)</span>p dV$ work for us (consider “us” as being outside “system” and “bath”).</p>
+<p>Next, we invoke the first law of thermodynamics,</p>
+<div class="math notranslate nohighlight">
+\[U=Q-W \;.\]</div>
+<p>Here we have, for the first time, introduced work <span class="math notranslate nohighlight">\(W\)</span>, which physcists define as <em>work done by the system</em> (Note, chemists define it as work done <em>on</em> the sytem). Imagine for instance, our system is a gas pressing against a piston. When the piston is allowed to move, the gas particles do <span class="math notranslate nohighlight">\(p dV\)</span> work for us (consider “us” as being outside “system” and “bath”).</p>
 <p>Also a footnote about <span class="math notranslate nohighlight">\(U\)</span>: In the context of spontaneous processes, we define it as an ensemble average of the energy of the system. That ensemble average can have a time dependence if the system starts out of equilibrium and is allowed to relax. Example: Consider a bottle of initially cold water that we through into a hot tub. The temperature of the bottle will increase over time until the temperature of the bottle matches the temperature of the hot tub. The energy <span class="math notranslate nohighlight">\(E_S(t)\)</span>  of the bottle will generally increase towards the peak energy (from above), but the time series will show fluctuations: If we repeat the entire experiment, <span class="math notranslate nohighlight">\(E_S(t)\)</span> will look slightly different because  the fluctuations are different. But the ensemble average <span class="math notranslate nohighlight">\(U(t)\)</span> over (infinitely) many realizations of the non-equilibrium process will be a deterministic time-dependent function.</p>
-<p>Now, we consider <em>isothermal</em> reactions in which the temperature is held constant, i.e. <span class="math notranslate nohighlight">\(\Delta T=0\)</span>. Assuming no work done, <span class="math notranslate nohighlight">\(W=0\)</span>, the Clausius inequality implies $<span class="math notranslate nohighlight">\(\Delta U-T\Delta S_S\leq 0.\)</span>$</p>
-<p>Note that the RHS is equal to the change <span class="math notranslate nohighlight">\(\Delta A\)</span> of the free energy (only in this isothermal case!). Thus, in a spontaneous process, the change in free energy is never positive,
-$<span class="math notranslate nohighlight">\(\boxed{\Delta A\leq0\qquad\text{(isothermal processes)}.}\)</span>$</p>
-<p>If the system does work, the Clausius inequality gives us a bound on how much work we can get out of a process that involves change <span class="math notranslate nohighlight">\(\Delta A&lt;0\)</span> in  free energy, namely
-$<span class="math notranslate nohighlight">\(\boxed{W\leq-\Delta A\qquad\text{(isothermal processes)}.}\)</span>$</p>
+<p>Now, we consider <em>isothermal</em> reactions in which the temperature is held constant, i.e. <span class="math notranslate nohighlight">\(\Delta T=0\)</span>. Assuming no work done, <span class="math notranslate nohighlight">\(W=0\)</span>, the Clausius inequality implies</p>
+<div class="math notranslate nohighlight">
+\[\Delta U-T\Delta S_S\leq 0.\]</div>
+<p>Note that the RHS is equal to the change <span class="math notranslate nohighlight">\(\Delta F\)</span> of the free energy (only in this isothermal case!). Thus, in a spontaneous process, the change in free energy is never positive,</p>
+<div class="math notranslate nohighlight">
+\[\boxed{\Delta A\leq0\qquad\text{(isothermal processes)}.}\]</div>
+<p>If the system does work, the Clausius inequality gives us a bound on how much work we can get out of a process that involves change <span class="math notranslate nohighlight">\(\Delta F&lt;0\)</span> in  free energy, namely</p>
+<div class="math notranslate nohighlight">
+\[\boxed{W\leq-\Delta A\qquad\text{(isothermal processes)}.}\]</div>
 <div class="alert alert-warning">
 Summary:  
 <ul class="simple">
-<li><p>Spontaneous reactions reduce the free energy <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>Spontaneous reactions reduce the free energy <span class="math notranslate nohighlight">\(F\)</span>.</p></li>
 <li><p>In equilibrium, the free energy is minimal.</p></li>
 <li><p>The work done during a spontaeous process is less than the negative change in free energy</p></li>
 <li><p>The work done during a reversible process is equal to the negative change in free energy</p></li>
 </ul>
-</div><p>The above discussion also implies relationships between differentials for general reversible processes (not only isothermal ones):
-$<span class="math notranslate nohighlight">\( dA=dU-T dS -S dT=-dW -S dT\)</span><span class="math notranslate nohighlight">\(
-or
-\)</span><span class="math notranslate nohighlight">\( dU=T dS- dW\)</span>$</p>
+</div><p>The above discussion also implies relationships between differentials for general reversible processes (not only isothermal ones):</p>
+<div class="math notranslate nohighlight">
+\[ dF=dU-T dS -S dT=-dW -S dT\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[ dU=T dS- dW\]</div>
 <div class="alert alert-info">
 <p><strong>Example: ATP consumption</strong>
 Most cellular processes are powered by
