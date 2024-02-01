@@ -8,4 +8,6 @@ chapters:
 - file: Coin-flipping
 - file: Shannon-entropy
 - file: Ensemble-Theory-1
-- file: L5 ensemble theory II
+- file: Meaning-of-Equilibrium
+  sections:
+  - file: L5-ensemble-theory-II
