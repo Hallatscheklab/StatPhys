@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Meaning of equilibrium &#8212; Equilibrium Statistical Physics</title>
+    <title>So, let’s compute the Gibbs entropy: &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -64,9 +64,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Intro_to_Stat_Phys_2_OH';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'L5 ensemble theory II';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Classical statistical mechanics" href="Ensemble-Theory-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,13 +177,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="L5%20ensemble%20theory%20II.html">So, let’s compute the Gibbs entropy:</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">So, let’s compute the Gibbs entropy:</a></li>
 
 
 </ul>
@@ -231,37 +232,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/Intro_to_Stat_Phys_2_OH.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -287,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FIntro_to_Stat_Phys_2_OH.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FL5 ensemble theory II.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Intro_to_Stat_Phys_2_OH.ipynb" target="_blank"
+      <li><a href="_sources/L5 ensemble theory II.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -401,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Meaning of equilibrium</h1>
+    <h1>So, let’s compute the Gibbs entropy:</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,11 +381,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Meaning of equilibrium</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function">Partition function</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spontaneous-reactions">Spontaneous Reactions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">So, let’s compute the Gibbs entropy:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-partition-function">Properties of the Partition Function</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-n-particles-in-a-box">Applications: N particles in a box</a></li>
 </ul>
 
             </nav>
@@ -428,70 +396,175 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="meaning-of-equilibrium">
-<h1>Meaning of equilibrium<a class="headerlink" href="#meaning-of-equilibrium" title="Permalink to this heading">#</a></h1>
-<p>Since the Boltzmann factor <span class="math notranslate nohighlight">\(\exp(E_s/k_\mathrm{B}T_b)\)</span> strongly suppresses energies that are much larger than the thermal energy <span class="math notranslate nohighlight">\(k_\mathrm{B}T_b\)</span>, one would think that system states with energies larger than <span class="math notranslate nohighlight">\(k_\mathrm{B}T_b\)</span> almost never occur.</p>
-<p>No! Even if any particular high energy state occurs with very low (exponentially small) probability, it can be that we typically observe one of them if there are sufficiently many of them. What matters is not only the Boltzmann factor but also how many states the <em>system</em> has with a given energy.</p>
-<p>To mathematize this insight, we introduce the multiplicity <span class="math notranslate nohighlight">\(\Omega_s(E_s)\)</span> of the system at energy <span class="math notranslate nohighlight">\(E_s\)</span>. With that we can say that the probability to observe the system in a state with energy <span class="math notranslate nohighlight">\(E_s\)</span> is given by how many states with that energy exist times the probablity to observe one of them, i.e.,
-$<span class="math notranslate nohighlight">\(\boxed{P(E_s)\propto \Omega_s(E_s) \exp(-\beta_b E_s)}\)</span>$</p>
-<p>Usually there is a pronounced tradeoff between the two factors appearing in this equation. As the system energy increases, we gain a lot of new system states. But with increasing system energy, we also loose increasingly loose bath states, in fact at an exponential rate precisely given by the Boltzmann factor. The result is a pronounced peak of the product of both factors at a particular energy <span class="math notranslate nohighlight">\(U\)</span>. This typical situation is depicted below.</p>
-<p><img alt="equilibrium peak" src="img/equilibrium-peak.png" /></p>
-<p>In macroscopic systems, made up of O(Avogardo number) of particles, the peak becomes extremely sharp even in log space. In equilibrium, where our Basic Principle is satisfied, one therefore finds the system essentially deterministically at the energy <span class="math notranslate nohighlight">\(U\)</span> corresponding to the peak. That energy is called <em>internal</em> energy and can be found by maximizing the product of <span class="math notranslate nohighlight">\(\Omega_s\)</span> and the Boltzmann factor:</p>
+  <p>In large system, syatem ewergy is strougly concentrated of</p>
+<p>(1) <span class="math notranslate nohighlight">\(\arg\max_{E_{S}} k_{\beta}^{-1} S_{S}\left(E_{S}\right)-\beta_{R S}=: E_{S}^{*}=\left\langle E_{S}\right\rangle=U\)</span>
+implying</p>
 <div class="math notranslate nohighlight">
-\[0=\left.\frac{\partial\ln P}{\partial E_s}\right|_U=\left.\frac{\partial\ln\Omega_s}{\partial E_s}\right|_U-\beta_b=0\]</div>
-<p>The internal energy can therefore be found graphically by following the trajectory of <span class="math notranslate nohighlight">\(\ln \Omega_s\)</span>, which is concave (bending downward), until its slope equals <span class="math notranslate nohighlight">\(\beta_b\)</span>.</p>
-<p>In complete analagy to our definition of the temperature of the bath, <span class="math notranslate nohighlight">\(\beta_b\equiv \partial_E \ln\Omega_b\)</span>, we now introduce the temperature of the system via <span class="math notranslate nohighlight">\(\beta_s\equiv \partial_E \ln\Omega_s\)</span>. The above equation says that, at the peak, both temperatures have to be the same,
-$<span class="math notranslate nohighlight">\(\beta_s\equiv \left.\frac{\partial\ln\Omega_s}{\partial E_s}\right|_U=\beta_b \)</span>$</p>
-<p>To make sure that the peak is actually a peak, we have to demand that the second derivative of <span class="math notranslate nohighlight">\(\ln P\)</span> is negative or, equivalently, that <span class="math notranslate nohighlight">\(\partial_E^2\ln \Omega_s&lt;0\)</span>. This condition is automatically met if <span class="math notranslate nohighlight">\(\ln \Omega_s\)</span> is a <em>concave</em> function, as sketched in the figure above.</p>
-<p>To summarize: At equilibrium, large systems coupled to a bath are almost deterministically found at a particular energy, the internal energy, where the temperature of bath and system are equal.</p>
-<p>If a large system is intially out of equilibrium, say it has a larger or smaller energy than <span class="math notranslate nohighlight">\(U\)</span>, it will gradually move towards the internal energy as a result of its internal dynamics towards higher probability (towards the peak). This is indicated by the blue arrow in my sketch above, indicating that <em>spontaneous</em> reactions always proceed towards the peak. Any reaction going away from the peak, towards lower probability, requires some kind of work and would not happen by itself (more precisely, would occur only with very low probability).</p>
-<section id="partition-function">
-<h2>Partition function<a class="headerlink" href="#partition-function" title="Permalink to this heading">#</a></h2>
-<p>To fully determine the probability <span class="math notranslate nohighlight">\(P(E_s)\)</span> to observe our system at a given energy <span class="math notranslate nohighlight">\(E_s\)</span>,
-$<span class="math notranslate nohighlight">\(P(E_s)=\frac{\Omega_s(E_s)\exp(-\beta_b E_s)}{Z} \)</span><span class="math notranslate nohighlight">\(
-we still need to evaluate a normalization constant \)</span>Z<span class="math notranslate nohighlight">\(,
-\)</span><span class="math notranslate nohighlight">\(Z\equiv \int dE_s \Omega_s(E_s)\exp(-\beta_b E_s)\)</span>$.</p>
-<p>In large systems, the integral is dominated by the value of the integrand at the peak energy <span class="math notranslate nohighlight">\(U\)</span>,
-$<span class="math notranslate nohighlight">\(Z\approx \Omega_s(U) \exp(\beta_bU)\)</span>$</p>
-<p>We define the free energy <span class="math notranslate nohighlight">\(A\)</span> as
-$<span class="math notranslate nohighlight">\(A\equiv -k_\mathrm{B}\ln Z=-k_\mathrm{B}\ln \Omega_s(U)+U=U-TS_s\)</span>$</p>
-<p>In the next section, we will see that the free energy attains a minmum at equilbrium. The above expression shows that <span class="math notranslate nohighlight">\(A\)</span> can be lowered either by lowering the energy or by increasing the entropy. <strong>The tradeoff between lowering energy (more states for the environment) and increasing entropy (more states for the system) is a recurrent theme in statistical physics.</strong></p>
-</section>
-</section>
-<section id="spontaneous-reactions">
-<h1>Spontaneous Reactions<a class="headerlink" href="#spontaneous-reactions" title="Permalink to this heading">#</a></h1>
-<p>A change in the macrostate of the system is said to happen spontaneously if we do not need to apply a (thermodynamic) driving force to induce the change. It is then clear that spontaneous reactions cannot increase the entropy of the world, <span class="math notranslate nohighlight">\(0\leq\Delta S_{\text{tot}},\)</span> which is one formulation fo the second law.</p>
-<p>The total entropy change can be decomposed into  entropy changes <span class="math notranslate nohighlight">\(\Delta S_s\)</span> and <span class="math notranslate nohighlight">\(\Delta S_b\)</span> of system and bath, respectively. For a large bath, we can Taylor expand the bath entropy change <span class="math notranslate nohighlight">\(\Delta S_b=\Delta E_b/T_b\)</span> in terms of the energy change <span class="math notranslate nohighlight">\(\Delta E_b\)</span> of the bath (just as we did to derive the Boltzmann factor). In terms of the the <em>heat</em> <span class="math notranslate nohighlight">\(Q\equiv-\Delta E_b\)</span> added to the system, we thus have
-$<span class="math notranslate nohighlight">\(0\leq\Delta S_{\text{tot}}=\Delta S_s+\Delta S_b=\Delta S_s-\frac{Q}{T_b}\)</span>$</p>
-<p>Thus, we obtain the <strong>Clausius inequality</strong>
-$<span class="math notranslate nohighlight">\(\boxed{\Delta S_s\geq\frac{Q}{T_b}}\)</span>$</p>
-<p>where the greater sign applies to <em>spontaneous</em> processes and the equal sign applies to <em>reversible</em> processes, which are the only ones that occur in equilibrium.</p>
-<p>Next, we invoke the first law of thermodynamics,
-$<span class="math notranslate nohighlight">\(U=Q-W \;.\)</span><span class="math notranslate nohighlight">\(
-Here we have, for the first time, introduced work \)</span>W<span class="math notranslate nohighlight">\(, which physcists define as *work done by the system* (Note, chemists define it as work done *on* the sytem). Imagine for instance, our system is a gas pressing against a piston. When the piston is allowed to move, the gas particles do \)</span>p dV$ work for us (consider “us” as being outside “system” and “bath”).</p>
-<p>Also a footnote about <span class="math notranslate nohighlight">\(U\)</span>: In the context of spontaneous processes, we define it as an ensemble average of the energy of the system. That ensemble average can have a time dependence if the system starts out of equilibrium and is allowed to relax. Example: Consider a bottle of initially cold water that we through into a hot tub. The temperature of the bottle will increase over time until the temperature of the bottle matches the temperature of the hot tub. The energy <span class="math notranslate nohighlight">\(E_s(t)\)</span>  of the bottle will generally increase towards the peak energy (from above), but the time series will show fluctuations: If we repeat the entire experiment, <span class="math notranslate nohighlight">\(E_s(t)\)</span> will look slightly different because  the fluctuations are different. But the ensemble average <span class="math notranslate nohighlight">\(U(t)\)</span> over (infinitely) many realizations of the non-equilibrium process will be a deterministic time-dependent function.</p>
-<p>Now, we consider <em>isothermal</em> reactions in which the temperature is held constant, i.e. <span class="math notranslate nohighlight">\(\Delta T=0\)</span>. Assuming no work done, <span class="math notranslate nohighlight">\(W=0\)</span>, the Clausius inequality implies $<span class="math notranslate nohighlight">\(\Delta U-T\Delta S_s\leq 0.\)</span>$</p>
-<p>Note that the RHS is equal to the change <span class="math notranslate nohighlight">\(\Delta A\)</span> of the free energy (only in this isothermal case!). Thus, in a spontaneous process, the change in free energy is never positive,
-$<span class="math notranslate nohighlight">\(\boxed{\Delta A\leq0\qquad\text{(isothermal processes)}.}\)</span>$</p>
-<p>If the system does work, the Clausius inequality gives us a bound on how much work we can get out of a process that involves change <span class="math notranslate nohighlight">\(\Delta A&lt;0\)</span> in  free energy, namely
-$<span class="math notranslate nohighlight">\(\boxed{W\leq-\Delta A\qquad\text{(isothermal processes)}.}\)</span>$</p>
-<div class="alert alert-warning">
-Summary:  
+\[
+O=\left|D_{B E S}^{-1}\right|_{x}\left(E_{x}\right)-\beta_{R} \Rightarrow \underset{S}{T_{S}} \underset{\partial_{E} S_{S}^{-1}=T_{R}=\partial S_{E R}^{-1}}{\text { thermalication. }}
+\]</div>
+<p>Instead of (D), we can also say that</p>
+<p>Es minimizes</p>
+<div class="math notranslate nohighlight">
+\[
+F \equiv E_{S}-T_{R} S_{S} \text {. For energy. }
+\]</div>
 <ul class="simple">
-<li><p>Spontaneous reactions reduce the free energy <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
-<li><p>In equilibrium, the free energy is minimal.</p></li>
-<li><p>The work done during a spontaeous process is less than the negative change in free energy</p></li>
-<li><p>The work done during a reversible process is equal to the negative change in free energy</p></li>
+<li><p>competition between energy and entropy of system</p></li>
+<li><p>Equivalently, competition between entropy of reservoir and entropy of system</p></li>
 </ul>
-</div><p>The above discussion also implies relationships between differentials for general reversible processes (not only isothermal ones):
-$<span class="math notranslate nohighlight">\( dA=dU-T dS -S dT=-dW -S dT\)</span><span class="math notranslate nohighlight">\(
-or
-\)</span><span class="math notranslate nohighlight">\( dU=T dS- dW\)</span>$</p>
-<div class="alert alert-info">
-<p><strong>Example: ATP consumption</strong>
-Most cellular processes are powered by
-$<span class="math notranslate nohighlight">\(ATP\rightarrow ADP + P_i\)</span>$</p>
-</div></section>
+<p><strong>It’s all in the multiplicities</strong></p>
+<p><span class="math notranslate nohighlight">\(F=E_{S}-T_{R} S_{S}\)</span> is maximized even in small systems if we define the entropy as Gibbs entropy</p>
+<div class="math notranslate nohighlight" id="equation-gibbs-entropy">
+<span class="eqno">(3)<a class="headerlink" href="#equation-gibbs-entropy" title="Permalink to this equation">#</a></span>\[
+S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
+\]</div>
+<p>Recall that Boltzmann distribution is the maximum entropy distribution given the mean energy <span class="math notranslate nohighlight">\(\left\langle E_{S}\right\rangle\)</span>. Thus, Boltzmann distribution maximizes the function</p>
+<div class="math notranslate nohighlight">
+\[
+\Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{: A}{T} \;,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(T_{R}^{-1}\)</span> is a Lagrange multiplier, only subject to the normalization constraint <span class="math notranslate nohighlight">\(\sum_i p_i=1\)</span>.</p>
+<section id="so-let-s-compute-the-gibbs-entropy">
+<h1>So, let’s compute the Gibbs entropy:<a class="headerlink" href="#so-let-s-compute-the-gibbs-entropy" title="Permalink to this heading">#</a></h1>
+<p>Expression (Gibbs-Entropy) depends on the probability distribution over energies,</p>
+<div class="math notranslate nohighlight">
+\[
+P\left(E_{S}\right)=\frac{\Omega\left(E_{S}\right) e^{-\beta_{k} E_{S}}}{Z}\;,
+\]</div>
+<p>which consists of the Boltzmann factor, multiplicity of states $\Omega_S(E_S) and the normalization factor</p>
+<div class="math notranslate nohighlight">
+\[
+Z=\sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta_{R} E_{S}}\;,
+\]</div>
+<p>which is called the <strong>partition function</strong>.</p>
+<p>The Gibbs entropy thus evalutes to
+$<span class="math notranslate nohighlight">\(
+S_{S}=-k_{B}\langle\ln P\rangle=+\frac{E_{S}}{T_{R}}+k_{B} \ln (Z)
+\)</span>$</p>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\boxed{-k_{B} T \ln (Z)=E_{S}-T_{R} S_{S}=F(T,\mathbf{x})}\]</div>
+<p>The fact that the free energy is given by the log of the partition function explains why the partition function is such an important object.</p>
+<div class="admonition-quick-math-recap admonition">
+<p class="admonition-title">Quick Math Recap</p>
+<p>We will next discuss some mathematical properties of the partition function. As a warmup, let’s recall the definition of <em>moment generating function</em></p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{p}(t) \equiv \sum p(x) e^{t x} \;,
+\]</div>
+<p>which satisfies</p>
+<div class="math notranslate nohighlight">
+\[\left.\partial_{t}^{n} \tilde{p}(t)\right|_{t=0}=\left\langle x^{n}\right\rangle\]</div>
+<p>The Taylor expansion of the <em>cumulant generating function</em> <span class="math notranslate nohighlight">\(\ln \tilde p(t)\)</span> yields the connected moments <span class="math notranslate nohighlight">\(\langle \rangle_c\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\boxed{\left.\partial_{t}^{n} \ln\tilde{p}(t)\right|_{t=0}=\left\langle x^{n}\right\rangle_{\text{c}}} \qquad (*)\]</div>
+<p>which are also called cumulants in probability theory. The first cumulants are mean, variance, skew and curtosis. A Gaussian has an infinite series of moments, but only the first two cumulants are non-vanishing. That’s why cumulants are generally more useful than moments.</p>
+<div class="math notranslate nohighlight">
+\[\langle x\rangle_c=\text{mean}(x)=\langle x\rangle\]</div>
+<div class="math notranslate nohighlight">
+\[
+ \left\langle x^{2}\right\rangle_{c}=\operatorname{var}(x)=\left\langle x^{2}-(x)\right\rangle^{2} 
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(p(x)\)</span> is normalized, <span class="math notranslate nohighlight">\(\tilde{p}(0)=1\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \tilde{p}(t)=0+\langle x\rangle t+\frac{1}{2}\left\langle x^{2}\right\rangle_{c} t^{2}+\ldots
+\]</div>
+<p>If is not normalized, with <span class="math notranslate nohighlight">\( \sum_{x} p(x)=Z_0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\ln (\tilde{p}(t))=-\ln (Z_0)+\langle x\rangle_c t+\frac{1}{2}\langle x\rangle_{c}^{2} t^{2}+\ldots
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> <strong>(*) still holds!</strong></p>
+</div>
+</section>
+<section id="properties-of-the-partition-function">
+<h1>Properties of the Partition Function<a class="headerlink" href="#properties-of-the-partition-function" title="Permalink to this heading">#</a></h1>
+<p>The partition function</p>
+<div class="math notranslate nohighlight">
+\[
+Z(\beta) \equiv \sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta E_{S}}
+\]</div>
+<p>is a Laplace transform of <span class="math notranslate nohighlight">\(\Omega\left(E_{S}\right)\)</span>. Since Laplace transforms can be inverted, <span class="math notranslate nohighlight">\(Z\)</span> and <span class="math notranslate nohighlight">\(\Omega\)</span> contain the same information. Likewise, their logarithms, the free energy <span class="math notranslate nohighlight">\(F\)</span> and the entropy <span class="math notranslate nohighlight">\(S\)</span>, contain the same information.</p>
+<p>Moreover, <span class="math notranslate nohighlight">\(Z(\beta)\)</span> can be viewed as the unnormalized moment generating function of the microcanonical distribution (with <span class="math notranslate nohighlight">\(t=-\beta\)</span>). Therefore, we can obtain cumulants of the internal energy by taking derivatives of the log of <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\langle E\rangle =-\partial_\beta \ln(Z(\beta))\]</div>
+<p>Check:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+ &amp; -\partial_{\beta} \ln [Z(\beta)]=\frac{\partial_\beta Z(\beta)}{Z(\beta)}=\frac{\sum_{i}\left(-\partial_{\beta}\right) e^{-\beta E_{i}}}{Z(\beta)} \\
+= &amp; \frac{\sum_{i} E_{i} e^{-\beta E_{i}}}{\sum_{i} e^{-\beta E_{i}}}=\langle E\rangle
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{var}( E) =(-\partial_\beta)^2 \ln(Z(\beta))=-\partial_\beta \langle E\rangle=k_\text{B} T^2\frac{\partial\langle E\rangle}{\partial T}= k_\text{B} T^2 C_x\]</div>
+<p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(C_{x}=\frac{1}{k_{B} T^{2}}\left\langle\delta E^{2}\right\rangle\)</span>. This is our first encounter of a fluctuation-response relationship (also called fluctuation-dissipation relationship): Fluctuations quite generlly probe the system’s potential to (linearly) respond to external forces.</p></li>
+<li><p>These relationships are super useful for experiments: We can measure how a polymer responds to a pulling force just by watching the polymer fluctuate, importantly without applying any force ourselves.</p></li>
+<li><p>The ratio of mean squared energy fluctuations and mean internal energy quantifies the concentration of measure in the thermodynamic limit: <span class="math notranslate nohighlight">\(\frac{\left\langle \delta E^{2}\right\rangle}{\langle E\rangle}=\sqrt{k_{B} T^{2}} \frac{\sqrt{C_{x}}}{\langle E\rangle} \sim N^{-1 / 2} \)</span> because both <span class="math notranslate nohighlight">\(C_{x}\propto N\)</span> and <span class="math notranslate nohighlight">\(E\propto N\)</span> are extensive.</p></li>
+<li><p>The concentration of measure implies that canonical and microcanonical ensembles are equivalent in the thermodynamic limit. (But they are not equivalent for small systems!)</p></li>
+</ul>
+</section>
+<section id="applications-n-particles-in-a-box">
+<h1>Applications: N particles in a box<a class="headerlink" href="#applications-n-particles-in-a-box" title="Permalink to this heading">#</a></h1>
+<p>(i) <strong>Maxwell–Boltzmann distribution</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; H(\{q, q\})=\sum_{i} \frac{\vec{p}_{1}^{2}}{k m}+U(\{q\}) \\
+&amp; P(\{q, p\})=Z^{-1}\left(\prod_{i} e^{-\frac{\vec{p}_{i}^{2}}{2 m}}\right) e^{-\beta U(\xi q\}\}}
+\end{aligned}
+\end{split}\]</div>
+<p>Distribution over each <span class="math notranslate nohighlight">\(p_i\)</span> factorizes, with the marginal</p>
+<div class="math notranslate nohighlight">
+\[
+P\left(p_{i}\right)=\frac{e^{-\beta p_{i}^{2} / 2 m}}{\sqrt{2 \pi m / \beta}}
+\]</div>
+<p><strong>Ideal gas</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}U=\left\{\begin{array}{l}0, \text{if all }\vec{q}_{i} \in \text{box} \\ \infty, \text { otherwise. }\end{array}\right.\end{split}\]</div>
+<p>The partition function evaluates to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+Z &amp; =\int \frac{d \vec{p}_{i} d \vec{q}_{i}}{h N !} e^{-\beta p_{i}^{2} / 2 m-U} \\
+&amp; =\frac{1}{N !}\left(\frac{V}{\lambda^{3}}\right)^{N} 
+\end{aligned}
+\end{split}\]</div>
+<p>where we introduced the characteristic length scale</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda=\frac{h}{\sqrt{2 \pi m k_{\beta} T}}
+\]</div>
+<p>associated with Planck’s constant. Note that we introduced the factor <span class="math notranslate nohighlight">\(1/N!\)</span> accounting for the fact that <span class="math notranslate nohighlight">\(N!\)</span> configurations obtained by relabelling indices belong to the same microstate.</p>
+<p>The free energy <span class="math notranslate nohighlight">\(F=-k_\text{B}T \ln(Z)\)</span> is obtained from the log of the partition function,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \frac{F}{k_{B} T}=-N \ln \left(\frac{V}{\lambda^{3}}\right)+N(\ln N-1) \\
+&amp; =-N\left[\ln \left(\frac{V / N}{\lambda^{3}}\right)-1\right] \\
+&amp; \frac{F}{K_{B} T}=-N \ln \left(\frac{V e}{N \lambda^{3}}\right) . 
+\end{aligned}
+\end{split}\]</div>
+<p>Note that the free energy is extensive. If we hadn’t incorporated the combinatorial factor <span class="math notranslate nohighlight">\(1/N!\)</span>, we would have obtained a super-extensive free energy (scaling as <span class="math notranslate nohighlight">\(N\logN\)</span>).</p>
+<p>To obtain from the free energy all the usual ideal gas laws, we use
+$<span class="math notranslate nohighlight">\(
+&amp; d F=-S d T-\underbrace{-P d V+\mu d N .}_{J \cdot d x}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; P=\left.\frac{-\partial F}{\partial V}\right|_{T, N}=\frac{N k_{B} T}{V} \\
+&amp; \mu=\left.\frac{\partial F}{\partial N}\right|_{T, V}=\frac{F}{N}+k_{B} T= \\
+&amp; =k_{B} T \ln \left(\frac{N}{V} \lambda^{3}\right) \\
+&amp; -S=\left.\frac{\partial F}{\partial T}\right|_{V, N}=\frac{F}{T}-N k_{B} T \cdot \frac{3}{2} \frac{1}{T}= \\
+&amp; S=N k_{B} \ln \left(\frac{V}{N \lambda^{3}}\right)+\frac{5}{2} 
+\end{aligned}
+\end{split}\]</div>
+<p>where the expression for the ideal gas entropy is called Sackur-Tetrode formula.</p>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -523,6 +596,15 @@ $<span class="math notranslate nohighlight">\(ATP\rightarrow ADP + P_i\)</span>$
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Ensemble-Theory-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classical statistical mechanics</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -539,11 +621,9 @@ $<span class="math notranslate nohighlight">\(ATP\rightarrow ADP + P_i\)</span>$
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Meaning of equilibrium</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#partition-function">Partition function</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spontaneous-reactions">Spontaneous Reactions</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">So, let’s compute the Gibbs entropy:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-partition-function">Properties of the Partition Function</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-n-particles-in-a-box">Applications: N particles in a box</a></li>
 </ul>
 
   </nav></div>
