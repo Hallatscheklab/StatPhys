@@ -186,8 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Meaning of equilibrium</a></li>
 <li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Meaning of equilibrium</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 </ul>
 
     </div>
@@ -430,29 +429,32 @@ document.write(`
 <h1>Meaning of equilibrium<a class="headerlink" href="#meaning-of-equilibrium" title="Permalink to this heading">#</a></h1>
 <p>Since the Boltzmann factor <span class="math notranslate nohighlight">\(\exp(E_S/k_\mathrm{B}T_R)\)</span> strongly suppresses energies that are much larger than the thermal energy <span class="math notranslate nohighlight">\(k_\mathrm{B}T_R\)</span>, one would think that system states with energies larger than <span class="math notranslate nohighlight">\(k_\mathrm{B}T_R\)</span> almost never occur.</p>
 <p>No! Even if any particular high energy state occurs with very low (exponentially small) probability, it can be that we typically observe one of them if there are sufficiently many of them. What matters is not only the Boltzmann factor but also how many states the <em>system</em> has with a given energy.</p>
-<p>To mathematize this insight, we introduce the multiplicity <span class="math notranslate nohighlight">\(\Omega_S(E_S)\)</span> of the system at energy <span class="math notranslate nohighlight">\(E_S\)</span>. With that we can say that the probability to observe the system in a state with energy <span class="math notranslate nohighlight">\(E_S\)</span> is given by how many states with that energy exist times the probablity to observe one of them, i.e.,
-$<span class="math notranslate nohighlight">\(\boxed{P(E_S)\propto \Omega_S(E_S) \exp(-\beta_R E_S)}\)</span>$</p>
+<p>To mathematize this insight, we introduce the multiplicity <span class="math notranslate nohighlight">\(\Omega_S(E_S)\)</span> of the system at energy <span class="math notranslate nohighlight">\(E_S\)</span>. With that we can say that the probability to observe the system in a state with energy <span class="math notranslate nohighlight">\(E_S\)</span> is given by how many states with that energy exist times the probablity to observe one of them, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\boxed{P(E_S)\propto \Omega_S(E_S) \exp(-\beta_R E_S)}\]</div>
 <p>Usually there is a pronounced tradeoff between the two factors appearing in this equation. As the system energy increases, we gain a lot of new system states. But with increasing system energy, we also loose increasingly loose bath states, in fact at an exponential rate precisely given by the Boltzmann factor. The result is a pronounced peak of the product of both factors at a particular energy <span class="math notranslate nohighlight">\(U\)</span>. This typical situation is depicted below.</p>
 <p><img alt="equilibrium peak" src="img/equilibrium-peak.png" /></p>
 <p>In macroscopic systems, made up of O(Avogardo number) of particles, the peak becomes extremely sharp even in log space. In equilibrium, where our Basic Principle is satisfied, one therefore finds the system essentially deterministically at the energy <span class="math notranslate nohighlight">\(U\)</span> corresponding to the peak. That energy is called <em>internal</em> energy and can be found by maximizing the product of <span class="math notranslate nohighlight">\(\Omega_S\)</span> and the Boltzmann factor:</p>
 <div class="math notranslate nohighlight">
 \[0=\left.\frac{\partial\ln P}{\partial E_S}\right|_U=\left.\frac{\partial\ln\Omega_S}{\partial E_S}\right|_U-\beta_R=0\]</div>
 <p>The internal energy can therefore be found graphically by following the trajectory of <span class="math notranslate nohighlight">\(\ln \Omega_S\)</span>, which is concave (bending downward), until its slope equals <span class="math notranslate nohighlight">\(\beta_R\)</span>.</p>
-<p>In complete analagy to our definition of the temperature of the bath, <span class="math notranslate nohighlight">\(\beta_R\equiv \partial_E \ln\Omega_R\)</span>, we now introduce the temperature of the system via <span class="math notranslate nohighlight">\(\beta_S\equiv \partial_E \ln\Omega_S\)</span>. The above equation says that, at the peak, both temperatures have to be the same,
-$<span class="math notranslate nohighlight">\(\beta_S\equiv \left.\frac{\partial\ln\Omega_S}{\partial E_S}\right|_U=\beta_R \)</span>$</p>
+<p>In complete analagy to our definition of the temperature of the bath, <span class="math notranslate nohighlight">\(\beta_R\equiv \partial_E \ln\Omega_R\)</span>, we now introduce the temperature of the system via <span class="math notranslate nohighlight">\(\beta_S\equiv \partial_E \ln\Omega_S\)</span>. The above equation says that, at the peak, both temperatures have to be the same,</p>
+<div class="math notranslate nohighlight">
+\[\beta_S\equiv \left.\frac{\partial\ln\Omega_S}{\partial E_S}\right|_U=\beta_R \]</div>
 <p>To make sure that the peak is actually a peak, we have to demand that the second derivative of <span class="math notranslate nohighlight">\(\ln P\)</span> is negative or, equivalently, that <span class="math notranslate nohighlight">\(\partial_E^2\ln \Omega_S&lt;0\)</span>. This condition is automatically met if <span class="math notranslate nohighlight">\(\ln \Omega_S\)</span> is a <em>concave</em> function, as sketched in the figure above.</p>
 <p>To summarize: At equilibrium, large systems coupled to a bath are almost deterministically found at a particular energy, the internal energy, where the temperature of bath and system are equal.</p>
 <p>If a large system is intially out of equilibrium, say it has a larger or smaller energy than <span class="math notranslate nohighlight">\(U\)</span>, it will gradually move towards the internal energy as a result of its internal dynamics towards higher probability (towards the peak). This is indicated by the blue arrow in my sketch above, indicating that <em>spontaneous</em> reactions always proceed towards the peak. Any reaction going away from the peak, towards lower probability, requires some kind of work and would not happen by itself (more precisely, would occur only with very low probability).</p>
 <section id="partition-function">
 <h2>Partition function<a class="headerlink" href="#partition-function" title="Permalink to this heading">#</a></h2>
-<p>To fully determine the probability <span class="math notranslate nohighlight">\(P(E_S)\)</span> to observe our system at a given energy <span class="math notranslate nohighlight">\(E_S\)</span>,
-$<span class="math notranslate nohighlight">\(P(E_S)=\frac{\Omega_S(E_S)\exp(-\beta_R E_S)}{Z} \)</span><span class="math notranslate nohighlight">\(
-we still need to evaluate a normalization constant \)</span>Z<span class="math notranslate nohighlight">\(,
-\)</span><span class="math notranslate nohighlight">\(Z\equiv \int dE_S \Omega_S(E_S)\exp(-\beta_R E_S)\)</span>$.</p>
-<p>In large systems, the integral is dominated by the value of the integrand at the peak energy <span class="math notranslate nohighlight">\(U\)</span>,
-$<span class="math notranslate nohighlight">\(Z\approx \Omega_S(U) \exp(\beta_RU)\)</span>$</p>
-<p>We define the Helmholtz Free energy <span class="math notranslate nohighlight">\(F\)</span> as
-$<span class="math notranslate nohighlight">\(F\equiv -k_\mathrm{B}\ln Z=-k_\mathrm{B}\ln \Omega_S(U)+U=U-TS_S\)</span>$</p>
+<p>To fully determine the probability <span class="math notranslate nohighlight">\(P(E_S)\)</span> to observe our system at a given energy <span class="math notranslate nohighlight">\(E_S\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[P(E_S)=\frac{\Omega_S(E_S)\exp(-\beta_R E_S)}{Z} \]</div>
+<p>we still need to evaluate a normalization constant <span class="math notranslate nohighlight">\(Z\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}Z\equiv \int dE_S \Omega_S(E_S)\exp(-\beta_R E_S)$$.\\In large systems, the integral is dominated by the value of the integrand at the peak energy $U$,\\$$Z\approx \Omega_S(U) \exp(\beta_RU)\end{aligned}\end{align} \]</div>
+<p>We define the Helmholtz Free energy <span class="math notranslate nohighlight">\(F\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[F\equiv -k_\mathrm{B}\ln Z=-k_\mathrm{B}\ln \Omega_S(U)+U=U-TS_S\]</div>
 <p>In the next section, we will see that the free energy generally attains a minmum at equilbrium. The above expression shows that <span class="math notranslate nohighlight">\(F\)</span> can be lowered either by lowering the energy or by increasing the entropy. <strong>The tradeoff between lowering energy (more states for the environment) and increasing entropy (more states for the system) is a recurrent theme in statistical physics.</strong></p>
 </section>
 </section>
