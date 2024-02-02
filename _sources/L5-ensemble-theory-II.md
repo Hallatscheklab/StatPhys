@@ -170,20 +170,26 @@ $$
 \end{aligned}
 $$
 
-Note that the free energy is extensive. If we hadn't incorporated the combinatorial factor $1/N!$, we would have obtained a super-extensive free energy (scaling as $N\logN$). 
+Note that the free energy is extensive. If we hadn't incorporated the combinatorial factor $1/N!$, we would have obtained a super-extensive free energy (scaling as $N\log N$). 
 
 To obtain from the free energy all the usual ideal gas laws, we use
+
 $$
-& d F=-S d T-\underbrace{-P d V+\mu d N .}_{J \cdot d x}$$
+& d F=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.$$
 
 $$
 \begin{aligned}
 & P=\left.\frac{-\partial F}{\partial V}\right|_{T, N}=\frac{N k_{B} T}{V} \\
-& \mu=\left.\frac{\partial F}{\partial N}\right|_{T, V}=\frac{F}{N}+k_{B} T= \\
-& =k_{B} T \ln \left(\frac{N}{V} \lambda^{3}\right) \\
-& -S=\left.\frac{\partial F}{\partial T}\right|_{V, N}=\frac{F}{T}-N k_{B} T \cdot \frac{3}{2} \frac{1}{T}= \\
-& S=N k_{B} \ln \left(\frac{V}{N \lambda^{3}}\right)+\frac{5}{2} 
+& \mu=\left.\frac{\partial F}{\partial N}\right|_{T, V}=\frac{F}{N}+k_{B} T=k_{B} T \ln \left(\frac{N}{V} \lambda^{3}\right) \\
+& -S=\left.\frac{\partial F}{\partial T}\right|_{V, N}=\frac{F}{T}-N k_{B} T \cdot \frac{3}{2} \frac{1}{T} \\
+& \frac{S}{N k_{B}}= \ln \left(\frac{V}{N \lambda^{3}}\right)+\frac{5}{2} 
 \end{aligned}
 $$
 
-where the expression for the ideal gas entropy is called Sackur-Tetrode formula.
+where the expression for the ideal gas entropy is called Sackur-Tetrode formula. For this expression to be a good approximation, we have to require that the volume per particle is much larger than $\lambda^3$,
+
+$$ \frac{V}{N} \gg \lambda^3 \;.$$
+
+Multiple particles trying to occupy the same "voxel" $\lambda^3$ will interact quantum mechanically.  
+
+

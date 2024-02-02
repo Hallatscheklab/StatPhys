@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'L5-ensemble-theory-II';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Meaning of equilibrium" href="Spontaneous-Reactions.html" />
+    <link rel="next" title="Spontaneous Reactions" href="Spontaneous-Reactions.html" />
     <link rel="prev" title="Meaning of equilibrium" href="Meaning-of-Equilibrium.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,8 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Meaning of equilibrium</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 </ul>
 
     </div>
@@ -534,21 +533,24 @@ Z &amp; =\int \frac{d \vec{p}_{i} d \vec{q}_{i}}{h N !} e^{-\beta p_{i}^{2} / 2 
 &amp; \frac{F}{K_{B} T}=-N \ln \left(\frac{V e}{N \lambda^{3}}\right) . 
 \end{aligned}
 \end{split}\]</div>
-<p>Note that the free energy is extensive. If we hadn’t incorporated the combinatorial factor <span class="math notranslate nohighlight">\(1/N!\)</span>, we would have obtained a super-extensive free energy (scaling as <span class="math notranslate nohighlight">\(N\logN\)</span>).</p>
-<p>To obtain from the free energy all the usual ideal gas laws, we use
-$<span class="math notranslate nohighlight">\(
-&amp; d F=-S d T-\underbrace{-P d V+\mu d N .}_{J \cdot d x}\)</span>$</p>
+<p>Note that the free energy is extensive. If we hadn’t incorporated the combinatorial factor <span class="math notranslate nohighlight">\(1/N!\)</span>, we would have obtained a super-extensive free energy (scaling as <span class="math notranslate nohighlight">\(N\log N\)</span>).</p>
+<p>To obtain from the free energy all the usual ideal gas laws, we use</p>
+<div class="math notranslate nohighlight">
+\[
+&amp; d F=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
 &amp; P=\left.\frac{-\partial F}{\partial V}\right|_{T, N}=\frac{N k_{B} T}{V} \\
-&amp; \mu=\left.\frac{\partial F}{\partial N}\right|_{T, V}=\frac{F}{N}+k_{B} T= \\
-&amp; =k_{B} T \ln \left(\frac{N}{V} \lambda^{3}\right) \\
-&amp; -S=\left.\frac{\partial F}{\partial T}\right|_{V, N}=\frac{F}{T}-N k_{B} T \cdot \frac{3}{2} \frac{1}{T}= \\
-&amp; S=N k_{B} \ln \left(\frac{V}{N \lambda^{3}}\right)+\frac{5}{2} 
+&amp; \mu=\left.\frac{\partial F}{\partial N}\right|_{T, V}=\frac{F}{N}+k_{B} T=k_{B} T \ln \left(\frac{N}{V} \lambda^{3}\right) \\
+&amp; -S=\left.\frac{\partial F}{\partial T}\right|_{V, N}=\frac{F}{T}-N k_{B} T \cdot \frac{3}{2} \frac{1}{T} \\
+&amp; \frac{S}{N k_{B}}= \ln \left(\frac{V}{N \lambda^{3}}\right)+\frac{5}{2} 
 \end{aligned}
 \end{split}\]</div>
-<p>where the expression for the ideal gas entropy is called Sackur-Tetrode formula.</p>
+<p>where the expression for the ideal gas entropy is called Sackur-Tetrode formula. For this expression to be a good approximation, we have to require that the volume per particle is much larger than <span class="math notranslate nohighlight">\(\lambda^3\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \frac{V}{N} \gg \lambda^3 \;.\]</div>
+<p>Multiple particles trying to occupy the same “voxel” <span class="math notranslate nohighlight">\(\lambda^3\)</span> will interact quantum mechanically.</p>
 </section>
 </section>
 
@@ -596,7 +598,7 @@ $<span class="math notranslate nohighlight">\(
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Meaning of equilibrium</p>
+        <p class="prev-next-title">Spontaneous Reactions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
