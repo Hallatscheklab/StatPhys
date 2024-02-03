@@ -9,7 +9,7 @@ $$(Gibbs-Entropy)
 To that end, simply recall that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
 
 $$
-\Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{: A}{T} \;,
+\Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{F}{T} \;,
 $$
 
 where $T_{R}^{-1}$ is a Lagrange multiplier, only subject to the normalization constraint $\sum_i p_i=1$.
@@ -22,7 +22,7 @@ $$
 P\left(E_{S}\right)=\frac{\Omega\left(E_{S}\right) e^{-\beta_{k} E_{S}}}{Z}\;,
 $$
 
-which consists of the Boltzmann factor, multiplicity of states $\Omega_S(E_S) and the normalization factor 
+which consists of the Boltzmann factor, multiplicity of states $\Omega_S(E_S)$ and the normalization factor 
 
 $$
 Z=\sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta_{R} E_{S}}\;,
@@ -84,15 +84,15 @@ $\Rightarrow$ **(*) still holds!**
 
 #### Properties of the Partition Function
 
-The partition function 
+The first thing to note about the partition function 
 
 $$
 Z(\beta) \equiv \sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta E_{S}}
 $$
 
-is a Laplace transform of $\Omega\left(E_{S}\right)$. Since Laplace transforms can be inverted, $Z$ and $\Omega$ contain the same information. Likewise, their logarithms, the free energy $F$ and the entropy $S$, contain the same information.
+is that it is the [Laplace transform](https://en.wikipedia.org/wiki/Laplace_transform) of $\Omega\left(E_{S}\right)$. Since Laplace transforms can be inverted, $Z(\beta)$ and $\Omega(E)$ contain the same information. Likewise, their logarithms, the free energy $F$ and the entropy $S$, contain the same information.
 
-Moreover, $Z(\beta)$ can be viewed as the unnormalized moment generating function of the microcanonical distribution (with $t=-\beta$). Therefore, we can obtain cumulants of the internal energy by taking derivatives of the log of $Z$.
+Moreover, $Z(\beta)$ can be viewed as the unnormalized moment generating function of the microcanonical distribution (with $t=-\beta$). Therefore, we can obtain cumulants of the internal energy by taking derivatives of the log of $Z$ (see Quick Math Recap)
 
 $$\langle E\rangle =-\partial_\beta \ln(Z(\beta))$$
 
@@ -170,12 +170,12 @@ $$
 \end{aligned}
 $$
 
-Note that the free energy is extensive. If we hadn't incorporated the combinatorial factor $1/N!$, we would have obtained a super-extensive free energy (scaling as $N\log N$). 
+Note that the free energy is extensive. If we hadn't incorporated the combinatorial factor $1/N!$, we would have obtained a super-extensive free energy (scaling as $N\log N$). This non-extensivity of the naive free energy (without $N!$) is called the [Gibbs paradox](https://en.wikipedia.org/wiki/Gibbs_paradox).
 
 To obtain from the free energy all the usual ideal gas laws, we use
 
 $$
-& d F=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.$$
+& d F=d(E-TS)=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.$$
 
 $$
 \begin{aligned}
@@ -190,6 +190,8 @@ where the expression for the ideal gas entropy is called Sackur-Tetrode formula.
 
 $$ \frac{V}{N} \gg \lambda^3 \;.$$
 
-Multiple particles trying to occupy the same "voxel" $\lambda^3$ will interact quantum mechanically.  
+Multiple particles trying to occupy the same "voxel" $\lambda^3$ will interact quantum mechanically. The onset of quantum mechanical effects can be seen in a graph comparing the entropy of a classical, Bose and Fermi gas,
+
+![test](https://en.wikipedia.org/wiki/Sackur–Tetrode_equation#/media/File:Quantum_ideal_gas_entropy_3d.svg)
 
 
