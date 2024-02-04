@@ -175,7 +175,9 @@ Note that the free energy is extensive. If we hadn't incorporated the combinator
 To obtain from the free energy all the usual ideal gas laws, we use
 
 $$
-& d F=d(E-TS)=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.$$
+d F=d(E-TS)=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.
+$$
+
 
 $$
 \begin{aligned}
@@ -186,12 +188,12 @@ $$
 \end{aligned}
 $$
 
-where the expression for the ideal gas entropy is called Sackur-Tetrode formula. For this expression to be a good approximation, we have to require that the volume per particle is much larger than $\lambda^3$,
+where the expression for the ideal gas entropy is called [Sackur-Tetrode formula](https://en.wikipedia.org/wiki/Sackur–Tetrode_equation). For this expression to be a good approximation, we have to require that the volume per particle is much larger than $\lambda^3$,
 
 $$ \frac{V}{N} \gg \lambda^3 \;.$$
 
-Multiple particles trying to occupy the same "voxel" $\lambda^3$ will interact quantum mechanically. The onset of quantum mechanical effects can be seen in a graph comparing the entropy of a classical, Bose and Fermi gas,
+Multiple particles trying to occupy the same "voxel" $\lambda^3$ will interact quantum mechanically. The onset of quantum mechanical effects can be seen in a graph comparing the entropy of a classical, Bose and Fermi gas (Figure from Wikipedia)
 
-![test](https://en.wikipedia.org/wiki/Sackur–Tetrode_equation#/media/File:Quantum_ideal_gas_entropy_3d.svg)
+![test](figures/Quantum_ideal_gas_entropy_3d.svg)
 
-
+ 
