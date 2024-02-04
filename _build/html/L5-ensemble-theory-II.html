@@ -406,7 +406,7 @@ S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
 <p>To that end, simply recall that Boltzmann distribution is the maximum entropy distribution given the mean energy <span class="math notranslate nohighlight">\(\left\langle E_{S}\right\rangle\)</span>. Thus, Boltzmann distribution maximizes the function</p>
 <div class="math notranslate nohighlight">
 \[
-\Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{: A}{T} \;,
+\Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{F}{T} \;,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(T_{R}^{-1}\)</span> is a Lagrange multiplier, only subject to the normalization constraint <span class="math notranslate nohighlight">\(\sum_i p_i=1\)</span>.</p>
 <section id="so-let-s-compute-the-gibbs-entropy">
@@ -416,7 +416,7 @@ S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
 \[
 P\left(E_{S}\right)=\frac{\Omega\left(E_{S}\right) e^{-\beta_{k} E_{S}}}{Z}\;,
 \]</div>
-<p>which consists of the Boltzmann factor, multiplicity of states $\Omega_S(E_S) and the normalization factor</p>
+<p>which consists of the Boltzmann factor, multiplicity of states <span class="math notranslate nohighlight">\(\Omega_S(E_S)\)</span> and the normalization factor</p>
 <div class="math notranslate nohighlight">
 \[
 Z=\sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta_{R} E_{S}}\;,
@@ -465,13 +465,13 @@ S_{S}=-k_{B}\langle\ln P\rangle=+\frac{E_{S}}{T_{R}}+k_{B} \ln (Z)
 </section>
 <section id="properties-of-the-partition-function">
 <h2>Properties of the Partition Function<a class="headerlink" href="#properties-of-the-partition-function" title="Permalink to this heading">#</a></h2>
-<p>The partition function</p>
+<p>The first thing to note about the partition function</p>
 <div class="math notranslate nohighlight">
 \[
 Z(\beta) \equiv \sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta E_{S}}
 \]</div>
-<p>is a Laplace transform of <span class="math notranslate nohighlight">\(\Omega\left(E_{S}\right)\)</span>. Since Laplace transforms can be inverted, <span class="math notranslate nohighlight">\(Z\)</span> and <span class="math notranslate nohighlight">\(\Omega\)</span> contain the same information. Likewise, their logarithms, the free energy <span class="math notranslate nohighlight">\(F\)</span> and the entropy <span class="math notranslate nohighlight">\(S\)</span>, contain the same information.</p>
-<p>Moreover, <span class="math notranslate nohighlight">\(Z(\beta)\)</span> can be viewed as the unnormalized moment generating function of the microcanonical distribution (with <span class="math notranslate nohighlight">\(t=-\beta\)</span>). Therefore, we can obtain cumulants of the internal energy by taking derivatives of the log of <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<p>is that it is the <a class="reference external" href="https://en.wikipedia.org/wiki/Laplace_transform">Laplace transform</a> of <span class="math notranslate nohighlight">\(\Omega\left(E_{S}\right)\)</span>. Since Laplace transforms can be inverted, <span class="math notranslate nohighlight">\(Z(\beta)\)</span> and <span class="math notranslate nohighlight">\(\Omega(E)\)</span> contain the same information. Likewise, their logarithms, the free energy <span class="math notranslate nohighlight">\(F\)</span> and the entropy <span class="math notranslate nohighlight">\(S\)</span>, contain the same information.</p>
+<p>Moreover, <span class="math notranslate nohighlight">\(Z(\beta)\)</span> can be viewed as the unnormalized moment generating function of the microcanonical distribution (with <span class="math notranslate nohighlight">\(t=-\beta\)</span>). Therefore, we can obtain cumulants of the internal energy by taking derivatives of the log of <span class="math notranslate nohighlight">\(Z\)</span> (see Quick Math Recap)</p>
 <div class="math notranslate nohighlight">
 \[\langle E\rangle =-\partial_\beta \ln(Z(\beta))\]</div>
 <p>Check:</p>
@@ -533,11 +533,12 @@ Z &amp; =\int \frac{d \vec{p}_{i} d \vec{q}_{i}}{h N !} e^{-\beta p_{i}^{2} / 2 
 &amp; \frac{F}{K_{B} T}=-N \ln \left(\frac{V e}{N \lambda^{3}}\right) . 
 \end{aligned}
 \end{split}\]</div>
-<p>Note that the free energy is extensive. If we hadn’t incorporated the combinatorial factor <span class="math notranslate nohighlight">\(1/N!\)</span>, we would have obtained a super-extensive free energy (scaling as <span class="math notranslate nohighlight">\(N\log N\)</span>).</p>
+<p>Note that the free energy is extensive. If we hadn’t incorporated the combinatorial factor <span class="math notranslate nohighlight">\(1/N!\)</span>, we would have obtained a super-extensive free energy (scaling as <span class="math notranslate nohighlight">\(N\log N\)</span>). This non-extensivity of the naive free energy (without <span class="math notranslate nohighlight">\(N!\)</span>) is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Gibbs_paradox">Gibbs paradox</a>.</p>
 <p>To obtain from the free energy all the usual ideal gas laws, we use</p>
 <div class="math notranslate nohighlight">
 \[
-&amp; d F=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.\]</div>
+d F=d(E-TS)=-S d T-\underbrace{\mu d N -P d V}_{J \cdot d x}\;.
+\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -547,10 +548,11 @@ Z &amp; =\int \frac{d \vec{p}_{i} d \vec{q}_{i}}{h N !} e^{-\beta p_{i}^{2} / 2 
 &amp; \frac{S}{N k_{B}}= \ln \left(\frac{V}{N \lambda^{3}}\right)+\frac{5}{2} 
 \end{aligned}
 \end{split}\]</div>
-<p>where the expression for the ideal gas entropy is called Sackur-Tetrode formula. For this expression to be a good approximation, we have to require that the volume per particle is much larger than <span class="math notranslate nohighlight">\(\lambda^3\)</span>,</p>
+<p>where the expression for the ideal gas entropy is called <a class="reference external" href="https://en.wikipedia.org/wiki/Sackur%E2%80%93Tetrode_equation">Sackur-Tetrode formula</a>. For this expression to be a good approximation, we have to require that the volume per particle is much larger than <span class="math notranslate nohighlight">\(\lambda^3\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[ \frac{V}{N} \gg \lambda^3 \;.\]</div>
-<p>Multiple particles trying to occupy the same “voxel” <span class="math notranslate nohighlight">\(\lambda^3\)</span> will interact quantum mechanically.</p>
+<p>Multiple particles trying to occupy the same “voxel” <span class="math notranslate nohighlight">\(\lambda^3\)</span> will interact quantum mechanically. The onset of quantum mechanical effects can be seen in a graph comparing the entropy of a classical, Bose and Fermi gas (Figure from Wikipedia)</p>
+<p><img alt="test" src="_images/Quantum_ideal_gas_entropy_3d.svg" /></p>
 </section>
 </section>
 
