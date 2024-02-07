@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Gibbs_Distribution';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Equipartition" href="Equipartition-Mesostates.html" />
-    <link rel="prev" title="Meaning of equilibrium" href="Meaning-of-Equilibrium.html" />
+    <link rel="next" title="Spontaneous Reactions" href="Spontaneous-Reactions.html" />
+    <link rel="prev" title="Gibbs entropy / Partition Function / Free energy" href="L5-ensemble-theory-II.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,10 +185,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Particle exchange and chemical potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Equipartition-Mesostates.html">Equipartition</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Particle exchange and chemical potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 </ul>
 
@@ -432,36 +432,47 @@ document.write(`
 <h1>Particle exchange and chemical potential<a class="headerlink" href="#particle-exchange-and-chemical-potential" title="Permalink to this heading">#</a></h1>
 <p>So far, we have considered closed systems and derived and studied the Boltzmann distribution.  Now our systems are open and the particle number might change. To derive the microstate probability distribution, we retrace the steps that led us to the Boltzmann distribution, except for allowing the system to trade particles with the bath.</p>
 <div>
-<img src="img/open_system.png" width="300"/>
-</div><p>The probability to find a system in a given microstate <span class="math notranslate nohighlight">\(\nu_s\)</span>, in which the system has energy <span class="math notranslate nohighlight">\(E_\mathrm{s}\)</span> and  <span class="math notranslate nohighlight">\(N_\mathrm{s}\)</span> particeles, is proportional to the number of available bath states,
-$<span class="math notranslate nohighlight">\(P(\nu_s)\propto e^{k_\mathrm{B}^{-1}S_b(E-E_s,N-N_s)}\;.\)</span><span class="math notranslate nohighlight">\(
-Next we Taylor expand the entropy of the large bath,
-\)</span><span class="math notranslate nohighlight">\(k_\mathrm{B}^{-1}S_b(E-E_s,N-N_s)=\mathrm{const.}-\beta_b(E_s-\mu_b N_s)\;,\)</span><span class="math notranslate nohighlight">\(
-where we have the usual thermodynamic definition of temperature
-\)</span><span class="math notranslate nohighlight">\(T_b^{-1}\equiv\frac{\partial S_b}{\partial E}\)</span><span class="math notranslate nohighlight">\(
-and introduced the **chemical potential**
-\)</span><span class="math notranslate nohighlight">\(\mu_b\equiv-T_b \frac{\partial S_b}{\partial N}\;.\)</span>$
-The chemical potential can be interpreted as the free energy added to the system when we inject one particle into the system.</p>
-<p>With these definitions, we obtain the <strong>Gibbs distribution</strong>
-$<span class="math notranslate nohighlight">\(P(\nu_s)=Z^{-1}e^{-\beta_b\left[E_s-\mu_b N_s\right]}\)</span><span class="math notranslate nohighlight">\(
-where the grand canonical partition function \)</span>Z<span class="math notranslate nohighlight">\( is given by the sum
-\)</span><span class="math notranslate nohighlight">\(Z=\sum_i e^{-\beta_b\left[E_s^{(i)}-\mu_b N_s^{(i)}\right]}\)</span><span class="math notranslate nohighlight">\(
-over all microstates \)</span>i$.</p>
-<p>To obtain the probability to find the system in <em>any one</em> of the states with energy <span class="math notranslate nohighlight">\(E_s\)</span> and particle number <span class="math notranslate nohighlight">\(N_s\)</span>, we have to multiply the Gibbs distribution with the multiplicity of system states,
-$<span class="math notranslate nohighlight">\(P(E_s,N_s)\propto e^{k_\mathrm{B}^{-1}S_s(E_s,N_s)}e^{-\beta_b\left[E_s-\mu_b N_s\right]}\;.\)</span><span class="math notranslate nohighlight">\(
-If the system is large, this distribution has a pronounced peak, such that the system will have an almost deterministic energy \)</span>U<span class="math notranslate nohighlight">\( and particle number \)</span>N<span class="math notranslate nohighlight">\(. The conditions for the maximum imply 
-\)</span><span class="math notranslate nohighlight">\(T_b=T_s\qquad \mu_b=\mu_s\;.\)</span>$
-Thus, temperatures and chemical potentials of bath and system are equal at equilibrium.</p>
-<p>Consideration of spontaneous processes shows that the equilibrium minimizes the grand potential
-$<span class="math notranslate nohighlight">\(\Sigma=-k_\mathrm{B}T\ln Z=U-T S- \mu N.\)</span>$</p>
+<img src="figures/open_system.png" width="300"/>
+</div><p>The probability to find a system in a given microstate <span class="math notranslate nohighlight">\(\nu_S\)</span>, in which the system has energy <span class="math notranslate nohighlight">\(E_S\)</span> and  <span class="math notranslate nohighlight">\(N_S\)</span> particeles, is proportional to the number of available bath states,</p>
+<div class="math notranslate nohighlight">
+\[P(\nu_S)\propto e^{k_\mathrm{B}^{-1}S_R(E-E_S,N-N_S)}\;.\]</div>
+<p>Next we Taylor expand the entropy of the large reservoir,</p>
+<div class="math notranslate nohighlight">
+\[k_\mathrm{B}^{-1}S_R(E-E_S,N-N_S)=\mathrm{const.}-\beta_R(E_S-\mu_R N_S)\;,\]</div>
+<p>where we have the usual thermodynamic definition of temperature</p>
+<div class="math notranslate nohighlight">
+\[T_R^{-1}\equiv\frac{\partial S_R}{\partial E}\]</div>
+<p>and introduced the <strong>chemical potential</strong></p>
+<div class="math notranslate nohighlight">
+\[\mu_R\equiv-T_R \frac{\partial S_R}{\partial N}\;.\]</div>
+<p>The chemical potential can be interpreted as the free energy added to the system when we inject one particle into the system.</p>
+<p>With these definitions, we obtain the Gibbs distribution</p>
+<div class="math notranslate nohighlight">
+\[P(\nu_S)=Z^{-1}e^{-\beta_R\left[E_S-\mu_R N_S\right]}\]</div>
+<p>where the grand canonical partition function <span class="math notranslate nohighlight">\(Z\)</span> is given by the sum</p>
+<div class="math notranslate nohighlight">
+\[Z=\sum_i e^{-\beta_R\left[E_S^{(i)}-\mu_R N_S^{(i)}\right]}\]</div>
+<p>over all microstates <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>To obtain the probability to find the system in <em>any one</em> of the states with energy <span class="math notranslate nohighlight">\(E_S\)</span> and particle number <span class="math notranslate nohighlight">\(N_S\)</span>, we have to multiply the Gibbs distribution with the multiplicity of system states,</p>
+<div class="math notranslate nohighlight">
+\[P(E_S,N_S)\propto e^{k_\mathrm{B}^{-1}S_S(E_S,N_S)}e^{-\beta_R\left[E_S-\mu_R N_S\right]}\;.\]</div>
+<p>If the system is large, this distribution has a pronounced peak, such that the system will have an almost deterministic energy <span class="math notranslate nohighlight">\(U\)</span> and particle number <span class="math notranslate nohighlight">\(N\)</span>. The conditions for the maximum imply</p>
+<div class="math notranslate nohighlight">
+\[T_R=T_S\qquad \mu_R=\mu_S\;.\]</div>
+<p>Thus, temperatures and chemical potentials of bath and system are equal at equilibrium.</p>
+<p>Consideration of spontaneous processes shows that the equilibrium minimizes the grand potential</p>
+<div class="math notranslate nohighlight">
+\[\Sigma=-k_\mathrm{B}T\ln Z=U-T S- \mu N.\]</div>
 <section id="volume-exchange-and-pressure">
 <h2>Volume exchange and pressure<a class="headerlink" href="#volume-exchange-and-pressure" title="Permalink to this heading">#</a></h2>
-<p>In complete analogy, we can also treat the case where bath and system trade energy and volume, which we briefly summarize for completeness. One obtains the microstate distribution
-$<span class="math notranslate nohighlight">\(P(\nu_s)\propto e^{-\beta_b\left[E_s+p_b dV_s\right]}\)</span><span class="math notranslate nohighlight">\(
-with the equilibrium condition of equal pressures \)</span>p_b=p_s$.</p>
-<p>Consideration of spontaneous processes shows that the equilibrium minimizes the Gibbs free energy
-$<span class="math notranslate nohighlight">\(G=U-T S+PV=\sum_i \mu_i N_i \;,\)</span><span class="math notranslate nohighlight">\(
-where the last sum goes over all particle species \)</span>i$.</p>
+<p>In complete analogy, we can also treat the case where bath and system trade energy and volume, which we briefly summarize for completeness. One obtains the microstate distribution</p>
+<div class="math notranslate nohighlight">
+\[P(\nu_S)\propto e^{-\beta_R\left[E_S+p_R dV_S\right]}\]</div>
+<p>with the equilibrium condition of equal pressures <span class="math notranslate nohighlight">\(p_R=p_S\)</span>.</p>
+<p>The equilibrium distribution minimizes the Gibbs free energy</p>
+<div class="math notranslate nohighlight">
+\[G=U-T S+PV=\sum_i \mu_i N_i \;,\]</div>
+<p>where the last sum goes over all particle species <span class="math notranslate nohighlight">\(i\)</span>.</p>
 </section>
 </section>
 
@@ -496,20 +507,20 @@ where the last sum goes over all particle species \)</span>i$.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Meaning-of-Equilibrium.html"
+       href="L5-ensemble-theory-II.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Meaning of equilibrium</p>
+        <p class="prev-next-title">Gibbs entropy / Partition Function / Free energy</p>
       </div>
     </a>
     <a class="right-next"
-       href="Equipartition-Mesostates.html"
+       href="Spontaneous-Reactions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Equipartition</p>
+        <p class="prev-next-title">Spontaneous Reactions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

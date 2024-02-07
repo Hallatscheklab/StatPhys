@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Meaning-of-Equilibrium';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Particle exchange and chemical potential" href="Gibbs_Distribution.html" />
+    <link rel="next" title="Equipartition" href="Equipartition-Mesostates.html" />
     <link rel="prev" title="Classical statistical mechanics" href="Ensemble-Theory-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,10 +185,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Meaning of equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Particle exchange and chemical potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Equipartition-Mesostates.html">Equipartition</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Particle exchange and chemical potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 </ul>
 
@@ -436,7 +436,8 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\boxed{P(E_S)\propto \Omega_S(E_S) \exp(-\beta_R E_S)}\]</div>
 <p>Usually there is a pronounced tradeoff between the two factors appearing in this equation. As the system energy increases, we gain a lot of new system states. But with increasing system energy, we also loose increasingly loose bath states, in fact at an exponential rate precisely given by the Boltzmann factor. The result is a pronounced peak of the product of both factors at a particular energy <span class="math notranslate nohighlight">\(U\)</span>. This typical situation is depicted below.</p>
-<img src="figures/equilibrium-peak.png" alt="drawing" width="600"/><p>In macroscopic systems, made up of O(Avogardo number) of particles, the peak becomes extremely sharp even in log space. In equilibrium, where our Basic Principle is satisfied, one therefore finds the system essentially deterministically at the energy <span class="math notranslate nohighlight">\(U\)</span> corresponding to the peak. That energy is called <em>internal</em> energy and can be found by maximizing the product of <span class="math notranslate nohighlight">\(\Omega_S\)</span> and the Boltzmann factor:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/equilibrium-peak.png"><img alt="fishy" class="bg-primary mb-1 align-center" src="_images/equilibrium-peak.png" style="width: 400px;" /></a>
+<p>In macroscopic systems, made up of O(Avogardo number) of particles, the peak becomes extremely sharp even in log space. In equilibrium, where our Basic Principle is satisfied, one therefore finds the system essentially deterministically at the energy <span class="math notranslate nohighlight">\(U\)</span> corresponding to the peak. That energy is called <em>internal</em> energy and can be found by maximizing the product of <span class="math notranslate nohighlight">\(\Omega_S\)</span> and the Boltzmann factor:</p>
 <div class="math notranslate nohighlight">
 \[0=\left.\frac{\partial\ln P}{\partial E_S}\right|_U=\left.\frac{\partial\ln\Omega_S}{\partial E_S}\right|_U-\beta_R=0\]</div>
 <p>The internal energy can therefore be found graphically by following the trajectory of <span class="math notranslate nohighlight">\(\ln \Omega_S\)</span>, which is concave (bending downward), until its slope equals <span class="math notranslate nohighlight">\(\beta_R\)</span>.</p>
@@ -501,11 +502,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Gibbs_Distribution.html"
+       href="Equipartition-Mesostates.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Particle exchange and chemical potential</p>
+        <p class="prev-next-title">Equipartition</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
