@@ -139,9 +139,3 @@ $$
 $$
 
 
-$$
-d E=\left.\frac{\partial E}{\partial \lambda}\right|_{x} d \lambda+\left.\frac{\partial E}{\partial x}\right|_{\lambda} \cdot d x
-$$
-
-internal state
-
