@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
+    <title>Non-equilibrium fluctuation theorems &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -64,9 +64,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Classical statistical mechanics - lec 1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Crooks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Spontaneous Reactions" href="Spontaneous-Reactions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
@@ -188,6 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Particle exchange and chemical potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Non-equilibrium fluctuation theorems</a></li>
 </ul>
 
     </div>
@@ -259,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FClassical statistical mechanics - lec 1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FCrooks.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Classical statistical mechanics - lec 1.md" target="_blank"
+      <li><a href="_sources/Crooks.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Non-equilibrium fluctuation theorems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,9 +384,10 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-reversibility">Time reversibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-concrete-setup">A concrete setup</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -395,192 +398,120 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Principles of classical statistical mechanics Vardar Ch. 4</p>
-<img src="figures/thermalization-microcanonical.jpg" alt="drawing" width="200"/>
-<p>Note: We skipped</p>
-<ul class="simple">
-<li><p>Ch I an thermos: pare requisite - ch 3 on kin theory some of
-this comes later</p></li>
-</ul>
-<p>Today: - Max Ext principle in stat mech.</p>
-<ul class="simple">
-<li><p>thermal “equilibrium”</p></li>
-</ul>
-<p><span class="math notranslate nohighlight">\(\sigma \frac{1}{T} \equiv \frac{\partial S}{\partial E}\)</span></p>
-<ul class="simple">
-<li><p>spotaneons reactions</p></li>
-<li><p>gen. coordinates and work</p></li>
-</ul>
-<p>Classical Statistical Mechanics</p>
-<p>equilibrium</p>
-<ul class="simple">
-<li><p>Basic principle: Jun an isolated system, all allowed (sec” érgaokicity hypothesis” “n Wiki”</p></li>
-</ul>
-<p>microstates are equally likely.</p>
+  <section id="non-equilibrium-fluctuation-theorems">
+<h1>Non-equilibrium fluctuation theorems<a class="headerlink" href="#non-equilibrium-fluctuation-theorems" title="Permalink to this heading">#</a></h1>
+<p>Statistical physics is a powerful framework to deduce general statements about the dynamics at or near equilibrium. However, for a long time, it was believed that no general statements can be made about far from equilibrium dynamics. This changed in the early 2000s with the discovery of non-equilibrium fluctuation theorems. We discuss the two best-known theorems, the Crooks and Jarzynski theorems.</p>
+<p>We have seen: In the thermodynamic limit, the work done on a system during an isothermal process always exceeds the change in free energy, <span class="math notranslate nohighlight">\(W\geq\Delta F.\)</span></p>
+<p>Jarzynski showed that this statement can be generalized to the equality</p>
 <div class="math notranslate nohighlight">
 \[
-\leftrightarrow \text { Max EnTropy! }
+\langle e^{-\beta W}\rangle= e^{-\beta \Delta F} \qquad\text{(Jarzynski 1998)}
 \]</div>
-<p><span class="math notranslate nohighlight">\(\left(\vec{q}_{1}, \ldots \vec{a}_{N}\right)\)</span></p>
-<p>Let <span class="math notranslate nohighlight">\(\mu=\{q, p\}\)</span> a point in <span class="math notranslate nohighlight">\(6 \mathrm{ND}\)</span> dim. ph. space: <span class="math notranslate nohighlight">\(\left(\vec{p}_{1}, \ldots p_{N}\right)\)</span></p>
+<p>To interpret this equation, we need to clarify the transformation process: Consider a system with an external control parameter, <span class="math notranslate nohighlight">\(\lambda\)</span>, such as the volume of a container or the length of a polymer. We assume at time <span class="math notranslate nohighlight">\(0\)</span>, the system is equilibrated with <span class="math notranslate nohighlight">\(\lambda=\lambda_i\)</span>. Then the system is driven out of equilbrium following a particular finite time protocol <span class="math notranslate nohighlight">\(\Lambda=\{\lambda(t)\}\)</span> until the final value <span class="math notranslate nohighlight">\(\lambda(T)=\lambda_f\)</span> is reached. The total work <span class="math notranslate nohighlight">\(W\)</span> done on the system during this process will be a random variable. It is different each time we rerun this process. The average on the left hand side is an average over many realizations of the above transformation.</p>
+<p>The free energy difference <span class="math notranslate nohighlight">\(\Delta F\)</span> on the right hand side is the difference between the free energy of the system for the initial and final parameters, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[
-P_{E}(\mu) d \mu \equiv \frac{1}{\Omega(E)} \delta(E-H(\mu)) d \mu
+\Delta F = F(T, \lambda_f)-F(T, \lambda_i)
 \]</div>
-<p>micro-canouical ensemble</p>
-<p>where <span class="math notranslate nohighlight">\(\Omega(E) \equiv \int d \mu \delta(E-H(\mu))\)</span> is the density of microstates consistent with <span class="math notranslate nohighlight">\(H=E\)</span>
-<span class="math notranslate nohighlight">\(\left(&quot; D .0 . S^e{\text {s }}\right.\)</span> )</p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_01_25_3ad16b5e2e3cbc7435eag-02.jpg?height=445&amp;width=380&amp;top_left_y=2264&amp;top_left_x=312" /></p>
-<p>insulation</p>
-<p>N.B.: - if states are discrete, esq. for Is ing spins <span class="math notranslate nohighlight">\(\sigma_{i}= \pm 1, \int d \mu \rightarrow \sum_{\mu}\)</span></p>
+<p>Note that if the transformation protocol <span class="math notranslate nohighlight">\(\Lambda\)</span> is short, the system will go through a dynamics very far from equilibrium and be at a state far from equilibrium at time <span class="math notranslate nohighlight">\(T\)</span>. Yet, the Jarzynski equation relates the ensuing work to the equilibrium quantity <span class="math notranslate nohighlight">\(\Delta F\)</span>, which is why this equation was so surprising.</p>
+<p>In the original publication, Jarzynksi derived his equation from Hamiltonian dynamics. We will take a different route, and show that the coarse-grained stochastic dynamics of a microscopically reversible equations of motions satisfies Crook’s theorem, from which the Jarzynski theorem follows easily.</p>
+<section id="time-reversibility">
+<h2>Time reversibility<a class="headerlink" href="#time-reversibility" title="Permalink to this heading">#</a></h2>
+<p>The crux of the Crooks theorem is that microscopic laws are time reversible. In a stochastic description of the dynamcis, this implies that, in equilibrium, <span class="math notranslate nohighlight">\(A \rightarrow B\)</span> occur at the same rate as <span class="math notranslate nohighlight">\(B \rightarrow A\)</span> transitions. Or in terms of probabilities, we must have the detailed balance condition,</p>
 <div class="math notranslate nohighlight">
 \[
-\delta(E-H(u)) \rightarrow \delta_{E_{1} H}
+p(A \rightarrow B)=p(B \rightarrow A) \qquad \text{(detailed balance)}
 \]</div>
-<ul class="simple">
-<li><p>Postulate implies</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\langle f\rangle_{E} &amp; =\lim _{T \rightarrow \infty} \frac{1}{T} \int_{0}^{T} f(\mu(t)) d t \\
-&amp; =\int d \mu P_{E}(\mu) f(\mu) .
-\end{aligned}
-\end{split}\]</div>
-<p>Longtime average <span class="math notranslate nohighlight">\(\rightarrow\)</span> ensemble</p>
-<p>The celebrated ergadicity theorem explains why ( <span class="math notranslate nohighlight">\(x\)</span> ) is to be expected for Hamiltonian dynamics. (later)</p>
-<p>But we can also argue for (*) to be the most un biased (Max End) dist. subject to <span class="math notranslate nohighlight">\(H=E=\)</span> canst</p>
-<p>Recall: entropy of a prob. dist: is <span class="math notranslate nohighlight">\(S=-\sum_{i} P_{i} \ln \left(P_{i}\right)\)</span>, which is maximized for <span class="math notranslate nohighlight">\(P_{i}=\)</span> canst <span class="math notranslate nohighlight">\(=\frac{1}{\Omega(E)}\)</span> In that case, <span class="math notranslate nohighlight">\(S=\ln (\Omega)\)</span>.</p>
-<p>Historically, Boltzmann defined <span class="math notranslate nohighlight">\(S \equiv k_{B} \ln (2)\)</span> with <span class="math notranslate nohighlight">\(\left[k_{B}\right]=J / k\)</span> a historical con venation.</p>
-<p>N.1.: - Do continuous state space<span class="math notranslate nohighlight">\(\Omega\)</span> is dimension fol.</p>
+<p>implying</p>
 <div class="math notranslate nohighlight">
 \[
-[\Omega]=([p][q])^{3 N} \cdot[E]^{-1} .
+p(A \rightarrow B \mid A) \cdot p(A)=p(B \rightarrow A \mid B) p(B) 
 \]</div>
-<ul class="simple">
-<li><p>to obtain a sensible difinition of <span class="math notranslate nohighlight">\(S\)</span>, we should define</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-S=k_{B} \ln \left(\frac{\Omega}{[\Omega]}\right) .
+<p>or</p>
+<div class="math notranslate nohighlight" id="equation-detailed-balance">
+<span class="eqno">(4)<a class="headerlink" href="#equation-detailed-balance" title="Permalink to this equation">#</a></span>\[
+\frac{p(A \rightarrow B \mid A)}{p(B \rightarrow A \mid B)} = \frac{p(B)}{p(A)}=e^{-\beta (E_B-E_A)}= e^{-\beta (Q+W)}\;,
 \]</div>
-<ul class="simple">
-<li><p>However, only differences <span class="math notranslate nohighlight">\(S\left(E_{1}\right)-S\left(E_{2}\right)\)</span> matter in classical stat mech <span class="math notranslate nohighlight">\(\rightarrow \Delta S=k_{B} \ln \left(\frac{\Omega_{1}}{\Omega_{2}}\right)\)</span> is coll-defined.</p></li>
-<li><p><span class="math notranslate nohighlight">\(Q M \Rightarrow\)</span> units of <span class="math notranslate nohighlight">\([p] \cdot[q]=h\)</span>. well-defined.</p></li>
-</ul>
-<p>Thermal equilibrium</p>
-<p>Consider is cleared system <span class="math notranslate nohighlight">\(\{\mu, E\}\)</span> consisting of tiro subsystems</p>
-<p><span class="math notranslate nohighlight">\(E_{1}, \underline{x}_{1}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\mu=\mu_{1} \otimes \mu_{2} \quad E=E_{1}+E_{2}+\)</span> supple confide.</p>
-<p>NB:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(E_{1}, E_{2}\)</span> care exferisive <span class="math notranslate nohighlight">\((\alpha \|, V)\)</span></p></li>
-<li><p>sunfucce contrib_ does not grow wt system size if inter actions are local <span class="math notranslate nohighlight">\(\rightarrow\)</span> negligible as <span class="math notranslate nohighlight">\(N / t \rightarrow \infty\)</span></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\Rightarrow &amp; P_{E}(\mu)=\frac{1}{\Omega(E)} \delta(E-H(\mu)) \\
-&amp; H(\mu)=H_{1}\left(\mu_{1}\right)+H_{2}\left(\mu_{2}\right)+\text { h. at. }
-\end{aligned}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-\Omega(E) &amp; =\int d \mu_{1} d \mu_{2} \delta(E-H(\mu)) \\
-&amp; =\int d E_{1} \Omega_{1}\left(E_{1}\right) \Omega_{2}\left(E-E_{1}\right) \\
-e^{S(E) / k_{B}} &amp; =\int d E_{1} e^{\left[S_{1}\left(E_{1}\right)+S\left(E-E_{1}\right)\right] / k_{B}}
-\end{aligned}
-\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(S_{1}, S_{2}\)</span> extensive:</p>
-<div class="math notranslate nohighlight">
-\[
-S(E)=N s_{1}\left(\frac{E_{1}}{N}\right)+N s_{2}\left(\frac{E-E_{1}}{N}\right)
+<p>where we used the fact that, in equilibrium, the likelihood ratio of two states is given by the boltzmann factor. As we transform the system from one state to the other, the energy change is generated by a combination of heat from the reservoir into the system and work done by an external force.</p>
+</section>
+<section id="a-concrete-setup">
+<h2>A concrete setup<a class="headerlink" href="#a-concrete-setup" title="Permalink to this heading">#</a></h2>
+<p>To be specific, let’s imagine the system consists of a polymer connected to an ideal spin. <span class="math notranslate nohighlight">\(x(t)\)</span> represents the (high-dimensional) configuration of the polymer and  <span class="math notranslate nohighlight">\(\lambda(t)\)</span> is the end-to-end distance from the open ends of polymer and spring. The reservoir is the surrounding fluid.</p>
+<p>Suppose we are interested in stretching the polymer from initial length <span class="math notranslate nohighlight">\(\lambda_i\)</span> to final length <span class="math notranslate nohighlight">\(\lambda_f\)</span> in the finite time <span class="math notranslate nohighlight">\(T\)</span>. Our goal is to measure <span class="math notranslate nohighlight">\(\Delta F=F(\lambda_f, T)-F(\lambda_i,T)\)</span>.</p>
+<p>[Cartoon]</p>
+<p>Let’s assume we discretize our stochastic dynamics into <span class="math notranslate nohighlight">\(N\)</span> time steps and let the control parameter jump change discontinuously at the end of each time step.</p>
+<p>[Cartoon]</p>
+<p>It is clear that, if our time steps are sufficiently small, we should be able to discretize the <span class="math notranslate nohighlight">\(\lambda(t)\)</span> dynamics into such a piecewise constant function. The advantage of this discretization is twofold:</p>
+<p>(1) it ensures that the external force does not perform any work in the time intervals between <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t+1\)</span> where <span class="math notranslate nohighlight">\(\lambda(t)=\lambda_{t,t+1}=\)</span> const.</p>
+<p>Thus,</p>
+<div class="math notranslate nohighlight" id="equation-conditional-probabilities-ratio">
+<span class="eqno">(5)<a class="headerlink" href="#equation-conditional-probabilities-ratio" title="Permalink to this equation">#</a></span>\[
+\frac{P\left(x_{t}^{+} \rightarrow x_{t+1}^{-} \mid \lambda_{t, t+1}, x_{t}^{+}\right)}{P\left(x_{t+1}^{-} \rightarrow x_{t}^{+} \mid \lambda_{t, t+1}, x_{t+1}^{-}\right)}=e^{-\beta Q_{t, t+1}}
 \]</div>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span></p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_01_25_3ad16b5e2e3cbc7435eag-08.jpg?height=1241&amp;width=1444&amp;top_left_y=89&amp;top_left_x=325" />
-<span class="math notranslate nohighlight">\(\Delta\)</span> deminated boy.meximum of inbeprond, i.e.</p>
+<p>where <span class="math notranslate nohighlight">\(Q_{t, 1+1}\)</span> is the heat added to the system in the time interval <span class="math notranslate nohighlight">\((t, t+1)\)</span>. The equality follows from equation <a class="reference internal" href="#equation-detailed-balance">(4)</a> and <span class="math notranslate nohighlight">\(W=0\)</span>.</p>
+<p>(2) During the instantaneous jumps in <span class="math notranslate nohighlight">\(\lambda(t)\)</span>, we can assume that the configuration <span class="math notranslate nohighlight">\(x\)</span> of the polymer does not change - only the ideal, massless spring gets stretched. Thus, the configuration before and after the jump are identical, <span class="math notranslate nohighlight">\(x^+_t=x^-_t \forall t\)</span>.</p>
+<p>Generalizing <a class="reference internal" href="#equation-conditional-probabilities-ratio">(5)</a>, we thus obtain</p>
 <div class="math notranslate nohighlight">
 \[
-S(E) \approx S_{1}\left(E_{1}^{*}\right)+S_{2}\left(E_{2}^{*}=E-E_{1}\right)
+\frac{P\left(X \mid \Lambda_{i}, x_{i}\right)}{P\left(\tilde{X} \mid \tilde{\Lambda}, x_{f}\right)}=e^{-\beta Q} 
 \]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{aligned}
-0 &amp; \left.\left.=\frac{d}{d E_{1}} \right\rvert\, \int_{E_{1}^{x}} S_{1}\left(E_{1}\right)+S_{2}\left(E-E_{1}\right)\right]= \\
-&amp; =\left.\frac{d S_{1}}{d E_{E_{1}}}\right|_{E_{1}^{x}}-\left.\frac{d S_{2}}{d E_{2}}\right|_{E_{2}^{x}=E-E_{1}}
-\end{aligned}
+&amp; X=\left\{x_{i}, x_{1},  \ldots x_{N-1},x_{f}\right\} \\
+&amp; \tilde{X}=\left\{x_{f}, x_{N-1}, x_{N-2},\ldots,c_{i}\right\} \text { (time reversed) } \\
+&amp; \Lambda=\left\{\lambda_{i}, \ldots . \lambda_{f}\right\}\\
+&amp; \tilde \Lambda=\left\{\lambda_{f}, \ldots . \lambda_{i}\right\} \text { (time reversed) } 
 \end{split}\]</div>
-<p>Defining <span class="math notranslate nohighlight">\(\frac{1}{T}=\frac{d S}{d E}, E^{*}\)</span> is set by</p>
+<p>Now, we integrate over the equilibrium distribution of the initial conditions for the forward path and the final conditions for the backward path.</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{1}{T_{1}}=\frac{1}{T_{2}}
+\frac{P\left(X \mid \Lambda_{i} \right)}{P\left(\tilde{X} \mid \tilde{\Lambda}\right)}=
+\frac{P\left(X \mid \Lambda_{i} ,x_{i}\right)}{P\left(\tilde{X} \mid \tilde{\Lambda}, x_{f}\right)}\frac{P\left(x_{i} \mid \lambda_{i}\right)}{P\left(x_{f} \mid \lambda_{j}\right)}=e^{-\beta Q} \frac{P\left(x_{i} \mid \lambda_{i}\right)}{P\left(x_{f} \mid \lambda_{j}\right)}
 \]</div>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> we identify <span class="math notranslate nohighlight">\(T=\frac{d E}{d S}\)</span> as the teu perature</p>
-<p>Noto: <span class="math notranslate nohighlight">\(t\)</span> adjucts itself so as to maximize <span class="math notranslate nohighlight">\(S\)</span>.</p>
-<p>If we prepare initial cond. where <span class="math notranslate nohighlight">\(E_{i} \neq E_{1}^{N}\)</span>, by ergedicity <span class="math notranslate nohighlight">\(E_{i} \rightarrow E_{i}^{*}\)</span> at long fime banse <span class="math notranslate nohighlight">\(E_{i}^{*}\)</span> is mula more likely.</p>
+<p>Imposing the Boltzmann distribution,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P\left(x_{i} \mid \lambda_{i}\right)=e^{-\beta(E_{i}-F_i)}\\
+P\left(x_{f} \mid \lambda_{f}\right)=e^{-\beta(E_{f}-F_f)}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_i=E(x_i,\lambda_i)\)</span> and <span class="math notranslate nohighlight">\(F_i=F(\lambda_i,T)\)</span>, we obtain</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta S=S_{1}^{\prime}\left(E_{1}^{*}\right)+S_{2}\left(E_{2}^{*}\right)-S\left(E_{1}\right)-S\left(E_{2}\right) \geq 0
+\frac{P\left(X \mid \Lambda_{i} \right)}{P\left(\tilde{X} \mid \tilde{\Lambda}\right)}=e^{-\beta(\underbrace{Q-\Delta E}_{-\Delta W}+\Delta F)}=e^{-\beta(\Delta F-W)}
 \]</div>
-<p>To first arder in <span class="math notranslate nohighlight">\(E_{1}^{*}-E_{1}=\delta E_{1}\)</span></p>
+<p>Crooks theorem (2000):</p>
 <div class="math notranslate nohighlight">
-\[
-\left(\frac{1}{T_{1}}-\frac{1}{T_{2}}\right) \delta E_{1} \geqslant 0
-\]</div>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Everyy flews form hat <span class="math notranslate nohighlight">\(\rightarrow\)</span> cald.</p>
-<p>Stability: Since the point <span class="math notranslate nohighlight">\(\left(E_{1}^{*} E_{2}^{*}\right)\)</span> is a maximum of <span class="math notranslate nohighlight">\(S\left(E_{1}^{*}\right)+S_{2}\left(E-E_{1}^{*}\right)\)</span> we must have</p>
-<div class="math notranslate nohighlight">
-\[
-\left.\frac{\partial^{2} S_{1}}{\partial E^{2}}\right|_{x_{1}}+\left.\frac{\partial^{2} S_{2}}{\partial E_{2}^{2}}\right|_{x_{2}} \leq 0
-\]</div>
-<p>Suppose both systems are identical, <span class="math notranslate nohighlight">\(S_{1}=S_{2}\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-\left.\Rightarrow \partial_{t}^{2} S\right|_{x} \leq 0 \Rightarrow \text { S is concave }
-\]</div>
-<p>Also, since <span class="math notranslate nohighlight">\(\left.\partial_{E} S\right|_{x}=T^{-1}\)</span>, we have <span class="math notranslate nohighlight">\(\left.\frac{\partial E}{\partial T}\right|_{x} \geq 0\)</span>.</p>
-<p>specific heat <span class="math notranslate nohighlight">\(C_{x} \geqslant 0\)</span></p>
-<p>Manipulating therma dyn. coordinets e.y.</p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_01_25_3ad16b5e2e3cbc7435eag-13.jpg?height=507&amp;width=608&amp;top_left_y=346&amp;top_left_x=473" /></p>
-<div class="math notranslate nohighlight">
-\[
-: \underline{x} \rightarrow \underline{x}+\underline{\delta x}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\text { reversibly }
-\]</div>
-<p>change in <span class="math notranslate nohighlight">\(E: E \rightarrow E+f \cdot \partial \underline{x}\)</span></p>
+\[\begin{split}
+\begin{array}{r}
+P(+W \mid \Delta)=\int D X \delta(W-w) P(X \mid \Delta) \\
+\stackrel{(3)}{=} \int D \tilde{X} \delta(W+w) P(\tilde{x} \mid \pi)  e^{-\beta(\Delta F-W)} \\
+=e^{-\beta(\Delta F-W) P(-W \mid \pi)} \\
+\frac{P(+W \mid \Delta)}{P(-W \mid \Delta)}=e^{-\beta(\Delta F-W)} 
+\end{array}
+\end{split}\]</div>
+<p>From the Crooks theorem, we get the Jarzynski equation easily</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\delta S= &amp; S\left(E+f \cdot \frac{d x}{x}, \underline{x}+\underline{\partial x}\right)- \\
-&amp; -S(E, \underline{x})= \\
-= &amp; \left.\frac{\partial S}{\partial t}\right|_{x}\left(\underline{f}(\underline{d x})+\left.\frac{\partial S}{\partial x}\right|_{E} \delta x \geq 0\right.
+&amp; \left\langle e^{-\beta W}\right\rangle_{\Lambda}=\int d W P(+W \mid \Lambda) e^{-\beta W} \\
+&amp; \quad \stackrel{(4)}{=} \int d W P(-W \mid \tilde{\Lambda}) e^{-\beta W-\beta(\Delta F- W)} \\
+&amp; =e^{-\beta \Lambda F} \int d W  P(-W \mid \tilde{\Lambda}) \\
+&amp; \left\langle e^{-\beta W}\right\rangle_{\Delta}=e^{-\beta \Delta F} \text { Jarzynski, 1998 } 
 \end{aligned}
 \end{split}\]</div>
+<p>Jensens in equality <span class="math notranslate nohighlight">\(\left\langle e^{-x}\right\rangle \geqslant e^{-\langle x\rangle}\)</span> then implies</p>
 <div class="math notranslate nohighlight">
 \[
-\text { én inilitar }
+\langle W\rangle \geq \Delta F
 \]</div>
-<p>revesilde <span class="math notranslate nohighlight">\(\rightarrow &quot;=0\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-\left.\Rightarrow \frac{\partial S}{\partial x_{1}}\right|_{E_{1} x_{j+i}}=-\frac{J_{i}}{T}
+d E=\left.\frac{\partial E}{\partial \lambda}\right|_{x} d \lambda+\left.\frac{\partial E}{\partial x}\right|_{\lambda} \cdot d x
 \]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{gathered}
-\Rightarrow d S(E, x)=\frac{d E}{T}-\frac{F \frac{d x}{T}}{T} \\
-\Rightarrow \underbrace{T d S}_{d Q}+J d x
-\end{gathered}
-\end{split}\]</div>
-<p>Hent.</p>
-<p>Glass of water, Biological cells, e tc. are open systems</p>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> trade <span class="math notranslate nohighlight">\(E, V, N\)</span> with environment</p>
-<p>(ak. a reservoir</p>
+<p>internal state</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -612,6 +543,15 @@ S(E) \approx S_{1}\left(E_{1}^{*}\right)+S_{2}\left(E_{2}^{*}=E-E_{1}\right)
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Spontaneous-Reactions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spontaneous Reactions</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -627,9 +567,10 @@ S(E) \approx S_{1}\left(E_{1}^{*}\right)+S_{2}\left(E_{2}^{*}=E-E_{1}\right)
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-reversibility">Time reversibility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-concrete-setup">A concrete setup</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
