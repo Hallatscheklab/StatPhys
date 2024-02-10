@@ -13,6 +13,8 @@ $$
 
 To interpret this equation, we need to clarify the transformation process: Consider a system with an external control parameter, $\lambda$, such as the volume of a container or the length of a polymer. We assume at time $0$, the system is equilibrated with $\lambda=\lambda_i$. Then the system is driven out of equilbrium following a particular finite time protocol $\Lambda=\{\lambda(t)\}$ until the final value $\lambda(T)=\lambda_f$ is reached. The total work $W$ done on the system during this process will be a random variable. It is different each time we rerun this process. The average on the left hand side is an average over many realizations of the above transformation. 
 
+
+
 The free energy difference $\Delta F$ on the right hand side is the difference between the free energy of the system for the initial and final parameters, i.e.,
 
 $$
@@ -51,12 +53,15 @@ To be specific, let's imagine the system consists of a polymer connected to an i
 Suppose we are interested in stretching the polymer from initial length $\lambda_i$ to final length $\lambda_f$ in the finite time $T$. Our goal is to measure $\Delta F=F(\lambda_f, T)-F(\lambda_i,T)$.
 
 
-[Cartoon]
+```{image} figures/crooks-polymer.jpg
+:alt: polymer
+:class: bg-primary mb-1
+:width: 400px
+:align: center
+```
 
 
-Let's assume we discretize our stochastic dynamics into $N$ time steps and let the control parameter jump change discontinuously at the end of each time step.
-
-[Cartoon]
+Let's assume we discretize our stochastic dynamics into $N$ time steps and let the control parameter jump change discontinuously at the end of each time step (see bottom right in figure).
 
 It is clear that, if our time steps are sufficiently small, we should be able to discretize the $\lambda(t)$ dynamics into such a piecewise constant function. The advantage of this discretization is twofold: 
 
@@ -110,32 +115,50 @@ $$
 $$
 
 
-Crooks theorem (2000):
+#### Crooks Fluctuation Theorem (CFT) (2000):
 
 $$
 \begin{array}{r}
-P(+W \mid \Delta)=\int D X \delta(W-w) P(X \mid \Delta) \\
-\stackrel{(3)}{=} \int D \tilde{X} \delta(W+w) P(\tilde{x} \mid \pi)  e^{-\beta(\Delta F-W)} \\
-=e^{-\beta(\Delta F-W) P(-W \mid \pi)} \\
-\frac{P(+W \mid \Delta)}{P(-W \mid \Delta)}=e^{-\beta(\Delta F-W)} 
+P(+W \mid \Delta)=\int D X \delta(W(X)-W) P(X \mid \Lambda) \\
+\stackrel{(3)}{=} \int D \tilde{X} \delta(W(X)+W) P(\tilde{X} \mid \Lambda)  e^{-\beta(\Delta F-W)} \\
+=e^{-\beta(\Delta F-W) }P(-W \mid \Lambda) 
 \end{array}
 $$
 
+$$
+\boxed{\frac{P(+W \mid \Delta)}{P(-W \mid \Delta)}=e^{-\beta(\Delta F-W)}\qquad \text { Crooks, 2000 }}
+$$ (crooks)
+
+
+#### Jarzynski (1998):
 From the Crooks theorem, we get the Jarzynski equation easily
 
 $$
 \begin{aligned}
 & \left\langle e^{-\beta W}\right\rangle_{\Lambda}=\int d W P(+W \mid \Lambda) e^{-\beta W} \\
 & \quad \stackrel{(4)}{=} \int d W P(-W \mid \tilde{\Lambda}) e^{-\beta W-\beta(\Delta F- W)} \\
-& =e^{-\beta \Lambda F} \int d W  P(-W \mid \tilde{\Lambda}) \\
-& \left\langle e^{-\beta W}\right\rangle_{\Delta}=e^{-\beta \Delta F} \text { Jarzynski, 1998 } 
+& =e^{-\beta \Delta F} \int d W  P(-W \mid \tilde{\Lambda})  
 \end{aligned}
 $$
 
-Jensens in equality $\left\langle e^{-x}\right\rangle \geqslant e^{-\langle x\rangle}$ then implies
+$$
+\boxed{
+\left\langle e^{-\beta W}\right\rangle_{\Lambda}=e^{-\beta \Delta F} \qquad \text { Jarzynski, 1998 }}
+$$
+
+Jensens inequality $\left\langle e^{-x}\right\rangle \geqslant e^{-\langle x\rangle}$ then implies
 
 $$
-\langle W\rangle \geq \Delta F
+\langle W\rangle \geq \Delta F \;,
 $$
+
+a version of the second law.
+
+#### Testing the Crooks fluctuation theorem
+
+In 2005, Bustamante's group at Berkeley published a test of the CFT. They repeatedly unfolded and refolded a RNA hairpin and determined the work distributions for Unfolding, $P_U(W)$, and for refoldung, $P_R(-W)$. These two distributions deviate from one another, the more so the more rapid the unfolding protocal is, i.e., the more it is out of equilibrium. Yet, if the CFT is correct, both distributions have to cross at exactly $W=\Delta F$,
+since $P_U(\Delta F)=P_R(-\Delta F)$. Indeed, that's what they found.
+
+
 
 
