@@ -58,9 +58,7 @@ $$
 then the free energy change is given by
 
 $$
-\begin{aligned}
-& \Delta F=\left.\frac{\partial F}{\partial N_B}\right|_{T, p, N_{C}}(-b \Delta N)+\left(\frac{\partial F}{\partial N_{C}}\right)_{T, p, N_B}(c \Delta N)
-\end{aligned}
+\Delta F=\left.\frac{\partial F}{\partial N_B}\right|_{T, p, N_{C}}(-b \Delta N)+\left(\frac{\partial F}{\partial N_{C}}\right)_{T, p, N_B}(c \Delta N)
 $$
 
 $$
