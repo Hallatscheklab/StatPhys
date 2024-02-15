@@ -111,7 +111,7 @@ $$
 
 transforming adenosine triphosphate (ATP) into adenosine diphosphate (ADP) and inorganic phosphate ($P_i$).
 
-The ATP to ADP ratio is carefully controlled inside cells to tune via Eq.s {eq}`free-energy-change-chem` and {eq}`chem-pot-dilute` the free energy difference $\Delta F_{A T P\rightarrow ADP+P_i} $ released when ATP is hydrolyzed. For [example](https://book.bionumbers.org/how-much-energy-is-released-in-atp-hydrolysis/), $\Delta F=20k_B T$ inside *E. coli* cells and the highest value, $30 k_BT$, in muscle cells of human athletes. 
+The ATP to ADP ratio is carefully [controlled](https://book.bionumbers.org/how-much-energy-is-released-in-atp-hydrolysis/) inside cells to tune via Eq.s {eq}`free-energy-change-chem` and {eq}`chem-pot-dilute` the free energy difference $\Delta F_{A T P\rightarrow ADP+P_i} $ released when ATP is hydrolyzed. For most cell types, $\Delta F\approx 20k_B T$, and the highest value, $30 k_BT$, in muscle cells of human athletes. 
 
 
 
