@@ -13,12 +13,14 @@ Let's divide up our entire space into cells of size $l^3$, such that, to a good 
 Let $z_{l} \equiv$ be the partition function of a cell with a solute and $z_{0}=$ the partition function of a cell without solute.
 
 The total partition function is then given by
+
 $$
 \begin{aligned}
 Z & =\frac{M^{N}}{N !} z_{l}^{N} z_{0}^{M-N}= \\
 & =\frac{M^{N}}{N !}\left(\frac{z_{l}}{z_{0}}\right)^{N} z_{0}^{M} 
 \end{aligned}
 $$
+
 where we assumed that the number $N$ of filled cells is much less than the total number of cells to simplify the combinatorial factor (binomial coefficient).
 
 So, the chemical potential of the solutes is given by
