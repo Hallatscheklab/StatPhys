@@ -26,7 +26,7 @@ where we assumed that the number $N$ of filled cells is much less than the total
 So, the chemical potential of the solutes is given by
 
 $$
-\beta \mu & =-\left.\frac{\partial \ln Z}{\partial N}\right|_{T_{1} N}=-\ln \left(\frac{M}{N}\right)-\ln \left(\frac{z_{l}}{z_{0}}\right)
+\beta \mu =-\left.\frac{\partial \ln Z}{\partial N}\right|_{T_{1} N}=-\ln \left(\frac{M}{N}\right)-\ln \left(\frac{z_{l}}{z_{0}}\right)
 $$
 
 or
