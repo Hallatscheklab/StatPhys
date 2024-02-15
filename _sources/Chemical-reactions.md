@@ -94,10 +94,10 @@ $$
 W \geqslant \Delta F
 $$
 
-according to the second law, or the Jarzynski equalitym
+(W=work done on system) according to the second law, or the Jarzynski equality
 
 $$
-\exp(-\beta W) = \exp(-\beta \Delta F)
+\langle\exp(-\beta W)\rangle = \exp(-\beta \Delta F) \;.
 $$
 
 
