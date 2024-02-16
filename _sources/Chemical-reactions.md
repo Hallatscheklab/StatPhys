@@ -1,6 +1,6 @@
 ## Chemical reactions
 
-To illustrate the conversion of free energy into work, we now discuss the equilibria aspired by chemical reactions. We then discuss ATP phosphorylation as an important reaction that is kept out of equilibrium in living systems, so that the drive towards equilibrium can be used inside biological cells to do work. 
+To illustrate the conversion of free energy into work, we now discuss the equilibria aspired by chemical reactions. We then discuss ATP phosphorylation as an important reaction that is kept out of equilibrium in living systems, so that the drive towards equilibrium can be used inside biological cells to do work.  
 
 ### Dilute mixtures
 
@@ -8,7 +8,7 @@ The analysis of chemical reactions is only simple if one can assume that the rel
 
 Let's divide up our entire space into cells of size $l^3$, such that, to a good approximation, each box contains 0 or $1$ solutes (but not more).
 
-![](https://cdn.mathpix.com/cropped/2024_02_13_49b9f01954f567005214g-03.jpg?height=870&width=1807&top_left_y=4&top_left_x=304)
+![solutes in cells](figures/solutes-in-cells.png)
 
 Let $z_{l} \equiv$ be the partition function of a cell with a solute and $z_{0}=$ the partition function of a cell without solute.
 
@@ -78,13 +78,14 @@ b\left(k_{B} T \ln\left(\rho_{B} l^{3}\right)+\mu_{B}^{(0)}\right)=c\left(k_{B} 
 $$
 
 $$
-\frac{\rho_{B}^{b}}{\rho_{C}^{c}}=\left(l^{-b+c}\right)^{3} e^{-\beta \Delta \mu_{\text{rxn}}^{(c)}}=K_{e q}(T) 
+\frac{\rho_{B}^{b}}{\rho_{C}^{c}}=\left(l^{-b+c}\right)^{3} e^{-\beta \Delta \mu_{\text{rxn}}^{(0)}}=K_{e q}(T) 
 $$
 
 $$
-\Delta \mu_{\text{rxn}}^{(0)}=b \mu_{b}^{(a)}-c \mu_{c}^{(0)} .
+\Delta \mu_{\text{rxn}}^{(0)}=b \mu_{b}^{(0)}-c \mu_{c}^{(0)} \;,
 $$
 
+defining the equilibrium constant in terms of chemical potential differences.
 
 
 Note, if a chemical reaction is not in equilibrium, it will run such that that $\Delta F <0$. If the reaction is

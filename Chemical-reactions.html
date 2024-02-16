@@ -409,7 +409,7 @@ document.write(`
 <h2>Dilute mixtures<a class="headerlink" href="#dilute-mixtures" title="Permalink to this heading">#</a></h2>
 <p>The analysis of chemical reactions is only simple if one can assume that the relevant reactants are relatively dilute. For this case, we first need to analyze the chemical potential of dilute mixtures.</p>
 <p>Let’s divide up our entire space into cells of size <span class="math notranslate nohighlight">\(l^3\)</span>, such that, to a good approximation, each box contains 0 or <span class="math notranslate nohighlight">\(1\)</span> solutes (but not more).</p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_13_49b9f01954f567005214g-03.jpg?height=870&amp;width=1807&amp;top_left_y=4&amp;top_left_x=304" /></p>
+<p><img alt="solutes in cells" src="_images/solutes-in-cells.png" /></p>
 <p>Let <span class="math notranslate nohighlight">\(z_{l} \equiv\)</span> be the partition function of a cell with a solute and <span class="math notranslate nohighlight">\(z_{0}=\)</span> the partition function of a cell without solute.</p>
 <p>The total partition function is then given by</p>
 <div class="math notranslate nohighlight">
@@ -466,12 +466,13 @@ b\left(k_{B} T \ln\left(\rho_{B} l^{3}\right)+\mu_{B}^{(0)}\right)=c\left(k_{B} 
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\frac{\rho_{B}^{b}}{\rho_{C}^{c}}=\left(l^{-b+c}\right)^{3} e^{-\beta \Delta \mu_{\text{rxn}}^{(c)}}=K_{e q}(T) 
+\frac{\rho_{B}^{b}}{\rho_{C}^{c}}=\left(l^{-b+c}\right)^{3} e^{-\beta \Delta \mu_{\text{rxn}}^{(0)}}=K_{e q}(T) 
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\Delta \mu_{\text{rxn}}^{(0)}=b \mu_{b}^{(a)}-c \mu_{c}^{(0)} .
+\Delta \mu_{\text{rxn}}^{(0)}=b \mu_{b}^{(0)}-c \mu_{c}^{(0)} \;,
 \]</div>
+<p>defining the equilibrium constant in terms of chemical potential differences.</p>
 <p>Note, if a chemical reaction is not in equilibrium, it will run such that that <span class="math notranslate nohighlight">\(\Delta F &lt;0\)</span>. If the reaction is
 used to do work, we have</p>
 <div class="math notranslate nohighlight">
