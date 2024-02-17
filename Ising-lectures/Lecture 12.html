@@ -62,7 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'figures/figure-generation';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising-lectures/Lecture 12';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -234,37 +236,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/figures/figure-generation.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -290,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2Ffigures/figure-generation.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FIsing-lectures/Lecture 12.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +291,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/figures/figure-generation.ipynb" target="_blank"
+      <li><a href="../_sources/Ising-lectures/Lecture 12.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -426,74 +397,187 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Parameters</span>
-<span class="n">length</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># Length of the ribbon</span>
-<span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>        <span class="c1"># Length of each cell</span>
-<span class="n">p</span> <span class="o">=</span> <span class="mf">0.2</span>      <span class="c1"># Probability of placing a ball in a cell</span>
-
-<span class="c1"># Create the ribbon and divide it into cells</span>
-<span class="n">cells</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span> <span class="o">+</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
-<span class="n">num_cells</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-
-<span class="c1"># Randomly place balls in cells with probability p</span>
-<span class="n">balls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">num_cells</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="n">p</span><span class="p">])</span>
-
-<span class="c1"># Re-plotting without title and with cell length labeled</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_cells</span><span class="p">):</span>
-    <span class="n">rect</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">i</span><span class="o">*</span><span class="n">l</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">l</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">balls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">circle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">i</span><span class="o">*</span><span class="n">l</span> <span class="o">+</span> <span class="n">l</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
-
-<span class="c1"># Labeling the cell length</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">l</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;$l$&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
-
-<span class="c1"># Formatting the plot</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;solutes-in-cells.png&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/f8eaab8a2fed56b233f51b6abf71c5c645baf8659f7315b2bdf891537b60e3bd.png" src="../_images/f8eaab8a2fed56b233f51b6abf71c5c645baf8659f7315b2bdf891537b60e3bd.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-
-<span class="c1"># Parameters</span>
-<span class="n">num_spins</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Number of Ising spins</span>
-
-<span class="c1"># Create an all-to-all graph</span>
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="n">num_spins</span><span class="p">)</span>
-
-<span class="c1"># Plotting</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># Position nodes in a circle</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;All-to-All Graph of 10 Ising Spins&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;all-to-all.png&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/6a215f88c8cb3c0d7b23e59025ed1f425a5447a6eadeeac40bb7b4390b792d9f.png" src="../_images/6a215f88c8cb3c0d7b23e59025ed1f425a5447a6eadeeac40bb7b4390b792d9f.png" />
-</div>
-</div>
+  <p>Lecture 12</p>
+<ul class="simple">
+<li><p>Existence of phase transitions in <span class="math notranslate nohighlight">\(D \geq 2\)</span></p></li>
+<li><p>Interacting gasses:
+-Tanks</p></li>
+<li><p>Excluded Volume</p></li>
+<li><p>Viral Expansion</p></li>
+</ul>
+<p>The Existence of phase transitions in 20</p>
+<p>In ID, starting from g.s. <span class="math notranslate nohighlight">\(\uparrow \uparrow \uparrow \ldots\)</span>, the change in free-energy to add IDW is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\Delta F &amp; =\Delta E-T \Delta S \\
+= &amp; (2 J)-k_{B} T \ln (L) \curvearrowleft \text { system size }
+\end{aligned}
+\end{split}\]</div>
+<p>So for <span class="math notranslate nohighlight">\(L&gt;e^{2 J / K_{B} T}\)</span>, <span class="math notranslate nohighlight">\(\Delta F&lt;0\)</span>, and hence D.W.s always destroy order beyond <span class="math notranslate nohighlight">\(\xi \sim e^{2 \pi / k_{B} T}\)</span></p>
+<p>What about 2D?</p>
+<p>In 2D, D.W.S are ID objects:</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_622e679a6d467a0c4e40g-02.jpg?height=566&amp;width=727&amp;top_left_y=1678&amp;top_left_x=641" /></p>
+<p>A domain wall of length <span class="math notranslate nohighlight">\(l\)</span> costs</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta E=2 \mathrm{Jl}
+\]</div>
+<p>In ID, any finite density <span class="math notranslate nohighlight">\(n_{D w}\)</span> of domains walls destroys order at scale <span class="math notranslate nohighlight">\(\xi \sim 1 / n_{\text {ow }}\)</span></p>
+<p>But in 2D, a finite density on small D.W.S doesn’t destroy order:</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_622e679a6d467a0c4e40g-03.jpg?height=498&amp;width=610&amp;top_left_y=642&amp;top_left_x=528" /></p>
+<p>still majority IIII!</p>
+<p>What matters is the size <span class="math notranslate nohighlight">\(l\)</span> of the D.W.S</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_622e679a6d467a0c4e40g-03.jpg?height=557&amp;width=639&amp;top_left_y=1494&amp;top_left_x=804" /></p>
+<div class="math notranslate nohighlight">
+\[
+V=L \cdot L
+\]</div>
+<p>Order is destroyed if D.W.S of size <span class="math notranslate nohighlight">\(l \sim L\)</span> become favorable.</p>
+<p>So the question is how</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta F(l)=2 J l-T S(l)
+\]</div>
+<p>behaves.</p>
+<p>In <span class="math notranslate nohighlight">\(I D\)</span> the only source of th <span class="math notranslate nohighlight">\(^{S}\)</span> was
+where <span class="math notranslate nohighlight">\({ }^{\text {the }}\)</span> is: <span class="math notranslate nohighlight">\(\ln (L)\)</span>.</p>
+<p>But in 2D, there are many ways to make wall of length <span class="math notranslate nohighlight">\(l\)</span> !</p>
+<div class="math notranslate nohighlight">
+\[
+l=12: \square,
+\]</div>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_622e679a6d467a0c4e40g-04.jpg?height=247&amp;width=895&amp;top_left_y=525&amp;top_left_x=889" /></p>
+<p>Counting <span class="math notranslate nohighlight">\(S(l)\)</span> exactly is tricky combinatorial problem. But all we really need to know is that for <span class="math notranslate nohighlight">\(l \geqslant 1\)</span>, <span class="math notranslate nohighlight">\(s(l) \propto\)</span> so .l (extensive)</p>
+<p>To see why, let <span class="math notranslate nohighlight">\(\Omega\left(l, x_{0}, x_{1}\right)\)</span> denote # of way string of length <span class="math notranslate nohighlight">\(l\)</span> connects <span class="math notranslate nohighlight">\(x_{0}, x_{i}\)</span>.</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_622e679a6d467a0c4e40g-04.jpg?height=233&amp;width=513&amp;top_left_y=1559&amp;top_left_x=722" /></p>
+<p>Clearly</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \Omega\left(l_{A}+l_{B}, x_{0}, x_{2}\right) \geq \Omega\left(l_{A}, x_{0}, x_{1}\right) \Omega\left(l_{B}, x_{1}, x_{2}\right) \\
+&amp; S\left(l_{A}+l_{B}, x_{0}, x_{2}\right) \geqslant S\left(l_{A}, x_{0}, x_{1}\right)+S\left(l_{B}, x_{1}, x_{2}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>If we fix <span class="math notranslate nohighlight">\(l=\alpha \cdot\left|x_{i}-x_{j}\right|\)</span>, this requires <span class="math notranslate nohighlight">\(s(l) \propto s_{0} \cdot l\)</span></p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\Delta F &amp; \approx 2 J l-T s_{0} l \\
+&amp; =l\left(2 J-T S_{0}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>Key result: for <span class="math notranslate nohighlight">\(T&lt;2 \mathrm{~J} /\)</span> so, large- l Dow. forbidden! ordered</p>
+<p>for <span class="math notranslate nohighlight">\(T&gt;2 \mathrm{~J} / \mathrm{so}\)</span>,</p>
+<p>larger D.W favored: disordered. Remarkably, the <span class="math notranslate nohighlight">\(2 D\)</span> I sing model admits
+exact solution (onstage nl and indeed finds <span class="math notranslate nohighlight">\(k_{B} T_{C}=\frac{2 J}{\sinh ^{-1}(1)} \approx J \cdot 2.26 \cdots\)</span></p>
+<p>Similar to our all-to-all problem, but locality gives nontrivial fractal structure at <span class="math notranslate nohighlight">\(T_{c}, w i+h\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+{ }_{m}^{+h} \propto\left|T-T_{c}\right|^{1 / 8}
+\]</div>
+<p>Te described by <span class="math notranslate nohighlight">\(2 D^{\prime \prime}\)</span> conformal field theory” (Phys 212)</p>
+<p>Interacting Gasses</p>
+<p>Let’s return to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; H=\sum_{i} \frac{p_{i}^{2}}{2 m i}+\frac{1}{2} \sum_{i \neq j} V\left(q_{i}-q_{j}\right) \\
+&amp; Z(J, N, V)=\frac{1}{N !} \overbrace{\left[\frac{d_{p}^{D}}{(2 \pi+)^{D}} e^{-\beta \frac{p^{2}}{2 m}}\right]^{N}}^{\lambda^{-D N}, \lambda=\sqrt{2 \pi h^{2} \beta / m}} \\
+&amp; \times \underbrace{\left(\prod_{i} \int_{V} d_{i} q_{i}\right) e^{-\frac{\beta}{2} \sum_{i&lt;j} V\left(q_{i}-q_{j}\right)}}_{Q_{N}(T, V)} \\
+&amp; =\frac{1}{N !} \frac{1}{\lambda^{-D N}} Q_{N}
+\end{aligned}
+\end{split}\]</div>
+<p>For <span class="math notranslate nohighlight">\(\quad v=0, \quad Q_{N}=v^{N} \quad \ln (N !)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; F=-K_{B} T \ln (Z)=-K_{B} T N\left(\ln \left(\frac{V}{\lambda^{D}}\right)-\ln \left(\frac{N}{e}\right)\right) \\
+&amp; P=-\left.\frac{\partial F}{\partial V}\right|_{N, T}=\frac{N K_{B} T}{V}, \quad P V=N K_{B} T
+\end{aligned}
+\end{split}\]</div>
+<p>But with interactions, <span class="math notranslate nohighlight">\(Q_{N} \neq V^{N}\)</span>. This “configuration integral” cant be exactly computed in general. Need:</p>
+<p><span class="math notranslate nohighlight">\(\checkmark\)</span> - numeric (molecular dynamics/</p>
+<p>(see text) - perturbation theory in <span class="math notranslate nohighlight">\(N / V\)</span> (Mayer Cluster expansion)</p>
+<p><span class="math notranslate nohighlight">\(\checkmark\)</span> - mean field theory</p>
+<p><span class="math notranslate nohighlight">\(\checkmark\)</span> - variational approximations:
+<span class="math notranslate nohighlight">\(F[P] \leqslant F\left[P_{\beta}\right]\)</span></p>
+<p>Before diving in, an exactly solvable warmup</p>
+<p>ID Tank’s Gas</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_622e679a6d467a0c4e40g-08.jpg?height=237&amp;width=1305&amp;top_left_y=103&amp;top_left_x=234" /></p>
+<p>Gas of hard ID “spheres” of diameter a; <span class="math notranslate nohighlight">\(\quad V\left(q_{i}-q_{j}\right)= \begin{cases}0 &amp; \text { if }\left|q_{i}-q_{j}\right|&gt;a \\ \infty &amp; \text { otherwise }\end{cases}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Q_{N}=\)</span> non-overlapping configurations</p>
+<p>W.L.O.G., restrict <span class="math notranslate nohighlight">\(q_{i} s q_{i+1}-a\)</span>, then <span class="math notranslate nohighlight">\(\times N\)</span> ! for permutations</p>
+<p>For <span class="math notranslate nohighlight">\(q_{1}: V_{1}\left(q_{2}\right) \equiv \int_{0}^{q_{2}-a} d q_{1}=q_{2}-a\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+q_{1}+q_{2}: v_{2}\left(q_{3}\right) &amp; \equiv \int_{a}^{q_{3}-a} d q_{2} \cdot v_{1}\left(q_{2}\right) \\
+&amp; =\frac{1}{2}\left(q_{3}-2 a\right)^{2} \\
+\longrightarrow v_{n}\left(q_{n+1}\right) &amp; =\frac{1}{n !}\left(q_{n+1}-n \cdot a\right)^{n}
+\end{aligned}
+\end{split}\]</div>
+<p>Finally, <span class="math notranslate nohighlight">\(\quad V_{N}=\int_{(N-1) a}^{L-a} d q_{N} V_{N-1}\left(q_{N}\right)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+=\frac{1}{N !}(L-N a)^{N}
+\]</div>
+<p>So <span class="math notranslate nohighlight">\(Q_{N}=(L-N a)^{N}=L^{N}(1-n \cdot a)^{N}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; F=F_{\text {free }}-K_{B} T \ln \left(\frac{Q_{N}}{L^{N}}\right) \\
+&amp; =F_{\text {free }}-K_{B} T N \ln \left(1-\frac{N}{V} \cdot a\right) \quad(V=L) \\
+&amp; P=-\frac{\partial F}{\partial V}=P_{\text {free }}+K_{B} T \frac{n^{2} \cdot a}{1-n \cdot a} \\
+&amp; =K_{B} T\left(n+\frac{n^{2} a}{1-n a}\right) \\
+&amp; =K_{B} T \frac{n}{1-n a} \\
+&amp; P \cdot(1-n a)=K_{B} T \cdot n \text { on } \\
+&amp; P(V-\underbrace{N a})=N K_{B} T \\
+&amp; \text { Ns/2 &quot;excluded volume&quot; }
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+P=\frac{N K_{B} T}{V-N_{a}}
+\]</div>
+<p>The “excluded volume” effect extends more generally, but in approximate sense. Consider for example hard spheres of volume <span class="math notranslate nohighlight">\(\Omega=\frac{4}{3} \pi r^{2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+Q_{N} \approx \frac{1}{N !} V \cdot(V-\Omega) \cdot(V-2 \Omega) \cdot(V-(N-1) \Omega)
+\]</div>
+<p>This is approximate because of jamming</p>
+<p>……. The excluded volume for</p>
+<p>(1) (2) 3 once 1,2 placed is not strictly additive if 1,2 are close. If <span class="math notranslate nohighlight">\(N \Omega \ll V\)</span>, this interaction is rare, so approximation ok in dilute limit.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text { Now } \begin{aligned}
+&amp; \prod_{n=1}^{N}(V-(N-n) \Omega)=e^{\sum \ln (V-(N-n) \Omega)} \\
+&amp; \approx e^{N \ln \left(V-\frac{N}{2} \Omega\right)}+V\left(\left(\frac{N \Omega}{V}\right)^{2}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>So effectively <span class="math notranslate nohighlight">\(\quad V \longrightarrow V-\frac{N}{2} \Omega\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r}
+P\left(V-\frac{N}{2} \Omega\right) \approx N K_{B} T \\
+P=n K_{B} T \frac{1}{1-n \frac{\Omega}{2}}
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+P &amp; =n K_{B} T \frac{1}{1-n \frac{\Omega}{2}} \\
+&amp; =n K_{B}+\left(1+\frac{\Omega}{2} n+\left(\frac{\Omega}{2}\right)^{2} n^{2}+\cdots\right)
+\end{aligned}
+\end{split}\]</div>
+<p>This is an example of a “viral expansion”</p>
+<div class="math notranslate nohighlight">
+\[
+P=n K_{B} T\left(1+B_{2}(T) n+B_{3}(T) n^{2}+\cdots\right)
+\]</div>
+<p>As explained in the textbook, the <span class="math notranslate nohighlight">\(B_{n}(T)\)</span> can be computed systematically via a diagrammatic perturbation theory. (Mayer Cluster Expansion)</p>
+<p>I find the result rather technical, so next lecture we will instead consider variational approach ( MFT.</p>
 
     <script type="text/x-thebe-config">
     {
@@ -508,7 +592,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./figures"
+            path: "./Ising-lectures"
         },
         predefinedOutput: true
     }
