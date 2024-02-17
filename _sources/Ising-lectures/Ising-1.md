@@ -108,56 +108,64 @@ $$
 \Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}
 $$
 
-Recall from our analysis of coin flipping, that this is exactly the number of states with $M$ more heads than tails in $N$ trials. Employing Stirling's formula, the entropy takes the form,
+Recall from our analysis of coin flipping, that this is exactly the number of states with $M$ more heads than tails in $N$ trials. Employing Stirling's formula, the entropy takes the form
 
-which is exactly the entropy of coin flipping {eq}`entropy-coin-flipping`. 
+$$
+s(m)=\frac{\ln \Omega(m)}{N}=-\left[\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)\right.
+$$
+
+which is the same expression we found for  coin flipping in {eq}`entropy-coin-flipping`. 
+
+So, 
  
 $$
+Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - \frac{s(m)}\beta\right]}= e^{-\beta f(m)}
+$$
+
+where $f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)$ is the free energy density conditional on magnetization.
+
+Thus, depending on $\beta J$, the net $f(m)$ looks
+
+![](https://cdn.mathpix.com/cropped/2024_02_16_819a36779a8388cf6552g-06.jpg?height=400&width=966&top_left_y=663&top_left_x=1018)
+
+
+As $N \rightarrow \infty$ (TDL), sum is dominated by minima $f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}$
+
+$$
 \begin{aligned}
-& S(m)=\frac{\ln \Omega(m)}{N}=-\left[\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right]\right. \\
-& \text { So } \\
-& Z(\beta, J, B)=\int_{-1}^{e(m)} d m e^{-\beta N} \underbrace{=f(m)}_{\left.-\frac{f}{2} m^{2}-B m-\frac{s(m)}{\beta}\right]}
+Z & =\int d m e^{-\beta N\left[f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}\right]} \\
+& =e^{-\beta N f(\bar{m})} \frac{1}{\sqrt{2 \pi \beta N / f^{\prime \prime}(\bar{m})}} \\
+F & =-k_{B} T \ln Z=N f(\bar{m})+O(\log (N))
 \end{aligned}
 $$
 
-fromenty density
-
-Thus, depending on $\beta y$, the net $f(m)$ looks
-
-
-As $N \rightarrow \infty$, sum is dominated by minima $f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}+\ldots$ $z=\int \operatorname{dm} e^{-\beta N\left[f(\bar{m})+\frac{1}{2} f^{\prime \prime}(\bar{m})(m-\bar{m})^{2}\right]}$
-
-$$
-=e^{-\beta N f(\bar{m})} \frac{1}{\sqrt{2 \pi \beta N / f^{(1)}}}
-$$
-
-$$
-F=N f(\bar{m})+O(\log (N))
-$$
-
-So problem reduces to determining minima $f(\bar{m})$. To facilitate, assume $m \ll 1$, where
+So, problem reduces to determining minima $f(\bar{m})$. To facilitate, assume $m \ll 1$, where
 
 $$
 \begin{gathered}
-S(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+C\left(m^{6}\right) \\
-\Rightarrow f(m)=-k_{B} T \ln (2)-B m+m^{2} \frac{k_{B} T-f}{2}+m^{4} \frac{k_{B} T}{12} .
+s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
+\Rightarrow f(m)=-k_{B} T \ln (2)-B m+m^{2} \frac{k_{B} T-J}{2}+m^{4} \frac{k_{B} T}{12} .
 \end{gathered}
 $$
 
+
 Let's consider case $B=0$ :
 
-$\bar{m}$ depends crucially on sign of $k_{B} T-\mathcal{Z}$
+$\bar{m}$ depends crucially on sign of
 
 $$
 \begin{aligned}
-& k_{B} T-J>0 . f=0 \quad \bar{m}=0 \\
-& k_{B} T-J<0: f=\square \bar{m}= \pm \sqrt{3\left(\frac{J}{k_{B} T}-1\right)}
+& k_{B} T-J>0: f(\bar{m}) \text{ is a single well; one minimum } \bar{m}=0 \\
+& k_{B} T-J<0: f(\bar{m}) \text{ is a symmetrical double well; two minima at } \bar{m}= \pm \sqrt{3\left(\frac{J}{k_{B}T}-1\right)}\;.
 \end{aligned}
 $$
 
-which minimum depends on sign (B),
+Which minimum is attained depends on sign (B), even for infinitesimal $B$ !
 
-(m) even for infinitesimal $B$ !
+
+
+
+
 
 (more analysis next HW)
 

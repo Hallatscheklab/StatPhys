@@ -483,46 +483,47 @@ Z=\sum_{\sigma} e^{-\beta H[\sigma]}=\sum_{m} \Omega(m) e^{-\beta H[m]}
 \[
 \Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}
 \]</div>
-<p>Recall from our analysis of coin flipping, that this is exactly the number of states with <span class="math notranslate nohighlight">\(M\)</span> more heads than tails in <span class="math notranslate nohighlight">\(N\)</span> trials. Employing Stirling’s formula, the entropy takes the form,</p>
-<p>which is exactly the entropy of coin flipping <a class="reference internal" href="../Coin-flipping.html#equation-entropy-coin-flipping">(1)</a>.</p>
+<p>Recall from our analysis of coin flipping, that this is exactly the number of states with <span class="math notranslate nohighlight">\(M\)</span> more heads than tails in <span class="math notranslate nohighlight">\(N\)</span> trials. Employing Stirling’s formula, the entropy takes the form</p>
+<div class="math notranslate nohighlight">
+\[
+s(m)=\frac{\ln \Omega(m)}{N}=-\left[\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)\right.
+\]</div>
+<p>which is the same expression we found for  coin flipping in <a class="reference internal" href="../Coin-flipping.html#equation-entropy-coin-flipping">(1)</a>.</p>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[
+Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - \frac{s(m)}\beta\right]}= e^{-\beta f(m)}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)\)</span> is the free energy density conditional on magnetization.</p>
+<p>Thus, depending on <span class="math notranslate nohighlight">\(\beta J\)</span>, the net <span class="math notranslate nohighlight">\(f(m)\)</span> looks</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_819a36779a8388cf6552g-06.jpg?height=400&amp;width=966&amp;top_left_y=663&amp;top_left_x=1018" /></p>
+<p>As <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> (TDL), sum is dominated by minima <span class="math notranslate nohighlight">\(f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; S(m)=\frac{\ln \Omega(m)}{N}=-\left[\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right]\right. \\
-&amp; \text { So } \\
-&amp; Z(\beta, J, B)=\int_{-1}^{e(m)} d m e^{-\beta N} \underbrace{=f(m)}_{\left.-\frac{f}{2} m^{2}-B m-\frac{s(m)}{\beta}\right]}
+Z &amp; =\int d m e^{-\beta N\left[f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}\right]} \\
+&amp; =e^{-\beta N f(\bar{m})} \frac{1}{\sqrt{2 \pi \beta N / f^{\prime \prime}(\bar{m})}} \\
+F &amp; =-k_{B} T \ln Z=N f(\bar{m})+O(\log (N))
 \end{aligned}
 \end{split}\]</div>
-<p>fromenty density</p>
-<p>Thus, depending on <span class="math notranslate nohighlight">\(\beta y\)</span>, the net <span class="math notranslate nohighlight">\(f(m)\)</span> looks</p>
-<p>As <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, sum is dominated by minima <span class="math notranslate nohighlight">\(f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}+\ldots\)</span> <span class="math notranslate nohighlight">\(z=\int \operatorname{dm} e^{-\beta N\left[f(\bar{m})+\frac{1}{2} f^{\prime \prime}(\bar{m})(m-\bar{m})^{2}\right]}\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-=e^{-\beta N f(\bar{m})} \frac{1}{\sqrt{2 \pi \beta N / f^{(1)}}}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-F=N f(\bar{m})+O(\log (N))
-\]</div>
-<p>So problem reduces to determining minima <span class="math notranslate nohighlight">\(f(\bar{m})\)</span>. To facilitate, assume <span class="math notranslate nohighlight">\(m \ll 1\)</span>, where</p>
+<p>So, problem reduces to determining minima <span class="math notranslate nohighlight">\(f(\bar{m})\)</span>. To facilitate, assume <span class="math notranslate nohighlight">\(m \ll 1\)</span>, where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
-S(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+C\left(m^{6}\right) \\
-\Rightarrow f(m)=-k_{B} T \ln (2)-B m+m^{2} \frac{k_{B} T-f}{2}+m^{4} \frac{k_{B} T}{12} .
+s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
+\Rightarrow f(m)=-k_{B} T \ln (2)-B m+m^{2} \frac{k_{B} T-J}{2}+m^{4} \frac{k_{B} T}{12} .
 \end{gathered}
 \end{split}\]</div>
 <p>Let’s consider case <span class="math notranslate nohighlight">\(B=0\)</span> :</p>
-<p><span class="math notranslate nohighlight">\(\bar{m}\)</span> depends crucially on sign of <span class="math notranslate nohighlight">\(k_{B} T-\mathcal{Z}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\bar{m}\)</span> depends crucially on sign of</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; k_{B} T-J&gt;0 . f=0 \quad \bar{m}=0 \\
-&amp; k_{B} T-J&lt;0: f=\square \bar{m}= \pm \sqrt{3\left(\frac{J}{k_{B} T}-1\right)}
+&amp; k_{B} T-J&gt;0: f(\bar{m}) \text{ is a single well; one minimum } \bar{m}=0 \\
+&amp; k_{B} T-J&lt;0: f(\bar{m}) \text{ is a symmetrical double well; two minima at } \bar{m}= \pm \sqrt{3\left(\frac{J}{k_{B}T}-1\right)}\;.
 \end{aligned}
 \end{split}\]</div>
-<p>which minimum depends on sign (B),</p>
-<p>(m) even for infinitesimal <span class="math notranslate nohighlight">\(B\)</span> !</p>
+<p>Which minimum is attained depends on sign (B), even for infinitesimal <span class="math notranslate nohighlight">\(B\)</span> !</p>
 <p>(more analysis next HW)</p>
 <p>The previous model is physically un realistic because it had all-to-all coupling; in our universe d.a.f. are arranged in space and interact locally. To this end:</p>
 </section>
