@@ -48,13 +48,35 @@ The familiar second term describes the effect of an external magnetic field $B$.
 ![all-to-all](../figures/all-to-all.png)
 
 
-Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be taken out, but we keep them for notational simplicty. 
+Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicty. 
+
+```{note} Versatility of the Ising model
+All-to-all Ising models, where each spin interacts with every other spin in the system, have applications far beyond the study of magnetism. These models are used in various fields to study systems characterized by complex interactions among their components. E.g.
+
+1. **Neural Networks and Neuroscience**: In computational neuroscience, the Ising model is used to describe the statistical properties of networks of neurons. It helps in understanding how the collective behavior of neurons can give rise to complex phenomena like memory, learning, and pattern recognition.
+
+2. **Optimization Problems**: The Ising model has been applied to solve complex optimization problems, where the goal is to find the minimum of a function over a large space of possible solutions. This includes tasks like the traveling salesman problem, job scheduling, and portfolio optimization. Quantum annealing and classical annealing techniques often use Ising models to represent these problems.
+
+3. **Social Dynamics**: In sociology, the Ising model is employed to study opinion dynamics within societies. It can model how individual opinions (spins) influence each other, leading to the emergence of consensus or polarization within groups.
+
+4. **Financial Markets**: The Ising model has been used to understand the complex dynamics of financial markets, including how individual decisions can lead to collective phenomena like bubbles and crashes. It helps in studying the correlation and volatility clustering observed in market data.
+
+5. **Protein Folding**: In biophysics, the Ising model is applied to understand protein folding, where the folding process can be thought of as spins finding their lowest energy configuration. This analogy helps in exploring the energy landscape of proteins and predicting their stable structures.
+
+6. **Ecological and Evolutionary Dynamics**: The model is used to study species distribution and interaction in ecosystems, as well as evolutionary dynamics where species or traits compete for dominance.
+
+7. **Materials Science**: Beyond traditional magnetism, the Ising model aids in studying the behavior of other condensed matter systems, like alloys and superconductors, where it helps in understanding phase transitions and critical phenomena.
+
+8. **Quantum Computing**: The Ising model is central to the design of quantum algorithms and the operation of quantum computers, especially in quantum annealing and simulation of quantum systems.
+
+9. **Epidemiology**: In modeling the spread of diseases, the Ising model can represent the state of individuals (susceptible, infected, recovered) and their interactions, helping to understand and predict outbreaks.
+```
 
 Defining $m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}$ what is $\langle m\rangle(\beta, J, \beta)$ as $N \longrightarrow \infty$ ?
 
 We will find that, in the thermodynamic limit $N\to \infty$, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.
 
-The above Ising model arises as an effective model in many contexts, eg. as a lattice model of particles where it describes 
+
 
 1: gas
 
