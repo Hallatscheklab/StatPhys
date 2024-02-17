@@ -50,7 +50,7 @@ The familiar second term describes the effect of an external magnetic field $B$.
 
 Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicty. 
 
-```{note} Versatility of the Ising model
+```{note} **Versatility of the Ising model**
 All-to-all Ising models, where each spin interacts with every other spin in the system, have applications far beyond the study of magnetism. These models are used in various fields to study systems characterized by complex interactions among their components. E.g.
 
 1. **Neural Networks and Neuroscience**: In computational neuroscience, the Ising model is used to describe the statistical properties of networks of neurons. It helps in understanding how the collective behavior of neurons can give rise to complex phenomena like memory, learning, and pattern recognition.
