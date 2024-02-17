@@ -45,7 +45,7 @@ $$
 
 The familiar second term describes the effect of an external magnetic field $B$. The first (non-linear) term describes ferromagnetic interactions: $J>0$ prefers $\uparrow \uparrow$ and $\downarrow \downarrow$ over $\downarrow \uparrow, \uparrow \downarrow$. The sum runs over all pairs of spins, i.e. the interactions are all-to-all,
 
-![all-to-all](figures/all-to-all.png)
+![all-to-all](../figures/all-to-all.png)
 
 
 Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be taken out, but we keep them for notational simplicty. 
