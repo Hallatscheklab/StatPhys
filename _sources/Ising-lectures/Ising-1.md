@@ -87,12 +87,12 @@ To compute $Z$, rewrite the Hamiltonian as
 
 $$
 \begin{aligned}
-H[\sigma] & =-\frac{7}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i} \\
-= & \left.N-\frac{J}{2} m^{2}[\sigma]-B m[\sigma]\right] .
+H[\sigma] & =-\frac{J}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i} \\
+= & \left.N-\frac{J}{2} [m(\sigma)]^2-B m(\sigma)\right] .
 \end{aligned}
 $$
 
-So, the energy of a microstate only depends on the magnetization $m[\sigma]$.
+So, the energy of a microstate only depends on the magnetization $m(\sigma)$.
 
 We can therefore decompose
 
@@ -102,7 +102,7 @@ $$
 
 where $\Omega(m)$ is the density of states with magnetization $m$.
 
-Since $N_{+}=\frac{N}{2}+\frac{M}{2}, N-\frac{N}{2}-\frac{M}{2}$,
+Since $N_{+}=\frac{N+M}{2}; N_-=\frac{N-M}{2}$,
 
 $$
 \Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}

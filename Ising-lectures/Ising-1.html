@@ -467,18 +467,18 @@ All-to-all Ising models, where each spin interacts with every other spin in the 
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-H[\sigma] &amp; =-\frac{7}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i} \\
-= &amp; \left.N-\frac{J}{2} m^{2}[\sigma]-B m[\sigma]\right] .
+H[\sigma] &amp; =-\frac{J}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i} \\
+= &amp; \left.N-\frac{J}{2} [m(\sigma)]^2-B m(\sigma)\right] .
 \end{aligned}
 \end{split}\]</div>
-<p>So, the energy of a microstate only depends on the magnetization <span class="math notranslate nohighlight">\(m[\sigma]\)</span>.</p>
+<p>So, the energy of a microstate only depends on the magnetization <span class="math notranslate nohighlight">\(m(\sigma)\)</span>.</p>
 <p>We can therefore decompose</p>
 <div class="math notranslate nohighlight">
 \[
 Z=\sum_{\sigma} e^{-\beta H[\sigma]}=\sum_{m} \Omega(m) e^{-\beta H[m]}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\Omega(m)\)</span> is the density of states with magnetization <span class="math notranslate nohighlight">\(m\)</span>.</p>
-<p>Since <span class="math notranslate nohighlight">\(N_{+}=\frac{N}{2}+\frac{M}{2}, N-\frac{N}{2}-\frac{M}{2}\)</span>,</p>
+<p>Since <span class="math notranslate nohighlight">\(N_{+}=\frac{N+M}{2}; N_-=\frac{N-M}{2}\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 \Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}
