@@ -387,7 +387,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-question">Key question</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -434,7 +438,11 @@ H[\sigma]=-\frac{J}{2 N} \sum_{i, j=1} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \s
 \]</div>
 <p>The familiar second term describes the effect of an external magnetic field <span class="math notranslate nohighlight">\(B\)</span>. The first (non-linear) term describes ferromagnetic interactions: <span class="math notranslate nohighlight">\(J&gt;0\)</span> prefers <span class="math notranslate nohighlight">\(\uparrow \uparrow\)</span> and <span class="math notranslate nohighlight">\(\downarrow \downarrow\)</span> over <span class="math notranslate nohighlight">\(\downarrow \uparrow, \uparrow \downarrow\)</span>. The sum runs over all pairs of spins, i.e. the interactions are all-to-all,</p>
 <p><img alt="all-to-all" src="../_images/all-to-all.png" /></p>
-<p>Note that the self-interaction terms (<span class="math notranslate nohighlight">\(i=j\)</span>) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicty.</p>
+<p>Note that the self-interaction terms (<span class="math notranslate nohighlight">\(i=j\)</span>) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity.</p>
+<section id="key-question">
+<h3>Key question<a class="headerlink" href="#key-question" title="Permalink to this heading">#</a></h3>
+<p>Defining <span class="math notranslate nohighlight">\(m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}\)</span> what is <span class="math notranslate nohighlight">\(\langle m\rangle(\beta, J, \beta)\)</span> as <span class="math notranslate nohighlight">\(N \longrightarrow \infty\)</span> ?</p>
+<p>We will find that, in the thermodynamic limit <span class="math notranslate nohighlight">\(N\to \infty\)</span>, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Versatility of the Ising model</strong>
@@ -451,15 +459,11 @@ All-to-all Ising models, where each spin interacts with every other spin in the 
 <li><p><strong>Epidemiology</strong>: In modeling the spread of diseases, the Ising model can represent the state of individuals (susceptible, infected, recovered) and their interactions, helping to understand and predict outbreaks.</p></li>
 </ol>
 </div>
-<p>Defining <span class="math notranslate nohighlight">\(m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}\)</span> what is <span class="math notranslate nohighlight">\(\langle m\rangle(\beta, J, \beta)\)</span> as <span class="math notranslate nohighlight">\(N \longrightarrow \infty\)</span> ?</p>
-<p>We will find that, in the thermodynamic limit <span class="math notranslate nohighlight">\(N\to \infty\)</span>, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.</p>
-<p>1: gas</p>
-<p>II’: liquid.</p>
-<p>Corks when we</p>
-<p>have a divergent length scale -</p>
-<p>near and order phase transition</p>
-<p>Analysis: <span class="math notranslate nohighlight">\(\langle m\rangle \equiv \frac{1}{N} \sum\left\langle\sigma_{p}\right\rangle\)</span> follows from partition fact <span class="math notranslate nohighlight">\(Z=\sum_{\{\sigma\}} e^{-\beta H\{\sigma\}}=e^{-\beta F}\)</span> via differentiation, <span class="math notranslate nohighlight">\(\langle m\rangle=-\frac{1}{N} \partial_{B} F\)</span>.</p>
-<p>To compute <span class="math notranslate nohighlight">\(Z\)</span>, note we can write</p>
+</section>
+<section id="analysis">
+<h3>Analysis:<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\langle m\rangle \equiv \frac{1}{N} \sum\left\langle\sigma_{i}\right\rangle\)</span> follows from the partition function <span class="math notranslate nohighlight">\(Z=\sum_{\{\sigma\}} e^{-\beta H\{\sigma\}}=e^{-\beta F}\)</span> via differentiation, <span class="math notranslate nohighlight">\(\langle m\rangle=-\frac{1}{N} \partial_{B} F\)</span>.</p>
+<p>To compute <span class="math notranslate nohighlight">\(Z\)</span>, rewrite the Hamiltonian as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -467,8 +471,8 @@ H[\sigma] &amp; =-\frac{7}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=
 = &amp; \left.N-\frac{J}{2} m^{2}[\sigma]-B m[\sigma]\right] .
 \end{aligned}
 \end{split}\]</div>
-<p>So, <span class="math notranslate nohighlight">\(H\)</span> depends only on <span class="math notranslate nohighlight">\(M=N \cdot m[\sigma]\)</span></p>
-<p>We can then decompose</p>
+<p>So, the energy of a microstate only depends on the magnetization <span class="math notranslate nohighlight">\(m[\sigma]\)</span>.</p>
+<p>We can therefore decompose</p>
 <div class="math notranslate nohighlight">
 \[
 Z=\sum_{\sigma} e^{-\beta H[\sigma]}=\sum_{m} \Omega(m) e^{-\beta H[m]}
@@ -479,7 +483,8 @@ Z=\sum_{\sigma} e^{-\beta H[\sigma]}=\sum_{m} \Omega(m) e^{-\beta H[m]}
 \[
 \Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}
 \]</div>
-<p>Recall coin flipping w/ <span class="math notranslate nohighlight">\(M\)</span> more Hs than <span class="math notranslate nohighlight">\(T_{s}\)</span> :</p>
+<p>Recall from our analysis of coin flipping, that this is exactly the number of states with <span class="math notranslate nohighlight">\(M\)</span> more heads than tails in <span class="math notranslate nohighlight">\(N\)</span> trials. Employing Stirling’s formula, the entropy takes the form,</p>
+<p>which is exactly the entropy of coin flipping <a class="reference internal" href="../Coin-flipping.html#equation-entropy-coin-flipping">(1)</a>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -520,6 +525,7 @@ S(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+C\left(m^{6}\right) \\
 <p>(m) even for infinitesimal <span class="math notranslate nohighlight">\(B\)</span> !</p>
 <p>(more analysis next HW)</p>
 <p>The previous model is physically un realistic because it had all-to-all coupling; in our universe d.a.f. are arranged in space and interact locally. To this end:</p>
+</section>
 </section>
 </section>
 
@@ -578,7 +584,11 @@ S(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+C\left(m^{6}\right) \\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-question">Key question</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

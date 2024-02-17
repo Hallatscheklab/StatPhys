@@ -48,7 +48,12 @@ The familiar second term describes the effect of an external magnetic field $B$.
 ![all-to-all](../figures/all-to-all.png)
 
 
-Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicty. 
+Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity. 
+
+#### Key question
+Defining $m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}$ what is $\langle m\rangle(\beta, J, \beta)$ as $N \longrightarrow \infty$ ?
+
+We will find that, in the thermodynamic limit $N\to \infty$, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.
 
 ```{note} **Versatility of the Ising model**
 All-to-all Ising models, where each spin interacts with every other spin in the system, have applications far beyond the study of magnetism. These models are used in various fields to study systems characterized by complex interactions among their components. E.g.
@@ -72,25 +77,13 @@ All-to-all Ising models, where each spin interacts with every other spin in the 
 9. **Epidemiology**: In modeling the spread of diseases, the Ising model can represent the state of individuals (susceptible, infected, recovered) and their interactions, helping to understand and predict outbreaks.
 ```
 
-Defining $m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}$ what is $\langle m\rangle(\beta, J, \beta)$ as $N \longrightarrow \infty$ ?
-
-We will find that, in the thermodynamic limit $N\to \infty$, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.
 
 
 
-1: gas
+#### Analysis: 
+$\langle m\rangle \equiv \frac{1}{N} \sum\left\langle\sigma_{i}\right\rangle$ follows from the partition function $Z=\sum_{\{\sigma\}} e^{-\beta H\{\sigma\}}=e^{-\beta F}$ via differentiation, $\langle m\rangle=-\frac{1}{N} \partial_{B} F$.
 
-II': liquid.
-
-Corks when we
-
-have a divergent length scale -
-
-near and order phase transition
-
-Analysis: $\langle m\rangle \equiv \frac{1}{N} \sum\left\langle\sigma_{p}\right\rangle$ follows from partition fact $Z=\sum_{\{\sigma\}} e^{-\beta H\{\sigma\}}=e^{-\beta F}$ via differentiation, $\langle m\rangle=-\frac{1}{N} \partial_{B} F$.
-
-To compute $Z$, note we can write
+To compute $Z$, rewrite the Hamiltonian as
 
 $$
 \begin{aligned}
@@ -99,9 +92,9 @@ H[\sigma] & =-\frac{7}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{
 \end{aligned}
 $$
 
-So, $H$ depends only on $M=N \cdot m[\sigma]$
+So, the energy of a microstate only depends on the magnetization $m[\sigma]$.
 
-We can then decompose
+We can therefore decompose
 
 $$
 Z=\sum_{\sigma} e^{-\beta H[\sigma]}=\sum_{m} \Omega(m) e^{-\beta H[m]}
@@ -115,8 +108,10 @@ $$
 \Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}
 $$
 
-Recall coin flipping w/ $M$ more Hs than $T_{s}$ :
+Recall from our analysis of coin flipping, that this is exactly the number of states with $M$ more heads than tails in $N$ trials. Employing Stirling's formula, the entropy takes the form,
 
+which is exactly the entropy of coin flipping {eq}`entropy-coin-flipping`. 
+ 
 $$
 \begin{aligned}
 & S(m)=\frac{\ln \Omega(m)}{N}=-\left[\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right]\right. \\
