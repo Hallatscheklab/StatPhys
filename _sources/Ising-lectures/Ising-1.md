@@ -129,7 +129,7 @@ $$
 $$
 
 
-Thus, depending on $\beta J$, the net $f(m)$ looks
+Depending on $\beta J$, $f(m)$ can look like a single or double well:
 
 ![all-to-all-free-energy](../figures/all-to-all-free-energy.png)
 
