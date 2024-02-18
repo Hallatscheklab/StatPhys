@@ -105,28 +105,34 @@ where $\Omega(m)$ is the density of states with magnetization $m$.
 Since $N_{+}=\frac{N+M}{2}; N_-=\frac{N-M}{2}$,
 
 $$
-\Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}
+\Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)/k_B}
 $$
 
 Recall from our analysis of coin flipping, that this is exactly the number of states with $M$ more heads than tails in $N$ trials. Employing Stirling's formula, the entropy takes the form
 
 $$
-s(m)=\frac{\ln \Omega(m)}{N}=-\left[\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)\right.
+\frac{s(m)}{k_B }=\frac{\ln \Omega(m)}{N }=-\frac{1+m}{2} \ln \frac{1+m}{2}-\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
 $$
 
-which is the same expression we found for  coin flipping in {eq}`entropy-coin-flipping`. 
+which is the same expression we found for  coin flipping in {eq}`entropy-coin-flipping` modulo the factor of $k_B$. 
 
 So, 
  
 $$
-Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - \frac{s(m)}\beta\right]}= e^{-\beta N f(m)}
+Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - T s(m)\right]}= e^{-\beta N f(m)}
 $$
 
-where $f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)$ is the free energy density conditional on magnetization.
+where $f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)$ is the free energy density conditional on magnetization. Note that, at $B=0$, the function $\beta f(m)$ merely depends on the parameter $\beta J$,
+
+$$
+\beta f (m)= -\frac{\beta J}2 m^2+\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
+$$
+
 
 Thus, depending on $\beta J$, the net $f(m)$ looks
 
-![](https://cdn.mathpix.com/cropped/2024_02_16_819a36779a8388cf6552g-06.jpg?height=400&width=966&top_left_y=663&top_left_x=1018)
+![all-to-all-free-energy]('../figures/all-to-all-free-energy.png')
+
 
 
 As $N \rightarrow \infty$ (TDL), sum is dominated by minima $f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}$
