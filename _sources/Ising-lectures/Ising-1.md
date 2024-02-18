@@ -119,7 +119,7 @@ which is the same expression we found for  coin flipping in {eq}`entropy-coin-fl
 So, 
  
 $$
-Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - \frac{s(m)}\beta\right]}= e^{-\beta f(m)}
+Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - \frac{s(m)}\beta\right]}= e^{-\beta N f(m)}
 $$
 
 where $f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)$ is the free energy density conditional on magnetization.
