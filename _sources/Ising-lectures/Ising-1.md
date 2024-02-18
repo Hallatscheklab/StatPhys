@@ -131,7 +131,7 @@ $$
 
 Thus, depending on $\beta J$, the net $f(m)$ looks
 
-![all-to-all-free-energy]('../figures/all-to-all-free-energy.png')
+![all-to-all-free-energy](../figures/all-to-all-free-energy.png)
 
 
 
