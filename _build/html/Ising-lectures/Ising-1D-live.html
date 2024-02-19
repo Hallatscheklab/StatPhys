@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Statistical mechanics with interactions - Ising models &#8212; Equilibrium Statistical Physics</title>
+    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -64,10 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising-lectures/Ising-1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising-lectures/Ising-1D-live';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Chemical reactions" href="../Chemical-reactions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
@@ -191,7 +190,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-1D.html">1D Ising model</a></li>
+
 </ul>
 
     </div>
@@ -263,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FIsing-lectures/Ising-1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FIsing-lectures/Ising-1D-live.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Ising-lectures/Ising-1.md" target="_blank"
+      <li><a href="../_sources/Ising-lectures/Ising-1D-live.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Statistical mechanics with interactions - Ising models</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,13 +387,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-question">Key question</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis:</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
-</li>
-</ul>
+
             </nav>
         </div>
     </div>
@@ -403,136 +400,205 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="statistical-mechanics-with-interactions-ising-models">
-<h1>Statistical mechanics with interactions - Ising models<a class="headerlink" href="#statistical-mechanics-with-interactions-ising-models" title="Permalink to this heading">#</a></h1>
-<p>Thus far, we have developed statistical mechanics as a theoretical framework and applied it to noninteracting systems (e.g. ideal gasses or the paramagnet) or small interacting systems (e.g. just a few spin degrees of freedom). We have left out interacting systems that are large. Why?</p>
-<p>Consider a system of <span class="math notranslate nohighlight">\(N\)</span> Ising spins, i.e. <span class="math notranslate nohighlight">\(N\)</span> degrees of freedom (d.o.f.) <span class="math notranslate nohighlight">\({\sigma_1, \sigma_2, \dots}\)</span> where each d.o.f. has two possible states, <span class="math notranslate nohighlight">\(\{+1,-1\}\)</span>. The partition function then involves summing over <span class="math notranslate nohighlight">\(2^N\)</span> microstates. With arbitrary interactions (i.e. Hamiltonians), this can be done for small <span class="math notranslate nohighlight">\(N\)</span>, where we can simply enumerate all possible states. But to be able to compute the partition function analytically for large <span class="math notranslate nohighlight">\(N\)</span> requires us to somehow organize the summation in a way that makes it tractable.</p>
-<p>To see why non-interacting systems are tractable, recall the partition function of a paramagnet (<span class="math notranslate nohighlight">\(N\)</span> non-interacting Ising spins in a magnetic field <span class="math notranslate nohighlight">\(B\)</span>),</p>
+  <p>ling models</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-01.jpg?height=1153&amp;width=2055&amp;top_left_y=235&amp;top_left_x=42" /></p>
+<p>ID <span class="math notranslate nohighlight">\(\quad H=-\gamma \sum_{i=1}^{N} \sigma_{i} \sigma_{i+1}-B \sum_{i} \sigma_{i}\)</span></p>
+<p>Order destroyed by domain walls for any finis temperature</p>
+<div class="math notranslate nohighlight">
+\[
+\uparrow \uparrow \uparrow \Uparrow \downarrow \downarrow \downarrow \downarrow \downarrow
+\]</div>
+<p>di. costs energy <span class="math notranslate nohighlight">\(\Delta=Z J\)</span></p>
+<p>Boltzmann: <span class="math notranslate nohighlight">\(\operatorname{pr}[d-\omega \mid\)</span> specificite <span class="math notranslate nohighlight">\(]=\frac{e^{-\beta \Delta}}{e^{-\beta \Delta}+1} \equiv P d \omega\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-Z(\beta, M) &amp; =\sum_{\left\{\sigma_{i}\right\}} e^{-\beta\left(-B \Sigma \sigma_{i}\right)} \\
-&amp; =\left(1+e^{\beta B}\right)^{N} \;.
+&amp; \beta J \gg 1 \Rightarrow p_{d \omega} \approx e^{-\beta \Delta} \\
+&amp; \beta J \ll 1 \Rightarrow P_{d, w} \approx \frac{1}{2}
 \end{aligned}
 \end{split}\]</div>
-<p>The factorization of the partition function factorized implies an additive free energy</p>
-<div class="math notranslate nohighlight">
-\[
-F=-k_{B} T N \ln \left(1+e^{\beta B}\right) \;.
-\]</div>
-<p>For non-interacting systems, we can simply “divide and conquer”: Analyze a small subsystem, in which we can enumerate all possible states, and obtain the large system as the sum of independent subsystems. (“Whole is not greater than sum of parts.”)</p>
-<p>Also, <span class="math notranslate nohighlight">\(F(T, B)\)</span> is an analytic function without any cusps, kinks or singularities. Since observables are obtained from derivatives, eg. <span class="math notranslate nohighlight">\(\left\langle\sigma_{i}\right\rangle=\frac{1}{N} \partial_B F\)</span>, everything behaves smoothly: no phase transitions.</p>
-<p>This is true for any model with a finite number of microstates <span class="math notranslate nohighlight">\(s=1,\dots, \Omega\)</span>: If <span class="math notranslate nohighlight">\(H[s ; J]\)</span> is analytic in the external force <span class="math notranslate nohighlight">\(J\)</span>, then</p>
-<div class="math notranslate nohighlight">
-\[
-Z(\beta, J)=\sum_{s=1}^{\Omega} e^{-\beta H[s ; J]}
-\]</div>
-<p>is. However, with (i) interactions and (ii) thermodynamic limit, this need not be the case: the whole is greater than the sum of its parts, “more is different” (P. Anderson).</p>
-<p>However, those intriguing, large, interacting systems generally cannot be solved exactly. We will explore approximations and numerical methods to tackle them. Nonetheless, there are certain cases that can be solved exactly, offering valuable insights. For example, the …</p>
-<section id="all-to-all-ising-model">
-<h2>All-to-all Ising model<a class="headerlink" href="#all-to-all-ising-model" title="Permalink to this heading">#</a></h2>
-<p>Consider <span class="math notranslate nohighlight">\(N\)</span> Ising spins <span class="math notranslate nohighlight">\(\left\{\sigma_{1}, \ldots, \sigma_{N}\right\}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span> with Hamiltonian</p>
-<div class="math notranslate nohighlight">
-\[
-H[\sigma]=-\frac{J}{2 N} \sum_{i, j=1} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i}
-\]</div>
-<p>The familiar second term describes the effect of an external magnetic field <span class="math notranslate nohighlight">\(B\)</span>. The first (non-linear) term describes ferromagnetic interactions: <span class="math notranslate nohighlight">\(J&gt;0\)</span> prefers <span class="math notranslate nohighlight">\(\uparrow \uparrow\)</span> and <span class="math notranslate nohighlight">\(\downarrow \downarrow\)</span> over <span class="math notranslate nohighlight">\(\downarrow \uparrow, \uparrow \downarrow\)</span>. The sum runs over all pairs of spins, i.e. the interactions are all-to-all,</p>
-<p><img alt="all-to-all" src="../_images/all-to-all.png" /></p>
-<p>Note that the self-interaction terms (<span class="math notranslate nohighlight">\(i=j\)</span>) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity.</p>
-<section id="key-question">
-<h3>Key question<a class="headerlink" href="#key-question" title="Permalink to this heading">#</a></h3>
-<p>Defining <span class="math notranslate nohighlight">\(m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}\)</span> what is <span class="math notranslate nohighlight">\(\langle m\rangle(\beta, J, \beta)\)</span> as <span class="math notranslate nohighlight">\(N \longrightarrow \infty\)</span> ?</p>
-<p>We will find that, in the thermodynamic limit <span class="math notranslate nohighlight">\(N\to \infty\)</span>, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Versatility of the Ising model</strong>
-All-to-all Ising models, where each spin interacts with every other spin in the system, have applications far beyond the study of magnetism. These models are used in various fields to study systems characterized by complex interactions among their components. E.g.</p>
-<ol class="arabic simple">
-<li><p><strong>Neural Networks and Neuroscience</strong>: In computational neuroscience, the Ising model is used to describe the statistical properties of networks of neurons. It helps in understanding how the collective behavior of neurons can give rise to complex phenomena like memory, learning, and pattern recognition.</p></li>
-<li><p><strong>Optimization Problems</strong>: The Ising model has been applied to solve complex optimization problems, where the goal is to find the minimum of a function over a large space of possible solutions. This includes tasks like the traveling salesman problem, job scheduling, and portfolio optimization. Quantum annealing and classical annealing techniques often use Ising models to represent these problems.</p></li>
-<li><p><strong>Social Dynamics</strong>: In sociology, the Ising model is employed to study opinion dynamics within societies. It can model how individual opinions (spins) influence each other, leading to the emergence of consensus or polarization within groups.</p></li>
-<li><p><strong>Financial Markets</strong>: The Ising model has been used to understand the complex dynamics of financial markets, including how individual decisions can lead to collective phenomena like bubbles and crashes. It helps in studying the correlation and volatility clustering observed in market data.</p></li>
-<li><p><strong>Protein Folding</strong>: In biophysics, the Ising model is applied to understand protein folding, where the folding process can be thought of as spins finding their lowest energy configuration. This analogy helps in exploring the energy landscape of proteins and predicting their stable structures.</p></li>
-<li><p><strong>Ecological and Evolutionary Dynamics</strong>: The model is used to study species distribution and interaction in ecosystems, as well as evolutionary dynamics where species or traits compete for dominance.</p></li>
-<li><p><strong>Materials Science</strong>: Beyond traditional magnetism, the Ising model aids in studying the behavior of other condensed matter systems, like alloys and superconductors, where it helps in understanding phase transitions and critical phenomena.</p></li>
-<li><p><strong>Quantum Computing</strong>: The Ising model is central to the design of quantum algorithms and the operation of quantum computers, especially in quantum annealing and simulation of quantum systems.</p></li>
-<li><p><strong>Epidemiology</strong>: In modeling the spread of diseases, the Ising model can represent the state of individuals (susceptible, infected, recovered) and their interactions, helping to understand and predict outbreaks.</p></li>
-</ol>
-</div>
-</section>
-<section id="analysis">
-<h3>Analysis:<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\langle m\rangle \equiv \frac{1}{N} \sum\left\langle\sigma_{i}\right\rangle\)</span> follows from the partition function <span class="math notranslate nohighlight">\(Z=\sum_{\{\sigma\}} e^{-\beta H\{\sigma\}}=e^{-\beta F}\)</span> via differentiation, <span class="math notranslate nohighlight">\(\langle m\rangle=-\frac{1}{N} \partial_{B} F\)</span>.</p>
-<p>To compute <span class="math notranslate nohighlight">\(Z\)</span>, rewrite the Hamiltonian as</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Gas of d.w.s with only hard-core interaction (Tonks gus) and davity</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-H[\sigma] &amp; =-\frac{J}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i} \\
-= &amp; \left.N-\frac{J}{2} [m(\sigma)]^2-B m(\sigma)\right] .
+&amp; \text { TDL } N_{d . w}=P d . w \cdot N, P_{d \omega} \ll l . \\
+&amp; \Rightarrow \text { dencity of d.w. } \rho=e^{-\beta \Delta}
 \end{aligned}
 \end{split}\]</div>
-<p>So, the energy of a microstate only depends on the magnetization <span class="math notranslate nohighlight">\(m(\sigma)\)</span>.</p>
-<p>We can therefore decompose</p>
-<div class="math notranslate nohighlight">
-\[
-Z=\sum_{\sigma} e^{-\beta H[\sigma]}=\sum_{m} \Omega(m) e^{-\beta H[m]}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\Omega(m)\)</span> is the density of states with magnetization <span class="math notranslate nohighlight">\(m\)</span>.</p>
-<p>Since <span class="math notranslate nohighlight">\(N_{+}=\frac{N+M}{2}; N_-=\frac{N-M}{2}\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-\Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)/k_B}
-\]</div>
-<p>Recall from our analysis of coin flipping, that this is exactly the number of states with <span class="math notranslate nohighlight">\(M\)</span> more heads than tails in <span class="math notranslate nohighlight">\(N\)</span> trials. Employing Stirling’s formula, the entropy takes the form</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{s(m)}{k_B }=\frac{\ln \Omega(m)}{N }=-\frac{1+m}{2} \ln \frac{1+m}{2}-\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
-\]</div>
-<p>which is the same expression we found for  coin flipping in <a class="reference internal" href="../Coin-flipping.html#equation-entropy-coin-flipping">(1)</a> modulo the factor of <span class="math notranslate nohighlight">\(k_B\)</span>.</p>
-<p>So,</p>
-<div class="math notranslate nohighlight">
-\[
-Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - T s(m)\right]}= e^{-\beta N f(m)}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)\)</span> is the free energy density conditional on magnetization. Note that, at <span class="math notranslate nohighlight">\(B=0\)</span>, the function <span class="math notranslate nohighlight">\(\beta f(m)\)</span> merely depends on the parameter <span class="math notranslate nohighlight">\(\beta J\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-\beta f (m)= -\frac{\beta J}2 m^2+\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
-\]</div>
-<p>Depending on <span class="math notranslate nohighlight">\(\beta J\)</span>, <span class="math notranslate nohighlight">\(f(m)\)</span> can look like a single or double well:</p>
-<p><img alt="all-to-all-free-energy" src="../_images/all-to-all-free-energy.png" /></p>
-<p>As <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> (TDL), sum is dominated by minima <span class="math notranslate nohighlight">\(f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}\)</span></p>
+<p>correlaticn funetion</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-Z &amp; =\int d m e^{-\beta N\left[f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}\right]} \\
-&amp; =e^{-\beta N f(\bar{m})} \frac{1}{\sqrt{2 \pi \beta N / f^{\prime \prime}(\bar{m})}} \\
-F &amp; =-k_{B} T \ln Z=N f(\bar{m})+O(\log (N))
+&amp; \left\langle\sigma_{0} \sigma_{r}\right\rangle=\left\{\begin{array}{l}
++1, \text { even ur. of d.w betw. Oandr } \\
+-1, \text { odd ur. }
+\end{array}\right. \\
+&amp; =\sum_{m=0}^{T} p_{m}(-1)^{m}
 \end{aligned}
 \end{split}\]</div>
-<p>So, problem reduces to determining minima <span class="math notranslate nohighlight">\(f(\bar{m})\)</span>. To facilitate, assume <span class="math notranslate nohighlight">\(m \ll 1\)</span>, where</p>
+<p><span class="math notranslate nohighlight">\(P_{m}=\)</span> Binomial distrib. with <span class="math notranslate nohighlight">\(m\)</span> success in <span class="math notranslate nohighlight">\(r\)</span> trials if succ. proba. <span class="math notranslate nohighlight">\(=\)</span> plw. .</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left\langle\sigma_{0} \sigma_{r}\right\rangle &amp; =\sum_{m=0}^{r}\left(\begin{array}{l}
+r \\
+m
+\end{array}\right) p^{m}(1-p)^{\tau-m} \cdot(-1)^{m} \\
+&amp; =(1-2 p)^{r} w \cdot p=\frac{e^{-\beta \Delta}}{e^{-\beta \Delta}+1}
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\sigma_{0} \sigma_{r}\right\rangle=\exp [r \ln (1-2 p)]=e^{-\frac{r}{\xi}},
+\]</div>
+<p>where the correlation length <span class="math notranslate nohighlight">\(\xi\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\xi=\frac{1}{|\ln (1-2 p)|} \simeq \frac{1}{p \ll 1} \simeq \frac{e^{\beta \Delta}}{2}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow-\xi\)</span> is typical domain size</p>
+<p><span class="math notranslate nohighlight">\(-\lim _{r \rightarrow \infty}\left\langle\sigma_{0} \sigma_{r}\right\rangle=0 \quad \forall T&gt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \quad N a\)</span> long range order</p>
+<p>always in paramapueticphase Na phase transitions!</p>
+<p>Full solution</p>
+<p>IDmadel (unlike 3D!) can be solved exactly using “transfer matrix method! First consider <span class="math notranslate nohighlight">\(B=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+z=\sum_{\{\sigma\}} \prod_{B \text { lactor }}^{\prod_{i=1}^{N} e^{\beta J \sigma_{i} \sigma_{i+1}}} \tag{*}
+\end{equation*}
+\]</div>
+<p>Deline <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix <span class="math notranslate nohighlight">\(T_{\sigma \sigma_{1}}=e^{\beta J \sigma \sigma^{\prime}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; T=\left[\begin{array}{ll}
+e^{\beta \gamma} &amp; e^{-\beta z} \\
+e^{-\beta z} &amp; e^{\beta J}
+\end{array}\right] \\
+&amp; Z=\sum_{\sigma_{1}} \sum_{\sigma_{2}} \cdots \sigma_{N} T_{\sigma_{1} \sigma_{2}} \cdot T_{\sigma_{2} \sigma_{3}} T_{3} \sigma_{4}
+\end{aligned}
+\end{split}\]</div>
+<p>Boltzmann fector</p>
+<p>This sum is just matrix multiplic.!</p>
+<p>Next, with <span class="math notranslate nohighlight">\(B \neq 0\)</span></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-04.jpg?height=554&amp;width=1513&amp;top_left_y=1762&amp;top_left_x=448" /></p>
+<p>Nsites with perindic b.c. (i.e.ering)</p>
+<div class="math notranslate nohighlight">
+\[
+Z_{N}=\left(T^{N}\right)_{11}+\left(T^{N}\right)_{22}=\operatorname{Tr}\left(T^{N}\right)
+\]</div>
+<p>Powers of a matrix are simple in terms of eigen vols and-rectors:</p>
+<p>For <span class="math notranslate nohighlight">\(\beta=0, \lambda_{ \pm}=e^{\beta \gamma} \pm e^{-\beta J}\)</span></p>
+<p><span class="math notranslate nohighlight">\([\)</span> from <span class="math notranslate nohighlight">\((T-\lambda 11) \underline{x}=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\operatorname{det}(T-\lambda 11)=0]\)</span></p>
+<p>Nate <span class="math notranslate nohighlight">\(\left.\frac{\lambda_{-}}{\lambda_{+}}=\tanh (\beta \gamma)&lt;1 \quad \forall \beta\right\rangle\)</span></p>
+<p>So <span class="math notranslate nohighlight">\(\lim _{N \rightarrow \infty} z_{N}=\underbrace{\lambda_{+}^{N}\left(1+\left(\frac{\lambda_{-}}{\lambda_{+}}\right)^{N}\right)}_{\underbrace{}_{T}\left(T^{N}\right)} \rightarrow \lambda_{+}^{N}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+F=-k_{B} T N \ln (2 \cosh (37))+o(1)
+\]</div>
+<p>Note: <span class="math notranslate nohighlight">\(F(T)\)</span> is analytic in <span class="math notranslate nohighlight">\(T\)</span>, unlike all-bo-all <span class="math notranslate nohighlight">\(H W\)</span> checks <span class="math notranslate nohighlight">\(x=-\left.\partial_{B}^{2} F(T, B)\right|_{B=0}=\frac{\partial(m)}{\partial B}\)</span> regular <span class="math notranslate nohighlight">\(\forall T\)</span>.</p>
+<p>Entropy density</p>
+<div class="math notranslate nohighlight">
+\[
+S=\frac{1}{N} \partial_{T} F
+\]</div>
+<p><span class="math notranslate nohighlight">\(\ln (2)\)</span></p>
+<p>smooth fets/no ph.tansitions</p>
+<p>Correlation <span class="math notranslate nohighlight">\(f c t: C(r) \equiv\left\langle\sigma_{0} \sigma_{r}\right\rangle\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\sigma_{0} \sigma_{r}\right\rangle=\frac{\sum_{i \sigma j} \ldots T_{\sigma_{0, \sigma_{0}}} \sigma_{0} T_{\sigma_{0} \sigma_{1}} \cdots \cdot \sigma_{x-1} \sigma_{r} \sigma_{j} T_{\sigma_{i} \sigma_{1}}}{z}
+\]</div>
+<p>Introducing <span class="math notranslate nohighlight">\(\hat{\sigma}^{z} \equiv\left(\begin{array}{cc}1 &amp; 0 \\ 0 &amp; -1\end{array}\right)\)</span>, we can write this as a matrix product</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-06.jpg?height=425&amp;width=1469&amp;top_left_y=2003&amp;top_left_x=496" /></p>
+<p>Introduce eigensystem of <span class="math notranslate nohighlight">\(T\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|+\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{l}
+1 \\
+1
+\end{array}\right) ; \lambda_{t}=2 \cosh (\beta \gamma)
+\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
-s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
-\Rightarrow f(m)=-k_{B} T \ln (2)-B m+m^{2} \frac{k_{B} T-J}{2}+m^{4} \frac{k_{B} T}{12} .
+1 \rightarrow=\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+1 \\
+-1
+\end{array}\right) ; \lambda_{-}=2 \sinh (\beta \gamma) \\
+T^{\gamma}=\sum_{\alpha= \pm}|\alpha\rangle\langle\alpha| \lambda_{\alpha}^{\gamma} \\
+C(\gamma)=\sum_{\alpha \beta \beta}\left\langle\beta\left|\hat{\sigma}^{z}\right| \alpha\right\rangle\left\langle\alpha\left|\hat{\sigma}^{z}\right| \beta\right\rangle \lambda_{\alpha}^{\gamma} \lambda_{\beta}^{N-\gamma}
 \end{gathered}
 \end{split}\]</div>
-<p>Let’s consider case <span class="math notranslate nohighlight">\(B=0\)</span> :</p>
-<p><span class="math notranslate nohighlight">\(\bar{m}\)</span> depends crucially on sign of</p>
+<p>dominated by <span class="math notranslate nohighlight">\(\beta=+\)</span> and <span class="math notranslate nohighlight">\(\left\langle\alpha\left|\beta^{z}\right|+\right\rangle \neq 0\)</span></p>
+<p>requires <span class="math notranslate nohighlight">\(\alpha=-\)</span></p>
+<p>So, <span class="math notranslate nohighlight">\(C(r)=\frac{\lambda_{-}^{r} \lambda_{+}^{N-r}}{\lambda_{+}^{N}}=\left(\frac{\lambda_{-}}{\lambda_{+}}\right)^{r}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+=e^{-r / \xi} \text { with } \frac{1}{\xi} \equiv \ln \left(\frac{\lambda_{+}}{\lambda_{-}}\right) \text {. }
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\frac{\lambda_{t}}{\lambda_{-}}=\tanh [\beta]=1-2 \frac{\underbrace{e^{-\beta \gamma}}_{P d . \omega .}}{\underbrace{\beta \gamma}+e^{-\beta \gamma}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> same corrleurfh as found before.</p>
+<p>Phase transition for <span class="math notranslate nohighlight">\(D&gt;1\)</span> ?</p>
+<p>Recap essence of IDsituation:</p>
+<p>In ID, long-range order can be destroyed by defects that cost a finite amount of energy.</p>
+<p>Same argument in 2D?</p>
+<p>For D&gt;1, domain walls are extended</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> to destroy order</p>
+<p>d. wis need to</p>
+<p>be large <span class="math notranslate nohighlight">\(\Rightarrow\)</span></p>
+<p>energy cost is not bounded by finite</p>
+<p>value <span class="math notranslate nohighlight">\(\Rightarrow I D\)</span> argument canal be applied.</p>
+<p>In 2D, a dew. is a ID object,</p>
+<p>which cast <span class="math notranslate nohighlight">\(\Delta E=27 \cdot l\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[
+l=\text { loupth of d.w. }
+\]</div>
+<p>In ID, any finite density “olw of di.w.s destrons order at the ecale <span class="math notranslate nohighlight">\(\xi \sim \frac{1}{u_{d} \omega_{1}}\)</span>.</p>
+<p>But in 2D, a fuile densits of sunall d.w.s dresuit abstroy as dor</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-09.jpg?height=792&amp;width=1765&amp;top_left_y=1021&amp;top_left_x=290" /></p>
+<p>What matters is the size of the <a class="reference external" href="http://d.ws">d.ws</a></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-09.jpg?height=676&amp;width=818&amp;top_left_y=2007&amp;top_left_x=235" /></p>
+<p>Cnder olestrayed if size <span class="math notranslate nohighlight">\(\ell \sim L\)</span> becnure favorable</p>
+<p>So, the question is how</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; k_{B} T-J&gt;0: f(\bar{m}) \text{ is a single well; one minimum } \bar{m}=0 \\
-&amp; k_{B} T-J&lt;0: f(\bar{m}) \text{ is a symmetrical double well; two minima at } \bar{m}= \pm \sqrt{3\left(\frac{J}{k_{B}T}-1\right)}\;.
+&amp; \Delta F(l)=\text { bree energy change indlaced } \\
+&amp; \text { by } d . w \cdot s \text { of size } l= \\
+&amp;=\underbrace{27 l}_{\substack{\text { energetic } \\
+\text { cost }}}-T S(l)
 \end{aligned}
 \end{split}\]</div>
-<p>Which minimum is attained depends on sign (B), even for infinitesimal <span class="math notranslate nohighlight">\(B\)</span> !</p>
-<p>(more analysis next HW)</p>
-<p>The previous model is physically un realistic because it had all-to-all coupling; in our universe d.a.f. are arranged in space and interact locally. To this end:</p>
-</section>
-</section>
-</section>
+<p>In ID, the only source of <span class="math notranslate nohighlight">\(S\)</span> was Whet dew. is: <span class="math notranslate nohighlight">\(S \sim \operatorname{lu}(L)\)</span> for l.d.w. But in 2D, the are many ways to make a wall of birth <span class="math notranslate nohighlight">\(l\)</span> :
+<img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-10.jpg?height=374&amp;width=1762&amp;top_left_y=1732&amp;top_left_x=261" /></p>
+<p>Counting <span class="math notranslate nohighlight">\(S(l)\)</span> exactly is a tricky combinatorial probkun. But all we need, for <span class="math notranslate nohighlight">\(l&gt;1, S(l) \cong S_{0} l\)</span>
+(extensive)</p>
+<p>To see why, let <span class="math notranslate nohighlight">\(\Omega\left(l, x_{0}, x_{1}\right)\)</span> denote # of ways string of berth <span class="math notranslate nohighlight">\(l\)</span> connects <span class="math notranslate nohighlight">\(x_{0}, x_{1}\)</span> :</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-11.jpg?height=373&amp;width=1140&amp;top_left_y=625&amp;top_left_x=551" /></p>
+<p>Clearly</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \Omega\left(l_{A}+l_{B}, x_{0}, x_{2}\right) \geqslant \Omega\left(l_{A}, x_{0}, x_{1}\right) \Omega\left(l_{B}, x_{1}, x_{2}\right) \\
+&amp; S\left(l_{A}+l_{B}, x_{0}, x_{2}\right) \geqslant S\left(l_{A}, x_{0}, x_{1}\right)+S\left(l_{B}, x_{1}, x_{2}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>Fix <span class="math notranslate nohighlight">\(x_{1}-x_{0}=\frac{e}{\alpha}\)</span> these inequalities imply <span class="math notranslate nohighlight">\(S(l) \simeq S_{0} \cdot l\)</span> or faster growing.</p>
+<p>But faster than extensive nat possible.</p>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\Delta F &amp; =2 J \ell-T s_{0} \ell \\
+&amp; =\ell\left(2 J-T s_{0}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>Key result: For <span class="math notranslate nohighlight">\(T&lt;\frac{27}{S_{0}}\)</span>, largel d.w.S</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> oretered plase Far <span class="math notranslate nohighlight">\(T&gt;\frac{27}{S o}\)</span>, large ld.wis disarderel</p>
 
     <script type="text/x-thebe-config">
     {
@@ -564,15 +630,6 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../Chemical-reactions.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chemical reactions</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -588,13 +645,9 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-question">Key question</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis:</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
-</li>
-</ul>
+
   </nav></div>
 
 </div></div>

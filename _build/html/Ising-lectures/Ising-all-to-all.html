@@ -64,9 +64,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising-lectures/Ising-1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising-lectures/Ising-all-to-all';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1D Ising model" href="Ising-1D.html" />
     <link rel="prev" title="Chemical reactions" href="../Chemical-reactions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -192,6 +193,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-1D.html">1D Ising model</a></li>
+
 </ul>
 
     </div>
@@ -263,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FIsing-lectures/Ising-1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FIsing-lectures/Ising-all-to-all.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Ising-lectures/Ising-1.md" target="_blank"
+      <li><a href="../_sources/Ising-lectures/Ising-all-to-all.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,6 +393,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-question">Key question</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-diagrams">Phase diagrams</a></li>
 </ul>
 </li>
 </ul>
@@ -438,11 +442,11 @@ H[\sigma]=-\frac{J}{2 N} \sum_{i, j=1} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \s
 \]</div>
 <p>The familiar second term describes the effect of an external magnetic field <span class="math notranslate nohighlight">\(B\)</span>. The first (non-linear) term describes ferromagnetic interactions: <span class="math notranslate nohighlight">\(J&gt;0\)</span> prefers <span class="math notranslate nohighlight">\(\uparrow \uparrow\)</span> and <span class="math notranslate nohighlight">\(\downarrow \downarrow\)</span> over <span class="math notranslate nohighlight">\(\downarrow \uparrow, \uparrow \downarrow\)</span>. The sum runs over all pairs of spins, i.e. the interactions are all-to-all,</p>
 <p><img alt="all-to-all" src="../_images/all-to-all.png" /></p>
-<p>Note that the self-interaction terms (<span class="math notranslate nohighlight">\(i=j\)</span>) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity.</p>
+<p>Note that the self-interaction terms (<span class="math notranslate nohighlight">\(i=j\)</span>) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity. Also note that we made the prefactor of the interaction term inversely proportional to <span class="math notranslate nohighlight">\(N\)</span> to ensure that the Hamiltonian is extensive.</p>
 <section id="key-question">
 <h3>Key question<a class="headerlink" href="#key-question" title="Permalink to this heading">#</a></h3>
 <p>Defining <span class="math notranslate nohighlight">\(m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}\)</span> what is <span class="math notranslate nohighlight">\(\langle m\rangle(\beta, J, \beta)\)</span> as <span class="math notranslate nohighlight">\(N \longrightarrow \infty\)</span> ?</p>
-<p>We will find that, in the thermodynamic limit <span class="math notranslate nohighlight">\(N\to \infty\)</span>, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.</p>
+<p>We will find that, in the thermodynamic limit <span class="math notranslate nohighlight">\(N\to \infty\)</span>, the all-to-all Ising model exhibits a phase transition exhibits a phase transition at a critical temperature <span class="math notranslate nohighlight">\(T_c\)</span>, below which the system shows spontaneous magnetization, and above which the magnetization disappears.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Versatility of the Ising model</strong>
@@ -528,8 +532,11 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
 \end{aligned}
 \end{split}\]</div>
 <p>Which minimum is attained depends on sign (B), even for infinitesimal <span class="math notranslate nohighlight">\(B\)</span> !</p>
-<p>(more analysis next HW)</p>
-<p>The previous model is physically un realistic because it had all-to-all coupling; in our universe d.a.f. are arranged in space and interact locally. To this end:</p>
+<p>(more analysis in HW4)</p>
+</section>
+<section id="phase-diagrams">
+<h3>Phase diagrams<a class="headerlink" href="#phase-diagrams" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-01.jpg?height=1153&amp;width=2055&amp;top_left_y=235&amp;top_left_x=42" /></p>
 </section>
 </section>
 </section>
@@ -573,6 +580,15 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
         <p class="prev-next-title">Chemical reactions</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Ising-1D.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1D Ising model</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -592,6 +608,7 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-to-all-ising-model">All-to-all Ising model</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-question">Key question</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-diagrams">Phase diagrams</a></li>
 </ul>
 </li>
 </ul>

@@ -48,12 +48,13 @@ The familiar second term describes the effect of an external magnetic field $B$.
 ![all-to-all](../figures/all-to-all.png)
 
 
-Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity. 
+Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity. Also note that we made the prefactor of the interaction term inversely proportional to $N$ to ensure that the Hamiltonian is extensive.
 
 #### Key question
 Defining $m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}$ what is $\langle m\rangle(\beta, J, \beta)$ as $N \longrightarrow \infty$ ?
 
-We will find that, in the thermodynamic limit $N\to \infty$, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.
+We will find that, in the thermodynamic limit $N\to \infty$, the all-to-all Ising model exhibits a phase transition exhibits a phase transition at a critical temperature $T_c$, below which the system shows spontaneous magnetization, and above which the magnetization disappears.
+
 
 ```{note} **Versatility of the Ising model**
 All-to-all Ising models, where each spin interacts with every other spin in the system, have applications far beyond the study of magnetism. These models are used in various fields to study systems characterized by complex interactions among their components. E.g.
@@ -87,12 +88,12 @@ To compute $Z$, rewrite the Hamiltonian as
 
 $$
 \begin{aligned}
-H[\sigma] & =-\frac{7}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i} \\
-= & \left.N-\frac{J}{2} m^{2}[\sigma]-B m[\sigma]\right] .
+H[\sigma] & =-\frac{J}{2 N} \sum_{i, j=1}^{N} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \sigma_{i} \\
+= & \left.N-\frac{J}{2} [m(\sigma)]^2-B m(\sigma)\right] .
 \end{aligned}
 $$
 
-So, the energy of a microstate only depends on the magnetization $m[\sigma]$.
+So, the energy of a microstate only depends on the magnetization $m(\sigma)$.
 
 We can therefore decompose
 
@@ -102,31 +103,37 @@ $$
 
 where $\Omega(m)$ is the density of states with magnetization $m$.
 
-Since $N_{+}=\frac{N}{2}+\frac{M}{2}, N-\frac{N}{2}-\frac{M}{2}$,
+Since $N_{+}=\frac{N+M}{2}; N_-=\frac{N-M}{2}$,
 
 $$
-\Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)}
+\Omega(M)=\frac{N !}{N_{+} ! N_{-} !}=e^{S(M)/k_B}
 $$
 
 Recall from our analysis of coin flipping, that this is exactly the number of states with $M$ more heads than tails in $N$ trials. Employing Stirling's formula, the entropy takes the form
 
 $$
-s(m)=\frac{\ln \Omega(m)}{N}=-\left[\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)\right.
+\frac{s(m)}{k_B }=\frac{\ln \Omega(m)}{N }=-\frac{1+m}{2} \ln \frac{1+m}{2}-\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
 $$
 
-which is the same expression we found for  coin flipping in {eq}`entropy-coin-flipping`. 
+which is the same expression we found for  coin flipping in {eq}`entropy-coin-flipping` modulo the factor of $k_B$. 
 
 So, 
  
 $$
-Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - \frac{s(m)}\beta\right]}= e^{-\beta f(m)}
+Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - T s(m)\right]}= e^{-\beta N f(m)}
 $$
 
-where $f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)$ is the free energy density conditional on magnetization.
+where $f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)$ is the free energy density conditional on magnetization. Note that, at $B=0$, the function $\beta f(m)$ merely depends on the parameter $\beta J$,
 
-Thus, depending on $\beta J$, the net $f(m)$ looks
+$$
+\beta f (m)= -\frac{\beta J}2 m^2+\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
+$$
 
-![](https://cdn.mathpix.com/cropped/2024_02_16_819a36779a8388cf6552g-06.jpg?height=400&width=966&top_left_y=663&top_left_x=1018)
+
+Depending on $\beta J$, $f(m)$ can look like a single or double well:
+
+![all-to-all-free-energy](../figures/all-to-all-free-energy.png)
+
 
 
 As $N \rightarrow \infty$ (TDL), sum is dominated by minima $f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}$
@@ -162,14 +169,11 @@ $$
 
 Which minimum is attained depends on sign (B), even for infinitesimal $B$ !
 
+(more analysis in HW4)
 
+#### Phase diagrams
 
-
-
-
-(more analysis next HW)
-
-The previous model is physically un realistic because it had all-to-all coupling; in our universe d.a.f. are arranged in space and interact locally. To this end:
+![](https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-01.jpg?height=1153&width=2055&top_left_y=235&top_left_x=42)
 
 
 

@@ -48,12 +48,13 @@ The familiar second term describes the effect of an external magnetic field $B$.
 ![all-to-all](../figures/all-to-all.png)
 
 
-Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity. 
+Note that the self-interaction terms ($i=j$) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity. Also note that we made the prefactor of the interaction term inversely proportional to $N$ to ensure that the Hamiltonian is extensive.
 
 #### Key question
 Defining $m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}$ what is $\langle m\rangle(\beta, J, \beta)$ as $N \longrightarrow \infty$ ?
 
-We will find that, in the thermodynamic limit $N\to \infty$, the all-to-all Ising model exhibits a phase transition. Below a certain critical temperature, the magnitization assumes a finite value, whose sign can be flipped by an infinitesimal amounts of the magnetic field.
+We will find that, in the thermodynamic limit $N\to \infty$, the all-to-all Ising model exhibits a phase transition exhibits a phase transition at a critical temperature $T_c$, below which the system shows spontaneous magnetization, and above which the magnetization disappears.
+
 
 ```{note} **Versatility of the Ising model**
 All-to-all Ising models, where each spin interacts with every other spin in the system, have applications far beyond the study of magnetism. These models are used in various fields to study systems characterized by complex interactions among their components. E.g.
@@ -168,14 +169,11 @@ $$
 
 Which minimum is attained depends on sign (B), even for infinitesimal $B$ !
 
+(more analysis in HW4)
 
+#### Phase diagrams
 
-
-
-
-(more analysis next HW)
-
-The previous model is physically un realistic because it had all-to-all coupling; in our universe d.a.f. are arranged in space and interact locally. To this end:
+![](https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-01.jpg?height=1153&width=2055&top_left_y=235&top_left_x=42)
 
 
 

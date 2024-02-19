@@ -15,4 +15,5 @@ chapters:
 - file: Spontaneous-Reactions
 - file: Crooks
 - file: Chemical-reactions
-- file: Ising-lectures/Ising-1
+- file: Ising-lectures/Ising-all-to-all
+- file: Ising-lectures/Ising-1D
