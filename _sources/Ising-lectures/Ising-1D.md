@@ -1,8 +1,10 @@
-## 1D Ising model
+## Finite dimensional Ising models
 
 
 The all-to-all coupling is physically unrealistic because, in our universe, degrees of freedom (d.o.f.s) are arranged in space and interact locally. 
 
+
+#### No phase transition in 1D
 At the extreme opposite end is the 1D Ising model, which is defined by the Hamiltonian
 
 $$
@@ -13,8 +15,7 @@ $$
 
 Do we observe the same phase transition (qualitatively and quantitatively) as in all-to-all?
 
-#### No phase transition
-The surprising answer is that the 1D Ising model admits no phase transition at all.
+ The surprising answer is that the 1D Ising model admits no phase transition at all.
 
 Order is distroyed at any finite temperature by the formation of domain walls, which simply are the sites where the order changes from all up to all down:
 
