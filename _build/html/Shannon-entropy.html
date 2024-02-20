@@ -163,8 +163,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/Entropy-Energy.png" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
-    <script>document.write(`<img src="_static/Entropy-Energy.png" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+    <img src="_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
   
   
 </a></div>
@@ -191,6 +191,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Particle exchange and chemical potential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crooks.html">Non-equilibrium fluctuation theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chemical-reactions.html">Chemical reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
 </ul>
 
     </div>
@@ -561,10 +566,10 @@ S^{*}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln 
 <ul class="simple">
 <li><p>Suppose the symbols <span class="math notranslate nohighlight">\(X\)</span> of a message are drawn from the distribution <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=p_{i}\)</span>. But we think they are drawn from <span class="math notranslate nohighlight">\(\{q_{i}\}\)</span> instead, use correspondingly sized code words and, hence, do not optimally compress the message. Instead there will be discrepancy between the length <span class="math notranslate nohighlight">\(L(N)\)</span> of the number of bits we use, <span class="math notranslate nohighlight">\(L(N)=-N \sum_{i} p_{i} \log q_{i} \)</span> and the minimal number of bits, <span class="math notranslate nohighlight">\(L_min(N)=-N \sum_{i} p_{i} \log p_{i}\)</span>, which is given by the entropy. The relative difference,</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-kl-div">
+<span class="eqno">(2)<a class="headerlink" href="#equation-kl-div" title="Permalink to this equation">#</a></span>\[
 \begin{array}{r}
-\frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=D_{K L}(\vec{p} \| \vec{q})
+\frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)\equiv D_{K L}(\vec{p} \| \vec{q})
 \end{array}
 \]</div>
 <p>is called Kullback-Leipler (KL) divergence or relative entropxy.</p>

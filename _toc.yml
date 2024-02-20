@@ -16,4 +16,5 @@ chapters:
 - file: Crooks
 - file: Chemical-reactions
 - file: Ising-lectures/Ising-all-to-all
-- file: Ising-lectures/Ising-1D
+- file: Ising-lectures/Ising-1D.ipynb
+- file: Variational-Methods/Variational-methods-Mean-Field
