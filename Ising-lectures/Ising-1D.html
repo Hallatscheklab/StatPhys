@@ -675,12 +675,7 @@ M(T) = \left(1 - \sinh^{-4}(2/T)\right)^{1/8} \;,
 \]</div>
 <p>which shows a markedly different exponent for the behavior near the critical point. It thus turns out that locality gives rise to nontrivial fractal structure described by 2D “conformal field theory” (see Physics 212).</p>
 <p>Finally, here’s the zero field phase diagram</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -708,9 +703,8 @@ M(T) = \left(1 - \sinh^{-4}(2/T)\right)^{1/8} \;,
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_21588/3083171715.py:12: RuntimeWarning: invalid value encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_24623/3083171715.py:12: RuntimeWarning: invalid value encountered in power
   M = np.where(T &lt; T_c, (1 - np.sinh(2/T)**(-4))**(1/8), 0)
 </pre></div>
 </div>

@@ -430,8 +430,11 @@ document.write(`
 \[
 E_{0}=\min _{\psi} \frac{\langle\psi|\hat{H}| \psi\rangle}{\langle\psi \mid \psi\rangle}
 \]</div>
-<p>To obtain exact result, the minumum is taken over full Hilbert space, but we can obtain upper bound on ED by a fewparameter anstatz <span class="math notranslate nohighlight">\(\quad\left|g_{1,}, g_{2}, \cdots\right\rangle,\left(e_{\text {.g. }, ~}|g\rangle=e^{-\frac{1}{2} g r^{2}}\right)\)</span></p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_ae34ced50d3894eb01a7g-02.jpg?height=199&amp;width=1359&amp;top_left_y=1108&amp;top_left_x=148" /></p>
+<p>To obtain exact result, the minumum is taken over full Hilbert space, but we can obtain upper bound on ED by a fewparameter anstatz <span class="math notranslate nohighlight">\(\quad\left|g_{1,}, g_{2}, \cdots\right\rangle\)</span>, e.g. <span class="math notranslate nohighlight">\(\langle r|g\rangle=e^{-\frac{1}{2} g r^{2}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+E_0\leq \frac{\langle g|\hat{H}|g\rangle}{\langle g|g\rangle}
+\]</div>
 <p>The <span class="math notranslate nohighlight">\(|g\rangle\)</span> obtained in this way is in this sense the “best” approximation to <span class="math notranslate nohighlight">\(\left|E_{0}\right\rangle\)</span> in the Hilbert subspace <span class="math notranslate nohighlight">\(\mid \{ g\} \rangle\)</span>.</p>
 <p>We can do something similar in statistical physics.</p>
 <p>Given <span class="math notranslate nohighlight">\(T, H\)</span>, we define the free-energy of an <em>arbitrary</em> distribution <span class="math notranslate nohighlight">\(\rho\)</span> by</p>
@@ -459,7 +462,7 @@ F[\rho] \geq F\left[\rho_{\beta}\right] \equiv F_{0}
 \min_{g} F[\rho(g)]&gt;F_{0}
 \]</div>
 <p>and use <span class="math notranslate nohighlight">\(\rho(g)\)</span> to compute approximate observables.</p>
-<p>Note that there is a simple way to see that <a class="reference internal" href="Variational-methods-Mean-Field-.html#equation-min-criterion">()</a>is true. Using <span class="math notranslate nohighlight">\(\rho_{\beta}=e^{-\beta (H-F_0)}\)</span>, we can write</p>
+<p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">(12)</a>is true. Using <span class="math notranslate nohighlight">\(\rho_{\beta}=e^{-\beta (H-F_0)}\)</span>, we can write</p>
 <div class="math notranslate nohighlight">
 \[
 \beta\left(F[\rho(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{\rho(g)}-F_{0}\right]-S[\rho(g)]/k_B =\langle \ln(\rho(g))\rangle_{\rho(g)}-\langle \ln(\rho(g))\rangle_{\rho(g)}=S_{KL}\left(\rho(g) \| \rho_{\beta}\right)
@@ -579,12 +582,7 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
 \[
 g=J \zeta \tanh (\beta g)
 \]</div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -610,7 +608,6 @@ g=J \zeta \tanh (\beta g)
 </pre></div>
 </div>
 </div>
-</details>
 <div class="cell_output docutils container">
 <img alt="../_images/501a834398753ac655cbc677faab64a0303a55066691a0e914019ea6e05361e5.png" src="../_images/501a834398753ac655cbc677faab64a0303a55066691a0e914019ea6e05361e5.png" />
 </div>
