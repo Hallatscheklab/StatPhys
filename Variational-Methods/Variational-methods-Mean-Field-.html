@@ -64,10 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/Variational-methods-Mean-Field';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/Variational-methods-Mean-Field-';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Finite dimensional Ising models" href="../Ising-lectures/Ising-1D.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
@@ -194,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variational-methods-Mean-Field.html">Variational Method</a></li>
 </ul>
 
     </div>
@@ -241,37 +240,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/Variational-Methods/Variational-methods-Mean-Field.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -297,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FVariational-Methods/Variational-methods-Mean-Field.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FVariational-Methods/Variational-methods-Mean-Field-.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Variational-Methods/Variational-methods-Mean-Field.ipynb" target="_blank"
+      <li><a href="../_sources/Variational-Methods/Variational-methods-Mean-Field-.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +305,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -455,11 +423,11 @@ F[\rho] \geq F\left[\rho_{\beta}\right] \equiv F_{0}
 <p>(Because <span class="math notranslate nohighlight">\(\rho_\beta\)</span> maximizes the Gibbs entropy subject to <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>)</p>
 <p>Given a few-parameter ansatz <span class="math notranslate nohighlight">\(\rho_{\mu}(g)\)</span>, we can then define our best approximation as</p>
 <div class="math notranslate nohighlight" id="equation-min-criterion">
-<span class="eqno">(12)<a class="headerlink" href="#equation-min-criterion" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-min-criterion" title="Permalink to this equation">#</a></span>\[
 \min_{g} F[\rho(g)]&gt;F_{0}
 \]</div>
 <p>and use <span class="math notranslate nohighlight">\(\rho(g)\)</span> to compute approximate observables.</p>
-<p>Note that there is a simple way to see that <a class="reference internal" href="Variational-methods-Mean-Field-.html#equation-min-criterion">()</a>is true. Using <span class="math notranslate nohighlight">\(\rho_{\beta}=e^{-\beta (H-F_0)}\)</span>, we can write</p>
+<p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">()</a>is true. Using <span class="math notranslate nohighlight">\(\rho_{\beta}=e^{-\beta (H-F_0)}\)</span>, we can write</p>
 <div class="math notranslate nohighlight">
 \[
 \beta\left(F[\rho(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{\rho(g)}-F_{0}\right]-S[\rho(g)]/k_B =\langle \ln(\rho(g))\rangle_{\rho(g)}-\langle \ln(\rho(g))\rangle_{\rho(g)}=S_{KL}\left(\rho(g) \| \rho_{\beta}\right)
@@ -579,42 +547,6 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
 \[
 g=J \zeta \tanh (\beta g)
 \]</div>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="c1"># Define the parameters</span>
-<span class="n">J</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># You can adjust J to see different behaviors</span>
-<span class="n">g_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>  <span class="c1"># Range of g values for plotting</span>
-
-<span class="c1"># Define the functions</span>
-<span class="n">g_function</span> <span class="o">=</span> <span class="n">g_values</span> 
-<span class="n">tanh_function</span> <span class="o">=</span> <span class="n">J</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">g_values</span><span class="p">)</span>
-
-<span class="c1"># Plotting</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">g_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$g$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">tanh_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J </span><span class="se">\\</span><span class="s1">tanh(g)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Graphical Solution of $g = J * </span><span class="se">\\</span><span class="s1">tanh(g)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$g$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Function value&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<img alt="../_images/501a834398753ac655cbc677faab64a0303a55066691a0e914019ea6e05361e5.png" src="../_images/501a834398753ac655cbc677faab64a0303a55066691a0e914019ea6e05361e5.png" />
-</div>
-</div>
 <p>Is this variational approximatition good? It knows about the lattice and dimensions <span class="math notranslate nohighlight">\(D=1,2,3\)</span> only through coordination number <span class="math notranslate nohighlight">\(\zeta\)</span>. e.g., for square lattice <span class="math notranslate nohighlight">\(\quad z=2 D \)</span></p>
 <p>But we know that the exact solution of 1D Ising model does not have symmetry breaking: the variational result is bad in 1D. On the other hand, if <span class="math notranslate nohighlight">\((D, z) \rightarrow \infty\)</span>, you can verify <span class="math notranslate nohighlight">\(F[\rho(g)]\)</span> is identical to the exact result of the all-to-all model: it is good in large <span class="math notranslate nohighlight">\(D\)</span> and large <span class="math notranslate nohighlight">\(\zeta\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(D=2,3\)</span>, the accuracy is intermediate; it correctly predicts symmetry breaking  but doesn’t get <span class="math notranslate nohighlight">\(T_{c}\)</span> or <span class="math notranslate nohighlight">\(m \sim\left|T-T_{c}\right|^{\beta}\)</span> quantitatively right.</p>
@@ -650,15 +582,6 @@ g=J \zeta \tanh (\beta g)
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../Ising-lectures/Ising-1D.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Finite dimensional Ising models</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
