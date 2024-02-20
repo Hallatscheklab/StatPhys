@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/Variational-methods-Mean-Field';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Finite dimensional Ising models" href="../Ising-lectures/Ising-1D.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -431,11 +432,11 @@ F[\rho] \geq F\left[\rho_{\beta}\right] \equiv F_{0}
 <p>(Because <span class="math notranslate nohighlight">\(\rho_\beta\)</span> maximizes the Gibbs entropy subject to <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>)</p>
 <p>Given a few-parameter ansatz <span class="math notranslate nohighlight">\(\rho_{\mu}(g)\)</span>, we can then define our best approximation as</p>
 <div class="math notranslate nohighlight" id="equation-min-criterion">
-<span class="eqno">()<a class="headerlink" href="#equation-min-criterion" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(12)<a class="headerlink" href="#equation-min-criterion" title="Permalink to this equation">#</a></span>\[
 \min_{g} F[\rho(g)]&gt;F_{0}
 \]</div>
 <p>and use <span class="math notranslate nohighlight">\(\rho(g)\)</span> to compute approximate observables.</p>
-<p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">()</a>is true. Using <span class="math notranslate nohighlight">\(\rho_{\beta}=e^{-\beta (H-F_0)}\)</span>, we can write</p>
+<p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">(12)</a>is true. Using <span class="math notranslate nohighlight">\(\rho_{\beta}=e^{-\beta (H-F_0)}\)</span>, we can write</p>
 <div class="math notranslate nohighlight">
 \[
 \beta\left(F[\rho(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{\rho(g)}-F_{0}\right]-S[\rho(g)]/k_B =\langle \ln(\rho(g))\rangle_{\rho(g)}-\langle \ln(\rho(g))\rangle_{\rho(g)}=S_{KL}\left(\rho(g) \| \rho_{\beta}\right)
@@ -607,6 +608,15 @@ F(p(g)] &amp; =\langle H\rangle_{g}-\left\langle H_{g}\right\rangle_{j}+F_{g}
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../Ising-lectures/Ising-1D.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Finite dimensional Ising models</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
