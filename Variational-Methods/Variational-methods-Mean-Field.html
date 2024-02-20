@@ -465,17 +465,17 @@ S[p]=-\sum_{\mu} p_{\mu} \log \left(p_{\mu}\right)
 \[
 F[p] \geq F\left[p_{\beta}\right] \equiv F_{0}
 \]</div>
-<p>(Because <span class="math notranslate nohighlight">\(\hatp\)</span> maximizes the Gibbs entropy subject to <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>)</p>
+<p>(Because <span class="math notranslate nohighlight">\(\hat p\)</span> maximizes the Gibbs entropy subject to <span class="math notranslate nohighlight">\(\langle E\rangle\)</span>)</p>
 <p>Given a few-parameter ansatz <span class="math notranslate nohighlight">\(p_{\mu}(g)\)</span>, we can then define our best approximation as</p>
 <div class="math notranslate nohighlight" id="equation-min-criterion">
 <span class="eqno">(12)<a class="headerlink" href="#equation-min-criterion" title="Permalink to this equation">#</a></span>\[
 \min_{g} F[p(g)]&gt;F_{0}
 \]</div>
 <p>and use <span class="math notranslate nohighlight">\(p(g)\)</span> to compute approximate observables.</p>
-<p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">(12)</a>is true. Using <span class="math notranslate nohighlight">\(\hatp=e^{-\beta (H-F_0)}\)</span>, we can write</p>
+<p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">(12)</a>is true. Using <span class="math notranslate nohighlight">\(\hat p=e^{-\beta (H-F_0)}\)</span>, we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\beta\left(F[p(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{p(g)}-F_{0}\right]-S[p(g)]/k_B =\langle \ln(\hatp)\rangle_{p(g)}-\langle \ln(p(g))\rangle_{p(g)}\\
+\beta\left(F[p(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{p(g)}-F_{0}\right]-S[p(g)]/k_B =\langle \ln(\hat p)\rangle_{p(g)}-\langle \ln(p(g))\rangle_{p(g)}\\
 =D_{KL}\left(p(g) \| \hat p\right)
 \end{split}\]</div>
 <p>showing that the difference between the approximate and true free energy is proportional to the “KL” divergence</p>
