@@ -481,7 +481,7 @@ document.write(`
 <h3>Ergodicity<a class="headerlink" href="#ergodicity" title="Permalink to this heading">#</a></h3>
 <p>One can imagine measuring expectation values <span class="math notranslate nohighlight">\(\langle f(\mu)\)</span> in two ways: 1. Follow a given system for a very long time, and determine the time average of <span class="math notranslate nohighlight">\(f\)</span>. 2. Determine the <em>ensemble</em> average of <span class="math notranslate nohighlight">\(f\)</span> over a very large number of system states drawn from the <span class="math notranslate nohighlight">\(P_{E,\mathbf{x}}\)</span>. Our Basic Principles implies that, in the limit, both results give the same answer. Mathematically,</p>
 <div class="math notranslate nohighlight" id="equation-ergodic-hypothesis">
-<span class="eqno">(2)<a class="headerlink" href="#equation-ergodic-hypothesis" title="Permalink to this equation">#</a></span>\[ \langle f\rangle_{E,\mathbf{x}}=\lim_{T\to\infty}\frac 1T \int_0^Tf(\mu(t)) dt=\int d\mu P_{E,\mathbf{x}}(\mu) f(\mu) \]</div>
+<span class="eqno">(3)<a class="headerlink" href="#equation-ergodic-hypothesis" title="Permalink to this equation">#</a></span>\[ \langle f\rangle_{E,\mathbf{x}}=\lim_{T\to\infty}\frac 1T \int_0^Tf(\mu(t)) dt=\int d\mu P_{E,\mathbf{x}}(\mu) f(\mu) \]</div>
 <p>The celebrated <a class="reference external" href="https://en.wikipedia.org/wiki/Ergodic_theory#:~:text=The%20concepts%20of%20ergodicity%20and,average%20over%20the%20entire%20space.">ergodicity theorem</a> explains why this equality and, thus, our Basic Principle, is to be expected for typical systems undergoing volume conserving Hamiltonian dynamics (see later in the course). Macroscopic systems, such as ferromagnetic systems below the Curie temperature, can demonstrate ergodicity breaking, where they do not explore all possible states as predicted by the ergodic hypothesis. This results in phenomena like spontaneous magnetization, a form of spontaneous symmetry breaking. Similarly, complex disordered systems like spin glasses and conventional glasses, like window glasses, exhibit more intricate forms of ergodicity breaking. These systems can appear solid over short timescales, like seconds or hours, due to their positive shear modulus, but over very long periods, like millennia, they behave more like liquids, displaying multiple time scales and intermediate plateaus in behavior.</p>
 </section>
 <section id="entropy">
@@ -528,7 +528,7 @@ document.write(`
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-x">
-<span class="eqno">(3)<a class="headerlink" href="#equation-x" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(4)<a class="headerlink" href="#equation-x" title="Permalink to this equation">#</a></span>\[
 e^{S(E) / k_{B}} =\int d E_{1} e^{\left[S_{1}\left(E_{1}, \bf{x}_1\right)+S\left(E-E_{1}, \bf{x}_2\right)\right] / k_{B}}
 \]</div>
 <p>(compound entropy)</p>
@@ -538,7 +538,7 @@ e^{S(E) / k_{B}} =\int d E_{1} e^{\left[S_{1}\left(E_{1}, \bf{x}_1\right)+S\left
 S(E,\bf{x})=N s_{1}\left(\frac{E_{1}}{N},\frac{\bf{x}_1}N\right)+N s_{2}\left(\frac{E-E_{1}}{N},\frac{\bf{x}_2}N\right)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> are entropies per particle, which approach a constant as we increase the system sizes.</p>
-<p>Thus, as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, the integral in <a class="reference internal" href="#equation-x">(3)</a> is dominated by the maximum of the integrand, so that</p>
+<p>Thus, as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, the integral in <a class="reference internal" href="#equation-x">(4)</a> is dominated by the maximum of the integrand, so that</p>
 <div class="math notranslate nohighlight">
 \[
 S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1},\bf{x}_2\right)
