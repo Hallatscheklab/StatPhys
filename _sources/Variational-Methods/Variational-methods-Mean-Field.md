@@ -1,4 +1,4 @@
-Lecture 13: Variational Method
+## Variational Method
 
 Recall that in quantum mechanics, the ground state can be defined variationally as
 
