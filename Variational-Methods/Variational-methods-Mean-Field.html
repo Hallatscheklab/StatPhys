@@ -497,7 +497,7 @@ p(g) \equiv \frac{1}{Z_{g}} e^{-\beta H_{g}}\;.
 \[
 F[p(g)]=\sum_{\mu} \frac{e^{-\beta H_{g}(\mu)}}{Z_{g}}\left(H(\mu)+\frac{1}{\beta} \ln \left(\frac{e^{-\beta H_{g}(\mu)}}{Z_{g}}\right)\right)
 \]</div>
-<p>Defining <span class="math notranslate nohighlight">\(\quad e^{-\beta F_{g}}=Z_{g}= \sum_{\mu} e^{-\beta H_{g}(\mu)}\quad\left(F_{g} \neq F[p(g)) !\right)\)</span>, we have</p>
+<p>Defining <span class="math notranslate nohighlight">\(\quad e^{-\beta F_{g}}\equiv Z_{g}= \sum_{\mu} e^{-\beta H_{g}(\mu)}\quad\left(F_{g} \neq F[p(g)] !\right)\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[
 F[p(g)]=\langle H\rangle_{g}-\left\langle H_{g}\right\rangle_{g}+F_{g}
@@ -606,20 +606,20 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># Define the parameters</span>
-<span class="n">J</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># You can adjust J to see different behaviors</span>
+<span class="c1"># Define the parameters for multiple J values</span>
+<span class="n">J_values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="n">g_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>  <span class="c1"># Range of g values for plotting</span>
 
-<span class="c1"># Define the functions</span>
-<span class="n">g_function</span> <span class="o">=</span> <span class="n">g_values</span> 
-<span class="n">tanh_function</span> <span class="o">=</span> <span class="n">J</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">g_values</span><span class="p">)</span>
-
-<span class="c1"># Plotting</span>
+<span class="c1"># Plotting for multiple J values</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">g_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$g</span><span class="se">\\</span><span class="s1">beta$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">tanh_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J</span><span class="se">\\</span><span class="s1">beta </span><span class="se">\\</span><span class="s1">zeta  </span><span class="se">\\</span><span class="s1">tanh(</span><span class="se">\\</span><span class="s1">beta g)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">g_values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$g</span><span class="se">\\</span><span class="s1">beta$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">J</span> <span class="ow">in</span> <span class="n">J_values</span><span class="p">:</span>
+    <span class="n">tanh_function</span> <span class="o">=</span> <span class="n">J</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">g_values</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">tanh_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">J</span><span class="si">}</span><span class="s1"> </span><span class="se">\\</span><span class="s1">tanh(g)$&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Graphical Solution of $</span><span class="se">\\</span><span class="s1">beta g = J </span><span class="se">\\</span><span class="s1">beta </span><span class="se">\\</span><span class="s1">zeta * </span><span class="se">\\</span><span class="s1">tanh(</span><span class="se">\\</span><span class="s1">beta g)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">beta g$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$g</span><span class="se">\\</span><span class="s1">beta$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Function value&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -629,7 +629,7 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c551ccb1fdef3ba69dcff97e0060694df46a90677600bafe31978b98f93addb3.png" src="../_images/c551ccb1fdef3ba69dcff97e0060694df46a90677600bafe31978b98f93addb3.png" />
+<img alt="../_images/da7553412ed18a4460229da2845ee07238b28ac7df7c539a370f1abc5f9f05f5.png" src="../_images/da7553412ed18a4460229da2845ee07238b28ac7df7c539a370f1abc5f9f05f5.png" />
 </div>
 </div>
 <section id="is-this-variational-approximation-good">
