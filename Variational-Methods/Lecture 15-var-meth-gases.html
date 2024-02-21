@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
+    <title>Variational treatment of a gas and the van der Waals equation of state &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -366,9 +366,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -379,19 +377,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Variational treatment of a gas and the van der Waals equation of state</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -401,24 +391,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>Lecture 15: Variational treatment of a gas <span class="math notranslate nohighlight">\(+V d W\)</span> Equation</p>
-<p>Variational treatment of a gas and the Vd W equation.</p>
+  <section id="variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">
+<h1>Variational treatment of a gas and the van der Waals equation of state<a class="headerlink" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state" title="Permalink to this heading">#</a></h1>
 <p>Our approximate treatment of a hard-sphere gas took only the “excluded volume” repulsion</p>
 <div class="math notranslate nohighlight">
 \[
 V^{N} \rightarrow(V-\Omega N / 2)^{N}
 \]</div>
-<p>But neutral molecules interact through an attractive <span class="math notranslate nohighlight">\(U(r) \approx-4 \in\left(\frac{\sigma}{r}\right)^{6}\)</span> as <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span>, with short-range repulsion. why? The charged constituents of a molecule can polarize:</p>
+<p>But neutral molecules interact through an attractive <span class="math notranslate nohighlight">\(U(r) \approx-4 \epsilon\left(\frac{\sigma}{r}\right)^{6}\)</span> as <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span>, with short-range repulsion. Why? The charged constituents of a molecule can polarize:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-02.jpg?height=299&amp;width=709&amp;top_left_y=1365&amp;top_left_x=1208" /></p>
 <p>Since a dipole generates <span class="math notranslate nohighlight">\(\widetilde{E} \sim \frac{d}{r^{3}}\)</span>, and <span class="math notranslate nohighlight">\(H \ni-\vec{E} \cdot \vec{d}\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 H \ni \frac{d_{1} d_{2}}{r^{3}}
 \]</div>
-<p>We can then treat this in quantum perturbation theory for a rotationally-syn. molecule. In ground state, <span class="math notranslate nohighlight">\(\langle\vec{d}\rangle=0\)</span> so to first order <span class="math notranslate nohighlight">\(\Delta E=0\)</span>. If <span class="math notranslate nohighlight">\(\Delta=E_{1}-E_{0}\)</span> is gap, and order PAt. gives</p>
+<p>We can then treat this in quantum perturbation theory for a rotationally-symmetric molecule. In ground state, <span class="math notranslate nohighlight">\(\langle\vec{d}\rangle=0\)</span> so to first order <span class="math notranslate nohighlight">\(\Delta E=0\)</span>. If <span class="math notranslate nohighlight">\(\Delta=E_{1}-E_{0}\)</span> is gap, and second order perturbation theory gives</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta E=-\frac{\mid\langle 1|\hat{v}| 0\rangle 1^{3}}{\Delta}
+\Delta E=-\frac{\mid\langle 1|\hat{v}| 0\rangle^{2}}{\Delta}
 \]</div>
 <p>Since <span class="math notranslate nohighlight">\(V \sim \frac{d_{1} d_{2}}{r^{3}}, \quad \Delta E \sim-\frac{1}{r^{6}}\)</span></p>
 <p>The completion between attraction, repulsion, and entropy leads to the presence of complex phase diagrams:</p>
@@ -598,6 +588,7 @@ p= &amp; \beta^{-1} \psi[n]=K_{B} T n \frac{1}{1-n \Omega / 2}-u n^{2} / 2 \\
 &amp; n=n_{g} \cdot \frac{V_{g}}{V}+n_{l} \frac{V_{l}}{V}
 \end{aligned}
 \end{split}\]</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -636,20 +627,7 @@ p= &amp; \beta^{-1} \psi[n]=K_{B} T n \frac{1}{1-n \Omega / 2}-u n^{2} / 2 \\
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>

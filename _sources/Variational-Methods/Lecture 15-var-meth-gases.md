@@ -1,6 +1,4 @@
-Lecture 15: Variational treatment of a gas $+V d W$ Equation
-
-Variational treatment of a gas and the Vd W equation.
+## Variational treatment of a gas and the van der Waals equation of state
 
 Our approximate treatment of a hard-sphere gas took only the "excluded volume" repulsion
 
@@ -8,7 +6,7 @@ $$
 V^{N} \rightarrow(V-\Omega N / 2)^{N}
 $$
 
-But neutral molecules interact through an attractive $U(r) \approx-4 \in\left(\frac{\sigma}{r}\right)^{6}$ as $r \rightarrow \infty$, with short-range repulsion. why? The charged constituents of a molecule can polarize:
+But neutral molecules interact through an attractive $U(r) \approx-4 \epsilon\left(\frac{\sigma}{r}\right)^{6}$ as $r \rightarrow \infty$, with short-range repulsion. Why? The charged constituents of a molecule can polarize:
 
 ![](https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-02.jpg?height=299&width=709&top_left_y=1365&top_left_x=1208)
 
@@ -18,10 +16,10 @@ $$
 H \ni \frac{d_{1} d_{2}}{r^{3}}
 $$
 
-We can then treat this in quantum perturbation theory for a rotationally-syn. molecule. In ground state, $\langle\vec{d}\rangle=0$ so to first order $\Delta E=0$. If $\Delta=E_{1}-E_{0}$ is gap, and order PAt. gives
+We can then treat this in quantum perturbation theory for a rotationally-symmetric molecule. In ground state, $\langle\vec{d}\rangle=0$ so to first order $\Delta E=0$. If $\Delta=E_{1}-E_{0}$ is gap, and second order perturbation theory gives
 
 $$
-\Delta E=-\frac{\mid\langle 1|\hat{v}| 0\rangle 1^{3}}{\Delta}
+\Delta E=-\frac{\mid\langle 1|\hat{v}| 0\rangle^{2}}{\Delta}
 $$
 
 Since $V \sim \frac{d_{1} d_{2}}{r^{3}}, \quad \Delta E \sim-\frac{1}{r^{6}}$
