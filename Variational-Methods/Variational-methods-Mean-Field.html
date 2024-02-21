@@ -475,7 +475,7 @@ F[p] \geq F\left[\hat p\right] \equiv F_{0}
 <p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">(12)</a>is true. Using <span class="math notranslate nohighlight">\(\hat p=e^{-\beta (H-F_0)}\)</span>, we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\beta\left(F[p(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{p(g)}-F_{0}\right]-S[p(g)]/k_B =\langle \ln(\hat p)\rangle_{p(g)}-\langle \ln(p(g))\rangle_{p(g)}\\
+\beta\left(F[p(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{p(g)}-F_{0}\right]-S[p(g)]/k_B =-\langle \ln(\hat p)\rangle_{p(g)}+\langle \ln(p(g))\rangle_{p(g)}\\
 =D_{KL}\left(p(g) \| \hat p\right)
 \end{split}\]</div>
 <p>showing that the difference between the approximate and true free energy is proportional to the “KL” divergence</p>
@@ -634,7 +634,7 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
 </div>
 <section id="is-this-variational-approximation-good">
 <h2>Is this variational approximation good?<a class="headerlink" href="#is-this-variational-approximation-good" title="Permalink to this heading">#</a></h2>
-<p>It knows about the lattice and dimensions <span class="math notranslate nohighlight">\(D=1,2,3\)</span> only through coordination number <span class="math notranslate nohighlight">\(\zeta\)</span>. e.g., for square lattice <span class="math notranslate nohighlight">\(\quad \zeta=2 D \)</span></p>
+<p>It knows about the lattice and dimensions <span class="math notranslate nohighlight">\(D=1,2,3\)</span> only through coordinatione number <span class="math notranslate nohighlight">\(\zeta\)</span>. e.g., for square lattice <span class="math notranslate nohighlight">\(\quad \zeta=2 D \)</span></p>
 <p>But we know that the exact solution of 1D Ising model does not have symmetry breaking: the variational result is bad in 1D. On the other hand, if <span class="math notranslate nohighlight">\((D, \zeta) \rightarrow \infty\)</span>, you can verify <span class="math notranslate nohighlight">\(F[p(g)]\)</span> is identical to the exact result of the all-to-all model: it is good in large <span class="math notranslate nohighlight">\(D\)</span> and large <span class="math notranslate nohighlight">\(\zeta\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(D=2,3\)</span>, the accuracy is intermediate; it correctly predicts symmetry breaking  but doesn’t get <span class="math notranslate nohighlight">\(T_{c}\)</span> or <span class="math notranslate nohighlight">\(m \sim\left|T-T_{c}\right|^{\beta}\)</span> quantitatively right.</p>
 </section>
