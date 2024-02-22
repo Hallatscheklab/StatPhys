@@ -1,4 +1,4 @@
-## Interacting Gasses
+## Interacting Gases
 
 Let's return to the Hamiltonian of particles - now with interactions, 
 
@@ -56,22 +56,22 @@ Then
 
 
 $$
-\phi(T, V, N) = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2\int_{0}^{q_2-\Omega}dq_1\\
- = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2 (q_2-\Omega)\\
- = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3(q_3-2 \Omega)^2\\
- = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N \left(q_N-(N-1) \Omega\right)^{N-1}\\
-= \frac{(V-\Omega)^N}{V^N}
+\phi(T, V, N) = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2\int_{0}^{q_2-\Omega}dq_1\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2 (q_2-\Omega)\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3(q_3-2 \Omega)^2\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N \left(q_N-(N-1) \Omega\right)^{N-1}\\
+= \frac{(V-N\Omega)^N}{V^N}
 $$
 
 
 $$
-Z(T,V,N)=Z_0 \phi(T, V, N)=\frac{(V-\Omega)^N}{N!\lambda^{D N}}
+Z(T,V,N)=Z_0 \phi(T, V, N)=\frac{(V-N\Omega)^N}{N!\lambda^{D N}}
 $$
 
 $$
 \begin{aligned}
-& F=-K_{B} T \ln (Z)=-K_{B} T N\ln \left(\frac{e (V-\Omega)}{N\lambda^{D}}\right) \\
-& P=-\left.\frac{\partial F}{\partial V}\right|_{N, T}=\frac{N K_{B} T}{(V-\Omega)}, \quad P V=N K_{B} T
+& F=-K_{B} T \ln (Z)=-K_{B} T N\ln \left(\frac{e (V-N\Omega)}{N\lambda^{D}}\right) \\
+& P=-\left.\frac{\partial F}{\partial V}\right|_{N, T}=\frac{N K_{B} T}{(V-N\Omega)}, \quad P V=N K_{B} T
 \end{aligned}
 $$
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Interacting Gasses &#8212; Equilibrium Statistical Physics</title>
+    <title>Interacting Gases &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Variational-methods-Mean-Field.html">Variational Method</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interacting Gasses</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interacting Gases</a></li>
 
 </ul>
 
@@ -382,7 +382,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Interacting Gasses</h1>
+    <h1>Interacting Gases</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,7 +392,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gasses</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">Variational treatment of a gas and the van der Waals equation of state</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>
@@ -413,8 +413,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="interacting-gasses">
-<h1>Interacting Gasses<a class="headerlink" href="#interacting-gasses" title="Permalink to this heading">#</a></h1>
+  <section id="interacting-gases">
+<h1>Interacting Gases<a class="headerlink" href="#interacting-gases" title="Permalink to this heading">#</a></h1>
 <p>Let’s return to the Hamiltonian of particles - now with interactions,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -457,21 +457,21 @@ Z(T, V, N) &amp; =\frac{1}{N !} \int \prod_{i=1}^{N}\left(\frac{\mathrm{d}^{D} \
 <p>Then</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\phi(T, V, N) = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2\int_{0}^{q_2-\Omega}dq_1\\
- = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2 (q_2-\Omega)\\
- = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3(q_3-2 \Omega)^2\\
- = V^{-N}\int_{V-\Omega}^{(N-1)\Omega}dq_N \left(q_N-(N-1) \Omega\right)^{N-1}\\
-= \frac{(V-\Omega)^N}{V^N}
+\phi(T, V, N) = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2\int_{0}^{q_2-\Omega}dq_1\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2 (q_2-\Omega)\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3(q_3-2 \Omega)^2\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N \left(q_N-(N-1) \Omega\right)^{N-1}\\
+= \frac{(V-N\Omega)^N}{V^N}
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[
-Z(T,V,N)=Z_0 \phi(T, V, N)=\frac{(V-\Omega)^N}{N!\lambda^{D N}}
+Z(T,V,N)=Z_0 \phi(T, V, N)=\frac{(V-N\Omega)^N}{N!\lambda^{D N}}
 \]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; F=-K_{B} T \ln (Z)=-K_{B} T N\ln \left(\frac{e (V-\Omega)}{N\lambda^{D}}\right) \\
-&amp; P=-\left.\frac{\partial F}{\partial V}\right|_{N, T}=\frac{N K_{B} T}{(V-\Omega)}, \quad P V=N K_{B} T
+&amp; F=-K_{B} T \ln (Z)=-K_{B} T N\ln \left(\frac{e (V-N\Omega)}{N\lambda^{D}}\right) \\
+&amp; P=-\left.\frac{\partial F}{\partial V}\right|_{N, T}=\frac{N K_{B} T}{(V-N\Omega)}, \quad P V=N K_{B} T
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
@@ -792,7 +792,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gasses</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">Variational treatment of a gas and the van der Waals equation of state</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>
