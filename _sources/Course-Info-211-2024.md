@@ -43,7 +43,7 @@ The notes are hosted on github pages at [https://hallatscheklab.github.io/StatPh
 
 **Exams and grades:** There will be one midterm and a final exam. Both will be 24-hour take home exams on the dates
 below.
-- Midterm, TBD 
+- Midterm, March 14 
 - Final, Fri, May 10, 7PM - 9PM
 
 Grades will be determined from a weighting of all the elements of the course as follows:
