@@ -104,7 +104,7 @@ This is approximate because of jamming ...
 
 ![jamming](../figures/two-close-particles.jpg)
 
-The excluded volume for particle 3 once 1,2 placed is not strictly additive if 1,2 are close: 3 has more space available when 1,2 are close than if they are apart (see !["depletion force"](https://en.wikipedia.org/wiki/Depletion_force)). 
+The excluded volume for particle 3 once 1,2 placed is not strictly additive if 1,2 are close: 3 has more space available when 1,2 are close than if they are apart (see [depletion force](https://en.wikipedia.org/wiki/Depletion_force)). 
 
 But if $N \Omega \ll V$, this interaction is rare, so approximation ok in dilute limit. So,
 
