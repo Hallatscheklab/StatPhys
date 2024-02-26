@@ -392,7 +392,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excluded-volume-effect">Excluded volume effect</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">Variational treatment of a gas and the van der Waals equation of state</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>
@@ -482,33 +485,36 @@ Z(T,V,N)=Z_0 \phi(T, V, N)=\frac{(V-N\Omega)^N}{N!\lambda^{D N}}
 \[
 \partial_V \ln(\phi(T, V, N)) = \sum_{k=1}^{N}\ln(1-\frac{k\Omega}{V})
 \]</div>
-<p>The “excluded volume” effect extends more generally, but in approximate sense. Consider for example hard spheres of volume <span class="math notranslate nohighlight">\(\Omega=\frac{4}{3} \pi r^{2}\)</span>. Then</p>
+<section id="excluded-volume-effect">
+<h2>Excluded volume effect<a class="headerlink" href="#excluded-volume-effect" title="Permalink to this heading">#</a></h2>
+<p>The “excluded volume” effect extends more generally, but in approximate sense. For this discussion, it is convenient to introduce the excluded volume <span class="math notranslate nohighlight">\(\Omega_{ex}\)</span> of a particle. Consider for example hard spheres. Then one sphere excludes all other sphere centers from a sphere of twice the radius, or volume <span class="math notranslate nohighlight">\(\Omega_{ex}=2^D\Omega\)</span>, i.e. larger than just the sphere itself. Naively, we would then approximate the configurational integral as</p>
 <div class="math notranslate nohighlight">
 \[
-\phi(T, V, N) \approx \frac{V}{V}  \cdot\frac{V-\Omega}{V}\cdot\frac{V-2\Omega}{V}\ldots \cdot\frac{V-(N-1)\Omega}{V}
+\phi(T, V, N) \approx \frac{V}{V}  \cdot\frac{V-\Omega_{ex}}{V}\cdot\frac{V-2\Omega_{ex}}{V}\ldots \cdot\frac{V-(N-1)\Omega_{ex}}{V}
 \]</div>
 <p>This is approximate because of jamming …</p>
 <p><img alt="jamming" src="../_images/two-close-particles.jpg" /></p>
 <p>The excluded volume for particle 3 once 1,2 placed is not strictly additive if 1,2 are close: 3 has more space available when 1,2 are close than if they are apart (see <a class="reference external" href="https://en.wikipedia.org/wiki/Depletion_force">depletion force</a>).</p>
-<p>But if <span class="math notranslate nohighlight">\(N \Omega \ll V\)</span>, this interaction is rare, so approximation ok in dilute limit. So,</p>
+<p>But if <span class="math notranslate nohighlight">\(N \Omega_{ex} \ll V\)</span>, this interaction is rare, so approximation ok in dilute limit. So,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\phi(T, V, N) \approx \prod_{n=1}^{N}(V-(N-n) \Omega)=e^{\sum \ln (V-(N-n) \Omega)} \\
- \approx e^{N \ln \left(V-\frac{N}{2} \Omega\right)}+O\left(\left(\frac{N \Omega}{V}\right)^{2}\right)
+\phi(T, V, N) \approx \prod_{n=1}^{N}(V-(N-n) \Omega_{ex})=e^{\sum \ln (V-(N-n) \Omega_{ex})} \\
+ \approx e^{N \ln \left(V-\frac{N}{2} \Omega_{ex}\right)}+O\left(\left(\frac{N \Omega_{ex}}{V}\right)^{2}\right)
 \end{split}\]</div>
-<p>So effectively <span class="math notranslate nohighlight">\(\quad V \longrightarrow V-\frac{N}{2} \Omega\)</span></p>
+<p>So effectively <span class="math notranslate nohighlight">\(\quad V \longrightarrow V-N \Omega_{ex}/2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{r}
-P\left(V-\frac{N}{2} \Omega\right) \approx N K_{B} T \\
-P=n K_{B} T \frac{1}{1-n \frac{\Omega}{2}}
+P\left(V-N \Omega_{ex}/2\right) \approx N K_{B} T \\
+P=n K_{B} T \frac{1}{1-n \Omega_{ex}/2}
 \end{array}
 \end{split}\]</div>
+<p>Note that this result reproduces our exact result in one dimensions, where <span class="math notranslate nohighlight">\(\Omega_{ex}=2\Omega\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-P &amp; =n K_{B} T \frac{1}{1-n \frac{\Omega}{2}} \\
-&amp; =n K_{B}+\left(1+\frac{\Omega}{2} n+\left(\frac{\Omega}{2}\right)^{2} n^{2}+\cdots\right)
+P &amp; =n K_{B} T \frac{1}{1-n \Omega_{ex}/2} \\
+&amp; =n K_{B}+\left(1+(\Omega_{ex}/2) n+\left(\Omega_{ex}/2\right)^{2} n^{2}+\cdots\right)
 \end{aligned}
 \end{split}\]</div>
 <p>This is an example of a “viral expansion”</p>
@@ -518,12 +524,13 @@ P=n K_{B} T\left(1+B_{2}(T) n+B_{3}(T) n^{2}+\cdots\right)
 \]</div>
 <p>As explained in the textbook, the <span class="math notranslate nohighlight">\(B_{n}(T)\)</span> can be computed systematically via a diagrammatic perturbation theory. This Mayer Cluster Expansion is however rather technical and its applicability somewhat limited - so we won’t discuss it in class. But have a look, especially if you’re interested in QFT. Here’s we’ll focus on the variational treatment.</p>
 </section>
+</section>
 <section id="variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">
 <h1>Variational treatment of a gas and the van der Waals equation of state<a class="headerlink" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state" title="Permalink to this heading">#</a></h1>
 <p>Our approximate treatment of a hard-sphere gas took only the “excluded volume” repulsion</p>
 <div class="math notranslate nohighlight">
 \[
-V^{N} \rightarrow(V-\Omega N / 2)^{N}
+V^{N} \rightarrow(V-\Omega 2^{D-1})^{N}
 \]</div>
 <p>But neutral molecules interact through an attractive <span class="math notranslate nohighlight">\(U(r) \approx-4 \epsilon\left(\frac{\sigma}{r}\right)^{6}\)</span> as <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span>, with short-range repulsion. Why? The charged constituents of a molecule can polarize:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-02.jpg?height=299&amp;width=709&amp;top_left_y=1365&amp;top_left_x=1208" /></p>
@@ -630,7 +637,7 @@ u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\rig
 \]</div>
 <div class="math notranslate nohighlight">
 \[
- \frac{\ln Q}{V} \geq n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta \cup \frac{n^{2}}{2}\equiv\psi[n]
+ \frac{\ln Q}{V} \geq n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta u \frac{n^{2}}{2}\equiv\psi[n]
 \]</div>
 <p>Now maximize <span class="math notranslate nohighlight">\(\psi\)</span> w.r.t. <span class="math notranslate nohighlight">\(n\)</span> : depending on <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span>, it can be in two minima corresponding to gas and liquid:</p>
 <p>(add figure)</p>
@@ -698,7 +705,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 <p>Interpretation: effect of long-range interaction is to shift <span class="math notranslate nohighlight">\(\mu \rightarrow \mu+\)</span> un do to the average attraction un experienced by each particle (mean-field)</p>
 <div class="math notranslate nohighlight">
 \[
-\psi=n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta \cup \frac{n^{2}}{2}
+\psi=n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta u \frac{n^{2}}{2}
 \]</div>
 <p>Choose units with <span class="math notranslate nohighlight">\(\beta=1, \Omega / 2=1\)</span>, and shift <span class="math notranslate nohighlight">\(\mu\)</span> :</p>
 <div class="math notranslate nohighlight">
@@ -792,7 +799,10 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excluded-volume-effect">Excluded volume effect</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">Variational treatment of a gas and the van der Waals equation of state</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>

@@ -91,12 +91,12 @@ $$
 $$
 
 
+#### Excluded volume effect
 
-
-The "excluded volume" effect extends more generally, but in approximate sense. Consider for example hard spheres of volume $\Omega=\frac{4}{3} \pi r^{2}$. Then
+The "excluded volume" effect extends more generally, but in approximate sense. For this discussion, it is convenient to introduce the excluded volume $\Omega_{ex}$ of a particle. Consider for example hard spheres. Then one sphere excludes all other sphere centers from a sphere of twice the radius, or volume $\Omega_{ex}=2^D\Omega$, i.e. larger than just the sphere itself. Naively, we would then approximate the configurational integral as
 
 $$
-\phi(T, V, N) \approx \frac{V}{V}  \cdot\frac{V-\Omega}{V}\cdot\frac{V-2\Omega}{V}\ldots \cdot\frac{V-(N-1)\Omega}{V}
+\phi(T, V, N) \approx \frac{V}{V}  \cdot\frac{V-\Omega_{ex}}{V}\cdot\frac{V-2\Omega_{ex}}{V}\ldots \cdot\frac{V-(N-1)\Omega_{ex}}{V}
 $$
 
 
@@ -106,26 +106,28 @@ This is approximate because of jamming ...
 
 The excluded volume for particle 3 once 1,2 placed is not strictly additive if 1,2 are close: 3 has more space available when 1,2 are close than if they are apart (see [depletion force](https://en.wikipedia.org/wiki/Depletion_force)). 
 
-But if $N \Omega \ll V$, this interaction is rare, so approximation ok in dilute limit. So,
+But if $N \Omega_{ex} \ll V$, this interaction is rare, so approximation ok in dilute limit. So,
 
 $$
-\phi(T, V, N) \approx \prod_{n=1}^{N}(V-(N-n) \Omega)=e^{\sum \ln (V-(N-n) \Omega)} \\
- \approx e^{N \ln \left(V-\frac{N}{2} \Omega\right)}+O\left(\left(\frac{N \Omega}{V}\right)^{2}\right)
+\phi(T, V, N) \approx \prod_{n=1}^{N}(V-(N-n) \Omega_{ex})=e^{\sum \ln (V-(N-n) \Omega_{ex})} \\
+ \approx e^{N \ln \left(V-\frac{N}{2} \Omega_{ex}\right)}+O\left(\left(\frac{N \Omega_{ex}}{V}\right)^{2}\right)
 $$
 
-So effectively $\quad V \longrightarrow V-\frac{N}{2} \Omega$
+So effectively $\quad V \longrightarrow V-N \Omega_{ex}/2$. 
 
 $$
 \begin{array}{r}
-P\left(V-\frac{N}{2} \Omega\right) \approx N K_{B} T \\
-P=n K_{B} T \frac{1}{1-n \frac{\Omega}{2}}
+P\left(V-N \Omega_{ex}/2\right) \approx N K_{B} T \\
+P=n K_{B} T \frac{1}{1-n \Omega_{ex}/2}
 \end{array}
 $$
 
+Note that this result reproduces our exact result in one dimensions, where $\Omega_{ex}=2\Omega$.
+
 $$
 \begin{aligned}
-P & =n K_{B} T \frac{1}{1-n \frac{\Omega}{2}} \\
-& =n K_{B}+\left(1+\frac{\Omega}{2} n+\left(\frac{\Omega}{2}\right)^{2} n^{2}+\cdots\right)
+P & =n K_{B} T \frac{1}{1-n \Omega_{ex}/2} \\
+& =n K_{B}+\left(1+(\Omega_{ex}/2) n+\left(\Omega_{ex}/2\right)^{2} n^{2}+\cdots\right)
 \end{aligned}
 $$
 
@@ -142,7 +144,7 @@ As explained in the textbook, the $B_{n}(T)$ can be computed systematically via 
 Our approximate treatment of a hard-sphere gas took only the "excluded volume" repulsion
 
 $$
-V^{N} \rightarrow(V-\Omega N / 2)^{N}
+V^{N} \rightarrow(V-\Omega 2^{D-1})^{N}
 $$
 
 But neutral molecules interact through an attractive $U(r) \approx-4 \epsilon\left(\frac{\sigma}{r}\right)^{6}$ as $r \rightarrow \infty$, with short-range repulsion. Why? The charged constituents of a molecule can polarize:
@@ -265,7 +267,7 @@ $$
 $$
 
 $$
- \frac{\ln Q}{V} \geq n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta \cup \frac{n^{2}}{2}\equiv\psi[n]
+ \frac{\ln Q}{V} \geq n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta u \frac{n^{2}}{2}\equiv\psi[n]
 $$
 
 
@@ -355,7 +357,7 @@ $$
 Interpretation: effect of long-range interaction is to shift $\mu \rightarrow \mu+$ un do to the average attraction un experienced by each particle (mean-field)
 
 $$
-\psi=n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta \cup \frac{n^{2}}{2}
+\psi=n\left[\ln \left(\frac{n^{-1}-\Omega / 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta u \frac{n^{2}}{2}
 $$
 
 Choose units with $\beta=1, \Omega / 2=1$, and shift $\mu$ :
