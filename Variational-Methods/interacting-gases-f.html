@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/interacting-gases-f';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Variational Method" href="Variational-methods-Mean-Field.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
@@ -194,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Variational-methods-Mean-Field.html">Variational Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interacting-gases-variational-treatment.html">Interacting Gases</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interacting Gases</a></li>
 
 </ul>
 
@@ -668,7 +669,7 @@ u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\rig
 \end{aligned}
 \]</div>
 <div class="math notranslate nohighlight" id="equation-gibbs-ineq-vdw">
-<span class="eqno">()<a class="headerlink" href="#equation-gibbs-ineq-vdw" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(13)<a class="headerlink" href="#equation-gibbs-ineq-vdw" title="Permalink to this equation">#</a></span>\[
  \frac{\ln Q}{\beta V} \geq \beta^{-1} n\left[\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda_T^{3}}\right)+\beta\mu+1\right]+\beta u \frac{n^{2}}{2}\equiv\psi[n,\mu,T]
 \]</div>
 <p>Note that the lHS has a simple interpretation in terms of pressure:</p>
@@ -678,14 +679,14 @@ u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\rig
  =(T S+\mu N-P V)-(T S+\mu N) \\
  =-P V
 \end{split}\]</div>
-<p>So, Eq. <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-gibbs-ineq-vdw">(13)</a> can be rewritten as</p>
+<p>So, Eq. <a class="reference internal" href="#equation-gibbs-ineq-vdw">(13)</a> can be rewritten as</p>
 <div class="math notranslate nohighlight">
 \[
 P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
 \]</div>
 <p>Thus, our <strong>best</strong> variational approximation of the true pressure is obtained by maximizing <span class="math notranslate nohighlight">\(\psi\)</span> w.r.t. <span class="math notranslate nohighlight">\(n\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-pressure-max-psi">
-<span class="eqno">()<a class="headerlink" href="#equation-pressure-max-psi" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(14)<a class="headerlink" href="#equation-pressure-max-psi" title="Permalink to this equation">#</a></span>\[
  P(\mu,T) \approx \max_{n}\psi_u[n,\mu,T]
 \]</div>
 <p>We’ll see that, as a function of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\psi[n,\mu,T]\)</span> exhibits two maxima corresponding to gas and liquid. Which maximum is the global one depends, for a given temperature <span class="math notranslate nohighlight">\(T\)</span>, on <span class="math notranslate nohighlight">\(\mu\)</span>.  To get a better sense of the behavior of <span class="math notranslate nohighlight">\(\psi_u[n,\mu,T]\)</span>, we’ll rescale all  parameters in terms of their characteristic values,</p>
@@ -719,7 +720,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
 \]</div>
 <p>Maximize:</p>
 <div class="math notranslate nohighlight" id="equation-maximizing-psi">
-<span class="eqno">()<a class="headerlink" href="#equation-maximizing-psi" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(15)<a class="headerlink" href="#equation-maximizing-psi" title="Permalink to this equation">#</a></span>\[
 \partial_{\tilde n} \tilde \psi=\ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } +\tilde \mu + \tilde u \tilde n= 0
 \]</div>
 <p>This has multiple <span class="math notranslate nohighlight">\(\tilde n\)</span>–solutions for a given <span class="math notranslate nohighlight">\(\tilde \mu\)</span> (see below).</p>
@@ -731,7 +732,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
 \[
 \tilde \mu=\frac{1}{1-n }-\tilde u n-\ln \left({\tilde n}^{-1}-1\right)
 \]</div>
-<p>Substituting this back into our approximation Eq. <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-pressure-max-psi">(14)</a>, we obtain an approximation of the pressure as a function of density,</p>
+<p>Substituting this back into our approximation Eq. <a class="reference internal" href="#equation-pressure-max-psi">(14)</a>, we obtain an approximation of the pressure as a function of density,</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{P}{P_0} \approx \tilde \psi_{\tilde u}[\tilde n,\tilde \mu] = \frac{\tilde n}{1-\tilde n}-\tilde u \frac{\tilde n^2}{2}
@@ -758,9 +759,9 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </section>
 <section id="phase-separation">
 <h3>Phase separation<a class="headerlink" href="#phase-separation" title="Permalink to this heading">#</a></h3>
-<p>Let’s return to <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-maximizing-psi">(15)</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
+<p>Let’s return to <a class="reference internal" href="#equation-maximizing-psi">(15)</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-graphical-vdw">
-<span class="eqno">()<a class="headerlink" href="#equation-graphical-vdw" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(16)<a class="headerlink" href="#equation-graphical-vdw" title="Permalink to this equation">#</a></span>\[
 \ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } =-\tilde \mu -\tilde u \tilde n \;.
 \]</div>
 <p>Note that the LHS is a complex function, but does not depend on any parameter. The RHS is merely a straight line with negative slope. So, we may solve the equation graphically by plotting the parameter-free RHS, and see under which conditions this function can be cut by a negative slope straight line.</p>
@@ -842,7 +843,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </div>
 <p>The interpretation here is that for low <span class="math notranslate nohighlight">\(\tilde \mu\)</span> (large negative <span class="math notranslate nohighlight">\(\mu\)</span>), a low density phase obtains, and vice versa for high <span class="math notranslate nohighlight">\(\tilde\mu\)</span>. There is a transition point <span class="math notranslate nohighlight">\(\tilde\mu_c(\tilde u)\)</span>, where the density jumps – phase transition:</p>
 <p><img alt="jump-from-nl-to-ng" src="../_images/jump-from-nl-to-ng.jpg" /></p>
-<p>However, the value of <span class="math notranslate nohighlight">\(\tilde u\)</span> has to exceed a critical <span class="math notranslate nohighlight">\(\tilde u_c\)</span>, to be in the two-phase regime. We can determine the minimal <span class="math notranslate nohighlight">\(\tilde u_c\)</span> by finding the maximal slope of the LHS in <a class="reference internal" href="#equation-graphical-vdw">()</a>. The maximal slope occurs at <span class="math notranslate nohighlight">\(\tilde n_*=1/3\)</span>, and so</p>
+<p>However, the value of <span class="math notranslate nohighlight">\(\tilde u\)</span> has to exceed a critical <span class="math notranslate nohighlight">\(\tilde u_c\)</span>, to be in the two-phase regime. We can determine the minimal <span class="math notranslate nohighlight">\(\tilde u_c\)</span> by finding the maximal slope of the LHS in <a class="reference internal" href="#equation-graphical-vdw">(16)</a>. The maximal slope occurs at <span class="math notranslate nohighlight">\(\tilde n_*=1/3\)</span>, and so</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde u_c=-(1/((1 - \tilde n_*)^2 \tilde n_*))=27/4\approx  6.75
@@ -899,6 +900,15 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Variational-methods-Mean-Field.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Variational Method</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
