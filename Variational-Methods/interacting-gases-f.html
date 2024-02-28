@@ -431,7 +431,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-waals-equation-of-state">Van der Waals equation of state</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-separation">Phase separation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-transition">Phase transition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-attractive-interaction">Minimal attractive interaction</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-construction-coexistence">Maxwell Construction / Coexistence</a></li>
 </ul>
 </li>
@@ -670,7 +673,7 @@ u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\rig
 \]</div>
 <div class="math notranslate nohighlight" id="equation-gibbs-ineq-vdw">
 <span class="eqno">(13)<a class="headerlink" href="#equation-gibbs-ineq-vdw" title="Permalink to this equation">#</a></span>\[
- \frac{\ln Q}{\beta V} \geq \beta^{-1} n\left[\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda_T^{3}}\right)+\beta\mu+1\right]+\beta u \frac{n^{2}}{2}\equiv\psi[n,\mu,T]
+ \frac{\ln Q}{\beta V} \geq \beta^{-1} n\left[\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda_T^{3}}\right)+\beta\mu+1\right]+ u \frac{n^{2}}{2}\equiv\psi[n,\mu,T]
 \]</div>
 <p>Note that the lHS has a simple interpretation in terms of pressure:</p>
 <div class="math notranslate nohighlight">
@@ -695,7 +698,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
 \tilde \psi=\frac{\psi}{ P_0}=\frac{\psi}{2k_BT/\Omega_{ex}} \\
 \tilde n=n\Omega_{ex}/2 \\
 \tilde \mu=\beta \mu+1-\ln(2\lambda_T^{3}/\Omega_{ex}) \\
-\tilde u=\beta u \Omega_{ex}/2
+\tilde u=2 u /(k_B T \Omega_{ex})
 \end{split}\]</div>
 <p>Then, our function <span class="math notranslate nohighlight">\(\psi\)</span> becomes</p>
 <div class="math notranslate nohighlight">
@@ -757,15 +760,20 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 \]</div>
 <p>showing that effect of long-range interaction is to shift <span class="math notranslate nohighlight">\(P \rightarrow P-a n^2=P-a v^{-2}\)</span> due to the average attraction <span class="math notranslate nohighlight">\(u n\)</span> experienced by each particle (mean-field).</p>
 </section>
-<section id="phase-separation">
-<h3>Phase separation<a class="headerlink" href="#phase-separation" title="Permalink to this heading">#</a></h3>
+<section id="phase-transition">
+<h3>Phase transition<a class="headerlink" href="#phase-transition" title="Permalink to this heading">#</a></h3>
 <p>Let’s return to <a class="reference internal" href="#equation-maximizing-psi">(15)</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-graphical-vdw">
 <span class="eqno">(16)<a class="headerlink" href="#equation-graphical-vdw" title="Permalink to this equation">#</a></span>\[
 \ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } =-\tilde \mu -\tilde u \tilde n \;.
 \]</div>
-<p>Note that the LHS is a complex function, but does not depend on any parameter. The RHS is merely a straight line with negative slope. So, we may solve the equation graphically by plotting the parameter-free RHS, and see under which conditions this function can be cut by a negative slope straight line.</p>
-<div class="cell docutils container">
+<p>Note that the LHS is a complicated non-linear function, but does not depend on any parameter. The RHS is merely a straight line with axis intercept <span class="math notranslate nohighlight">\(-\tilde \mu\)</span> and negative slope <span class="math notranslate nohighlight">\(-\tilde u\)</span>. So, we may solve the equation graphically by plotting the parameter-free RHS, and see under which conditions this function can be cut by a negative slope straight line.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -775,7 +783,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span>
 
 <span class="c1"># Define the second function to plot</span>
-<span class="k">def</span> <span class="nf">second_function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tilde_mu</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">tilde_u</span><span class="o">=</span><span class="mi">15</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">second_function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tilde_mu</span><span class="o">=-</span><span class="mf">1.9</span><span class="p">,</span> <span class="n">tilde_u</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">tilde_mu</span> <span class="o">-</span> <span class="n">tilde_u</span> <span class="o">*</span> <span class="n">n</span>
 
 <span class="c1"># Generate a range of tilde n values within the specified interval</span>
@@ -798,12 +806,18 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/70d489e40513d16ee5a7f98890cac5209a3735fe9cae4bbbbcaf341c5dee66e7.png" src="../_images/70d489e40513d16ee5a7f98890cac5209a3735fe9cae4bbbbcaf341c5dee66e7.png" />
+<img alt="../_images/3201113827166bd89aa07eab353c96d88a59bf6bfb63d0ff2a5d8702ba602507.png" src="../_images/3201113827166bd89aa07eab353c96d88a59bf6bfb63d0ff2a5d8702ba602507.png" />
 </div>
 </div>
 <p>From the plot above, we can see that we can have three extrema. Plotting <span class="math notranslate nohighlight">\(\psi\)</span> on a log plot shows that there are two maxima and a minimum in the middle. Which maximum dominates, depends on the chemical potential <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -813,16 +827,16 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
     <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">mu</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span> <span class="n">u</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
 
 <span class="c1"># Generate a range of tilde n values within the specified interval</span>
-<span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">.999</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">.8</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 
 <span class="c1"># Specify a range of tilde mu values for plotting</span>
-<span class="n">mu_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">mu_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.7</span><span class="p">,</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.1</span><span class="p">]</span>
 
 <span class="c1"># Specify a range of tilde u values for plotting</span>
-<span class="n">u_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span>
+<span class="n">u_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
 
 <span class="c1"># Plot the function for various combinations of tilde u and tilde mu values</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">mu_values</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">u_values</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">psi_tilde_updated</span><span class="p">(</span><span class="n">n_values</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">u</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$\mu=</span><span class="si">{</span><span class="n">mu</span><span class="si">}</span><span class="s1">, u=</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
@@ -837,23 +851,34 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<img alt="../_images/5a01b33beebe3cfb63e0ff6ec020cdb65cafad469397b37093add7249c65d7de.png" src="../_images/5a01b33beebe3cfb63e0ff6ec020cdb65cafad469397b37093add7249c65d7de.png" />
+<img alt="../_images/7c3cc3c3941f8240cb4befa774bb00083610cb36d8f6904cb37276c5002f3395.png" src="../_images/7c3cc3c3941f8240cb4befa774bb00083610cb36d8f6904cb37276c5002f3395.png" />
 </div>
 </div>
 <p>The interpretation here is that for low <span class="math notranslate nohighlight">\(\tilde \mu\)</span> (large negative <span class="math notranslate nohighlight">\(\mu\)</span>), a low density phase obtains, and vice versa for high <span class="math notranslate nohighlight">\(\tilde\mu\)</span>. There is a transition point <span class="math notranslate nohighlight">\(\tilde\mu_c(\tilde u)\)</span>, where the density jumps – phase transition:</p>
 <p><img alt="jump-from-nl-to-ng" src="../_images/jump-from-nl-to-ng.jpg" /></p>
-<p>However, the value of <span class="math notranslate nohighlight">\(\tilde u\)</span> has to exceed a critical <span class="math notranslate nohighlight">\(\tilde u_c\)</span>, to be in the two-phase regime. We can determine the minimal <span class="math notranslate nohighlight">\(\tilde u_c\)</span> by finding the maximal slope of the LHS in <a class="reference internal" href="#equation-graphical-vdw">(16)</a>. The maximal slope occurs at <span class="math notranslate nohighlight">\(\tilde n_*=1/3\)</span>, and so</p>
+<p><span class="math notranslate nohighlight">\(\tilde \psi\)</span> has two maxima and one minimum for <span class="math notranslate nohighlight">\(\mu\)</span> near the transition point, indicating that both the low and high-density states are <em>metastable</em>. Once <span class="math notranslate nohighlight">\(\mu\)</span> is still further away from the transition point, the minimum annihilates with one maximum, such that only one maximum remains.</p>
+<p>The extremum structure of <span class="math notranslate nohighlight">\(\tilde \psi\)</span> matters for the relaxation to equilibrium. If there are two maxima, and we start out at the lower maximum, relaxation proceeds via droplets of a minimal size. If there’s just one maximum, the relaxation proceeds spontanously.</p>
+<section id="minimal-attractive-interaction">
+<h4>Minimal attractive interaction<a class="headerlink" href="#minimal-attractive-interaction" title="Permalink to this heading">#</a></h4>
+<p>However, to be able to observe a phase transition as function of <span class="math notranslate nohighlight">\(\mu\)</span>, the value of <span class="math notranslate nohighlight">\(\tilde u\)</span> has to exceed a critical <span class="math notranslate nohighlight">\(\tilde u_c\)</span> so that <span class="math notranslate nohighlight">\(\tilde \psi\)</span> has two maxima and one minimum. We can determine the minimal <span class="math notranslate nohighlight">\(\tilde u_c\)</span> by finding the maximal slope of the LHS in <a class="reference internal" href="#equation-graphical-vdw">(16)</a>,</p>
 <div class="math notranslate nohighlight">
 \[
-\tilde u_c=-(1/((1 - \tilde n_*)^2 \tilde n_*))=27/4\approx  6.75
+u_c =\max_{n} \partial_{\tilde n} \left(\frac{1}{1-\tilde n }-\ln \left({\tilde n}^{-1}-1\right) \right)=\max_{n} \frac{1}{n(1-n)^2} 
+\]</div>
+<p>The maximal slope occurs at <span class="math notranslate nohighlight">\(\tilde n_*=1/3\)</span>, and so</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde u_c= 27/4\approx  6.75
 \]</div>
 <p>We can depict the entire phase behavior in a <span class="math notranslate nohighlight">\((\tilde u, \tilde \mu)\)</span> phase diagram</p>
 <p><img alt="u-vs-mu" src="../_images/u-vs-mu.jpg" /></p>
 </section>
+</section>
 <section id="maxwell-construction-coexistence">
 <h3>Maxwell Construction / Coexistence<a class="headerlink" href="#maxwell-construction-coexistence" title="Permalink to this heading">#</a></h3>
-<p>If we work in contact with particle reservoir ( <span class="math notranslate nohighlight">\(\mu\)</span>-ensemble), then <span class="math notranslate nohighlight">\(n(\mu)\)</span> jumps below <span class="math notranslate nohighlight">\(T_{c}: n_{n g} \mathfrak{f}^{n} \longrightarrow_{N}\)</span>.</p>
+<p>If we work in contact with particle reservoir ( <span class="math notranslate nohighlight">\(\mu\)</span>-ensemble), then <span class="math notranslate nohighlight">\(n(\mu)\)</span> jumps below <span class="math notranslate nohighlight">\(T_c\)</span>.</p>
 <p>But what if we put <span class="math notranslate nohighlight">\(n=\frac{N}{V}\)</span> particks in a box for fixed <span class="math notranslate nohighlight">\(N\)</span> with <span class="math notranslate nohighlight">\(n_{g}&lt;n&lt;h_{l}\)</span> ? Intuitively, we know: it will phase separate:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-11.jpg?height=504&amp;width=603&amp;top_left_y=1118&amp;top_left_x=522" /></p>
 <div class="math notranslate nohighlight">
@@ -933,7 +958,10 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#van-der-waals-equation-of-state">Van der Waals equation of state</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-separation">Phase separation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-transition">Phase transition</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-attractive-interaction">Minimal attractive interaction</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-construction-coexistence">Maxwell Construction / Coexistence</a></li>
 </ul>
 </li>
