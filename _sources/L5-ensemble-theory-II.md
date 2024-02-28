@@ -6,7 +6,7 @@ $$
 S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
 $$(Gibbs-Entropy)
 
-To that end, recall from our {ref}`discussion of information entropy<max-ent-boltzmann>` that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
+To that end, recall from our [discussion of information entropy](max-ent-boltzmann) that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
 
 $$
 \Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{F}{T} \;,
