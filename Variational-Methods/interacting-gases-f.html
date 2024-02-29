@@ -67,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/interacting-gases-f';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Monte Carlo and the Metropolis Algorithm" href="../MonteCarlo/MonteCarlo.html" />
     <link rel="prev" title="Variational Method" href="Variational-methods-Mean-Field.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,6 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Variational-methods-Mean-Field.html">Variational Method</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Interacting Gases</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
 </ul>
 
     </div>
@@ -682,7 +684,7 @@ u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\rig
  =(T S+\mu N-P V)-(T S+\mu N) \\
  =-P V
 \end{split}\]</div>
-<p>So, Eq. <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-gibbs-ineq-vdw">()</a> can be rewritten as</p>
+<p>So, Eq. <a class="reference internal" href="#equation-gibbs-ineq-vdw">(13)</a> can be rewritten as</p>
 <div class="math notranslate nohighlight">
 \[
 P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
@@ -729,7 +731,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
 \[
 \tilde \mu=\frac{1}{1-n }-\tilde u n-\ln \left({\tilde n}^{-1}-1\right)
 \]</div>
-<p>Substituting this back into our approximation Eq. <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-pressure-max-psi">()</a>, we obtain an approximation of the pressure as a function of density,</p>
+<p>Substituting this back into our approximation Eq. <a class="reference internal" href="#equation-pressure-max-psi">(14)</a>, we obtain an approximation of the pressure as a function of density,</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{P}{P_0} \approx \tilde \psi_{\tilde u}[\tilde n,\tilde \mu] = \frac{\tilde n}{1-\tilde n}-\tilde u \frac{\tilde n^2}{2}
@@ -756,7 +758,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </section>
 <section id="phase-transition">
 <h3>Phase transition<a class="headerlink" href="#phase-transition" title="Permalink to this heading">#</a></h3>
-<p>Let’s return to <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-maximizing-psi">()</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
+<p>Let’s return to <a class="reference internal" href="#equation-maximizing-psi">(15)</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-graphical-vdw">
 <span class="eqno">(16)<a class="headerlink" href="#equation-graphical-vdw" title="Permalink to this equation">#</a></span>\[
 \ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } =-\tilde \mu -\tilde u \tilde n \;.
@@ -823,8 +825,10 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 <span class="c1"># Generate a range of tilde n values within the specified interval</span>
 <span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">.8</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 
+
 <span class="c1"># Specify a range of tilde mu values for plotting</span>
 <span class="n">mu_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.7</span><span class="p">,</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.875</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.1</span><span class="p">]</span>
+
 
 <span class="c1"># Specify a range of tilde u values for plotting</span>
 <span class="n">u_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
@@ -875,21 +879,20 @@ u_c =\max_{n} \partial_{\tilde n} \left(\frac{1}{1-\tilde n }-\ln \left({\tilde 
 <section id="phase-separation-gibbs-criterion-maxwell-construction">
 <h3>Phase separation / Gibbs criterion / Maxwell construction<a class="headerlink" href="#phase-separation-gibbs-criterion-maxwell-construction" title="Permalink to this heading">#</a></h3>
 <p>If we work in contact with particle reservoir ( <span class="math notranslate nohighlight">\(\mu\)</span>-ensemble), then <span class="math notranslate nohighlight">\(n(\mu)\)</span> jumps below <span class="math notranslate nohighlight">\(T_c\)</span>.</p>
-<p>But what if we put <span class="math notranslate nohighlight">\(n=\frac{N}{V}\)</span> particls in a box for fixed <span class="math notranslate nohighlight">\(N\)</span> with <span class="math notranslate nohighlight">\(n_{g}&lt;n&lt;h_{l}\)</span> ? Intuitively, we know: it will phase separate:</p>
+<p>But what if we put <span class="math notranslate nohighlight">\(n=\frac{N}{V}\)</span> particls in a box for fixed <span class="math notranslate nohighlight">\(N\)</span> with <span class="math notranslate nohighlight">\(n_{g}&lt;n&lt;n_{l}\)</span> ? Intuitively, we know: it will phase separate:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-11.jpg?height=504&amp;width=603&amp;top_left_y=1118&amp;top_left_x=522" /></p>
 <p>We can model this situation as two large systems in contact with one another, exchanging particles and volume, and in contact with a joint reservoir, with which they exchange energy:</p>
 <p><img alt="2systems-1reservoir" src="../_images/2systems-reservoir.jpg" /></p>
-<p>For stability, the liquid and gas compartments need to have the same chemical potential and temperature. I.e. our <span class="math notranslate nohighlight">\(\~\psi_{\~u}(\~n, \~\mu)\)</span> function applies to <em>both</em> systems. However, because both systems also exchange volumes, the pressures in both compartments needs to be the same. This restricts the chemical potential to take for a given <span class="math notranslate nohighlight">\(\tilde u&lt;\tild u_c\)</span> the specific value for which both maxima are at the same height, e.g. as in the green curve in the above figure of <span class="math notranslate nohighlight">\(\~\psi_{\~u}(\~n, \~\mu)\)</span>.</p>
+<p>For stability, the liquid and gas compartments need to have the same chemical potential and temperature. I.e. our <span class="math notranslate nohighlight">\(\tilde\psi_{\tilde u}(\tilde n, \tilde\mu)\)</span> function applies to <em>both</em> systems. However, because both systems also exchange volumes, the pressures in both compartments needs to be the same. This restricts the chemical potential to take for a given <span class="math notranslate nohighlight">\(\tilde u&lt;\tilde u_c\)</span> the specific value for which both maxima are at the same height, e.g.</p>
+<p><img alt="equal-pressure-condition" src="../_images/Gibbs-criterion.jpg" /></p>
+<p>Both maxima determine the pressure in the gas and liquid compartments, and the densities <span class="math notranslate nohighlight">\(n_l &gt; n_g\)</span> determine their volume fraction. If the total density is <span class="math notranslate nohighlight">\(n=N/V\)</span>, the liquid volume fraction <span class="math notranslate nohighlight">\(0&lt;\alpha_l&lt;1\)</span> satisfies</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; V=V_{g}+V_{l} \\
-&amp; N=N_{g}+N_{l} \\
-&amp; N=n_{g} \cdot V_{g}+n_{l} V_{l} \\
-&amp; n=n_{g} \cdot \frac{V_{g}}{V}+n_{l} \frac{V_{l}}{V}
-\end{aligned}
-\end{split}\]</div>
-<p><img alt="maxwell-construction" src="../_images/maxwell-construction.jpg" /></p>
+\[
+\alpha_l n_l+(1-alpha_l) n_g=n
+\]</div>
+<p>Doing this procedure for all densities produces the following pressure vs inverse density plot</p>
+<p><img alt="equal-pressure-condition" src="../_images/VdW_isotherms+2log.jpg" /></p>
+<p>Note that the above approach to phase separation (equal pressures and chemical potentials in gas and liquid compartments) is equivalent to the more popular <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell_construction">Maxwell equal area construction</a>.</p>
 </section>
 </section>
 </section>
@@ -932,6 +935,15 @@ u_c =\max_{n} \partial_{\tilde n} \left(\frac{1}{1-\tilde n }-\ln \left({\tilde 
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Variational Method</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../MonteCarlo/MonteCarlo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Monte Carlo and the Metropolis Algorithm</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
