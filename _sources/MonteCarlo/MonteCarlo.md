@@ -169,7 +169,7 @@ $$
 As we go along, we accumulate measurements
 
 $$
-\sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)
+\langle \mathcal{O} \rangle\approxM^{-1}\sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)
 $$
 
 for any relevant observables.
@@ -186,7 +186,7 @@ $\tau$ is determined by the eigenspectrum of $M$. It is a good idea to throw-out
 
 $$
 \begin{aligned}
-\langle O\rangle=\frac{1}{\mu-T} & \sum_{t=T}^{M} O\left(\mu_{t}\right) \\
+\langle \mathcal{O}\rangle=\frac{1}{\mu-T} & \sum_{t=T}^{M} \mathcal{O}\left(\mu_{t}\right) \\
 & \tau \text { "burn-in" time }
 \end{aligned}
 $$
@@ -199,7 +199,7 @@ For a finite number of samples " $M$ ",
 
 $$
 \begin{aligned}
-& \langle O\rangle=\frac{1}{M} \sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)+\epsilon 
+& \langle \mathcal{O}\rangle=\frac{1}{M} \sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)+\epsilon 
 \end{aligned}
 $$
 

@@ -435,7 +435,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-attractive-interaction">Minimal attractive interaction</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-construction-coexistence">Maxwell Construction / Coexistence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-separation-gibbs-criterion-maxwell-construction">Phase separation / Gibbs criterion / Maxwell construction</a></li>
 </ul>
 </li>
 </ul>
@@ -864,17 +864,22 @@ u_c =\max_{n} \partial_{\tilde n} \left(\frac{1}{1-\tilde n }-\ln \left({\tilde 
 <p>The maximal slope occurs at <span class="math notranslate nohighlight">\(\tilde n_*=1/3\)</span>, and so</p>
 <div class="math notranslate nohighlight">
 \[
-\tilde u_c= 27/4\approx  6.75
+\tilde u_c\equiv \frac{2u}{k_BT/\Omega_{ex}}= 27/4\approx  6.75
 \]</div>
+<p>So, as we vary <span class="math notranslate nohighlight">\(\mu\)</span>, we get a sudden jump in density if the attraction if <span class="math notranslate nohighlight">\(\tilde u&gt;u_c\)</span>. In light of definition of <span class="math notranslate nohighlight">\(\tilde u\)</span>, this means that the attraction is strong enough for a given temperature and <span class="math notranslate nohighlight">\(\Omega_{ex}\)</span> or the temperature is sufficiently low for a given attraction parameter <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(\Omega_{ex}\)</span>. Since we can normally not change experimentally any aspect of the Hamiltonian (except for external fields), but we can easily tune the temperature, the statement <span class="math notranslate nohighlight">\(T&lt;T_c(u,\Omega_{ex}) \rightarrow\)</span> phase transition is the most significant one.</p>
 <p>We can depict the entire phase behavior in a <span class="math notranslate nohighlight">\((\tilde u, \tilde \mu)\)</span> phase diagram</p>
 <p><img alt="u-vs-mu" src="../_images/u-vs-mu.jpg" /></p>
+<p><strong>Question:</strong> How does the <span class="math notranslate nohighlight">\(\tilde n\)</span> vs <span class="math notranslate nohighlight">\(\tilde \mu\)</span> plot look for <span class="math notranslate nohighlight">\(\tilde u\geq \tilde u_c\)</span>?</p>
 </section>
 </section>
-<section id="maxwell-construction-coexistence">
-<h3>Maxwell Construction / Coexistence<a class="headerlink" href="#maxwell-construction-coexistence" title="Permalink to this heading">#</a></h3>
+<section id="phase-separation-gibbs-criterion-maxwell-construction">
+<h3>Phase separation / Gibbs criterion / Maxwell construction<a class="headerlink" href="#phase-separation-gibbs-criterion-maxwell-construction" title="Permalink to this heading">#</a></h3>
 <p>If we work in contact with particle reservoir ( <span class="math notranslate nohighlight">\(\mu\)</span>-ensemble), then <span class="math notranslate nohighlight">\(n(\mu)\)</span> jumps below <span class="math notranslate nohighlight">\(T_c\)</span>.</p>
-<p>But what if we put <span class="math notranslate nohighlight">\(n=\frac{N}{V}\)</span> particks in a box for fixed <span class="math notranslate nohighlight">\(N\)</span> with <span class="math notranslate nohighlight">\(n_{g}&lt;n&lt;h_{l}\)</span> ? Intuitively, we know: it will phase separate:</p>
+<p>But what if we put <span class="math notranslate nohighlight">\(n=\frac{N}{V}\)</span> particls in a box for fixed <span class="math notranslate nohighlight">\(N\)</span> with <span class="math notranslate nohighlight">\(n_{g}&lt;n&lt;h_{l}\)</span> ? Intuitively, we know: it will phase separate:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-11.jpg?height=504&amp;width=603&amp;top_left_y=1118&amp;top_left_x=522" /></p>
+<p>We can model this situation as two large systems in contact with one another, exchanging particles and volume, and in contact with a joint reservoir, with which they exchange energy:</p>
+<p><img alt="2systems-1reservoir" src="../_images/2systems-reservoir.jpg" /></p>
+<p>For stability, the liquid and gas compartments need to have the same chemical potential and temperature. I.e. our <span class="math notranslate nohighlight">\(\~\psi_{\~u}(\~n, \~\mu)\)</span> function applies to <em>both</em> systems. However, because both systems also exchange volumes, the pressures in both compartments needs to be the same. This restricts the chemical potential to take for a given <span class="math notranslate nohighlight">\(\tilde u&lt;\tild u_c\)</span> the specific value for which both maxima are at the same height, e.g. as in the green curve in the above figure of <span class="math notranslate nohighlight">\(\~\psi_{\~u}(\~n, \~\mu)\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -956,7 +961,7 @@ u_c =\max_{n} \partial_{\tilde n} \left(\frac{1}{1-\tilde n }-\ln \left({\tilde 
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimal-attractive-interaction">Minimal attractive interaction</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-construction-coexistence">Maxwell Construction / Coexistence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-separation-gibbs-criterion-maxwell-construction">Phase separation / Gibbs criterion / Maxwell construction</a></li>
 </ul>
 </li>
 </ul>
