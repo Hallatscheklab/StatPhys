@@ -1,0 +1,687 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Monte Carlo and the Metropolis Algorithm &#8212; Equilibrium Statistical Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MonteCarlo/MonteCarlo';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="../_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FMonteCarlo/MonteCarlo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/MonteCarlo/MonteCarlo.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Monte Carlo and the Metropolis Algorithm</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-sampling">Importance sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metropolis-rule">Metropolis Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-considerations">Numerical Considerations</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="monte-carlo-and-the-metropolis-algorithm">
+<h1>Monte Carlo and the Metropolis Algorithm<a class="headerlink" href="#monte-carlo-and-the-metropolis-algorithm" title="Permalink to this heading">#</a></h1>
+<p>For general <span class="math notranslate nohighlight">\(H\)</span>, it is not easy to compute</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \mathcal{O}\rangle=\frac{1}{Z} \sum_{\mu} \mathcal{O}(\mu) e^{-\beta H(\mu)}
+\]</div>
+<p>exactly. Except in special cases (1D, non-interacting, exactly solvable), either approximate (variational/perturbative) or numerical approaches needed.</p>
+<p>Monte Carlo is a general method for computing <span class="math notranslate nohighlight">\(\sum_{\mu} f_{\mu}\)</span> where <span class="math notranslate nohighlight">\(\mu \in\)</span> really big space. Applicable not just to statistical physics but alos in biology, finance, complex systems etc. (cite)</p>
+<p>In a general setting, <span class="math notranslate nohighlight">\(\sum_\mu f_{\mu}\)</span> may not have an underlying probabilistic interpretation; for example we might be trying to evaluate an oscillatory integral in a high-dim space <span class="math notranslate nohighlight">\(\mu \in \mathbb{R}^{n}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\int_{0}^{1} d x_{1} d x_{2} \cdots d x_{n}}_{\sum_{\mu}} \underbrace{f\left(x_{1}, \cdots x_{n}\right)}_{f_{\mu}}
+\]</div>
+<section id="importance-sampling">
+<h2>Importance sampling<a class="headerlink" href="#importance-sampling" title="Permalink to this heading">#</a></h2>
+<p>In this general setting, the first step is to introduce an “importance” weight <span class="math notranslate nohighlight">\(0&lt;p_{\mu}&lt;1, \sum_{N} p_{\mu}=1\)</span>. A natural choice is <span class="math notranslate nohighlight">\(p_{\mu}=\frac{\left|f_{\mu}\right|}{\sum\left|f_{\mu}\right|}\)</span>, which places a higher weight at summands that are large. We can then trivially rewrite</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{\mu} f_{\mu}=\sum p_{\mu} \cdot \overbrace{\left(\frac{f_{\mu}}{p_{\mu}}\right)}^{\mathcal{O}_{\mu}}=\langle\mathcal{O}\rangle_{p}
+\]</div>
+<p>In statistical mechanics, the natural choice is the Boltzmann distribution: <span class="math notranslate nohighlight">\(p_{\mu}=\frac{e^{-\beta H_{\mu}}}{z}\)</span></p>
+<p>Since the entropy <span class="math notranslate nohighlight">\(S\propto N\)</span> is extensive in the number <span class="math notranslate nohighlight">\(N\)</span> of degrees of freedom, which can be very large (e.g. <span class="math notranslate nohighlight">\(N \sim 10^{23}\)</span>), the number <span class="math notranslate nohighlight">\(\Omega=e^{S/k_B}\)</span> of all possible microstates is often <em>huge</em>. It is, therefore, way too slow to explicitly sum <span class="math notranslate nohighlight">\(\sum_{\mu=1}^{\Omega} p_{\mu} \mathcal{O}_{\mu}\)</span>.</p>
+<p>However, rare (“unimportant”) events <span class="math notranslate nohighlight">\(p_{\mu} \ll 1\)</span> don’t contribute much, so we shouldn’t spend much time on them. This suggest we can estimate <span class="math notranslate nohighlight">\(\langle \mathcal{O}\rangle p\)</span> by sampling from <span class="math notranslate nohighlight">\(p_\mu\)</span>.</p>
+<p>All this means is that we repeatedly roll an <span class="math notranslate nohighlight">\(\Omega\)</span>-sided die weighted by <span class="math notranslate nohighlight">\(p_{\mu}\)</span>. This generates a sequence of samples <span class="math notranslate nohighlight">\(\mu_{1}, \mu_{2}, \cdots \mu_{m}\)</span> where <span class="math notranslate nohighlight">\(M \ll \Omega\)</span>. Our estimate is then</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \mathcal{O}\rangle_{p} \approx \frac{1}{M} \sum_{i=1}^{M} \mathcal{O}_{\mu_{i}}
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(\lim _{M \rightarrow \infty} \frac{1}{M} \sum_{i=1}^{M} \mathcal{O}_{\mu_i}=\langle\mathcal{O}\rangle_p\)</span> guaranteed.</p>
+<p>For finite <span class="math notranslate nohighlight">\(M\)</span>, there will be some error in our estimate of <span class="math notranslate nohighlight">\(\langle \mathcal{O}\rangle_p\)</span> because we may have made some atypical rolls of the die. The typical deviation between <span class="math notranslate nohighlight">\(\langle \mathcal{O}\rangle_p\)</span> and <span class="math notranslate nohighlight">\(\frac{1}{M} \sum_{i=1}^{M} \mathcal{O}_{\mu_i}\)</span> is (central limit theorem)</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta \mathcal{O}=\frac{1}{\sqrt{M}} \sqrt{\left\langle(O-\langle O\rangle)^{2}\right\rangle}
+\]</div>
+<p>So the Monte-Carlo accuracy scales as</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon=\frac{\text{var}{(\mathcal{O})}}{\sqrt{M}} \;.
+\]</div>
+<p>In most cases of interest, <span class="math notranslate nohighlight">\(\text{var}{(\mathcal{O})}\)</span> is bounded as the size of the space <span class="math notranslate nohighlight">\(\Omega \rightarrow \infty\)</span>. For example, in the Ising model <span class="math notranslate nohighlight">\(\Omega=2^{N}\)</span>, but <span class="math notranslate nohighlight">\(\left\langle m^{2}\right\rangle \equiv N^{-1}\sum_i \sigma_i\)</span> is independent of <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>To obtain accuracy <span class="math notranslate nohighlight">\(\epsilon\)</span>, we need <span class="math notranslate nohighlight">\(M_{\epsilon}=\frac{\left\langle \mathcal{O}^{2}\right\rangle}{\epsilon^{2}}\)</span> samples, which will thus be vastly less than a full sum <span class="math notranslate nohighlight">\(\sum_{\mu=1}^{\Omega} p_{\mu} \mathcal{O}_{\mu}\)</span> over all <span class="math notranslate nohighlight">\(\Omega\)</span> states.</p>
+<p>However: we encounter a problem. For <span class="math notranslate nohighlight">\(p_{\mu}=\frac{e^{-\beta H_{\mu}}}{Z}\)</span>, how do we efficiently roll a <span class="math notranslate nohighlight">\(\Omega\)</span>-sided die? Worse, we don’t actually know the probabilities because we cannot compute the normalization constant</p>
+<div class="math notranslate nohighlight">
+\[
+Z=\sum_{N=1}^{N} e^{-\beta H_{N}} \;,
+\]</div>
+<p>aka the partition function. Getting around this problem is where the genius of Metropolis et al. ‘53 (cite) comes in. They discovered a way to sample from <span class="math notranslate nohighlight">\(p_{\mu}=\frac{e^{-\beta E_{\mu}}}{Z}\)</span> without knowing <span class="math notranslate nohighlight">\(Z\)</span> !</p>
+<p>The idea is to invent some fictions dynamics <span class="math notranslate nohighlight">\(\mu_{t} \rightarrow \mu_{t+1}\)</span> so that <span class="math notranslate nohighlight">\(\quad\left\{\mu_{1}, \mu_{2}, \mu_{3}, \ldots\right\}\)</span> visits state <span class="math notranslate nohighlight">\(\mu\)</span> with frequency <span class="math notranslate nohighlight">\(p_\mu\)</span>. Of course in stat-mech, we could choose <span class="math notranslate nohighlight">\(r=\{q, p\}\)</span> to evolve under <span class="math notranslate nohighlight">\(\vec{F}=m \vec{a}\)</span> with a reservoir, which by ergodic hypothesis would produce <span class="math notranslate nohighlight">\(p_\mu\)</span>. But (as your HW demonstrates) this is expensive/slow. Instead we introduce some simpler/fake dynamics in the form of a “Markov chain”.</p>
+<p>A “Markov chain” is a set of transition rates <span class="math notranslate nohighlight">\(O&lt;M_{\mu^{\prime} \mu}&lt;1\)</span> under which the probability dist. evolves as</p>
+<div class="math notranslate nohighlight" id="equation-master-eq">
+<span class="eqno">()<a class="headerlink" href="#equation-master-eq" title="Permalink to this equation">#</a></span>\[
+p_{\mu^{\prime}}(t+1)=\sum_{N} M_{\mu^{\prime} \mu} p_{\mu}(t)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\sum_{\mu^{\prime}} M_{\mu^{\prime} \mu}=1\)</span>. <span class="math notranslate nohighlight">\(M_{\mu^{\prime} \mu}=P\left(\mu^{\prime} \mid \mu\right)\)</span> is the conditional probability for transition <span class="math notranslate nohighlight">\(\mu \longrightarrow \mu^{\prime}\)</span> at each step.</p>
+<p>At long times, the distribution equilibrates to</p>
+<div class="math notranslate nohighlight">
+\[
+p_{\mu}(t=\infty)=\lim _{t \rightarrow \infty}\left(M^{t}\right) p_{\mu}(0) \equiv \pi_{\mu}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(M \cdot \pi_{\mu}=\pi_{\mu}\)</span>.</p>
+<p>We are not going to keep track of the full distribution <span class="math notranslate nohighlight">\(p_{\mu}(t)\)</span> (<span class="math notranslate nohighlight">\(\Omega\)</span> is huge). Instead, we want to sample from it, <span class="math notranslate nohighlight">\(\left\{\mu_{1}, \mu_{2}, \cdots\right\}\)</span>.</p>
+<p>To implement the Markov process represented by the above master equation <a class="reference internal" href="#equation-master-eq">()</a>, we pick at each time step a new state <span class="math notranslate nohighlight">\(\mu_{t+1}\)</span> given <span class="math notranslate nohighlight">\(\mu_t\)</span> by rolling a die biased on the conditional probability <span class="math notranslate nohighlight">\(P\left(\mu_{t+1} \mid \mu_{t}\right)=M_{\mu_{t+1}\mu_t} \)</span>. As you repeat, you build up <span class="math notranslate nohighlight">\(\left\{\mu_{1}, \mu_{2}, \cdots, \mu_{T}\right\}\)</span> which is distributed at <span class="math notranslate nohighlight">\(\pi_{\mu}\)</span> as <span class="math notranslate nohighlight">\(T \rightarrow \infty\)</span>.</p>
+<p>So the question is now how to pick <span class="math notranslate nohighlight">\(M_{\mu^\prime\mu}\)</span> so that <span class="math notranslate nohighlight">\(\pi_{\mu}=\frac{1}{Z} e^{-\beta H_{\mu}}\)</span>.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(M\)</span> satisfies</p>
+<div class="math notranslate nohighlight">
+\[
+M_{\mu^{\prime} \mu} \pi_{\mu}=M_{\mu \mu^{\prime}} \pi_{\mu'}
+\]</div>
+<p>for any two <span class="math notranslate nohighlight">\(\mu, \mu^{\prime}\)</span> (“detailed balance”).</p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[
+\left(M \cdot \pi\right)_{\mu^{\prime}}=\sum_{\mu} M_{\mu^{\prime} \mu} \pi_{\mu}=\sum_{\mu} M_{\mu \mu^{\prime}} \pi_{\mu^{\prime}}=\pi_{\mu^{\prime}}
+\]</div>
+<p>So, any arbitrary distribution <span class="math notranslate nohighlight">\(\pi_\mu\)</span> can be generated by a Markov process where the transition rates satisfy the detailed balance condition corresponding to <span class="math notranslate nohighlight">\(\pi_\mu\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{M_{\mu^{\prime} \mu}}{M_{\mu \mu^{\prime}}}=\frac{\pi_{\mu^{\prime}}}{\pi_{\mu}}=e^{-\beta\left(E_{\mu^{\prime}}-E_{\mu}\right)} \;.
+\]</div>
+<p>The key simplification is that <span class="math notranslate nohighlight">\(Z\)</span> cancels in these transition rate ratios - the RHS is easily computable.</p>
+<p>There are many choices which satisfy detailed balance; the simplest is the Metropolis rule.</p>
+<section id="metropolis-rule">
+<h3>Metropolis Rule<a class="headerlink" href="#metropolis-rule" title="Permalink to this heading">#</a></h3>
+<p>Let’s focus on a spin system <span class="math notranslate nohighlight">\(\mu={\sigma_{1},\sigma_{2}, \cdots \sigma_{N}}\)</span> for notational simplicity (the original paper focusses on <span class="math notranslate nohighlight">\(\mu=\left\{\vec{q}_{i}, \vec{p}_{i}\right\})\)</span></p>
+<p>(1) Randomly pick one of the <span class="math notranslate nohighlight">\(N\)</span> spins ” <span class="math notranslate nohighlight">\(\sigma_{i}\)</span> “</p>
+<p>(2) Consider a “trial” configuration <span class="math notranslate nohighlight">\(\{\sigma\}^{\prime}\)</span> obtained by taking current <span class="math notranslate nohighlight">\(\left\{\sigma\}_{t}\right.\)</span> and flipping only <span class="math notranslate nohighlight">\(\sigma_{i} \rightarrow-\sigma_{i}\)</span></p>
+<p>E.g., for <span class="math notranslate nohighlight">\(\{\sigma\}_{t}=\uparrow \uparrow \downarrow \uparrow\)</span> and <span class="math notranslate nohighlight">\(\{\sigma'\}=\uparrow \downarrow \downarrow \uparrow\)</span>.</p>
+<p>(3) Compute the energy change</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta E=H\left[\left\{\sigma^{\prime}\right\}\right]-\mathcal{H}\left[\{\sigma\}_{t}\right]
+\]</div>
+<p>Note that because <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> is local, this can be done only by looking at the spins near <span class="math notranslate nohighlight">\(\sigma_{i}\)</span> ; we don’t need to compute the full energy!</p>
+<p>(4) Generate a random number <span class="math notranslate nohighlight">\(0&lt;q&lt;i\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\( q&lt;e^{-\beta \Delta E}\)</span> : <strong>Accept</strong> the move. <span class="math notranslate nohighlight">\(\left\{\sigma 3_{t+1}=\{\sigma\}^{\prime}\right.\)</span></p>
+<p>Otherwise, if <span class="math notranslate nohighlight">\(q&gt;e^{-\beta \Delta E}\)</span> : <strong>Reject</strong> the move: <span class="math notranslate nohighlight">\(\{\sigma\}_{t+1}=\{\sigma\}_{t}\)</span></p>
+<p>Note that if <span class="math notranslate nohighlight">\(\Delta E&lt;0, e^{-\beta \Delta E}&gt;1\)</span>, we always accept the rule.</p>
+<p>Let’s check: is <span class="math notranslate nohighlight">\(\frac{M_{\mu^{\prime} \mu}}{M_{\mu \mu^{\prime}}}=e^{-\beta\left(E_{\mu^{\prime}}-E_{\mu}\right)}\)</span>?</p>
+<p>If <span class="math notranslate nohighlight">\(\Delta E=E_{\mu}-E_{\mu}&lt;0\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; M_{\mu^{\prime} \mu}=1, \quad M_{\mu \mu^{\prime}}=e^{+\beta \Delta E} \\
+&amp; \longrightarrow \frac{M_{\mu^{\prime}\mu}}{M_{\mu \mu^{\prime}}}=e^{-\beta \Delta E}
+\end{aligned}
+\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\Delta E&gt;0\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; M_{\mu^{\prime} \mu}=e^{-\beta \Delta E}, \quad M_{\mu \mu^{\prime}}=1 \\
+&amp; \longrightarrow \frac{M_{\mu^{\prime} \mu}}{M_{\mu \mu^{\prime}}}=e^{-\beta \Delta E}
+\end{aligned}
+\end{split}\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(M_{\mu'\mu}\)</span> indeed satisfies detailed balance w.r.t. <span class="math notranslate nohighlight">\(\pi_\mu\)</span>.</p>
+<p>We throw this into a for-loop, generating thousands of samples</p>
+<div class="math notranslate nohighlight">
+\[
+\left\{\mu_{1}, \mu_{2}, \mu_{3}, \cdots, \mu_{M}\right\}
+\]</div>
+<p>As we go along, we accumulate measurements</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)
+\]</div>
+<p>for any relevant observables.</p>
+</section>
+<section id="numerical-considerations">
+<h3>Numerical Considerations<a class="headerlink" href="#numerical-considerations" title="Permalink to this heading">#</a></h3>
+<p>(1) “Burn in”. Given an initial state, a MC chain relaxes to eq. value over time ” <span class="math notranslate nohighlight">\(\tau\)</span> “</p>
+<div class="math notranslate nohighlight">
+\[
+M^{t} p(t=0)=\pi+O\left(e^{-t / \tau}\right)
+\]</div>
+<p><span class="math notranslate nohighlight">\(\tau\)</span> is determined by the eigenspectrum of <span class="math notranslate nohighlight">\(M\)</span>. It is a good idea to throw-out the first <span class="math notranslate nohighlight">\(\sim \tau\)</span> measurements to account for this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle O\rangle=\frac{1}{\mu-T} &amp; \sum_{t=T}^{M} O\left(\mu_{t}\right) \\
+&amp; \tau \text { &quot;burn-in&quot; time }
+\end{aligned}
+\end{split}\]</div>
+<p>In practice you done know the relaxation time a priori, so <span class="math notranslate nohighlight">\(T\)</span> determined by various heuristics.</p>
+<p>(2) Error Bars + auto-correlation</p>
+<p>For a finite number of samples ” <span class="math notranslate nohighlight">\(M\)</span> “,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; \langle O\rangle=\frac{1}{M} \sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)+\epsilon 
+\end{aligned}
+\]</div>
+<p>The error <span class="math notranslate nohighlight">\(\epsilon\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\epsilon=\frac{\text{var}(\mathcal{O})}{\sqrt{M}} \\
+\text{var}(\mathcal{O})=\frac{1}{M} \sum_{t=1}^{M} \mathcal{O}^{2}\left(\mu_{t}\right)-\langle\mathcal{O}\rangle^{2}
+\end{split}\]</div>
+<p>if each a sample <span class="math notranslate nohighlight">\(\mu_{t}\)</span> is generated by an indepedent roll of an <span class="math notranslate nohighlight">\(N\)</span>-sided die. However, if <span class="math notranslate nohighlight">\(\mu_{t}\)</span> is generated by a Markov chain this generates a correlation between samples</p>
+<div class="math notranslate nohighlight">
+\[
+\langle \mathcal{O}_{t}\mathcal{O}_{t+\tau} \rangle\sim e^{t/\tau}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau\)</span> is “auto-correlation” rime. Very roughly speaking this gives</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon=\frac{\text{var}(\mathcal{O})}{\sqrt{M/\tau}}\;.
+\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./MonteCarlo"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-sampling">Importance sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metropolis-rule">Metropolis Rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-considerations">Numerical Considerations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oskar Hallatschek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -187,7 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Particle exchange and chemical potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
@@ -682,7 +682,7 @@ u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\rig
  =(T S+\mu N-P V)-(T S+\mu N) \\
  =-P V
 \end{split}\]</div>
-<p>So, Eq. <a class="reference internal" href="#equation-gibbs-ineq-vdw">(13)</a> can be rewritten as</p>
+<p>So, Eq. <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-gibbs-ineq-vdw">()</a> can be rewritten as</p>
 <div class="math notranslate nohighlight">
 \[
 P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
@@ -715,13 +715,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
 <li><p><strong>Plotting:</strong> Thirdly, because the remaining formula relates numbers to numbers, we can directly produce plots to get a sense of the behavior of <span class="math notranslate nohighlight">\(\tilde \psi\)</span>, without worrying about what units we should put on the different axis: Each effective parameter should be studied for values much smaller and much larger than 1.</p></li>
 </ul>
 </div>
-<p>: Depending on <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span>, it can be in two maxima corresponding to gas and liquid:</p>
-<p>(add figure)</p>
-<div class="math notranslate nohighlight">
-\[
-\tilde \psi_{\tilde u}(\tilde n, \tilde \mu) =\frac{\psi}{P_0}= \tilde n \ln(\tilde n^{-1}-1)+\tilde \mu \tilde n + \tilde u \frac{\tilde n^2}2
-\]</div>
-<p>Maximize:</p>
+<p>Now, let’s maximize <span class="math notranslate nohighlight">\(\tilde \psi\)</span> w.r.t. our variational parameter <span class="math notranslate nohighlight">\(\tilde n\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-maximizing-psi">
 <span class="eqno">(15)<a class="headerlink" href="#equation-maximizing-psi" title="Permalink to this equation">#</a></span>\[
 \partial_{\tilde n} \tilde \psi=\ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } +\tilde \mu + \tilde u \tilde n= 0
@@ -735,7 +729,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi[n,\mu,T]
 \[
 \tilde \mu=\frac{1}{1-n }-\tilde u n-\ln \left({\tilde n}^{-1}-1\right)
 \]</div>
-<p>Substituting this back into our approximation Eq. <a class="reference internal" href="#equation-pressure-max-psi">(14)</a>, we obtain an approximation of the pressure as a function of density,</p>
+<p>Substituting this back into our approximation Eq. <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-pressure-max-psi">()</a>, we obtain an approximation of the pressure as a function of density,</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{P}{P_0} \approx \tilde \psi_{\tilde u}[\tilde n,\tilde \mu] = \frac{\tilde n}{1-\tilde n}-\tilde u \frac{\tilde n^2}{2}
@@ -762,7 +756,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </section>
 <section id="phase-transition">
 <h3>Phase transition<a class="headerlink" href="#phase-transition" title="Permalink to this heading">#</a></h3>
-<p>Let’s return to <a class="reference internal" href="#equation-maximizing-psi">(15)</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
+<p>Let’s return to <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-maximizing-psi">()</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-graphical-vdw">
 <span class="eqno">(16)<a class="headerlink" href="#equation-graphical-vdw" title="Permalink to this equation">#</a></span>\[
 \ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } =-\tilde \mu -\tilde u \tilde n \;.
@@ -830,7 +824,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 <span class="n">n_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">.8</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 
 <span class="c1"># Specify a range of tilde mu values for plotting</span>
-<span class="n">mu_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.7</span><span class="p">,</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.1</span><span class="p">]</span>
+<span class="n">mu_values</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.7</span><span class="p">,</span><span class="o">-</span><span class="mf">1.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.875</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.95</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.1</span><span class="p">]</span>
 
 <span class="c1"># Specify a range of tilde u values for plotting</span>
 <span class="n">u_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
@@ -853,7 +847,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7c3cc3c3941f8240cb4befa774bb00083610cb36d8f6904cb37276c5002f3395.png" src="../_images/7c3cc3c3941f8240cb4befa774bb00083610cb36d8f6904cb37276c5002f3395.png" />
+<img alt="../_images/a6505cdc8a542f4f1f31e59fb2f910a7212539f5630cbe39e699688ba8479dcf.png" src="../_images/a6505cdc8a542f4f1f31e59fb2f910a7212539f5630cbe39e699688ba8479dcf.png" />
 </div>
 </div>
 <p>The interpretation here is that for low <span class="math notranslate nohighlight">\(\tilde \mu\)</span> (large negative <span class="math notranslate nohighlight">\(\mu\)</span>), a low density phase obtains, and vice versa for high <span class="math notranslate nohighlight">\(\tilde\mu\)</span>. There is a transition point <span class="math notranslate nohighlight">\(\tilde\mu_c(\tilde u)\)</span>, where the density jumps – phase transition:</p>
