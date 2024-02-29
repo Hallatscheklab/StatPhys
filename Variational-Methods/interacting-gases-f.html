@@ -779,7 +779,9 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span>
 
 <span class="c1"># Define the second function to plot</span>
-<span class="k">def</span> <span class="nf">second_function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tilde_mu</span><span class="o">=-</span><span class="mf">1.9</span><span class="p">,</span> <span class="n">tilde_u</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+<span class="c1">#def second_function(n, tilde_mu=-1.9, tilde_u=8):</span>
+
+<span class="k">def</span> <span class="nf">second_function</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tilde_mu</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span> <span class="n">tilde_u</span><span class="o">=</span><span class="mi">13</span><span class="p">):</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">tilde_mu</span> <span class="o">-</span> <span class="n">tilde_u</span> <span class="o">*</span> <span class="n">n</span>
 
 <span class="c1"># Generate a range of tilde n values within the specified interval</span>
@@ -804,7 +806,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3201113827166bd89aa07eab353c96d88a59bf6bfb63d0ff2a5d8702ba602507.png" src="../_images/3201113827166bd89aa07eab353c96d88a59bf6bfb63d0ff2a5d8702ba602507.png" />
+<img alt="../_images/ea3b53efe2cbc6f13a6ef46e4b6d9d246f04c8f7dd6378c71ae640b55d7ea9bf.png" src="../_images/ea3b53efe2cbc6f13a6ef46e4b6d9d246f04c8f7dd6378c71ae640b55d7ea9bf.png" />
 </div>
 </div>
 <p>From the plot above, we can see that we can have three extrema. Plotting <span class="math notranslate nohighlight">\(\psi\)</span> on a log plot shows that there are two maxima and a minimum in the middle. Which maximum dominates, depends on the chemical potential <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
