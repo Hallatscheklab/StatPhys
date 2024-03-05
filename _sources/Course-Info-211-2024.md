@@ -5,7 +5,7 @@
 ```
 UNIVERSITY OF CALIFORNIA, BERKELEY DEPARTMENT OF PHYSICS
 ```
-**Instructor**: Prof. Oskar Hallatschek (he/his), *Office*: 408C Stanley Hall, *Email*: ohallats@berkeley.edu
+**Instructor**: Prof. Oskar Hallatschek (he/his), *Office*: 408C Stanley Hall, *Email*: ohallats@berkeley.edu 
 
 **Teaching assistant**: Irian D'Andrea (she/her), *Email*: irian@berkeley.edu 
 
