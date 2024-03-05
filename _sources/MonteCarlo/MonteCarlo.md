@@ -8,7 +8,7 @@ $$
 
 exactly. Except in special cases (1D, non-interacting, exactly solvable), either approximate (variational/perturbative) or numerical approaches needed.
 
-Monte Carlo is a general method for computing $\sum_{\mu} f_{\mu}$ where $\mu \in$ really big space. Applicable not just to statistical physics but alos in biology, finance, complex systems etc. (cite)
+Monte Carlo is a general method for computing $\sum_{\mu} f_{\mu}$ where $\mu \in$ really big space. Applicable not just to statistical physics but also in biology, finance, complex systems etc. (cite)
 
 In a general setting, $\sum_\mu f_{\mu}$ may not have an underlying probabilistic interpretation; for example we might be trying to evaluate an oscillatory integral in a high-dim space $\mu \in \mathbb{R}^{n}$
 
@@ -64,13 +64,24 @@ aka the partition function. Getting around this problem is where the genius of M
 
 The idea is to invent some fictions dynamics $\mu_{t} \rightarrow \mu_{t+1}$ so that $\quad\left\{\mu_{1}, \mu_{2}, \mu_{3}, \ldots\right\}$ visits state $\mu$ with frequency $p_\mu$. Of course in stat-mech, we could choose $r=\{q, p\}$ to evolve under $\vec{F}=m \vec{a}$ with a reservoir, which by ergodic hypothesis would produce $p_\mu$. But (as your HW demonstrates) this is expensive/slow. Instead we introduce some simpler/fake dynamics in the form of a "Markov chain". 
 
-A "Markov chain" is a set of transition rates $O<M_{\mu^{\prime} \mu}<1$ under which the probability dist. evolves as 
+#### Markov chains
+
+A "Markov chain" is a set of transition rates $0<M_{\mu^{\prime} \mu}<1$ under which the probability dist. evolves as 
 
 $$
 p_{\mu^{\prime}}(t+1)=\sum_{N} M_{\mu^{\prime} \mu} p_{\mu}(t)
 $$ (master-eq)
 
-with $\sum_{\mu^{\prime}} M_{\mu^{\prime} \mu}=1$. $M_{\mu^{\prime} \mu}=P\left(\mu^{\prime} \mid \mu\right)$ is the conditional probability for transition $\mu \longrightarrow \mu^{\prime}$ at each step. 
+$M_{\mu^{\prime} \mu}=P\left(\mu^{\prime} \mid \mu\right)$ is the conditional probability for the transition $\mu \longrightarrow \mu^{\prime}$ at each time step. Probability conservation implies that the columns sum up to one,
+
+$$
+\sum_{\mu^{\prime}} M_{\mu^{\prime} \mu}=1\;.
+$$
+
+(I.e. with probability 1, the process has to jump to one of the states.)
+
+Note that the jump probabilities only depend on the current state $\mu_t$ and not on the earlier states $\{\mu_0, \dots \mu_{t-1}\}$ visited. The process is therefore said to by memory less, or "Markovian". 
+
 
 At long times, the distribution equilibrates to
 
@@ -78,7 +89,7 @@ $$
 p_{\mu}(t=\infty)=\lim _{t \rightarrow \infty}\left(M^{t}\right) p_{\mu}(0) \equiv \pi_{\mu}
 $$
 
-where $M \cdot \pi_{\mu}=\pi_{\mu}$.
+where $(M \pi)_{\mu}=\pi_{\mu}$, i.e., the steady state distribution $\pi$ is the right eigen vector of $M$ corresponding to eigen value $1$.
 
 We are not going to keep track of the full distribution $p_{\mu}(t)$ ($\Omega$ is huge). Instead, we want to sample from it, $\left\{\mu_{1}, \mu_{2}, \cdots\right\}$.
 
@@ -111,13 +122,15 @@ The key simplification is that $Z$ cancels in these transition rate ratios - the
 
 There are many choices which satisfy detailed balance; the simplest is the Metropolis rule.
 
+*Side remark:* Markov processes are often used to approximate the actual dynamics of a physical system, for example, in the case of the Brownian motion of a particle or polymer. In these cases, detailed balance needs to be satisfied because of the time reversibility of the microscopic laws of physics. From that it follows that the forward/backward dynamics have to look the same in equilibrium. 
+
 #### Metropolis Rule
 
-Let's focus on a spin system $\mu={\sigma_{1},\sigma_{2}, \cdots \sigma_{N}}$ for notational simplicity (the original paper focusses on $\mu=\left\{\vec{q}_{i}, \vec{p}_{i}\right\})$
+Let's focus on a spin system $\mu=\{\sigma_{1},\sigma_{2}, \cdots \sigma_{N}\}$ for notational simplicity (the original paper focusses on $\mu=\left\{\vec{q}_{i}, \vec{p}_{i}\right\})$
 
 (1) Randomly pick one of the $N$ spins " $\sigma_{i}$ "
 
-(2) Consider a "trial" configuration $\{\sigma\}^{\prime}$ obtained by taking current $\left\{\sigma\}_{t}\right.$ and flipping only $\sigma_{i} \rightarrow-\sigma_{i}$
+(2) Consider a "trial" configuration $\{\sigma'\}$ obtained by taking current $\left\{\sigma\}_{t}\right.$ and flipping only $\sigma_{i} \rightarrow-\sigma_{i}$
 
 E.g., for $\{\sigma\}_{t}=\uparrow \uparrow \downarrow \uparrow$ and $\{\sigma'\}=\uparrow \downarrow \downarrow \uparrow$.
 
@@ -130,9 +143,9 @@ $$
 
 Note that because $\mathcal{H}$ is local, this can be done only by looking at the spins near $\sigma_{i}$ ; we don't need to compute the full energy!
 
-(4) Generate a random number $0<q<i$.
+(4) Generate a random number $0<q<1$.
 
-If $ q<e^{-\beta \Delta E}$ : **Accept** the move. $\left\{\sigma 3_{t+1}=\{\sigma\}^{\prime}\right.$
+If $ q<e^{-\beta \Delta E}$ : **Accept** the move. $\left\{\sigma \}_{t+1}=\{\sigma\}^{\prime}\right.$
 
 Otherwise, if $q>e^{-\beta \Delta E}$ : **Reject** the move: $\{\sigma\}_{t+1}=\{\sigma\}_{t}$
 
@@ -169,7 +182,7 @@ $$
 As we go along, we accumulate measurements
 
 $$
-\langle \mathcal{O} \rangle\approxM^{-1}\sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)
+\langle \mathcal{O} \rangle\approx M^{-1}\sum_{t=1}^{M} \mathcal{O}\left(\mu_{t}\right)
 $$
 
 for any relevant observables.
