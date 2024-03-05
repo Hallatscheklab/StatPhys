@@ -79,26 +79,39 @@ What's the shape of the charge distribution?
 
 - The Boltzmann distribution dictates the density given the electrostatic potential 
 
-$$c_{ \pm}(x)=e^{-\frac{ \pm z e V(x)}{k T}} \cdot c_{\infty}$$ (elec-potential)
+$$n_{ \pm}(r)=e^{-\frac{ \pm z e V(r)}{k T}} \cdot n_{\infty}$$ (elec-potential)
 
-- But the electric potential $V(x)$ depends on the density via the Poisson equation (in 1D):
+- But the electric potential $V(r)$ depends on the density via the Poisson equation (in 1D):
 
-$$\quad \partial_{x}^{2} V(x) \cong-\frac{\rho(x)}{\varepsilon_{0} D}=-\frac{c_{+}(x) z e-c_{-}(x) z e}{\varepsilon_{0} D}
+$$\quad \nabla^{2} V(r) =-\frac{\rho(r)+\rho_{ext}(r)}{\varepsilon_{0} D}=-\frac{n_{+}(r) z e-n_{-}(r) z e}{\varepsilon_{0} D}-\frac{\rho_{ext}(r)}{\varepsilon_{0} D}
 $$ (poisson)
+
+- where we introduced an externally fixed charge density $\rho_{ext}(r)$.
 
 - {eq}`elec-potential` and {eq}`poisson` have to be solved self-consistently, which is hard in general.
 
-But when $q V \ll K T$ (ie. assume $x \gg l_{\beta}$ ), we can expand: $c_{ \pm}=c_{\infty}\left(1 \mp \frac{z e V(x)}{k T}\right)$
+But when $q V \ll K T$ (ie. assume $x \gg l_{\beta}$ ), we can expand: $n_{ \pm}=n_{\infty}\left(1 \mp \frac{z e V(r)}{k T}\right)$
 
 $$
-\partial_{x}^{2} V=\frac{2(z e)^{2} c_{\infty} V(x)}{\varepsilon_{0} D k T} 
+\nabla^{2} V=\frac{2(z e)^{2} c_{\infty} V(r)}{\varepsilon_{0} D k T} -\frac{\rho_{ext}(r)}{\varepsilon_{0} D}\equiv\kappa_D^2V(r) -\frac{\rho_{ext}(r)}{\varepsilon_{0} D}\;.
 $$
 
-So, the electrical potential decays exponentially,
+In Fourier space, this equation reads
 
 $$
-V(x) \sim e^{-\frac{x}{\lambda_{D}}} 
+(-q^2-\kappa_D^2)V(q)=-\frac{\rho_{ext}}{D\epsilon_0}
 $$
+
+$$
+V(q)=\frac{\rho_{ext}}{D\epsilon_0} \frac{1}{q^2+\kappa_D^2}
+$$
+
+
+So, the electrical potential of a point charge $\rho_{ext}(q)=1$ decays exponentially,
+
+$$
+V_{\text{eff}}= \frac{1}{4 \pi r D \epsilon_0} e^{-\frac{x}{\lambda_{D}}}
+$$ (Yukawa)
 
 on a length scale called the Debye screening length,
 
@@ -106,25 +119,14 @@ $$
 \lambda_{D}=\sqrt\frac{\epsilon_0 D k_BT}{2(ze)^2 c_\infty} \;.
 $$
 
-Ex: Inside biological physiological conditions, $\lambda_D\approx 0.8$ nm.
+The potential in {eq}`Yukawa`is called "Yukawa potential".
 
 
-Boundary conditions @ $x=0$: $E \stackrel{!}{=} \frac{\sigma}{\varepsilon_{0} D}=-\frac{d V}{d x}$
 
-$$
-\begin{aligned}
-& \Rightarrow V(x)=\frac{\sigma \lambda_{D}}{\varepsilon_{0} D} e^{-\frac{x}{\lambda_{D}}} \\
-& g(x)=-\varepsilon_{0} D \partial_{x}^{2} V=-\frac{\sigma}{\lambda_{D}} e^{-\frac{x}{\lambda_{D}}}
-\end{aligned}
-$$
 
-rem: our assumption $q V \gg k_{B} T$ works well for proteins
+```{note} Significance of Debye screening for protein binding:
 
-![](https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-3.jpg?height=299&width=1270&top_left_y=1232&top_left_x=536)
-
-```{note} Significance of Debye screening:
-
-For distances $>\lambda_D$, charges are not "felt" by others. This is essential to the "laws" of protein binding via non-covalent bonds:
+Inside biological cells, $\lambda_D\approx 0.8$ nm$ due to ion concentrations in the 100mM range. Since proteins have typical diameter of $4$ nm, electrostatic protein-protein interactions usually play out on their surfaces:
 
 ![](https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-4.jpg?height=369&width=750&top_left_y=746&top_left_x=733)
 
@@ -134,3 +136,8 @@ For distances $>\lambda_D$, charges are not "felt" by others. This is essential 
 - Bulk structure and bulk charge distribution are  less critical to binding.
 - caveat: The last decade has revealed that weak binding due to unspecific binding between intrinsically disordered proteins can generate protein condensates that form membrane-less droplet-like organelles -> hot/hyped field.
 ```
+
+
+rem: our assumption $q V \gg k_{B} T$ works well for proteins
+
+![](https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-3.jpg?height=299&width=1270&top_left_y=1232&top_left_x=536)

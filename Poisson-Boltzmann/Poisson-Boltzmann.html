@@ -457,46 +457,46 @@ U=\frac12 \int V(\vec r) \rho(\vec r)
 <li><p>The Boltzmann distribution dictates the density given the electrostatic potential</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-elec-potential">
-<span class="eqno">(18)<a class="headerlink" href="#equation-elec-potential" title="Permalink to this equation">#</a></span>\[c_{ \pm}(x)=e^{-\frac{ \pm z e V(x)}{k T}} \cdot c_{\infty}\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-elec-potential" title="Permalink to this equation">#</a></span>\[n_{ \pm}(r)=e^{-\frac{ \pm z e V(r)}{k T}} \cdot n_{\infty}\]</div>
 <ul class="simple">
-<li><p>But the electric potential <span class="math notranslate nohighlight">\(V(x)\)</span> depends on the density via the Poisson equation (in 1D):</p></li>
+<li><p>But the electric potential <span class="math notranslate nohighlight">\(V(r)\)</span> depends on the density via the Poisson equation (in 1D):</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-poisson">
-<span class="eqno">(19)<a class="headerlink" href="#equation-poisson" title="Permalink to this equation">#</a></span>\[\quad \partial_{x}^{2} V(x) \cong-\frac{\rho(x)}{\varepsilon_{0} D}=-\frac{c_{+}(x) z e-c_{-}(x) z e}{\varepsilon_{0} D}
+<span class="eqno">(19)<a class="headerlink" href="#equation-poisson" title="Permalink to this equation">#</a></span>\[\quad \nabla^{2} V(r) =-\frac{\rho(r)+\rho_{ext}(r)}{\varepsilon_{0} D}=-\frac{n_{+}(r) z e-n_{-}(r) z e}{\varepsilon_{0} D}-\frac{\rho_{ext}(r)}{\varepsilon_{0} D}
 \]</div>
 <ul class="simple">
+<li><p>where we introduced an externally fixed charge density <span class="math notranslate nohighlight">\(\rho_{ext}(r)\)</span>.</p></li>
 <li><p><a class="reference internal" href="#equation-elec-potential">(18)</a> and <a class="reference internal" href="#equation-poisson">(19)</a> have to be solved self-consistently, which is hard in general.</p></li>
 </ul>
-<p>But when <span class="math notranslate nohighlight">\(q V \ll K T\)</span> (ie. assume <span class="math notranslate nohighlight">\(x \gg l_{\beta}\)</span> ), we can expand: <span class="math notranslate nohighlight">\(c_{ \pm}=c_{\infty}\left(1 \mp \frac{z e V(x)}{k T}\right)\)</span></p>
+<p>But when <span class="math notranslate nohighlight">\(q V \ll K T\)</span> (ie. assume <span class="math notranslate nohighlight">\(x \gg l_{\beta}\)</span> ), we can expand: <span class="math notranslate nohighlight">\(n_{ \pm}=n_{\infty}\left(1 \mp \frac{z e V(r)}{k T}\right)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\partial_{x}^{2} V=\frac{2(z e)^{2} c_{\infty} V(x)}{\varepsilon_{0} D k T} 
+\nabla^{2} V=\frac{2(z e)^{2} c_{\infty} V(r)}{\varepsilon_{0} D k T} -\frac{\rho_{ext}(r)}{\varepsilon_{0} D}\equiv\kappa_D^2V(r) -\frac{\rho_{ext}(r)}{\varepsilon_{0} D}\;.
 \]</div>
-<p>So, the electrical potential decays exponentially,</p>
+<p>In Fourier space, this equation reads</p>
 <div class="math notranslate nohighlight">
 \[
-V(x) \sim e^{-\frac{x}{\lambda_{D}}} 
+(-q^2-\kappa_D^2)V(q)=-\frac{\rho_{ext}}{D\epsilon_0}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+V(q)=\frac{\rho_{ext}}{D\epsilon_0} \frac{1}{q^2+\kappa_D^2}
+\]</div>
+<p>So, the electrical potential of a point charge <span class="math notranslate nohighlight">\(\rho_{ext}(q)=1\)</span> decays exponentially,</p>
+<div class="math notranslate nohighlight" id="equation-yukawa">
+<span class="eqno">(20)<a class="headerlink" href="#equation-yukawa" title="Permalink to this equation">#</a></span>\[
+V_{\text{eff}}= \frac{1}{4 \pi r D \epsilon_0} e^{-\frac{x}{\lambda_{D}}}
 \]</div>
 <p>on a length scale called the Debye screening length,</p>
 <div class="math notranslate nohighlight">
 \[
 \lambda_{D}=\sqrt\frac{\epsilon_0 D k_BT}{2(ze)^2 c_\infty} \;.
 \]</div>
-<p>Ex: Inside biological physiological conditions, <span class="math notranslate nohighlight">\(\lambda_D\approx 0.8\)</span> nm.</p>
-<p>Boundary conditions &#64; <span class="math notranslate nohighlight">\(x=0\)</span>: <span class="math notranslate nohighlight">\(E \stackrel{!}{=} \frac{\sigma}{\varepsilon_{0} D}=-\frac{d V}{d x}\)</span></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{aligned}
-&amp; \Rightarrow V(x)=\frac{\sigma \lambda_{D}}{\varepsilon_{0} D} e^{-\frac{x}{\lambda_{D}}} \\
-&amp; g(x)=-\varepsilon_{0} D \partial_{x}^{2} V=-\frac{\sigma}{\lambda_{D}} e^{-\frac{x}{\lambda_{D}}}
-\end{aligned}
-\end{split}\]</div>
-<p>rem: our assumption <span class="math notranslate nohighlight">\(q V \gg k_{B} T\)</span> works well for proteins</p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-3.jpg?height=299&amp;width=1270&amp;top_left_y=1232&amp;top_left_x=536" /></p>
+<p>The potential in <a class="reference internal" href="#equation-yukawa">(20)</a>is called “Yukawa potential”.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Significance of Debye screening:</p>
-<p>For distances <span class="math notranslate nohighlight">\(&gt;\lambda_D\)</span>, charges are not “felt” by others. This is essential to the “laws” of protein binding via non-covalent bonds:</p>
+<p>Significance of Debye screening for protein binding:</p>
+<p>Inside biological cells, <span class="math notranslate nohighlight">\(\lambda_D\approx 0.8\)</span> nm<span class="math notranslate nohighlight">\( due to ion concentrations in the 100mM range. Since proteins have typical diameter of \)</span>4$ nm, electrostatic protein-protein interactions usually play out on their surfaces:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-4.jpg?height=369&amp;width=750&amp;top_left_y=746&amp;top_left_x=733" /></p>
 <ul class="simple">
 <li><p>Binding requires complementary surface shapes and charge distributions.</p></li>
@@ -506,6 +506,8 @@ V(x) \sim e^{-\frac{x}{\lambda_{D}}}
 <li><p>caveat: The last decade has revealed that weak binding due to unspecific binding between intrinsically disordered proteins can generate protein condensates that form membrane-less droplet-like organelles -&gt; hot/hyped field.</p></li>
 </ul>
 </div>
+<p>rem: our assumption <span class="math notranslate nohighlight">\(q V \gg k_{B} T\)</span> works well for proteins</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-3.jpg?height=299&amp;width=1270&amp;top_left_y=1232&amp;top_left_x=536" /></p>
 </section>
 </section>
 
