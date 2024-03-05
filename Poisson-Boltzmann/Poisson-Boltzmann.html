@@ -448,7 +448,7 @@ U=\frac12 \int V(\vec r) \rho(\vec r)
 </section>
 <section id="debye-screening">
 <h2>Debye screening<a class="headerlink" href="#debye-screening" title="Permalink to this heading">#</a></h2>
-<p>Suppose there are two types of ions, <span class="math notranslate nohighlight">\(q_{\pm}=\pm z e\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the charge number and “+” refers to a cation and “-” to anion. Let’s describe the ion density by <span class="math notranslate nohighlight">\(n_{\pm}\)</span>, which is on average <span class="math notranslate nohighlight">\(n_\infty\)</span>. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around <span class="math notranslate nohighlight">\(n_\infty\sim 100 mM\)</span> each. What happens if we introduce an extra charge at the origin?</p>
+<p>Suppose there are two types of ions, <span class="math notranslate nohighlight">\(q_{\pm}=\pm z e\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the charge number and “+” refers to a cation and “-” to anion. Let’s describe the ion density by <span class="math notranslate nohighlight">\(n_{\pm}=\langle \rho_{\pm}\rangle/q_{\pm}\)</span>, which we suppose is equal to <span class="math notranslate nohighlight">\(n_\infty\)</span> for both ion types far from any perturbation. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around <span class="math notranslate nohighlight">\(n_\infty\sim 100 mM\)</span> each. What happens if we introduce an extra charge at the origin?</p>
 <p><strong>Intuitively:</strong></p>
 <p><img alt="Debye screening" src="../_images/Debye-screening.jpg" /></p>
 <p>How to describe the density <span class="math notranslate nohighlight">\(c(x)\)</span> of charges and the electric potential <span class="math notranslate nohighlight">\(V(x)\)</span>?</p>
@@ -457,7 +457,7 @@ U=\frac12 \int V(\vec r) \rho(\vec r)
 <li><p>The Boltzmann distribution dictates the density given the electrostatic potential</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-elec-potential">
-<span class="eqno">(18)<a class="headerlink" href="#equation-elec-potential" title="Permalink to this equation">#</a></span>\[n_{ \pm}(r)=e^{-\frac{ \pm z e V(r)}{k T}} \cdot n_{\infty}\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-elec-potential" title="Permalink to this equation">#</a></span>\[n_{ \pm}(r)=e^{-\frac{ q_{\pm} V(r)}{k T}} \cdot n_{\infty}\]</div>
 <ul class="simple">
 <li><p>But the electric potential <span class="math notranslate nohighlight">\(V(r)\)</span> depends on the density via the Poisson equation (in 1D):</p></li>
 </ul>
@@ -493,10 +493,11 @@ V_{\text{eff}}= \frac{1}{4 \pi r D \epsilon_0} e^{-\frac{x}{\lambda_{D}}}
 \lambda_{D}=\sqrt\frac{\epsilon_0 D k_BT}{2(ze)^2 c_\infty} \;.
 \]</div>
 <p>The potential in <a class="reference internal" href="#equation-yukawa">(20)</a>is called “Yukawa potential”.</p>
+<p>Exercise: <strong>Where did the above analysis make approximations?</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Significance of Debye screening for protein binding:</p>
-<p>Inside biological cells, <span class="math notranslate nohighlight">\(\lambda_D\approx 0.8\)</span> nm<span class="math notranslate nohighlight">\( due to ion concentrations in the 100mM range. Since proteins have typical diameter of \)</span>4$ nm, electrostatic protein-protein interactions usually play out on their surfaces:</p>
+<p>Inside biological cells, <span class="math notranslate nohighlight">\(\lambda_D\approx 0.8\)</span> nm due to ion concentrations in the 100mM range. Since proteins have typical diameter of <span class="math notranslate nohighlight">\(4\)</span> nm, electrostatic protein-protein interactions usually play out on their surfaces:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-4.jpg?height=369&amp;width=750&amp;top_left_y=746&amp;top_left_x=733" /></p>
 <ul class="simple">
 <li><p>Binding requires complementary surface shapes and charge distributions.</p></li>

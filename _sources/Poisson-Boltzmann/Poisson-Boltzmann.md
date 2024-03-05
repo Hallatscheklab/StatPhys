@@ -65,7 +65,7 @@ $$
 
 ### Debye screening
 
-Suppose there are two types of ions, $q_{\pm}=\pm z e$, where $z$ is the charge number and "+" refers to a cation and "-" to anion. Let's describe the ion density by $n_{\pm}$, which is on average $n_\infty$. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around $n_\infty\sim 100 mM$ each. What happens if we introduce an extra charge at the origin?
+Suppose there are two types of ions, $q_{\pm}=\pm z e$, where $z$ is the charge number and "+" refers to a cation and "-" to anion. Let's describe the ion density by $n_{\pm}=\langle \rho_{\pm}\rangle/q_{\pm}$, which we suppose is equal to $n_\infty$ for both ion types far from any perturbation. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around $n_\infty\sim 100 mM$ each. What happens if we introduce an extra charge at the origin?
 
 **Intuitively:**
 
@@ -79,7 +79,7 @@ What's the shape of the charge distribution?
 
 - The Boltzmann distribution dictates the density given the electrostatic potential 
 
-$$n_{ \pm}(r)=e^{-\frac{ \pm z e V(r)}{k T}} \cdot n_{\infty}$$ (elec-potential)
+$$n_{ \pm}(r)=e^{-\frac{ q_{\pm} V(r)}{k T}} \cdot n_{\infty}$$ (elec-potential)
 
 - But the electric potential $V(r)$ depends on the density via the Poisson equation (in 1D):
 
@@ -121,12 +121,14 @@ $$
 
 The potential in {eq}`Yukawa`is called "Yukawa potential".
 
+Exercise: **Where did the above analysis make approximations?**
+
 
 
 
 ```{note} Significance of Debye screening for protein binding:
 
-Inside biological cells, $\lambda_D\approx 0.8$ nm$ due to ion concentrations in the 100mM range. Since proteins have typical diameter of $4$ nm, electrostatic protein-protein interactions usually play out on their surfaces:
+Inside biological cells, $\lambda_D\approx 0.8$ nm due to ion concentrations in the 100mM range. Since proteins have typical diameter of $4$ nm, electrostatic protein-protein interactions usually play out on their surfaces:
 
 ![](https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-4.jpg?height=369&width=750&top_left_y=746&top_left_x=733)
 
