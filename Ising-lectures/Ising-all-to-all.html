@@ -599,7 +599,7 @@ F &amp; =-k_{B} T \ln Z=N f(\bar{m})+O(\log (N))
 \[\begin{split}
 \begin{gathered}
 s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
-\Rightarrow f(m)=-k_{B} T \ln (2)-B m+m^{2} \frac{k_{B} T-J}{2}+m^{4} \frac{k_{B} T}{12} .
+\Rightarrow f(m)=-k_{B} T \ln (2)-B m+m^{2} \frac{k_{B} T-J}{2}+m^{4} \frac{k_{B} T}{12}+O\left(m^{6}\right)  .
 \end{gathered}
 \end{split}\]</div>
 <p>Let’s consider case <span class="math notranslate nohighlight">\(B=0\)</span> :</p>
@@ -608,10 +608,11 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
 \[\begin{split}
 \begin{aligned}
 &amp; k_{B} T-J&gt;0: f(\bar{m}) \text{ is a single well; one minimum } \bar{m}=0 \\
-&amp; k_{B} T-J&lt;0: f(\bar{m}) \text{ is a symmetrical double well; two minima at } \bar{m}= \pm \sqrt{3\left(\frac{J}{k_{B}T}-1\right)}\;.
+&amp; k_{B} T-J&lt;0: f(\bar{m}) \text{ is a symmetrical double well; two minima, which for $J/(k_{B}T)-1\ll1$ are well approximated by } \bar{m}= \pm \sqrt{3\left(\frac{J}{k_{B}T}-1\right)}+\text{h.o.t.}\;.
 \end{aligned}
 \end{split}\]</div>
 <p>Which minimum is attained depends on sign (B), even for infinitesimal <span class="math notranslate nohighlight">\(B\)</span> !</p>
+<p>The behavior near the critical point <span class="math notranslate nohighlight">\(\bar{m} \propto (\frac{T_c-T}{T_c})^{1/2}\)</span> turns out to be <em>universal</em> for Ising-like order parameters in the all-to-all limit.</p>
 <p>(more analysis in HW4)</p>
 </section>
 <section id="phase-diagrams">
