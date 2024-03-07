@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Charge screening by counter ions - plasmas &#8212; Equilibrium Statistical Physics</title>
+    <title>Debye-Hückel theory - charge screening &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -198,7 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Charge screening by counter ions - plasmas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Debye-Hückel theory - charge screening</a></li>
 </ul>
 
     </div>
@@ -384,7 +384,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Charge screening by counter ions - plasmas</h1>
+    <h1>Debye-Hückel theory - charge screening</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -407,12 +407,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="charge-screening-by-counter-ions-plasmas">
-<h1>Charge screening by counter ions - plasmas<a class="headerlink" href="#charge-screening-by-counter-ions-plasmas" title="Permalink to this heading">#</a></h1>
-<p>When we discussed our variational approach and mean field theory, the question came up what happens when the two-body potential energy decays slowly, like the eletrostatic potential <span class="math notranslate nohighlight">\(U= e^2/(4\pi r^{2})\)</span>? Then,</p>
+  <section id="debye-huckel-theory-charge-screening">
+<h1>Debye-Hückel theory - charge screening<a class="headerlink" href="#debye-huckel-theory-charge-screening" title="Permalink to this heading">#</a></h1>
+<p>When we discussed our variational approach and mean field theory, the question came up what happens when the two-body potential energy decays slowly, like the eletrostatic potential <span class="math notranslate nohighlight">\(U= e^2/(4\pi r)\)</span>? Then,</p>
 <div class="math notranslate nohighlight">
 \[
-\langle H\rangle_N\propto \int d^3r U(r)=4\pi \int_{r_0}^\infty r^2 U(r) dr = e^2 \int_{r_0}^\infty dr=\infty\;.
+\langle H\rangle_N\propto \int d^3r U(r)=4\pi \int_{r_0}^\infty r^2 U(r) dr = e^2 \int_{r_0}^\infty r dr=\infty\;.
 \]</div>
 <p>Thus, the interactions are too strong to apply our previous mean field /variational approaches, which assumed we can approximate the true gas by a modified version of the ideal gas.</p>
 <p>Fortunately, there’s another mean-field theory: Debye-Hückel.</p>
@@ -441,8 +441,8 @@ document.write(`
 \rho=\sum_i q_i \delta(\vec r- \vec r_i) \;,
 \]</div>
 <p>We can express the total electrostatic interaction energy as</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-interaction">
+<span class="eqno">(18)<a class="headerlink" href="#equation-interaction" title="Permalink to this equation">#</a></span>\[
 U=\frac12 \int V(\vec r) \rho(\vec r)
 \]</div>
 </section>
@@ -451,22 +451,22 @@ U=\frac12 \int V(\vec r) \rho(\vec r)
 <p>Suppose there are two types of ions, <span class="math notranslate nohighlight">\(q_{\pm}=\pm z e\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the charge number and “+” refers to a cation and “-” to anion. Let’s describe the ion density by <span class="math notranslate nohighlight">\(n_{\pm}=\langle \rho_{\pm}\rangle/q_{\pm}\)</span>, which we suppose is equal to <span class="math notranslate nohighlight">\(n_\infty\)</span> for both ion types far from any perturbation. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around <span class="math notranslate nohighlight">\(n_\infty\sim 100 mM\)</span> each. What happens if we introduce an extra charge at the origin?</p>
 <p><strong>Intuitively:</strong></p>
 <p><img alt="Debye screening" src="../_images/Debye-screening.jpg" /></p>
-<p>How to describe the density <span class="math notranslate nohighlight">\(c(x)\)</span> of charges and the electric potential <span class="math notranslate nohighlight">\(V(x)\)</span>?</p>
+<p>How to describe the density <span class="math notranslate nohighlight">\(\rho(x)\)</span> of charges and the electric potential <span class="math notranslate nohighlight">\(V(x)\)</span>?</p>
 <p>What’s the shape of the charge distribution?</p>
 <ul class="simple">
 <li><p>The Boltzmann distribution dictates the density given the electrostatic potential</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-elec-potential">
-<span class="eqno">(18)<a class="headerlink" href="#equation-elec-potential" title="Permalink to this equation">#</a></span>\[n_{ \pm}(r)=e^{-\frac{ q_{\pm} V(r)}{k T}} \cdot n_{\infty}\]</div>
+<span class="eqno">(19)<a class="headerlink" href="#equation-elec-potential" title="Permalink to this equation">#</a></span>\[n_{ \pm}(r)=e^{-\frac{ q_{\pm} V(r)}{k T}} \cdot n_{\infty}\]</div>
 <ul class="simple">
 <li><p>But the electric potential <span class="math notranslate nohighlight">\(V(r)\)</span> depends on the density via the Poisson equation (in 1D):</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-poisson">
-<span class="eqno">(19)<a class="headerlink" href="#equation-poisson" title="Permalink to this equation">#</a></span>\[\quad \nabla^{2} V(r) =-\frac{\rho(r)+\rho_{ext}(r)}{\varepsilon_{0} D}=-\frac{n_{+}(r) z e-n_{-}(r) z e}{\varepsilon_{0} D}-\frac{\rho_{ext}(r)}{\varepsilon_{0} D}
+<span class="eqno">(20)<a class="headerlink" href="#equation-poisson" title="Permalink to this equation">#</a></span>\[\quad \nabla^{2} V(r) =-\frac{\rho(r)+\rho_{ext}(r)}{\varepsilon_{0} D}=-\frac{n_{+}(r) z e-n_{-}(r) z e}{\varepsilon_{0} D}-\frac{\rho_{ext}(r)}{\varepsilon_{0} D}
 \]</div>
 <ul class="simple">
 <li><p>where we introduced an externally fixed charge density <span class="math notranslate nohighlight">\(\rho_{ext}(r)\)</span>.</p></li>
-<li><p><a class="reference internal" href="#equation-elec-potential">(18)</a> and <a class="reference internal" href="#equation-poisson">(19)</a> have to be solved self-consistently, which is hard in general.</p></li>
+<li><p><a class="reference internal" href="#equation-elec-potential">(19)</a> and <a class="reference internal" href="#equation-poisson">(20)</a> have to be solved self-consistently, which is hard in general.</p></li>
 </ul>
 <p>But when <span class="math notranslate nohighlight">\(q V \ll K T\)</span> (ie. assume <span class="math notranslate nohighlight">\(x \gg l_{\beta}\)</span> ), we can expand: <span class="math notranslate nohighlight">\(n_{ \pm}=n_{\infty}\left(1 \mp \frac{z e V(r)}{k T}\right)\)</span></p>
 <div class="math notranslate nohighlight">
@@ -484,7 +484,7 @@ V(q)=\frac{\rho_{ext}}{D\epsilon_0} \frac{1}{q^2+\kappa_D^2}
 \]</div>
 <p>So, the electrical potential of a point charge <span class="math notranslate nohighlight">\(\rho_{ext}(q)=1\)</span> decays exponentially,</p>
 <div class="math notranslate nohighlight" id="equation-yukawa">
-<span class="eqno">(20)<a class="headerlink" href="#equation-yukawa" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21)<a class="headerlink" href="#equation-yukawa" title="Permalink to this equation">#</a></span>\[
 V_{\text{eff}}= \frac{1}{4 \pi r D \epsilon_0} e^{-\frac{x}{\lambda_{D}}}
 \]</div>
 <p>on a length scale called the Debye screening length,</p>
@@ -492,8 +492,22 @@ V_{\text{eff}}= \frac{1}{4 \pi r D \epsilon_0} e^{-\frac{x}{\lambda_{D}}}
 \[
 \lambda_{D}=\sqrt\frac{\epsilon_0 D k_BT}{2(ze)^2 c_\infty} \;.
 \]</div>
-<p>The potential in <a class="reference internal" href="#equation-yukawa">(20)</a>is called “Yukawa potential”.</p>
-<p>Exercise: <strong>Where did the above analysis make approximations?</strong></p>
+<p>The potential in <a class="reference internal" href="#equation-yukawa">(21)</a>is called “Yukawa potential”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Where did the above analysis make a mean field approximation?</p>
+<p>We light-heartedly assumed that the probability of a charge distribution,</p>
+<div class="math notranslate nohighlight">
+\[ 
+p({\rho})\propto e^{-\beta U} \;,\propto e^{-\beta\langle V(\vec r) \rho(\vec r)}
+\]</div>
+<p>with the interaction energy <span class="math notranslate nohighlight">\(U\)</span> given by <code class="xref eq docutils literal notranslate"><span class="pre">interaciton</span></code>, can be written as</p>
+<div class="math notranslate nohighlight">
+\[
+p({\rho})\propto e^{-\beta\int \langle V(\vec r) \rho(\vec r)}
+\]</div>
+<p>This ignores that terms of order <span class="math notranslate nohighlight">\(\int \delta V \delta \rho\)</span>, where <span class="math notranslate nohighlight">\(\delta V=V-\langle V\rangle\)</span> and <span class="math notranslate nohighlight">\(\delta \rho=\rho-\langle \rho\rangle\)</span></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Significance of Debye screening for protein binding:</p>

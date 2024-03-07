@@ -1,11 +1,11 @@
-## Charge screening by counter ions - plasmas
+## Debye-Hückel theory - charge screening 
 
 
 
-When we discussed our variational approach and mean field theory, the question came up what happens when the two-body potential energy decays slowly, like the eletrostatic potential $U= e^2/(4\pi r^{2})$? Then,
+When we discussed our variational approach and mean field theory, the question came up what happens when the two-body potential energy decays slowly, like the eletrostatic potential $U= e^2/(4\pi r)$? Then,
 
 $$
-\langle H\rangle_N\propto \int d^3r U(r)=4\pi \int_{r_0}^\infty r^2 U(r) dr = e^2 \int_{r_0}^\infty dr=\infty\;.
+\langle H\rangle_N\propto \int d^3r U(r)=4\pi \int_{r_0}^\infty r^2 U(r) dr = e^2 \int_{r_0}^\infty r dr=\infty\;.
 $$
 
 Thus, the interactions are too strong to apply our previous mean field /variational approaches, which assumed we can approximate the true gas by a modified version of the ideal gas. 
@@ -47,7 +47,7 @@ We can express the total electrostatic interaction energy as
 
 $$
 U=\frac12 \int V(\vec r) \rho(\vec r)
-$$
+$$ (interaction)
 
 
 
@@ -73,7 +73,7 @@ Suppose there are two types of ions, $q_{\pm}=\pm z e$, where $z$ is the charge 
 
 
 
-How to describe the density $c(x)$ of charges and the electric potential $V(x)$?
+How to describe the density $\rho(x)$ of charges and the electric potential $V(x)$?
 
 What's the shape of the charge distribution? 
 
@@ -121,9 +121,22 @@ $$
 
 The potential in {eq}`Yukawa`is called "Yukawa potential".
 
-Exercise: **Where did the above analysis make approximations?**
+```{note} Where did the above analysis make a mean field approximation?
 
+We light-heartedly assumed that the probability of a charge distribution,
 
+$$ 
+p({\rho})\propto e^{-\beta U} \;,\propto e^{-\beta\langle V(\vec r) \rho(\vec r)}
+$$
+
+with the interaction energy $U$ given by {eq}`interaciton`, can be written as
+
+$$
+p({\rho})\propto e^{-\beta\int \langle V(\vec r) \rho(\vec r)}
+$$
+
+This ignores that terms of order $\int \delta V \delta \rho$, where $\delta V=V-\langle V\rangle$ and $\delta \rho=\rho-\langle \rho\rangle$
+```
 
 
 ```{note} Significance of Debye screening for protein binding:

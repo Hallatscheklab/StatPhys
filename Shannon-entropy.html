@@ -199,7 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Poisson-Boltzmann/Poisson-Boltzmann.html">Charge screening by counter ions - plasmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
 </ul>
 
     </div>
@@ -653,7 +653,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 C=\sup_{P_X}I(X;Y)\;.
 \]</div>
 <p>Example:</p>
-<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id5" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="#id4" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).</p>
+<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).</p>
 <p>Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.</p>
 <p><img alt="" src="_images/6-5.jpg" /></p>
 <p>The figure below plots</p>
@@ -668,11 +668,15 @@ C=\sup_{P_X}I(X;Y)\;.
 <section id="citations">
 <h1>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h1>
 <div class="docutils container" id="id3">
-<div class="citation" id="id5" role="doc-biblioentry">
+<div class="citation" id="id7" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Bia12</a><span class="fn-bracket">]</span></span>
 <p>William Bialek. <em>Biophysics: searching for principles</em>. Princeton University Press, 2012.</p>
 </div>
-<div class="citation" id="id4" role="doc-biblioentry">
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>CRJ+05<span class="fn-bracket">]</span></span>
+<p>Delphine Collin, Felix Ritort, Christopher Jarzynski, Steven B Smith, Ignacio Tinoco Jr, and Carlos Bustamante. Verification of the crooks fluctuation theorem and recovery of rna folding free energies. <em>Nature</em>, 437(7056):231–234, 2005.</p>
+</div>
+<div class="citation" id="id6" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">SKVSB98</a><span class="fn-bracket">]</span></span>
 <p>Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. <em>Physical review letters</em>, 80(1):197, 1998.</p>
 </div>

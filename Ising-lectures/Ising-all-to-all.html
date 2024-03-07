@@ -199,7 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Charge screening by counter ions - plasmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
 </ul>
 
     </div>
@@ -526,7 +526,7 @@ Z=\sum_{\sigma} e^{-\beta H[\sigma]}=\sum_{m} \Omega(m) e^{-\beta H[m]}
 <p>Recall from our analysis of coin flipping, that this is exactly the number of states with <span class="math notranslate nohighlight">\(M\)</span> more heads than tails in <span class="math notranslate nohighlight">\(N\)</span> trials. Employing Stirling’s formula, the entropy takes the form</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{s(m)}{k_B }=\frac{\ln \Omega(m)}{N }=-\frac{1+m}{2} \ln \frac{1+m}{2}-\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
+\frac{s(m)}{k_B }=\frac{\ln \Omega(m)}{N }=-\frac{1+m}{2} \ln \frac{1+m}{2}-\frac{1-m}{2} \ln \frac{1-m}{2} 
 \]</div>
 <p>which is the same expression we found for  coin flipping in <a class="reference internal" href="../Coin-flipping.html#equation-entropy-coin-flipping">(1)</a> modulo the factor of <span class="math notranslate nohighlight">\(k_B\)</span>.</p>
 <p>So,</p>
@@ -537,7 +537,7 @@ Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - T s(m)\r
 <p>where <span class="math notranslate nohighlight">\(f(m)=e(m)-T s(m)=-\frac{J}2 m^2- B m-Ts(m)\)</span> is the free energy density conditional on magnetization. Note that, at <span class="math notranslate nohighlight">\(B=0\)</span>, the function <span class="math notranslate nohighlight">\(\beta f(m)\)</span> merely depends on the parameter <span class="math notranslate nohighlight">\(\beta J\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-\beta f (m)= -\frac{\beta J}2 m^2+\frac{1+m}{2} \ln \frac{1+m}{2}+\frac{1+m}{2} \ln \left(\frac{1-m}{2}\right)
+\beta f(m) = -\frac{\beta J}{2} m^2 + \frac{1+m}{2}\ln{\frac{1+m}{2}} + \frac{1-m}{2} \ln{\frac{1-m}{2}}
 \]</div>
 <p>Depending on <span class="math notranslate nohighlight">\(\beta J\)</span>, <span class="math notranslate nohighlight">\(f(m)\)</span> can look like a single or double well:</p>
 <div class="cell tag_hide-input docutils container">
@@ -582,7 +582,7 @@ Z(\beta, J, B)=\int_{-1}^{1} d m e^{-\beta N\left[-\frac{J}2 m^2- B m - T s(m)\r
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3dfc57682d228fe42ea6d43fdb6b96b0347c3aa116db32ad5de0c95480322e46.png" src="../_images/3dfc57682d228fe42ea6d43fdb6b96b0347c3aa116db32ad5de0c95480322e46.png" />
+<img alt="../_images/3fe0df59ef936a3c8c52c0f9b3a8b8e57044eebbfc844588d4c827b95bc4316c.png" src="../_images/3fe0df59ef936a3c8c52c0f9b3a8b8e57044eebbfc844588d4c827b95bc4316c.png" />
 </div>
 </div>
 <p>As <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> (TDL), sum is dominated by minima <span class="math notranslate nohighlight">\(f(m)=f(\bar{m})+\frac{1}{2} f^{\prime \prime}(m)(m-\bar{m})^{2}\)</span></p>
