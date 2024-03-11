@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Debye-Hückel theory - charge screening &#8212; Equilibrium Statistical Physics</title>
+    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -64,10 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Poisson-Boltzmann/Poisson-Boltzmann';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Newtonian-Diffusion/FPII';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Monte Carlo and the Metropolis Algorithm" href="../MonteCarlo/MonteCarlo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
@@ -198,7 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Debye-Hückel theory - charge screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
 </ul>
 
     </div>
@@ -270,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FPoisson-Boltzmann/Poisson-Boltzmann.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FNewtonian-Diffusion/FPII.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +299,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Poisson-Boltzmann/Poisson-Boltzmann.md" target="_blank"
+      <li><a href="../_sources/Newtonian-Diffusion/FPII.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Debye-Hückel theory - charge screening</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -393,10 +392,9 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-electrostatics">Recap electrostatics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debye-screening">Debye screening</a></li>
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
+
             </nav>
         </div>
     </div>
@@ -407,138 +405,115 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="debye-huckel-theory-charge-screening">
-<h1>Debye-Hückel theory - charge screening<a class="headerlink" href="#debye-huckel-theory-charge-screening" title="Permalink to this heading">#</a></h1>
-<p>When we discussed our variational approach and mean field theory, the question came up what happens when the two-body potential energy decays slowly, like the eletrostatic potential <span class="math notranslate nohighlight">\(U= e^2/(4\pi r)\)</span>? Then,</p>
+  <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_98bf12f770d7dd841a69g-1.jpg?height=155&amp;width=945&amp;top_left_y=223&amp;top_left_x=525" /></p>
+<p>General properties of the FPE:</p>
+<p>The FPE has the form of a continuity equation</p>
 <div class="math notranslate nohighlight">
-\[
-\langle H\rangle_N\propto \int d^3r U(r)=4\pi \int_{r_0}^\infty r^2 U(r) dr = e^2 \int_{r_0}^\infty r dr=\infty\;.
-\]</div>
-<p>Thus, the interactions are too strong to apply our previous mean field /variational approaches, which assumed we can approximate the true gas by a modified version of the ideal gas.</p>
-<p>Fortunately, there’s another mean-field theory: Debye-Hückel.</p>
-<p>But first, a quick …</p>
-<section id="recap-electrostatics">
-<h2>Recap electrostatics<a class="headerlink" href="#recap-electrostatics" title="Permalink to this heading">#</a></h2>
-<p>Gauß’s law for electricity in differential form</p>
-<div class="math notranslate nohighlight">
-\[
-\nabla \cdot \mathbf{E}=\rho/(D\epsilon_0)
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\rho(\vec r)\)</span> is the charge density and <span class="math notranslate nohighlight">\(D\)</span> is the dielectric constant of the medium, assumed to be constant (<span class="math notranslate nohighlight">\(D\approx 80\)</span> in water!).</p>
-<p>In the absence of a magnetic field, the curl of the electric field vanishes. So, we can write <span class="math notranslate nohighlight">\(\mathbf{E}\)</span> as the gradient of an electrical potential <span class="math notranslate nohighlight">\(V\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-\mathbf{E} = -\nabla V \;.
-\]</div>
-<p>Gauß’s law thus turns into the Poisson equation</p>
-<div class="math notranslate nohighlight">
-\[
-\nabla^2 V=-\rho/(D\epsilon_0)\;.
-\]</div>
-<p>For discrete charges <span class="math notranslate nohighlight">\(q_i\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[
-\rho=\sum_i q_i \delta(\vec r- \vec r_i) \;,
-\]</div>
-<p>We can express the total electrostatic interaction energy as</p>
-<div class="math notranslate nohighlight" id="equation-interaction">
-<span class="eqno">(18)<a class="headerlink" href="#equation-interaction" title="Permalink to this equation">#</a></span>\[
-U=\frac12 \int V(\vec r) \rho(\vec r)
-\]</div>
-</section>
-<section id="debye-screening">
-<h2>Debye screening<a class="headerlink" href="#debye-screening" title="Permalink to this heading">#</a></h2>
-<p>Suppose there are two types of ions, <span class="math notranslate nohighlight">\(q_{\pm}=\pm z e\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the charge number and “+” refers to a cation and “-” to anion. Let’s describe the average ion density by <span class="math notranslate nohighlight">\(n_{\pm}=\langle \rho_{\pm}\rangle/q_{\pm}\)</span>, which we suppose is equal to <span class="math notranslate nohighlight">\(n_\infty\)</span> for both ion types far from any perturbation. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around <span class="math notranslate nohighlight">\(n_\infty\sim 100 mM\)</span> each. What happens if we introduce an extra charge and keep it fixed at the origin?</p>
-<p><strong>Intuitively:</strong></p>
-<p><img alt="Debye screening" src="../_images/Debye-screening.jpg" /></p>
-<p>How to describe the average density <span class="math notranslate nohighlight">\(\rho(x)\)</span> of charges and the average electric potential?</p>
-<p>What’s the shape of the charge distribution?</p>
-<p>Ignoring fluctuations, we can say:</p>
-<ul class="simple">
-<li><p>The Boltzmann distribution dictates the density given the electrostatic potential</p></li>
-</ul>
-<div class="math notranslate nohighlight" id="equation-elec-potential">
-<span class="eqno">(19)<a class="headerlink" href="#equation-elec-potential" title="Permalink to this equation">#</a></span>\[n_{ \pm}(r)=e^{-\frac{ q_{\pm} V(r)}{k T}} \cdot n_{\infty}\]</div>
-<ul class="simple">
-<li><p>But the electric potential <span class="math notranslate nohighlight">\(V(r)\)</span> depends on the density via the Poisson equation (in 1D):</p></li>
-</ul>
-<div class="math notranslate nohighlight" id="equation-poisson">
-<span class="eqno">(20)<a class="headerlink" href="#equation-poisson" title="Permalink to this equation">#</a></span>\[\quad \nabla^{2} V(r) =-\frac{\rho(r)+\rho_{ext}(r)}{\varepsilon_{0} D}=-\frac{n_{+}(r) z e-n_{-}(r) z e}{\varepsilon_{0} D}-\frac{\rho_{ext}(r)}{\varepsilon_{0} D}
-\]</div>
-<ul class="simple">
-<li><p>where we introduced an externally fixed charge density <span class="math notranslate nohighlight">\(\rho_{ext}(r)\)</span>.</p></li>
-<li><p><a class="reference internal" href="#equation-elec-potential">(19)</a> and <a class="reference internal" href="#equation-poisson">(20)</a> have to be solved self-consistently, which is hard in general.</p></li>
-</ul>
-<p>But when <span class="math notranslate nohighlight">\(q V \ll K T\)</span> (ie. assume <span class="math notranslate nohighlight">\(x \gg l_{\beta}\)</span> ), we can expand: <span class="math notranslate nohighlight">\(n_{ \pm}=n_{\infty}\left(1 \mp \frac{z e V(r)}{k T}\right)\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-\nabla^{2} V=\frac{2(z e)^{2} c_{\infty} V(r)}{\varepsilon_{0} D k T} -\frac{\rho_{ext}(r)}{\varepsilon_{0} D}\equiv\kappa_D^2V(r) -\frac{\rho_{ext}(r)}{\varepsilon_{0} D}\;.
-\]</div>
-<p>In Fourier space, this equation reads</p>
-<div class="math notranslate nohighlight">
-\[
-(-q^2-\kappa_D^2)V(q)=-\frac{\rho_{ext}}{D\epsilon_0}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-V(q)=\frac{\rho_{ext}}{D\epsilon_0} \frac{1}{q^2+\kappa_D^2}
-\]</div>
-<p>So, the electrical potential of a point charge <span class="math notranslate nohighlight">\(\rho_{ext}(q)=1\)</span> decays exponentially,</p>
-<div class="math notranslate nohighlight" id="equation-yukawa">
-<span class="eqno">(21)<a class="headerlink" href="#equation-yukawa" title="Permalink to this equation">#</a></span>\[
-V_{\text{eff}}= \frac{1}{4 \pi r D \epsilon_0} e^{-\frac{x}{\lambda_{D}}}
-\]</div>
-<p>on a length scale called the Debye screening length,</p>
-<div class="math notranslate nohighlight">
-\[
-\lambda_{D}=\sqrt\frac{\epsilon_0 D k_BT}{2(ze)^2 c_\infty} \;.
-\]</div>
-<p>The potential in <a class="reference internal" href="#equation-yukawa">(21)</a>is called “Yukawa potential”.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Where did the above analysis make a mean field approximation?</p>
-<p>We light-heartedly assumed that the probability <span class="math notranslate nohighlight">\(p({\rho})\propto e^{-\beta U[\rho]}\)</span> of a charge distribution <span class="math notranslate nohighlight">\(\rho(r)\)</span> with the interaction energy <span class="math notranslate nohighlight">\(U\)</span> given by <a class="reference internal" href="#equation-interaction">(18)</a>, can be written as</p>
-<div class="math notranslate nohighlight">
-\[
-p({\rho})\propto e^{-\beta\int \langle V(\vec r)\rangle \rho(\vec r)}
-\]</div>
-<p>as if the density interacts with the <em>average</em> electrical potential. But, in fact, <span class="math notranslate nohighlight">\(V\)</span> is fluctuating itself as it depends on <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
-<p>Starting form the correct interaction energy, we can see clearly what approximation we’ve done:</p>
-<div class="math notranslate nohighlight">
-\[
-U=\frac12 \int V \rho=\frac12 \int (\langle V \rangle+\delta V) (\langle \rho \rangle+\delta \rho)=\text{const.}+\frac12 \int (\langle V \rangle \delta \rho+\frac12 \delta V) \langle \rho \rangle  + O(\delta \rho \delta V)
-\]</div>
-<p>We clearly ignored the term of order <span class="math notranslate nohighlight">\(\delta rho \delta V\)</span>, which is acceptable if the relative mean squared deviation of both quantities are small.</p>
-<p>Secondly, we replaced</p>
-<div class="math notranslate nohighlight">
-\[
-\frac12 \int (\langle V \rangle \delta \rho+\frac12 \delta V \langle \rho \rangle) \to \int \langle V \rangle \delta \rho
-\]</div>
-<p>This, in fact, is not an approximation but a straight forward consequence from the Poisson equation,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} 
-\nabla^2 \langle V\rangle=-\langle\rho\rangle (D\epsilon_0)^{-1}\\
-\nabla^2 \langle \delta V\rangle=-\langle\delta \rho\rangle (D\epsilon_0)^{-1}\;.
+\[\begin{split}
+\begin{gathered}
+\partial_{+} p(x, t)=-\partial_{x} j(x, t) \text { where } \\
+j(x)=\alpha_{1}(x, t) p(x, t)-\frac{1}{2} q_{t}\left[\alpha_{2}(x) p(x, t)\right]
+\end{gathered}
 \end{split}\]</div>
-<p>Thus, ignoring <span class="math notranslate nohighlight">\(O(\delta \rho \delta V)\)</span> terms in the interaction energy is “all” we did.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Significance of Debye screening for protein binding:</p>
-<p>Inside biological cells, <span class="math notranslate nohighlight">\(\lambda_D\approx 0.8\)</span> nm due to ion concentrations in the 100mM range. Since proteins have typical diameter of <span class="math notranslate nohighlight">\(4\)</span> nm, electrostatic protein-protein interactions usually play out on their surfaces:</p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-4.jpg?height=369&amp;width=750&amp;top_left_y=746&amp;top_left_x=733" /></p>
+<p>is the probability current at <span class="math notranslate nohighlight">\((x, y)\)</span></p>
+<p>Ie.: Probability is locally conserved</p>
+<p>$$</p>
+<p>$$</p>
+<p><span class="math notranslate nohighlight">\(\frac{\text { Boundary conditions: }}{\text { Suppose: } x \in[a, b]}\)</span></p>
 <ul class="simple">
-<li><p>Binding requires complementary surface shapes and charge distributions.</p></li>
-<li><p>Even if complimentary charges get close, interaction potentials barely exceeds <span class="math notranslate nohighlight">\(k_BT\)</span> (technically, because thermal fluctuations let charges fluctuate on a scale comparable to <span class="math notranslate nohighlight">\(\lambda_D\)</span>) <span class="math notranslate nohighlight">\(\Rightarrow\)</span> need several electrostatic bonds.</p></li>
-<li><p>together, this implies that binding is highly specific</p></li>
-<li><p>Bulk structure and bulk charge distribution are  less critical to binding.</p></li>
-<li><p>caveat: The last decade has revealed that weak binding due to unspecific binding between intrinsically disordered proteins can generate protein condensates that form membrane-less droplet-like organelles -&gt; hot/hyped field.</p></li>
+<li><p>Reflectingber <span class="math notranslate nohighlight">\(f^{\prime}(a, t)=j(b, 1)=0 \Rightarrow \int_{a}^{b} d x p(x, t)=\)</span> cons.</p></li>
+<li><p>Absorbing bc: <span class="math notranslate nohighlight">\(p(a, t)=p(b, t)=0=0 \int_{a}^{b} d x p(x, t)\)</span> decays. 1 a particle may get trapped at the boundary</p></li>
 </ul>
-</div>
-<p>rem: our assumption <span class="math notranslate nohighlight">\(q V \gg k_{B} T\)</span> works well for proteins</p>
-<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_05_6d0b0833bad953ee6990g-3.jpg?height=299&amp;width=1270&amp;top_left_y=1232&amp;top_left_x=536" /></p>
-</section>
-</section>
+<p>or if <span class="math notranslate nohighlight">\(x=\)</span> papulationsize <span class="math notranslate nohighlight">\(=0 x=0\)</span> is absorbing.</p>
+<p><span class="math notranslate nohighlight">\(\frac{\text { Infinite systems: }}{\text { (usually ) }} \lim _{x \rightarrow \pm \infty} p(x, t)=\lim _{x \rightarrow \pm \infty} a_{x} p(x, t)=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> system is normalizable &amp; well-behaved.</p>
+<p>I many other boundary conditions (mixed /reactive).</p>
+<p>Station any processes: <span class="math notranslate nohighlight">\(\partial_{+} p=0 \Rightarrow j(x, t)=\)</span> cont.</p>
+<p>Reflective b. cs:</p>
+<div class="math notranslate nohighlight">
+\[
+0=j(x, t)=\alpha_{1}(x) p_{s t}(x)-\frac{1}{2} \partial_{x}\left[\alpha_{2}(x) p_{s t}(x)\right]
+\]</div>
+<p>… integrate (by separation of variables) to give</p>
+<div class="math notranslate nohighlight">
+\[
+p_{s t}(x) \propto \frac{1}{\alpha_{2}(x)} \exp \left[2 \int^{x} d x^{\prime} \frac{\alpha_{1}\left(x^{\prime}\right)}{\alpha_{2}\left(x^{\prime}\right)}\right]
+\]</div>
+<p>Example:</p>
+<ul class="simple">
+<li><p>Brownian particle in a potential <span class="math notranslate nohighlight">\(U(x)\)</span>. Homogeneous fluid: <span class="math notranslate nohighlight">\(\alpha_{2}(x)=\)</span> cons <span class="math notranslate nohighlight">\(=2 D\)</span></p></li>
+</ul>
+<p>Force en particle <span class="math notranslate nohighlight">\(=-\partial_{x} U(x)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> overdaurped velocity <span class="math notranslate nohighlight">\(=-\frac{\partial_{x} u(x) !}{y}=\alpha_{1}(x)\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(y=\)</span> friction coefficient.</p>
+<p><span class="math notranslate nohighlight">\(=6 \pi \eta R\)</span> for a sphere of radius <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow p_{\delta t}(x) \alpha \exp \left[-\frac{U(x)}{\mathcal{G} D}\right]\)</span></p>
+<p><span class="math notranslate nohighlight">\(\triangle\)</span> Bolt z mann distribution</p>
+<p>only if</p>
+<p><span class="math notranslate nohighlight">\(D=\frac{k_{B} T}{f} \left\lvert\, \begin{aligned} &amp; \text { EINSTEIN } \\ &amp; \text { RELATION } \\ &amp; \text { connects 2 macroscopic } \\ &amp; \text { coefficients ( } D, y)\end{aligned}\right.\)</span> to the molecular world” <span class="math notranslate nohighlight">\(\left(t_{B} T\right)\)</span>.</p>
+<ul class="simple">
+<li><p>Brownian particle in a harmonic potential, <span class="math notranslate nohighlight">\(U(x)=\frac{1}{2} k x^{2}=\)</span></p></li>
+</ul>
+<p>Oronstein - Uhlenbeck process.</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{p}(x, f)=\partial_{x}\left[\frac{k}{q} \times p\right]+D \partial_{x}^{2} p=(1)
+\]</div>
+<p>Expectation: <span class="math notranslate nohighlight">\(\langle x(t)\rangle=\int d x \cdot x p(x, t)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{t}(x\rangle=\int d x \partial_{x}\left[\frac{k}{g} x p+D \partial_{x}\right]_{-\frac{k}{q} t} x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-\frac{k}{\xi} t
+\]</div>
+<p>In fact (1) can be solved exactly,</p>
+<div class="math notranslate nohighlight">
+\[
+P(x, t)=\frac{1}{\sqrt{2 \pi \sigma^{2}(t)}} e^{-\frac{[x-\bar{x}(f)]^{2}}{2 \sigma^{2}(t)}}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\sigma^{2}=2 D+\)</span>, wa 2) Meteleol of cherackistics</p>
+<p>Backward -FP equation.</p>
+<p>The propagator <span class="math notranslate nohighlight">\(G(x,+\mid \xi, z)\)</span> not all satisfies the FP eqn,</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{+} G=-\partial_{x}\left(\alpha_{1} G\right)+\frac{1}{2} \partial_{x}^{2}\left(\alpha_{2} G\right)
+\]</div>
+<p>but also an equivalentbackwardequ</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{\tau} G=+\alpha_{1}(\xi) \partial_{\xi} G+\frac{1}{2} \alpha_{2}(\xi) \partial_{\xi}^{2} G,
+\]</div>
+<p>where the derivatives act on the initial conditions.</p>
+<p>BE offer easier to use with absorbing</p>
+<p>Proof: boundary conditions</p>
+<div class="math notranslate nohighlight">
+\[
+G(x,+\mid \xi, \tau-\delta \tau)=\int d g G\left(x,+\mid \xi_{1} \tau\right) G\left(y_{\tau} \tau \mid \xi_{1} \tau-\delta \tau\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; G\left(\xi_{1} \tau \mid \xi, \tau-\delta \tau\right) \stackrel{\text { Telor }}{=} G\left(y_{1} \tau-\delta \tau \mid \xi, \tau-\delta \tau\right) \\
+&amp; +\delta \tau\left[-\partial_{y}\left(\alpha_{1} G\right)+\partial_{y}^{2}\left(\alpha_{2} G\right)\right] \\
+&amp; +O\left(\delta \tau^{2}\right)
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\mathcal{F}(*)\)</span>, using partial intepation</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; \operatorname{and} G(y, \tau-\delta \tau \mid \xi, \tau-\delta \tau) \equiv \delta(y-\xi)
+\end{aligned}
+\]</div>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_98bf12f770d7dd841a69g-6.jpg?height=279&amp;width=1632&amp;top_left_y=1575&amp;top_left_x=254" /></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; +\frac{1}{2} \int d \varphi_{\alpha_{2}}(\xi) \partial_{y}^{2} G\left(x_{1}+1 y_{1}\right) \delta(\xi-\xi)
+\end{aligned}
+\]</div>
 
     <script type="text/x-thebe-config">
     {
@@ -553,7 +528,7 @@ U=\frac12 \int V \rho=\frac12 \int (\langle V \rangle+\delta V) (\langle \rho \r
         },
         kernelOptions: {
             name: "python3",
-            path: "./Poisson-Boltzmann"
+            path: "./Newtonian-Diffusion"
         },
         predefinedOutput: true
     }
@@ -570,15 +545,6 @@ U=\frac12 \int V \rho=\frac12 \int (\langle V \rangle+\delta V) (\langle \rho \r
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../MonteCarlo/MonteCarlo.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Monte Carlo and the Metropolis Algorithm</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -594,10 +560,9 @@ U=\frac12 \int V \rho=\frac12 \int (\langle V \rangle+\delta V) (\langle \rho \r
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-electrostatics">Recap electrostatics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debye-screening">Debye screening</a></li>
+    <ul class="simple visible nav section-nav flex-column">
 </ul>
+
   </nav></div>
 
 </div></div>

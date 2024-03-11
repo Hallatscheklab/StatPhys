@@ -25,7 +25,7 @@ $$
 
 where $\rho(\vec r)$ is the charge density and $D$ is the dielectric constant of the medium, assumed to be constant ($D\approx 80$ in water!).
 
-In the absence of a magnetic field, the curl of the electric field vanishes, so that we can express the express $\mathbf{E}$ in terms of an electrical potential $V$, 
+In the absence of a magnetic field, the curl of the electric field vanishes. So, we can write $\mathbf{E}$ as the gradient of an electrical potential $V$, 
 
 $$
 \mathbf{E} = -\nabla V \;.
@@ -65,7 +65,7 @@ $$ (interaction)
 
 ### Debye screening
 
-Suppose there are two types of ions, $q_{\pm}=\pm z e$, where $z$ is the charge number and "+" refers to a cation and "-" to anion. Let's describe the ion density by $n_{\pm}=\langle \rho_{\pm}\rangle/q_{\pm}$, which we suppose is equal to $n_\infty$ for both ion types far from any perturbation. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around $n_\infty\sim 100 mM$ each. What happens if we introduce an extra charge at the origin?
+Suppose there are two types of ions, $q_{\pm}=\pm z e$, where $z$ is the charge number and "+" refers to a cation and "-" to anion. Let's describe the average ion density by $n_{\pm}=\langle \rho_{\pm}\rangle/q_{\pm}$, which we suppose is equal to $n_\infty$ for both ion types far from any perturbation. For example, inside cells there are lots of sodium (Na+), potassium (K+), and chloride (Cl-) at around $n_\infty\sim 100 mM$ each. What happens if we introduce an extra charge and keep it fixed at the origin?
 
 **Intuitively:**
 
@@ -73,9 +73,11 @@ Suppose there are two types of ions, $q_{\pm}=\pm z e$, where $z$ is the charge 
 
 
 
-How to describe the density $\rho(x)$ of charges and the electric potential $V(x)$?
+How to describe the average density $\rho(x)$ of charges and the average electric potential?
 
 What's the shape of the charge distribution? 
+
+Ignoring fluctuations, we can say:
 
 - The Boltzmann distribution dictates the density given the electrostatic potential 
 
@@ -123,19 +125,37 @@ The potential in {eq}`Yukawa`is called "Yukawa potential".
 
 ```{note} Where did the above analysis make a mean field approximation?
 
-We light-heartedly assumed that the probability of a charge distribution,
+We light-heartedly assumed that the probability $p({\rho})\propto e^{-\beta U[\rho]}$ of a charge distribution $\rho(r)$ with the interaction energy $U$ given by {eq}`interaction`, can be written as
+
+$$
+p({\rho})\propto e^{-\beta\int \langle V(\vec r)\rangle \rho(\vec r)}
+$$
+
+as if the density interacts with the *average* electrical potential. But, in fact, $V$ is fluctuating itself as it depends on $\rho$. 
+
+Starting form the correct interaction energy, we can see clearly what approximation we've done:
+
+$$
+U=\frac12 \int V \rho=\frac12 \int (\langle V \rangle+\delta V) (\langle \rho \rangle+\delta \rho)=\text{const.}+\frac12 \int (\langle V \rangle \delta \rho+\frac12 \delta V) \langle \rho \rangle  + O(\delta \rho \delta V)
+$$
+
+We clearly ignored the term of order $\delta rho \delta V$, which is acceptable if the relative mean squared deviation of both quantities are small. 
+
+Secondly, we replaced
+
+$$
+\frac12 \int (\langle V \rangle \delta \rho+\frac12 \delta V \langle \rho \rangle) \to \int \langle V \rangle \delta \rho
+$$
+
+This, in fact, is not an approximation but a straight forward consequence from the Poisson equation, 
 
 $$ 
-p({\rho})\propto e^{-\beta U} \;,\propto e^{-\beta\langle V(\vec r) \rho(\vec r)}
+\nabla^2 \langle V\rangle=-\langle\rho\rangle (D\epsilon_0)^{-1}\\
+\nabla^2 \langle \delta V\rangle=-\langle\delta \rho\rangle (D\epsilon_0)^{-1}\;.
 $$
 
-with the interaction energy $U$ given by {eq}`interaciton`, can be written as
+Thus, ignoring $O(\delta \rho \delta V)$ terms in the interaction energy is "all" we did.
 
-$$
-p({\rho})\propto e^{-\beta\int \langle V(\vec r) \rho(\vec r)}
-$$
-
-This ignores that terms of order $\int \delta V \delta \rho$, where $\delta V=V-\langle V\rangle$ and $\delta \rho=\rho-\langle \rho\rangle$
 ```
 
 
