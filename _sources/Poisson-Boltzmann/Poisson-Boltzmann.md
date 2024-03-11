@@ -151,7 +151,7 @@ This, in fact, is not an approximation but a straight forward consequence from t
 
 $$ 
 \nabla^2 \langle V\rangle=-\langle\rho\rangle (D\epsilon_0)^{-1}\\
-\nabla^2 \langle \delta V\rangle=-\langle\delta \rho\rangle (D\epsilon_0)^{-1}\;.
+\nabla^2 \delta V=-\delta \rho (D\epsilon_0)^{-1}\;.
 $$
 
 Thus, ignoring $O(\delta \rho \delta V)$ terms in the interaction energy is "all" we did.
