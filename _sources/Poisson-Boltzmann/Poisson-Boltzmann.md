@@ -139,6 +139,8 @@ $$
 U=\frac12 \int V \rho=\frac12 \int (\langle V \rangle+\delta V) (\langle \rho \rangle+\delta \rho)=\text{const.}+\frac12 \int (\langle V \rangle \delta \rho+\frac12 \delta V) \langle \rho \rangle  + O(\delta \rho \delta V)
 $$
 
+where "const." refers to a term that is the same for every charge micro-state.
+
 We clearly ignored the term of order $\delta rho \delta V$, which is acceptable if the relative mean squared deviation of both quantities are small. 
 
 Secondly, we replaced
