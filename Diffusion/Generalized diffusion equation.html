@@ -1,0 +1,790 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Brownian Motion as a Free Energy minimizing process &#8212; Equilibrium Statistical Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Diffusion/Generalized diffusion equation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="../_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FDiffusion/Generalized diffusion equation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Diffusion/Generalized diffusion equation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Brownian Motion as a Free Energy minimizing process</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="brownian-motion-as-a-free-energy-minimizing-process">
+<h1>Brownian Motion as a Free Energy minimizing process<a class="headerlink" href="#brownian-motion-as-a-free-energy-minimizing-process" title="Permalink to this heading">#</a></h1>
+<p>Consider a suspension of a large nr of ideal, non-interacting beads (friction coefficient <span class="math notranslate nohighlight">\(\xi=6 \pi \eta_{s}^{\sigma}\)</span> ):</p>
+<p><span class="math notranslate nohighlight">\(c(x, t)=\)</span> Particle density &#64; <span class="math notranslate nohighlight">\(\{x,t\}\)</span>.</p>
+<p>Goal: Construct a phenomenological model for the dynamics <span class="math notranslate nohighlight">\(c(x, t)\)</span> that generates the equilibrium distribution <span class="math notranslate nohighlight">\( \longrightarrow C_{e q}(t) \sim e^{-\frac{U(x)}{v_{B} T}}\)</span> long-term. ,</p>
+<p>We will see: This Brownian Dynamics continuously</p>
+<p>lowers the Free Energy.</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-03.jpg?height=340&amp;width=1866&amp;top_left_y=358&amp;top_left_x=102" /></p>
+<p>The probability current <span class="math notranslate nohighlight">\(j(x, t)\)</span> (=ur of particles passing through <span class="math notranslate nohighlight">\(x\)</span> per uniting) results from</p>
+<p>i) deterministic motion <span class="math notranslate nohighlight">\(\dot{f}_{\text {jet }}=c \cdot \bar{v}=-\frac{c}{\xi} \partial_{x} u\)</span></p>
+<p>ii) random motion <span class="math notranslate nohighlight">\(j_{\text {shah }}=-D \frac{\partial C}{\partial x} \quad\)</span> Pick’s law</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-03.jpg?height=482&amp;width=1582&amp;top_left_y=1503&amp;top_left_x=472" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\text { i) }+ \text { ii }) \Rightarrow \quad j &amp; =c \cdot V_{f l} \text { with } \\
+V_{f l} &amp; =-\xi^{-1} \partial_{x}(\underbrace{u+D \xi \ln (c)}_{=\mu(x)})=-\xi^{-1} 2 x \mu .
+\end{aligned}
+\end{split}\]</div>
+<p>local chemical potential of non-interacting particles.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\Rightarrow \quad \frac{\partial c}{\partial t}=\frac{\partial}{\partial x}\left(C \frac{\partial y}{\xi}\right)=\frac{\partial}{\partial x} \frac{1}{\xi}\left(D \xi \frac{\partial c}{\partial x}+C \frac{\partial u}{\partial x}\right) \tag{1}
+\end{equation*}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mu(x)=k_{B} T \ln (c)+U\)</span></p>
+<p>Equilibrium <span class="math notranslate nohighlight">\((t \rightarrow \infty)\)</span> :
+Sualuclacoski Equation (also called Fokker -Planck or Generalized Diffusion Eq.4)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \frac{\partial c}{\partial t}=-\partial_{x j} \longrightarrow 0 \quad \text { fin } t \rightarrow \infty \\
+\Rightarrow &amp; j=\text { cons. } \stackrel{!}{=} 0 \quad(\text { refer } j(x \rightarrow \pm \infty)=0) \\
+= &amp; -\frac{c}{\xi} 2 x \mu \Rightarrow \mu=U+D \xi \log \left(c_{1}\right)=\text { canst. } \\
+\Rightarrow &amp; C_{\text {eq }} \propto \exp \left(-\frac{U(x)}{D \xi}\right) \stackrel{!}{\alpha} \exp \left(-\frac{U(x)}{k_{B} T}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>(Since it has bo be the Bottemane distribution)</p>
+<div class="math notranslate nohighlight">
+\[
+=0 \sqrt{D=\frac{k_{i n} T}{\sum_{1}}}
+\]</div>
+<p>Stakes-</p>
+<p>Einstein Relation</p>
+<p>velocity</p>
+<p>fluctuations dissipation</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\Delta x^{2}(t)\right\rangle=2 D t
+\]</div>
+<p>(R) Friction coefficient of</p>
+<p>Typical proteins have <span class="math notranslate nohighlight">\(R \approx 2\)</span> nm</p>
+<div class="math notranslate nohighlight">
+\[
+\Rightarrow D_{\text {protein }} \approx 100 \frac{\mathrm{mm}^{2}}{\mathrm{~s}}
+\]</div>
+<p>a ball of radius <span class="math notranslate nohighlight">\(R: \xi=6 \pi \eta R\)</span>. Cf. bacteria, <span class="math notranslate nohighlight">\(D_{\text {bc }} \approx 0,5 \frac{\mathrm{m}^{2}}{\mathrm{~s}}\)</span></p>
+<p>Notes from (1):</p>
+<div class="math notranslate nohighlight">
+\[
+j \propto \frac{\partial \mu(x)}{\partial x},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu(x) \equiv U(x)+k_{B} T \ln (c)\)</span> is our good dd chemical potential!</p>
+<p>Thus <span class="math notranslate nohighlight">\(j=0\)</span> if <span class="math notranslate nohighlight">\(\mu=\)</span> canst.</p>
+<p>三 good ald condition for themody manic equilibrium.
+This sugsests a generalization: Smoluchask:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\partial_{+} \psi\left(\left\{x_{i}\right\}_{i}\right)=-\partial_{i} j_{i} \\
+j_{i}=-\psi \sum_{j} H_{i j} F_{j} F_{j}=-\partial_{j}\left(U+k_{\beta} T \ln (\psi)\right)
+\end{gathered}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Browiem mation of interacting degrees of freedou, e.y.</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-06.jpg?height=399&amp;width=947&amp;top_left_y=1256&amp;top_left_x=712" /></p>
+<p>freely jointed chain = micdel of a plexible polquer.</p>
+<p>Free Energy Minimization:</p>
+<p>Proposition! The functional tigre-dep</p>
+<div class="math notranslate nohighlight">
+\[
+F[c]=\int d x c(x, t) \cdot \mu(x) \frac{1}{\Gamma}\langle u\rangle-T S ;
+\]</div>
+<p>is monotonously decreasing <span class="math notranslate nohighlight">\(\delta S=-h_{B}\langle\log c\rangle\)</span>;</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d F}{d t}=\int d x\left[\mu \frac{\partial c}{\partial t}+G \frac{\partial u}{\partial t}\right]
+\]</div>
+<p>(1) parielle int</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-07.jpg?height=470&amp;width=1741&amp;top_left_y=1137&amp;top_left_x=334" /></p>
+<p><span class="math notranslate nohighlight">\(\angle O\)</span> culess <span class="math notranslate nohighlight">\(\mu=\)</span> const <span class="math notranslate nohighlight">\(\Rightarrow \quad C=C_{\text {eq. }}\)</span>.</p>
+<p>Nbles:</p>
+<ul class="simple">
+<li><p>Dynamice is time ineverible cames forn coase-srainis (sce next Tue)</p></li>
+</ul>
+<p>Recap: Generalized diffusion eau (in ID)</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{+} c(x, t)=-\partial_{x j}
+\]</div>
+<p>current <span class="math notranslate nohighlight">\(f(x, t)=-\frac{G \cdot \partial_{x} \mu}{\xi}\)</span></p>
+<p>local chemical potential <span class="math notranslate nohighlight">\(\mu(x, t)=U(x, t)-\xi_{B} T \log (c)\)</span></p>
+<p>Flow is driven by gradients in chem. pot.</p>
+<p>Einstein Relation: <span class="math notranslate nohighlight">\(D=\frac{k_{B} T}{\xi}\)</span></p>
+<p>Basic solution of the diffusion eau.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+U=0 \Rightarrow \frac{\partial c(x, t)}{\partial t}=D \partial_{x}^{2} c\left(x_{t} t\right) \tag{1}
+\end{equation*}
+\]</div>
+<p>Assume point-like initial conditions: <span class="math notranslate nohighlight">\(C(x, 0)=\delta(x)\)</span> standard deviation. Fourier transform of eq.n (1):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r}
+c(x, t)=\int_{-\infty}^{\infty} \frac{d q}{2 \pi} e^{-i q x} c(q, t) \\
+\sim(1) \Rightarrow \frac{\partial c(q, t)}{\partial t}=-D q^{2} c(q, t) .
+\end{array}
+\end{split}\]</div>
+<p>Now, this is an ordinary differential eq (in contrast to the partial diff. eau. (1))</p>
+<p>The solution is</p>
+<div class="math notranslate nohighlight">
+\[
+c(q, t)=C(q, 0) e^{-D_{q}^{2} t}
+\]</div>
+<p><span class="math notranslate nohighlight">\(c(a, c)\)</span> follows from Fearer transforming (2):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; c(q, 0)=\int_{-\infty}^{\infty} d x e^{i q x} c(x, t) \\
+&amp;=\int_{-\infty}^{\infty} d x e^{i q x} d(x)=1 \\
+&amp; \Rightarrow c(q, t)=e^{-D q^{2} t}
+\end{aligned}
+\end{split}\]</div>
+<p>Foamier back transform:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; c(x, t)=\int_{-\infty}^{\infty} \frac{d q}{2 \pi} c(q, f) e^{-i q x}= \\
+&amp; =\int_{-\infty}^{\infty} \frac{d q}{2 \pi} e^{-D_{q}^{2} t-i q x}
+\end{aligned}
+\end{split}\]</div>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-10.jpg?height=342&amp;width=1153&amp;top_left_y=2019&amp;top_left_x=454" /></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; =e^{-\frac{x^{2}}{4 D t} \frac{1}{2 \pi \sqrt{D t}}} \underbrace{\int_{-\infty}^{\infty} d Q e^{-Q^{2}}}_{\sqrt{\pi}}
+\end{aligned}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Rightarrow \begin{aligned}
+&amp; c(x, t)=\frac{e^{-\frac{x^{2}}{4 D t}}}{\sqrt{4 \pi D t}}=\frac{e^{-\frac{x^{2}}{2 \sigma_{t}^{2}}}}{\sqrt{2 \pi \sigma_{t}^{2}}}(3) \\
+&amp; \text { with } \sigma_{t}^{2} \equiv\left\langle(x(t)-x(\theta))^{2}\right\rangle=2 D t
+\end{aligned}
+\end{split}\]</div>
+<p>N.B.: This is a Green’s function solution,</p>
+<p>The solution to any initial condition</p>
+<p>can be found by convolution with (3).</p>
+<p>N.B: In our examples (so far), all particles are mon-interacting.</p>
+<div class="math notranslate nohighlight">
+\[
+\Longrightarrow c(x, t)=N \cdot p(x, t)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(p(x, t)\)</span> being the probability of a single particle to be at <span class="math notranslate nohighlight">\(x, t\)</span>.</p>
+<p>Applications of the Diffusion equ</p>
+<p>Recap:- D=coust II no external force.</p>
+<p>Let’s pat in numbers:</p>
+<p>i) Nerve Cell</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-13.jpg?height=442&amp;width=1282&amp;top_left_y=678&amp;top_left_x=410" /></p>
+<p>Is diffusion fast enough to transport vesicles?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; D=0,5 \mathrm{~m}^{2} / \mathrm{s}=\frac{k T}{6 \pi \eta R_{+}} ; \\
+&amp; \frac{\left\langle x^{2}\right\rangle}{2 D}=t=12 \text { days! }
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Nerve cells heed active Aranspat?</p>
+<p>ii) E. coli:</p>
+<div class="math notranslate nohighlight">
+\[
+\text { RAP; } R=2,5 \mathrm{um}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D \approx 100 \text { prom } 2 / 5
+\]</div>
+<p>1 m</p>
+<div class="math notranslate nohighlight">
+\[
+t=\frac{R^{2}}{2 D} \approx 2 \mathrm{~ms}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> diffusion is fast enough!</p>
+<p>Application: Diffusion sets fundamental limits to Rates of biological aud chemical reactions.</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-14.jpg?height=1044&amp;width=1499&amp;top_left_y=541&amp;top_left_x=610" /></p>
+<p>How many ligands capthesed per sec?</p>
+<p>Use diffusion eau. to model tree ligands:</p>
+<p>ss. <span class="math notranslate nohighlight">\(0=\partial_{+} c \Rightarrow \quad \partial_{r} c_{s}=\frac{\text { cons. }}{r^{2}}\)</span> for <span class="math notranslate nohighlight">\(r&gt;R\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+c_{s}(r)=\frac{-A}{r}+B=-\frac{A}{r}+c_{\theta} \Rightarrow c_{\varsigma}(\infty)=\varepsilon
+\]</div>
+<p>i) Perfect absorber limit: <span class="math notranslate nohighlight">\(c_{s}(R)=0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\Rightarrow c_{S}(r)=c_{0}\left(1-\frac{R}{r}\right) .
+\]</div>
+<p>particle current <span class="math notranslate nohighlight">\(j(R)=|\vec{j}(\vec{R})|=D \partial_{r} c(r, t)=\frac{D c}{R_{c} R}\)</span></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-15.jpg?height=644&amp;width=1874&amp;top_left_y=709&amp;top_left_x=235" /></p>
+<p>per area.</p>
+<p>total flux of captured particles</p>
+<div class="math notranslate nohighlight">
+\[
+\phi=j(R) \cdot 4 \pi R^{2}=\frac{4 \pi D c_{0} R}{\left[\frac{L^{2}}{s} \cdot \frac{1}{L^{3}} \cdot L=\frac{1}{S}\right]}
+\]</div>
+<p>ii) Finite abruption rate: <span class="math notranslate nohighlight">\(\phi=4 \pi R^{2}(R) \stackrel{\#}{=} M k_{0} \cdot c(R)(2)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \text { (1): } j(R)=-D \partial_{r} C C_{n=R}=-\frac{A}{R^{2}} D \\
+&amp; \curvearrowright(2): 4 \pi A D=\mu k_{g u}\left(-\frac{A}{R}+C_{0}\right)
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+A &amp; =\frac{C_{0} M k_{\text {an }}}{4 \pi D+\frac{M k_{\text {an }}}{R}} \\
+C(R) &amp; =C_{0}\left[1-\frac{M k_{\text {on }}}{4 \pi D R+M k_{\text {on }}}\right] \\
+&amp; =\frac{C_{e}}{1+\frac{M k_{\text {an }}}{4 \pi D R}}=\left\{\begin{array}{l}
+C_{0}, \frac{M \pi R}{4 \pi R} \\
+0, \frac{M k_{\text {an }}}{4 \pi R} \longrightarrow \infty
+\end{array}\right.
+\end{aligned}
+\end{split}\]</div>
+<p>How many receptors for haft max. rate?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; j(k)=\frac{D A}{R^{2}}=\frac{C_{0} 4 k_{\text {au }} D / R}{4 \pi D R+M h_{\text {an }}}=\text { half max ? } \\
+&amp; 4 \pi D R=M k \\
+&amp; M=\frac{4 \pi D R}{k_{\text {au }}} \\
+&amp; k=10 \mu \mathrm{m} \\
+&amp; D=100 \frac{\mu^{2}}{\mathrm{~s}} \\
+&amp; k_{a_{1}}=10 \frac{1}{\mu H \cdot S}
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow M \approx 10^{5}\)</span> receptor (egg. insulin</p>
+<p>on cell membrane (receptors in fat cells)</p>
+<p>Ara <span class="math notranslate nohighlight">\(\approx\)</span> ko qum <span class="math notranslate nohighlight">\({ }^{2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\Rightarrow \text { mean spacing } \approx \sqrt{\frac{\text { area }}{M}}=\frac{1}{10} m_{m}={ }^{109 n m}
+\]</div>
+<p>Com pare w/ protein radius <span class="math notranslate nohighlight">\(\sim 5 \mathrm{um}\)</span>.</p>
+<p>Universal bound on chemical reaction rates</p>
+<p>Keg question 1</p>
+<p>3 How fast is <span class="math notranslate nohighlight">\(A+B \xrightarrow{k} C\)</span></p>
+<p>If it is limited by <span class="math notranslate nohighlight">\(A-B\)</span> collision rates?</p>
+<p>ie. each A-B collision leads to one <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow k=c_{A}-k_{A \in B}\)</span>, where</p>
+<p>where <span class="math notranslate nohighlight">\(\tilde{k}_{A+B}\)</span> is the rate at which</p>
+<p>a focal A particle is hit by <span class="math notranslate nohighlight">\(B\)</span> particles.</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_11_f0ae63d09b92115db638g-17.jpg?height=889&amp;width=2029&amp;top_left_y=1894&amp;top_left_x=81" /></p>
+<p>Since <span class="math notranslate nohighlight">\(x_{A}-x_{B}\)</span> diffuses w/ trice the diffusion constant, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp; \text { \# collisions of } \\
+&amp; \frac{\text { on focal A }}{\operatorname{tim} e}=4 \pi(2 D)(2 R) C_{B}=\widetilde{k}_{A \in B} \\
+&amp; \Rightarrow \frac{\partial C_{C}}{\partial t}=k_{\text {diff }} C_{A} \cdot C_{B} \quad(1) \tag{1}
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_{\text {diff }}=16 \pi D R=16 \pi R \frac{k_{B} T}{60 \eta k}=\frac{8 k_{B} T}{3 \eta}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\approx 7 \cdot 109 \frac{1}{M \cdot s}
+\]</div>
+<p>Nates:</p>
+<ul class="simple">
+<li><p>Most enzymes are 100-1000 times slaver</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> the require more than I collisions to form a product.</p>
+<p>-… could be modeled by assuming a finite absorption rate.</p>
+<ul class="simple">
+<li><p>Relation to Michaelis-Menten kinetics:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\underset{\text { Rate of product }}{\text { formation }}=k_{\text {max }}[E] \frac{[S]}{K_{M}+[S]} \xrightarrow{\underbrace{}_{\text {enzyme }} \frac{[S] \rightarrow 0}{k_{\text {max }}}[E][S]}\)</span></p>
+<p>compare <span class="math notranslate nohighlight">\(w / e q\)</span>. (1) <span class="math notranslate nohighlight">\(\Rightarrow\)</span></p>
+<p>efficiency</p>
+<p>The enzyme “ficirncy” is bounded by kdifg</p>
+<div class="math notranslate nohighlight">
+\[
+\left[\frac{k_{\max }}{k_{M}}\right]=\frac{1}{\text { Concentration } \cdot \text { time }}
+\]</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Diffusion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oskar Hallatschek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
