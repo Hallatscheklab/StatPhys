@@ -1,6 +1,6 @@
 ## When does quantum mechanics make a difference?
 
-Following Kardar, we'll motivate quantum statistical mechanics with some cases where classical mechanics gives incorrect answers or even diverges, before developing the general formalism.
+Following Kardar 6.1 and 6.2, we'll motivate quantum statistical mechanics with some cases where classical mechanics gives incorrect answers or even diverges, before developing the general formalism.
 
 #### Fluctuations of a Hydrogen atom
 
