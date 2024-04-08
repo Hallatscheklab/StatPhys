@@ -30,12 +30,12 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
@@ -49,24 +49,21 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/Variational-methods-Mean-Field';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Interacting Gases" href="interacting-gases-f.html" />
     <link rel="prev" title="Finite dimensional Ising models" href="../Ising-lectures/Ising-1D.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,7 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -187,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Particle exchange and chemical potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
@@ -195,6 +203,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interacting-gases-f.html">Interacting Gases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
+
 </ul>
 
     </div>
@@ -472,10 +488,10 @@ F[p] \geq F\left[\hat p\right] \equiv F_{0}
 \min_{g} F[p(g)]&gt;F_{0}
 \]</div>
 <p>and use <span class="math notranslate nohighlight">\(p(g)\)</span> to compute approximate observables.</p>
-<p>Note that there is a simple way to see that <a class="reference internal" href="#equation-min-criterion">(12)</a>is true. Using <span class="math notranslate nohighlight">\(\hat p=e^{-\beta (H-F_0)}\)</span>, we can write</p>
+<p>Note that there is a simple way to see that <a class="reference internal" href="Variational-methods-Mean-Field-.html#equation-min-criterion">()</a>is true. Using <span class="math notranslate nohighlight">\(\hat p=e^{-\beta (H-F_0)}\)</span>, we can write</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\beta\left(F[p(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{p(g)}-F_{0}\right]-S[p(g)]/k_B =\langle \ln(\hat p)\rangle_{p(g)}-\langle \ln(p(g))\rangle_{p(g)}\\
+\beta\left(F[p(g)]-F_{0}\right)=\beta\left[\langle H\rangle_{p(g)}-F_{0}\right]-S[p(g)]/k_B =-\langle \ln(\hat p)\rangle_{p(g)}+\langle \ln(p(g))\rangle_{p(g)}\\
 =D_{KL}\left(p(g) \| \hat p\right)
 \end{split}\]</div>
 <p>showing that the difference between the approximate and true free energy is proportional to the “KL” divergence</p>
@@ -497,7 +513,7 @@ p(g) \equiv \frac{1}{Z_{g}} e^{-\beta H_{g}}\;.
 \[
 F[p(g)]=\sum_{\mu} \frac{e^{-\beta H_{g}(\mu)}}{Z_{g}}\left(H(\mu)+\frac{1}{\beta} \ln \left(\frac{e^{-\beta H_{g}(\mu)}}{Z_{g}}\right)\right)
 \]</div>
-<p>Defining <span class="math notranslate nohighlight">\(\quad e^{-\beta F_{g}}=Z_{g}= \sum_{\mu} e^{-\beta H_{g}(\mu)}\quad\left(F_{g} \neq F[p(g)) !\right)\)</span>, we have</p>
+<p>Defining <span class="math notranslate nohighlight">\(\quad e^{-\beta F_{g}}\equiv Z_{g}= \sum_{\mu} e^{-\beta H_{g}(\mu)}\quad\left(F_{g} \neq F[p(g)] !\right)\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[
 F[p(g)]=\langle H\rangle_{g}-\left\langle H_{g}\right\rangle_{g}+F_{g}
@@ -606,20 +622,20 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># Define the parameters</span>
-<span class="n">J</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># You can adjust J to see different behaviors</span>
+<span class="c1"># Define the parameters for multiple J values</span>
+<span class="n">J_values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="n">g_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>  <span class="c1"># Range of g values for plotting</span>
 
-<span class="c1"># Define the functions</span>
-<span class="n">g_function</span> <span class="o">=</span> <span class="n">g_values</span> 
-<span class="n">tanh_function</span> <span class="o">=</span> <span class="n">J</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">g_values</span><span class="p">)</span>
-
-<span class="c1"># Plotting</span>
+<span class="c1"># Plotting for multiple J values</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">g_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$g</span><span class="se">\\</span><span class="s1">beta$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">tanh_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$J</span><span class="se">\\</span><span class="s1">beta </span><span class="se">\\</span><span class="s1">zeta  </span><span class="se">\\</span><span class="s1">tanh(</span><span class="se">\\</span><span class="s1">beta g)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">g_values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$g</span><span class="se">\\</span><span class="s1">beta$&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">J</span> <span class="ow">in</span> <span class="n">J_values</span><span class="p">:</span>
+    <span class="n">tanh_function</span> <span class="o">=</span> <span class="n">J</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">g_values</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">g_values</span><span class="p">,</span> <span class="n">tanh_function</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="si">{</span><span class="n">J</span><span class="si">}</span><span class="s1"> </span><span class="se">\\</span><span class="s1">tanh(g)$&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Graphical Solution of $</span><span class="se">\\</span><span class="s1">beta g = J </span><span class="se">\\</span><span class="s1">beta </span><span class="se">\\</span><span class="s1">zeta * </span><span class="se">\\</span><span class="s1">tanh(</span><span class="se">\\</span><span class="s1">beta g)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">beta g$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$g</span><span class="se">\\</span><span class="s1">beta$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Function value&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -629,12 +645,12 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c551ccb1fdef3ba69dcff97e0060694df46a90677600bafe31978b98f93addb3.png" src="../_images/c551ccb1fdef3ba69dcff97e0060694df46a90677600bafe31978b98f93addb3.png" />
+<img alt="../_images/da7553412ed18a4460229da2845ee07238b28ac7df7c539a370f1abc5f9f05f5.png" src="../_images/da7553412ed18a4460229da2845ee07238b28ac7df7c539a370f1abc5f9f05f5.png" />
 </div>
 </div>
 <section id="is-this-variational-approximation-good">
 <h2>Is this variational approximation good?<a class="headerlink" href="#is-this-variational-approximation-good" title="Permalink to this heading">#</a></h2>
-<p>It knows about the lattice and dimensions <span class="math notranslate nohighlight">\(D=1,2,3\)</span> only through coordination number <span class="math notranslate nohighlight">\(\zeta\)</span>. e.g., for square lattice <span class="math notranslate nohighlight">\(\quad \zeta=2 D \)</span></p>
+<p>It knows about the lattice and dimensions <span class="math notranslate nohighlight">\(D=1,2,3\)</span> only through coordinatione number <span class="math notranslate nohighlight">\(\zeta\)</span>. e.g., for square lattice <span class="math notranslate nohighlight">\(\quad \zeta=2 D \)</span></p>
 <p>But we know that the exact solution of 1D Ising model does not have symmetry breaking: the variational result is bad in 1D. On the other hand, if <span class="math notranslate nohighlight">\((D, \zeta) \rightarrow \infty\)</span>, you can verify <span class="math notranslate nohighlight">\(F[p(g)]\)</span> is identical to the exact result of the all-to-all model: it is good in large <span class="math notranslate nohighlight">\(D\)</span> and large <span class="math notranslate nohighlight">\(\zeta\)</span>.</p>
 <p>For <span class="math notranslate nohighlight">\(D=2,3\)</span>, the accuracy is intermediate; it correctly predicts symmetry breaking  but doesn’t get <span class="math notranslate nohighlight">\(T_{c}\)</span> or <span class="math notranslate nohighlight">\(m \sim\left|T-T_{c}\right|^{\beta}\)</span> quantitatively right.</p>
 </section>
@@ -678,6 +694,15 @@ m_{g}= \pm \sqrt{3\left(1-\frac{1}{J \zeta \beta}\right)}
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Finite dimensional Ising models</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="interacting-gases-f.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Interacting Gases</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

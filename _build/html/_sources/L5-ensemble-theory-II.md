@@ -1,12 +1,12 @@
 ### Gibbs entropy / Partition Function / Free energy
 
-We alluded to intuition to argue that the Helmholtz free energy $F=E_{S}-T_{R} S_{S}$ is minimized in large systems. But in fact, we can easily show that $F$ is minimized even in small systems if we define the entropy as Gibbs entropy
+We alluded to intuition that, in large systems, the product of microstates and Boltzmann factor is strongly peaked. The typical states of a large system lie on the peak, where Helmholtz free energy $F=E_{S}-T_{R} S_{S}$ is minimized. But in fact, we can easily show that $F$ is minimized even in small systems if we define the entropy as Gibbs entropy
 
 $$
 S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
 $$(Gibbs-Entropy)
 
-To that end, simply recall that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
+To that end, recall from our [discussion of information entropy](max-ent-boltzmann) that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
 
 $$
 \Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{F}{T} \;,
@@ -16,7 +16,7 @@ where $T_{R}^{-1}$ is a Lagrange multiplier, only subject to the normalization c
 
 
 ##### So, let's compute the Gibbs entropy:
-Expression (Gibbs-Entropy) depends on the probability distribution over energies,
+The Gibbs entropy depends on the probability distribution over energies,
 
 $$
 P\left(E_{S}\right)=\frac{\Omega\left(E_{S}\right) e^{-\beta_{k} E_{S}}}{Z}\;,
@@ -31,6 +31,7 @@ $$
 which is called the **partition function**.
 
 The Gibbs entropy thus evalutes to 
+
 $$
 S_{S}=-k_{B}\langle\ln P\rangle=+\frac{E_{S}}{T_{R}}+k_{B} \ln (Z)
 $$

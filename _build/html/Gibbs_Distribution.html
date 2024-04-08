@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Particle exchange and chemical potential &#8212; Equilibrium Statistical Physics</title>
+    <title>Trading conserved quantities between reservoir and system // External forces &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -30,12 +30,12 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
@@ -49,18 +49,14 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -168,7 +164,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -188,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Equipartition-Mesostates.html">Equipartition</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Particle exchange and chemical potential</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Trading conserved quantities between reservoir and system // External forces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crooks.html">Non-equilibrium fluctuation theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Chemical-reactions.html">Chemical reactions</a></li>
@@ -196,6 +203,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
+
 </ul>
 
     </div>
@@ -412,7 +427,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Particle exchange and chemical potential</h1>
+    <h1>Trading conserved quantities between reservoir and system // External forces</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -422,7 +437,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-exchange-and-chemical-potential">Particle exchange and chemical potential</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volume-exchange-and-pressure">Volume exchange and pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-fields-acting-on-extensive-quantities">External fields acting on extensive quantities</a></li>
 </ul>
             </nav>
         </div>
@@ -434,8 +451,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="particle-exchange-and-chemical-potential">
-<h1>Particle exchange and chemical potential<a class="headerlink" href="#particle-exchange-and-chemical-potential" title="Permalink to this heading">#</a></h1>
+  <section id="trading-conserved-quantities-between-reservoir-and-system-external-forces">
+<h1>Trading conserved quantities between reservoir and system // External forces<a class="headerlink" href="#trading-conserved-quantities-between-reservoir-and-system-external-forces" title="Permalink to this heading">#</a></h1>
+<p>We have seen how the exchange of energy between reservoir and system biases the microstates of the system in a way described by a Boltzmann factor. In this section, we’ll see that the same happens when we trade other conserved quantities, like particle numbers or volume, except that the corresponding Boltzmann factors involved other (conjugated) variables than energy and temperature. We will also find that mathematically the same happens under the action of an external force, generating a Boltzmann factor that involves the force and the conjugated extensive quantity of the system, e.g. an external pressure acting on the volume of the system or a magnetic field acting on the magnetization of the system.</p>
+<section id="particle-exchange-and-chemical-potential">
+<h2>Particle exchange and chemical potential<a class="headerlink" href="#particle-exchange-and-chemical-potential" title="Permalink to this heading">#</a></h2>
 <p>So far, we have considered closed systems and derived and studied the Boltzmann distribution.  Now our systems are open and the particle number might change. To derive the microstate probability distribution, we retrace the steps that led us to the Boltzmann distribution, except for allowing the system to trade particles with the bath.</p>
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/open_system.png"><img alt="open systems" class="bg-primary mb-1 align-center" src="_images/open_system.png" style="width: 300px;" /></a>
 <p>The probability to find a system in a given microstate <span class="math notranslate nohighlight">\(\nu_S\)</span>, in which the system has energy <span class="math notranslate nohighlight">\(E_S\)</span> and  <span class="math notranslate nohighlight">\(N_S\)</span> particeles, is proportional to the number of available bath states,</p>
@@ -465,9 +485,11 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[T_R=T_S\qquad \mu_R=\mu_S\;.\]</div>
 <p>Thus, temperatures and chemical potentials of bath and system are equal at equilibrium.</p>
-<p>Consideration of spontaneous processes shows that the equilibrium minimizes the grand potential</p>
+<p>Analogously to Section, one can show that the grand potential minimizes</p>
 <div class="math notranslate nohighlight">
-\[\Sigma=-k_\mathrm{B}T\ln Z=U-T S- \mu N.\]</div>
+\[\Sigma=-k_\mathrm{B}T\ln Z=E-T S- \mu N \;,\]</div>
+<p>which amounts to maximizing entropy under the constraints of mean energy and particle number</p>
+</section>
 <section id="volume-exchange-and-pressure">
 <h2>Volume exchange and pressure<a class="headerlink" href="#volume-exchange-and-pressure" title="Permalink to this heading">#</a></h2>
 <p>In complete analogy, we can also treat the case where bath and system trade energy and volume, which we briefly summarize for completeness. One obtains the microstate distribution</p>
@@ -476,8 +498,12 @@ document.write(`
 <p>with the equilibrium condition of equal pressures <span class="math notranslate nohighlight">\(p_R=p_S\)</span>.</p>
 <p>The equilibrium distribution minimizes the Gibbs free energy</p>
 <div class="math notranslate nohighlight">
-\[G=U-T S+PV=\sum_i \mu_i N_i \;,\]</div>
+\[G=E-T S+PV=\sum_i \mu_i N_i \;,\]</div>
 <p>where the last sum goes over all particle species <span class="math notranslate nohighlight">\(i\)</span>.</p>
+</section>
+<section id="external-fields-acting-on-extensive-quantities">
+<h2>External fields acting on extensive quantities<a class="headerlink" href="#external-fields-acting-on-extensive-quantities" title="Permalink to this heading">#</a></h2>
+<p>(show figure involving reservoir and external field)</p>
 </section>
 </section>
 
@@ -545,7 +571,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-exchange-and-chemical-potential">Particle exchange and chemical potential</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volume-exchange-and-pressure">Volume exchange and pressure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-fields-acting-on-extensive-quantities">External fields acting on extensive quantities</a></li>
 </ul>
   </nav></div>
 

@@ -18,3 +18,9 @@ chapters:
 - file: Ising-lectures/Ising-all-to-all
 - file: Ising-lectures/Ising-1D.ipynb
 - file: Variational-Methods/Variational-methods-Mean-Field
+- file: Variational-Methods/interacting-gases-f
+- file: MonteCarlo/MonteCarlo
+- file: Poisson-Boltzmann/Poisson-Boltzmann
+- file: Diffusion/Diffusion.ipynb
+- file: QM-SM-Intro/QM-SM-intro
+- file: QM-SM-Intro/QM-SM-intro-2

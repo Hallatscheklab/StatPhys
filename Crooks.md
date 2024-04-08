@@ -156,8 +156,10 @@ a version of the second law.
 
 #### Testing the Crooks fluctuation theorem
 
-In 2005, Bustamante's group at Berkeley published a test of the CFT. They repeatedly unfolded and refolded a RNA hairpin and determined the work distributions for Unfolding, $P_U(W)$, and for refoldung, $P_R(-W)$. These two distributions deviate from one another, the more so the more rapid the unfolding protocal is, i.e., the more it is out of equilibrium. Yet, if the CFT is correct, both distributions have to cross at exactly $W=\Delta F$,
+In 2005, Bustamante's group at Berkeley published a test of the CFT ({cite}`collin2005verification`). They repeatedly unfolded and refolded a RNA hairpin and determined the work distributions for Unfolding, $P_U(W)$, and for refoldung, $P_R(-W)$. These two distributions deviate from one another, the more so the more rapid the unfolding protocal is, i.e., the more it is out of equilibrium. Yet, if the CFT is correct, both distributions have to cross at exactly $W=\Delta F$,
 since $P_U(\Delta F)=P_R(-\Delta F)$. Indeed, that's what they found.
+
+{biography}
 
 
 
