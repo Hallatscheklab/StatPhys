@@ -61,11 +61,11 @@ $$
 
 where $\quad\left[p_{\alpha, r}, u_{\beta, r^{\prime}}\right]=-i \delta_{\alpha \beta} \delta_{r r^{\prime}}$
 
-This allows us to use discrete Fourier transform to simplify $\tilde{H}$ :
+This allows us to use discrete Fourier transform to simplify $\hat{H}$ :
 
 $$
 \begin{aligned}
-& U_{\alpha}(\vec{k}) \equiv \frac{1}{\sqrt{N}} \int \sum_{\vec{r}} e^{-i \vec{k} \cdot \vec{r}} U_{\alpha, r} \\
+& u_{\alpha}(\vec{k}) \equiv \frac{1}{\sqrt{N}} \int \sum_{\vec{r}} e^{-i \vec{k} \cdot \vec{r}} u_{\alpha, r} \\
 & p_{\alpha}(\vec{k}) \equiv \frac{1}{\sqrt{N}} \sum_{\vec{r}} e^{-i \vec{k} \cdot \vec{r}} p_{\alpha, r} \\
 & K_{\alpha \beta}(\vec{k}) \equiv \sum_{\vec{r}} e^{i \vec{k} \cdot \vec{r}} K_{\alpha, \beta}(\vec{r})
 \end{aligned}
@@ -74,7 +74,7 @@ $$
 For simplicity assume $K_{\alpha \beta}(\vec{k})=\delta_{\alpha \beta} \tilde{K}(\vec{k})$
 
 $$
-\hat{H}=\sum_{k}\left[\frac{\vec{p}(\vec{k}) \cdot \vec{\rho}(-\vec{k})}{2 m}+\frac{1}{2} \widetilde{K}(\vec{k}) \vec{u}(\vec{k}) \cdot \vec{u}(-\vec{k})\right]
+\hat{H}=V^*+\sum_{k}\left[\frac{\vec{p}(\vec{k}) \cdot \vec{p}(-\vec{k})}{2 m}+\frac{1}{2} \widetilde{K}(\vec{k}) \vec{u}(\vec{k}) \cdot \vec{u}(-\vec{k})\right]
 $$
 
 What discrete values do $\vec{k}$ take?
@@ -83,7 +83,7 @@ First recall $\vec{r}=a(l \hat{x}+m \hat{y}+n \hat{z})$
 
 So $\quad e^{i \vec{k} \cdot \vec{r}}=e^{i\left(\vec{k}+\frac{2 \pi}{a} \hat{e}_{i}\right) \cdot \vec{r}}$ for $\hat{e}_{i}=\hat{x}, \hat{y}, \hat{z}$.
 
-Thus $u_{\alpha}(\vec{k})=U_{\alpha}\left(\vec{k}+\frac{2 \pi}{a} \hat{e}_i\right)$ : periodic in k-space. This k-space torus is called the "Brillouin Zone" (BZ)
+Thus $u_{\alpha}(\vec{k})=u_{\alpha}\left(\vec{k}+\frac{2 \pi}{a} \hat{e}_i\right)$ : periodic in k-space. This k-space torus is called the "Brillouin Zone" (BZ)
 
 ![](https://cdn.mathpix.com/cropped/2024_03_30_5afcfb13a3ee84e64774g-05.jpg?height=445&width=712&top_left_y=780&top_left_x=729)
 
@@ -97,18 +97,17 @@ $$
 \end{aligned}
 $$
 
-Together this gives, a one-to-one mapping between $(L/a)^{3}$ $\vec{r}$ points ti $(L/a)^{3}$ $\vec{k}$ points.
+Together this gives, a one-to-one mapping between $(L/a)^{3}$ $\vec{r}$ points to $(L/a)^{3}$ $\vec{k}$ points.
 
-Finally, note that because $\vec{p}_{\vec{r}}$ and $\vec{u}_{\vec{r}}$ are real,
+Finally, note that because $\vec{p}_{\vec{r}}$ and $\vec{u}_{\vec{r}}$ are real, $\vec u_{\alpha,\vec k}=\vec u_{\alpha,-\vec k}^{*}, \vec p_{\alpha, k}=\vec p_{\alpha,-\vec k}^{*}$, and thus
 
 $$
 \begin{gathered}
-\vec u_{\alpha,\vec k}=\vec u_{\alpha,-\vec k}^{*} \quad \vec p_{\alpha, k}=\vec p_{\alpha,-\vec k}^{*}: \\
 \hat{H}=V^{*}+\sum_{k}\left[\frac{|\vec{p}(\vec{k})|^{2}}{2 m}+\frac{1}{2} \tilde{K}(\vec{k})|\vec{u}(\vec{k})|^{2}\right]
 \end{gathered}
 $$
 
-We see problem decouples in K-space: $3 N=3 L^{3} \quad$ indepedent harmonic oscillators with frequency $\omega(\vec{k})=\sqrt{\frac{\widetilde{K}(\vec{k})}{m}}$
+So, in k-space, the problem can be decomposed into $3 N=3 (L/a)^{3}$ indepedent harmonic oscillators with frequency $\omega(\vec{k})=\sqrt{\frac{\widetilde{K}(\vec{k})}{m}}$
 
 These oscillations correspond to waves in the positions of atoms:
 
@@ -118,25 +117,25 @@ These oscillations correspond to waves in the positions of atoms:
 These are sound waves of the crystal. They travel at group velocity $\vec{v}_{\vec{k}}=\frac{\partial \omega(\vec{k})}{\partial \vec{k}}$, which depends on the "dispersion relation" $\omega(\vec{k})$.
 
 
-Quantum mechanically, we introduce $3 \mathrm{~N}$ raising / lowering operators $\hat a_{\alpha, k}^{+}, \hat a_{\alpha, k}$ with occupancy operator $\hat n_{\alpha, k}=a_{\alpha, k}^{+} a_{\alpha, k}$. With ansatz
+Quantum mechanically, we introduce $3 \mathrm{~N}$ raising / lowering operators $\hat a_{\alpha, \vec k}^{+}, \hat a_{\alpha, \vec k}$ with occupancy operator $\hat n_{\alpha, k}=a_{\alpha, \vec k}^{+} a_{\alpha, \vec k}$. With ansatz
 
 $$
 \begin{aligned}
-& u_{\alpha, k}=\sqrt{\frac{b}{2 m \omega(k)}}\left(a_{k}^{+}+a_{-k}\right) \\
-& p_{\alpha, k}=i \sqrt{\frac{k m \omega(k)}{2}}\left(a_{k}^{+}-a_{-k}\right) \\
-& {\left[p_{k}, u_{-k}\right]=i \frac{\hbar}{2}(-1-1)=-i \hbar}
+& \hat u_{\alpha, k}=\sqrt{\frac{\hbar}{2 m \omega(k)}}\left(a_{\alpha, k}^{+}+a_{\alpha, -k}\right) \\
+& \hat p_{\alpha, k}=i \sqrt{\frac{\hbar m \omega(k)}{2}}\left(a_{\alpha, k}^{+}-a_{\alpha, -k}\right) \\
+& \left[\hat u_{k}, \hat p_{-k}\right]=i \hbar
 \end{aligned}
 $$
 
 we obtain
 
 $$
-\hat{H}=V^{*}+\sum_{k, \alpha} \hbar \omega_\alpha(\vec{k})\left(\hat{n}_{\alpha, \vec{k}}+\frac{1}{2}\right) \;.
+\hat{H}=V^{*}+\sum_{k, \alpha} \hbar \omega(k)\left(\hat{n}_{\alpha, \vec{k}}+\frac{1}{2}\right) \;.
 $$
 
 Just like electromagnetic waves (light) give rise to quantized photons (Q.E.D.), these quanta of sound waves are called "phonons." They are bosonic "quasiparticles" even though the underlying atoms may be fermions. Simple example of persistent theme in cond-mat / quantum many -body physics: emergence of lowenergy quasiparticle excitations distinct from constituent particles; they are "collective modes."
 
-The Hilbert space is spanned by specifying the occupation of each of the $3 N \quad n_{\alpha, k}=0,1,2, \ldots$
+The Hilbert space is spanned by specifying the occupation of each of the $3 N \quad n_{\alpha, \vec k}=0,1,2, \ldots$
 
 $$
 \left|\left\{n_{\alpha, k}\right\}\right\rangle=\left|0,3,1,2, \ldots\right\rangle
@@ -146,10 +145,10 @@ The QM partition function is
 
 $$
 \begin{aligned}
-Z & =\sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta H}=e^{-\beta E_{0}} \sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta\sum_{\vec k, \alpha} \hbar \omega(\vec{k})n_{\alpha, \vec{k}}} \\
-& =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\sum_{n_{\alpha, \vec k}=0}^{\infty} e^{-\beta \hbar \omega_{\alpha}(\vec k)  n_{\alpha, \vec k}}\right) \\
-& =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\frac{1}{1-e^{-\beta \hbar \omega_{\alpha}(\vec k)}}\right) \\
-F & =-\frac{1}{\beta} \ln (Z)=E_{0}+\frac{1}{\beta} \sum_{\vec k,\alpha} \ln \left(1-e^{-\beta \hbar \omega_{\alpha}(\vec k)}\right)
+Z & =\sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta H}=e^{-\beta E_{0}} \sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta\sum_{\vec k, \alpha} \hbar \omega(k)n_{\alpha, \vec{k}}} \\
+& =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\sum_{n_{\alpha, \vec k}=0}^{\infty} e^{-\beta \hbar \omega(k)  n_{\alpha, \vec k}}\right) \\
+& =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\frac{1}{1-e^{-\beta \hbar \omega(k)}}\right) \\
+F & =-\frac{1}{\beta} \ln (Z)=E_{0}+\frac{1}{\beta} \sum_{\vec k,\alpha} \ln \left(1-e^{-\beta \hbar \omega(k)}\right)
 \end{aligned}
 $$
 
@@ -157,7 +156,7 @@ Important physical observables are
 
 $$
 \begin{aligned}
-\langle E\rangle & =E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, k}\right\rangle \hbar \omega_{\alpha}(k) \\
+\langle E\rangle & =E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, k}\right\rangle \hbar \omega(k) \\
 C & =\partial_{T}\langle E\rangle
 \end{aligned}
 $$
@@ -168,7 +167,7 @@ First we need
 
 $$
 \begin{aligned}
-& \left\langle n_{\alpha, \vec k}\right\rangle=\frac{\sum_{n=0}^{\infty} n e^{-\beta \hbar \omega_{\alpha}(\vec k) n}}{\sum_{n=0}^{\infty} e^{-\beta \hbar  \omega_{\alpha}(\vec k) \cdot n}}=\frac{1}{e^{\beta \hbar \omega_{\alpha}(\vec k)}-1}
+& \left\langle n_{\alpha, \vec k}\right\rangle=\frac{\sum_{n=0}^{\infty} n e^{-\beta \hbar \omega(k) n}}{\sum_{n=0}^{\infty} e^{-\beta \hbar  \omega(k) \cdot n}}=\frac{1}{e^{\beta \hbar \omega(k)}-1}
 \end{aligned}
 $$
 
@@ -176,16 +175,16 @@ This is the famous Bose-Einstein distribution.
 
 $$
 \begin{aligned}
-& \langle E\rangle=E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, \vec k}\right\rangle \hbar \omega_{\alpha}(\vec k) \\
-& C=\partial_{T}\langle E\rangle=k_{B} \sum_{\alpha, \vec k} \frac{1}{\left(e^{\beta \hbar \omega_{\alpha}(\vec k)}-1\right)^{2}}\left(\frac{\hbar \omega_{\alpha}(\vec k)}{k_{B} T}\right)^{2}
+& \langle E\rangle=E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, \vec k}\right\rangle \hbar \omega(k) \\
+& C=\partial_{T}\langle E\rangle=k_{B} \sum_{\alpha, \vec k} \frac{1}{\left(e^{\beta \hbar \omega(k)}-1\right)^{2}}\left(\frac{\hbar \omega(k)}{k_{B} T}\right)^{2}
 \end{aligned}
 $$
 
-To proceed further, we need to know $\omega_{\alpha}(\vec k)$.
+To proceed further, we need to know $\omega(k)$.
 
 ## Debye Model.
 
-In general, the precise form of $\omega_{\alpha}(\vec k)$ depends on all the details of
+In general, the precise form of $\omega(k)$ depends on all the details of
 
 $$
 \text { chemistry } \longrightarrow V\left(\{\vec{q} \vec{r} \}) \rightarrow K_{\alpha \beta}(\vec{r}) .\right.
@@ -217,7 +216,7 @@ $$
 Finally, if system is isotropic, $x \sim y \sim z$,
 
 $$
-F(\vec{k})=B|\vec{k}|^{2}+O\left(k^{4}\right)
+\tilde K (\vec{k})=B|\vec{k}|^{2}+O\left(k^{4}\right)
 $$
 
 So $\omega(\vec{k})=\sqrt{\frac{B k^{2}+\cdots}{m}}=v \cdot|\vec{k}|+O\left(k^{3}\right)$
@@ -235,7 +234,7 @@ $$
 Since $\vec{k}=\frac{2 \pi}{L }(i, j, k)$, we obtain in the limit $L \rightarrow \infty$
 
 $$
-\sum_{\vec{k}} \rightarrow\left(\frac{L \cdot a}{2 \pi}\right)^{3} \int_{B Z} d^{3} k
+\sum_{\vec{k}} \rightarrow\left(\frac{L}{2 \pi}\right)^{3} \int_{B Z} d^{3} k
 $$
 
 So $\langle E\rangle \approx E_{0}+3 \cdot v \int_{B Z} \frac{d^{3} k}{(2 \pi)^{3}} \frac{\hbar v k}{e^{\beta \hbar  v k}-1}$
@@ -253,7 +252,7 @@ The boundary of the $B Z$, which has energy $\quad E \sim \hbar v \cdot \frac{\p
 
 $$
 \begin{aligned}
-\langle E) & =E_{0}+3 V \int_{d^{3} k}^{(2 \pi)^{3}} \frac{\hbar v k}{e^{\beta \hbar v k}-1} \\
+\langle E) & =E_{0}+3 V \int_{BZ}\frac {d^3k}{(2\pi)^3} \frac{\hbar v k}{e^{\beta \hbar v k}-1} \\
 & =E_{0}+3 V \int_{0}^{\infty} d k \frac{4 \pi k^{2}}{(2 \pi)^{3}} \frac{\hbar v k}{e^{\beta \hbar v k}-1} \\
 & =E_{0}+\frac{\pi^{2}}{10} \cdot V \cdot \frac{\left(k_{B} T\right)^{4}}{(\hbar v)^{3}} \\
 \frac{C}{V} & =k_{B} \frac{2 \pi^{2}}{5}\left(\frac{k_{B} T}{\hbar v}\right)^{3}

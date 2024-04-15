@@ -63,6 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'QM-SM-Intro/QM-SM-intro-2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bosons and Fermions" href="../Boson-Fermions/QM-SM-Bosons.html" />
     <link rel="prev" title="When does quantum mechanics make a difference?" href="QM-SM-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -210,6 +211,7 @@
 <li class="toctree-l1"><a class="reference internal" href="QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Bosons.html">Bosons and Fermions</a></li>
 </ul>
 
     </div>
@@ -470,11 +472,11 @@ V(\{\vec q_{\vec r}\})=V^*+\frac 12 \sum_{\vec r, \vec r', \alpha, \beta} \frac{
 \[\hat{H}=V^{*}+\sum_{r} \frac{\vec{p}_{r}^{2}}{2 m}+\frac{1}{2} \sum_{r, r^{\prime}} u_{\alpha, r} K_{\alpha  \beta}\left(r-r^{\prime}\right) u_{\beta, r^{\prime}}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\quad\left[p_{\alpha, r}, u_{\beta, r^{\prime}}\right]=-i \delta_{\alpha \beta} \delta_{r r^{\prime}}\)</span></p>
-<p>This allows us to use discrete Fourier transform to simplify <span class="math notranslate nohighlight">\(\tilde{H}\)</span> :</p>
+<p>This allows us to use discrete Fourier transform to simplify <span class="math notranslate nohighlight">\(\hat{H}\)</span> :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; U_{\alpha}(\vec{k}) \equiv \frac{1}{\sqrt{N}} \int \sum_{\vec{r}} e^{-i \vec{k} \cdot \vec{r}} U_{\alpha, r} \\
+&amp; u_{\alpha}(\vec{k}) \equiv \frac{1}{\sqrt{N}} \int \sum_{\vec{r}} e^{-i \vec{k} \cdot \vec{r}} u_{\alpha, r} \\
 &amp; p_{\alpha}(\vec{k}) \equiv \frac{1}{\sqrt{N}} \sum_{\vec{r}} e^{-i \vec{k} \cdot \vec{r}} p_{\alpha, r} \\
 &amp; K_{\alpha \beta}(\vec{k}) \equiv \sum_{\vec{r}} e^{i \vec{k} \cdot \vec{r}} K_{\alpha, \beta}(\vec{r})
 \end{aligned}
@@ -482,12 +484,12 @@ V(\{\vec q_{\vec r}\})=V^*+\frac 12 \sum_{\vec r, \vec r', \alpha, \beta} \frac{
 <p>For simplicity assume <span class="math notranslate nohighlight">\(K_{\alpha \beta}(\vec{k})=\delta_{\alpha \beta} \tilde{K}(\vec{k})\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\hat{H}=\sum_{k}\left[\frac{\vec{p}(\vec{k}) \cdot \vec{\rho}(-\vec{k})}{2 m}+\frac{1}{2} \widetilde{K}(\vec{k}) \vec{u}(\vec{k}) \cdot \vec{u}(-\vec{k})\right]
+\hat{H}=V^*+\sum_{k}\left[\frac{\vec{p}(\vec{k}) \cdot \vec{p}(-\vec{k})}{2 m}+\frac{1}{2} \widetilde{K}(\vec{k}) \vec{u}(\vec{k}) \cdot \vec{u}(-\vec{k})\right]
 \]</div>
 <p>What discrete values do <span class="math notranslate nohighlight">\(\vec{k}\)</span> take?</p>
 <p>First recall <span class="math notranslate nohighlight">\(\vec{r}=a(l \hat{x}+m \hat{y}+n \hat{z})\)</span></p>
 <p>So <span class="math notranslate nohighlight">\(\quad e^{i \vec{k} \cdot \vec{r}}=e^{i\left(\vec{k}+\frac{2 \pi}{a} \hat{e}_{i}\right) \cdot \vec{r}}\)</span> for <span class="math notranslate nohighlight">\(\hat{e}_{i}=\hat{x}, \hat{y}, \hat{z}\)</span>.</p>
-<p>Thus <span class="math notranslate nohighlight">\(u_{\alpha}(\vec{k})=U_{\alpha}\left(\vec{k}+\frac{2 \pi}{a} \hat{e}_i\right)\)</span> : periodic in k-space. This k-space torus is called the “Brillouin Zone” (BZ)</p>
+<p>Thus <span class="math notranslate nohighlight">\(u_{\alpha}(\vec{k})=u_{\alpha}\left(\vec{k}+\frac{2 \pi}{a} \hat{e}_i\right)\)</span> : periodic in k-space. This k-space torus is called the “Brillouin Zone” (BZ)</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_30_5afcfb13a3ee84e64774g-05.jpg?height=445&amp;width=712&amp;top_left_y=780&amp;top_left_x=729" /></p>
 <p>Second, let’s assume the system has periodic boundary condition in real space, <span class="math notranslate nohighlight">\(\vec{r} \sim \vec{r}+L \cdot \hat{e}_{i}\)</span>. This implies that we can only choose <span class="math notranslate nohighlight">\(\vec k\)</span> vectors that satisfy</p>
 <div class="math notranslate nohighlight">
@@ -498,35 +500,34 @@ V(\{\vec q_{\vec r}\})=V^*+\frac 12 \sum_{\vec r, \vec r', \alpha, \beta} \frac{
 &amp; -\frac{L}{2} \leq i, j, k\leq\frac{L}{2}
 \end{aligned}
 \end{split}\]</div>
-<p>Together this gives, a one-to-one mapping between <span class="math notranslate nohighlight">\((L/a)^{3}\)</span> <span class="math notranslate nohighlight">\(\vec{r}\)</span> points ti <span class="math notranslate nohighlight">\((L/a)^{3}\)</span> <span class="math notranslate nohighlight">\(\vec{k}\)</span> points.</p>
-<p>Finally, note that because <span class="math notranslate nohighlight">\(\vec{p}_{\vec{r}}\)</span> and <span class="math notranslate nohighlight">\(\vec{u}_{\vec{r}}\)</span> are real,</p>
+<p>Together this gives, a one-to-one mapping between <span class="math notranslate nohighlight">\((L/a)^{3}\)</span> <span class="math notranslate nohighlight">\(\vec{r}\)</span> points to <span class="math notranslate nohighlight">\((L/a)^{3}\)</span> <span class="math notranslate nohighlight">\(\vec{k}\)</span> points.</p>
+<p>Finally, note that because <span class="math notranslate nohighlight">\(\vec{p}_{\vec{r}}\)</span> and <span class="math notranslate nohighlight">\(\vec{u}_{\vec{r}}\)</span> are real, <span class="math notranslate nohighlight">\(\vec u_{\alpha,\vec k}=\vec u_{\alpha,-\vec k}^{*}, \vec p_{\alpha, k}=\vec p_{\alpha,-\vec k}^{*}\)</span>, and thus</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 \begin{gathered}
-\vec u_{\alpha,\vec k}=\vec u_{\alpha,-\vec k}^{*} \quad \vec p_{\alpha, k}=\vec p_{\alpha,-\vec k}^{*}: \\
 \hat{H}=V^{*}+\sum_{k}\left[\frac{|\vec{p}(\vec{k})|^{2}}{2 m}+\frac{1}{2} \tilde{K}(\vec{k})|\vec{u}(\vec{k})|^{2}\right]
 \end{gathered}
-\end{split}\]</div>
-<p>We see problem decouples in K-space: <span class="math notranslate nohighlight">\(3 N=3 L^{3} \quad\)</span> indepedent harmonic oscillators with frequency <span class="math notranslate nohighlight">\(\omega(\vec{k})=\sqrt{\frac{\widetilde{K}(\vec{k})}{m}}\)</span></p>
+\]</div>
+<p>So, in k-space, the problem can be decomposed into <span class="math notranslate nohighlight">\(3 N=3 (L/a)^{3}\)</span> indepedent harmonic oscillators with frequency <span class="math notranslate nohighlight">\(\omega(\vec{k})=\sqrt{\frac{\widetilde{K}(\vec{k})}{m}}\)</span></p>
 <p>These oscillations correspond to waves in the positions of atoms:</p>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_30_5afcfb13a3ee84e64774g-06.jpg?height=430&amp;width=1737&amp;top_left_y=1436&amp;top_left_x=140" /></p>
 <p>These are sound waves of the crystal. They travel at group velocity <span class="math notranslate nohighlight">\(\vec{v}_{\vec{k}}=\frac{\partial \omega(\vec{k})}{\partial \vec{k}}\)</span>, which depends on the “dispersion relation” <span class="math notranslate nohighlight">\(\omega(\vec{k})\)</span>.</p>
-<p>Quantum mechanically, we introduce <span class="math notranslate nohighlight">\(3 \mathrm{~N}\)</span> raising / lowering operators <span class="math notranslate nohighlight">\(\hat a_{\alpha, k}^{+}, \hat a_{\alpha, k}\)</span> with occupancy operator <span class="math notranslate nohighlight">\(\hat n_{\alpha, k}=a_{\alpha, k}^{+} a_{\alpha, k}\)</span>. With ansatz</p>
+<p>Quantum mechanically, we introduce <span class="math notranslate nohighlight">\(3 \mathrm{~N}\)</span> raising / lowering operators <span class="math notranslate nohighlight">\(\hat a_{\alpha, \vec k}^{+}, \hat a_{\alpha, \vec k}\)</span> with occupancy operator <span class="math notranslate nohighlight">\(\hat n_{\alpha, k}=a_{\alpha, \vec k}^{+} a_{\alpha, \vec k}\)</span>. With ansatz</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; u_{\alpha, k}=\sqrt{\frac{b}{2 m \omega(k)}}\left(a_{k}^{+}+a_{-k}\right) \\
-&amp; p_{\alpha, k}=i \sqrt{\frac{k m \omega(k)}{2}}\left(a_{k}^{+}-a_{-k}\right) \\
-&amp; {\left[p_{k}, u_{-k}\right]=i \frac{\hbar}{2}(-1-1)=-i \hbar}
+&amp; \hat u_{\alpha, k}=\sqrt{\frac{\hbar}{2 m \omega(k)}}\left(a_{\alpha, k}^{+}+a_{\alpha, -k}\right) \\
+&amp; \hat p_{\alpha, k}=i \sqrt{\frac{\hbar m \omega(k)}{2}}\left(a_{\alpha, k}^{+}-a_{\alpha, -k}\right) \\
+&amp; \left[\hat u_{k}, \hat p_{-k}\right]=i \hbar
 \end{aligned}
 \end{split}\]</div>
 <p>we obtain</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{H}=V^{*}+\sum_{k, \alpha} \hbar \omega_\alpha(\vec{k})\left(\hat{n}_{\alpha, \vec{k}}+\frac{1}{2}\right) \;.
+\hat{H}=V^{*}+\sum_{k, \alpha} \hbar \omega(k)\left(\hat{n}_{\alpha, \vec{k}}+\frac{1}{2}\right) \;.
 \]</div>
 <p>Just like electromagnetic waves (light) give rise to quantized photons (Q.E.D.), these quanta of sound waves are called “phonons.” They are bosonic “quasiparticles” even though the underlying atoms may be fermions. Simple example of persistent theme in cond-mat / quantum many -body physics: emergence of lowenergy quasiparticle excitations distinct from constituent particles; they are “collective modes.”</p>
-<p>The Hilbert space is spanned by specifying the occupation of each of the <span class="math notranslate nohighlight">\(3 N \quad n_{\alpha, k}=0,1,2, \ldots\)</span></p>
+<p>The Hilbert space is spanned by specifying the occupation of each of the <span class="math notranslate nohighlight">\(3 N \quad n_{\alpha, \vec k}=0,1,2, \ldots\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \left|\left\{n_{\alpha, k}\right\}\right\rangle=\left|0,3,1,2, \ldots\right\rangle
@@ -535,17 +536,17 @@ V(\{\vec q_{\vec r}\})=V^*+\frac 12 \sum_{\vec r, \vec r', \alpha, \beta} \frac{
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-Z &amp; =\sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta H}=e^{-\beta E_{0}} \sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta\sum_{\vec k, \alpha} \hbar \omega(\vec{k})n_{\alpha, \vec{k}}} \\
-&amp; =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\sum_{n_{\alpha, \vec k}=0}^{\infty} e^{-\beta \hbar \omega_{\alpha}(\vec k)  n_{\alpha, \vec k}}\right) \\
-&amp; =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\frac{1}{1-e^{-\beta \hbar \omega_{\alpha}(\vec k)}}\right) \\
-F &amp; =-\frac{1}{\beta} \ln (Z)=E_{0}+\frac{1}{\beta} \sum_{\vec k,\alpha} \ln \left(1-e^{-\beta \hbar \omega_{\alpha}(\vec k)}\right)
+Z &amp; =\sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta H}=e^{-\beta E_{0}} \sum_{\left\{n_{\alpha, \vec k}\right\}} e^{-\beta\sum_{\vec k, \alpha} \hbar \omega(k)n_{\alpha, \vec{k}}} \\
+&amp; =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\sum_{n_{\alpha, \vec k}=0}^{\infty} e^{-\beta \hbar \omega(k)  n_{\alpha, \vec k}}\right) \\
+&amp; =e^{-\beta E_{0}} \prod_{\vec k,\alpha}\left(\frac{1}{1-e^{-\beta \hbar \omega(k)}}\right) \\
+F &amp; =-\frac{1}{\beta} \ln (Z)=E_{0}+\frac{1}{\beta} \sum_{\vec k,\alpha} \ln \left(1-e^{-\beta \hbar \omega(k)}\right)
 \end{aligned}
 \end{split}\]</div>
 <p>Important physical observables are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\langle E\rangle &amp; =E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, k}\right\rangle \hbar \omega_{\alpha}(k) \\
+\langle E\rangle &amp; =E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, k}\right\rangle \hbar \omega(k) \\
 C &amp; =\partial_{T}\langle E\rangle
 \end{aligned}
 \end{split}\]</div>
@@ -554,23 +555,23 @@ C &amp; =\partial_{T}\langle E\rangle
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
-&amp; \left\langle n_{\alpha, \vec k}\right\rangle=\frac{\sum_{n=0}^{\infty} n e^{-\beta \hbar \omega_{\alpha}(\vec k) n}}{\sum_{n=0}^{\infty} e^{-\beta \hbar  \omega_{\alpha}(\vec k) \cdot n}}=\frac{1}{e^{\beta \hbar \omega_{\alpha}(\vec k)}-1}
+&amp; \left\langle n_{\alpha, \vec k}\right\rangle=\frac{\sum_{n=0}^{\infty} n e^{-\beta \hbar \omega(k) n}}{\sum_{n=0}^{\infty} e^{-\beta \hbar  \omega(k) \cdot n}}=\frac{1}{e^{\beta \hbar \omega(k)}-1}
 \end{aligned}
 \]</div>
 <p>This is the famous Bose-Einstein distribution.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; \langle E\rangle=E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, \vec k}\right\rangle \hbar \omega_{\alpha}(\vec k) \\
-&amp; C=\partial_{T}\langle E\rangle=k_{B} \sum_{\alpha, \vec k} \frac{1}{\left(e^{\beta \hbar \omega_{\alpha}(\vec k)}-1\right)^{2}}\left(\frac{\hbar \omega_{\alpha}(\vec k)}{k_{B} T}\right)^{2}
+&amp; \langle E\rangle=E_{0}+\sum_{\alpha, \vec k}\left\langle n_{\alpha, \vec k}\right\rangle \hbar \omega(k) \\
+&amp; C=\partial_{T}\langle E\rangle=k_{B} \sum_{\alpha, \vec k} \frac{1}{\left(e^{\beta \hbar \omega(k)}-1\right)^{2}}\left(\frac{\hbar \omega(k)}{k_{B} T}\right)^{2}
 \end{aligned}
 \end{split}\]</div>
-<p>To proceed further, we need to know <span class="math notranslate nohighlight">\(\omega_{\alpha}(\vec k)\)</span>.</p>
+<p>To proceed further, we need to know <span class="math notranslate nohighlight">\(\omega(k)\)</span>.</p>
 </section>
 </section>
 <section id="debye-model">
 <h1>Debye Model.<a class="headerlink" href="#debye-model" title="Permalink to this heading">#</a></h1>
-<p>In general, the precise form of <span class="math notranslate nohighlight">\(\omega_{\alpha}(\vec k)\)</span> depends on all the details of</p>
+<p>In general, the precise form of <span class="math notranslate nohighlight">\(\omega(k)\)</span> depends on all the details of</p>
 <div class="math notranslate nohighlight">
 \[
 \text { chemistry } \longrightarrow V\left(\{\vec{q} \vec{r} \}) \rightarrow K_{\alpha \beta}(\vec{r}) .\right.
@@ -597,7 +598,7 @@ C &amp; =\partial_{T}\langle E\rangle
 <p>Finally, if system is isotropic, <span class="math notranslate nohighlight">\(x \sim y \sim z\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
-F(\vec{k})=B|\vec{k}|^{2}+O\left(k^{4}\right)
+\tilde K (\vec{k})=B|\vec{k}|^{2}+O\left(k^{4}\right)
 \]</div>
 <p>So <span class="math notranslate nohighlight">\(\omega(\vec{k})=\sqrt{\frac{B k^{2}+\cdots}{m}}=v \cdot|\vec{k}|+O\left(k^{3}\right)\)</span></p>
 <p>where <span class="math notranslate nohighlight">\(v=\sqrt{B / m}=\)</span> is the velocity of sound.</p>
@@ -610,7 +611,7 @@ F(\vec{k})=B|\vec{k}|^{2}+O\left(k^{4}\right)
 <p>Since <span class="math notranslate nohighlight">\(\vec{k}=\frac{2 \pi}{L }(i, j, k)\)</span>, we obtain in the limit <span class="math notranslate nohighlight">\(L \rightarrow \infty\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\sum_{\vec{k}} \rightarrow\left(\frac{L \cdot a}{2 \pi}\right)^{3} \int_{B Z} d^{3} k
+\sum_{\vec{k}} \rightarrow\left(\frac{L}{2 \pi}\right)^{3} \int_{B Z} d^{3} k
 \]</div>
 <p>So <span class="math notranslate nohighlight">\(\langle E\rangle \approx E_{0}+3 \cdot v \int_{B Z} \frac{d^{3} k}{(2 \pi)^{3}} \frac{\hbar v k}{e^{\beta \hbar  v k}-1}\)</span></p>
 <p>Since <span class="math notranslate nohighlight">\(B Z=[-\pi / a, \pi / a]^{3}\)</span>, this is hard integral. However, for</p>
@@ -625,7 +626,7 @@ T \ll T_{D} \equiv \frac{\hbar v}{k_B} \cdot \frac{\pi}{a}, \\
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\langle E) &amp; =E_{0}+3 V \int_{d^{3} k}^{(2 \pi)^{3}} \frac{\hbar v k}{e^{\beta \hbar v k}-1} \\
+\langle E) &amp; =E_{0}+3 V \int_{BZ}\frac {d^3k}{(2\pi)^3} \frac{\hbar v k}{e^{\beta \hbar v k}-1} \\
 &amp; =E_{0}+3 V \int_{0}^{\infty} d k \frac{4 \pi k^{2}}{(2 \pi)^{3}} \frac{\hbar v k}{e^{\beta \hbar v k}-1} \\
 &amp; =E_{0}+\frac{\pi^{2}}{10} \cdot V \cdot \frac{\left(k_{B} T\right)^{4}}{(\hbar v)^{3}} \\
 \frac{C}{V} &amp; =k_{B} \frac{2 \pi^{2}}{5}\left(\frac{k_{B} T}{\hbar v}\right)^{3}
@@ -700,6 +701,15 @@ E(p)=\sqrt{m_{0}^{2} v^{4}+p^{2} \cdot v^{2}}=m v^{2}+\frac{p^{2}}{2 m}
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">When does quantum mechanics make a difference?</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../Boson-Fermions/QM-SM-Bosons.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bosons and Fermions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
