@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Ideal Quantum Gases &#8212; Equilibrium Statistical Physics</title>
+    <title>Formalism of quantum statistical mechanics &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -58,10 +58,9 @@
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Boson-Fermions/QM-SM-Bosons';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'QM-SM-Intro/QM-SM-Formalism-complete';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Formalism of quantum statistical mechanics" href="../QM-SM-Intro/QM-SM-Formalism.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,7 +181,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
@@ -205,12 +204,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ideal Quantum Gases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Bosons.html">Ideal Quantum Gases</a></li>
 </ul>
 
     </div>
@@ -282,7 +281,7 @@
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FBoson-Fermions/QM-SM-Bosons.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FQM-SM-Intro/QM-SM-Formalism-complete.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +311,7 @@
       
       
       
-      <li><a href="../_sources/Boson-Fermions/QM-SM-Bosons.md" target="_blank"
+      <li><a href="../_sources/QM-SM-Intro/QM-SM-Formalism-complete.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ideal Quantum Gases</h1>
+    <h1>Formalism of quantum statistical mechanics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,9 +407,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ideal-quantum-gases">
-<h1>Ideal Quantum Gases<a class="headerlink" href="#ideal-quantum-gases" title="Permalink to this heading">#</a></h1>
-<p>See Kardar 7.1-7.5, and my online lectures. Notes will follow soonish.</p>
+  <section id="formalism-of-quantum-statistical-mechanics">
+<h1>Formalism of quantum statistical mechanics<a class="headerlink" href="#formalism-of-quantum-statistical-mechanics" title="Permalink to this heading">#</a></h1>
+<p>See Kardar 6.4 (Quantum microstates) and Kardar 6.5 (Quantum macrostates), and my online lecture. Notes following soonish.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -426,7 +425,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Boson-Fermions"
+            path: "./QM-SM-Intro"
         },
         predefinedOutput: true
     }
@@ -443,15 +442,6 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../QM-SM-Intro/QM-SM-Formalism.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Formalism of quantum statistical mechanics</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
