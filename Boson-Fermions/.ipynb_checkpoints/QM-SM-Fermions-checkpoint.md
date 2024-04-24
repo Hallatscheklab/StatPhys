@@ -1,6 +1,6 @@
-## Formalism of quantum statistical mechanics
+## Ideal quantum gases - Fermions
 
-See Kardar 6.4 (Quantum microstates) and Kardar 6.5 (Quantum macrostates), and my online lecture. Notes following soonish. 
+See Kardar 7.1-7.5, and my online lectures. Typed up notes will follow soonish. For now, you can {download}`these handwritten lecture notes by Dr. Zalatel<Fermion-statistics.pdf>`.
 
 
 
