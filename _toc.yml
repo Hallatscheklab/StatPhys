@@ -28,4 +28,5 @@ chapters:
 - file: Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace
 - file: Boson-Fermions/QM-SM-Dilute-ideal-qm-gases
 - file: Boson-Fermions/QM-SM-DegenerateFermi
-- file: Landau/Landau-Theory
+- file: Boson-Fermions/QM-SM-BEC
+- file: Landau/Landau
