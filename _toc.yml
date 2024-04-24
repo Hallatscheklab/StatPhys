@@ -25,5 +25,7 @@ chapters:
 - file: QM-SM-Intro/QM-SM-intro
 - file: QM-SM-Intro/QM-SM-intro-2
 - file: QM-SM-Intro/QM-SM-Formalism
-- file: Boson-Fermions/QM-SM-Fermions
-- file: Boson-Fermions/QM-SM-Bosons
+- file: Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace
+- file: Boson-Fermions/QM-SM-Dilute-ideal-qm-gases
+- file: Boson-Fermions/QM-SM-DegenerateFermi
+- file: Boson-Fermions/QM-SM-BEC
