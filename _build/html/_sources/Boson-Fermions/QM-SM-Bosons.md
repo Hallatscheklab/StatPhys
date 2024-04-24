@@ -1,6 +1,6 @@
 ## Ideal Quantum Gases
 
-See Kardar 7.1-7.5, and my online lectures. Notes will follow soonish. 
+See Kardar 7.1-7.5, and my online lectures. Typed up notes will follow soonish. For now, you can {download}`these handwritten lecture notes by Dr. Zalatel<Fermion-statistics.pdf>`.
 
 
 

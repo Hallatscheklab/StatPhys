@@ -64,7 +64,7 @@ To see (*), note that
 
 $$
 \operatorname{Tr}(\hat{O} \hat{\rho})=\sum_{\alpha_{1}}\langle\alpha|\hat{O} \hat{\rho}| \alpha)=\sum_{\alpha \beta}\langle\alpha|\hat{O}| \beta\rangle \underbrace{\langle\beta|\hat{\rho}| \alpha\rangle}_{=p_{\alpha}\delta_{\alpha, \beta}}
-& =\sum_{\alpha} p_{\alpha}\langle\alpha|\hat{O}| \alpha\rangle
+ =\sum_{\alpha} p_{\alpha}\langle\alpha|\hat{O}| \alpha\rangle
 $$
 
 $\hat{\rho}$ can be expanded in any orthogonal basis
