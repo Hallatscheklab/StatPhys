@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Ideal quantum gases - Degenerate Fermi gas &#8212; Equilibrium Statistical Physics</title>
+    <title>Coarse-graining and Landau theory &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -62,11 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Boson-Fermions/QM-SM-DegenerateFermi';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ergodicity/Ergodicity';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ideal quantum gases - Bose-Einstein Condensate" href="QM-SM-BEC.html" />
-    <link rel="prev" title="Pressure of a dilute ideal quantum gase" href="QM-SM-Dilute-ideal-qm-gases.html" />
+    <link rel="prev" title="Breakdown of Landau theory" href="../Landau/Ginzburg-Landau.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,13 +203,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ideal quantum gases - Degenerate Fermi gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Landau/Landau.html">Landau theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ergodicity/Ergodicity.html">Coarse-graining and Landau theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Coarse-graining and Landau theory</a></li>
 </ul>
 
     </div>
@@ -282,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FBoson-Fermions/QM-SM-DegenerateFermi.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FErgodicity/Ergodicity.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -312,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Boson-Fermions/QM-SM-DegenerateFermi.md" target="_blank"
+      <li><a href="../_sources/Ergodicity/Ergodicity.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ideal quantum gases - Degenerate Fermi gas</h1>
+    <h1>Coarse-graining and Landau theory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,9 +407,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="ideal-quantum-gases-degenerate-fermi-gas">
-<h1>Ideal quantum gases - Degenerate Fermi gas<a class="headerlink" href="#ideal-quantum-gases-degenerate-fermi-gas" title="Permalink to this heading">#</a></h1>
-<p>See Kardar 7.5, and my online lectures. Typed up notes will follow soonish. For now, you can <a class="reference download internal" download="" href="../_downloads/abdd85e94dfd852f4031df9e918befe2/Degenerate-Fermi.pdf"><code class="xref download docutils literal notranslate"><span class="pre">these</span> <span class="pre">handwritten</span> <span class="pre">lecture</span> <span class="pre">notes</span> <span class="pre">by</span> <span class="pre">Dr.</span> <span class="pre">Zalatel</span></code></a>.</p>
+  <section id="coarse-graining-and-landau-theory">
+<h1>Coarse-graining and Landau theory<a class="headerlink" href="#coarse-graining-and-landau-theory" title="Permalink to this heading">#</a></h1>
+<p>See my online lectures. Typed up notes will follow soonish. For now, you can <code class="xref download docutils literal notranslate"><span class="pre">these</span> <span class="pre">handwritten</span> <span class="pre">lecture</span> <span class="pre">notes</span> <span class="pre">by</span> <span class="pre">me</span> <span class="pre">&amp;</span> <span class="pre">Dr.</span> <span class="pre">Zalatel</span></code>.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -426,7 +425,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Boson-Fermions"
+            path: "./Ergodicity"
         },
         predefinedOutput: true
     }
@@ -444,22 +443,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="QM-SM-Dilute-ideal-qm-gases.html"
+       href="../Landau/Ginzburg-Landau.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pressure of a dilute ideal quantum gase</p>
+        <p class="prev-next-title">Breakdown of Landau theory</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="QM-SM-BEC.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ideal quantum gases - Bose-Einstein Condensate</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
