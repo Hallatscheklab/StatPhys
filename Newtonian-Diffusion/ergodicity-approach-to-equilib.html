@@ -1,0 +1,918 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Newtonian-Diffusion/ergodicity-approach-to-equilib';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="../_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ergodicity/Ergodicity.html">Coarse-graining and Landau theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Landau/Landau.html">Landau theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FNewtonian-Diffusion/ergodicity-approach-to-equilib.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Newtonian-Diffusion/ergodicity-approach-to-equilib.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Lecture 3: Ergodicity and the approach to <span class="math notranslate nohighlight">\(E q\)</span>.</p>
+<p>Copyright Michael zaletel 2021</p>
+<ul class="simple">
+<li><p>Liouville’s theorem</p></li>
+<li><p>QM density matrices</p></li>
+<li><p>Master equations</p></li>
+<li><p>H- theorem</p></li>
+</ul>
+<p>So far, we’ve discussed probability in distriguteral. In stat -mech the relevant physical system: over micro-states of</p>
+<p>Microstates:</p>
+<p><span class="math notranslate nohighlight">\(\frac{\text { Classical Particles: }}{\text { (Phase Space) }}\left\{\vec{q}_{1}, \vec{q}_{2}, \cdots \vec{q}_{N}, \vec{p}_{1}, \vec{\rho}_{2} \cdots \vec{p}_{N}\right\}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int P\left(\vec{q}_{i}, \vec{p}_{i}, t\right) \prod_{i} d^{3} q_{i} d^{3} p_{i}=1
+\]</div>
+<p>The target space need not, be <span class="math notranslate nohighlight">\(\mathbb{R}^{3 N}\)</span></p>
+<p>for example in a spin-system, <span class="math notranslate nohighlight">\(\vec{q} \sim \vec{s},|\vec{s}|^{\prime}=1\)</span>.</p>
+<p>Averages of observables:</p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\vec{q}_{i}\right\rangle=\int P(\{q, p\}) \underset{N}{\vec{q}_{i}} d V
+\]</div>
+<p>Density: <span class="math notranslate nohighlight">\(&lt;n(\vec{r}))=\int P(\{q, p\}) \underbrace{\sum_{i=1}^{N} \delta^{3}(\vec{r}-\vec{q} ;)}_{n(\vec{r})} d V\)</span></p>
+<p>Density-density correlation function</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\left\langle n\left(\vec{r}_{1}\right) n\left(\vec{r}_{2}\right)\right)=\int p(\{q, p\}) \sum_{i, j} \delta^{(s)}\left(\vec{r}_{1}-\vec{q}_{i}\right) \delta\left(\vec{r}_{2}-\vec{q}_{j}\right) d V \\
+E=\int P(\{q, p\}) H(\{q, p\}) d V
+\end{gathered}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(c+c\)</span>.</p>
+<p>QM:</p>
+<div class="math notranslate nohighlight">
+\[
+|\psi\rangle=\sum_{i} c_{i}|i\rangle
+\]</div>
+<p>To describe a probability distribution
+over <span class="math notranslate nohighlight">\(Q M\)</span> states
+<span class="math notranslate nohighlight">\(\left\{p_{\alpha},|\psi a\rangle\right\}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{\rho} &amp; =\sum_{\alpha} p_{\alpha}\left|\psi_{\alpha}\right\rangle\left\langle\psi_{\alpha}\right|, \quad \sum p_{\alpha}=1=\operatorname{Tr}(\hat{\rho}) \\
+\langle\hat{O}\rangle_{\hat{\rho}} &amp; =\sum_{\alpha} p_{\alpha}\left\langle\psi_{\alpha}|\hat{\cup}| \psi_{\alpha}\right\rangle \\
+&amp; =\operatorname{Tr}(\hat{O} \hat{\rho})
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\hat{\rho}_{\text {basis: }}\)</span> ban be expanded in orthoganal</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}=\sum_{i, j} \rho_{i, j}|i\rangle&lt;j \mid
+\]</div>
+<p>Note that not all <span class="math notranslate nohighlight">\(\rho i, j\)</span> are valid D.M.</p>
+<p>(1) <span class="math notranslate nohighlight">\(\operatorname{Tr}(\hat{\rho})=1\)</span></p>
+<p>(2) <span class="math notranslate nohighlight">\(\left(\hat{\rho}^{+}\right)=\sum_{\alpha} \rho_{\alpha}^{*}\left(\left|\psi_{\alpha}\right\rangle\left\langle\psi_{\alpha}\right|\right)^{+}=\hat{\rho} \quad\)</span> (Hermitian)</p>
+<p>(3) For any <span class="math notranslate nohighlight">\(|v\rangle\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle v|\tilde{\rho}| v\rangle &amp; =\sum_{\alpha} p_{\alpha}\left\langle v\left(\psi_{\alpha}\right)\left\langle\psi_{\alpha} \mid v\right\rangle\right. \\
+&amp; =\sum_{\alpha} p_{\alpha}\left|\left\langle v \mid \psi_{\alpha}\right\rangle\right|^{2} \geq 0
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\hat{\rho}\)</span> is “positive semi-definite”</p>
+<div class="math notranslate nohighlight">
+\[
+\text { PS. } D \longleftrightarrow \operatorname{spec}(\hat{\rho}) \geq 0
+\]</div>
+<p>In general basis,</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-04.jpg?height=539&amp;width=1426&amp;top_left_y=292&amp;top_left_x=295" /></p>
+<p>By P.S.D, <span class="math notranslate nohighlight">\(\quad 0 \leqslant p_{i, i} \leq 1, \quad \sum p_{i, i}=1\)</span></p>
+<p>So populations look like probabilities.</p>
+<p>However, this is basis dependent!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{1}{2}\left[\begin{array}{cc}
+|\uparrow\rangle &amp; |\downarrow\rangle \\
+\frac{1}{2} &amp; \frac{1}{2} \\
+\frac{1}{2} &amp; \frac{1}{2}
+\end{array}\right] \longleftrightarrow\left[\begin{array}{ll}
+|\rightarrow\rangle &amp; \mid \longleftrightarrow \\
+1 &amp; 0 \\
+0 &amp; 0
+\end{array}\right]
+\end{split}\]</div>
+<p>There is always a special basis in which coherence <span class="math notranslate nohighlight">\(=0\)</span>, egg.</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\rho}=\operatorname{diag}\left(\rho_{i}\right)
+\]</div>
+<p>For the purpose of this week well assume this basis is time -independent, so we can heuristically just work with population <span class="math notranslate nohighlight">\(p_{i}\)</span>. of course full case is richer.</p>
+<p>Conservation of probability and Liouville’s Th.</p>
+<p>In QM, <span class="math notranslate nohighlight">\(\quad \partial_{t}|\psi\rangle=-i \hat{H}|\psi\rangle\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[\begin{array}{l}
+\hat{\rho}=\sum p_{\alpha}\left|\psi_{\alpha}\right\rangle\left\langle\psi_{\alpha}\right| \\
+\partial_{t} \hat{\rho}=-i[\hat{H}, \hat{\rho}]
+\end{array}\right.
+\end{split}\]</div>
+<p>So <span class="math notranslate nohighlight">\(\begin{aligned} \partial_{t} \sum_{i} p_{i, i}=\partial_{t}(\operatorname{Tr}(\hat{\rho})) &amp; =-i \operatorname{Tr}([\hat{H}, \hat{\rho}]) \\ &amp; =0\end{aligned}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+(\operatorname{Tr}([A, B])=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=0
+\]</div>
+<p>So <span class="math notranslate nohighlight">\(\operatorname{Tr}(\hat{\rho})=1\)</span> is respected under time-evol.</p>
+<p>How does this work in C.M.?</p>
+<p>Liouville’s Theorem</p>
+<p>Classically,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \partial_{t} q_{i}=\frac{\partial H}{\partial p_{i}} \quad \text { (Ham. Eq) } \\
+&amp; \partial_{t} p_{i}=-\frac{\partial H}{\partial q_{i}}
+\end{aligned}
+\end{split}\]</div>
+<p>What does this imply for <span class="math notranslate nohighlight">\(\partial_{t} P(\{q, p\}, t)\)</span> ?</p>
+<p>Consider the evolution of a small volume <span class="math notranslate nohighlight">\(\Delta V \longrightarrow \Delta V^{\prime}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+(q, p) \longrightarrow\left(q^{\prime}, p^{\prime}\right)
+\]</div>
+<p>We know <span class="math notranslate nohighlight">\(P(q, p, t) \cdot \Delta V=P\left(q^{\prime}, p^{\prime}, t+d t\right) \cdot \Delta V^{\prime}\)</span></p>
+<p>We have <span class="math notranslate nohighlight">\(q^{\prime}=q+\dot{q} d t, \quad p^{\prime}=p+\dot{p} d t\)</span></p>
+<p>But what is <span class="math notranslate nohighlight">\(\Delta V^{\prime}\)</span> ?</p>
+<p>Claim: <span class="math notranslate nohighlight">\(\Delta V^{\prime}=\Delta V\)</span></p>
+<p>for Hamiltonian.</p>
+<p>Like incompressible fluid!</p>
+<div class="math notranslate nohighlight">
+\[
+P(q, p, t)=P\left(q^{\prime}, p^{\prime}, t^{\prime}\right)
+\]</div>
+<p>Proof <span class="math notranslate nohighlight">\(\quad \Delta V=\Delta V^{\prime}\)</span></p>
+<p>Let’s consider a general diff-eq.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \partial_{t} x_{i}=\varphi_{i}(\vec{x}) \\
+&amp; \quad\left(\partial_{t} \vec{x}=\vec{\varphi}(\vec{x})\right)
+\end{aligned}
+\end{split}\]</div>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-07.jpg?height=350&amp;width=1004&amp;top_left_y=355&amp;top_left_x=292" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \vec{x} \longrightarrow \vec{x}+d_{t} \cdot \vec{\varphi}(x) \\
+&amp; \left.\vec{x}+\vec{\Delta}_{i} \rightarrow\left(\vec{x}+\vec{\Delta}_{i}\right)+d_{t} \quad \vec{\varphi}(\vec{x}+\vec{\Delta} ;)\right) \\
+&amp; \approx\left(\vec{x}+\vec{\Delta}_{i}\right)+d t\left(\vec{\varphi}(\vec{x})+\frac{\partial \vec{\varphi}^{\prime}}{\partial \vec{x}} \cdot \vec{\Delta}_{i}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \vec{\Delta}_{i}^{\prime}=\vec{\Delta}_{i}+d_{t} \frac{\partial \vec{\varphi}}{\partial \vec{x}} \cdot \vec{\Delta}_{i} \\
+&amp; \Delta^{\prime}=\left(\mathbb{1}+d t \frac{\partial \varphi}{\partial x}\right) \cdot \stackrel{\rightharpoonup}{\Delta} \\
+&amp; \text { « Jacobian }
+\end{aligned}
+\end{split}\]</div>
+<p>Now <span class="math notranslate nohighlight">\(\Delta V=\)</span> vol of parallel piped <span class="math notranslate nohighlight">\((\{\vec{\Delta} ; \xi)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+=\operatorname{Det}\left[\begin{array}{lll}
+\vec{\Delta}_{1} &amp; \vec{\Delta}_{2} &amp; \cdots
+\end{array}\right]
+\]</div>
+<p>How do we figure out <span class="math notranslate nohighlight">\(\Delta v^{\prime}=\left|\Delta^{\prime}\right|\)</span> ? Useful
+formula:</p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{Det}(M)=e^{\operatorname{Tr} \ln (M)}
+\]</div>
+<p>Proof: If <span class="math notranslate nohighlight">\(\operatorname{spec}(M)=m_{i}, \operatorname{Det}(M)=\prod_{i} m_{i}\)</span></p>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\ln (\operatorname{Det}(M)) &amp; =\ln \left(\Pi m_{i}\right)=\sum_{i}^{1} \ln \left(m_{i}\right) \\
+&amp; =\operatorname{Tr}(\ln (M))
+\end{aligned}
+\end{split}\]</div>
+<p>Deft <span class="math notranslate nohighlight">\(M=e^{\operatorname{Tr}(\ln (M))}\)</span></p>
+<p>Now <span class="math notranslate nohighlight">\(\quad M=\vec{\Delta}_{i}=\left(\mathbb{I}+d t \frac{\partial \varphi}{\partial x}\right) \Delta\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\ln \left(\left(\mathbb{1}+d_{t} \frac{\partial \varphi}{\partial x}\right) \cdot \Delta\right)= \\
+\ln \left(\left(\mathbb{1}+d_{t} \frac{\partial \varphi}{\partial x}\right)\right)+\ln (\Delta) \\
+\Delta V^{\prime}=e^{\operatorname{Tr}\left(\ln \left(\mathbb{1}+d_{t} \frac{\partial \varphi}{\partial x}\right)\right)} \cdot \Delta V \\
+\Delta V^{\prime}=e^{\ln \left(\operatorname{Tr} \frac{\partial \varphi}{\partial x}\right)} \Delta V
+\end{gathered}
+\end{split}\]</div>
+<p>Trace of Jacobian <span class="math notranslate nohighlight">\(\frac{\partial y}{\partial x}\)</span> determines expansion factor.</p>
+<p>Hamiltonian: <span class="math notranslate nohighlight">\(\quad \dot{q}_{i}=\overbrace{\frac{\partial H}{\partial \rho_{i}}}^{\varphi_{1, i}} \quad \dot{\rho}_{i}=\overbrace{-\frac{\partial H}{\partial q_{i}}}^{\varphi_{2, i}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{Tr}\left(\frac{\partial q}{\partial x}\right)=\sum_{i} \frac{\partial \dot{q}_{i}}{\partial q_{i}}+\frac{\partial \dot{p}_{i}}{\partial p_{i}}=\sum_{i} \frac{\partial^{2} H}{\partial q_{i} \partial p_{i}}-\frac{\partial^{2} H}{\partial p_{i} \partial q_{i}}=\gamma
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Delta V^{\prime}=\Delta V
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\quad \Delta V^{\prime}=\Delta V^{\prime}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+P(q, p, t) &amp; =P\left(q^{\prime}, p^{\prime}, t+d t\right) \\
+&amp; =P(q+d t \dot{q}, p+d t \dot{p}, t+d t \\
+&amp; =P(q, p, t)+\left(\frac{\partial P}{\partial q} \dot{q}+\frac{\partial P}{\partial p} \dot{p}+\frac{\partial P}{\partial t}\right) d t \\
+\frac{\partial P}{\partial t} &amp; =-\left(\frac{\partial P}{\partial q} \dot{q}+\frac{\partial P}{\partial p} \dot{p}\right] \\
+&amp; =\left[\frac{\partial P}{\partial p} \frac{\partial H}{\partial q}-\frac{\partial P}{\partial q} \frac{\partial H}{\partial p}\right\} \\
+&amp; =\{H, P\}
+\end{aligned}
+\end{split}\]</div>
+<p>“Poisson Bracket”: For general <span class="math notranslate nohighlight">\(A(q, p)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\{A, B\} \equiv \sum_{i} \frac{\partial A}{\partial q_{i}} \frac{\partial B}{\partial p_{i}}-\frac{\partial A}{\partial p_{i}} \frac{\partial B}{\partial q_{i}}
+\]</div>
+<p>QM <span class="math notranslate nohighlight">\(\longrightarrow\)</span> Classical</p>
+<p><span class="math notranslate nohighlight">\(-i b[\hat{A}, \hat{B}] \longrightarrow\{A, B\}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{t} \hat{\rho}=-i \hbar[H, \hat{\rho}] \longrightarrow \partial_{t} P=\{H, P\}
+\]</div>
+<p>Suppose system starts somewhere in box <span class="math notranslate nohighlight">\(\Delta V\)</span>, with <span class="math notranslate nohighlight">\(P=\frac{1}{\Delta V}\)</span></p>
+<p>When dynamics are chaotic, <span class="math notranslate nohighlight">\(\Delta V\)</span> evolves like droplet in an incompressible turbulent fluid, distorting into fine tendrils (subject to E-conservation)</p>
+<p>In principle, <span class="math notranslate nohighlight">\(P(\{q, p\}, t)\)</span> develops a very fine fractal structure with rapid variations between <span class="math notranslate nohighlight">\(0 / 1\)</span>. However, physically we are interested in observables like <span class="math notranslate nohighlight">\(\left\langle\vec{q}_{i}\right\rangle\)</span> which vary smoothly with phase space, or we make measurements at slightly different times. This will effectively make <span class="math notranslate nohighlight">\(P(\{q, p\})\)</span> indistinguishable from a “smeared out” (coarse-grained) version.</p>
+<p>Arovas presents nice way of</p>
+<p>Break up phase-space into cubes of volume <span class="math notranslate nohighlight">\(\quad \Delta V=(2 \pi k)^{N} \quad[\Delta q \cdot \Delta p]=J \cdot s=[h]\)</span></p>
+<p>We can then coarse grain</p>
+<div class="math notranslate nohighlight">
+\[
+P(\{q, p\}) \rightarrow P_{i}
+\]</div>
+<p>To obtain coarse-grained</p>
+<p><span class="math notranslate nohighlight">\(\partial_{t} P_{i}\)</span>, note that microscopic trajectories flow between cells. Let</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-11.jpg?height=336&amp;width=558&amp;top_left_y=1191&amp;top_left_x=323" /></p>
+<div class="math notranslate nohighlight">
+\[
+W_{j i}=\text { rate at }
+\]</div>
+<p>which points in <span class="math notranslate nohighlight">\(i\)</span></p>
+<p><span class="math notranslate nohighlight">\((w&gt;0)\)</span><span class="math notranslate nohighlight">\(\rightarrow j\)</span></p>
+<p>So <span class="math notranslate nohighlight">\(\partial_{t} P_{i}=\underbrace{\sum_{j \neq i} W_{i j} P_{j}}_{\text {in }}-\underbrace{\sum_{j \neq i} W_{j i} P_{i}}_{\text {out }}\)</span></p>
+<p>This is a “continuou s-time Markov process” (HW: discrete time)</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{t} \sum_{i} P_{i}=\sum_{i \neq j} W_{i j} P_{j}-\sum_{i \neq j} W_{j i} P_{i}=0
+\]</div>
+<p>We can rewrite <span class="math notranslate nohighlight">\(\partial_{\tau} P_{i}=-\Pi_{i j} P_{j}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+P(t)=e^{-\Gamma t} P(0)
+\]</div>
+<p><span class="math notranslate nohighlight">\(\operatorname{Prob-cons} \Rightarrow \sum_{i} \Gamma_{i j}=0\)</span>. This implies</p>
+<p>I has an eigen value of <span class="math notranslate nohighlight">\(0,\left(\begin{array}{l}1 \\ 1 \\ i\end{array}\right)^{\top} I=0\)</span></p>
+<p>Thus there is right eigenvector,</p>
+<div class="math notranslate nohighlight">
+\[
+I \cdot p^{e q}=0 \Rightarrow e^{-t I} \cdot p^{e q}=p^{e q}
+\]</div>
+<p>This is a fixed point / “steady state” It is not neccesarily unique for example if Wij has disconnected cliques, each will have a per independently</p>
+<p><span class="math notranslate nohighlight">\(W_{i j}:\)</span></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-12.jpg?height=333&amp;width=776&amp;top_left_y=1466&amp;top_left_x=886" /></p>
+<p>But unique <span class="math notranslate nohighlight">\(p^{e q}\)</span> is rather generic; for example always generic in finite state space.</p>
+<p>If <span class="math notranslate nohighlight">\(p^{e q}\)</span> is unique, we call the markov process “ergodic”</p>
+<p>In <span class="math notranslate nohighlight">\(H W\)</span>, you prove <span class="math notranslate nohighlight">\(\operatorname{spec}(\Gamma)=\gamma_{i}\)</span></p>
+<p>satisfies <span class="math notranslate nohighlight">\(\operatorname{Re}\left(\gamma_{i}\right) \geqslant 0\)</span> with <span class="math notranslate nohighlight">\(\gamma_{0}=0\)</span></p>
+<p>So at large times, <span class="math notranslate nohighlight">\(e^{-\Gamma t} \sim e^{-\gamma_{i} t} \Rightarrow\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\lim _{t \rightarrow \infty} P(t)=\lim _{t \rightarrow \infty} e^{-\Gamma t} P(0)=P^{e q}+O\left(e^{-+\gamma_{1}}\right)
+\]</div>
+<p>System relaxes to equilibrium; rate
+depends on spectrum <span class="math notranslate nohighlight">\(\gamma_{i}\)</span>.</p>
+<p>Note partitioning into phase-space cubes is not the only type of coarse-graining possible. We can also coarse -grain from <span class="math notranslate nohighlight">\(N\)</span>-body <span class="math notranslate nohighlight">\(\Rightarrow 2\)</span>-bod,</p>
+<div class="math notranslate nohighlight">
+\[
+P\left(q_{1}, \cdots q_{N} ; p_{1}, \cdots p_{N}\right) \Rightarrow P_{1}(q, p)
+\]</div>
+<p>by integrating over all possible <span class="math notranslate nohighlight">\(N-1\)</span>
+other particles, egg.</p>
+<div class="math notranslate nohighlight">
+\[
+P_{1}(q, p)=\frac{1}{N} \sum_{i} \int d V \delta\left(q_{i}-q\right) \delta\left(p_{i}-p\right) P(\{q, p\})
+\]</div>
+<p>This is the type of coarse-graining
+relevant to BBGKY/ Bultmann Theorem of gasses, (Kadar che 3).</p>
+<p>QM application: <span class="math notranslate nohighlight">\(\quad P_{i}=\)</span> population of <span class="math notranslate nohighlight">\(\hat{\rho}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+W_{j \leftarrow i}=\frac{2 \pi}{A}|\langle i|\hat{v}| j\rangle|^{2} \rho_{\pi}\left(E_{j}\right)_{\text {DOS }}
+\]</div>
+<p>However, this is heuristic since it neglects coherence. Well do proper treatment later (“Lind bladian”)
+<span class="math notranslate nohighlight">\(\mathrm{H}\)</span> - theorem</p>
+<p>As <span class="math notranslate nohighlight">\(\quad P(t) \rightarrow p^{e q}(t)\)</span>, intuitively the system get’s more “mixed up.” Under certain assumptions, this approach can be proven monotonic. Our measure of mixing we call ” <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> “.</p>
+<div class="math notranslate nohighlight">
+\[
+H=\sum P_{i} \ln \left(\frac{P_{i}}{P_{i}^{e q}}\right)=\sum P_{i} \ln \left(\frac{1}{P_{i}^{e q}}\right)-S^{\text {entropy }}[P]
+\]</div>
+<p>Incidentally this is called the “relative-entropy” or “Kullback-Leibler divergence” of <span class="math notranslate nohighlight">\(P\)</span>, Per,</p>
+<div class="math notranslate nohighlight">
+\[
+H=S_{k L}\left(P \| P^{e q}\right) \geq 0
+\]</div>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-14.jpg?height=200&amp;width=1694&amp;top_left_y=1374&amp;top_left_x=266" /></p>
+<p>Note if <span class="math notranslate nohighlight">\(p_{i}^{e q}=e^{-\beta E_{i}} / Z\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+H &amp; =\ln (Z)+\beta(\underbrace{\sum_{i} P_{i} E_{i}-\beta^{-1} S[P]}_{\langle E\rangle-T S=F[P]}) \\
+&amp; =\beta\left(F[P]-F\left[P^{e q}\right]\right) \geqslant 0
+\end{aligned}
+\end{split}\]</div>
+<p>The <span class="math notranslate nohighlight">\(\mathrm{H}\)</span>-theorem states that underacertain assumption, “detailed balance”,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial H}{\partial t} \leq 0
+\]</div>
+<p>Recall eq. condition <span class="math notranslate nohighlight">\(I \cdot p^{e q}=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+O=\sum_{j \neq i} W_{i j} P_{j}^{e q}-W_{j i} P_{i}^{e q} \quad \forall i
+\]</div>
+<p>Only need to be true after summing <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>“Detailed balance” is special property of <span class="math notranslate nohighlight">\(W_{i j}\)</span> that it hold term-by-term:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+W_{i j} p_{j}^{e q}-W_{j i} p_{i}^{e q}=0 \\
+\qquad \frac{W_{i j}}{W_{j i}}=\frac{p_{i}^{e q}}{p_{j}^{e q}}
+\end{gathered}
+\end{split}\]</div>
+<p>It says that in eq, probability flows look like</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-15.jpg?height=403&amp;width=750&amp;top_left_y=1697&amp;top_left_x=135" /></p>
+<p>rather than</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-15.jpg?height=436&amp;width=536&amp;top_left_y=1684&amp;top_left_x=1505" /></p>
+<p>Satisfied, for example, by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; w_{i j}=\frac{2 \pi}{}|\langle i|v| j\rangle|^{2} \rho\left(E_{i}\right) \\
+&amp; \longrightarrow \frac{w_{i j}}{w_{j i}}=\frac{\rho\left(E_{i}\right)}{\rho\left(E_{j}\right)}
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\frac{d P}{d t}= &amp; -\Gamma P \quad, \quad \Gamma_{i j}=0 \\
+\frac{d H}{d t}= &amp; \frac{d}{d t} \sum P_{i} \ln \left(\frac{P_{i}}{P_{i}^{e q}}\right)=-\sum_{i, j} \Gamma_{i j} P_{j} \ln \left(\frac{P_{i}}{P_{i}^{e q}}\right) \\
+&amp; +\sum_{i, j} P_{i} \frac{\Gamma_{i j} P_{j}}{P_{i}} \\
+= &amp; I_{0}\left(\sum_{i} \Gamma_{i j}=0\right) \\
+= &amp; -\sum_{i, j} \ln \left(\frac{P_{i}}{P_{i}^{e q}}\right) \Gamma_{i j} P_{j} \\
+\frac{d H}{d t}= &amp; -\sum_{i, j}\left(\Gamma_{i j} P_{j}^{e q}\right) \mu_{j}, \mu_{i}=\frac{P_{i}}{P_{i}^{e q}}
+\end{aligned}
+\end{split}\]</div>
+<p>Now note detailed balance implies</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; W_{i j} p_{j}^{e q}=W_{j i} P_{i}^{e q} \\
+&amp; I_{i j} p_{j}^{e q}=\Gamma_{j i} p_{i}^{e q}
+\end{aligned}
+\end{split}\]</div>
+<p>This symmetrizes the expression under ir jj</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d H}{d t}=\frac{1}{2} \sum_{i, j}\left(\ln \left(\mu_{i}\right)-\ln \left(\mu_{j}\right)\right)\left(\Gamma_{i j} P_{j}^{e q}\right)\left(\mu_{i}-\mu_{j}\right)
+\]</div>
+<p><span class="math notranslate nohighlight">\(i=j\)</span> doesn’t contribute, while for <span class="math notranslate nohighlight">\(i \neq j, \quad \Gamma_{i j} p_{j}^{e q} \leq 0\)</span></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_03_07_d17e115a9bf9f64f18f8g-16.jpg?height=221&amp;width=1788&amp;top_left_y=2449&amp;top_left_x=114" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \text { So, term-by-term } \\
+&amp; \frac{d H}{d t} \leq 0
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text { Wi+h } \quad H=0 \quad \rightarrow \quad P_{i}=p_{i}^{\text {eq }}
+\]</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Newtonian-Diffusion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oskar Hallatschek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
