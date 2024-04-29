@@ -1,0 +1,640 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'L7 Clausius relation, reversible work';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Equipartition-Mesostates.html">Equipartition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crooks.html">Non-equilibrium fluctuation theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chemical-reactions.html">Chemical reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Landau/Landau.html">Landau theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FL7 Clausius relation, reversible work.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/L7 Clausius relation, reversible work.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_07_bb23d5a0987bf0ed93c2g-01.jpg?height=343&amp;width=1206&amp;top_left_y=216&amp;top_left_x=184" /></p>
+<div class="math notranslate nohighlight">
+\[
+P\left(\mu_{s}\right)=z^{-1} e^{-\beta\left[E_{s}-\frac{\downarrow}{f} \cdot x\right]}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text { or } p\left(\mu_{s}\right)=e^{-\beta\left[E_{s}-f \cdot x-F\right]} \quad \begin{gathered}
+\text { peopetice of } \\
+\text { the nest ovine. }
+\end{gathered}
+\end{split}\]</div>
+<p>where</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_07_bb23d5a0987bf0ed93c2g-01.jpg?height=318&amp;width=1702&amp;top_left_y=857&amp;top_left_x=495" /></p>
+<p>free ewers at lent ert aside variable!</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp;\left(\langle\underline{x}\rangle=\frac{\partial F}{\partial F},\right. \text { suskep(ibilitins from second abirivatives.) } \\
+&amp; F=\langle E\rangle-T S-\mathcal{f}\langle x\rangle \text { minimized } \\
+&amp; \rightarrow F=E-T S-F \cdot \underline{x} \text { in } T D L . \\
+&amp; d E \Rightarrow d F
+\end{aligned}
+\end{split}\]</div>
+<p>(1) Generalized ententes der rived from ” <span class="math notranslate nohighlight">\(x\)</span> ” exchange between <span class="math notranslate nohighlight">\(R\)</span> and S. (2) Thermodye force <span class="math notranslate nohighlight">\(f_{R}\)</span> describes how strongly” <span class="math notranslate nohighlight">\(k\)</span> wants more ” <span class="math notranslate nohighlight">\(x\)</span> “. (aka how strongly <span class="math notranslate nohighlight">\(R\)</span> entropy increases with <span class="math notranslate nohighlight">\(x\)</span> ).</p>
+<p>Generalization: Same mathematical structure arises if we apply an external force of that we control. In this case, <span class="math notranslate nohighlight">\(f\)</span> has nothing to do with <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(\underline{x}\)</span> may not bo conserved.</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_07_bb23d5a0987bf0ed93c2g-02.jpg?height=216&amp;width=482&amp;top_left_y=1644&amp;top_left_x=248" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+E_{R} &amp; =E_{\text {tot }}-\left(E_{s}-f \cdot \underline{f}\right) \text { Gibbs canonical ensemble } \\
+&amp; \rightarrow P(\mu)=e^{-\beta\left(E-E_{R}\right)} \alpha e^{-\beta\left(E_{s}-f-x\right)}
+\end{aligned}
+\end{split}\]</div>
+<p>Exaruples Magnet in ext. field</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_07_bb23d5a0987bf0ed93c2g-03.jpg?height=560&amp;width=2021&amp;top_left_y=558&amp;top_left_x=634" /></p>
+<p>Para magnet: <span class="math notranslate nohighlight">\(H_{\text {int }}=0 . \quad \vec{M}=\mu \sum_{i=1}^{N} \sigma_{i}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; Z(T, B, N)=\sum_{\sigma_{1} \ldots} e^{+\beta B / \Gamma_{i} \sigma_{i}^{i=1}}=\sum_{\bar{\sigma}} \pi_{i} e^{\beta B \mu \sigma_{r}} \\
+&amp; =\prod_{i} \sum_{\sigma_{i}} e^{\beta B \mu \sigma_{i}}=\left[e^{\beta B \mu}+e^{-\beta B \mu}\right]^{N} \\
+&amp; =[2 \cosh (\beta B \mu)]^{N}
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+F=-\frac{N}{\beta} \log \left(2 \cosh \left(\beta B_{\mu}\right)\right)
+\]</div>
+<p><span class="math notranslate nohighlight">\(\langle\mu\rangle=-\frac{\partial F}{\partial B}=N \mu \frac{\sinh \left(\beta B_{\mu}\right)}{\cosh \left(\beta B_{\mu}\right)}=N_{\mu} \tanh \left(\beta B_{\mu}\right)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+X=\mu \partial_{B} \tanh (\mu B \beta)_{4}=\mu^{2} \beta \cosh ^{-2}(\mu B \beta)
+\]</div>
+<p>Polymer <span class="math notranslate nohighlight">\(\left.\stackrel{\rightharpoonup}{F}^{\sigma}\right\urcorner \backsim \stackrel{F}{\longmapsto}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+P(\mu)=z^{-1} e^{\left.-\beta\left[t_{i}, \hat{r}\right]-\vec{F} \cdot \vec{R}\right]}
+\]</div>
+<p>How mule work cen be extracted from a shrinking polymer?
+<span class="math notranslate nohighlight">\(\rightarrow\)</span> Spoulanems reactions</p>
+<p>If <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(S\)</span> are large:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\Delta S_{\text {tot }} &amp; \geqslant 0 \quad \text { (Secandlow) } \\
+\Delta S_{S}+\Delta S_{R} &amp; =\Delta S_{S}-\frac{Q}{T_{R}} \geqslant 0
+\end{aligned}
+\end{split}\]</div>
+<p>if <span class="math notranslate nohighlight">\(R\)</span> coordinates are cost.</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \Delta S_{S} \geqslant \frac{Q}{T_{R}}\)</span> Clausius Inequality
+<span class="math notranslate nohighlight">\(&quot;=&quot;\)</span> : neversible change <span class="math notranslate nohighlight">\(T \Delta S-\Delta E+W \geqslant 0\)</span></p>
+<p>” <span class="math notranslate nohighlight">\(&gt;\)</span> “: ir reversible <span class="math notranslate nohighlight">\(\quad+w \geqslant+\Delta F\)</span></p>
+<p>Isf law: <span class="math notranslate nohighlight">\(Q=-\Delta E_{R}=\Delta E_{S}-\omega\)</span></p>
+<p><span class="math notranslate nohighlight">\(\omega\)</span> : wakk doue on the syst</p>
+<p><span class="math notranslate nohighlight">\(\omega=0 \stackrel{\text { Clansius }}{\Delta E_{S}-T_{R} \Delta S_{S}} \leq 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> spant. reactinus reduce freo ensy</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> equilibrium <span class="math notranslate nohighlight">\(\Rightarrow\)</span> D no spait reacte
+<span class="math notranslate nohighlight">\(\mathrm{W} \neq \mathrm{O} \xrightarrow{\text { Cousins }}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \Delta E_{S}-T_{b} \Delta S_{S}-W \leq 0 \\
+&amp; \Rightarrow \quad W \geqslant \Delta F
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> cannot get more work out than <span class="math notranslate nohighlight">\(-\triangle F\)</span>, if <span class="math notranslate nohighlight">\(\triangle F&lt;O\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\operatorname{Jarzynski:}_{198}\left\langle e^{\beta \omega}\right\rangle=e^{-\beta \Delta F}
+\]</div>
+<p>Example: ATP consumption</p>
+<p>Most cellular processes are powered by</p>
+<div class="math notranslate nohighlight">
+\[
+A T P \leftrightarrows A D P+P_{i}
+\]</div>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_07_bb23d5a0987bf0ed93c2g-09.jpg?height=174&amp;width=1334&amp;top_left_y=391&amp;top_left_x=760" /></p>
+<p><span class="math notranslate nohighlight">\(\triangle F\)</span></p>
+<p>ATP is used to do useful work in the cell. concentration,
+see rater <span class="math notranslate nohighlight">\({ }^{2}\)</span> )</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_07_bb23d5a0987bf0ed93c2g-09.jpg?height=455&amp;width=1189&amp;top_left_y=648&amp;top_left_x=680" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \Delta r(\text { Kinesin }) \approx 8 \mathrm{~nm} \Rightarrow F_{\text {stall }} \frac{20 \mathrm{kT}}{8 \mathrm{~mm}}=\frac{20.4 \mathrm{pNnm}}{8} \\
+&amp; \approx 10 p \mathrm{~N} .
+\end{aligned}
+\end{split}\]</div>
+<p>Measurement shows <span class="math notranslate nohighlight">\(F_{\text {stall }}=5-7 p N(\)</span> Visscher, Sanitizer, Block Nature 99) depeulin on Af car. Suppl. Reading</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_07_bb23d5a0987bf0ed93c2g-10.jpg?height=1923&amp;width=1956&amp;top_left_y=87&amp;top_left_x=462" /></p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oskar Hallatschek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

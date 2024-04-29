@@ -1,0 +1,880 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Interacting Gases &#8212; Equilibrium Statistical Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/interacting-gases-variational-treatment-Copy1';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="../_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Variational-methods-Mean-Field.html">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interacting-gases-f.html">Interacting Gases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Landau/Landau.html">Landau theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FVariational-Methods/interacting-gases-variational-treatment-Copy1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Variational-Methods/interacting-gases-variational-treatment-Copy1.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Interacting Gases</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excluded-volume-effect">Excluded volume effect</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">Variational treatment of a gas and the van der Waals equation of state</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-construction-coexistence">Maxwell Construction / Coexistence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="interacting-gases">
+<h1>Interacting Gases<a class="headerlink" href="#interacting-gases" title="Permalink to this heading">#</a></h1>
+<p>Let’s return to the Hamiltonian of particles - now with interactions,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+\mathcal{H}_{N}=\sum_{i=1}^{N} \frac{\vec{p}_{i}^{2}}{2 m}+\mathcal{U}\left(\vec{q}_{1}, \cdots, \vec{q}_{N}\right) 
+\end{equation*}
+\]</div>
+<p>the partition function can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+Z(T, V, N) &amp; =\frac{1}{N !} \int \prod_{i=1}^{N}\left(\frac{\mathrm{d}^{D} \vec{p}_{i} \mathrm{~d}^{D} \vec{q}_{i}}{h^{D}}\right) \exp \left[-\beta \sum_{i} \frac{\vec{p}_{i}{ }^{2}}{2 m}\right] \exp \left[-\beta \mathcal{U}\left(\vec{q}_{1}, \cdots, \vec{q}_{N}\right)\right] \\
+&amp; =Z_{0}(T, V, N) \langle \exp \left[-\beta \mathcal{U}\left(\vec{q}_{1}, \cdots, \vec{q}_{N}\right)\right]\rangle^{0}
+\end{align*}
+\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}Z_{0}(T, V, N)=\frac{V^N}{N!\lambda^{DN}}\\
+\lambda=\sqrt{\frac{2\pi h^2}{k_B T m}}
+\end{split}\]</div>
+<p>is the partition function of the ideal gas (Eq. (4.73)), and <span class="math notranslate nohighlight">\(\langle\mathcal{O}\rangle^{0}\)</span> denotes the expectation value of <span class="math notranslate nohighlight">\(\mathcal{O}\)</span> computed with the probability distribution of the non-interacting system.</p>
+<p>Without interactions, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; F_0=-K_{B} T \ln (Z_0)=-K_{B} T N\ln \left(\frac{e V}{N\lambda^{D}}\right) \\
+&amp; P=-\left.\frac{\partial F}{\partial V}\right|_{N, T}=\frac{N K_{B} T}{V}, \quad P V=N K_{B} T
+\end{aligned}
+\end{split}\]</div>
+<p>But the “configuration integral”</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(T, V, N)\equiv \langle \exp \left[-\beta \mathcal{U}\left(\vec{q}_{1}, \cdots, \vec{q}_{N}\right)\right]\rangle^{0}=\left(\prod_{i=1}^{N} \int \frac{\mathrm{~d}^{3} \vec{q}_{i}}{V}\right)\exp \left[-\beta \mathcal{U}\left(\vec{q}_{1}, \cdots, \vec{q}_{N}\right)\right]
+\]</div>
+<p>can’t be exactly computed in general. We need approximations: molecular dynamics(HW), monte carlo (soon),  perturbation theory in <span class="math notranslate nohighlight">\(N / V\)</span> (Mayer Cluster expansion, see text), mean field theory, variational approximations (today).</p>
+<p>Before diving in, an exactly solvable warmup:</p>
+<p>Gas of hard ID “spheres” (intervals) of “volume” (length) <span class="math notranslate nohighlight">\(\Omega\)</span>.
+(Tonk’s gas)</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_16_622e679a6d467a0c4e40g-08.jpg?height=237&amp;width=1305&amp;top_left_y=103&amp;top_left_x=234" /></p>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\phi(T, V, N) = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2\int_{0}^{q_2-\Omega}dq_1\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3\int_{\Omega}^{q_3-\Omega}dq_2 (q_2-\Omega)\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N\ldots\int_{2\Omega}^{q_4-\Omega}dq_3(q_3-2 \Omega)^2\\
+ = V^{-N}\int^{V-\Omega}_{(N-1)\Omega}dq_N \left(q_N-(N-1) \Omega\right)^{N-1}\\
+= \frac{(V-N\Omega)^N}{V^N}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+Z(T,V,N)=Z_0 \phi(T, V, N)=\frac{(V-N\Omega)^N}{N!\lambda^{D N}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; F=-K_{B} T \ln (Z)=-K_{B} T N\ln \left(\frac{e (V-N\Omega)}{N\lambda^{D}}\right) \\
+&amp; P=-\left.\frac{\partial F}{\partial V}\right|_{N, T}=\frac{N K_{B} T}{(V-N\Omega)}, \quad P V=N K_{B} T
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\ln(\phi(T, V, N)) = \sum_{k=1}^{N}\ln(1-\frac{k\Omega}{V})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\partial_V \ln(\phi(T, V, N)) = \sum_{k=1}^{N}\ln(1-\frac{k\Omega}{V})
+\]</div>
+<section id="excluded-volume-effect">
+<h2>Excluded volume effect<a class="headerlink" href="#excluded-volume-effect" title="Permalink to this heading">#</a></h2>
+<p>The “excluded volume” effect extends more generally, but in approximate sense. For this discussion, it is convenient to introduce the excluded volume <span class="math notranslate nohighlight">\(\Omega_{ex}\)</span> of a particle. Consider for example hard spheres. Then one sphere excludes all other sphere centers from a sphere of twice the radius, or volume <span class="math notranslate nohighlight">\(\Omega_{ex}=2^D\Omega\)</span>, i.e. larger than just the sphere itself. Naively, we would then approximate the configurational integral as</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(T, V, N) \approx \frac{V}{V}  \cdot\frac{V-\Omega_{ex}}{V}\cdot\frac{V-2\Omega_{ex}}{V}\ldots \cdot\frac{V-(N-1)\Omega_{ex}}{V}
+\]</div>
+<p>This is approximate because of jamming …</p>
+<p><img alt="jamming" src="../_images/two-close-particles.jpg" /></p>
+<p>The excluded volume for particle 3 once 1,2 placed is not strictly additive if 1,2 are close: 3 has more space available when 1,2 are close than if they are apart (see <a class="reference external" href="https://en.wikipedia.org/wiki/Depletion_force">depletion force</a>).</p>
+<p>But if <span class="math notranslate nohighlight">\(N \Omega_{ex} \ll V\)</span>, this interaction is rare, so approximation ok in dilute limit. So,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\phi(T, V, N) \approx \prod_{n=1}^{N}(V-(N-n) \Omega_{ex})=e^{\sum \ln (V-(N-n) \Omega_{ex})} \\
+ \approx e^{N \ln \left(V-\frac{N}{2} \Omega_{ex}\right)}+O\left(\left(\frac{N \Omega_{ex}}{V}\right)^{2}\right)
+\end{split}\]</div>
+<p>So effectively <span class="math notranslate nohighlight">\(\quad V \longrightarrow V-N \Omega_{ex}/2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{r}
+P\left(V-N \Omega_{ex}/2\right) \approx N K_{B} T \\
+P=n K_{B} T \frac{1}{1-n \Omega_{ex}/2}
+\end{array}
+\end{split}\]</div>
+<p>Note that this result reproduces our exact result in one dimensions, where <span class="math notranslate nohighlight">\(\Omega_{ex}=2\Omega\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+P &amp; =n K_{B} T \frac{1}{1-n \Omega_{ex}/2} \\
+&amp; =n K_{B}+\left(1+(\Omega_{ex}/2) n+\left(\Omega_{ex}/2\right)^{2} n^{2}+\cdots\right)
+\end{aligned}
+\end{split}\]</div>
+<p>This is an example of a “viral expansion”</p>
+<div class="math notranslate nohighlight">
+\[
+P=n K_{B} T\left(1+B_{2}(T) n+B_{3}(T) n^{2}+\cdots\right)
+\]</div>
+<p>As explained in the textbook, the <span class="math notranslate nohighlight">\(B_{n}(T)\)</span> can be computed systematically via a diagrammatic perturbation theory. This Mayer Cluster Expansion is however rather technical and its applicability somewhat limited - so we won’t discuss it in class. But have a look, especially if you’re interested in QFT. Here’s we’ll focus on the variational treatment.</p>
+</section>
+</section>
+<section id="variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">
+<h1>Variational treatment of a gas and the van der Waals equation of state<a class="headerlink" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state" title="Permalink to this heading">#</a></h1>
+<p>Our approximate treatment of a hard-sphere gas took only the “excluded volume” repulsion</p>
+<div class="math notranslate nohighlight">
+\[
+V^{N} \rightarrow(V-\Omega_{ex}2^{D-1})^{N}
+\]</div>
+<p>But neutral molecules interact through an attractive <span class="math notranslate nohighlight">\(U(r) \approx-4 \epsilon\left(\frac{\sigma}{r}\right)^{6}\)</span> as <span class="math notranslate nohighlight">\(r \rightarrow \infty\)</span>, with short-range repulsion. Why? The charged constituents of a molecule can polarize:</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-02.jpg?height=299&amp;width=709&amp;top_left_y=1365&amp;top_left_x=1208" /></p>
+<p>Since a dipole generates <span class="math notranslate nohighlight">\(E \propto \frac{d}{r^{3}}\)</span>, and <span class="math notranslate nohighlight">\(U\propto-\vec{E} \cdot \vec{d}\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+U\propto \frac{d_{1} d_{2}}{r^{3}}
+\]</div>
+<p>We can then treat this in quantum perturbation theory for a rotationally-symmetric molecule. In ground state, <span class="math notranslate nohighlight">\(\langle\vec{d}\rangle=0\)</span> so to first order <span class="math notranslate nohighlight">\(\Delta E=0\)</span>. If <span class="math notranslate nohighlight">\(\Delta=E_{1}-E_{0}\)</span> is gap, and second order perturbation theory gives</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta E=-\frac{|\langle 1|U| 0\rangle|^{2}}{\Delta}
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(U \sim \frac{d_{1} d_{2}}{r^{3}}, \quad \Delta E \sim-\frac{1}{r^{6}}\)</span></p>
+<p>The competition between attraction, repulsion, and entropy leads to the presence of complex phase diagrams:</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-03.jpg?height=750&amp;width=1045&amp;top_left_y=1435&amp;top_left_x=615" /></p>
+<section id="mean-field-treatment">
+<h2>Mean-field treatment<a class="headerlink" href="#mean-field-treatment" title="Permalink to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[
+H=\sum_{i} \frac{\rho^{2}}{2 m}+\frac{1}{2} \sum_{i \neq j} U\left(r_{i}-r_{j}\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+U(r)=\left\{\begin{array}{l}
+\infty, \quad r&lt;r_{0} \\
+-u_{0}\left(\frac{r_{0}}{r}\right)^{6}, r&gt;r_{0}
+\end{array}\right.
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; Z(N, T, V)=\frac{1}{N ! \lambda_{T}^{3N}} \left(\prod_{k=1}^{N} \int_{V} d^{3} r_{k} \right) e^{-\frac{\beta}{2} \sum_{i\neq j} U\left(r_{i}-r_{j}\right)} \\
+&amp; Q(\mu, T, V)=\operatorname{Tr}\left(e^{-\beta(H-\mu N)}\right)=\sum_{N} e^{\beta \mu N} Z(N, T, V)
+\end{aligned}
+\end{split}\]</div>
+<p>We will see that the <span class="math notranslate nohighlight">\(Q\)</span>-ensemble is convenient: <span class="math notranslate nohighlight">\(\mu\)</span> is like the “B” of Ising model, while the density <span class="math notranslate nohighlight">\(n=N/V\)</span> jumps like <span class="math notranslate nohighlight">\(m\)</span>.</p>
+<section id="variational-ansatz">
+<h3>Variational ansatz:<a class="headerlink" href="#variational-ansatz" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\rho_{N} \propto e^{-\beta \sum_{i=1}^{N} \frac{p^{2}}{2 m}} \text{ if }\left|r_{i}-r_{j}\right| &gt; r_{0}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is our variational parameter.</p>
+<p>If we treat the <span class="math notranslate nohighlight">\(\left|r_{i}-r_{j}\right|&gt;r_{0}\)</span> constraint via the low-<span class="math notranslate nohighlight">\(n\)</span> excluded volume approximation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+Z(N, T, V) &amp; =\frac{(V-N \Omega_{ex} / 2)^{N}}{N ! \lambda_{T}^{3 N}} \\
+\ln \frac{1}{N !} &amp; =e^{N\left[\ln \left(\frac{1}{N}\right)+1\right] \quad(\text {Stirling) }} \\
+Z(N, T, V) &amp; =e^{N\left[\ln \left(\frac{V / N-\Omega_{ex}/ 2}{\lambda^{3} T}\right)+1\right]} \\
+Q(\mu, T, V) &amp; =\sum_{N'} Z\left(N^{\prime}, T, V\right) e^{\beta N^{\prime} \mu}
+\end{aligned}
+\end{split}\]</div>
+<p>But by our ansatz, only <span class="math notranslate nohighlight">\(N^{\prime}=N\)</span> contributes:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_{N}(\mu, T, v)=e^{N\left[\ln \left(\frac{V / N-\Omega_{ex}/ 2}{\lambda^{3} T}\right)+\beta \mu+1\right] .}
+\]</div>
+<p>We can then apply the Gibbs inequality</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\ln (Q) \geqslant \ln \left(Q_{N}\right)+\beta\left\langle H_{N}-H\right\rangle_{N} \\
+H_{N}-H=-\frac{1}{2} \sum_{i \neq j}^{ N} U\left(r_{i}-r_{j}\right) \quad\left(\left|r_{i}-r_{j}\right|&gt;r_{0}\right)
+\end{gathered}
+\end{split}\]</div>
+<p>Fortunately, is is easy to compute <span class="math notranslate nohighlight">\(\left\langle U\left(r_{i}-r_{j}\right)\right)_{N}\)</span> because in <span class="math notranslate nohighlight">\(\langle\rangle_{N}\)</span> particles are uncorrelated outside <span class="math notranslate nohighlight">\(r_{0}\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left\langle U\left(r_{i}-r_{j}\right)\right\rangle_{N} &amp; =\frac{\int_{r &gt; r_{0}} d^D r\; U(r)}{V} \equiv &amp; -\frac{u}{V} \\
+{[u] } &amp; =J \cdot m^{D} 
+\end{aligned}
+\end{split}\]</div>
+<p>For <span class="math notranslate nohighlight">\(U(r)=-U_{0}\left(\frac{r_{0}}{r}\right)^{\alpha}\)</span> for example,</p>
+<div class="math notranslate nohighlight">
+\[
+S_{D} \int_{r_{0}}^{\infty} r^{D-1-\alpha} d r=\left.S_{D} \frac{r^{D-\alpha}}{D-\alpha}\right|_{r_{0}} ^{R}, \alpha&gt;D
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\right) \\
+&amp; =U_{0} \frac{S_{D}}{\alpha-D} r_{0}^{D}
+\end{aligned}
+\end{split}\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left\langle\frac{1}{2} \sum_{i \neq j} U\left(r_{i}-r_{j}\right)\right\rangle &amp; =-\frac{u}{V} \frac{N(N-1)}{2} \\
+&amp; =\frac{-u \cdot N^{2}}{V}=-u\frac{n}{2}  N \quad(N \rightarrow \infty)
+\end{aligned}
+\end{split}\]</div>
+<p>Simple physical interpretation: each particle sees <span class="math notranslate nohighlight">\(-u \cdot n\)</span> on average from other particles (mean-field)</p>
+<div class="math notranslate nohighlight">
+\[\left.\ln Q \geq \ln (Q_N)+\beta\langle H_{N}-H\right\rangle_{N}=\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+&amp; =N\left[\ln \left(\frac{V / N-\Omega_{ex}/ 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta u \frac{n}{2} N 
+\end{aligned}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ \frac{\ln Q}{V} \geq n\left[\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta u \frac{n^{2}}{2}\equiv\psi[n]
+\]</div>
+<p>Now maximize <span class="math notranslate nohighlight">\(\psi\)</span> w.r.t. <span class="math notranslate nohighlight">\(n\)</span> : depending on <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span>, it can be in two maxima corresponding to gas and liquid:</p>
+<p>(add figure)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \psi[n]=n\left[\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda^{3} T}\right)+ \beta \mu+1\right]+\beta u \frac{n^{2}}{2} \\
+&amp; \beta P=\max _{n} \psi[n]
+\end{aligned}
+\end{split}\]</div>
+<p>Maximize:</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{n} \psi=\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda^{3}}\right)+\beta \mu+1+\beta u n-\frac{1}{1-n \Omega_{ex}/ 2}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\beta \mu=-1-\beta u n-\ln \left(\frac{n^{-1}-n / 2}{\lambda^{3}}\right)+\frac{1}{1-n \Omega_{ex}/ 2}
+\]</div>
+<p>This can admit multiple solutions</p>
+<p>substituting back into <span class="math notranslate nohighlight">\(\psi[n]\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\beta^{-1} \psi[n]=K_{B} T n \frac{1}{1-n \Omega_{ex}/ 2}-u n^{2} / 2 
+\]</div>
+<p>Note the free energy <span class="math notranslate nohighlight">\(\psi\)</span> has a simple interpretation in terms of pressure:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+-\frac{1}{\beta} \ln Q=\Omega_{ex}E-T S-\mu N \\
+ =(T S+\mu N-P V)-(T S+\mu N) \\
+ =-P V
+\end{split}\]</div>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[
+\beta P \approx \max_{n} \psi[n]
+\]</div>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[
+\left(P+u n^{2} / 2\right)=K_{B} T \frac{N}{V-N \Omega_{ex}/ 2}
+\]</div>
+<p>which leads the <strong>Van der Waals equation of state</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \left(P+u n^{2} / 2\right)(V-N \Omega_{ex}/ 2)=N K_{B} T \\
+&amp; \left(P+a n^{2}\right)(V-b N)=N K_{B} T \;.
+\end{aligned}
+\end{split}\]</div>
+<p>We see the two phenomenological coefficients <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> of VdW have their origin in the mean field treatment of long-range attraction (a) and short-distance repulsion (b).</p>
+<p>In terms of the molecular volume <span class="math notranslate nohighlight">\(v=n^{-1}\)</span>, we can also write</p>
+<div class="math notranslate nohighlight">
+\[
+P=\frac{k_B T}{v-b}-\frac{a}{v^2}
+\]</div>
+<p>showing that effect of long-range interaction is to shift <span class="math notranslate nohighlight">\(P \rightarrow P-a n^2=P-a v^{-2}\)</span> due to the average attraction <span class="math notranslate nohighlight">\(u n\)</span> experienced by each particle (mean-field)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\partial_{n} \psi &amp; =0 \\
+\beta(\mu+u n) &amp; =\ln \left(\frac{n \lambda^{3}}{1-n \Omega_{ex}/ 2}\right)+\frac{n \Omega_{ex}/ 2}{1-n \Omega_{ex}/ 2}
+\end{aligned}
+\end{split}\]</div>
+<p>Interpretation: effect of long-range interaction is to shift <span class="math notranslate nohighlight">\(\mu \rightarrow \mu+\)</span> un do to the average attraction un experienced by each particle (mean-field)</p>
+<div class="math notranslate nohighlight">
+\[
+\psi=n\left[\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda^{3} T}\right)+\beta \mu+1\right]+\beta u \frac{n^{2}}{2}
+\]</div>
+<p>Choose units with <span class="math notranslate nohighlight">\(\beta=1, \Omega_{ex}/ 2=1\)</span>, and shift <span class="math notranslate nohighlight">\(\mu\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
+\psi=n \ln \left(n^{-1}-1\right)+u \frac{n^{2}}{2}+\left(\bar{\mu}+\frac{3}{2}-\frac{u}{3}-\ln 2\right) n
+\]</div>
+<p>Clearly two maxima <span class="math notranslate nohighlight">\(\longrightarrow 1\)</span> minima. So need region</p>
+<div class="math notranslate nohighlight">
+\[
+\partial_{n}^{2} \psi=u-\frac{1}{n(1-n)^{2}} \geq 0
+\]</div>
+<p>Best case: <span class="math notranslate nohighlight">\(n=\frac{1}{3} \Rightarrow u \geq \frac{27}{4} \equiv u_{c}\)</span></p>
+<p>For <span class="math notranslate nohighlight">\(u&gt;u_{c}, \quad \psi\)</span> develops two maxima</p>
+<p>at <span class="math notranslate nohighlight">\(n_{g}&lt;n_{l}\)</span></p>
+<p><img alt="Psi-mu-n" src="../_images/Psi-mu-n.jpg" /></p>
+<p><img alt="u-vs-mu" src="../_images/u-vs-mu.jpg" /></p>
+<p>Below <span class="math notranslate nohighlight">\(T_{c}\)</span>,</p>
+<p><img alt="jump-from-nl-to-ng" src="../_images/jump-from-nl-to-ng.jpg" /></p>
+</section>
+<section id="maxwell-construction-coexistence">
+<h3>Maxwell Construction / Coexistence<a class="headerlink" href="#maxwell-construction-coexistence" title="Permalink to this heading">#</a></h3>
+<p>If we work in contact with particle reservoir ( <span class="math notranslate nohighlight">\(\mu\)</span>-ensemble), then <span class="math notranslate nohighlight">\(n(\mu)\)</span> jumps below <span class="math notranslate nohighlight">\(T_{c}: n_{n g} \mathfrak{f}^{n} \longrightarrow_{N}\)</span>.</p>
+<p>But what if we put <span class="math notranslate nohighlight">\(n=\frac{N}{V}\)</span> particks in a box for fixed <span class="math notranslate nohighlight">\(N\)</span> with <span class="math notranslate nohighlight">\(n_{g}&lt;n&lt;h_{l}\)</span> ? Intuitively, we know: it will phase separate:</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_19_12ee2a2d42e4a6485d42g-11.jpg?height=504&amp;width=603&amp;top_left_y=1118&amp;top_left_x=522" /></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; V=V_{g}+V_{l} \\
+&amp; N=N_{g}+N_{l} \\
+&amp; N=n_{g} \cdot V_{g}+n_{l} V_{l} \\
+&amp; n=n_{g} \cdot \frac{V_{g}}{V}+n_{l} \frac{V_{l}}{V}
+\end{aligned}
+\end{split}\]</div>
+<p><img alt="maxwell-construction" src="../_images/maxwell-construction.jpg" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Variational-Methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Interacting Gases</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excluded-volume-effect">Excluded volume effect</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-treatment-of-a-gas-and-the-van-der-waals-equation-of-state">Variational treatment of a gas and the van der Waals equation of state</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-field-treatment">Mean-field treatment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-ansatz">Variational ansatz:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxwell-construction-coexistence">Maxwell Construction / Coexistence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oskar Hallatschek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
