@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Equilibrium Statistical Physics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Ising-lectures/Ising-1D-live';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="../_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture Notes on Equilibrium Statistical Mechanics (Physics 211)
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ising-1D.html">Finite dimensional Ising models</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Landau/Landau.html">Landau theory</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FIsing-lectures/Ising-1D-live.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Ising-lectures/Ising-1D-live.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>ling models</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-01.jpg?height=1153&amp;width=2055&amp;top_left_y=235&amp;top_left_x=42" /></p>
+<p>ID <span class="math notranslate nohighlight">\(\quad H=-\gamma \sum_{i=1}^{N} \sigma_{i} \sigma_{i+1}-B \sum_{i} \sigma_{i}\)</span></p>
+<p>Order destroyed by domain walls for any finis temperature</p>
+<div class="math notranslate nohighlight">
+\[
+\uparrow \uparrow \uparrow \Uparrow \downarrow \downarrow \downarrow \downarrow \downarrow
+\]</div>
+<p>di. costs energy <span class="math notranslate nohighlight">\(\Delta=Z J\)</span></p>
+<p>Boltzmann: <span class="math notranslate nohighlight">\(\operatorname{pr}[d-\omega \mid\)</span> specificite <span class="math notranslate nohighlight">\(]=\frac{e^{-\beta \Delta}}{e^{-\beta \Delta}+1} \equiv P d \omega\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \beta J \gg 1 \Rightarrow p_{d \omega} \approx e^{-\beta \Delta} \\
+&amp; \beta J \ll 1 \Rightarrow P_{d, w} \approx \frac{1}{2}
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> Gas of d.w.s with only hard-core interaction (Tonks gus) and davity</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \text { TDL } N_{d . w}=P d . w \cdot N, P_{d \omega} \ll l . \\
+&amp; \Rightarrow \text { dencity of d.w. } \rho=e^{-\beta \Delta}
+\end{aligned}
+\end{split}\]</div>
+<p>correlaticn funetion</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \left\langle\sigma_{0} \sigma_{r}\right\rangle=\left\{\begin{array}{l}
++1, \text { even ur. of d.w betw. Oandr } \\
+-1, \text { odd ur. }
+\end{array}\right. \\
+&amp; =\sum_{m=0}^{T} p_{m}(-1)^{m}
+\end{aligned}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(P_{m}=\)</span> Binomial distrib. with <span class="math notranslate nohighlight">\(m\)</span> success in <span class="math notranslate nohighlight">\(r\)</span> trials if succ. proba. <span class="math notranslate nohighlight">\(=\)</span> plw. .</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\left\langle\sigma_{0} \sigma_{r}\right\rangle &amp; =\sum_{m=0}^{r}\left(\begin{array}{l}
+r \\
+m
+\end{array}\right) p^{m}(1-p)^{\tau-m} \cdot(-1)^{m} \\
+&amp; =(1-2 p)^{r} w \cdot p=\frac{e^{-\beta \Delta}}{e^{-\beta \Delta}+1}
+\end{aligned}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\sigma_{0} \sigma_{r}\right\rangle=\exp [r \ln (1-2 p)]=e^{-\frac{r}{\xi}},
+\]</div>
+<p>where the correlation length <span class="math notranslate nohighlight">\(\xi\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\xi=\frac{1}{|\ln (1-2 p)|} \simeq \frac{1}{p \ll 1} \simeq \frac{e^{\beta \Delta}}{2}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow-\xi\)</span> is typical domain size</p>
+<p><span class="math notranslate nohighlight">\(-\lim _{r \rightarrow \infty}\left\langle\sigma_{0} \sigma_{r}\right\rangle=0 \quad \forall T&gt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \quad N a\)</span> long range order</p>
+<p>always in paramapueticphase Na phase transitions!</p>
+<p>Full solution</p>
+<p>IDmadel (unlike 3D!) can be solved exactly using “transfer matrix method! First consider <span class="math notranslate nohighlight">\(B=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+z=\sum_{\{\sigma\}} \prod_{B \text { lactor }}^{\prod_{i=1}^{N} e^{\beta J \sigma_{i} \sigma_{i+1}}} \tag{*}
+\end{equation*}
+\]</div>
+<p>Deline <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix <span class="math notranslate nohighlight">\(T_{\sigma \sigma_{1}}=e^{\beta J \sigma \sigma^{\prime}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; T=\left[\begin{array}{ll}
+e^{\beta \gamma} &amp; e^{-\beta z} \\
+e^{-\beta z} &amp; e^{\beta J}
+\end{array}\right] \\
+&amp; Z=\sum_{\sigma_{1}} \sum_{\sigma_{2}} \cdots \sigma_{N} T_{\sigma_{1} \sigma_{2}} \cdot T_{\sigma_{2} \sigma_{3}} T_{3} \sigma_{4}
+\end{aligned}
+\end{split}\]</div>
+<p>Boltzmann fector</p>
+<p>This sum is just matrix multiplic.!</p>
+<p>Next, with <span class="math notranslate nohighlight">\(B \neq 0\)</span></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-04.jpg?height=554&amp;width=1513&amp;top_left_y=1762&amp;top_left_x=448" /></p>
+<p>Nsites with perindic b.c. (i.e.ering)</p>
+<div class="math notranslate nohighlight">
+\[
+Z_{N}=\left(T^{N}\right)_{11}+\left(T^{N}\right)_{22}=\operatorname{Tr}\left(T^{N}\right)
+\]</div>
+<p>Powers of a matrix are simple in terms of eigen vols and-rectors:</p>
+<p>For <span class="math notranslate nohighlight">\(\beta=0, \lambda_{ \pm}=e^{\beta \gamma} \pm e^{-\beta J}\)</span></p>
+<p><span class="math notranslate nohighlight">\([\)</span> from <span class="math notranslate nohighlight">\((T-\lambda 11) \underline{x}=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\operatorname{det}(T-\lambda 11)=0]\)</span></p>
+<p>Nate <span class="math notranslate nohighlight">\(\left.\frac{\lambda_{-}}{\lambda_{+}}=\tanh (\beta \gamma)&lt;1 \quad \forall \beta\right\rangle\)</span></p>
+<p>So <span class="math notranslate nohighlight">\(\lim _{N \rightarrow \infty} z_{N}=\underbrace{\lambda_{+}^{N}\left(1+\left(\frac{\lambda_{-}}{\lambda_{+}}\right)^{N}\right)}_{\underbrace{}_{T}\left(T^{N}\right)} \rightarrow \lambda_{+}^{N}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+F=-k_{B} T N \ln (2 \cosh (37))+o(1)
+\]</div>
+<p>Note: <span class="math notranslate nohighlight">\(F(T)\)</span> is analytic in <span class="math notranslate nohighlight">\(T\)</span>, unlike all-bo-all <span class="math notranslate nohighlight">\(H W\)</span> checks <span class="math notranslate nohighlight">\(x=-\left.\partial_{B}^{2} F(T, B)\right|_{B=0}=\frac{\partial(m)}{\partial B}\)</span> regular <span class="math notranslate nohighlight">\(\forall T\)</span>.</p>
+<p>Entropy density</p>
+<div class="math notranslate nohighlight">
+\[
+S=\frac{1}{N} \partial_{T} F
+\]</div>
+<p><span class="math notranslate nohighlight">\(\ln (2)\)</span></p>
+<p>smooth fets/no ph.tansitions</p>
+<p>Correlation <span class="math notranslate nohighlight">\(f c t: C(r) \equiv\left\langle\sigma_{0} \sigma_{r}\right\rangle\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\left\langle\sigma_{0} \sigma_{r}\right\rangle=\frac{\sum_{i \sigma j} \ldots T_{\sigma_{0, \sigma_{0}}} \sigma_{0} T_{\sigma_{0} \sigma_{1}} \cdots \cdot \sigma_{x-1} \sigma_{r} \sigma_{j} T_{\sigma_{i} \sigma_{1}}}{z}
+\]</div>
+<p>Introducing <span class="math notranslate nohighlight">\(\hat{\sigma}^{z} \equiv\left(\begin{array}{cc}1 &amp; 0 \\ 0 &amp; -1\end{array}\right)\)</span>, we can write this as a matrix product</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-06.jpg?height=425&amp;width=1469&amp;top_left_y=2003&amp;top_left_x=496" /></p>
+<p>Introduce eigensystem of <span class="math notranslate nohighlight">\(T\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|+\rangle=\frac{1}{\sqrt{2}}\left(\begin{array}{l}
+1 \\
+1
+\end{array}\right) ; \lambda_{t}=2 \cosh (\beta \gamma)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+1 \rightarrow=\frac{1}{\sqrt{2}}\left(\begin{array}{c}
+1 \\
+-1
+\end{array}\right) ; \lambda_{-}=2 \sinh (\beta \gamma) \\
+T^{\gamma}=\sum_{\alpha= \pm}|\alpha\rangle\langle\alpha| \lambda_{\alpha}^{\gamma} \\
+C(\gamma)=\sum_{\alpha \beta \beta}\left\langle\beta\left|\hat{\sigma}^{z}\right| \alpha\right\rangle\left\langle\alpha\left|\hat{\sigma}^{z}\right| \beta\right\rangle \lambda_{\alpha}^{\gamma} \lambda_{\beta}^{N-\gamma}
+\end{gathered}
+\end{split}\]</div>
+<p>dominated by <span class="math notranslate nohighlight">\(\beta=+\)</span> and <span class="math notranslate nohighlight">\(\left\langle\alpha\left|\beta^{z}\right|+\right\rangle \neq 0\)</span></p>
+<p>requires <span class="math notranslate nohighlight">\(\alpha=-\)</span></p>
+<p>So, <span class="math notranslate nohighlight">\(C(r)=\frac{\lambda_{-}^{r} \lambda_{+}^{N-r}}{\lambda_{+}^{N}}=\left(\frac{\lambda_{-}}{\lambda_{+}}\right)^{r}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+=e^{-r / \xi} \text { with } \frac{1}{\xi} \equiv \ln \left(\frac{\lambda_{+}}{\lambda_{-}}\right) \text {. }
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\frac{\lambda_{t}}{\lambda_{-}}=\tanh [\beta]=1-2 \frac{\underbrace{e^{-\beta \gamma}}_{P d . \omega .}}{\underbrace{\beta \gamma}+e^{-\beta \gamma}}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> same corrleurfh as found before.</p>
+<p>Phase transition for <span class="math notranslate nohighlight">\(D&gt;1\)</span> ?</p>
+<p>Recap essence of IDsituation:</p>
+<p>In ID, long-range order can be destroyed by defects that cost a finite amount of energy.</p>
+<p>Same argument in 2D?</p>
+<p>For D&gt;1, domain walls are extended</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> to destroy order</p>
+<p>d. wis need to</p>
+<p>be large <span class="math notranslate nohighlight">\(\Rightarrow\)</span></p>
+<p>energy cost is not bounded by finite</p>
+<p>value <span class="math notranslate nohighlight">\(\Rightarrow I D\)</span> argument canal be applied.</p>
+<p>In 2D, a dew. is a ID object,</p>
+<p>which cast <span class="math notranslate nohighlight">\(\Delta E=27 \cdot l\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[
+l=\text { loupth of d.w. }
+\]</div>
+<p>In ID, any finite density “olw of di.w.s destrons order at the ecale <span class="math notranslate nohighlight">\(\xi \sim \frac{1}{u_{d} \omega_{1}}\)</span>.</p>
+<p>But in 2D, a fuile densits of sunall d.w.s dresuit abstroy as dor</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-09.jpg?height=792&amp;width=1765&amp;top_left_y=1021&amp;top_left_x=290" /></p>
+<p>What matters is the size of the <a class="reference external" href="http://d.ws">d.ws</a></p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-09.jpg?height=676&amp;width=818&amp;top_left_y=2007&amp;top_left_x=235" /></p>
+<p>Cnder olestrayed if size <span class="math notranslate nohighlight">\(\ell \sim L\)</span> becnure favorable</p>
+<p>So, the question is how</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \Delta F(l)=\text { bree energy change indlaced } \\
+&amp; \text { by } d . w \cdot s \text { of size } l= \\
+&amp;=\underbrace{27 l}_{\substack{\text { energetic } \\
+\text { cost }}}-T S(l)
+\end{aligned}
+\end{split}\]</div>
+<p>In ID, the only source of <span class="math notranslate nohighlight">\(S\)</span> was Whet dew. is: <span class="math notranslate nohighlight">\(S \sim \operatorname{lu}(L)\)</span> for l.d.w. But in 2D, the are many ways to make a wall of birth <span class="math notranslate nohighlight">\(l\)</span> :
+<img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-10.jpg?height=374&amp;width=1762&amp;top_left_y=1732&amp;top_left_x=261" /></p>
+<p>Counting <span class="math notranslate nohighlight">\(S(l)\)</span> exactly is a tricky combinatorial probkun. But all we need, for <span class="math notranslate nohighlight">\(l&gt;1, S(l) \cong S_{0} l\)</span>
+(extensive)</p>
+<p>To see why, let <span class="math notranslate nohighlight">\(\Omega\left(l, x_{0}, x_{1}\right)\)</span> denote # of ways string of berth <span class="math notranslate nohighlight">\(l\)</span> connects <span class="math notranslate nohighlight">\(x_{0}, x_{1}\)</span> :</p>
+<p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-11.jpg?height=373&amp;width=1140&amp;top_left_y=625&amp;top_left_x=551" /></p>
+<p>Clearly</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+&amp; \Omega\left(l_{A}+l_{B}, x_{0}, x_{2}\right) \geqslant \Omega\left(l_{A}, x_{0}, x_{1}\right) \Omega\left(l_{B}, x_{1}, x_{2}\right) \\
+&amp; S\left(l_{A}+l_{B}, x_{0}, x_{2}\right) \geqslant S\left(l_{A}, x_{0}, x_{1}\right)+S\left(l_{B}, x_{1}, x_{2}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>Fix <span class="math notranslate nohighlight">\(x_{1}-x_{0}=\frac{e}{\alpha}\)</span> these inequalities imply <span class="math notranslate nohighlight">\(S(l) \simeq S_{0} \cdot l\)</span> or faster growing.</p>
+<p>But faster than extensive nat possible.</p>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\Delta F &amp; =2 J \ell-T s_{0} \ell \\
+&amp; =\ell\left(2 J-T s_{0}\right)
+\end{aligned}
+\end{split}\]</div>
+<p>Key result: For <span class="math notranslate nohighlight">\(T&lt;\frac{27}{S_{0}}\)</span>, largel d.w.S</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> oretered plase Far <span class="math notranslate nohighlight">\(T&gt;\frac{27}{S o}\)</span>, large ld.wis disarderel</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Ising-lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Oskar Hallatschek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
