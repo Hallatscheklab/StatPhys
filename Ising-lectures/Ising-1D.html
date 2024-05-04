@@ -208,7 +208,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ergodicity/Ergodicity.html">Coarse-graining and Landau theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ergodicity/Ergodicity.html">Coarse-graining and Ergodicity theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
 
@@ -533,13 +533,13 @@ $<span class="math notranslate nohighlight">\(
 \[
 Z=\sum_{\{\sigma\}} \prod_{i} e^{\beta J \sigma_{i} \sigma_{i+1}}
 \]</div>
-<p>Define the <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix <span class="math notranslate nohighlight">\(T_{\sigma, \sigma^{\prime}}=e \beta J \sigma \sigma^{\prime}\)</span></p>
+<p>Define the <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix <span class="math notranslate nohighlight">\(T_{\sigma, \sigma^{\prime}}=e^{\beta J \sigma \sigma^{\prime}}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 T=\left[\begin{array}{cc}
 e^{\beta J} &amp; e^{-\beta J} \\
 e^{-\beta J} &amp; e^{\beta J}
-\end{array}\right]=\sigma^{T} \sigma^{\prime}
+\end{array}\right] 
 \end{split}\]</div>
 <p>The partition function can then be rewritten as</p>
 <div class="math notranslate nohighlight">
@@ -627,12 +627,12 @@ C(r)=\frac{\operatorname{Tr}\left(\hat{\sigma}^{z} T^{r} \hat{\sigma}^{z} T^{N-r
 &amp; \Rightarrow C(r)=\sum_{\alpha, \beta}\left\langle\beta\left|\hat{\sigma}^{z}\right| \alpha\right\rangle\left\langle\alpha\left|\hat{\sigma}^{z}\right| \beta\right\rangle \lambda_{\alpha}^{r} \lambda_{\beta}^{N-r}
 \end{aligned}
 \end{split}\]</div>
-<p>The sum of <span class="math notranslate nohighlight">\(\beta\)</span> is dominated by <span class="math notranslate nohighlight">\(\beta=+\)</span> because of the extensive exponent in the fact <span class="math notranslate nohighlight">\(\lambda_{\beta}^{N-r}\)</span>. Then, for <span class="math notranslate nohighlight">\(\left\langle\alpha\left|\sigma^{2}\right|+\right\rangle \)</span> to be nonzero, we must have <span class="math notranslate nohighlight">\(\alpha=-\)</span>. So, we obtain the simple result</p>
+<p>The sum of <span class="math notranslate nohighlight">\(\beta\)</span> is dominated by <span class="math notranslate nohighlight">\(\beta=+\)</span> because of the extensive exponent in the factor <span class="math notranslate nohighlight">\(\lambda_{\beta}^{N-r}\)</span>. Then, for <span class="math notranslate nohighlight">\(\left\langle\alpha\left|\sigma^{z}\right|+\right\rangle \)</span> to be nonzero, we must have <span class="math notranslate nohighlight">\(\alpha=-\)</span>. So, we obtain the simple result</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; C(r)=\frac{\lambda_{-}^{r} \lambda_{+}^{N-r}}{\lambda_{+}^{N}}=\left(\frac{\lambda_{t}}{\lambda_{t}}\right)^{\gamma} \\
-\Rightarrow &amp; C(r)=e^{-r / \xi} \text { with } \frac{1}{\xi} \equiv \ln \left(\frac{\lambda_{t}}{\lambda_{-}}\right) .
+&amp; C(r)=\frac{\lambda_{-}^{r} \lambda_{+}^{N-r}}{\lambda_{+}^{N}}=\left(\frac{\lambda_{-}}{\lambda_{+}}\right)^{\gamma} \\
+\Rightarrow &amp; C(r)=e^{-r / \xi} \text { with } \frac{1}{\xi} \equiv \ln \left(\frac{\lambda_{+}}{\lambda_{-}}\right) .
 \end{aligned}
 \end{split}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\frac{\lambda_{+}}{\lambda_{-}}=\tanh \beta J=\frac{e^{\beta J}-e^{-\beta J}}{e^{\beta J}+e^{-\beta J}}=1-2 \underbrace{\frac{e^{-\beta J}}{e^{\beta J}+e^{-\beta J}}}_{p_{d.w.}}\)</span>, we get <span class="math notranslate nohighlight">\(\xi=\frac{1}{\ln \left(1-2 p_{d.w.}\right)}\)</span> as in domain wall argument.</p>
@@ -728,7 +728,7 @@ M(T) = \left(1 - \sinh^{-4}(2/T)\right)^{1/8} \;,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_9908/3083171715.py:12: RuntimeWarning: invalid value encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_25590/3083171715.py:12: RuntimeWarning: invalid value encountered in power
   M = np.where(T &lt; T_c, (1 - np.sinh(2/T)**(-4))**(1/8), 0)
 </pre></div>
 </div>
