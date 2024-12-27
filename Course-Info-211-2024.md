@@ -30,9 +30,9 @@ Drop Deadline: Feb 10.
 **Texts:**
 
 - M. Kardar, Statistical Physics of Particles. The paper copy is nice, but UC Library has an online version. This is the primary resource for the course.
-- D. Arovas, Thermodynamics and Statistical Mechanics. You can find Dan Arovas’ stat-mech notes on his [UCSD page](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjo4KDQsOKDAxXNSDABHbPdArgQFnoECBEQAQ&url=https%3A%2F%2Fcourses.physics.ucsd.edu%2F2010%2FSpring%2Fphysics210a%2FLECTURES%2F210_COURSE.pdf&usg=AOvVaw0R9iSEgaPJOCgsJF7sWy-m&opi=89978449)
+- D. Arovas, Thermodynamics and Statistical Mechanics. You can find Dan Arovas’ stat-mech notes on his [UCSD page](https://courses.physics.ucsd.edu/2010/Spring/physics210a/LECTURES/210_COURSE.pdf)
 - J. Sethna, Entropy, Order Parameters, and Complexity. The 2nd edition, which I'll use, is available online [here](https://sethna.lassp.cornell.edu/StatMech/)
-- [MacKay, Information Theory](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi2mNTQhdeDAxWaRzABHTfNAEAQFnoECA8QAQ&url=https%3A%2F%2Fwww.inference.org.uk%2Fitprnn%2Fbook.pdf&usg=AOvVaw2U9u5mdeY0yzjLEbxfO3LW&opi=89978449) has lots of interesting connections between statistical physics and information theory. 
+- [MacKay, Information Theory](https://www.inference.org.uk/mackay/itila/book.html) has lots of interesting connections between statistical physics and information theory. 
 - I'll provide reading guidelines at the beginning of each chapter. 
 
 **Lecture notes:** I'll develop my own lecture notes as a jupyter book, which allows me to include Python code. You will be able to use Google Colab (merely requires a Google account) to open any page of the jupyter book, and play with the content, for example, to run variations of the code. 
