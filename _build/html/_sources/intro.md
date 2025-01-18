@@ -10,19 +10,19 @@ UNIVERSITY OF CALIFORNIA, BERKELEY DEPARTMENT OF PHYSICS
 The following lecture notes are designed to complement the Berkeley Physics course 211 material covered in the spring of 2024. Special thanks to Mike Zalatel and Dunghai Lee for their invaluable lecture notes, which have partially influenced my own.
 
 The course structure is adapted and reordered from Kardar's textbook.
-- Probability & information entropy (2-3 lectures)
+- Probability & information entropy  
     - Kardar 2, Arovas 1
-- Fundamentals of thermodynamics via molecular perspective - ensemble theory (3-4 lectures)
+- Fundamentals of thermodynamics via molecular perspective - ensemble theory  
     - Kardar 4, Arovas 4
-- Dynamics of interacting particles (6 lectures)
+- Dynamics of interacting particles  
     - Kardar 5, Arovas 6
-- Techniques in computational statistical physics (1-2 lectures)
-    - Zalatel lecture notes, MacKay, TBD sources
+- Monte Carlo, Debye-Hueckel, Diffusion
+    - lecture notes
 - Study of Hamiltonian dynamics and ergodicity
     - Arovas 3, Kardar 3.1, 3.2
-- Quantum statistical mechanics (7 lectures)
+- Quantum statistical mechanics  
     - Kardar 6+7, Arovas 5
-- Exploration of mean field and Landau theory (4 lectures)
+- Exploration of mean field and Landau theory 
     - Arovas 7
 
 Important Notes:
