@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Coin-flipping';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Course Information" href="Course-Info-211-2024.html" />
+    <link rel="prev" title="Quick Summary of Statistical Mechanics" href="Introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,6 +186,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Probability and information entropy</a></li>
 </ul>
 
@@ -486,18 +487,66 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 \end{aligned}
 \end{split}\]</div>
 <p>If <span class="math notranslate nohighlight">\(p=q=\frac{1}{2}, P(A)=P(B)=P(C)\)</span>. So, why does <span class="math notranslate nohighlight">\(B\)</span> (and <span class="math notranslate nohighlight">\(C\)</span>?) look exceptional?</p>
+<p>Coarse-Graining</p>
+<p>In statistical physics, the concept of coarse-graining is fundamental to bridging the microscopic and macroscopic perspectives. The microstate of a system, represented as <span class="math notranslate nohighlight">\({\sigma} = \left{\sigma_1, \sigma_2, \ldots\right}\)</span>, encompasses the complete configuration of all its components. The collection of all possible microstates provides a detailed description of the system at its most granular level.</p>
+<p>However, we are rarely concerned with the exact details of individual microstates. Instead, we focus on features common to all typical microstates. In most cases, the specific microstate of a system—such as the precise arrangement of spins in a solid or the exact positions and momenta of molecules in a glass of water—offers little insight into its macroscopic behavior. Questions like “What happens to water when it is heated?” or “How does a balloon respond to pressure?” relate to emergent properties derived from the shared characteristics of the vast number of possible microstates in a macroscopic system (on the order of Avogadro’s number).</p>
+<p>For instance, when observing a sequence of coin flips represented as 1’s and 0’s, we are generally uninterested in the precise order of outcomes. Instead, we notice patterns, such as the balance between 1’s and 0’s. This leads us to consider quantities like the total number of heads <span class="math notranslate nohighlight">\(N_+\)</span>, tails <span class="math notranslate nohighlight">\(N_-\)</span>, or their difference:</p>
+<div class="math notranslate nohighlight">
+\[
+X \equiv \sum_{j=1}^{N} \sigma_j = N_+ - N_-.
+\]</div>
+<p>Similarly, in a magnet, individual spins are difficult to measure, but we can focus on macroscopic quantities like the magnetization, which is also expressed as <span class="math notranslate nohighlight">\(X = N_+ - N_-\)</span>, the net difference between up and down spins.</p>
+<p>Since mapping <span class="math notranslate nohighlight">\({\sigma} \rightarrow X\)</span> reduces detailed information to a single summary quantity, <span class="math notranslate nohighlight">\(X\)</span> is known as a macroscopic observable. Fixing <span class="math notranslate nohighlight">\(X\)</span> defines a macrostate, which captures the system’s behavior at a higher level of abstraction.</p>
+<p>A primary goal in statistical physics is to transition from the probability distribution of microstates, <span class="math notranslate nohighlight">\(P({\sigma})\)</span>, to the probability distribution of macrostates, <span class="math notranslate nohighlight">\(P(X)\)</span>. Understanding this transformation is central to the discipline. To explore this, consider a coin-flipping example.</p>
+<p>The probability of observing a macrostate <span class="math notranslate nohighlight">\(X\)</span> depends on two factors: the number of microstates <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> consistent with <span class="math notranslate nohighlight">\(X\)</span>, and the probability <span class="math notranslate nohighlight">\(p^{N_+}q^{N_-}\)</span> of any specific microstate. This yields the binomial distribution:</p>
+<div class="math notranslate nohighlight">
+\[
+P(X) = P(N_+, N_-) = \underbrace{\frac{N!}{N_+! N_-!}}{\equiv e^{S(X)}} \quad \underbrace{p^{N+}q^{N_-}}_{\equiv e^{-E(X)}}.
+\]</div>
+<p>Rewriting, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+P(X) = e^{S(X)} e^{-E(X)},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(S(X)\)</span>, the logarithm of the number of microstates, represents the system’s entropy, and <span class="math notranslate nohighlight">\(E(X)\)</span>, the logarithm of the microstate probabilities, corresponds to its energy. These two quantities, entropy and energy, often compete in determining the system’s behavior.</p>
+<p>The entropy can be computed as:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \ln(N!) - \ln(N_+!) - \ln(N_-!).
+\]</div>
+<p>Using Stirling’s approximation:</p>
+<div class="math notranslate nohighlight">
+\[
+\ln N! \approx N (\ln N - 1) + O(\ln N),
+\]</div>
+<p>the entropy becomes:</p>
+<div class="math notranslate nohighlight">
+\[
+S \approx -N \left(\frac{1+x}{2} \ln \left(\frac{1+x}{2}\right) + \frac{1-x}{2} \ln \left(\frac{1-x}{2}\right)\right),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x = X / N\)</span> is the specific magnetization.</p>
+<p>The energy is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+E(x) &amp;= -\ln \left(p^{N_+} q^{N_-}\right) = -N_+ \ln(p) - N_- \ln(q) \
+&amp;= -N \left[\frac{1+x}{2} \ln(p) + \frac{1-x}{2} \ln(q)\right] \
+&amp;= -\frac{N}{2} \left[\ln(pq) + x \ln \frac{p}{q}\right].
+\end{aligned}
+\]</div>
+<p>This framework highlights the balance between entropy and energy in determining macroscopic properties, which is a cornerstone of statistical physics.</p>
 </section>
 <section id="coarse-graining">
 <h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h3>
 <p>In the realm of statistical physics, the concept of <strong>coarse-graining</strong> plays a pivotal role in understanding the transition from microscopic to macroscopic descriptions. The entire configuration of a system, denoted by <span class="math notranslate nohighlight">\(\{\sigma\} = \left\{\sigma_{1}, \sigma_{2}, \ldots\right\}\)</span>, represents the <strong>micro-state</strong>. The set of all micro-states encompasses all possible configurations at the most fundamental level.</p>
-<p><strong>We usually don’t care about microstates.</strong> In most physical systems, we cannot directly observe all degrees of freedom of a microstate. More importantly, the precise microstate of the system, i.e. the current configuration of spins in a solid, the position and momenta of all gas particles in glass of water, says almost nothing about the features of the macroscopic system. What happens to the water when we heat it up, how does a balloon respond to pressure, or why is water sometimes solid sometimes liquid? All these questions ask about the emmergent phenomena resulting from the typical features of the <em>giant</em> number of typical microstates a maccroscopic (Avogadro-number-like) system can take.</p>
-<p>More concretely, in a magnet, we typically cannot measure all spins. But we usually care about aspects that represent sums over all spins, for instance, the magnetization,</p>
+<p><strong>However, we are rarely concerned with the exact details of individual microstates. Instead, we focus on features common to all typical microstates.</strong> In most cases, the specific microstate of a system—such as the precise arrangement of spins in a solid or the exact positions and momenta of molecules in a glass of water—offers little insight into its macroscopic behavior. Questions like “What happens to water when it is heated?” or “How does a balloon respond to pressure?” relate to emergent properties derived from the shared characteristics of the vast number of possible microstates in a macroscopic system (on the order of Avogadro’s number).</p>
+<p>For instance, when observing a sequence of coin flips represented as 1’s and 0’s, we are generally uninterested in the precise order of outcomes. Instead, we notice patterns, such as the balance between 1’s and 0’s. This leads us to consider quantities like the total number of heads <span class="math notranslate nohighlight">\(N_+\)</span>, tails <span class="math notranslate nohighlight">\(N_-\)</span>, or their difference,</p>
 <div class="math notranslate nohighlight">
-\[X \equiv \sum_{j=1}^{N} \sigma_{j}\;,\]</div>
-<p>which is the difference <span class="math notranslate nohighlight">\(X=N_+-N_-\)</span> between up- and down-spins. (Likewise, when we stare at a coin flip series of 1’s and 0’s our brains tend to quickly notice if there’s a mismatch between 1’s and 0’s.)</p>
-<p>Since <span class="math notranslate nohighlight">\(\{\sigma\} \rightarrow X\)</span> is a many-to-one mapping, we call <span class="math notranslate nohighlight">\(X\)</span> a macroscopic observable. By fixing the value of <span class="math notranslate nohighlight">\(X\)</span>, we effectively define what is known as a <strong>macro-state</strong>.</p>
-<p>A typical objective in statistical physics is to transition from the probability distribution of micro-states, <span class="math notranslate nohighlight">\(P(\{\sigma\})\)</span>, to that of macro-states, <span class="math notranslate nohighlight">\(P(X)\)</span>. What generically happens during this transition is the central question of statistical physics. Today, we will explore this question using coin flipping.</p>
-<p><strong>Returning to coin flipping.</strong> The probability of <span class="math notranslate nohighlight">\(X\)</span> is naturally represented as a product of the number <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> of possible microstates (aka microscopic configurations) and the probability <span class="math notranslate nohighlight">\(p^{N_{+}}q^{N_{-}}\)</span> to observe anyone of the microstates. We thus obtain the binomial distribution</p>
+\[X \equiv \sum_{j=1}^{N} \sigma_{j}=N_+ - N_-\;.\]</div>
+<p>Similarly, in a magnet, individual spins are difficult to measure, but we can focus on macroscopic quantities like the magnetization, which is also expressed as <span class="math notranslate nohighlight">\(X = N_+ - N_-\)</span>, the net difference between up and down spins.</p>
+<p>Since mapping <span class="math notranslate nohighlight">\({\sigma} \rightarrow X\)</span> reduces detailed information to a single summary quantity, <span class="math notranslate nohighlight">\(X\)</span> is known as a macroscopic observable. Fixing <span class="math notranslate nohighlight">\(X\)</span> defines a macrostate, which captures the system’s behavior at a higher level of abstraction. (The associated loss of information is a key quantity central to both information theory and statistical mechanics. More on that later.)</p>
+<p>A primary goal in statistical physics is to transition from the probability distribution of microstates, <span class="math notranslate nohighlight">\(P({\sigma})\)</span>, to the probability distribution of macrostates, <span class="math notranslate nohighlight">\(P(X)\)</span>. Understanding this transformation is central to the discipline. To explore this, consider a coin-flipping example.</p>
+<p>The probability of observing a macrostate <span class="math notranslate nohighlight">\(X\)</span> depends on two factors: the number of microstates <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> consistent with <span class="math notranslate nohighlight">\(X\)</span>, and the probability <span class="math notranslate nohighlight">\(p^{N_+}q^{N_-}\)</span> of any specific microstate. This yields the binomial distribution:</p>
 <div class="math notranslate nohighlight">
 \[
 P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \underbrace{p^{N_{+}}q^{N_{-}}}_{\equiv e^{-E(X)}}
@@ -703,8 +752,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0f58d04328822c1764ab6913642ea086e33403d55077aeb1504230c757f976a8.png" src="_images/0f58d04328822c1764ab6913642ea086e33403d55077aeb1504230c757f976a8.png" />
-<img alt="_images/5157b9e0198ddcdb10fe09ea684f8e10c4a8ef62e4e1ae9eae68672eda7b4b54.png" src="_images/5157b9e0198ddcdb10fe09ea684f8e10c4a8ef62e4e1ae9eae68672eda7b4b54.png" />
+<img alt="_images/19955b887765645451d87930370124e1c972a742f9ca6ba4e75d99ace2db3c38.png" src="_images/19955b887765645451d87930370124e1c972a742f9ca6ba4e75d99ace2db3c38.png" />
+<img alt="_images/930121cfd1e95ca2cd3043de32a8501ca378cdc87203f2c426e322f63c3f916c.png" src="_images/930121cfd1e95ca2cd3043de32a8501ca378cdc87203f2c426e322f63c3f916c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -735,7 +784,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e29d2b6c2b5250bbbb303774d39545d589daaae68213edcea9c9e3e3b12bf20c.png" src="_images/e29d2b6c2b5250bbbb303774d39545d589daaae68213edcea9c9e3e3b12bf20c.png" />
+<img alt="_images/5a8e0ffd0b8238b119ec3f8c635bce2c20a9693cafbd39183334ba4db0f0c7bf.png" src="_images/5a8e0ffd0b8238b119ec3f8c635bce2c20a9693cafbd39183334ba4db0f0c7bf.png" />
 </div>
 </div>
 </section>
@@ -773,12 +822,12 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Course-Info-211-2024.html"
+       href="Introduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Course Information</p>
+        <p class="prev-next-title">Quick Summary of Statistical Mechanics</p>
       </div>
     </a>
 </div>
