@@ -19,7 +19,7 @@ F 3:00PM - 3:59PM, Room: 109 - Dwinelle
 
 **Office hours:** \
 Prof. H: Tu 5:00 - 6:00PM in 408C Stanley Hall\
-Irian: Th 10AM  Interaction Room, 5th floor Birge.
+Stefan: Th 10AM  Interaction Room, 5th floor Birge.
 
 Drop Deadline: Feb 12.
 
