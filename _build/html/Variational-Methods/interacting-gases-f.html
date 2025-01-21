@@ -63,8 +63,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Variational-Methods/interacting-gases-f';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Monte Carlo and the Metropolis Algorithm" href="../MonteCarlo/MonteCarlo.html" />
-    <link rel="prev" title="Variational Method" href="Variational-methods-Mean-Field.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,40 +183,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Variational-methods-Mean-Field.html">Variational Method</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Interacting Gases</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Landau/Landau.html">Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
 </ul>
 
     </div>
@@ -694,7 +661,7 @@ u &amp; =U_{0} r_{0}^{\alpha} S_{D}\left(\frac{0-r_{0}^{D-\alpha}}{D-\alpha}\rig
 \end{aligned}
 \]</div>
 <div class="math notranslate nohighlight" id="equation-gibbs-ineq-vdw">
-<span class="eqno">(13)<a class="headerlink" href="#equation-gibbs-ineq-vdw" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-gibbs-ineq-vdw" title="Permalink to this equation">#</a></span>\[
  \frac{\ln Q}{\beta V} \geq \beta^{-1} n\left[\ln \left(\frac{n^{-1}-\Omega_{ex}/ 2}{\lambda_T^{3}}\right)+\beta\mu+1\right]+ u \frac{n^{2}}{2}\equiv\psi_u[n,\mu,T]
 \]</div>
 <p>Note that the lHS has a simple interpretation in terms of pressure:</p>
@@ -711,7 +678,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi_u[n,\mu,T]
 \]</div>
 <p>Thus, our <strong>best</strong> variational approximation of the true pressure is obtained by maximizing <span class="math notranslate nohighlight">\(\psi\)</span> w.r.t. <span class="math notranslate nohighlight">\(n\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-pressure-max-psi">
-<span class="eqno">(14)<a class="headerlink" href="#equation-pressure-max-psi" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-pressure-max-psi" title="Permalink to this equation">#</a></span>\[
  P(\mu,T) \approx \max_{n}\psi_u[n,\mu,T]
 \]</div>
 <p>We’ll see that, as a function of <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\psi[n,\mu,T]\)</span> exhibits two maxima corresponding to gas and liquid. Which maximum is the global one depends, for a given temperature <span class="math notranslate nohighlight">\(T\)</span>, on <span class="math notranslate nohighlight">\(\mu\)</span>.  To get a better sense of the behavior of <span class="math notranslate nohighlight">\(\psi_u[n,\mu,T]\)</span>, we’ll rescale all  parameters in terms of their characteristic values,</p>
@@ -739,7 +706,7 @@ P(\mu,T) =\frac{\ln Q(\mu,T,V)}{\beta V} \geq \psi_u[n,\mu,T]
 </div>
 <p>Now, let’s maximize <span class="math notranslate nohighlight">\(\tilde \psi\)</span> w.r.t. our variational parameter <span class="math notranslate nohighlight">\(\tilde n\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-maximizing-psi">
-<span class="eqno">(15)<a class="headerlink" href="#equation-maximizing-psi" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-maximizing-psi" title="Permalink to this equation">#</a></span>\[
 \partial_{\tilde n} \tilde \psi=\ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } +\tilde \mu + \tilde u \tilde n= 0
 \]</div>
 <p>This has multiple <span class="math notranslate nohighlight">\(\tilde n\)</span>–solutions for a given <span class="math notranslate nohighlight">\(\tilde \mu\)</span> (see below).</p>
@@ -780,7 +747,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 <h3>Phase transition<a class="headerlink" href="#phase-transition" title="Permalink to this heading">#</a></h3>
 <p>Let’s return to <a class="reference internal" href="interacting-gases-variational-treatment.html#equation-maximizing-psi">()</a> determining the optimal density <em>given</em> the chemical potential, which can be rewritten as</p>
 <div class="math notranslate nohighlight" id="equation-graphical-vdw">
-<span class="eqno">(16)<a class="headerlink" href="#equation-graphical-vdw" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-graphical-vdw" title="Permalink to this equation">#</a></span>\[
 \ln \left({\tilde n}^{-1}-1\right) -\frac{1}{1-\tilde n } =-\tilde \mu -\tilde u \tilde n \;.
 \]</div>
 <p>Note that the LHS is a complicated non-linear function, but does not depend on any parameter. The RHS is merely a straight line with axis intercept <span class="math notranslate nohighlight">\(-\tilde \mu\)</span> and negative slope <span class="math notranslate nohighlight">\(-\tilde u\)</span>. So, we may solve the equation graphically by plotting the parameter-free RHS, and see under which conditions this function can be cut by a negative slope straight line.</p>
@@ -882,7 +849,7 @@ P=\frac{k_B T}{v-b}-\frac{a}{v^2}
 <p>The extremum structure of <span class="math notranslate nohighlight">\(\tilde \psi\)</span> matters for the relaxation to equilibrium. If there are two maxima, and we start out at the lower maximum, relaxation proceeds via droplets of a minimal size. If there’s just one maximum, the relaxation proceeds spontanously.</p>
 <section id="minimal-attractive-interaction">
 <h4>Minimal attractive interaction<a class="headerlink" href="#minimal-attractive-interaction" title="Permalink to this heading">#</a></h4>
-<p>However, to be able to observe a phase transition as function of <span class="math notranslate nohighlight">\(\mu\)</span>, the value of <span class="math notranslate nohighlight">\(\tilde u\)</span> has to exceed a critical <span class="math notranslate nohighlight">\(\tilde u_c\)</span> so that <span class="math notranslate nohighlight">\(\tilde \psi\)</span> has two maxima and one minimum. We can determine the minimal <span class="math notranslate nohighlight">\(\tilde u_c\)</span> by finding the maximal slope of the LHS in <a class="reference internal" href="#equation-graphical-vdw">(16)</a>,</p>
+<p>However, to be able to observe a phase transition as function of <span class="math notranslate nohighlight">\(\mu\)</span>, the value of <span class="math notranslate nohighlight">\(\tilde u\)</span> has to exceed a critical <span class="math notranslate nohighlight">\(\tilde u_c\)</span> so that <span class="math notranslate nohighlight">\(\tilde \psi\)</span> has two maxima and one minimum. We can determine the minimal <span class="math notranslate nohighlight">\(\tilde u_c\)</span> by finding the maximal slope of the LHS in <a class="reference internal" href="#equation-graphical-vdw">()</a>,</p>
 <div class="math notranslate nohighlight">
 \[
 u_c =\max_{n} \partial_{\tilde n} \left(\frac{1}{1-\tilde n }-\ln \left({\tilde n}^{-1}-1\right) \right)=\max_{n} \frac{1}{n(1-n)^2} 
@@ -949,24 +916,6 @@ u_c =\max_{n} \partial_{\tilde n} \left(\frac{1}{1-\tilde n }-\ln \left({\tilde 
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Variational-methods-Mean-Field.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Variational Method</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../MonteCarlo/MonteCarlo.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Monte Carlo and the Metropolis Algorithm</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

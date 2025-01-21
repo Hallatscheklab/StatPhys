@@ -63,7 +63,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Coin-flipping';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Entropy and information" href="Shannon-entropy.html" />
     <link rel="prev" title="Course Information" href="Course-Info-211-2024.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,37 +187,6 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Probability and information entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Equipartition-Mesostates.html">Equipartition</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Crooks.html">Non-equilibrium fluctuation theorems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Chemical-reactions.html">Chemical reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Landau/Landau.html">Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
 </ul>
 
     </div>
@@ -522,13 +490,14 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 <section id="coarse-graining">
 <h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h3>
 <p>In the realm of statistical physics, the concept of <strong>coarse-graining</strong> plays a pivotal role in understanding the transition from microscopic to macroscopic descriptions. The entire configuration of a system, denoted by <span class="math notranslate nohighlight">\(\{\sigma\} = \left\{\sigma_{1}, \sigma_{2}, \ldots\right\}\)</span>, represents the <strong>micro-state</strong>. The set of all micro-states encompasses all possible configurations at the most fundamental level.</p>
-<p>But, usually, we cannot directly observe all degrees of freedom of a microstate. Instead, we measure certain observables that have the same value for many microstates. For example, we typically cannot measure all spins in a magnet but just a sum over all spins. In a magnet, for instance, we care about the magnetization,</p>
+<p><strong>We usually don’t care about microstates.</strong> In most physical systems, we cannot directly observe all degrees of freedom of a microstate. More importantly, the precise microstate of the system, i.e. the current configuration of spins in a solid, the position and momenta of all gas particles in glass of water, says almost nothing about the features of the macroscopic system. What happens to the water when we heat it up, how does a balloon respond to pressure, or why is water sometimes solid sometimes liquid? All these questions ask about the emmergent phenomena resulting from the typical features of the <em>giant</em> number of typical microstates a maccroscopic (Avogadro-number-like) system can take.</p>
+<p>More concretely, in a magnet, we typically cannot measure all spins. But we usually care about aspects that represent sums over all spins, for instance, the magnetization,</p>
 <div class="math notranslate nohighlight">
 \[X \equiv \sum_{j=1}^{N} \sigma_{j}\;,\]</div>
 <p>which is the difference <span class="math notranslate nohighlight">\(X=N_+-N_-\)</span> between up- and down-spins. (Likewise, when we stare at a coin flip series of 1’s and 0’s our brains tend to quickly notice if there’s a mismatch between 1’s and 0’s.)</p>
 <p>Since <span class="math notranslate nohighlight">\(\{\sigma\} \rightarrow X\)</span> is a many-to-one mapping, we call <span class="math notranslate nohighlight">\(X\)</span> a macroscopic observable. By fixing the value of <span class="math notranslate nohighlight">\(X\)</span>, we effectively define what is known as a <strong>macro-state</strong>.</p>
-<p>A typical objective in statistical physics is to transition from the probability distribution of micro-states, <span class="math notranslate nohighlight">\(P(\{\sigma\})\)</span>, to that of macro-states, <span class="math notranslate nohighlight">\(P(X)\)</span>. What generically happens during this transition is a fundamental aspect that we will explore now,  using coin flipping.</p>
-<p>The probability of <span class="math notranslate nohighlight">\(X\)</span> is naturally represented as a product of the number <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> of possible microstates (aka microscopic configurations) and the probability <span class="math notranslate nohighlight">\(p^{N_{+}}q^{N_{-}}\)</span> to observe anyone of the microstates. We thus obtain the binomial distribution</p>
+<p>A typical objective in statistical physics is to transition from the probability distribution of micro-states, <span class="math notranslate nohighlight">\(P(\{\sigma\})\)</span>, to that of macro-states, <span class="math notranslate nohighlight">\(P(X)\)</span>. What generically happens during this transition is the central question of statistical physics. Today, we will explore this question using coin flipping.</p>
+<p><strong>Returning to coin flipping.</strong> The probability of <span class="math notranslate nohighlight">\(X\)</span> is naturally represented as a product of the number <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> of possible microstates (aka microscopic configurations) and the probability <span class="math notranslate nohighlight">\(p^{N_{+}}q^{N_{-}}\)</span> to observe anyone of the microstates. We thus obtain the binomial distribution</p>
 <div class="math notranslate nohighlight">
 \[
 P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \underbrace{p^{N_{+}}q^{N_{-}}}_{\equiv e^{-E(X)}}
@@ -537,7 +506,7 @@ P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \u
 \[
 P(X)= e^{S(X)}e^{-E(X)}
 \]</div>
-<p>Here, we introduced the quantities <span class="math notranslate nohighlight">\(S(X)\)</span> as the log of the number of microstates and <span class="math notranslate nohighlight">\(E(X)\)</span> as the log-probability of the microstates. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
+<p>Here, we introduced the quantities <span class="math notranslate nohighlight">\(S(X)\)</span> as the <strong>log of the number of microstates</strong> and <span class="math notranslate nohighlight">\(E(X)\)</span> as the <strong>log-probability of the microstates</strong>. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
@@ -567,7 +536,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <p>For large <span class="math notranslate nohighlight">\(N\)</span>, both entropy <span class="math notranslate nohighlight">\(S\propto N\)</span> and energy <span class="math notranslate nohighlight">\(S\propto N\)</span> have a very simple, linear dependence on <span class="math notranslate nohighlight">\(N\)</span>. Macroscopic observables that grow linearly with the system size are called <strong>extensive</strong>. These are in contrast to <strong>intensive</strong> quanitites, which approach a constant in the thermodynamic limit of large systems, for example <span class="math notranslate nohighlight">\(x=X/N\)</span> which is bounded between -1 and 1.</p>
 <p><strong>Throughout this course, we use capital/lower case letters to indicate extensive/intensive quantities.</strong></p>
 </div>
-<p>Let’s have a look at their competition:</p>
+<p>The following plots illustrate the competition between energy and entropy.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -626,11 +595,12 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </div>
 <p>Notice:</p>
 <ul class="simple">
-<li><p>The entropy has a maximum at the neutral point <span class="math notranslate nohighlight">\(x = 0\)</span> and vanishes at the boundaries (all spin up / down)</p></li>
+<li><p>The entropy <span class="math notranslate nohighlight">\(s(x)\)</span> has a maximum at the neutral point <span class="math notranslate nohighlight">\(x = 0\)</span> and vanishes at the boundaries (all spin up / down)</p></li>
 <li><p>“Low energy” states have higher probab.</p></li>
 <li><p>The competition between <span class="math notranslate nohighlight">\(e(x)\)</span> and <span class="math notranslate nohighlight">\(s(x)\)</span> leads to a maximum of in the sum <span class="math notranslate nohighlight">\(s(x)-e(x)\)</span>.</p></li>
 <li><p>Later, we will rather look at the negative, <span class="math notranslate nohighlight">\(e(x)-s(x)=:f(x)\)</span>, which we call a free energy. It is generally a convex function and has a <em>minimum</em> at the most likely value of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ul>
+<p><em>You can play with the parameter <span class="math notranslate nohighlight">\(p\)</span> in the above code to move the maximum.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The depicted maximum in <span class="math notranslate nohighlight">\(-f(x)\)</span> does not look very impressive. But, since we have</p>
@@ -733,8 +703,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1a692f345929e3294feff0dd47ee095ec04c4600b5026442d42cc6aff4b6defc.png" src="_images/1a692f345929e3294feff0dd47ee095ec04c4600b5026442d42cc6aff4b6defc.png" />
-<img alt="_images/926a6952172ca36f3b3c16a380f208a46a3485099bdc704f171ab1bd7244d861.png" src="_images/926a6952172ca36f3b3c16a380f208a46a3485099bdc704f171ab1bd7244d861.png" />
+<img alt="_images/0f58d04328822c1764ab6913642ea086e33403d55077aeb1504230c757f976a8.png" src="_images/0f58d04328822c1764ab6913642ea086e33403d55077aeb1504230c757f976a8.png" />
+<img alt="_images/5157b9e0198ddcdb10fe09ea684f8e10c4a8ef62e4e1ae9eae68672eda7b4b54.png" src="_images/5157b9e0198ddcdb10fe09ea684f8e10c4a8ef62e4e1ae9eae68672eda7b4b54.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -765,7 +735,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7c21330ca0ec0ec26d8b77a41e5aa346559d4c6e704bd711f0ef3f19456b02d3.png" src="_images/7c21330ca0ec0ec26d8b77a41e5aa346559d4c6e704bd711f0ef3f19456b02d3.png" />
+<img alt="_images/e29d2b6c2b5250bbbb303774d39545d589daaae68213edcea9c9e3e3b12bf20c.png" src="_images/e29d2b6c2b5250bbbb303774d39545d589daaae68213edcea9c9e3e3b12bf20c.png" />
 </div>
 </div>
 </section>
@@ -810,15 +780,6 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Course Information</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Shannon-entropy.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Entropy and information</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
