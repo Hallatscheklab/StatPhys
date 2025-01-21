@@ -497,7 +497,7 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 \[X \equiv \sum_{j=1}^{N} \sigma_{j}=N_+ - N_-\;.\]</div>
 <p>Similarly, in a magnet, individual spins are difficult to measure, but we can focus on macroscopic quantities like the magnetization, which is also expressed as <span class="math notranslate nohighlight">\(X = N_+ - N_-\)</span>, the net difference between up and down spins.</p>
 <p>Since mapping <span class="math notranslate nohighlight">\({\sigma} \rightarrow X\)</span> reduces detailed information to a single summary quantity, <span class="math notranslate nohighlight">\(X\)</span> is known as a macroscopic observable. Fixing <span class="math notranslate nohighlight">\(X\)</span> defines a macrostate, which captures the system’s behavior at a higher level of abstraction. (The associated loss of information is a key quantity central to both information theory and statistical mechanics. More on that later.)</p>
-<p>A primary goal in statistical physics is to transition from the probability distribution of microstates, <span class="math notranslate nohighlight">\(P({\sigma})\)</span>, to the probability distribution of macrostates, <span class="math notranslate nohighlight">\(P(X)\)</span>. Understanding this transformation is central to the discipline. To explore this, consider a coin-flipping example.</p>
+<p><strong>A primary goal in statistical physics is to transition from the probability distribution of microstates, <span class="math notranslate nohighlight">\(P({\sigma})\)</span>, to the probability distribution of macrostates, <span class="math notranslate nohighlight">\(P(X)\)</span>.</strong> Understanding this transformation is central to the discipline. To explore this, consider a coin-flipping example.</p>
 <p>The probability of observing a macrostate <span class="math notranslate nohighlight">\(X\)</span> depends on two factors: the number of microstates <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> consistent with <span class="math notranslate nohighlight">\(X\)</span>, and the probability <span class="math notranslate nohighlight">\(p^{N_+}q^{N_-}\)</span> of any specific microstate. This yields the binomial distribution:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -507,7 +507,7 @@ P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \u
 \[
 P(X)= e^{S(X)}e^{-E(X)}
 \]</div>
-<p>Here, we introduced the quantities <span class="math notranslate nohighlight">\(S(X)\)</span> as the <strong>log of the number of microstates</strong> and <span class="math notranslate nohighlight">\(E(X)\)</span> as the <strong>log-probability of the microstates</strong>. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
+<p>Here, we introduced the quantities <span class="math notranslate nohighlight">\(S(X)\)</span> as the <strong>log of the number of microstates</strong> and <span class="math notranslate nohighlight">\(E(X)\)</span> as the <strong>log-probability of a single such microstate</strong>. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
@@ -607,7 +607,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <p>The depicted maximum in <span class="math notranslate nohighlight">\(-f(x)\)</span> does not look very impressive. But, since we have</p>
 <div class="math notranslate nohighlight">
 \[P(x)=e^{-N f(x)}, \]</div>
-<p>a so-called (large deviation principle)[<a class="reference external" href="https://en.wikipedia.org/wiki/Large_deviations_theory">https://en.wikipedia.org/wiki/Large_deviations_theory</a>], we will get a pronounced maximum at <span class="math notranslate nohighlight">\(x=p- q\)</span> (the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span>) for even modestly large <span class="math notranslate nohighlight">\(N\)</span>. Fully deterministic behavior <span class="math notranslate nohighlight">\(x \to p-q\)</span> emerges in the thermodynamic limit, <span class="math notranslate nohighlight">\(N\to \infty\)</span>. The most likely value of <span class="math notranslate nohighlight">\(x\)</span> coincides with the expectation value <span class="math notranslate nohighlight">\(\langle x \rangle = p-q\)</span>, see below.</p>
+<p>a so-called (large deviation principle)[<a class="reference external" href="https://en.wikipedia.org/wiki/Large_deviations_theory">https://en.wikipedia.org/wiki/Large_deviations_theory</a>], we will get a pronounced maximum at <span class="math notranslate nohighlight">\(x=p- q\)</span> (at which <span class="math notranslate nohighlight">\(f(x)\)</span> is minimal) for even modestly large <span class="math notranslate nohighlight">\(N\)</span>. Fully deterministic behavior <span class="math notranslate nohighlight">\(x \to p-q\)</span> emerges in the thermodynamic limit, <span class="math notranslate nohighlight">\(N\to \infty\)</span>. The most likely value of <span class="math notranslate nohighlight">\(x\)</span> coincides with the expectation value <span class="math notranslate nohighlight">\(\langle x \rangle = p-q\)</span>, see below.</p>
 </div>
 <p>We can explore the effects of finite <span class="math notranslate nohighlight">\(N\)</span> by Taylor expanding <span class="math notranslate nohighlight">\(S(x)-E(x)\)</span> to <span class="math notranslate nohighlight">\(O(\Delta x^2)\equiv O\left[(x-\langle x\rangle)^{2}\right]\)</span>, we obtain to leading order a Gaussian,</p>
 <div class="math notranslate nohighlight">
@@ -704,8 +704,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a787eb11fdb0aa29309e813a3ba58a212d3225a51536c71d4ce040d2c2a6fb5e.png" src="_images/a787eb11fdb0aa29309e813a3ba58a212d3225a51536c71d4ce040d2c2a6fb5e.png" />
-<img alt="_images/98e38271fc7f7bb7d88e93dc7592735c763467274242c2b9ac0ec79f0f3bd253.png" src="_images/98e38271fc7f7bb7d88e93dc7592735c763467274242c2b9ac0ec79f0f3bd253.png" />
+<img alt="_images/eb7d363891a4d53a27fac670ced973fe92b2515dc4952a0906a779845d30ce70.png" src="_images/eb7d363891a4d53a27fac670ced973fe92b2515dc4952a0906a779845d30ce70.png" />
+<img alt="_images/ae58b60dbdad772a6708dc20ebcca74ac15724d08dd129b4503ae79ddb25da4c.png" src="_images/ae58b60dbdad772a6708dc20ebcca74ac15724d08dd129b4503ae79ddb25da4c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -736,7 +736,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3de89fec678822a0a13c5692ea9a05d77e2ab6ac559a61f60abec071b79190fd.png" src="_images/3de89fec678822a0a13c5692ea9a05d77e2ab6ac559a61f60abec071b79190fd.png" />
+<img alt="_images/cace163af9077a8fb7f1b8748132d98eabd8cf3e3124ce17bbeeae7079d5af4f.png" src="_images/cace163af9077a8fb7f1b8748132d98eabd8cf3e3124ce17bbeeae7079d5af4f.png" />
 </div>
 </div>
 </section>
