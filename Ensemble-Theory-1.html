@@ -30,12 +30,12 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
@@ -49,14 +49,18 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -162,18 +166,7 @@
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -186,8 +179,8 @@
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2025.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Quick Summary of Statistical Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Probability-Entropy/Coin-flipping.html">Probability, energy and entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Probability-Entropy/Shannon-entropy.html">Entropy and information</a></li>
 
 </ul>
 
@@ -463,7 +456,8 @@ document.write(`
 </ul>
 </li>
 </ul>
-<img src="https://github.com/Hallatscheklab/SoftMatter22-23/blob/main/source/notebooks/L1/img/trail-of-bright-light-in-box-460688633-5966b3605f9b5816183316bb.webp?raw=1" alt="systems" name="systems" class="bg-primary mb-1" width="500px"><p>Then, we can mathematize the basic principle by stating that the equilibrium distribution <span class="math notranslate nohighlight">\(P_{E,\mathbf{x}}(\mu)\)</span> to observe a particular state <span class="math notranslate nohighlight">\(\mu\)</span> is given by</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://github.com/Hallatscheklab/SoftMatter22-23/blob/main/source/notebooks/L1/img/trail-of-bright-light-in-box-460688633-5966b3605f9b5816183316bb.webp?raw=1" id="systems"><img alt="systems" class="bg-primary mb-1" id="systems" src="https://github.com/Hallatscheklab/SoftMatter22-23/blob/main/source/notebooks/L1/img/trail-of-bright-light-in-box-460688633-5966b3605f9b5816183316bb.webp?raw=1" style="width: 500px;" /></a>
+<p>Then, we can mathematize the basic principle by stating that the equilibrium distribution <span class="math notranslate nohighlight">\(P_{E,\mathbf{x}}(\mu)\)</span> to observe a particular state <span class="math notranslate nohighlight">\(\mu\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[P_{E,\mathbf{x}}(\mu)d\mu=\frac{\delta(E-H(\mu))}{\Omega(E,\mathbf{x})}d\mu \qquad (\text{micro-canonical ensemble})\]</div>
 <p>where the normalization constant</p>
@@ -542,7 +536,8 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 \[
 \left.\frac{\partial S_{1}(E_1^*)}{\partial E_{1}}\right|_{x_{1}}=\left.\frac{\partial S_{2}(E_2^*=E-E_1^*)}{\partial E_{2}}\right|_{x_{2}}
 \]</div>
-<img src="figures/thermalization-microcanonical.jpg" alt="drawing" width="200"/><p>Employing the <strong>thermodynamic definition of temperature</strong></p>
+<a class="reference internal image-reference" href="_images/thermalization-microcanonical.jpg"><img alt="drawing" src="_images/thermalization-microcanonical.jpg" style="width: 200px;" /></a>
+<p>Employing the <strong>thermodynamic definition of temperature</strong></p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{T}=\left.\frac{\partial S}{\partial E}\right|_{\bf{x}}\;,\]</div>
 <p>the maximum <span class="math notranslate nohighlight">\(E_1^{*}\)</span> is set by</p>
