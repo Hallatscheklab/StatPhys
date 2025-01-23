@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: Course-Info-211-2024
+- file: Course-Info-211-2025
 - file: Introduction
 - file: Coin-flipping
 #- file: Shannon-entropy

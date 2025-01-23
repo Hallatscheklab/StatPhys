@@ -5,25 +5,25 @@
 ```
 UNIVERSITY OF CALIFORNIA, BERKELEY DEPARTMENT OF PHYSICS
 ```
-**Instructor**: Prof. Oskar Hallatschek (he/his), *Office*: 408C Stanley Hall, *Email*: ohallats@berkeley.edu 
+**Instructor**: Prof. Oskar Hallatschek (he/him/his), *Office*: 408C Stanley Hall, *Email*: ohallats@berkeley.edu 
 
-**Teaching assistant**: Stefan Divic (he/his), *Email*: stefan_divic@berkeley.edu 
+**Teaching assistant**: Stefan Divic (he/him/his), *Email*: stefan_divic@berkeley.edu
 
-**Lecture info**: TuTh 3:30PM - 5:00PM, Room: 2 - Physics Building
+[**Lecture info**](https://classes.berkeley.edu/content/2025-spring-physics-211-001-lec-001): Tu, Th 3:30 - 5:00PM, Room: Physics Building, Lecture Room #2
 
 I’ll lecture live and post a recording to bCourses afterwards for those who can’t make it. If you have a question you’d like answered, but can’t make it to the lecture, send a note and I’ll answer it at the beginning of lecture and you can catch my answer on the recording.
 
 **Discussion sections:** will be a mixture of problem solving, python computer experiments and interesting stat-mech applications.\
-W 5:00PM - 6:00PM, Room: 183 - Dwinelle \
-F 3:00PM - 3:59PM, Room: 109 - Dwinelle
+W 5:00PM - 6:00PM, Room: Dwinelle 183 \
+F 3:00PM - 4:00PM, Room: Dwinelle 109
 
 **Office hours:** \
-Prof. H: Tu 5:00 - 6:00PM in 408C Stanley Hall\
-Stefan: Th 10AM  Interaction Room, 5th floor Birge.
+Prof. H: **TODO** in room **TODO**\
+Stefan: Th 10am in Birge Interaction Room (5th floor Birge Hall outside of elevator)
 
-Drop Deadline: Feb 12.
+Drop Deadline: ["Wednesday of 4th week of a given Fall or Spring semester"](https://lsadvising.berkeley.edu/progress-planning/schedule-planning-and-enrollment/enrollment-add-or-drop-course)
 
-**Course Webpage:** [https://bcourses.berkeley.edu/courses/1543239](https://bcourses.berkeley.edu/courses/1543239)
+**Course Webpage:** [bCourses](bcourses.berkeley.edu)
 
 **Prerequisites:** Physics 112, 137A/B or equivalents.
 
@@ -41,10 +41,10 @@ These notes will almost certainly have to go through various editorial iteration
 
 The notes are hosted on github pages at [https://hallatscheklab.github.io/StatPhys/intro.html](https://hallatscheklab.github.io/StatPhys/intro.html).
 
-**Exams and grades:** There will be one midterm and a final exam. The midterm will be in person (during class time) and the final exam will be a 24-hour take home exam. Dates:
-
-- Midterm, Tue, March 11 
-- Final, Fri, May 16 
+**Exams and grades:** There will be one midterm and a final exam. Both will be 24-hour take home exams on the dates
+below.
+- Midterm: **TODO**
+- Final: **TODO**
 
 Grades will be determined from a weighting of all the elements of the course as follows:
 
@@ -60,7 +60,8 @@ Grades will be determined from a weighting of all the elements of the course as 
 **Conflicts:** Let me know of any exam conflicts at least two weeks before the exam. If circumstances make it impossible
 for you to take the midterm, we’ll shift its weight to the final.
 
-**Accommodations:** If you need disability-related accommodations in this class, if you have emergency medical information you wish to share with the instructor, or if you need special arrangements in case the building must be evacuated should we return to campus, please inform Prof. Hallatschek immediately.
+**Accommodations:** If you need disability-related accommodations in this class, if you have emergency medical information you wish to share with the instructor, or if you need special arrangements in case the building must be evacuated
+should we return to campus, please inform Prof. Hallatschek immediately.
 
 **For your moral compass:** \
 *Collaboration and Independence:* Reflecting the collaborative nature of science, I expect you to work on the problem
@@ -76,8 +77,7 @@ or online, published or unpublished sources. Translation for grad school: don’
 
 -----------
 
-**All above provisions listed in the course info sheet are subject to change at the instructor’s discretion. Changes may
-happen to address problems and to improve the smooth running of the class and/or discussion sections.**
+All above provisions listed in the course info sheet are subject to change at the instructor’s discretion. Changes may
+happen to address problems and to improve the smooth running of the class and/or discussion sections.
 
 ------------
-
