@@ -532,6 +532,52 @@ H(X)\equiv -\left\langle\log_2 p_{i}\right\rangle=-\sum_{i} p_{i} \log_2 p_{i} \
 <li><p>The average code word length per symbol is therefore <span class="math notranslate nohighlight">\(\langle L\rangle/N=-\sum p_i\log_2p_i=H(X)=\frac 74&lt;2\)</span></p></li>
 <li><p>In fact, the above code can be generalized to obtain an optimal code for any source distribution, provided the messages are long enough and consist of uncorrelated symbols.</p></li>
 </ul>
+<p><strong>Code to compute the entropy of a given text string.</strong> English text has a typical entropy rate of 3 to 3.5 bits per symbol, substantially less than <span class="math notranslate nohighlight">\(\log_2(26)\approx 4.7\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="k">def</span> <span class="nf">compute_entropy</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Shannon entropy of a given text.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    text (str): The input text.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    float: The Shannon entropy of the text.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Convert text to lowercase and remove non-alphabetic characters</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">isalpha</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
+    
+    <span class="c1"># Count the frequency of each character</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    
+    <span class="c1"># Total number of characters</span>
+    <span class="n">total_characters</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">frequency</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    
+    <span class="c1"># Compute the Shannon entropy</span>
+    <span class="n">entropy</span> <span class="o">=</span> <span class="o">-</span><span class="nb">sum</span><span class="p">((</span><span class="n">freq</span> <span class="o">/</span> <span class="n">total_characters</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">freq</span> <span class="o">/</span> <span class="n">total_characters</span><span class="p">)</span> <span class="k">for</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">frequency</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    
+    <span class="k">return</span> <span class="n">entropy</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">sample_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The quick brown fox jumps over the lazy dog. This sentence is often used to test typewriters and fonts because it contains all the letters of the English alphabet.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">entropy_value</span> <span class="o">=</span> <span class="n">compute_entropy</span><span class="p">(</span><span class="n">sample_text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shannon Entropy of the given text: </span><span class="si">{</span><span class="n">entropy_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bits/character&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shannon Entropy of the given text: 4.1516 bits/character
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="estimation">
 <h3>Estimation:<a class="headerlink" href="#estimation" title="Permalink to this heading">#</a></h3>
