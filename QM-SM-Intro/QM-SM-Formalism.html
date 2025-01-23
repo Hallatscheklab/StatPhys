@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Formalism of quantum statistical mechanics &#8212; Equilibrium Statistical Physics</title>
   
@@ -15,58 +14,60 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'QM-SM-Intro/QM-SM-Formalism';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hilbert space of Bosons and Fermions" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html" />
-    <link rel="prev" title="Gapless quantum matter: phonons + Debye model Coldstone’s Theorem" href="QM-SM-intro-2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -74,32 +75,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -107,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -115,15 +99,17 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
-  <header>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -132,7 +118,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,6 +134,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -160,21 +149,17 @@
     
     
     <img src="../_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
-    <script>document.write(`<img src="../_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+    <img src="../_static/LLPS.webp" class="logo__image only-dark pst-js-only" alt="Equilibrium Statistical Physics - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -185,41 +170,10 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2025.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ergodicity/Ergodicity.html">Coarse-graining and Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Formalism of quantum statistical mechanics</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Landau/Landau.html">Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
 </ul>
 
     </div>
@@ -228,14 +182,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -244,14 +203,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -374,27 +333,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -443,7 +394,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="formalism-of-quantum-statistical-mechanics">
-<h1>Formalism of quantum statistical mechanics<a class="headerlink" href="#formalism-of-quantum-statistical-mechanics" title="Permalink to this heading">#</a></h1>
+<h1>Formalism of quantum statistical mechanics<a class="headerlink" href="#formalism-of-quantum-statistical-mechanics" title="Link to this heading">#</a></h1>
 <p>(Also see Kardar 6.4 (Quantum microstates) and Kardar 6.5 (Quantum macrostates))</p>
 <p>Thus far, we dove into quantum stat-mech using the replacement recepie</p>
 <div class="math notranslate nohighlight">
@@ -451,7 +402,7 @@ document.write(`
 Z=\sum_{n} e^{-\beta E_{n}}, \hat{H}\left|E_{n}\right\rangle=E_{n}\left|E_{n}\right\rangle
 \]</div>
 <p>This is correct, but its worth developing the general formalism.</p>
-<p>Classically, we have a distribution over microstates ” <span class="math notranslate nohighlight">\(\mu\)</span> “, <span class="math notranslate nohighlight">\(p(\mu)\)</span>, with <span class="math notranslate nohighlight">\(\langle O\rangle=\sum_{\mu} p(\mu) O(\mu)\)</span></p>
+<p>Classically, we have a distribution over microstates “ <span class="math notranslate nohighlight">\(\mu\)</span> “, <span class="math notranslate nohighlight">\(p(\mu)\)</span>, with <span class="math notranslate nohighlight">\(\langle O\rangle=\sum_{\mu} p(\mu) O(\mu)\)</span></p>
 <p>The distribution <span class="math notranslate nohighlight">\(p(\mu)\)</span> depends on ensemble,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -547,7 +498,7 @@ c &amp; 0
 \operatorname{Tr}[A, B]=A_{i j} B_{j i}-B_{i j} \cdot A_{j i}=0 \text {. finite ! } \quad \mid \quad \underbrace{}_{-i \hbar}\langle\psi|=\langle\psi| \hat{H}
 \]</div>
 <section id="dynamics">
-<h2>Dynamics:<a class="headerlink" href="#dynamics" title="Permalink to this heading">#</a></h2>
+<h2>Dynamics:<a class="headerlink" href="#dynamics" title="Link to this heading">#</a></h2>
 <p>Exercise: Show that the Schrödinger equation</p>
 <div class="math notranslate nohighlight">
 \[i\hbar \partial_{t}|\varphi\rangle=\hat{H}|\psi\rangle\]</div>
@@ -570,7 +521,7 @@ i\hbar \partial_{t} \sum_{i} \rho_{i, i}=i \hbar \partial_{t}(\operatorname{Tr}(
 <p>( For a unitarian evolution in a open systan, one obtaines the so-called Lindblad quation which has aspects of a Masters equation)</p>
 </section>
 <section id="density-matrices-in-equilbrium">
-<h2>Density matrices in equilbrium.<a class="headerlink" href="#density-matrices-in-equilbrium" title="Permalink to this heading">#</a></h2>
+<h2>Density matrices in equilbrium.<a class="headerlink" href="#density-matrices-in-equilbrium" title="Link to this heading">#</a></h2>
 <p>The various equilibrium ensembles are then taken to be diagonal in the <span class="math notranslate nohighlight">\(\hat{H}\)</span> basis:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -609,14 +560,14 @@ i\hbar \partial_{t} \sum_{i} \rho_{i, i}=i \hbar \partial_{t}(\operatorname{Tr}(
 </section>
 </section>
 <section id="the-many-body-hilbert-space">
-<h1>The Many-Body Hilbert space<a class="headerlink" href="#the-many-body-hilbert-space" title="Permalink to this heading">#</a></h1>
+<h1>The Many-Body Hilbert space<a class="headerlink" href="#the-many-body-hilbert-space" title="Link to this heading">#</a></h1>
 <p>The sum <span class="math notranslate nohighlight">\(\sum_{n} e^{-\beta E_{n}}\left|E_{n}\right\rangle\left\langle E_{n}\right|\)</span> runs over the Hilbert space <span class="math notranslate nohighlight">\(\left|E_{n}\right\rangle \in \mathcal{H}\)</span>, so its worth understanding the structure of <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> in a many-body system. 3 common cases:</p>
 <p>(1) Spins / quits <span class="math notranslate nohighlight">\(|\uparrow \uparrow \downarrow \uparrow \cdots\rangle\)</span></p>
 <p>(2) Bosons <span class="math notranslate nohighlight">\(\left.\psi\left(x_{1}, x_{2}\right)=\psi\left(x_{2}, x_{1}\right)\right\}\)</span> 1st/2nd</p>
 <p>(3) Fermions <span class="math notranslate nohighlight">\(\left.\psi\left(x_{1}, x_{2}\right)=-\psi\left(x_{2}, x_{1}\right)\right\}\)</span> quantization</p>
 <p>We start with (1) amd some rudiments of quantum information- (2, 3) are covered in future lectures.</p>
 <section id="spins-1-qu-dits">
-<h2>Spins 1 “qu-dits”<a class="headerlink" href="#spins-1-qu-dits" title="Permalink to this heading">#</a></h2>
+<h2>Spins 1 “qu-dits”<a class="headerlink" href="#spins-1-qu-dits" title="Link to this heading">#</a></h2>
 <p>The Hilbert space of <span class="math notranslate nohighlight">\(s=1 / 2\)</span> spin is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -641,7 +592,7 @@ i\hbar \partial_{t} \sum_{i} \rho_{i, i}=i \hbar \partial_{t}(\operatorname{Tr}(
 <p>or “qudit”, <span class="math notranslate nohighlight">\(d=2s+1\)</span>.</p>
 </section>
 <section id="what-about-2-spins">
-<h2>What about 2 spins?<a class="headerlink" href="#what-about-2-spins" title="Permalink to this heading">#</a></h2>
+<h2>What about 2 spins?<a class="headerlink" href="#what-about-2-spins" title="Link to this heading">#</a></h2>
 <p>Now,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}H^{(2)}=\operatorname{span}(\{|\uparrow \uparrow\rangle,|\uparrow \downarrow\rangle,|\downarrow \uparrow\rangle,|\downarrow \downarrow\rangle\})\\
@@ -685,7 +636,7 @@ i\hbar \partial_{t} \sum_{i} \rho_{i, i}=i \hbar \partial_{t}(\operatorname{Tr}(
 <p>So… simulating quantum w/ classical hard!</p>
 </section>
 <section id="many-body-operators">
-<h2>Many body operators<a class="headerlink" href="#many-body-operators" title="Permalink to this heading">#</a></h2>
+<h2>Many body operators<a class="headerlink" href="#many-body-operators" title="Link to this heading">#</a></h2>
 <p>The tensor product structure also extends to operators:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -745,7 +696,7 @@ i\hbar \partial_{t} \sum_{i} \rho_{i, i}=i \hbar \partial_{t}(\operatorname{Tr}(
 <p>Not easy, because to obtain <span class="math notranslate nohighlight">\(\hat{\rho}_\beta\)</span> we need to diagonalize <span class="math notranslate nohighlight">\(2^{N} \times 2^{N}\)</span> matrix <span class="math notranslate nohighlight">\(\hat{H}_{T F I}\)</span> ! The biggest computations of this form can handle <span class="math notranslate nohighlight">\(N \sim 20\)</span> or so (see  discussions of “quantum supremacy”)</p>
 </section>
 <section id="reduced-density-matrices-entanglement">
-<h2>Reduced Density matrices / Entanglement<a class="headerlink" href="#reduced-density-matrices-entanglement" title="Permalink to this heading">#</a></h2>
+<h2>Reduced Density matrices / Entanglement<a class="headerlink" href="#reduced-density-matrices-entanglement" title="Link to this heading">#</a></h2>
 <p>In classical probability theory, a distribution over two random variables, <span class="math notranslate nohighlight">\(\mu=\{\mu_{1}, \mu_{2}\}, \quad p\left(\mu_{1}, \mu_{2}\right)\)</span>, allows us to define a marginal distribution over
 one:</p>
 <div class="math notranslate nohighlight">
@@ -849,7 +800,7 @@ Note that, in general,</p>
 <p>The two EPR spins are correlated even though the system (as a whole) is in a definite (pure) state.</p>
 </section>
 <section id="entropy">
-<h2>Entropy:<a class="headerlink" href="#entropy" title="Permalink to this heading">#</a></h2>
+<h2>Entropy:<a class="headerlink" href="#entropy" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\quad S=-\operatorname{Tr}(\hat{\rho} \ln (\hat{\rho}))\]</div>
 <p>For <span class="math notranslate nohighlight">\(\hat{\rho}=\sum p_{\alpha}|\alpha\rangle\langle\alpha|, \quad\langle\alpha \mid \beta\rangle=\delta_{\alpha \beta}\)</span>.</p>
@@ -865,7 +816,7 @@ S[\hat{\rho}]=0 \Longleftrightarrow \hat{\rho}=|\psi\rangle\langle\psi|
 <p>Otherwise, <span class="math notranslate nohighlight">\(\quad S[\hat{\rho}]&gt;0 \Rightarrow \hat{\rho}\)</span> “mixed</p>
 </section>
 <section id="entanglement">
-<h2>Entanglement:<a class="headerlink" href="#entanglement" title="Permalink to this heading">#</a></h2>
+<h2>Entanglement:<a class="headerlink" href="#entanglement" title="Link to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(\mathcal{H}=\mathcal{H}_{1} \otimes \mathcal{H}_{2}\)</span>, and <span class="math notranslate nohighlight">\(\quad|\psi\rangle \in \mathcal{H}\)</span>.</p>
 <p>Clearly, <span class="math notranslate nohighlight">\(\hat{\rho}=|\psi\rangle\langle\psi|\)</span> has <span class="math notranslate nohighlight">\(S[\hat{\rho}]=0\)</span>.</p>
 <p>However, the RDM <span class="math notranslate nohighlight">\(\hat{\rho}_{1}=\operatorname{Tr}_{2}(\hat{\rho})\)</span> can be mixed. We call <span class="math notranslate nohighlight">\(S\left[\hat{\rho}_{1}\right]\)</span> the “entanglement entropy”.</p>
@@ -881,7 +832,7 @@ S[\hat{\rho}]=0 \Longleftrightarrow \hat{\rho}=|\psi\rangle\langle\psi|
 </div>
 </section>
 <section id="measures-of-quantum-information">
-<h2>Measures of quantum information<a class="headerlink" href="#measures-of-quantum-information" title="Permalink to this heading">#</a></h2>
+<h2>Measures of quantum information<a class="headerlink" href="#measures-of-quantum-information" title="Link to this heading">#</a></h2>
 <p>Many but not all results of classical information theory transfer to the quantum case.</p>
 <p>For <span class="math notranslate nohighlight">\(\quad H_{A} \otimes \mathcal{H}_{B}=\mathcal{H}_{A B}, \quad \hat{\rho}_{A}=\operatorname{Tr}_{B}\left(\hat{\rho}_{A B}\right)\)</span>,
 one defines the “mutual information”, which is a measure of total correlation</p>
@@ -934,27 +885,9 @@ I(A: B)=0 \quad \Longleftrightarrow \hat{\rho}_{A B}=\hat{\rho}_{a} \otimes \hat
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="QM-SM-intro-2.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hilbert space of Bosons and Fermions</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -962,7 +895,8 @@ I(A: B)=0 \quad \Longleftrightarrow \hat{\rho}_{A B}=\hat{\rho}_{a} \otimes \hat
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1011,7 +945,7 @@ By Oskar Hallatschek
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -1035,8 +969,8 @@ By Oskar Hallatschek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

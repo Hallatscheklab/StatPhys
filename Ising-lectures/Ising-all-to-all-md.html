@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Statistical mechanics with interactions - Ising models &#8212; Equilibrium Statistical Physics</title>
   
@@ -15,49 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ising-lectures/Ising-all-to-all-md';</script>
@@ -65,6 +67,7 @@
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -72,32 +75,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -105,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,15 +99,17 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
-  <header>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -130,7 +118,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -145,6 +134,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -158,21 +149,17 @@
     
     
     <img src="../_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
-    <script>document.write(`<img src="../_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+    <img src="../_static/LLPS.webp" class="logo__image only-dark pst-js-only" alt="Equilibrium Statistical Physics - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -184,40 +171,9 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2025.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Coin-flipping.html">Probability and information entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Shannon-entropy.html">Entropy and information</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Equipartition-Mesostates.html">Equipartition</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Crooks.html">Non-equilibrium fluctuation theorems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Chemical-reactions.html">Chemical reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ising-1D.html">Finite dimensional Ising models</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Ergodicity/Ergodicity.html">Coarse-graining and Ergodicity theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Landau/Landau.html">Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
 </ul>
 
     </div>
@@ -226,14 +182,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -242,14 +203,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -372,27 +333,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -431,7 +384,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="statistical-mechanics-with-interactions-ising-models">
-<h1>Statistical mechanics with interactions - Ising models<a class="headerlink" href="#statistical-mechanics-with-interactions-ising-models" title="Permalink to this heading">#</a></h1>
+<h1>Statistical mechanics with interactions - Ising models<a class="headerlink" href="#statistical-mechanics-with-interactions-ising-models" title="Link to this heading">#</a></h1>
 <p>Thus far, we have developed statistical mechanics as a theoretical framework and applied it to noninteracting systems (e.g. ideal gasses or the paramagnet) or small interacting systems (e.g. just a few spin degrees of freedom). We have left out interacting systems that are large. Why?</p>
 <p>Consider a system of <span class="math notranslate nohighlight">\(N\)</span> Ising spins, i.e. <span class="math notranslate nohighlight">\(N\)</span> degrees of freedom (d.o.f.) <span class="math notranslate nohighlight">\({\sigma_1, \sigma_2, \dots}\)</span> where each d.o.f. has two possible states, <span class="math notranslate nohighlight">\(\{+1,-1\}\)</span>. The partition function then involves summing over <span class="math notranslate nohighlight">\(2^N\)</span> microstates. With arbitrary interactions (i.e. Hamiltonians), this can be done for small <span class="math notranslate nohighlight">\(N\)</span>, where we can simply enumerate all possible states. But to be able to compute the partition function analytically for large <span class="math notranslate nohighlight">\(N\)</span> requires us to somehow organize the summation in a way that makes it tractable.</p>
 <p>To see why non-interacting systems are tractable, recall the partition function of a paramagnet (<span class="math notranslate nohighlight">\(N\)</span> non-interacting Ising spins in a magnetic field <span class="math notranslate nohighlight">\(B\)</span>),</p>
@@ -457,7 +410,7 @@ Z(\beta, J)=\sum_{s=1}^{\Omega} e^{-\beta H[s ; J]}
 <p>is. However, with (i) interactions and (ii) thermodynamic limit, this need not be the case: the whole is greater than the sum of its parts, “more is different” (P. Anderson).</p>
 <p>However, those intriguing, large, interacting systems generally cannot be solved exactly. We will explore approximations and numerical methods to tackle them. Nonetheless, there are certain cases that can be solved exactly, offering valuable insights. For example, the …</p>
 <section id="all-to-all-ising-model">
-<h2>All-to-all Ising model<a class="headerlink" href="#all-to-all-ising-model" title="Permalink to this heading">#</a></h2>
+<h2>All-to-all Ising model<a class="headerlink" href="#all-to-all-ising-model" title="Link to this heading">#</a></h2>
 <p>Consider <span class="math notranslate nohighlight">\(N\)</span> Ising spins <span class="math notranslate nohighlight">\(\left\{\sigma_{1}, \ldots, \sigma_{N}\right\}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span> with Hamiltonian</p>
 <div class="math notranslate nohighlight">
 \[
@@ -467,7 +420,7 @@ H[\sigma]=-\frac{J}{2 N} \sum_{i, j=1} \sigma_{i} \sigma_{j}-\sum_{i=1}^{N} B \s
 <p><img alt="all-to-all" src="../_images/all-to-all.png" /></p>
 <p>Note that the self-interaction terms (<span class="math notranslate nohighlight">\(i=j\)</span>) merely contribute a constant and, therefore, have no effect on the behavior of the model. These terms could be explicitely taken out of the Hamiltonian, but we keep them for notational simplicity. Also note that we made the prefactor of the interaction term inversely proportional to <span class="math notranslate nohighlight">\(N\)</span> to ensure that the Hamiltonian is extensive.</p>
 <section id="key-question">
-<h3>Key question<a class="headerlink" href="#key-question" title="Permalink to this heading">#</a></h3>
+<h3>Key question<a class="headerlink" href="#key-question" title="Link to this heading">#</a></h3>
 <p>Defining <span class="math notranslate nohighlight">\(m \equiv \frac{1}{N} \sum_{i=1}^{N} \sigma_{i}\)</span> what is <span class="math notranslate nohighlight">\(\langle m\rangle(\beta, J, \beta)\)</span> as <span class="math notranslate nohighlight">\(N \longrightarrow \infty\)</span> ?</p>
 <p>We will find that, in the thermodynamic limit <span class="math notranslate nohighlight">\(N\to \infty\)</span>, the all-to-all Ising model exhibits a phase transition exhibits a phase transition at a critical temperature <span class="math notranslate nohighlight">\(T_c\)</span>, below which the system shows spontaneous magnetization, and above which the magnetization disappears.</p>
 <div class="admonition note">
@@ -488,7 +441,7 @@ All-to-all Ising models, where each spin interacts with every other spin in the 
 </div>
 </section>
 <section id="analysis">
-<h3>Analysis:<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h3>
+<h3>Analysis:<a class="headerlink" href="#analysis" title="Link to this heading">#</a></h3>
 <p><span class="math notranslate nohighlight">\(\langle m\rangle \equiv \frac{1}{N} \sum\left\langle\sigma_{i}\right\rangle\)</span> follows from the partition function <span class="math notranslate nohighlight">\(Z=\sum_{\{\sigma\}} e^{-\beta H\{\sigma\}}=e^{-\beta F}\)</span> via differentiation, <span class="math notranslate nohighlight">\(\langle m\rangle=-\frac{1}{N} \partial_{B} F\)</span>.</p>
 <p>To compute <span class="math notranslate nohighlight">\(Z\)</span>, rewrite the Hamiltonian as</p>
 <div class="math notranslate nohighlight">
@@ -558,7 +511,7 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
 <p>(more analysis in HW4)</p>
 </section>
 <section id="phase-diagrams">
-<h3>Phase diagrams<a class="headerlink" href="#phase-diagrams" title="Permalink to this heading">#</a></h3>
+<h3>Phase diagrams<a class="headerlink" href="#phase-diagrams" title="Link to this heading">#</a></h3>
 <p><img alt="" src="https://cdn.mathpix.com/cropped/2024_02_18_d4a93dd939ac97dd8d1dg-01.jpg?height=1153&amp;width=2055&amp;top_left_y=235&amp;top_left_x=42" /></p>
 </section>
 </section>
@@ -591,7 +544,7 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -601,7 +554,8 @@ s(m)=\ln (2)-\frac{m^{2}}{2}-\frac{m^{4}}{12}+O\left(m^{6}\right) \\
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -640,7 +594,7 @@ By Oskar Hallatschek
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -664,8 +618,8 @@ By Oskar Hallatschek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

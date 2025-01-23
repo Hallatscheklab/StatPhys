@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Probability and information entropy &#8212; Equilibrium Statistical Physics</title>
   
@@ -15,58 +14,61 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Coin-flipping';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Entropy and information" href="Shannon-entropy.html" />
-    <link rel="prev" title="Course Information" href="Course-Info-211-2024.html" />
+    <link rel="prev" title="Quick Summary of Statistical Mechanics" href="Introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -74,32 +76,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -107,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -115,24 +100,25 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
-  <header>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
       
-        
-      
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,6 +133,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -160,21 +148,17 @@
     
     
     <img src="_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
-    <script>document.write(`<img src="_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
+    <img src="_static/LLPS.webp" class="logo__image only-dark pst-js-only" alt="Equilibrium Statistical Physics - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -186,40 +170,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2024.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2025.html">Course Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Probability and information entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Equipartition-Mesostates.html">Equipartition</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Crooks.html">Non-equilibrium fluctuation theorems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Chemical-reactions.html">Chemical reactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-all-to-all.html">Statistical mechanics with interactions - Ising models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ising-lectures/Ising-1D.html">Finite dimensional Ising models</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/Variational-methods-Mean-Field.html">Variational Method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Variational-Methods/interacting-gases-f.html">Interacting Gases</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="MonteCarlo/MonteCarlo.html">Monte Carlo and the Metropolis Algorithm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Poisson-Boltzmann/Poisson-Boltzmann.html">Debye-Hückel theory - charge screening</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Diffusion/Diffusion.html">Diffusion as a free energy minimizing process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Ergodicity/Ergodicity.html">Coarse-graining and Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro.html">When does quantum mechanics make a difference?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-intro-2.html">Gapless quantum matter: phonons + Debye model Coldstone’s Theorem</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="QM-SM-Intro/QM-SM-Formalism.html">Formalism of quantum statistical mechanics</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-Boson-Fermion-Hilbertspace.html">Hilbert space of Bosons and Fermions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-Dilute-ideal-qm-gases.html">Pressure of a dilute ideal quantum gase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-DegenerateFermi.html">Ideal quantum gases - Degenerate Fermi gas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Boson-Fermions/QM-SM-BEC.html">Ideal quantum gases - Bose-Einstein Condensate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Landau/Landau.html">Landau theory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Landau/Ginzburg-Landau.html">Breakdown of Landau theory</a></li>
 </ul>
 
     </div>
@@ -228,14 +181,19 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -244,14 +202,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -276,14 +234,14 @@
       
       <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/Coin-flipping.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="_static/images/logo_colab.png">
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -405,27 +363,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -471,7 +421,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="probability-and-information-entropy">
-<h1>Probability and information entropy<a class="headerlink" href="#probability-and-information-entropy" title="Permalink to this heading">#</a></h1>
+<h1>Probability and information entropy<a class="headerlink" href="#probability-and-information-entropy" title="Link to this heading">#</a></h1>
 <p>Agenda:</p>
 <ul class="simple">
 <li><p>microstates vs macrostates</p></li>
@@ -486,7 +436,7 @@ document.write(`
 <li><p>Kardar, Ch. 2</p></li>
 </ul>
 <section id="coin-flipping">
-<h2>Coin flipping<a class="headerlink" href="#coin-flipping" title="Permalink to this heading">#</a></h2>
+<h2>Coin flipping<a class="headerlink" href="#coin-flipping" title="Link to this heading">#</a></h2>
 <p>We will use the simple example of repeatedly flipping a biased coin as a warm-up excercise to illustrate key concepts in statistical physics.</p>
 <p>Coin flipping arises in many context:</p>
 <ul class="simple">
@@ -494,7 +444,7 @@ document.write(`
 <li><p>time series of left- or right steps in a random walk or a polymer (1D freely jointed chain)</p></li>
 </ul>
 <section id="setup">
-<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h3>
+<h3>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h3>
 <p>We assume that the coin is flipped <span class="math notranslate nohighlight">\(N\)</span> times (~”volume” of spin chain) and describe the outcome of coin flip <span class="math notranslate nohighlight">\(i\)</span> as <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span>.</p>
 <p>For a single coin flip, the probabilities of heads and tails are</p>
 <div class="math notranslate nohighlight">
@@ -521,15 +471,16 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 <p>If <span class="math notranslate nohighlight">\(p=q=\frac{1}{2}, P(A)=P(B)=P(C)\)</span>. So, why does <span class="math notranslate nohighlight">\(B\)</span> (and <span class="math notranslate nohighlight">\(C\)</span>?) look exceptional?</p>
 </section>
 <section id="coarse-graining">
-<h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h3>
+<h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Link to this heading">#</a></h3>
 <p>In the realm of statistical physics, the concept of <strong>coarse-graining</strong> plays a pivotal role in understanding the transition from microscopic to macroscopic descriptions. The entire configuration of a system, denoted by <span class="math notranslate nohighlight">\(\{\sigma\} = \left\{\sigma_{1}, \sigma_{2}, \ldots\right\}\)</span>, represents the <strong>micro-state</strong>. The set of all micro-states encompasses all possible configurations at the most fundamental level.</p>
-<p>But, usually, we cannot directly observe all degrees of freedom of a microstate. Instead, we measure certain observables that have the same value for many microstates. For example, we typically cannot measure all spins in a magnet but just a sum over all spins. In a magnet, for instance, we care about the magnetization,</p>
+<p><strong>However, we are rarely concerned with the exact details of individual microstates. Instead, we focus on features common to all typical microstates.</strong> In most cases, the specific microstate of a system—such as the precise arrangement of spins in a solid or the exact positions and momenta of molecules in a glass of water—offers little insight into its macroscopic behavior. Questions like “What happens to water when it is heated?” or “How does a balloon respond to pressure?” relate to emergent properties derived from the shared characteristics of the vast number of possible microstates in a macroscopic system (on the order of Avogadro’s number).</p>
+<p>For instance, when observing a sequence of coin flips represented as 1’s and 0’s, we are generally uninterested in the precise order of outcomes. Instead, we notice patterns, such as the balance between 1’s and 0’s. This leads us to consider quantities like the total number of heads <span class="math notranslate nohighlight">\(N_+\)</span>, tails <span class="math notranslate nohighlight">\(N_-\)</span>, or their difference,</p>
 <div class="math notranslate nohighlight">
-\[X \equiv \sum_{j=1}^{N} \sigma_{j}\;,\]</div>
-<p>which is the difference <span class="math notranslate nohighlight">\(X=N_+-N_-\)</span> between up- and down-spins. (Likewise, when we stare at a coin flip series of 1’s and 0’s our brains tend to quickly notice if there’s a mismatch between 1’s and 0’s.)</p>
-<p>Since <span class="math notranslate nohighlight">\(\{\sigma\} \rightarrow X\)</span> is a many-to-one mapping, we call <span class="math notranslate nohighlight">\(X\)</span> a macroscopic observable. By fixing the value of <span class="math notranslate nohighlight">\(X\)</span>, we effectively define what is known as a <strong>macro-state</strong>.</p>
-<p>A typical objective in statistical physics is to transition from the probability distribution of micro-states, <span class="math notranslate nohighlight">\(P(\{\sigma\})\)</span>, to that of macro-states, <span class="math notranslate nohighlight">\(P(X)\)</span>. What generically happens during this transition is a fundamental aspect that we will explore now,  using coin flipping.</p>
-<p>The probability of <span class="math notranslate nohighlight">\(X\)</span> is naturally represented as a product of the number <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> of possible microstates (aka microscopic configurations) and the probability <span class="math notranslate nohighlight">\(p^{N_{+}}q^{N_{-}}\)</span> to observe anyone of the microstates. We thus obtain the binomial distribution</p>
+\[X \equiv \sum_{j=1}^{N} \sigma_{j}=N_+ - N_-\;.\]</div>
+<p>Similarly, in a magnet, individual spins are difficult to measure, but we can focus on macroscopic quantities like the magnetization, which is also expressed as <span class="math notranslate nohighlight">\(X = N_+ - N_-\)</span>, the net difference between up and down spins.</p>
+<p>Since mapping <span class="math notranslate nohighlight">\({\sigma} \rightarrow X\)</span> reduces detailed information to a single summary quantity, <span class="math notranslate nohighlight">\(X\)</span> is known as a macroscopic observable. Fixing <span class="math notranslate nohighlight">\(X\)</span> defines a macrostate, which captures the system’s behavior at a higher level of abstraction. (The associated loss of information is a key quantity central to both information theory and statistical mechanics. More on that later.)</p>
+<p><strong>A primary goal in statistical physics is to transition from the probability distribution of microstates, <span class="math notranslate nohighlight">\(P({\sigma})\)</span>, to the probability distribution of macrostates, <span class="math notranslate nohighlight">\(P(X)\)</span>.</strong> Understanding this transformation is central to the discipline. To explore this, consider a coin-flipping example.</p>
+<p>The probability of observing a macrostate <span class="math notranslate nohighlight">\(X\)</span> depends on two factors: the number of microstates <span class="math notranslate nohighlight">\(\binom{N}{N_+}\)</span> consistent with <span class="math notranslate nohighlight">\(X\)</span>, and the probability <span class="math notranslate nohighlight">\(p^{N_+}q^{N_-}\)</span> of any specific microstate. This yields the binomial distribution:</p>
 <div class="math notranslate nohighlight">
 \[
 P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \underbrace{p^{N_{+}}q^{N_{-}}}_{\equiv e^{-E(X)}}
@@ -538,19 +489,19 @@ P(X)=P(N_+,N_+)=\underbrace{\frac{N!}{N_{+}! N_{-}!}}_{\equiv e^{S(X)}} \quad \u
 \[
 P(X)= e^{S(X)}e^{-E(X)}
 \]</div>
-<p>Here, we introduced the quantities <span class="math notranslate nohighlight">\(S(X)\)</span> as the log of the number of microstates and <span class="math notranslate nohighlight">\(E(X)\)</span> as the log-probability of the microstates. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
+<p>Here, we introduced the quantities <span class="math notranslate nohighlight">\(S(X)\)</span> as the <strong>log of the number of microstates</strong> and <span class="math notranslate nohighlight">\(E(X)\)</span> as the <strong>log-probability of a single such microstate</strong>. Up to pre-factors, these quantities are <strong>entropy</strong> and <strong>energy</strong> in statistical physics. They always compete with one another ….</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
 &amp; S=\ln (N !)-\ln \left(N_{+} !\right)-\ln \left(N_{-} !\right)
 \end{aligned}
 \]</div>
-<p>Using Stirling’s approximation</p>
-<div class="math notranslate nohighlight">
-\[\ln N !=N(\ln N-1)+O(\ln N)\]</div>
-<p>we find for the entropy</p>
+<p>Now we invoke Stirling’s approximation, which is given by
+$<span class="math notranslate nohighlight">\(\ln N !=N(\ln N-1)+O(\ln N)\)</span><span class="math notranslate nohighlight">\(
+and can be *roughly* derived as \)</span>\ln N! = \sum_{j=1}^N \ln j \approx \int_1^N dx \ln x = N(\ln N - 1) + 1$, which successfully captures the leading dependence.</p>
+<p>Using Stirling’s approximation, we find for the entropy</p>
 <div class="math notranslate nohighlight" id="equation-entropy-coin-flipping">
-<span class="eqno">(1)<a class="headerlink" href="#equation-entropy-coin-flipping" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-entropy-coin-flipping" title="Link to this equation">#</a></span>\[
 S \approx-N\left(\frac{1+x}{2} \ln \left(\frac{1+x}{2}\right)+\frac{1-x}{2} \ln \left(\frac{1-x}{2}\right)\right)\;,
 \]</div>
 <p>where we introduced the specific magnetization <span class="math notranslate nohighlight">\(x=X/N\)</span>.</p>
@@ -568,7 +519,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 <p>For large <span class="math notranslate nohighlight">\(N\)</span>, both entropy <span class="math notranslate nohighlight">\(S\propto N\)</span> and energy <span class="math notranslate nohighlight">\(S\propto N\)</span> have a very simple, linear dependence on <span class="math notranslate nohighlight">\(N\)</span>. Macroscopic observables that grow linearly with the system size are called <strong>extensive</strong>. These are in contrast to <strong>intensive</strong> quanitites, which approach a constant in the thermodynamic limit of large systems, for example <span class="math notranslate nohighlight">\(x=X/N\)</span> which is bounded between -1 and 1.</p>
 <p><strong>Throughout this course, we use capital/lower case letters to indicate extensive/intensive quantities.</strong></p>
 </div>
-<p>Let’s have a look at their competition:</p>
+<p>The following plots illustrate the competition between energy and entropy.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -622,42 +573,43 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/0b7616cce707c6d823564822704b73981963d4b89765d6ac952feb2c7aa8673c.png" src="_images/0b7616cce707c6d823564822704b73981963d4b89765d6ac952feb2c7aa8673c.png" />
+<img alt="_images/2c473c3ab8e00818c3577ae6aeb5fc942cc734327e90ebeea67870bce0a7ebf0.png" src="_images/2c473c3ab8e00818c3577ae6aeb5fc942cc734327e90ebeea67870bce0a7ebf0.png" />
 </div>
 </div>
 <p>Notice:</p>
 <ul class="simple">
-<li><p>The entropy has a maximum at the neutral point <span class="math notranslate nohighlight">\(x = 0\)</span> and vanishes at the boundaries (all spin up / down)</p></li>
-<li><p>“Low energy” states have higher probab.</p></li>
-<li><p>The competition between <span class="math notranslate nohighlight">\(e(x)\)</span> and <span class="math notranslate nohighlight">\(s(x)\)</span> leads to a maximum of in the sum <span class="math notranslate nohighlight">\(s(x)-e(x)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(s(x)\)</span> and <span class="math notranslate nohighlight">\(e(x)\)</span> are the entropy and energy per coin, respectively (see legend).</p></li>
+<li><p>The entropy <span class="math notranslate nohighlight">\(s(x)\)</span> has a maximum at the neutral point <span class="math notranslate nohighlight">\(x = 0\)</span> and vanishes at the boundaries (all spin up / down)/</p></li>
+<li><p>“Low energy” states have higher probability.</p></li>
+<li><p>The competition between <span class="math notranslate nohighlight">\(e(x)\)</span> and <span class="math notranslate nohighlight">\(s(x)\)</span> leads to a maximum in their difference, <span class="math notranslate nohighlight">\(s(x)-e(x)\)</span>.</p></li>
 <li><p>Later, we will rather look at the negative, <span class="math notranslate nohighlight">\(e(x)-s(x)=:f(x)\)</span>, which we call a free energy. It is generally a convex function and has a <em>minimum</em> at the most likely value of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The depicted maximum in <span class="math notranslate nohighlight">\(-f(x)\)</span> does not look very impressive. But, since we have</p>
 <div class="math notranslate nohighlight">
-\[P(x)=e^{-N f(x)}, \]</div>
-<p>a so-called (large deviation principle)[<a class="reference external" href="https://en.wikipedia.org/wiki/Large_deviations_theory">https://en.wikipedia.org/wiki/Large_deviations_theory</a>], we will get a pronounced maximum at <span class="math notranslate nohighlight">\(x=p- q\)</span> (the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span>) for even modestly large <span class="math notranslate nohighlight">\(N\)</span>. Fully deterministic behavior <span class="math notranslate nohighlight">\(x \to p-q\)</span> emerges in the thermodynamic limit, <span class="math notranslate nohighlight">\(N\to \infty\)</span>. The most likely value of <span class="math notranslate nohighlight">\(x\)</span> coincides with the expectation value <span class="math notranslate nohighlight">\(\langle x \rangle = p-q\)</span>, see below.</p>
+\[P(x)=e^{-N f(x)},\]</div>
+<p>a so-called (large deviation principle)[<a class="reference external" href="https://en.wikipedia.org/wiki/Large_deviations_theory">https://en.wikipedia.org/wiki/Large_deviations_theory</a>], we will get a pronounced maximum at <span class="math notranslate nohighlight">\(x=p-q\)</span> (the minimum of <span class="math notranslate nohighlight">\(f(x)\)</span>) for even modestly large <span class="math notranslate nohighlight">\(N\)</span>. Fully deterministic behavior <span class="math notranslate nohighlight">\(x \to p-q\)</span> emerges in the thermodynamic limit, <span class="math notranslate nohighlight">\(N\to \infty\)</span>. The most likely value of <span class="math notranslate nohighlight">\(x\)</span> coincides with the expectation value <span class="math notranslate nohighlight">\(\langle x \rangle = p-q\)</span> (see below).</p>
 </div>
 <p>We can explore the effects of finite <span class="math notranslate nohighlight">\(N\)</span> by Taylor expanding <span class="math notranslate nohighlight">\(S(x)-E(x)\)</span> to <span class="math notranslate nohighlight">\(O(\Delta x^2)\equiv O\left[(x-\langle x\rangle)^{2}\right]\)</span>, we obtain to leading order a Gaussian,</p>
 <div class="math notranslate nohighlight">
 \[
-P(x) \approx C e^{-\left[\frac{(\Delta x)^{2}}{2 \langle \Delta x \rangle^2}+O\left(\frac{1}{N}\right)\right]} \;,
+P(x) \approx C e^{-\left[\frac{(\Delta x)^{2}}{2 \langle \Delta x^2 \rangle}+O\left(\frac{1}{N}\right)\right]} \;,
 \]</div>
-<p>whose spread is controled by the variance <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle = 4pq N^{-1/2}\)</span> and the variance.</p>
+<p>whose spread is controlled by the variance <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle = 4pq N^{-1/2}\)</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>One can show that, quite generally, large sums of random variables tend to Gaussians if correlations are short ranged. This is a consequence of the Central Limit Theorem. The Gaussian is completely fixed by knowing the first and second moment of the distribution. Since the first two moments can often be determined quite easily (see below), this is a great advantage for calculations. The scaling <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle\sim N^{-1/2}\)</span> and the fact that the limiting distribution is independent of the higher order details of the distributions of individual random numbers is a first example of <strong>universality</strong>.</p>
+<p>One can show that, quite generally, large sums of random variables tend to Gaussians if correlations are short ranged. This is a consequence of the Central Limit Theorem (CLT). The Gaussian is completely fixed by knowing the first and second moment of the distribution. Since the first two moments can often be determined quite easily (see below), this is a great advantage for calculations. The scaling <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle\sim N^{-1/2}\)</span> and the fact that the limiting distribution is independent of the higher order details of the distributions of individual random numbers is a first example of <strong>universality</strong>. See Section 1.5 of Arovas for a clear mathematical demonstration of the CLT.</p>
 </div>
 <section id="calculation-of-first-and-second-moment">
-<h4>Calculation of first and second moment<a class="headerlink" href="#calculation-of-first-and-second-moment" title="Permalink to this heading">#</a></h4>
-<p>The <span class="math notranslate nohighlight">\(n^\text{th}\)</span> moment of a random variable X is <span class="math notranslate nohighlight">\(\langle X^n\rangle\)</span>. The first and second moment of a distribution can often be computed analytically, and those are needed in the context of the CLT. Higher order moments are often more challenging to obtain.</p>
+<h4>Calculation of first and second moment<a class="headerlink" href="#calculation-of-first-and-second-moment" title="Link to this heading">#</a></h4>
+<p>The <span class="math notranslate nohighlight">\(n^\text{th}\)</span> moment of a random variable X is defined by <span class="math notranslate nohighlight">\(\langle X^n\rangle\)</span>. The first and second moment of a distribution can often be computed analytically, and those are needed in the context of the CLT. Higher order moments are often more challenging to obtain.</p>
 <section id="expectation-value">
-<h5>Expectation value<a class="headerlink" href="#expectation-value" title="Permalink to this heading">#</a></h5>
+<h5>Expectation value<a class="headerlink" href="#expectation-value" title="Link to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\langle X\rangle &amp; =\sum_{\{\sigma\}} P(\{\sigma\}) X(\{\sigma\})= \\
+\langle X\rangle &amp; =\sum_{\{\sigma\}} P(\{\sigma\}) X(\{\sigma\}) \\
 &amp; =\sum_{\{\sigma\}}\left[\prod_{j} P\left(\sigma_{j}\right)\right]\left[\sum_{i} \sigma_{i}\right] \\
 &amp; =\sum_{j} \sum_{\sigma_{j}} P\left(\sigma_{j}\right) \cdot \sigma_{j} \\
 &amp; =\sum_{j}(p-q)=N(p-q)
@@ -668,7 +620,7 @@ P(x) \approx C e^{-\left[\frac{(\Delta x)^{2}}{2 \langle \Delta x \rangle^2}+O\l
 <p>One measure of spread is the</p>
 </section>
 <section id="variance">
-<h5>Variance<a class="headerlink" href="#variance" title="Permalink to this heading">#</a></h5>
+<h5>Variance<a class="headerlink" href="#variance" title="Link to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
 \[
 \operatorname{var}(X) \equiv\langle\underbrace{(X-\langle X\rangle)^{2}}_{\equiv \Delta X^2}\rangle=\left\langle X^{2}\right\rangle-\langle X\rangle^{2} .
@@ -689,21 +641,21 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 \[\begin{split}
 \begin{aligned}
 \left\langle X^{2}\right\rangle-\langle X\rangle^{2} &amp; =N\left(1-(p-q)^{2}\right) . \\
-\operatorname{var}(X) &amp; =4 \mathrm{Npq} .
+\operatorname{var}(X) &amp; =4 Npq .
 \end{aligned}
 \end{split}\]</div>
 <p>Note: Since <span class="math notranslate nohighlight">\(\Delta X \propto \sqrt{N}\)</span> but <span class="math notranslate nohighlight">\(\langle X\rangle\propto N\)</span>, we have <span class="math notranslate nohighlight">\(\frac{\Delta x}{\langle x\rangle} \sim N^{-1/2}\rightarrow 0\)</span> for <span class="math notranslate nohighlight">\(p \neq q\)</span> as <span class="math notranslate nohighlight">\(N\to \infty\)</span>.</p>
-<p>The <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> scaling is a general consequence of the C.L.T..</p>
+<p>The <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> scaling is a general consequence of the CLT.</p>
 </section>
 </section>
 </section>
 <section id="simulating-coin-flips">
-<h3>Simulating coin-flips<a class="headerlink" href="#simulating-coin-flips" title="Permalink to this heading">#</a></h3>
+<h3>Simulating coin-flips<a class="headerlink" href="#simulating-coin-flips" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
-<span class="n">S</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># Number of samples</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>   <span class="c1"># Length of each sequence</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># Number of samples (sequences)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">150</span>   <span class="c1"># Length of each sequence</span>
 <span class="n">Q</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Number of sequences to plot</span>
 
 <span class="c1"># Parameters for the biased coin</span>
@@ -717,9 +669,9 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Q</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">biased_coin_flips</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Sequence </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cumulative Sum of Sigma_j&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cumulative Sum of Biased Coin Flips for Q Sequences (p=</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$k$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Cumulative Sum $\sum_{j=1}^k \sigma_j$&#39;</span><span class="p">)</span> <span class="c1">#&#39;Cumulative Sum of Sigma_j&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cumulative Sum of Biased Coin Flips for Q=</span><span class="si">{</span><span class="n">Q</span><span class="si">}</span><span class="s1"> Sequences (p=</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="c1"># Plot 2: Histogram of the total sum of the sigmas of all sequences (with biased coin)</span>
@@ -734,8 +686,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/671afb6b3ec3a148b1de4e8e1f1d5949c14778fc9cf0c401da8945efcfd6eb6a.png" src="_images/671afb6b3ec3a148b1de4e8e1f1d5949c14778fc9cf0c401da8945efcfd6eb6a.png" />
-<img alt="_images/63366b885252026fb118555167de6ef740f87030c32797b9692a5ef81fa19514.png" src="_images/63366b885252026fb118555167de6ef740f87030c32797b9692a5ef81fa19514.png" />
+<img alt="_images/2348d0e1544165efde12c2c3c4da4fd5dd8824568ac153bba5e654c5aa6e89fd.png" src="_images/2348d0e1544165efde12c2c3c4da4fd5dd8824568ac153bba5e654c5aa6e89fd.png" />
+<img alt="_images/16cc22d36eaa83896f7e6863f8f840d394bef172afb54010d1c2016ba60009b8.png" src="_images/16cc22d36eaa83896f7e6863f8f840d394bef172afb54010d1c2016ba60009b8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -766,7 +718,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9337dde61a86fd99ccf05bdab9900e9b7c5766da50dae925e1775c75a536096a.png" src="_images/9337dde61a86fd99ccf05bdab9900e9b7c5766da50dae925e1775c75a536096a.png" />
+<img alt="_images/84ea5071282f2681c6005dae90902dc1d688df92f212f18fd406462820a38d3d.png" src="_images/84ea5071282f2681c6005dae90902dc1d688df92f212f18fd406462820a38d3d.png" />
 </div>
 </div>
 </section>
@@ -800,26 +752,17 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Course-Info-211-2024.html"
+       href="Introduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Course Information</p>
+        <p class="prev-next-title">Quick Summary of Statistical Mechanics</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Shannon-entropy.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Entropy and information</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -828,7 +771,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -874,7 +818,7 @@ By Oskar Hallatschek
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -898,8 +842,8 @@ By Oskar Hallatschek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
