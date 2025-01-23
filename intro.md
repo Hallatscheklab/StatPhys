@@ -14,6 +14,8 @@ The course structure is adapted and reordered from Kardar's textbook.
     - Kardar 2, Arovas 1
 - Fundamentals of thermodynamics via molecular perspective - ensemble theory  
     - Kardar 4, Arovas 4
+- Non-equilibrium Fluctuation theorems
+    - lecture notes
 - Dynamics of interacting particles  
     - Kardar 5, Arovas 6
 - Monte Carlo, Debye-Hueckel, Diffusion
