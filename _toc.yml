@@ -7,7 +7,7 @@ chapters:
 - file: Course-Info-211-2025
 - file: Introduction
 - file: Coin-flipping
-#- file: Shannon-entropy
+- file: Shannon-entropy
 #- file: Ensemble-Theory-1
 #- file: Meaning-of-Equilibrium
 #- file: Equipartition-Mesostates
