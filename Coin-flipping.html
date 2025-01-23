@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Probability and information entropy &#8212; Equilibrium Statistical Physics</title>
   
@@ -14,61 +15,58 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Coin-flipping';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Entropy and information" href="Shannon-entropy.html" />
     <link rel="prev" title="Quick Summary of Statistical Mechanics" href="Introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -76,16 +74,32 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -93,6 +107,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,25 +115,24 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
+  <header>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -133,8 +147,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -148,17 +160,21 @@
     
     
     <img src="_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
-    <img src="_static/LLPS.webp" class="logo__image only-dark pst-js-only" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -173,6 +189,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2025.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
+
 </ul>
 
     </div>
@@ -181,19 +199,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -202,14 +215,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -234,14 +247,14 @@
       
       <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/Coin-flipping.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
+    <img src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -363,19 +376,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -421,7 +442,7 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="probability-and-information-entropy">
-<h1>Probability and information entropy<a class="headerlink" href="#probability-and-information-entropy" title="Link to this heading">#</a></h1>
+<h1>Probability and information entropy<a class="headerlink" href="#probability-and-information-entropy" title="Permalink to this heading">#</a></h1>
 <p>Agenda:</p>
 <ul class="simple">
 <li><p>microstates vs macrostates</p></li>
@@ -436,7 +457,7 @@
 <li><p>Kardar, Ch. 2</p></li>
 </ul>
 <section id="coin-flipping">
-<h2>Coin flipping<a class="headerlink" href="#coin-flipping" title="Link to this heading">#</a></h2>
+<h2>Coin flipping<a class="headerlink" href="#coin-flipping" title="Permalink to this heading">#</a></h2>
 <p>We will use the simple example of repeatedly flipping a biased coin as a warm-up excercise to illustrate key concepts in statistical physics.</p>
 <p>Coin flipping arises in many context:</p>
 <ul class="simple">
@@ -444,7 +465,7 @@
 <li><p>time series of left- or right steps in a random walk or a polymer (1D freely jointed chain)</p></li>
 </ul>
 <section id="setup">
-<h3>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h3>
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h3>
 <p>We assume that the coin is flipped <span class="math notranslate nohighlight">\(N\)</span> times (~”volume” of spin chain) and describe the outcome of coin flip <span class="math notranslate nohighlight">\(i\)</span> as <span class="math notranslate nohighlight">\(\sigma_{i} \in\{-1,+1\}\)</span>.</p>
 <p>For a single coin flip, the probabilities of heads and tails are</p>
 <div class="math notranslate nohighlight">
@@ -471,7 +492,7 @@ P\left(\sigma_{1}, \sigma_{2}, \ldots\right) &amp; = \prod_{j} P\left(\sigma_{j}
 <p>If <span class="math notranslate nohighlight">\(p=q=\frac{1}{2}, P(A)=P(B)=P(C)\)</span>. So, why does <span class="math notranslate nohighlight">\(B\)</span> (and <span class="math notranslate nohighlight">\(C\)</span>?) look exceptional?</p>
 </section>
 <section id="coarse-graining">
-<h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Link to this heading">#</a></h3>
+<h3>Coarse-graining<a class="headerlink" href="#coarse-graining" title="Permalink to this heading">#</a></h3>
 <p>In the realm of statistical physics, the concept of <strong>coarse-graining</strong> plays a pivotal role in understanding the transition from microscopic to macroscopic descriptions. The entire configuration of a system, denoted by <span class="math notranslate nohighlight">\(\{\sigma\} = \left\{\sigma_{1}, \sigma_{2}, \ldots\right\}\)</span>, represents the <strong>micro-state</strong>. The set of all micro-states encompasses all possible configurations at the most fundamental level.</p>
 <p><strong>However, we are rarely concerned with the exact details of individual microstates. Instead, we focus on features common to all typical microstates.</strong> In most cases, the specific microstate of a system—such as the precise arrangement of spins in a solid or the exact positions and momenta of molecules in a glass of water—offers little insight into its macroscopic behavior. Questions like “What happens to water when it is heated?” or “How does a balloon respond to pressure?” relate to emergent properties derived from the shared characteristics of the vast number of possible microstates in a macroscopic system (on the order of Avogadro’s number).</p>
 <p>For instance, when observing a sequence of coin flips represented as 1’s and 0’s, we are generally uninterested in the precise order of outcomes. Instead, we notice patterns, such as the balance between 1’s and 0’s. This leads us to consider quantities like the total number of heads <span class="math notranslate nohighlight">\(N_+\)</span>, tails <span class="math notranslate nohighlight">\(N_-\)</span>, or their difference,</p>
@@ -501,7 +522,7 @@ $<span class="math notranslate nohighlight">\(\ln N !=N(\ln N-1)+O(\ln N)\)</spa
 and can be *roughly* derived as \)</span>\ln N! = \sum_{j=1}^N \ln j \approx \int_1^N dx \ln x = N(\ln N - 1) + 1$, which successfully captures the leading dependence.</p>
 <p>Using Stirling’s approximation, we find for the entropy</p>
 <div class="math notranslate nohighlight" id="equation-entropy-coin-flipping">
-<span class="eqno">(1)<a class="headerlink" href="#equation-entropy-coin-flipping" title="Link to this equation">#</a></span>\[
+<span class="eqno">(1)<a class="headerlink" href="#equation-entropy-coin-flipping" title="Permalink to this equation">#</a></span>\[
 S \approx-N\left(\frac{1+x}{2} \ln \left(\frac{1+x}{2}\right)+\frac{1-x}{2} \ln \left(\frac{1-x}{2}\right)\right)\;,
 \]</div>
 <p>where we introduced the specific magnetization <span class="math notranslate nohighlight">\(x=X/N\)</span>.</p>
@@ -573,7 +594,7 @@ E(x) &amp; =-\ln \left(p^{N_{+}} q^{N_{-}}\right)=-N_{+} \ln (p)-N_{-} \ln (q) \
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="_images/2c473c3ab8e00818c3577ae6aeb5fc942cc734327e90ebeea67870bce0a7ebf0.png" src="_images/2c473c3ab8e00818c3577ae6aeb5fc942cc734327e90ebeea67870bce0a7ebf0.png" />
+<img alt="_images/0b7616cce707c6d823564822704b73981963d4b89765d6ac952feb2c7aa8673c.png" src="_images/0b7616cce707c6d823564822704b73981963d4b89765d6ac952feb2c7aa8673c.png" />
 </div>
 </div>
 <p>Notice:</p>
@@ -602,10 +623,10 @@ P(x) \approx C e^{-\left[\frac{(\Delta x)^{2}}{2 \langle \Delta x^2 \rangle}+O\l
 <p>One can show that, quite generally, large sums of random variables tend to Gaussians if correlations are short ranged. This is a consequence of the Central Limit Theorem (CLT). The Gaussian is completely fixed by knowing the first and second moment of the distribution. Since the first two moments can often be determined quite easily (see below), this is a great advantage for calculations. The scaling <span class="math notranslate nohighlight">\(\langle \Delta x^2\rangle\sim N^{-1/2}\)</span> and the fact that the limiting distribution is independent of the higher order details of the distributions of individual random numbers is a first example of <strong>universality</strong>. See Section 1.5 of Arovas for a clear mathematical demonstration of the CLT.</p>
 </div>
 <section id="calculation-of-first-and-second-moment">
-<h4>Calculation of first and second moment<a class="headerlink" href="#calculation-of-first-and-second-moment" title="Link to this heading">#</a></h4>
+<h4>Calculation of first and second moment<a class="headerlink" href="#calculation-of-first-and-second-moment" title="Permalink to this heading">#</a></h4>
 <p>The <span class="math notranslate nohighlight">\(n^\text{th}\)</span> moment of a random variable X is defined by <span class="math notranslate nohighlight">\(\langle X^n\rangle\)</span>. The first and second moment of a distribution can often be computed analytically, and those are needed in the context of the CLT. Higher order moments are often more challenging to obtain.</p>
 <section id="expectation-value">
-<h5>Expectation value<a class="headerlink" href="#expectation-value" title="Link to this heading">#</a></h5>
+<h5>Expectation value<a class="headerlink" href="#expectation-value" title="Permalink to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -620,7 +641,7 @@ P(x) \approx C e^{-\left[\frac{(\Delta x)^{2}}{2 \langle \Delta x^2 \rangle}+O\l
 <p>One measure of spread is the</p>
 </section>
 <section id="variance">
-<h5>Variance<a class="headerlink" href="#variance" title="Link to this heading">#</a></h5>
+<h5>Variance<a class="headerlink" href="#variance" title="Permalink to this heading">#</a></h5>
 <div class="math notranslate nohighlight">
 \[
 \operatorname{var}(X) \equiv\langle\underbrace{(X-\langle X\rangle)^{2}}_{\equiv \Delta X^2}\rangle=\left\langle X^{2}\right\rangle-\langle X\rangle^{2} .
@@ -650,7 +671,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </section>
 </section>
 <section id="simulating-coin-flips">
-<h3>Simulating coin-flips<a class="headerlink" href="#simulating-coin-flips" title="Link to this heading">#</a></h3>
+<h3>Simulating coin-flips<a class="headerlink" href="#simulating-coin-flips" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
@@ -686,8 +707,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2348d0e1544165efde12c2c3c4da4fd5dd8824568ac153bba5e654c5aa6e89fd.png" src="_images/2348d0e1544165efde12c2c3c4da4fd5dd8824568ac153bba5e654c5aa6e89fd.png" />
-<img alt="_images/16cc22d36eaa83896f7e6863f8f840d394bef172afb54010d1c2016ba60009b8.png" src="_images/16cc22d36eaa83896f7e6863f8f840d394bef172afb54010d1c2016ba60009b8.png" />
+<img alt="_images/e7c764a2fc9c2619dde149c73c08e49595ea7b7e642ed2590dcb771c35c86a60.png" src="_images/e7c764a2fc9c2619dde149c73c08e49595ea7b7e642ed2590dcb771c35c86a60.png" />
+<img alt="_images/723569668998f5cb7cd60f6d098e6acf932dc9d02f4e60665a5fffd8ee449604.png" src="_images/723569668998f5cb7cd60f6d098e6acf932dc9d02f4e60665a5fffd8ee449604.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -718,7 +739,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/84ea5071282f2681c6005dae90902dc1d688df92f212f18fd406462820a38d3d.png" src="_images/84ea5071282f2681c6005dae90902dc1d688df92f212f18fd406462820a38d3d.png" />
+<img alt="_images/c6d583f029757852a67a1478413dcc6d07792c7cccfb03c41cb3c1ab2da91b13.png" src="_images/c6d583f029757852a67a1478413dcc6d07792c7cccfb03c41cb3c1ab2da91b13.png" />
 </div>
 </div>
 </section>
@@ -752,7 +773,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -764,6 +785,15 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
         <p class="prev-next-title">Quick Summary of Statistical Mechanics</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Shannon-entropy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Entropy and information</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -771,8 +801,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -842,8 +871,8 @@ By Oskar Hallatschek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>

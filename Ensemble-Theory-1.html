@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Classical statistical mechanics &#8212; Equilibrium Statistical Physics</title>
   
@@ -14,52 +15,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ensemble-Theory-1';</script>
@@ -67,7 +65,6 @@
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,16 +72,32 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -92,6 +105,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,17 +113,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
+  <header>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
   
+  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -118,8 +130,7 @@
       
         
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -134,8 +145,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="intro.html">
   
@@ -149,17 +158,21 @@
     
     
     <img src="_static/LLPS.webp" class="logo__image only-light" alt="Equilibrium Statistical Physics - Home"/>
-    <img src="_static/LLPS.webp" class="logo__image only-dark pst-js-only" alt="Equilibrium Statistical Physics - Home"/>
+    <script>document.write(`<img src="_static/LLPS.webp" class="logo__image only-dark" alt="Equilibrium Statistical Physics - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -174,6 +187,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2025.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability and information entropy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy.html">Entropy and information</a></li>
+
 </ul>
 
     </div>
@@ -182,19 +197,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -203,14 +213,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -235,14 +245,14 @@
       
       <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/Ensemble-Theory-1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="_static/images/logo_colab.png">
+    <img src="_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -364,19 +374,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -416,7 +434,7 @@
                 <article class="bd-article">
                   
   <section id="classical-statistical-mechanics">
-<h1>Classical statistical mechanics<a class="headerlink" href="#classical-statistical-mechanics" title="Link to this heading">#</a></h1>
+<h1>Classical statistical mechanics<a class="headerlink" href="#classical-statistical-mechanics" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Kardar Ch. 4</p></li>
 <li><p>We skipped Ch. 1 because Thermo is a prerequisite for this class, and its principles will soon be rederived from a molecular viewpoint</p></li>
@@ -430,7 +448,7 @@
 <li><p>Note that living systems consume energy to drive irreversible processes and stay away from thermal equilibrium. Nevertheless, they often show seemingly random fluctuations that can even dominate their behavior. It is active topic research how to extend statistical mechanics to describe such active systems far from equilibrium.</p></li>
 </ul>
 <section id="closed-systems-microcanonical-ensemble">
-<h2>Closed systems – microcanonical ensemble<a class="headerlink" href="#closed-systems-microcanonical-ensemble" title="Link to this heading">#</a></h2>
+<h2>Closed systems – microcanonical ensemble<a class="headerlink" href="#closed-systems-microcanonical-ensemble" title="Permalink to this heading">#</a></h2>
 <p><strong>Basic principle of statistical mechanics:</strong> In an <em>isolated</em> system, all <em>allowed</em> <em>microstates</em> are equally likely.</p>
 <ul class="simple">
 <li><p>An “isolated” system does not transfer energy, matter, volume or other conserved quantities outside its boundaries. A “closed” system can exchange energy, but not matter. “Open” systems typically exchange energy, matter and volume. Example: Biological systems (cells, organisms).</p></li>
@@ -454,14 +472,14 @@
 <p>characterizes the total number of microstates {<span class="math notranslate nohighlight">\(\mu\)</span>} with <span class="math notranslate nohighlight">\(H(\mu)=E\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}_\mu=\mathbf{x}\)</span>.</p>
 <p>Note that for discrete set of micro states, e.g., when discussing Ising spins <span class="math notranslate nohighlight">\(\sigma_i=\pm 1\)</span>, replace the integral by a sum, <span class="math notranslate nohighlight">\(\int d\mu\rightarrow \sum_{\mu}\)</span>, and the Dirac delta function by a Kronecker delta, <span class="math notranslate nohighlight">\(\delta(E-H(\mu))\rightarrow \delta_{E,H(\mu)}\)</span></p>
 <section id="ergodicity">
-<h3>Ergodicity<a class="headerlink" href="#ergodicity" title="Link to this heading">#</a></h3>
+<h3>Ergodicity<a class="headerlink" href="#ergodicity" title="Permalink to this heading">#</a></h3>
 <p>One can imagine measuring expectation values <span class="math notranslate nohighlight">\(\langle f(\mu)\)</span> in two ways: 1. Follow a given system for a very long time, and determine the time average of <span class="math notranslate nohighlight">\(f\)</span>. 2. Determine the <em>ensemble</em> average of <span class="math notranslate nohighlight">\(f\)</span> over a very large number of system states drawn from the <span class="math notranslate nohighlight">\(P_{E,\mathbf{x}}\)</span>. Our Basic Principles implies that, in the limit, both results give the same answer. Mathematically,</p>
 <div class="math notranslate nohighlight" id="equation-ergodic-hypothesis">
-<span class="eqno">()<a class="headerlink" href="#equation-ergodic-hypothesis" title="Link to this equation">#</a></span>\[ \langle f\rangle_{E,\mathbf{x}}=\lim_{T\to\infty}\frac 1T \int_0^Tf(\mu(t)) dt=\int d\mu P_{E,\mathbf{x}}(\mu) f(\mu) \]</div>
+<span class="eqno">()<a class="headerlink" href="#equation-ergodic-hypothesis" title="Permalink to this equation">#</a></span>\[ \langle f\rangle_{E,\mathbf{x}}=\lim_{T\to\infty}\frac 1T \int_0^Tf(\mu(t)) dt=\int d\mu P_{E,\mathbf{x}}(\mu) f(\mu) \]</div>
 <p>The celebrated <a class="reference external" href="https://en.wikipedia.org/wiki/Ergodic_theory#:~:text=The%20concepts%20of%20ergodicity%20and,average%20over%20the%20entire%20space.">ergodicity theorem</a> explains why this equality and, thus, our Basic Principle, is to be expected for typical systems undergoing volume conserving Hamiltonian dynamics (see later in the course). Macroscopic systems, such as ferromagnetic systems below the Curie temperature, can demonstrate ergodicity breaking, where they do not explore all possible states as predicted by the ergodic hypothesis. This results in phenomena like spontaneous magnetization, a form of spontaneous symmetry breaking. Similarly, complex disordered systems like spin glasses and conventional glasses, like window glasses, exhibit more intricate forms of ergodicity breaking. These systems can appear solid over short timescales, like seconds or hours, due to their positive shear modulus, but over very long periods, like millennia, they behave more like liquids, displaying multiple time scales and intermediate plateaus in behavior.</p>
 </section>
 <section id="entropy">
-<h3>Entropy<a class="headerlink" href="#entropy" title="Link to this heading">#</a></h3>
+<h3>Entropy<a class="headerlink" href="#entropy" title="Permalink to this heading">#</a></h3>
 <p>We can also argue for the micro-canonical ensemble to be the most unbiased (maximum entropy) distribution subject to the constraints <span class="math notranslate nohighlight">\(H(\mu)=E\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}_\mu=\mathbf{x}\)</span>. Recall that the entropy of a discrete probability distribution is <span class="math notranslate nohighlight">\(S=-\sum_i P_i \ln(P_i)\)</span>, which is maximized for <span class="math notranslate nohighlight">\(P_i=\)</span>const.<span class="math notranslate nohighlight">\(=\Omega^{-1}(E,\mathbf{x})\)</span>. In that case, <span class="math notranslate nohighlight">\(S=\ln(\Omega(E,\mathbf{x}))\)</span>.</p>
 <p>Historically, Boltzmann defined entropy to be the dimensionful quantity</p>
 <div class="math notranslate nohighlight">
@@ -477,7 +495,7 @@
 </div>
 </section>
 <section id="thermal-equilibrium">
-<h3>Thermal equilibrium<a class="headerlink" href="#thermal-equilibrium" title="Link to this heading">#</a></h3>
+<h3>Thermal equilibrium<a class="headerlink" href="#thermal-equilibrium" title="Permalink to this heading">#</a></h3>
 <p>Consider an isolated system <span class="math notranslate nohighlight">\({\mu, E, \bf{x}}\)</span> consisting of two subsystem in contact so that they can exchange energy,</p>
 <p><img alt="" src="_images/micro-can-compound-system.jpg" /></p>
 <div class="math notranslate nohighlight">
@@ -504,7 +522,7 @@
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-x">
-<span class="eqno">()<a class="headerlink" href="#equation-x" title="Link to this equation">#</a></span>\[
+<span class="eqno">()<a class="headerlink" href="#equation-x" title="Permalink to this equation">#</a></span>\[
 e^{S(E) / k_{B}} =\int d E_{1} e^{\left[S_{1}\left(E_{1}, \bf{x}_1\right)+S\left(E-E_{1}, \bf{x}_2\right)\right] / k_{B}}
 \]</div>
 <p>(compound entropy)</p>
@@ -584,7 +602,7 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 </section>
 </section>
 <section id="energy-exchange-canonical-ensemble">
-<h2>Energy exchange – canonical ensemble<a class="headerlink" href="#energy-exchange-canonical-ensemble" title="Link to this heading">#</a></h2>
+<h2>Energy exchange – canonical ensemble<a class="headerlink" href="#energy-exchange-canonical-ensemble" title="Permalink to this heading">#</a></h2>
 <p>Most soft matter systems are closed but not isolated - they trade energy and volume with the environment (a.k.a. <em>reservoir</em>, <em>bath</em>, <em>sorroundings</em>). What can we say about <span class="math notranslate nohighlight">\(P(\nu_s)\)</span> in those cases?</p>
 <p>The combination of System (index s) and Bath (index b) forms an <em>isolated</em> system with fixed <span class="math notranslate nohighlight">\(E\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(N\)</span>. We can therefore apply our “Basic Principle” to conclude</p>
 <ul class="simple">
@@ -676,7 +694,7 @@ The energy difference for a nonzero magnetic field is therefore given by</p>
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
 </div>
@@ -686,8 +704,7 @@ The energy difference for a nonzero magnetic field is therefore given by</p>
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -751,8 +768,8 @@ By Oskar Hallatschek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
 
   <footer class="bd-footer">
   </footer>
