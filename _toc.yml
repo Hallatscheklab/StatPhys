@@ -6,8 +6,8 @@ root: intro
 chapters:
 - file: Course-Info-211-2025
 - file: Introduction
-- file: Coin-flipping
-- file: Shannon-entropy
+- file: Probability-Entropy/Coin-flipping
+- file: Probability-Entropy/Shannon-entropy
 #- file: Ensemble-Theory-1
 #- file: Meaning-of-Equilibrium
 #- file: Equipartition-Mesostates
