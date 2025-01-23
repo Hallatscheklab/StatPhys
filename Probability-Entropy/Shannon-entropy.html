@@ -532,7 +532,8 @@ H(X)\equiv -\left\langle\log_2 p_{i}\right\rangle=-\sum_{i} p_{i} \log_2 p_{i} \
 <li><p>The average code word length per symbol is therefore <span class="math notranslate nohighlight">\(\langle L\rangle/N=-\sum p_i\log_2p_i=H(X)=\frac 74&lt;2\)</span></p></li>
 <li><p>In fact, the above code can be generalized to obtain an optimal code for any source distribution, provided the messages are long enough and consist of uncorrelated symbols.</p></li>
 </ul>
-<p><strong>Code to compute the entropy of a given text string.</strong> English text has a typical entropy rate of 3 to 3.5 bits per symbol, substantially less than <span class="math notranslate nohighlight">\(\log_2(26)\approx 4.7\)</span></p>
+<p>Below is the code to compute the entropy of a given text string.
+English text has a typical entropy rate of 3 to 3.5 bits per symbol, substantially less than <span class="math notranslate nohighlight">\(\log_2(26)\approx 4.7\)</span>. Modify “sample_text” to compute the entropy of your favorite piece of poetry or prose.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
