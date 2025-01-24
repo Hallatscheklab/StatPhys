@@ -461,7 +461,7 @@ S\left(N_{+}\right) &amp;= N\ln N - N - N_+\ln N_+ + N_+ - N_-\ln N_- + N_- \\
 \[\begin{split}
 \begin{aligned}
 &amp; \begin{array}{c}
-N_{+} \rightarrow\left\langle N_{+}\right\rangle=p N, \quad N_{-}=\left\langle N_{r}\right\rangle=q N . \\
+N_{+} \rightarrow\left\langle N_{+}\right\rangle=p N, \quad N_{-}=\left\langle N_{+}\right\rangle=q N . \\
 \end{array}
 \end{aligned}
 \end{split}\]</div>
@@ -568,13 +568,27 @@ English text has a typical entropy rate of 3 to 3.5 bits per symbol, substantial
 <span class="s2">The quick brown fox jumps over the lazy dog. This sentence is often used to test typewriters and fonts because it contains all the letters of the English alphabet.</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
-<span class="n">entropy_value</span> <span class="o">=</span> <span class="n">compute_entropy</span><span class="p">(</span><span class="n">sample_text</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shannon Entropy of the given text: </span><span class="si">{</span><span class="n">entropy_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bits/character&quot;</span><span class="p">)</span>
+<span class="n">sample_textB</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;I’ve written several times about the case for disqualifying Donald Trump via the 14th Amendment, arguing that it fails tests of political prudence and constitutional plausibility alike. But the debate keeps going, and the proponents of disqualification have dug into the position that whatever the prudential concerns about the amendment’s application, the events of Jan. 6, 2021, obviously amounted to an insurrection in the sense intended by the Constitution, and saying otherwise is just evasion or denial.</span>
+
+<span class="s2">From their vantage point, any definition of “insurrection” that limits the amendment’s application to the kind of broad political-military rebellion that occasioned its original passage — to the hypothetical raising of a Trumpist Army of Northern Virginia, say, or the seizure of the U.S. Capitol by a Confederate States of Trumpist America — is an abuse of the natural meaning of the word. Such a limitation, they say, ignores all the obvious ways that lesser, less comprehensive forms of resistance to lawful authority clearly qualify as insurrectionary.</span>
+
+<span class="s2">Here are a couple of examples of this argument: The Atlantic’s Adam Serwer, arguing with me and New York magazine’s Jonathan Chait; and the constitutional law professor Ilya Somin, going back and forth with his fellow legal scholar Steven Calabresi in Reason magazine.</span>
+
+<span class="s2">I have a basic sympathy with Calabresi’s suggestion that the “paradigmatic example” that the drafters of the 14th Amendment had in mind should guide our understanding of its ambiguities, and since the paradigmatic example is the Civil War, in which hundreds of thousands of people were killed, a five-hour riot probably doesn’t clear the bar. (For related arguments about the perils of applying precedents from specific crises to radically different situations, see this essay from Samuel Issacharoff as well.)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="n">entropy_sample_text</span> <span class="o">=</span> <span class="n">compute_entropy</span><span class="p">(</span><span class="n">sample_text</span><span class="p">)</span>
+<span class="n">entropy_sample_textB</span> <span class="o">=</span> <span class="n">compute_entropy</span><span class="p">(</span><span class="n">sample_textB</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shannon Entropy of sample_text A: </span><span class="si">{</span><span class="n">entropy_sample_text</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bits/character&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shannon Entropy of sample_text B: </span><span class="si">{</span><span class="n">entropy_sample_textB</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bits/character&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shannon Entropy of the given text: 4.1516 bits/character
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shannon Entropy of sample_text A: 4.1516 bits/character
+Shannon Entropy of sample_text B: 4.1700 bits/character
 </pre></div>
 </div>
 </div>
