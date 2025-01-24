@@ -53,6 +53,7 @@ Grades will be determined from a weighting of all the elements of the course as 
 - Final, 40 %
 - Homework, 40 %
 - *extra credit:* participation, 5 %
+
 **Homework:** Assignments will be posted weekly on Fridays by 5PM and are due the following Friday by 11:59PM via Gradescope.
 
 **Late / missed homework policy:** We will drop your lowest homework score. We will not accept late homework submission unless there are extenuating circumstances (e.g. sickness, family emergencies, natural desasters, accidents but also prepping for March meeting). If you expect to be ill or unable to do homework for more than a week, let us know.
