@@ -651,9 +651,7 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 \frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)\equiv D_{K L}(\vec{p} \| \vec{q})
 \end{array}
 \]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>is called Kullback-Leibler (KL) divergence or relative entropxy. The KL divergence is always non-negative, which follows from Jensen&#39;s inequality applied to the logarithm, $\log(\mathbb{E}[X]) \geq \mathbb{E}[\log(X)]$, and vanishes only when the two distributions are identical. That&#39;s why it is often used like a distance between the two distributions $\vec p$ and $\vec q$. However, KL divergence is not a true distance measure as it is not symmetric and does not satisfy the triangle inequality.
-</pre></div>
-</div>
+<p>is called Kullback-Leibler (KL) divergence or relative entropxy. The KL divergence is always non-negative, which follows from Jensen’s inequality applied to the logarithm, <span class="math notranslate nohighlight">\(\log(\mathbb{E}[X]) \geq \mathbb{E}[\log(X)]\)</span>, and vanishes only when the two distributions are identical. That’s why it is often used like a distance between the two distributions <span class="math notranslate nohighlight">\(\vec p\)</span> and <span class="math notranslate nohighlight">\(\vec q\)</span>. However, KL divergence is not a true distance measure as it is not symmetric and does not satisfy the triangle inequality.</p>
 <ul class="simple">
 <li><p>Suppose we obtain samples <span class="math notranslate nohighlight">\(\left\{X_{i}\right\}\)</span> and want to decide whether they are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> or <span class="math notranslate nohighlight">\(\vec{q}\)</span>. To this end, we compare the log-likelihoods for drawing the samples from either distribution,</p></li>
 </ul>
@@ -802,7 +800,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d60017f975c5c792ea5716e1eb4aec35b397ec631baa1a97926825e053cbd023.png" src="../_images/d60017f975c5c792ea5716e1eb4aec35b397ec631baa1a97926825e053cbd023.png" />
+<img alt="../_images/e83e97af739afd5336258eb530c91374c594514f3255ddd842a6ebadfd5417f3.png" src="../_images/e83e97af739afd5336258eb530c91374c594514f3255ddd842a6ebadfd5417f3.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
