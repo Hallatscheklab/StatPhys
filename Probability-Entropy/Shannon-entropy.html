@@ -651,8 +651,8 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 \frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)\equiv D_{K L}(\vec{p} \| \vec{q})
 \end{array}
 \]</div>
-<p>is called Kullback-Leibler (KL) divergence or relative entropxy. The KL divergence is always non-negative, which follows from Jensen’s inequality applied to the logarithm, <span class="math notranslate nohighlight">\(\log(\mathbb{E}[X]) \geq \mathbb{E}[\log(X)]\)</span>, and vanishes only when the two distributions are identical. That’s why it is often used like a distance between the two distributions <span class="math notranslate nohighlight">\(\vec p\)</span> and <span class="math notranslate nohighlight">\(\vec q\)</span>. However, KL divergence is not a true distance measure as it is not symmetric and does not satisfy the triangle inequality.</p>
 <ul class="simple">
+<li><p>is called Kullback-Leibler (KL) divergence or relative entropxy. The KL divergence is always non-negative, which follows from Jensen’s inequality applied to the logarithm, <span class="math notranslate nohighlight">\(\log(\mathbb{E}[X]) \geq \mathbb{E}[\log(X)]\)</span>, and vanishes only when the two distributions are identical. That’s why it is often used like a distance between the two distributions <span class="math notranslate nohighlight">\(\vec p\)</span> and <span class="math notranslate nohighlight">\(\vec q\)</span>. However, KL divergence is not a true distance measure as it is not symmetric and does not satisfy the triangle inequality.</p></li>
 <li><p>Suppose we obtain samples <span class="math notranslate nohighlight">\(\left\{X_{i}\right\}\)</span> and want to decide whether they are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> or <span class="math notranslate nohighlight">\(\vec{q}\)</span>. To this end, we compare the log-likelihoods for drawing the samples from either distribution,</p></li>
 </ul>
 <div class="math notranslate nohighlight">
@@ -800,7 +800,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/439c23e7d0457fc258646fa3fb68c240bcc0129c8ad96164ea7444c4e34ff502.png" src="../_images/439c23e7d0457fc258646fa3fb68c240bcc0129c8ad96164ea7444c4e34ff502.png" />
+<img alt="../_images/669309b7b249932467e6f691d6269c9c29baa2d1c6f408461a4dd97daeddcf71.png" src="../_images/669309b7b249932467e6f691d6269c9c29baa2d1c6f408461a4dd97daeddcf71.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
