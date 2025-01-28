@@ -427,12 +427,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-simulation">Example Mutual Information Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-being-degraded-by-noise">Example Mutual Information being degraded by noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
 </ul>
 </li>
 </ul>
@@ -717,14 +715,15 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 <p>which is called mutual information <span class="math notranslate nohighlight">\(I(X;Y)\)</span> between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. <strong>The mutual information measures how many bits of information we can learn on average about <span class="math notranslate nohighlight">\(X\)</span> when we measure <span class="math notranslate nohighlight">\(Y\)</span>.</strong></p>
 <p>The notation “<span class="math notranslate nohighlight">\(X;Y\)</span>” makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <p>Recalling our discussion of Kullback-Leibler divergence, we  see that the mutual information is a positive quantity unless <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are uncorrelated, <span class="math notranslate nohighlight">\(P_{(X,Y)}=P_{X}\otimes P_Y\)</span>.</p>
-<p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(I (X; Y) \leq H(X)\)</span> and <span class="math notranslate nohighlight">\(I (X; Y) \leq H(Y)\)</span>.</p>
+<p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(0\leq I (X; Y) \leq H(X)\)</span> and <span class="math notranslate nohighlight">\(0\leq I (X; Y) \leq H(Y)\)</span>.</p>
 </section>
 </section>
-<section id="example-mutual-information-simulation">
-<h2>Example Mutual Information Simulation<a class="headerlink" href="#example-mutual-information-simulation" title="Permalink to this heading">#</a></h2>
+<section id="example-mutual-information-being-degraded-by-noise">
+<h2>Example Mutual Information being degraded by noise<a class="headerlink" href="#example-mutual-information-being-degraded-by-noise" title="Permalink to this heading">#</a></h2>
 <p>This simple simulation illustrates how the mutual information between two random variables <span class="math notranslate nohighlight">\( X \)</span> and <span class="math notranslate nohighlight">\( Y \)</span> decays as their relationship is disturbed by noise.</p>
+</section>
 <section id="scenario">
-<h3>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">#</a></h3>
+<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\( X \)</span>: A random variable drawn from a normal distribution.</p></li>
 <li><p><span class="math notranslate nohighlight">\( Y \)</span>: A noisy version of <span class="math notranslate nohighlight">\( X \)</span>, where the noise level determines the correlation between <span class="math notranslate nohighlight">\( X \)</span> and <span class="math notranslate nohighlight">\( Y \)</span>.</p></li>
@@ -732,7 +731,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </ul>
 </section>
 <section id="method">
-<h3>Method<a class="headerlink" href="#method" title="Permalink to this heading">#</a></h3>
+<h2>Method<a class="headerlink" href="#method" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Generate <span class="math notranslate nohighlight">\( X \)</span> from a standard normal distribution.</p></li>
 <li><p>Create <span class="math notranslate nohighlight">\( Y \)</span> as <span class="math notranslate nohighlight">\( Y = X + \text{noise} \)</span>, where the “noise” is a Gaussian random variable. The width of the Gaussian is varied.</p></li>
@@ -800,14 +799,14 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/950626ae1f3a325616a13fe8f08e541af6f83e25ef0c199c4406945f4545f2f2.png" src="../_images/950626ae1f3a325616a13fe8f08e541af6f83e25ef0c199c4406945f4545f2f2.png" />
+<img alt="../_images/05e79edcec4aa99aa7a0b08caa618f59d216f7aa6d89487af81df8b80c3268b5.png" src="../_images/05e79edcec4aa99aa7a0b08caa618f59d216f7aa6d89487af81df8b80c3268b5.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <section id="observations">
-<h4>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h4>
+<h3>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Low noise</strong>: When noise is minimal, ( Y ) closely reflects ( X ), resulting in high mutual information.</p></li>
 <li><p><strong>High noise</strong>: As noise increases, ( Y ) becomes less correlated with ( X ), reducing mutual information.</p></li>
@@ -831,7 +830,6 @@ Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in
 <p>vs <span class="math notranslate nohighlight">\(S(\text{Words})\)</span> as a measure for how much information per second the spike trains encode about the the time stamp in the movie. The idea is that this gives an estimate of the information encoded about the entire sensory input (for which the time stamp is just a proxy).</p>
 <p>As the time resolution <span class="math notranslate nohighlight">\(\Delta \tau\)</span> is varied from 800 ms down to 2 ms,  the information rate follows the entropy rate <span class="math notranslate nohighlight">\(S(\text{Words})\)</span>, with a nearly constant 50% efficiency.  This result was influential because it suggests that neurons are making use of a significant fraction of their capacity in actually encoding sensory signals. Also, this is true even at millisecond time resolution. The  idea that the entropy of the spike train sets a limit to neural information transmission  emerged almost immediately after Shannon’s work, but it was never clear whether these limits could be approached by real systems.</p>
 <p><img alt="" src="Probability-Entropy/6-7.jpg" /></p>
-</section>
 </section>
 </section>
 </section>
@@ -927,12 +925,10 @@ Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-simulation">Example Mutual Information Simulation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-being-degraded-by-noise">Example Mutual Information being degraded by noise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
 </ul>
 </li>
 </ul>
