@@ -421,8 +421,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy">Relative entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy-kullback-leibler-kl-divergence">Relative entropy (Kullback-Leibler (KL) divergence)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-simulation">Example Mutual Information Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -605,7 +613,7 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 \[\begin{split}
 \begin{aligned}
 \mathcal{L}\left(\alpha, \beta,\left\{p_{i}\right\}\right) &amp; =-\sum_{i} p_{i} \ln p_{i}-\alpha\left(\sum_{i} p_{i}-1\right)- \\
-&amp; -\beta\left(\sum_{i} p_{i} F\left(x_{i}\right)-f\right)
+&amp; -\beta\left(\sum_{i} p_{i} F\left(x_{i}\right)-\phi \right)
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
@@ -617,6 +625,7 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 \end{split}\]</div>
 <p>Notes:</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> is fixed by the the constraint of <span class="math notranslate nohighlight">\(\langle F(x)\rangle=\phi\)</span>, and <span class="math notranslate nohighlight">\(Z\)</span> is fixed by the normalization of the probability distribution</p></li>
 <li><p>This does not mean <span class="math notranslate nohighlight">\(p\)</span> <strong>is</strong> <span class="math notranslate nohighlight">\(p^{*}\)</span>. Multiple <span class="math notranslate nohighlight">\(\{p_i\}\)</span> may give the same <span class="math notranslate nohighlight">\(\langle F(x)\rangle\)</span></p></li>
 <li><p>the above maps on the Boltzmann distribution if we identify <span class="math notranslate nohighlight">\(\beta\equiv (k_{B} T)^{-1}\)</span> and <span class="math notranslate nohighlight">\(F=\text { Energy }\)</span>. The Boltzmann distribution can, therefore, be viewed as the Maximum Entropy distribution subject to the constraint of a given mean energy (also called internal energy).</p></li>
 <li><p>One can add further constaints and update in light of extra knouledge.</p></li>
@@ -629,10 +638,10 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 <li><p>How does this compare to the Bayesian updating rules?</p></li>
 </ul>
 </section>
-<section id="relative-entropy">
-<h3>Relative entropy<a class="headerlink" href="#relative-entropy" title="Permalink to this heading">#</a></h3>
+<section id="relative-entropy-kullback-leibler-kl-divergence">
+<h3>Relative entropy (Kullback-Leibler (KL) divergence)<a class="headerlink" href="#relative-entropy-kullback-leibler-kl-divergence" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Suppose the symbols <span class="math notranslate nohighlight">\(X\)</span> of a message are drawn from the distribution <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=p_{i}\)</span>. But we think they are drawn from <span class="math notranslate nohighlight">\(\{q_{i}\}\)</span> instead, use correspondingly sized code words and, hence, do not optimally compress the message. Instead there will be discrepancy between the length <span class="math notranslate nohighlight">\(L(N)\)</span> of the number of bits we use, <span class="math notranslate nohighlight">\(L(N)=-N \sum_{i} p_{i} \log q_{i} \)</span> and the minimal number of bits, <span class="math notranslate nohighlight">\(L_{min}(N)=-N \sum_{i} p_{i} \log p_{i}\)</span>, which is given by the entropy. The relative difference,</p></li>
+<li><p>Suppose the symbols <span class="math notranslate nohighlight">\(X\)</span> of a message are drawn from the distribution <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=p_{i}\)</span>. But we think they are drawn from <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=q_{i}\)</span> instead, use correspondingly sized code words and, hence, do not optimally compress the message. Instead there will be discrepancy between the length <span class="math notranslate nohighlight">\(L(N)\)</span> of the number of bits we use, <span class="math notranslate nohighlight">\(L(N)=-N \sum_{i} p_{i} \log q_{i} \)</span> and the minimal number of bits, <span class="math notranslate nohighlight">\(L_{min}(N)=-N \sum_{i} p_{i} \log p_{i}\)</span>, which is given by the entropy. The relative difference,</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-kl-div">
 <span class="eqno">(2)<a class="headerlink" href="#equation-kl-div" title="Permalink to this equation">#</a></span>\[
@@ -647,8 +656,9 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
-\log \left[\frac{P(\text { samples } \mid \vec{p})}{P(\text { samples } \mid \vec{q})}\right]=\sum_{i} n\left(x_{i}\right) \log_2\left(\frac{p_{i}}{q_{i}}\right) \\
-\longrightarrow N \sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)=N D_{k L}(\vec{p} \| \vec{q})
+\log \left[\frac{P(\text { samples } \mid \vec{p})}{P(\text { samples } \mid \vec{q})}\right]=\log \left[P(\text { samples } \mid \vec{p})\right]-\log \left[P(\text { samples } \mid \vec{q})\right] \\
+=\sum_{i} n\left(x_{i}\right) \log_2(p_{i})-n\left(x_{i}\right) \log_2(q_{i})=\sum_{i} n\left(x_{i}\right) \log_2\left(\frac{p_{i}}{q_{i}}\right) \\
+\longrightarrow N \sum_{i} p_{i} \log_2 \left(\frac{p_{i}}{q_{i}}\right)=N D_{K L}(\vec{p} \| \vec{q})
 \end{gathered}
 \end{split}\]</div>
 <p>Thus, we need <span class="math notranslate nohighlight">\(\gtrsim D_{K L}^{-1}(\vec{p} \| \vec{q})\)</span> samples to reliably tell that the samples are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> instead of <span class="math notranslate nohighlight">\(\vec{q}\)</span>.</p>
@@ -681,8 +691,8 @@ P_{(X|Y)}(x|y)=\frac{P_{(Y|X)}(y|x)P_X(x)}{P_Y(y)}
 <section id="mutual-information">
 <h3>Mutual information<a class="headerlink" href="#mutual-information" title="Permalink to this heading">#</a></h3>
 <p>Recall that we can interpret <span class="math notranslate nohighlight">\(S(X) \cong\)</span> as lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span>. Measurements can reduce our lack of knowledge, but often we cannot measure a particular quantity <span class="math notranslate nohighlight">\(X\)</span> directly but only a quantity <span class="math notranslate nohighlight">\(Y\)</span> that is correlated with <span class="math notranslate nohighlight">\(X\)</span>. For example, we may be interested in knowing the particular microstate of a 1d spin chain, but we can only measure the magnetization of the spin chain - the difference between up- and down-spins.</p>
-<p>¿By how much does our lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span> decrease when we measure <span class="math notranslate nohighlight">\(Y\)</span>?</p>
-<p>To address this question, let’s first assume we measure a particular value <span class="math notranslate nohighlight">\(Y=y\)</span>. The fact that we now know the value of <span class="math notranslate nohighlight">\(Y\)</span> changes the entropy of <span class="math notranslate nohighlight">\(X\)</span> from the initial entropy <span class="math notranslate nohighlight">\(S(X)\)</span> of the <span class="math notranslate nohighlight">\(X\)</span> distribution,</p>
+<p>¿By how much does our lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span> decrease when we measure <span class="math notranslate nohighlight">\(Y\)</span>?
+To address this question, let’s first assume we measure a particular value <span class="math notranslate nohighlight">\(Y=y\)</span>. The fact that we now know the value of <span class="math notranslate nohighlight">\(Y\)</span> changes the entropy of <span class="math notranslate nohighlight">\(X\)</span> from the initial entropy <span class="math notranslate nohighlight">\(S(X)\)</span> of the <span class="math notranslate nohighlight">\(X\)</span> distribution,</p>
 <div class="math notranslate nohighlight">
 \[ S(X)= -\sum_{x} P_{X}(x) \log_2 P_{X}(x)\;,\]</div>
 <p>to the entropy <span class="math notranslate nohighlight">\(S(X|y)\)</span> of the conditional probability distribution <span class="math notranslate nohighlight">\(P(x|y)\)</span> of <span class="math notranslate nohighlight">\(x\)</span> given <span class="math notranslate nohighlight">\(y\)</span>,</p>
@@ -706,6 +716,101 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 <p>The notation “<span class="math notranslate nohighlight">\(X;Y\)</span>” makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <p>Recalling our discussion of Kullback-Leibler divergence, we  see that the mutual information is a positive quantity unless <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are uncorrelated, <span class="math notranslate nohighlight">\(P_{(X,Y)}=P_{X}\otimes P_Y\)</span>.</p>
 <p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(I (X; Y) \leq S(X)\)</span> and <span class="math notranslate nohighlight">\(I (X; Y) \leq S(Y)\)</span>.</p>
+</section>
+</section>
+<section id="example-mutual-information-simulation">
+<h2>Example Mutual Information Simulation<a class="headerlink" href="#example-mutual-information-simulation" title="Permalink to this heading">#</a></h2>
+<p>This simple simulation illustrates how the mutual information between two random variables ( X ) and ( Y ) decays as their relationship is disturbed by noise.</p>
+<section id="scenario">
+<h3>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>( X ): A random variable drawn from a normal distribution.</p></li>
+<li><p>( Y ): A noisy version of ( X ), where the noise level determines the correlation between ( X ) and ( Y ).</p></li>
+<li><p>Mutual information is calculated for different levels of noise using estimation techniques.</p></li>
+</ul>
+</section>
+<section id="method">
+<h3>Method<a class="headerlink" href="#method" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Generate ( X ) from a standard normal distribution.</p></li>
+<li><p>Create ( Y ) as ( Y = X + \text{noise} ), where the noise level is varied.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutual_info_regression</span></code> from scikit-learn to estimate the mutual information ( I(X; Y) ).</p></li>
+<li><p>Plot the mutual information as a function of noise level.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">mutual_info_regression</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Title and description of the notebook</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># Mutual Information Simulation</span>
+
+<span class="sd">This notebook demonstrates the concept of mutual information using a simple example. We examine how the mutual information between two variables changes as the noise level in their relationship increases.</span>
+
+<span class="sd">## Overview</span>
+<span class="sd">- **X**: Random variable drawn from a standard normal distribution.</span>
+<span class="sd">- **Y**: A noisy version of X.</span>
+<span class="sd">- **Goal**: Measure the mutual information between X and Y for various noise levels.</span>
+
+<span class="sd">## Libraries Used</span>
+<span class="sd">- `numpy`: For generating random data.</span>
+<span class="sd">- `sklearn.feature_selection`: For estimating mutual information.</span>
+<span class="sd">- `matplotlib`: For visualization.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># Number of samples</span>
+<span class="n">noise_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Different noise levels</span>
+<span class="n">mutual_information</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Simulation and mutual information calculation</span>
+<span class="k">for</span> <span class="n">noise</span> <span class="ow">in</span> <span class="n">noise_levels</span><span class="p">:</span>
+    <span class="c1"># Generate X from a standard normal distribution</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Generate Y as a noisy version of X</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Estimate mutual information using sklearn&#39;s mutual_info_regression</span>
+    <span class="n">mi</span> <span class="o">=</span> <span class="n">mutual_info_regression</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mutual_information</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+
+<span class="c1"># Visualization</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">noise_levels</span><span class="p">,</span> <span class="n">mutual_information</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mutual Information&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Mutual Information vs. Noise Level&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Noise Level (Std Dev of Noise)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mutual Information (bits)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">## Observations</span>
+<span class="sd">- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.</span>
+<span class="sd">- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.</span>
+
+<span class="sd">## Conclusion</span>
+<span class="sd">This simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/793e0fa99804933c075a1a7e1f5a29b2e04a0e1822d5e3e6f88452c6ee2590fa.png" src="../_images/793e0fa99804933c075a1a7e1f5a29b2e04a0e1822d5e3e6f88452c6ee2590fa.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="observations">
+<h4>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Low noise</strong>: When noise is minimal, ( Y ) closely reflects ( X ), resulting in high mutual information.</p></li>
+<li><p><strong>High noise</strong>: As noise increases, ( Y ) becomes less correlated with ( X ), reducing mutual information.</p></li>
+</ul>
+<p>This simulation demonstrates how mutual information quantifies the dependence between two variables, even under varying noise levels.</p>
 <p>The mutual information appears is a central quantity in information theory and appears in basic models of information flow:</p>
 <p><img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3e5366c809cb41ab57f4364b475895f13a9dd328" /></p>
 <p><span class="math notranslate nohighlight">\(I(X;Y)\)</span> quantifies how efficiently <span class="math notranslate nohighlight">\(Y\)</span> encodes <span class="math notranslate nohighlight">\(X\)</span>.</p>
@@ -715,15 +820,16 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 C=\sup_{P_X}I(X;Y)\;.
 \]</div>
 <p>Example:</p>
-<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).</p>
-<p>Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.</p>
-<p><img alt="" src="Probability-Entropy/6-5.jpg" /></p>
+<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).
+Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.
+<img alt="" src="Probability-Entropy/6-5.jpg" /></p>
 <p>The figure below plots</p>
 <div class="math notranslate nohighlight">
 \[ I(\text{Words;Sensory inputs})= S(\text{Words})-\langle S(\text{Words| time in movie}) \rangle_{\text{time}} \]</div>
 <p>vs <span class="math notranslate nohighlight">\(S(\text{Words})\)</span> as a measure for how much information per second the spike trains encode about the the time stamp in the movie. The idea is that this gives an estimate of the information encoded about the entire sensory input (for which the time stamp is just a proxy).</p>
 <p>As the time resolution <span class="math notranslate nohighlight">\(\Delta \tau\)</span> is varied from 800 ms down to 2 ms,  the information rate follows the entropy rate <span class="math notranslate nohighlight">\(S(\text{Words})\)</span>, with a nearly constant 50% efficiency.  This result was influential because it suggests that neurons are making use of a significant fraction of their capacity in actually encoding sensory signals. Also, this is true even at millisecond time resolution. The  idea that the entropy of the spike train sets a limit to neural information transmission  emerged almost immediately after Shannon’s work, but it was never clear whether these limits could be approached by real systems.</p>
 <p><img alt="" src="Probability-Entropy/6-7.jpg" /></p>
+</section>
 </section>
 </section>
 </section>
@@ -806,8 +912,16 @@ C=\sup_{P_X}I(X;Y)\;.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy">Relative entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy-kullback-leibler-kl-divergence">Relative entropy (Kullback-Leibler (KL) divergence)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-simulation">Example Mutual Information Simulation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
