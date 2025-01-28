@@ -8,7 +8,7 @@ chapters:
 - file: Introduction
 - file: Probability-Entropy/Coin-flipping
 - file: Probability-Entropy/Shannon-entropy
-#- file: Ensemble-Theory-1
+- file: Ensemble-Theory-1
 #- file: Meaning-of-Equilibrium
 #- file: Equipartition-Mesostates
 #- file: L5-ensemble-theory-II
