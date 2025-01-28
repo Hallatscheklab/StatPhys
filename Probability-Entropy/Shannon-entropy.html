@@ -651,7 +651,9 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 \frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)\equiv D_{K L}(\vec{p} \| \vec{q})
 \end{array}
 \]</div>
-<p>is called Kullback-Leibler (KL) divergence or relative entropxy.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>is called Kullback-Leibler (KL) divergence or relative entropxy. The KL divergence is always non-negative, which follows from Jensen&#39;s inequality applied to the logarithm, $\log(\mathbb{E}[X]) \geq \mathbb{E}[\log(X)]$, and vanishes only when the two distributions are identical. That&#39;s why it is often used like a distance between the two distributions $\vec p$ and $\vec q$. However, KL divergence is not a true distance measure as it is not symmetric and does not satisfy the triangle inequality.
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>Suppose we obtain samples <span class="math notranslate nohighlight">\(\left\{X_{i}\right\}\)</span> and want to decide whether they are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> or <span class="math notranslate nohighlight">\(\vec{q}\)</span>. To this end, we compare the log-likelihoods for drawing the samples from either distribution,</p></li>
 </ul>
@@ -692,22 +694,22 @@ P_{(X|Y)}(x|y)=\frac{P_{(Y|X)}(y|x)P_X(x)}{P_Y(y)}
 </section>
 <section id="mutual-information">
 <h3>Mutual information<a class="headerlink" href="#mutual-information" title="Permalink to this heading">#</a></h3>
-<p>Recall that we can interpret <span class="math notranslate nohighlight">\(S(X) \cong\)</span> as lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span>. Measurements can reduce our lack of knowledge, but often we cannot measure a particular quantity <span class="math notranslate nohighlight">\(X\)</span> directly but only a quantity <span class="math notranslate nohighlight">\(Y\)</span> that is correlated with <span class="math notranslate nohighlight">\(X\)</span>. For example, we may be interested in knowing the particular microstate of a 1d spin chain, but we can only measure the magnetization of the spin chain - the difference between up- and down-spins.</p>
+<p>Recall that we can interpret <span class="math notranslate nohighlight">\(H(X) \cong\)</span> as lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span>. Measurements can reduce our lack of knowledge, but often we cannot measure a particular quantity <span class="math notranslate nohighlight">\(X\)</span> directly but only a quantity <span class="math notranslate nohighlight">\(Y\)</span> that is correlated with <span class="math notranslate nohighlight">\(X\)</span>. For example, we may be interested in knowing the particular microstate of a 1d spin chain, but we can only measure the magnetization of the spin chain - the difference between up- and down-spins.</p>
 <p>¿By how much does our lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span> decrease when we measure <span class="math notranslate nohighlight">\(Y\)</span>?
-To address this question, let’s first assume we measure a particular value <span class="math notranslate nohighlight">\(Y=y\)</span>. The fact that we now know the value of <span class="math notranslate nohighlight">\(Y\)</span> changes the entropy of <span class="math notranslate nohighlight">\(X\)</span> from the initial entropy <span class="math notranslate nohighlight">\(S(X)\)</span> of the <span class="math notranslate nohighlight">\(X\)</span> distribution,</p>
+To address this question, let’s first assume we measure a particular value <span class="math notranslate nohighlight">\(Y=y\)</span>. The fact that we now know the value of <span class="math notranslate nohighlight">\(Y\)</span> changes the entropy of <span class="math notranslate nohighlight">\(X\)</span> from the initial entropy <span class="math notranslate nohighlight">\(H(X)\)</span> of the <span class="math notranslate nohighlight">\(X\)</span> distribution,</p>
 <div class="math notranslate nohighlight">
-\[ S(X)= -\sum_{x} P_{X}(x) \log_2 P_{X}(x)\;,\]</div>
-<p>to the entropy <span class="math notranslate nohighlight">\(S(X|y)\)</span> of the conditional probability distribution <span class="math notranslate nohighlight">\(P(x|y)\)</span> of <span class="math notranslate nohighlight">\(x\)</span> given <span class="math notranslate nohighlight">\(y\)</span>,</p>
+\[ H(X)= -\sum_{x} P_{X}(x) \log_2 P_{X}(x)\;,\]</div>
+<p>to the entropy <span class="math notranslate nohighlight">\(H(X|y)\)</span> of the conditional probability distribution <span class="math notranslate nohighlight">\(P(x|y)\)</span> of <span class="math notranslate nohighlight">\(x\)</span> given <span class="math notranslate nohighlight">\(y\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[S(X|y)= -\sum_{x} P_{(X|Y)}(x|y) \log_2 P_{(X|Y)}(x|y). \]</div>
-<p>Note that we do not necessarily have <span class="math notranslate nohighlight">\(S(X|y)&lt;S(X)\)</span>, for example if the particular measurement <span class="math notranslate nohighlight">\(Y=y\)</span> indicates that there is a lot of noise in <span class="math notranslate nohighlight">\(X\)</span>.</p>
+\[H(X|y)= -\sum_{x} P_{(X|Y)}(x|y) \log_2 P_{(X|Y)}(x|y). \]</div>
+<p>Note that we do not necessarily have <span class="math notranslate nohighlight">\(H(X|y)&lt;H(X)\)</span>, for example if the particular measurement <span class="math notranslate nohighlight">\(Y=y\)</span> indicates that there is a lot of noise in <span class="math notranslate nohighlight">\(X\)</span>.</p>
 <p>However, if we average the negative entropy change over all possible <span class="math notranslate nohighlight">\(y\)</span>’s drawn from <span class="math notranslate nohighlight">\(P_Y\)</span> we obtain a non-negative quantity</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
 I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
-= S(X) - S(X|Y) \\
-= S(X) - \langle S(X|y)\rangle_y \\
+= H(X) - H(X|Y) \\
+= H(X) - \langle H(X|y)\rangle_y \\
 =-\sum_{x} P_{X}(x) \log P_{X}(x)+\sum_{Y} P_{Y}(y) \sum_{x} P_{(X|Y)}(x|y) \log P_{(X|Y)}(x \mid y) \\
 =\sum_{x, y} P_{(X,Y)}(x, y) \log \left[\frac{P_{(X|Y)}(x \mid y)}{P_{X}(x)}\right] \\
 =\sum_{x, y} P_{(X,Y)}(x, y) \log \left[\frac{P_{(X,Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right] \\
@@ -717,7 +719,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 <p>which is called mutual information <span class="math notranslate nohighlight">\(I(X;Y)\)</span> between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. <strong>The mutual information measures how many bits of information we can learn on average about <span class="math notranslate nohighlight">\(X\)</span> when we measure <span class="math notranslate nohighlight">\(Y\)</span>.</strong></p>
 <p>The notation “<span class="math notranslate nohighlight">\(X;Y\)</span>” makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 <p>Recalling our discussion of Kullback-Leibler divergence, we  see that the mutual information is a positive quantity unless <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are uncorrelated, <span class="math notranslate nohighlight">\(P_{(X,Y)}=P_{X}\otimes P_Y\)</span>.</p>
-<p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(I (X; Y) \leq S(X)\)</span> and <span class="math notranslate nohighlight">\(I (X; Y) \leq S(Y)\)</span>.</p>
+<p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(I (X; Y) \leq H(X)\)</span> and <span class="math notranslate nohighlight">\(I (X; Y) \leq H(Y)\)</span>.</p>
 </section>
 </section>
 <section id="example-mutual-information-simulation">
@@ -800,7 +802,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/957af7a4b666bcc1f9d019d6fefd72aa4e2ab8480279ba5d57e9969d59fac775.png" src="../_images/957af7a4b666bcc1f9d019d6fefd72aa4e2ab8480279ba5d57e9969d59fac775.png" />
+<img alt="../_images/d60017f975c5c792ea5716e1eb4aec35b397ec631baa1a97926825e053cbd023.png" src="../_images/d60017f975c5c792ea5716e1eb4aec35b397ec631baa1a97926825e053cbd023.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
