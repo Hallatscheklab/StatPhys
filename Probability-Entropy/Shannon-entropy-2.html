@@ -422,6 +422,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy-kullback-leibler-kl-divergence">Relative entropy (Kullback-Leibler (KL) divergence)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-being-degraded-by-noise">Example Mutual Information being degraded by noise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a></li>
 </ul>
 </li>
 </ul>
@@ -649,6 +655,148 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 \end{gathered}
 \end{split}\]</div>
 <p>Thus, we need <span class="math notranslate nohighlight">\(\gtrsim D_{K L}^{-1}(\vec{p} \| \vec{q})\)</span> samples to reliably tell that the samples are drawn from <span class="math notranslate nohighlight">\(\vec{p}\)</span> instead of <span class="math notranslate nohighlight">\(\vec{q}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When our calculations involve probability distributions of more than one random variable, as in the next section, it is sometimes challenging to keep the different conditional / joint / marginal distributions apart. Then, it is useful to use the following detailed notation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+P_X(x)\equiv\Pr[X=x] \\
+P_Y(y)\equiv\Pr[Y=y] \\ 
+P_{(X,Y)}(x,y)\equiv\Pr[X=x \,\&amp;\, Y=y]=P_{(Y,X)}(y,x) \qquad {\rm joint \; probability}\\
+P_{(X|Y)}(x|y)\equiv \Pr[X=x|Y=y] \qquad {\rm conditional \; probability}
+\end{gathered}
+\end{split}\]</div>
+<p>Note that conditional and joint probability are connected via</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{gathered}
+P_{(X,Y)}(x,y) = P_{(X|Y)}(x|y)P_Y(y) = P_{(Y|X)}(y|x)P_X(x)
+\end{gathered}
+\]</div>
+<p>which implies Bayes theorem</p>
+<div class="math notranslate nohighlight">
+\[
+P_{(X|Y)}(x|y)=\frac{P_{(Y|X)}(y|x)P_X(x)}{P_Y(y)}
+\]</div>
+</div>
+</section>
+<section id="mutual-information">
+<h3>Mutual information<a class="headerlink" href="#mutual-information" title="Permalink to this heading">#</a></h3>
+<p>Recall that we can interpret <span class="math notranslate nohighlight">\(H(X) \cong\)</span> as lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span>. Measurements can reduce our lack of knowledge, but often we cannot measure a particular quantity <span class="math notranslate nohighlight">\(X\)</span> directly but only a quantity <span class="math notranslate nohighlight">\(Y\)</span> that is correlated with <span class="math notranslate nohighlight">\(X\)</span>. For example, we may be interested in knowing the particular microstate of a 1d spin chain, but we can only measure the magnetization of the spin chain - the difference between up- and down-spins.</p>
+<p>¿By how much does our lack of knowledge about <span class="math notranslate nohighlight">\(X\)</span> decrease when we measure <span class="math notranslate nohighlight">\(Y\)</span>?
+To address this question, let’s first assume we measure a particular value <span class="math notranslate nohighlight">\(Y=y\)</span>. The fact that we now know the value of <span class="math notranslate nohighlight">\(Y\)</span> changes the entropy of <span class="math notranslate nohighlight">\(X\)</span> from the initial entropy <span class="math notranslate nohighlight">\(H(X)\)</span> of the <span class="math notranslate nohighlight">\(X\)</span> distribution,</p>
+<div class="math notranslate nohighlight">
+\[ H(X)= -\sum_{x} P_{X}(x) \log_2 P_{X}(x)\;,\]</div>
+<p>to the entropy <span class="math notranslate nohighlight">\(H(X|y)\)</span> of the conditional probability distribution <span class="math notranslate nohighlight">\(P(x|y)\)</span> of <span class="math notranslate nohighlight">\(x\)</span> given <span class="math notranslate nohighlight">\(y\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[H(X|y)= -\sum_{x} P_{(X|Y)}(x|y) \log_2 P_{(X|Y)}(x|y). \]</div>
+<p>Note that we do not necessarily have <span class="math notranslate nohighlight">\(H(X|y)&lt;H(X)\)</span>, for example if the particular measurement <span class="math notranslate nohighlight">\(Y=y\)</span> indicates that there is a lot of noise in <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>However, if we average the negative entropy change over all possible <span class="math notranslate nohighlight">\(y\)</span>’s drawn from <span class="math notranslate nohighlight">\(P_Y\)</span> we obtain a non-negative quantity</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
+= H(X) - H(X|Y) \\
+= H(X) - \langle H(X|y)\rangle_y \\
+=-\sum_{x} P_{X}(x) \log P_{X}(x)+\sum_{Y} P_{Y}(y) \sum_{x} P_{(X|Y)}(x|y) \log P_{(X|Y)}(x \mid y) \\
+=\sum_{x, y} P_{(X,Y)}(x, y) \log \left[\frac{P_{(X|Y)}(x \mid y)}{P_{X}(x)}\right] \\
+=\sum_{x, y} P_{(X,Y)}(x, y) \log \left[\frac{P_{(X,Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right] \\
+=D_{KL}(P_{(X,Y)}||P_{X}\otimes P_Y) \;,
+\end{gathered}
+\end{split}\]</div>
+<p>which is called mutual information <span class="math notranslate nohighlight">\(I(X;Y)\)</span> between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. <strong>The mutual information measures how many bits of information we can learn on average about <span class="math notranslate nohighlight">\(X\)</span> when we measure <span class="math notranslate nohighlight">\(Y\)</span>.</strong></p>
+<p>The notation “<span class="math notranslate nohighlight">\(X;Y\)</span>” makes it clear that the expression is symmetric (evident from the last line of the last formula): on average, measuring <span class="math notranslate nohighlight">\(Y\)</span> tells as much about <span class="math notranslate nohighlight">\(X\)</span> as measuring <span class="math notranslate nohighlight">\(X\)</span> tells us about <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<p>Recalling our discussion of Kullback-Leibler divergence, we  see that the mutual information is a positive quantity unless <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are uncorrelated, <span class="math notranslate nohighlight">\(P_{(X,Y)}=P_{X}\otimes P_Y\)</span>.</p>
+<p>Interestingly, if we consider only discrete sets of possibilities, then entropies are positive (or zero), so  that these equations imply the bounds <span class="math notranslate nohighlight">\(0\leq I (X; Y) \leq H(X)\)</span> and <span class="math notranslate nohighlight">\(0\leq I (X; Y) \leq H(Y)\)</span>.</p>
+</section>
+<section id="example-mutual-information-being-degraded-by-noise">
+<h3>Example Mutual Information being degraded by noise<a class="headerlink" href="#example-mutual-information-being-degraded-by-noise" title="Permalink to this heading">#</a></h3>
+<p>This simple simulation illustrates how the mutual information between two random variables <span class="math notranslate nohighlight">\( X \)</span> and <span class="math notranslate nohighlight">\( Y \)</span> decays as their relationship is disturbed by noise.</p>
+<section id="scenario">
+<h4>Scenario<a class="headerlink" href="#scenario" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\( X \)</span>: A random variable drawn from a normal distribution.</p></li>
+<li><p><span class="math notranslate nohighlight">\( Y \)</span>: A noisy version of <span class="math notranslate nohighlight">\( X \)</span>, where the noise level determines the correlation between <span class="math notranslate nohighlight">\( X \)</span> and <span class="math notranslate nohighlight">\( Y \)</span>.</p></li>
+<li><p>Mutual information is calculated for different levels of noise using estimation techniques.</p></li>
+</ul>
+</section>
+</section>
+<section id="method">
+<h3>Method<a class="headerlink" href="#method" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Generate <span class="math notranslate nohighlight">\( X \)</span> from a standard normal distribution.</p></li>
+<li><p>Create <span class="math notranslate nohighlight">\( Y \)</span> as <span class="math notranslate nohighlight">\( Y = X + \text{noise} \)</span>, where the “noise” is a Gaussian random variable. The width of the Gaussian is varied.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutual_info_regression</span></code> from scikit-learn to estimate the mutual information ( I(X; Y) ).</p></li>
+<li><p>Plot the mutual information as a function of noise level.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">mutual_info_regression</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Title and description of the notebook</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># Mutual Information Simulation</span>
+
+<span class="sd">This notebook demonstrates the concept of mutual information using a simple example. We examine how the mutual information between two variables changes as the noise level in their relationship increases.</span>
+
+<span class="sd">## Overview</span>
+<span class="sd">- **X**: Random variable drawn from a standard normal distribution.</span>
+<span class="sd">- **Y**: A noisy version of X.</span>
+<span class="sd">- **Goal**: Measure the mutual information between X and Y for various noise levels.</span>
+
+<span class="sd">## Libraries Used</span>
+<span class="sd">- `numpy`: For generating random data.</span>
+<span class="sd">- `sklearn.feature_selection`: For estimating mutual information.</span>
+<span class="sd">- `matplotlib`: For visualization.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># Number of samples</span>
+<span class="n">noise_levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Different noise levels</span>
+<span class="n">mutual_information</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Simulation and mutual information calculation</span>
+<span class="k">for</span> <span class="n">noise</span> <span class="ow">in</span> <span class="n">noise_levels</span><span class="p">:</span>
+    <span class="c1"># Generate X from a standard normal distribution</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Generate Y as a noisy version of X</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">X</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Estimate mutual information using sklearn&#39;s mutual_info_regression</span>
+    <span class="n">mi</span> <span class="o">=</span> <span class="n">mutual_info_regression</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">mutual_information</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span>
+
+<span class="c1"># Visualization</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">noise_levels</span><span class="p">,</span> <span class="n">mutual_information</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mutual Information&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Mutual Information vs. Noise Level&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Noise Level (Std Dev of Noise)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Mutual Information (bits)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">## Observations</span>
+<span class="sd">- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.</span>
+<span class="sd">- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.</span>
+
+<span class="sd">## Conclusion</span>
+<span class="sd">This simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4797e3881f59748f2a93393c8927fba7e2d744edf1ca1566fde48cd39e2e50dc.png" src="../_images/4797e3881f59748f2a93393c8927fba7e2d744edf1ca1566fde48cd39e2e50dc.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -722,6 +870,12 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation">Estimation:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-entropy-kullback-leibler-kl-divergence">Relative entropy (Kullback-Leibler (KL) divergence)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mutual-information-being-degraded-by-noise">Example Mutual Information being degraded by noise</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario">Scenario</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a></li>
 </ul>
 </li>
 </ul>
