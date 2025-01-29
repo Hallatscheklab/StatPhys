@@ -430,6 +430,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-transmission">Information transmission</a></li>
 </ul>
             </nav>
         </div>
@@ -791,13 +792,33 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4797e3881f59748f2a93393c8927fba7e2d744edf1ca1566fde48cd39e2e50dc.png" src="../_images/4797e3881f59748f2a93393c8927fba7e2d744edf1ca1566fde48cd39e2e50dc.png" />
+<img alt="../_images/05d6e1387640d477dae48c6580d00ddeb125e06149c7377c5832dd3f12ddad39.png" src="../_images/05d6e1387640d477dae48c6580d00ddeb125e06149c7377c5832dd3f12ddad39.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+</section>
+<section id="information-transmission">
+<h2>Information transmission<a class="headerlink" href="#information-transmission" title="Permalink to this heading">#</a></h2>
+<p>The mutual information appears is a central quantity in information theory and appears in basic models of information flow:</p>
+<p><img alt="" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3e5366c809cb41ab57f4364b475895f13a9dd328" /></p>
+<p><span class="math notranslate nohighlight">\(I(X;Y)\)</span> quantifies how efficiently <span class="math notranslate nohighlight">\(Y\)</span> encodes <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>The maximal rate of information transmission through the channel is given by the channel capacity</p>
+<div class="math notranslate nohighlight">
+\[
+C=\sup_{P_X}I(X;Y)\;.
+\]</div>
+<p>Example:</p>
+<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="Shannon-entropy.html#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="Shannon-entropy.html#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).
+Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.
+<img alt="" src="Probability-Entropy/6-5.jpg" /></p>
+<p>The figure below plots</p>
+<div class="math notranslate nohighlight">
+\[ I(\text{Words;Sensory inputs})= S(\text{Words})-\langle S(\text{Words| time in movie}) \rangle_{\text{time}} \]</div>
+<p>vs <span class="math notranslate nohighlight">\(S(\text{Words})\)</span> as a measure for how much information per second the spike trains encode about the the time stamp in the movie. The idea is that this gives an estimate of the information encoded about the entire sensory input (for which the time stamp is just a proxy).</p>
+<p>As the time resolution <span class="math notranslate nohighlight">\(\Delta \tau\)</span> is varied from 800 ms down to 2 ms,  the information rate follows the entropy rate <span class="math notranslate nohighlight">\(S(\text{Words})\)</span>, with a nearly constant 50% efficiency.  This result was influential because it suggests that neurons are making use of a significant fraction of their capacity in actually encoding sensory signals. Also, this is true even at millisecond time resolution. The  idea that the entropy of the spike train sets a limit to neural information transmission  emerged almost immediately after Shannon’s work, but it was never clear whether these limits could be approached by real systems.</p>
 </section>
 </section>
 
@@ -878,6 +899,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method">Method</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-transmission">Information transmission</a></li>
 </ul>
   </nav></div>
 
