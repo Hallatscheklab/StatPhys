@@ -190,7 +190,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability, energy and entropy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Entropy and information</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 </ul>
 
@@ -418,7 +417,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entropy and information</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-as-lack-of-knowledge">Interpretation as lack of knowledge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
@@ -434,10 +432,6 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-transmission">Information transmission</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -798,7 +792,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f2931d9f27d4b799679d71f55965aff2d86867d876806bb59d30fa31657ac83e.png" src="../_images/f2931d9f27d4b799679d71f55965aff2d86867d876806bb59d30fa31657ac83e.png" />
+<img alt="../_images/966ba50941b5231cb3730232e3750f78da7420bff3566bb0ab76420e72e04062.png" src="../_images/966ba50941b5231cb3730232e3750f78da7420bff3566bb0ab76420e72e04062.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
@@ -817,7 +811,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 C=\sup_{P_X}I(X;Y)\;.
 \]</div>
 <p>Example:</p>
-<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).
+<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="Shannon-entropy.html#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="Shannon-entropy.html#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).
 Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.
 <img alt="" src="Probability-Entropy/6-5.jpg" /></p>
 <p>The figure below plots</p>
@@ -826,24 +820,6 @@ Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in
 <p>vs <span class="math notranslate nohighlight">\(S(\text{Words})\)</span> as a measure for how much information per second the spike trains encode about the the time stamp in the movie. The idea is that this gives an estimate of the information encoded about the entire sensory input (for which the time stamp is just a proxy).</p>
 <p>As the time resolution <span class="math notranslate nohighlight">\(\Delta \tau\)</span> is varied from 800 ms down to 2 ms,  the information rate follows the entropy rate <span class="math notranslate nohighlight">\(S(\text{Words})\)</span>, with a nearly constant 50% efficiency.  This result was influential because it suggests that neurons are making use of a significant fraction of their capacity in actually encoding sensory signals. Also, this is true even at millisecond time resolution. The  idea that the entropy of the spike train sets a limit to neural information transmission  emerged almost immediately after Shannon’s work, but it was never clear whether these limits could be approached by real systems.</p>
 </section>
-</section>
-<section id="citations">
-<h1>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h1>
-<div class="docutils container" id="id3">
-<div class="citation" id="id7" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Bia12</a><span class="fn-bracket">]</span></span>
-<p>William Bialek. <em>Biophysics: searching for principles</em>. Princeton University Press, 2012.</p>
-</div>
-<div class="citation" id="id5" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>CRJ+05<span class="fn-bracket">]</span></span>
-<p>Delphine Collin, Felix Ritort, Christopher Jarzynski, Steven B Smith, Ignacio Tinoco Jr, and Carlos Bustamante. Verification of the crooks fluctuation theorem and recovery of rna folding free energies. <em>Nature</em>, 437(7056):231–234, 2005.</p>
-</div>
-<div class="citation" id="id6" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">SKVSB98</a><span class="fn-bracket">]</span></span>
-<p>Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. <em>Physical review letters</em>, 80(1):197, 1998.</p>
-</div>
-</div>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -910,7 +886,6 @@ Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entropy and information</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-as-lack-of-knowledge">Interpretation as lack of knowledge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consequences">Consequences:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coding">Coding</a></li>
@@ -926,10 +901,6 @@ Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-transmission">Information transmission</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
