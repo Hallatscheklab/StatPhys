@@ -60,9 +60,11 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Probability-Entropy/Shannon-entropy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Probability-Entropy/Shannon-entropy-2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classical statistical mechanics" href="../Ensemble-Theory-1.html" />
+    <link rel="prev" title="Probability, energy and entropy" href="Coin-flipping.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,11 +185,11 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Course-Info-211-2025.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Coin-flipping.html">Probability, energy and entropy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Shannon-entropy-2.html">Entropy and information</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Entropy and information</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
 </ul>
@@ -244,7 +246,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/Probability-Entropy/Shannon-entropy.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/Hallatscheklab/StatPhys/blob/master/Probability-Entropy/Shannon-entropy-2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -292,7 +294,7 @@
       
       
       
-      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FProbability-Entropy/Shannon-entropy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Hallatscheklab/StatPhys/issues/new?title=Issue%20on%20page%20%2FProbability-Entropy/Shannon-entropy-2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +324,7 @@
       
       
       
-      <li><a href="../_sources/Probability-Entropy/Shannon-entropy.ipynb" target="_blank"
+      <li><a href="../_sources/Probability-Entropy/Shannon-entropy-2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -643,7 +645,7 @@ Shannon Entropy of sample_text B: 4.1700 bits/character
 <li><p>Suppose the symbols <span class="math notranslate nohighlight">\(X\)</span> of a message are drawn from the distribution <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=p_{i}\)</span>. But we think they are drawn from <span class="math notranslate nohighlight">\(\operatorname{Pr}\left[X=x_{i}\right]=q_{i}\)</span> instead, use correspondingly sized code words and, hence, do not optimally compress the message. Instead there will be discrepancy between the length <span class="math notranslate nohighlight">\(L(N)\)</span> of the number of bits we use, <span class="math notranslate nohighlight">\(L(N)=-N \sum_{i} p_{i} \log q_{i} \)</span> and the minimal number of bits, <span class="math notranslate nohighlight">\(L_{min}(N)=-N \sum_{i} p_{i} \log p_{i}\)</span>, which is given by the entropy. The relative difference,</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-kl-div">
-<span class="eqno">()<a class="headerlink" href="#equation-kl-div" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2)<a class="headerlink" href="#equation-kl-div" title="Permalink to this equation">#</a></span>\[
 \begin{array}{r}
 \frac{L-L_{\text {min }}}{N}=\sum_{i} p_{i} \log \left(\frac{p_{i}}{q_{i}}\right)\equiv D_{K L}(\vec{p} \| \vec{q})
 \end{array}
@@ -797,7 +799,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a1fd80edc9133ea8fe24eaa32102afb4f10210f0d302b2cea02a1c733f9b9cb.png" src="../_images/9a1fd80edc9133ea8fe24eaa32102afb4f10210f0d302b2cea02a1c733f9b9cb.png" />
+<img alt="../_images/612613f2491379e4f9c73da6e9a9af6ac192cb15874ca48c3fd4c68d3d249c11.png" src="../_images/612613f2491379e4f9c73da6e9a9af6ac192cb15874ca48c3fd4c68d3d249c11.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
@@ -824,7 +826,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 C=\sup_{P_X}I(X;Y)\;.
 \]</div>
 <p>Example:</p>
-<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="Shannon-entropy-2.html#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="Shannon-entropy-2.html#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).
+<p>To see how the ideas of entropy reduction and information work in a real example,  let’s consider the response of a neuron to sensory inputs (for more, see Bialek’s book, Ch. 6.2 <span id="id1">[<a class="reference internal" href="#id7" title="William Bialek. Biophysics: searching for principles. Princeton University Press, 2012.">Bia12</a>]</span> and the original paper published in PRL<span id="id2">[<a class="reference internal" href="#id6" title="Steven P Strong, Roland Koberle, Rob R De Ruyter Van Steveninck, and William Bialek. Entropy and information in neural spike trains. Physical review letters, 80(1):197, 1998.">SKVSB98</a>]</span>).
 Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in the fly visual system. In these experiments, a fly sees a randomly moving pattern,  and H1 responds with a stream of spikes. If we fix <span class="math notranslate nohighlight">\(\Delta \tau = 3\)</span>ms nd look at <span class="math notranslate nohighlight">\(T = 30\)</span> ms  segments of the spike train, there are <span class="math notranslate nohighlight">\(2T /\Delta \tau \sim 10^3\)</span> possible words, but the distribution is biased, and the entropy is only <span class="math notranslate nohighlight">\(S(T, \Delta \tau)\sim\)</span> 5 bits<span class="math notranslate nohighlight">\( &lt;\log_2(10^3)\sim 10\)</span> bits. This relatively low entropy  means that we can still sample the distributions of words even out to <span class="math notranslate nohighlight">\(T \sim 50−60\)</span> ms,  which is interesting, because the fly can actually generate a flight correction in response  to visual motion inputs within <span class="math notranslate nohighlight">\(\sim 30\)</span> ms.
 <img alt="" src="Probability-Entropy/6-5.jpg" /></p>
 <p>The figure below plots</p>
@@ -884,6 +886,24 @@ Figure 6.5 shows the results of experiments on the motion-sensitive neuron H1 in
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Coin-flipping.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Probability, energy and entropy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Ensemble-Theory-1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classical statistical mechanics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
