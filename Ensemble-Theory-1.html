@@ -501,7 +501,7 @@ document.write(`
 </section>
 <section id="thermal-equilibrium">
 <h3>Thermal equilibrium<a class="headerlink" href="#thermal-equilibrium" title="Permalink to this heading">#</a></h3>
-<p>Consider an isolated system <span class="math notranslate nohighlight">\({\mu, E, \bf{x}}\)</span> consisting of two subsystem in contact so that they can exchange energy,</p>
+<p>Consider an isolated system <span class="math notranslate nohighlight">\({\mu, E, \bm{x}}\)</span> consisting of two subsystem in contact so that they can exchange energy,</p>
 <p><img alt="" src="_images/micro-can-compound-system.jpg" /></p>
 <div class="math notranslate nohighlight">
 \[\mu=\mu_1 \otimes \mu_2\]</div>
@@ -522,25 +522,25 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-\Omega(E, \bf{x}) &amp; =\int d \mu_{1} d \mu_{2} \delta(E-H(\mu)) \\
-&amp; =\int d E_{1} \Omega_{1}\left(E_{1}, \bf{x}_1\right) \Omega_{2}\left(E-E_{1}, \bf{x}_2\right)
+\Omega(E, \bm{x}) &amp; =\int d \mu_{1} d \mu_{2} \delta(E-H(\mu)) \\
+&amp; =\int d E_{1} \Omega_{1}\left(E_{1}, \bm{x}_1\right) \Omega_{2}\left(E-E_{1}, \bm{x}_2\right)
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-x">
 <span class="eqno">(4)<a class="headerlink" href="#equation-x" title="Permalink to this equation">#</a></span>\[
-e^{S(E) / k_{B}} =\int d E_{1} e^{\left[S_{1}\left(E_{1}, \bf{x}_1\right)+S\left(E-E_{1}, \bf{x}_2\right)\right] / k_{B}}
+e^{S(E) / k_{B}} =\int d E_{1} e^{\left[S_{1}\left(E_{1}, \bm{x}_1\right)+S\left(E-E_{1}, \bm{x}_2\right)\right] / k_{B}}
 \]</div>
 <p>(compound entropy)</p>
 <p><span class="math notranslate nohighlight">\(S_{1}, S_{2}\)</span> extensive and, so,</p>
 <div class="math notranslate nohighlight">
 \[
-S(E,\bf{x})=N s_{1}\left(\frac{E_{1}}{N},\frac{\bf{x}_1}N\right)+N s_{2}\left(\frac{E-E_{1}}{N},\frac{\bf{x}_2}N\right)
+S(E,\bm{x})=N s_{1}\left(\frac{E_{1}}{N},\frac{\bm{x}_1}N\right)+N s_{2}\left(\frac{E-E_{1}}{N},\frac{\bm{x}_2}N\right)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> are entropies per particle, which approach a constant as we increase the system sizes.</p>
 <p>Thus, as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, the integral in <a class="reference internal" href="#equation-x">(4)</a> is dominated by the maximum of the integrand, so that</p>
 <div class="math notranslate nohighlight">
 \[
-S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1},\bf{x}_2\right)
+S(E,\bm{x}) \to S_{1}\left(E_{1}^{*},\bm{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1},\bm{x}_2\right)
 \]</div>
 <p>where the position of the maximum is obtained by extremizing w.r.t. <span class="math notranslate nohighlight">\(E_1\)</span>, resulting in</p>
 <div class="math notranslate nohighlight">
@@ -550,12 +550,12 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 <a class="reference internal image-reference" href="_images/thermalization-microcanonical.jpg"><img alt="drawing" src="_images/thermalization-microcanonical.jpg" style="width: 200px;" /></a>
 <p>Employing the <strong>thermodynamic definition of temperature</strong></p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{T}\equiv\left.\frac{\partial S}{\partial E}\right|_{\bf{x}}\;,\]</div>
+\[\frac{1}{T}\equiv\left.\frac{\partial S}{\partial E}\right|_{\bm{x}}\;,\]</div>
 <p>so that</p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{T_1}\equiv\left.\frac{\partial S}{\partial E}\right|_{\bf{x_1}}\;\]</div>
+\[\frac{1}{T_1}\equiv\left.\frac{\partial S}{\partial E}\right|_{\bm{x_1}}\;\]</div>
 <div class="math notranslate nohighlight">
-\[\frac{1}{T_2}\equiv\left.\frac{\partial S}{\partial E}\right|_{\bf{x_2}}\;,\]</div>
+\[\frac{1}{T_2}\equiv\left.\frac{\partial S}{\partial E}\right|_{\bm{x_2}}\;,\]</div>
 <p>the maximum <span class="math notranslate nohighlight">\(E_1^{*}\)</span> is set by</p>
 <div class="math notranslate nohighlight">
 \[
@@ -592,10 +592,10 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 <p>I.e., the <strong>specific heat</strong> <span class="math notranslate nohighlight">\(C_{x}\equiv \left.\frac{\partial E}{\partial T}\right|_{x}\)</span> is <strong>non-negative</strong>.</p>
 <p><strong>Work and First Law</strong></p>
 <p>Thus far, we kept the generalized coordinates fixed and studied the redistribution of energy. When we manipulate the generalized coordinates, we do work on the system.</p>
-<p>To analyze this situation, consider first changing <span class="math notranslate nohighlight">\(\bf{x}\to \bf{x}+\bf{\delta x}\)</span> in a slow, <em>reversible</em>, manner. (I.e. we can return to the initial state by reversing the externally applied forces <span class="math notranslate nohighlight">\(\bf{J}\)</span>.)</p>
-<p>Then, the energy will change, <span class="math notranslate nohighlight">\(E\to E+\bf{J} \cdot \bf{\delta x}\)</span>, and so</p>
+<p>To analyze this situation, consider first changing <span class="math notranslate nohighlight">\(\bm{x}\to \bm{x}+\bm{\delta x}\)</span> in a slow, <em>reversible</em>, manner. (I.e. we can return to the initial state by reversing the externally applied forces <span class="math notranslate nohighlight">\(\bm{J}\)</span>.)</p>
+<p>Then, the energy will change, <span class="math notranslate nohighlight">\(E\to E+\bm{J} \cdot \bm{\delta x}\)</span>, and so</p>
 <div class="math notranslate nohighlight">
-\[\delta S=S(E+\bf{J} \cdot \bf{dx},\bf{x}+\bf{\delta x})-S(E,\bf{x})=\left. \frac{\partial S}{\partial E}\right|_x(\bf{J} \cdot \bf{\delta x})+\left.\frac{\partial S}{\partial x}\right|_E \bf{\delta x}\geq 0\]</div>
+\[\delta S=S(E+\bm{J} \cdot \bm{\delta x},\bm{x}+\bm{\delta x})-S(E,\bm{x})=\left. \frac{\partial S}{\partial E}\right|_x(\bm{J} \cdot \bm{\delta x})+\left.\frac{\partial S}{\partial x}\right|_E \bm{\delta x}\geq 0\]</div>
 <p>For a reversible dynamics, we must have the equal sign, i.e.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -604,11 +604,11 @@ S(E,\bf{x}) \to S_{1}\left(E_{1}^{*},\bf{x}_1\right)+S_{2}\left(E_{2}^{*}=E-E_{1
 <p>Thus, for a reversible transformation, the change in entropy becomes</p>
 <div class="math notranslate nohighlight">
 \[
-\Rightarrow \delta S=\frac{d E}{T}-\frac{\bf{J} \cdot \bf{\delta x}}{T} \]</div>
+\Rightarrow \delta S=\frac{d E}{T}-\frac{\bm{J} \cdot \bm{\delta x}}{T} \]</div>
 <p>which implies the <strong>first law of thermodynamics</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-\Rightarrow dE=\underbrace{T d S}_{d Q}+\underbrace{\bf{J} \cdot \bf{\delta x}}_{dW}
+\Rightarrow dE=\underbrace{T d S}_{d Q}+\underbrace{\bm{J} \cdot \bm{\delta x}}_{dW}
 \]</div>
 </section>
 </section>
