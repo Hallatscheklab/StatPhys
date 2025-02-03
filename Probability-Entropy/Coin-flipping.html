@@ -191,6 +191,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Probability, energy and entropy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Shannon-entropy-2.html">Entropy and information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Ensemble-Theory-1.html">Classical statistical mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Meaning-of-Equilibrium.html">Meaning of equilibrium</a></li>
 </ul>
 
     </div>
@@ -518,8 +519,10 @@ P(X)= e^{S(X)}e^{-E(X)}
 \end{aligned}
 \]</div>
 <p>Now we invoke Stirling’s approximation, which is given by
-$<span class="math notranslate nohighlight">\(\ln N !=N(\ln N-1)+O(\ln N)\)</span><span class="math notranslate nohighlight">\(
-and can be *roughly* derived as \)</span>\ln N! = \sum_{j=1}^N \ln j \approx \int_1^N dx \ln x = N(\ln N - 1) + 1$, which successfully captures the leading dependence.</p>
+\begin{aligned}
+\ln N !=N(\ln N-1)+O(\ln N)
+\end{aligned}
+and can be roughly derived as <span class="math notranslate nohighlight">\(\ln N! = \sum_{j=1}^N \ln j \approx \int_1^N dx \ln x = N(\ln N - 1) + 1\)</span>, which successfully captures the leading dependence.</p>
 <p>Using Stirling’s approximation, we find for the entropy</p>
 <div class="math notranslate nohighlight" id="equation-entropy-coin-flipping">
 <span class="eqno">(1)<a class="headerlink" href="#equation-entropy-coin-flipping" title="Permalink to this equation">#</a></span>\[
@@ -676,7 +679,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
 <span class="n">S</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># Number of samples (sequences)</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>   <span class="c1"># Length of each sequence</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">200</span>   <span class="c1"># Length of each sequence</span>
 <span class="n">Q</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Number of sequences to plot</span>
 
 <span class="c1"># Parameters for the biased coin</span>
@@ -707,8 +710,8 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0a2920e29ac159621b5de49070552cb59c060413dd739d84ebe1c5144d761919.png" src="../_images/0a2920e29ac159621b5de49070552cb59c060413dd739d84ebe1c5144d761919.png" />
-<img alt="../_images/71a33418e85a714986cfd116897634fbbaf6b073a68df70cce7e4716707bbbe3.png" src="../_images/71a33418e85a714986cfd116897634fbbaf6b073a68df70cce7e4716707bbbe3.png" />
+<img alt="../_images/273903d7c574f42ae77a93affa7334f1e2901683980cb19e823d809e7843f093.png" src="../_images/273903d7c574f42ae77a93affa7334f1e2901683980cb19e823d809e7843f093.png" />
+<img alt="../_images/d9e6ead369c44c642bc50b9353e010afed45187890ffcae8bc33591b05a5f619.png" src="../_images/d9e6ead369c44c642bc50b9353e010afed45187890ffcae8bc33591b05a5f619.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -739,7 +742,7 @@ v. <span class="math notranslate nohighlight">\(\langle X\rangle^{2}=N^{2}(p-q)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9d7e32ba4e6ecc2baf5b11bfd20dfd80e73a6420431df94f44f2edcc702b07e7.png" src="../_images/9d7e32ba4e6ecc2baf5b11bfd20dfd80e73a6420431df94f44f2edcc702b07e7.png" />
+<img alt="../_images/f590e43143fded8702104b83b10702c8ab2b28f4f25f11c8a973147bb9646d11.png" src="../_images/f590e43143fded8702104b83b10702c8ab2b28f4f25f11c8a973147bb9646d11.png" />
 </div>
 </div>
 </section>

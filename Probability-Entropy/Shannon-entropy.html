@@ -504,8 +504,8 @@ N_{+} \rightarrow\left\langle N_{+}\right\rangle=p N, \quad N_{-}=\left\langle N
 <section id="coding">
 <h3>Coding<a class="headerlink" href="#coding" title="Permalink to this heading">#</a></h3>
 <p>Suppose we end up measuring the micro-state of our system of <span class="math notranslate nohighlight">\(N\)</span> coin flips or dice tosses, how many bits do we need to store this information?</p>
-<p>For <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, simply enumerate only the <span class="math notranslate nohighlight">\(e^{S}\)</span> typical microstates, all having <em>same</em> probabilities (namely <span class="math notranslate nohighlight">\(1/e^{S}\)</span>). This needs <span class="math notranslate nohighlight">\(\log_{2}\left(e^{s}\right)=S \cdot \log_{2}(e)\)</span> bits. (of course, this is not a proof, but it works because of CLT induced measure concentration.)</p>
-<p>Shannon thus gave an operational meaning to <span class="math notranslate nohighlight">\(S\)</span> in terms of “information” and the resources required to communicate an ensemble of messages, where each message represents a sequence of dice throws. Each symbol of the message represents a discrete random variable <span class="math notranslate nohighlight">\(X\)</span>, attaining a value <span class="math notranslate nohighlight">\(x_i\)</span> with probability <span class="math notranslate nohighlight">\(p_i\)</span>. To simplify notation Shannon introduced the information entropy a discrete random variable <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<p>For <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span>, simply enumerate only the <span class="math notranslate nohighlight">\(e^{S}\)</span> typical microstates, all having <em>same</em> probabilities (namely <span class="math notranslate nohighlight">\(1/e^{S}\)</span>). This needs <span class="math notranslate nohighlight">\(\log_{2}\left(e^{S}\right)=S \cdot \log_{2}(e)\)</span> bits. (of course, this is not a proof, but it works because of CLT-induced measure concentration.)</p>
+<p>Shannon thus gave an operational meaning to <span class="math notranslate nohighlight">\(S\)</span> in terms of “information” and the resources required to communicate an ensemble of messages, where each message represents a sequence of dice throws. Each symbol of the message represents a discrete random variable <span class="math notranslate nohighlight">\(X\)</span>, attaining a value <span class="math notranslate nohighlight">\(x_i\)</span> with probability <span class="math notranslate nohighlight">\(p_i\)</span>. To simplify notation Shannon introduced the information entropy of a discrete random variable <span class="math notranslate nohighlight">\(X\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 H(X)\equiv -\left\langle\log_2 p_{i}\right\rangle=-\sum_{i} p_{i} \log_2 p_{i} \;.
@@ -797,7 +797,7 @@ I(X;Y)\equiv \text{entropy before}-\text{entropy after} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a002dc3326987e8ccb11ca3bf483a053d76f7c4a1a2dc0f08d565cb297f77bd.png" src="../_images/9a002dc3326987e8ccb11ca3bf483a053d76f7c4a1a2dc0f08d565cb297f77bd.png" />
+<img alt="../_images/3e83e60530aba2f0bf0c8fd77f48adf2774cd6c75634df37be257b01e4f3f408.png" src="../_images/3e83e60530aba2f0bf0c8fd77f48adf2774cd6c75634df37be257b01e4f3f408.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n## Observations\n- **Low Noise Levels**: When noise is minimal, Y closely reflects X, resulting in high mutual information.\n- **High Noise Levels**: As noise increases, Y becomes less correlated with X, reducing mutual information.\n\n## Conclusion\nThis simulation demonstrates how mutual information quantifies the dependence between two variables and highlights its sensitivity to noise.\n&#39;
 </pre></div>
 </div>
