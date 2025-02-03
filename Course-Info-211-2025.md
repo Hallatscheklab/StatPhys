@@ -19,7 +19,7 @@ F 3:00PM - 4:00PM, Room: Dwinelle 109
 
 **Office hours:** \
 Prof. H: **TODO** in room **TODO**\
-Stefan: Th 10am in Birge Interaction Room (5th floor Birge Hall outside of elevator)
+Stefan: Th 10am in 395 Physics North
 
 Drop Deadline: ["Wednesday of 4th week of a given Fall or Spring semester"](https://lsadvising.berkeley.edu/progress-planning/schedule-planning-and-enrollment/enrollment-add-or-drop-course)
 
