@@ -410,35 +410,38 @@ document.write(`
 <p>We alluded to intuition that, in large systems, the product of microstates and Boltzmann factor is strongly peaked. The typical states of a large system lie on the peak, where Helmholtz free energy <span class="math notranslate nohighlight">\(F=E_{S}-T_{R} S_{S}\)</span> is minimized. But in fact, we can easily show that <span class="math notranslate nohighlight">\(F\)</span> is minimized even in small systems if we define the entropy as Gibbs entropy</p>
 <div class="math notranslate nohighlight" id="equation-gibbs-entropy">
 <span class="eqno">(3)<a class="headerlink" href="#equation-gibbs-entropy" title="Permalink to this equation">#</a></span>\[
-S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
+S_{S} \equiv-k_{B}\langle\ln P\rangle=-k_{B} \sum_{\mu_S} P(\mu_S) \ln P(\mu_S) \;.
 \]</div>
 <p>To that end, recall from our <a class="reference internal" href="#max-ent-boltzmann"><span class="xref myst">discussion of information entropy</span></a> that Boltzmann distribution is the maximum entropy distribution given the mean energy <span class="math notranslate nohighlight">\(\left\langle E_{S}\right\rangle\)</span>. Thus, Boltzmann distribution maximizes the function</p>
 <div class="math notranslate nohighlight">
 \[
-\Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{F}{T} \;,
+\Phi=S_{S}-T_{R}^{-1}\left\langle \mathcal{H}_{S}\right\rangle=\frac{F}{T} \;,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(T_{R}^{-1}\)</span> is a Lagrange multiplier, only subject to the normalization constraint <span class="math notranslate nohighlight">\(\sum_i p_i=1\)</span>.</p>
 <section id="so-let-s-compute-the-gibbs-entropy">
 <h2>So, let’s compute the Gibbs entropy:<a class="headerlink" href="#so-let-s-compute-the-gibbs-entropy" title="Permalink to this heading">#</a></h2>
-<p>The Gibbs entropy depends on the probability distribution over energies,</p>
+<p>The Gibbs entropy depends on the probability distribution over micro-states,</p>
 <div class="math notranslate nohighlight">
 \[
-P\left(E_{S}\right)=\frac{\Omega\left(E_{S}\right) e^{-\beta_{k} E_{S}}}{Z}\;,
+P\left(\mu_{S}\right)=\frac{e^{-\beta_{R} \mathcal{H}(\mu_{S})}}{Z}\;,
 \]</div>
-<p>which consists of the Boltzmann factor, multiplicity of states <span class="math notranslate nohighlight">\(\Omega_S(E_S)\)</span> and the normalization factor</p>
+<p>which consists of the Boltzmann factor, and the normalization factor</p>
 <div class="math notranslate nohighlight">
 \[
-Z=\sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta_{R} E_{S}}\;,
+Z=\sum_{\mu_{S}} e^{-\beta_{R} \mathcal{H}(\mu_{S})} = \sum_{E_{S}} \Omega_S\left(E_{S}\right) e^{-\beta_{R} E_{S}}\;,
 \]</div>
 <p>which is called the <strong>partition function</strong>.</p>
 <p>The Gibbs entropy thus evalutes to</p>
 <div class="math notranslate nohighlight">
-\[
-S_{S}=-k_{B}\langle\ln P\rangle=+\frac{E_{S}}{T_{R}}+k_{B} \ln (Z)
-\]</div>
+\[\begin{split}
+\begin{aligned}
+S_{S} &amp;=-k_{B}\langle\ln P\rangle=-k_{B}\sum_\mu P(\mu)\ln P(\mu)\\
+&amp;-k_{B}\sum_\mu P(\mu)\ln\left(\frac{\exp(-\beta_R \mathcal{H}_S(\mu))}{Z}\right)=+\frac{\langle\mathcal{H}_{S}\rangle}{T_{R}}+k_{B} \ln (Z)
+\end{aligned}
+\end{split}\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[\boxed{-k_{B} T \ln (Z)=E_{S}-T_{R} S_{S}=F(T,\mathbf{x})}\]</div>
+\[\boxed{-k_{B} T \ln (Z)=\langle\mathcal{H}_S\rangle-T_{R} S_{S}=F(T,\mathbf{x})}\]</div>
 <p>The fact that the free energy is given by the log of the partition function explains why the partition function is such an important object.</p>
 <div class="admonition-quick-math-recap admonition">
 <p class="admonition-title">Quick Math Recap</p>
