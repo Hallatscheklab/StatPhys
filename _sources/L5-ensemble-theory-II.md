@@ -41,15 +41,15 @@ $$
 
 or 
 
-$$\boxed{-k_{B} T \ln (Z)=\langle\mathcal{H}_S\rangle-T_{R} S_{S}=F(T,\mathbf{x})}$$  
+$$\boxed{-k_{B} T \ln (Z)=\langle\mathcal{H}_S\rangle-T_{R} S_{S}=F(T_R,\mathbf{x})}$$  
 
 The fact that the free energy is given by the log of the partition function explains why the partition function is such an important object. The above relationship also implies that the canonical distribution can be written as
 
 $$
-P\left(\mu_{S}\right)=\frac{e^{-\beta_{R} \mathcal{H}(\mu_{S})}}{Z} = e^{-\beta_{R} (\mathcal{H}\left(\mu_{S})-F\right)}\;,
+P\left(\mu_{S}\right)=\frac{e^{-\beta_{R} \mathcal{H}(\mu_{S})}}{Z} = e^{-\beta_{R} (\mathcal{H}\left(\mu_{S})-F\right)}\;.
 $$
 
-which is easy to remember.
+So, the probability of observing a microstate is exponential in the difference betwen micro-state energy and free energy - usefuly and easy to remember.
 
 
 

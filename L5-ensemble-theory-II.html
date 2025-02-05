@@ -196,6 +196,7 @@
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Gibbs entropy / Partition Function / Free energy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thermalization-simulation.html">Molecular Dynamics Simulation of Thermalization</a></li>
 </ul>
 
     </div>
@@ -441,13 +442,13 @@ S_{S} &amp;=-k_{B}\langle\ln P\rangle=-k_{B}\sum_\mu P(\mu)\ln P(\mu)\\
 \end{split}\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight">
-\[\boxed{-k_{B} T \ln (Z)=\langle\mathcal{H}_S\rangle-T_{R} S_{S}=F(T,\mathbf{x})}\]</div>
+\[\boxed{-k_{B} T \ln (Z)=\langle\mathcal{H}_S\rangle-T_{R} S_{S}=F(T_R,\mathbf{x})}\]</div>
 <p>The fact that the free energy is given by the log of the partition function explains why the partition function is such an important object. The above relationship also implies that the canonical distribution can be written as</p>
 <div class="math notranslate nohighlight">
 \[
-P\left(\mu_{S}\right)=\frac{e^{-\beta_{R} \mathcal{H}(\mu_{S})}}{Z} = e^{-\beta_{R} (\mathcal{H}\left(\mu_{S})-F\right)}\;,
+P\left(\mu_{S}\right)=\frac{e^{-\beta_{R} \mathcal{H}(\mu_{S})}}{Z} = e^{-\beta_{R} (\mathcal{H}\left(\mu_{S})-F\right)}\;.
 \]</div>
-<p>which is easy to remember.</p>
+<p>So, the probability of observing a microstate is exponential in the difference betwen micro-state energy and free energy - usefuly and easy to remember.</p>
 <div class="admonition-quick-math-recap admonition">
 <p class="admonition-title">Quick Math Recap</p>
 <p>We will next discuss some mathematical properties of the partition function. As a warmup, let’s recall the definition of <em>moment generating function</em></p>
