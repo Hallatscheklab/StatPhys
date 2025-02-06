@@ -122,7 +122,7 @@ $$\text{var}( E) =(-\partial_\beta)^2 \ln(Z(\beta))=-\partial_\beta \langle E\ra
 
 
 **Note:** 
-- $C_{x}=\frac{1}{k_{B} T^{2}}\left\langle\delta E^{2}\right\rangle$. This is our first encounter of a fluctuation-response relationship (also called fluctuation-dissipation relationship): Fluctuations quite generlly probe the system's potential to (linearly) respond to external forces.
+- $C_{x}=\frac{1}{k_{B} T^{2}}\left\langle\delta E^{2}\right\rangle$. This is our first encounter of a fluctuation-response relationship (also called fluctuation-dissipation relationship): Fluctuations quite generally probe the system's potential to (linearly) respond to external forces.
 - These relationships are super useful for experiments: We can measure how a polymer responds to a pulling force just by watching the polymer fluctuate, importantly without applying any force ourselves.
 
 
