@@ -654,13 +654,14 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span><span class="p">:</span>  <span class="c1"># Hard-sphere collision condition</span>
 <span class="g g-Whitespace">     </span><span class="mi">58</span>             <span class="n">normal</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="n">dist</span>
 
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/numpy/linalg/linalg.py:2379,</span> in <span class="ni">_norm_dispatcher</span><span class="nt">(x, ord, axis, keepdims)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2375</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">op</span><span class="p">(</span><span class="n">svd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">compute_uv</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2376</span>     <span class="k">return</span> <span class="n">result</span>
-<span class="ne">-&gt; </span><span class="mi">2379</span> <span class="k">def</span> <span class="nf">_norm_dispatcher</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2380</span>     <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2383</span> <span class="nd">@array_function_dispatch</span><span class="p">(</span><span class="n">_norm_dispatcher</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2384</span> <span class="k">def</span> <span class="nf">norm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/numpy/linalg/linalg.py:2546,</span> in <span class="ni">norm</span><span class="nt">(x, ord, axis, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2541</span> <span class="n">ndim</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
+<span class="g g-Whitespace">   </span><span class="mi">2542</span> <span class="k">if</span> <span class="p">((</span><span class="nb">ord</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">2543</span>     <span class="p">(</span><span class="nb">ord</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;fro&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">2544</span>     <span class="p">(</span><span class="nb">ord</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)):</span>
+<span class="ne">-&gt; </span><span class="mi">2546</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2547</span>     <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2548</span>         <span class="n">x_real</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">real</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -721,6 +722,42 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Final Kinetic Energy Distribution (Log-Linear)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">maxwell</span>
+
+<span class="c1"># Compute velocity magnitudes before and after thermalization</span>
+<span class="n">vel_initial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">vel_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Expected Maxwell-Boltzmann distribution</span>
+<span class="n">T_final</span> <span class="o">=</span> <span class="p">(</span><span class="n">T_hot</span> <span class="o">+</span> <span class="n">T_cold</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Final temperature assumption</span>
+<span class="n">v_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">vel_final</span><span class="p">),</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">mb_distribution</span> <span class="o">=</span> <span class="n">maxwell</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">v_range</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">T_final</span><span class="p">))</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">vel_final</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">v_range</span><span class="p">))</span>
+
+<span class="c1"># Plot velocity distributions before and after thermalization</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">vel_initial</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Initial Velocity Distribution&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">vel_final</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Final Velocity Distribution&#39;</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v_range</span><span class="p">,</span> <span class="n">mb_distribution</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Maxwell-Boltzmann Prediction&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Velocity Magnitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Velocity Distribution Before and After Thermalization&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_51365/574067822.py:24: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
 </pre></div>
 </div>
 </div>
