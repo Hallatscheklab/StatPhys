@@ -61,6 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'thermalization-simulation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spontaneous Reactions" href="Spontaneous-Reactions.html" />
     <link rel="prev" title="Trading conserved quantities between reservoir and system // External forces" href="Gibbs_Distribution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -194,6 +195,8 @@
 <li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Molecular Dynamics Simulation of Thermalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crooks.html">Non-equilibrium fluctuation theorems</a></li>
 </ul>
 
     </div>
@@ -781,42 +784,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgbca451154bb645019bf66e69c8b40089">
+  <img id="_anim_imgedf557e84bca4caf8e575b9f789d001b">
   <div class="anim-controls">
-    <input id="_anim_sliderbca451154bb645019bf66e69c8b40089" type="range" class="anim-slider"
+    <input id="_anim_slideredf557e84bca4caf8e575b9f789d001b" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animbca451154bb645019bf66e69c8b40089.set_frame(parseInt(this.value));">
+           oninput="animedf557e84bca4caf8e575b9f789d001b.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="animbca451154bb645019bf66e69c8b40089.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="animedf557e84bca4caf8e575b9f789d001b.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="animbca451154bb645019bf66e69c8b40089.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="animedf557e84bca4caf8e575b9f789d001b.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="animbca451154bb645019bf66e69c8b40089.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="animedf557e84bca4caf8e575b9f789d001b.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="animbca451154bb645019bf66e69c8b40089.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="animedf557e84bca4caf8e575b9f789d001b.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="animbca451154bb645019bf66e69c8b40089.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="animedf557e84bca4caf8e575b9f789d001b.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="animbca451154bb645019bf66e69c8b40089.play_animation()">
+      <button title="Play" aria-label="Play" onclick="animedf557e84bca4caf8e575b9f789d001b.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="animbca451154bb645019bf66e69c8b40089.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="animedf557e84bca4caf8e575b9f789d001b.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="animbca451154bb645019bf66e69c8b40089.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="animedf557e84bca4caf8e575b9f789d001b.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="animbca451154bb645019bf66e69c8b40089.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="animedf557e84bca4caf8e575b9f789d001b.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectbca451154bb645019bf66e69c8b40089"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectedf557e84bca4caf8e575b9f789d001b"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_bca451154bb645019bf66e69c8b40089"
+      <input type="radio" name="state" value="once" id="_anim_radio1_edf557e84bca4caf8e575b9f789d001b"
              >
-      <label for="_anim_radio1_bca451154bb645019bf66e69c8b40089">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_bca451154bb645019bf66e69c8b40089"
+      <label for="_anim_radio1_edf557e84bca4caf8e575b9f789d001b">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_edf557e84bca4caf8e575b9f789d001b"
              checked>
-      <label for="_anim_radio2_bca451154bb645019bf66e69c8b40089">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_bca451154bb645019bf66e69c8b40089"
+      <label for="_anim_radio2_edf557e84bca4caf8e575b9f789d001b">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_edf557e84bca4caf8e575b9f789d001b"
              >
-      <label for="_anim_radio3_bca451154bb645019bf66e69c8b40089">Reflect</label>
+      <label for="_anim_radio3_edf557e84bca4caf8e575b9f789d001b">Reflect</label>
     </form>
   </div>
 </div>
@@ -826,9 +829,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgbca451154bb645019bf66e69c8b40089";
-    var slider_id = "_anim_sliderbca451154bb645019bf66e69c8b40089";
-    var loop_select_id = "_anim_loop_selectbca451154bb645019bf66e69c8b40089";
+    var img_id = "_anim_imgedf557e84bca4caf8e575b9f789d001b";
+    var slider_id = "_anim_slideredf557e84bca4caf8e575b9f789d001b";
+    var loop_select_id = "_anim_loop_selectedf557e84bca4caf8e575b9f789d001b";
     var frames = new Array(100);
     
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -48676,7 +48679,7 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animbca451154bb645019bf66e69c8b40089 = new Animation(frames, img_id, slider_id, 10.0,
+        animedf557e84bca4caf8e575b9f789d001b = new Animation(frames, img_id, slider_id, 10.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -48719,11 +48722,11 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80543/3736240743.py:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/3736240743.py:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   plt.show()
-/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80543/3736240743.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/3736240743.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   plt.show()
-/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80543/3736240743.py:30: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/3736240743.py:30: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   plt.show()
 </pre></div>
 </div>
@@ -48751,7 +48754,7 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80543/2537679197.py:16: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/2537679197.py:16: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   plt.show()
 </pre></div>
 </div>
@@ -48787,7 +48790,7 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80543/574067822.py:24: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/574067822.py:24: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
   plt.show()
 </pre></div>
 </div>
@@ -48834,6 +48837,15 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Trading conserved quantities between reservoir and system // External forces</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Spontaneous-Reactions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spontaneous Reactions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
