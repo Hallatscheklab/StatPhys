@@ -654,14 +654,12 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span><span class="p">:</span>  <span class="c1"># Hard-sphere collision condition</span>
 <span class="g g-Whitespace">     </span><span class="mi">58</span>             <span class="n">normal</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="n">dist</span>
 
-<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/numpy/linalg/linalg.py:2546,</span> in <span class="ni">norm</span><span class="nt">(x, ord, axis, keepdims)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2541</span> <span class="n">ndim</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span>
-<span class="g g-Whitespace">   </span><span class="mi">2542</span> <span class="k">if</span> <span class="p">((</span><span class="nb">ord</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span>
-<span class="g g-Whitespace">   </span><span class="mi">2543</span>     <span class="p">(</span><span class="nb">ord</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;fro&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span>
-<span class="g g-Whitespace">   </span><span class="mi">2544</span>     <span class="p">(</span><span class="nb">ord</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)):</span>
-<span class="ne">-&gt; </span><span class="mi">2546</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2547</span>     <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="o">.</span><span class="n">type</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">2548</span>         <span class="n">x_real</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">real</span>
+<span class="nn">File ~/anaconda3/lib/python3.10/site-packages/numpy/linalg/linalg.py:2552,</span> in <span class="ni">norm</span><span class="nt">(x, ord, axis, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2550</span>     <span class="n">sqnorm</span> <span class="o">=</span> <span class="n">x_real</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_real</span><span class="p">)</span> <span class="o">+</span> <span class="n">x_imag</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x_imag</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2551</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2552</span>     <span class="n">sqnorm</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2553</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">sqnorm</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2554</span> <span class="k">if</span> <span class="n">keepdims</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -703,6 +701,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_51365/3736240743.py:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_51365/3736240743.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_51365/3736240743.py:30: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,6 +730,12 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Final Kinetic Energy Distribution (Log-Linear)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_51365/2537679197.py:16: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
 </pre></div>
 </div>
 </div>
