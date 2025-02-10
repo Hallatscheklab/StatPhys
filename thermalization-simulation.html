@@ -511,7 +511,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span> 
+<span class="c1">#matplotlib.use(&#39;Agg&#39;) </span>
 
 <span class="c1"># Simulation parameters</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Total number of particles</span>
@@ -784,42 +784,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgedf557e84bca4caf8e575b9f789d001b">
+  <img id="_anim_img5c12a79afbf5434db0a442db5fb73599">
   <div class="anim-controls">
-    <input id="_anim_slideredf557e84bca4caf8e575b9f789d001b" type="range" class="anim-slider"
+    <input id="_anim_slider5c12a79afbf5434db0a442db5fb73599" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animedf557e84bca4caf8e575b9f789d001b.set_frame(parseInt(this.value));">
+           oninput="anim5c12a79afbf5434db0a442db5fb73599.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="animedf557e84bca4caf8e575b9f789d001b.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim5c12a79afbf5434db0a442db5fb73599.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="animedf557e84bca4caf8e575b9f789d001b.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="anim5c12a79afbf5434db0a442db5fb73599.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="animedf557e84bca4caf8e575b9f789d001b.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="anim5c12a79afbf5434db0a442db5fb73599.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="animedf557e84bca4caf8e575b9f789d001b.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="anim5c12a79afbf5434db0a442db5fb73599.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="animedf557e84bca4caf8e575b9f789d001b.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="anim5c12a79afbf5434db0a442db5fb73599.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="animedf557e84bca4caf8e575b9f789d001b.play_animation()">
+      <button title="Play" aria-label="Play" onclick="anim5c12a79afbf5434db0a442db5fb73599.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="animedf557e84bca4caf8e575b9f789d001b.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="anim5c12a79afbf5434db0a442db5fb73599.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="animedf557e84bca4caf8e575b9f789d001b.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="anim5c12a79afbf5434db0a442db5fb73599.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="animedf557e84bca4caf8e575b9f789d001b.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="anim5c12a79afbf5434db0a442db5fb73599.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectedf557e84bca4caf8e575b9f789d001b"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select5c12a79afbf5434db0a442db5fb73599"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_edf557e84bca4caf8e575b9f789d001b"
+      <input type="radio" name="state" value="once" id="_anim_radio1_5c12a79afbf5434db0a442db5fb73599"
              >
-      <label for="_anim_radio1_edf557e84bca4caf8e575b9f789d001b">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_edf557e84bca4caf8e575b9f789d001b"
+      <label for="_anim_radio1_5c12a79afbf5434db0a442db5fb73599">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_5c12a79afbf5434db0a442db5fb73599"
              checked>
-      <label for="_anim_radio2_edf557e84bca4caf8e575b9f789d001b">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_edf557e84bca4caf8e575b9f789d001b"
+      <label for="_anim_radio2_5c12a79afbf5434db0a442db5fb73599">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_5c12a79afbf5434db0a442db5fb73599"
              >
-      <label for="_anim_radio3_edf557e84bca4caf8e575b9f789d001b">Reflect</label>
+      <label for="_anim_radio3_5c12a79afbf5434db0a442db5fb73599">Reflect</label>
     </form>
   </div>
 </div>
@@ -829,9 +829,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgedf557e84bca4caf8e575b9f789d001b";
-    var slider_id = "_anim_slideredf557e84bca4caf8e575b9f789d001b";
-    var loop_select_id = "_anim_loop_selectedf557e84bca4caf8e575b9f789d001b";
+    var img_id = "_anim_img5c12a79afbf5434db0a442db5fb73599";
+    var slider_id = "_anim_slider5c12a79afbf5434db0a442db5fb73599";
+    var loop_select_id = "_anim_loop_select5c12a79afbf5434db0a442db5fb73599";
     var frames = new Array(100);
     
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -48679,12 +48679,13 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animedf557e84bca4caf8e575b9f789d001b = new Animation(frames, img_id, slider_id, 10.0,
+        anim5c12a79afbf5434db0a442db5fb73599 = new Animation(frames, img_id, slider_id, 10.0,
                                  loop_select_id);
     }, 0);
   })()
 </script>
-</div></div>
+</div><img alt="_images/6bbbd9631dc019e6f156acfe871623afbb987929723f98c7fe62807a7f98bd3b.png" src="_images/6bbbd9631dc019e6f156acfe871623afbb987929723f98c7fe62807a7f98bd3b.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -48722,14 +48723,9 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/3736240743.py:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
-  plt.show()
-/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/3736240743.py:21: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
-  plt.show()
-/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/3736240743.py:30: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
-  plt.show()
-</pre></div>
-</div>
+<img alt="_images/351281b1a63119aa3576e987a5b7371ef39d62207b823bb8948099a82026543e.png" src="_images/351281b1a63119aa3576e987a5b7371ef39d62207b823bb8948099a82026543e.png" />
+<img alt="_images/a4ac227eb66730558369ca8dc0501186c73e7964aa01d8b1dde6a1f8429b1654.png" src="_images/a4ac227eb66730558369ca8dc0501186c73e7964aa01d8b1dde6a1f8429b1654.png" />
+<img alt="_images/e968166f0bf7d4b68c361d56437e863c4f2824ad5587d9c9ebc3e982807acb44.png" src="_images/e968166f0bf7d4b68c361d56437e863c4f2824ad5587d9c9ebc3e982807acb44.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -48754,10 +48750,7 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/2537679197.py:16: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
-  plt.show()
-</pre></div>
-</div>
+<img alt="_images/eee3125e1c7bacb2571942270ec08abc5a951a3c0d731e917ffd9f7062c813d0.png" src="_images/eee3125e1c7bacb2571942270ec08abc5a951a3c0d731e917ffd9f7062c813d0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -48790,10 +48783,7 @@ jAWLiIiISGAsWEREREQCY8EiIiIiEtj/B+TfukX01BRIAAAAAElFTkSuQmCC\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/zz/1vw5bbc56354j3gzyyp8xx4m0000gn/T/ipykernel_80775/574067822.py:24: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
-  plt.show()
-</pre></div>
-</div>
+<img alt="_images/070da3b8e4a7b5f17fe205e279045a2090ba6c89c9b5cbaa72badc028bf7c932.png" src="_images/070da3b8e4a7b5f17fe205e279045a2090ba6c89c9b5cbaa72badc028bf7c932.png" />
 </div>
 </div>
 </section>
