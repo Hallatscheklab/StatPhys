@@ -3,29 +3,29 @@
 We alluded to intuition that, in large systems, the product of microstates and Boltzmann factor is strongly peaked. The typical states of a large system lie on the peak, where Helmholtz free energy $F=E_{S}-T_{R} S_{S}$ is minimized. But in fact, we can easily show that $F$ is minimized even in small systems if we define the entropy as Gibbs entropy
 
 $$
-S_{S} \equiv-k_{B}\langle\ln p\rangle=-k_{B} \sum_{i} p_{i} \ln p_{i} \;.
+S_{S} \equiv-k_{B}\langle\ln P\rangle=-k_{B} \sum_{\mu_S} P(\mu_S) \ln P(\mu_S) \;.
 $$(Gibbs-Entropy)
 
 To that end, recall from our [discussion of information entropy](max-ent-boltzmann) that Boltzmann distribution is the maximum entropy distribution given the mean energy $\left\langle E_{S}\right\rangle$. Thus, Boltzmann distribution maximizes the function
 
 $$
-\Phi=S_{S}-T_{R}^{-1}\left\langle E_{S}\right\rangle=\frac{F}{T} \;,
+\Phi=S_{S}-T_{R}^{-1}\left\langle \mathcal{H}_{S}\right\rangle=\frac{F}{T} \;,
 $$
 
 where $T_{R}^{-1}$ is a Lagrange multiplier, only subject to the normalization constraint $\sum_i p_i=1$.
 
 
 ##### So, let's compute the Gibbs entropy:
-The Gibbs entropy depends on the probability distribution over energies,
+The Gibbs entropy depends on the probability distribution over micro-states,
 
 $$
-P\left(E_{S}\right)=\frac{\Omega\left(E_{S}\right) e^{-\beta_{k} E_{S}}}{Z}\;,
+P\left(\mu_{S}\right)=\frac{e^{-\beta_{R} \mathcal{H}(\mu_{S})}}{Z}\;,
 $$
 
-which consists of the Boltzmann factor, multiplicity of states $\Omega_S(E_S)$ and the normalization factor 
+which consists of the Boltzmann factor, and the normalization factor 
 
 $$
-Z=\sum_{E_{S}} \Omega\left(E_{S}\right) e^{-\beta_{R} E_{S}}\;,
+Z=\sum_{\mu_{S}} e^{-\beta_{R} \mathcal{H}(\mu_{S})} = \sum_{E_{S}} \Omega_S\left(E_{S}\right) e^{-\beta_{R} E_{S}}\;,
 $$
 
 which is called the **partition function**.
@@ -33,14 +33,23 @@ which is called the **partition function**.
 The Gibbs entropy thus evalutes to 
 
 $$
-S_{S}=-k_{B}\langle\ln P\rangle=+\frac{E_{S}}{T_{R}}+k_{B} \ln (Z)
+\begin{aligned}
+S_{S} &=-k_{B}\langle\ln P\rangle=-k_{B}\sum_\mu P(\mu)\ln P(\mu)\\
+&-k_{B}\sum_\mu P(\mu)\ln\left(\frac{\exp(-\beta_R \mathcal{H}_S(\mu))}{Z}\right)=+\frac{\langle\mathcal{H}_{S}\rangle}{T_{R}}+k_{B} \ln (Z)
+\end{aligned}
 $$
 
 or 
 
-$$\boxed{-k_{B} T \ln (Z)=E_{S}-T_{R} S_{S}=F(T,\mathbf{x})}$$  
+$$\boxed{-k_{B} T \ln (Z)=\langle\mathcal{H}_S\rangle-T_{R} S_{S}=F(T_R,\mathbf{x})}$$  
 
-The fact that the free energy is given by the log of the partition function explains why the partition function is such an important object. 
+The fact that the free energy is given by the log of the partition function explains why the partition function is such an important object. The above relationship also implies that the canonical distribution can be written as
+
+$$
+P\left(\mu_{S}\right)=\frac{e^{-\beta_{R} \mathcal{H}(\mu_{S})}}{Z} = e^{-\beta_{R} (\mathcal{H}\left(\mu_{S})-F\right)}\;.
+$$
+
+So, the probability of observing a microstate is exponential in the difference betwen micro-state energy and free energy - usefuly and easy to remember.
 
 
 
@@ -113,7 +122,7 @@ $$\text{var}( E) =(-\partial_\beta)^2 \ln(Z(\beta))=-\partial_\beta \langle E\ra
 
 
 **Note:** 
-- $C_{x}=\frac{1}{k_{B} T^{2}}\left\langle\delta E^{2}\right\rangle$. This is our first encounter of a fluctuation-response relationship (also called fluctuation-dissipation relationship): Fluctuations quite generlly probe the system's potential to (linearly) respond to external forces.
+- $C_{x}=\frac{1}{k_{B} T^{2}}\left\langle\delta E^{2}\right\rangle$. This is our first encounter of a fluctuation-response relationship (also called fluctuation-dissipation relationship): Fluctuations quite generally probe the system's potential to (linearly) respond to external forces.
 - These relationships are super useful for experiments: We can measure how a polymer responds to a pulling force just by watching the polymer fluctuate, importantly without applying any force ourselves.
 
 

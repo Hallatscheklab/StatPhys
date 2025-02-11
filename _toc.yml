@@ -13,8 +13,9 @@ chapters:
 - file: Equipartition-Mesostates
 - file: L5-ensemble-theory-II
 - file: Gibbs_Distribution
-#- file: Spontaneous-Reactions
-#- file: Crooks
+- file: thermalization-simulation
+- file: Spontaneous-Reactions
+- file: Crooks
 #- file: Chemical-reactions
 #- file: Ising-lectures/Ising-all-to-all
 #- file: Ising-lectures/Ising-1D.ipynb
