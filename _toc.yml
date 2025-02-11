@@ -10,9 +10,9 @@ chapters:
 - file: Probability-Entropy/Shannon-entropy-2
 - file: Ensemble-Theory-1
 - file: Meaning-of-Equilibrium
-#- file: Equipartition-Mesostates
-#- file: L5-ensemble-theory-II
-#- file: Gibbs_Distribution
+- file: Equipartition-Mesostates
+- file: L5-ensemble-theory-II
+- file: Gibbs_Distribution
 #- file: Spontaneous-Reactions
 #- file: Crooks
 #- file: Chemical-reactions
