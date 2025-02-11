@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Statistical Physics: Systems with Generalized Coordinates and External Fields &#8212; Equilibrium Statistical Physics</title>
+    <title>Two standard examples for a system coupled to an external field &#8212; Equilibrium Statistical Physics</title>
   
   
   
@@ -63,6 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'paramagnet-FLC';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spontaneous Reactions" href="Spontaneous-Reactions.html" />
+    <link rel="prev" title="Molecular Dynamics Simulation of Thermalization" href="thermalization-simulation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,7 +185,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Course-Info-211-2025.html">Course Information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Quick Summary of Statistical Mechanics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Probability-Entropy/Coin-flipping.html">Probability, energy and entropy</a></li>
@@ -195,6 +197,10 @@
 <li class="toctree-l1"><a class="reference internal" href="L5-ensemble-theory-II.html">Gibbs entropy / Partition Function / Free energy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Gibbs_Distribution.html">Trading conserved quantities between reservoir and system // External forces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="thermalization-simulation.html">Molecular Dynamics Simulation of Thermalization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Two standard examples for a system coupled to an external field</a></li>
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Spontaneous-Reactions.html">Spontaneous Reactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crooks.html">Non-equilibrium fluctuation theorems</a></li>
 </ul>
@@ -413,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Statistical Physics: Systems with Generalized Coordinates and External Fields</h1>
+    <h1>Two standard examples for a system coupled to an external field</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -423,22 +429,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Statistical Physics: Systems with Generalized Coordinates and External Fields</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preface">Preface</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-ising-paramagnet">Section 1: Ising Paramagnet</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-partition-function">1.1 Derivation of the Partition Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-magnetization">1.2 Expectation Value of Magnetization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-susceptibility">1.3 Magnetic Susceptibility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Two standard examples for a system coupled to an external field</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-ising-paramagnet">Section 1: Ising Paramagnet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-partition-function">1.1 Derivation of the Partition Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-magnetization">1.2 Expectation Value of Magnetization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-susceptibility">1.3 Magnetic Susceptibility</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-freely-jointed-chain-in-an-external-force-field">Section 2: Freely Jointed Chain in an External Force Field</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Section 2: Freely Jointed Chain in an External Force Field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1 Derivation of the Partition Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-end-to-end-distance">2.2 Expectation Value of End-to-End Distance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-response-to-an-increase-in-force">2.4 Linear Response to an Increase in Force</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-freely-jointed-chain-in-an-external-force-field">Section 2: Freely Jointed Chain in an External Force Field</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Section 2: Freely Jointed Chain in an External Force Field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1 Derivation of the Partition Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-end-to-end-distance">2.2 Expectation Value of End-to-End Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-response-to-an-increase-in-force">2.4 Linear Response to an Increase in Force</a></li>
 </ul>
 </li>
 </ul>
@@ -453,22 +455,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="statistical-physics-systems-with-generalized-coordinates-and-external-fields">
-<h1>Statistical Physics: Systems with Generalized Coordinates and External Fields<a class="headerlink" href="#statistical-physics-systems-with-generalized-coordinates-and-external-fields" title="Permalink to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="preface">
-<h1>Preface<a class="headerlink" href="#preface" title="Permalink to this heading">#</a></h1>
-<p>In many physical systems, an extensive generalized coordinate couples linearly to an external field, leading to a generalized ensemble. Examples include the magnetization in a magnetic field and the end-to-end distance of a polymer chain under an external force. These systems exhibit behavior analogous to ensembles with conserved quantities, as fluctuations in the generalized coordinate follow similar statistical principles.</p>
-<p>In this notebook, we will explore two such systems:</p>
-<ol class="arabic simple">
-<li><p>The Ising Paramagnet</p></li>
-<li><p>The Freely Jointed Chain under an External Force</p></li>
-</ol>
+  <section id="two-standard-examples-for-a-system-coupled-to-an-external-field">
+<h1>Two standard examples for a system coupled to an external field<a class="headerlink" href="#two-standard-examples-for-a-system-coupled-to-an-external-field" title="Permalink to this heading">#</a></h1>
+<p>In many physical systems, an extensive generalized coordinate couples linearly to an external field, leading to a generalized ensemble. These systems exhibit behavior analogous to ensembles with conserved quantities, as fluctuations in the generalized coordinate follow similar statistical principles.</p>
+<p>Here, we go in detail through two examples: An ising spin in a magnetic field and a freely jointed polymer chain under an external force.</p>
 <hr class="docutils" />
+</section>
 <section id="section-1-ising-paramagnet">
-<h2>Section 1: Ising Paramagnet<a class="headerlink" href="#section-1-ising-paramagnet" title="Permalink to this heading">#</a></h2>
+<h1>Section 1: Ising Paramagnet<a class="headerlink" href="#section-1-ising-paramagnet" title="Permalink to this heading">#</a></h1>
 <section id="derivation-of-the-partition-function">
-<h3>1.1 Derivation of the Partition Function<a class="headerlink" href="#derivation-of-the-partition-function" title="Permalink to this heading">#</a></h3>
+<h2>1.1 Derivation of the Partition Function<a class="headerlink" href="#derivation-of-the-partition-function" title="Permalink to this heading">#</a></h2>
 <p>The Ising paramagnet consists of <span class="math notranslate nohighlight">\(N\)</span> non-interacting spins in an external magnetic field <span class="math notranslate nohighlight">\(B_{ext}\)</span>. Each spin can take two values, <span class="math notranslate nohighlight">\(+1\)</span> or <span class="math notranslate nohighlight">\(-1\)</span>, corresponding to alignment or anti-alignment with the field.</p>
 <p>The energy of a single spin is given by:</p>
 <div class="math notranslate nohighlight">
@@ -493,7 +489,7 @@ Z = \left( 2 \cosh(\beta \mu B_{ext}) \right)^N
 \]</div>
 </section>
 <section id="expectation-value-of-magnetization">
-<h3>1.2 Expectation Value of Magnetization<a class="headerlink" href="#expectation-value-of-magnetization" title="Permalink to this heading">#</a></h3>
+<h2>1.2 Expectation Value of Magnetization<a class="headerlink" href="#expectation-value-of-magnetization" title="Permalink to this heading">#</a></h2>
 <p>The magnetization is given by:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -501,7 +497,7 @@ Z = \left( 2 \cosh(\beta \mu B_{ext}) \right)^N
 \]</div>
 </section>
 <section id="magnetic-susceptibility">
-<h3>1.3 Magnetic Susceptibility<a class="headerlink" href="#magnetic-susceptibility" title="Permalink to this heading">#</a></h3>
+<h2>1.3 Magnetic Susceptibility<a class="headerlink" href="#magnetic-susceptibility" title="Permalink to this heading">#</a></h2>
 <p>The magnetic susceptibility is:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -561,12 +557,12 @@ Z = \left( 2 \cosh(\beta \mu B_{ext}) \right)^N
 </section>
 </section>
 <section id="section-2-freely-jointed-chain-in-an-external-force-field">
-<h2>Section 2: Freely Jointed Chain in an External Force Field<a class="headerlink" href="#section-2-freely-jointed-chain-in-an-external-force-field" title="Permalink to this heading">#</a></h2>
+<h1>Section 2: Freely Jointed Chain in an External Force Field<a class="headerlink" href="#section-2-freely-jointed-chain-in-an-external-force-field" title="Permalink to this heading">#</a></h1>
 </section>
 <section id="id1">
-<h2>Section 2: Freely Jointed Chain in an External Force Field<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h1>Section 2: Freely Jointed Chain in an External Force Field<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h3>2.1 Derivation of the Partition Function<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h2>2.1 Derivation of the Partition Function<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Consider a freely jointed chain with <span class="math notranslate nohighlight">\(N\)</span> segments, each of length <span class="math notranslate nohighlight">\(l\)</span>, in an external force field <span class="math notranslate nohighlight">\(F\)</span>.</p>
 <p><img alt="Freely jointed chain" src="_images/FJC.png" /></p>
 <p>The energy of the system is:</p>
@@ -592,7 +588,7 @@ Z = \left( \frac{\sinh(\beta F l)}{\beta F l} \right)^N
 \]</div>
 </section>
 <section id="expectation-value-of-end-to-end-distance">
-<h3>2.2 Expectation Value of End-to-End Distance<a class="headerlink" href="#expectation-value-of-end-to-end-distance" title="Permalink to this heading">#</a></h3>
+<h2>2.2 Expectation Value of End-to-End Distance<a class="headerlink" href="#expectation-value-of-end-to-end-distance" title="Permalink to this heading">#</a></h2>
 <p>The end-to-end distance is:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -601,7 +597,7 @@ Z = \left( \frac{\sinh(\beta F l)}{\beta F l} \right)^N
 <p>where <span class="math notranslate nohighlight">\(L(x) = \coth(x) - \frac{1}{x}\)</span> is the Langevin function.</p>
 </section>
 <section id="linear-response-to-an-increase-in-force">
-<h3>2.4 Linear Response to an Increase in Force<a class="headerlink" href="#linear-response-to-an-increase-in-force" title="Permalink to this heading">#</a></h3>
+<h2>2.4 Linear Response to an Increase in Force<a class="headerlink" href="#linear-response-to-an-increase-in-force" title="Permalink to this heading">#</a></h2>
 <p>In the linear response regime (small <span class="math notranslate nohighlight">\(F\)</span>), the end-to-end distance is approximately proportional to the applied force:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -651,16 +647,6 @@ Z = \left( \frac{\sinh(\beta F l)}{\beta F l} \right)^N
 </div>
 </div>
 </section>
-<section id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
-<p>In this notebook, we have derived and computed key quantities for two systems that exhibit generalized ensemble behavior:</p>
-<ol class="arabic simple">
-<li><p>The Ising Paramagnet, where we calculated the partition function, magnetization, and magnetic susceptibility.</p></li>
-<li><p>The Freely Jointed Chain, where we determined the partition function and expectation value of the end-to-end distance.</p></li>
-</ol>
-<p>These examples illustrate how generalized coordinates coupled to external fields give rise to rich physical behavior analogous to that seen in traditional thermodynamic ensembles.</p>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -693,6 +679,24 @@ Z = \left( \frac{\sinh(\beta F l)}{\beta F l} \right)^N
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="thermalization-simulation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Molecular Dynamics Simulation of Thermalization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Spontaneous-Reactions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spontaneous Reactions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -709,22 +713,18 @@ Z = \left( \frac{\sinh(\beta F l)}{\beta F l} \right)^N
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Statistical Physics: Systems with Generalized Coordinates and External Fields</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preface">Preface</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-ising-paramagnet">Section 1: Ising Paramagnet</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-partition-function">1.1 Derivation of the Partition Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-magnetization">1.2 Expectation Value of Magnetization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-susceptibility">1.3 Magnetic Susceptibility</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Two standard examples for a system coupled to an external field</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-ising-paramagnet">Section 1: Ising Paramagnet</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-the-partition-function">1.1 Derivation of the Partition Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-magnetization">1.2 Expectation Value of Magnetization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnetic-susceptibility">1.3 Magnetic Susceptibility</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-freely-jointed-chain-in-an-external-force-field">Section 2: Freely Jointed Chain in an External Force Field</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Section 2: Freely Jointed Chain in an External Force Field</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1 Derivation of the Partition Function</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-end-to-end-distance">2.2 Expectation Value of End-to-End Distance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-response-to-an-increase-in-force">2.4 Linear Response to an Increase in Force</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-2-freely-jointed-chain-in-an-external-force-field">Section 2: Freely Jointed Chain in an External Force Field</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Section 2: Freely Jointed Chain in an External Force Field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1 Derivation of the Partition Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expectation-value-of-end-to-end-distance">2.2 Expectation Value of End-to-End Distance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-response-to-an-increase-in-force">2.4 Linear Response to an Increase in Force</a></li>
 </ul>
 </li>
 </ul>
