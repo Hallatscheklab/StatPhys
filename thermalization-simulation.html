@@ -455,8 +455,9 @@ document.write(`
 <p>As the simulation progresses, particles collide and exchange energy, leading to <strong>thermal equilibration</strong>. The key observables in this simulation include:</p>
 <ol class="arabic simple">
 <li><p><strong>Kinetic energy evolution of labeled particles</strong></p></li>
-<li><p><strong>Histogram of kinetic energy distributions before and after thermalization</strong></p></li>
-<li><p><strong>An animated visualization of particle dynamics</strong></p></li>
+<li><p><strong>Histogram of kinetic energy distributions before and after thermalization</strong> (now with a log-linear plot)</p></li>
+<li><p><strong>Velocity distributions before and after thermalization</strong>, compared to the <strong>normalized 2D Maxwell-Boltzmann distribution</strong></p></li>
+<li><p><strong>An animated visualization of particle dynamics</strong> (optimized for inline rendering in Jupyter Book)</p></li>
 </ol>
 </section>
 <section id="physical-model">
@@ -468,7 +469,7 @@ document.write(`
 <ul class="simple">
 <li><p>Momentum and kinetic energy are conserved.</p></li>
 <li><p>Collisions with walls are perfectly elastic.</p></li>
-<li><p>Two-particle collisions are resolved using the conservation laws.</p></li>
+<li><p><strong>Particle-particle collisions are explicitly handled</strong> using momentum and energy conservation equations.</p></li>
 </ul>
 </section>
 <section id="initial-conditions">
@@ -488,21 +489,21 @@ document.write(`
 <h2>Implementation Details<a class="headerlink" href="#implementation-details" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Elastic collisions</strong> are detected and handled via velocity updates.</p></li>
+<li><p><strong>Hard-sphere interactions</strong> are included to ensure realistic thermalization.</p></li>
 <li><p><strong>Kinetic energy tracking</strong> is performed for labeled hot and cold particles.</p></li>
 <li><p><strong>Animation subsampling</strong> is implemented to reduce memory overhead.</p></li>
-<li><p><strong>Histograms</strong> show the initial and final kinetic energy distributions, with the expected exponential curve overlayed.</p></li>
+<li><p><strong>Histograms</strong> show the initial and final kinetic energy distributions, now also in a <strong>log-linear plot</strong>.</p></li>
+<li><p><strong>Velocity distributions are plotted and compared to the properly normalized 2D Maxwell-Boltzmann distribution</strong>.</p></li>
 </ul>
 </section>
 <section id="visualization-and-outputs">
 <h2>Visualization and Outputs<a class="headerlink" href="#visualization-and-outputs" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Real-time animation</strong> of particle motion (optimized for VSCode &amp; Jupyter).</p></li>
-<li><p><strong>Time series plots</strong> of kinetic energy for labeled particles.</p></li>
-<li><p><strong>Histograms of kinetic energy distributions</strong> before and after equilibration.</p></li>
+<li><p><strong>Inline animation</strong> of particle motion (compatible with Jupyter Book, avoids external windows).</p></li>
+<li><p><strong>Time series plots</strong> of kinetic energy for labeled particles (rendered inline in Jupyter Book).</p></li>
+<li><p><strong>Histograms of kinetic energy distributions</strong> before and after equilibration, including a <strong>log-linear plot</strong>.</p></li>
+<li><p><strong>Velocity distributions before and after thermalization</strong>, with an overlay of the <strong>normalized 2D Maxwell-Boltzmann distribution</strong>.</p></li>
 </ol>
-<hr class="docutils" />
-<p><strong>Run this script in Jupyter or VSCode</strong> with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">qt</span></code> for interactive visualization.</p>
-<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -784,42 +785,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_imgce59a3362a4441bda4f10b771a65b769">
+  <img id="_anim_img3cd14a43abc9454f9d6bdbfb9fcfca54">
   <div class="anim-controls">
-    <input id="_anim_sliderce59a3362a4441bda4f10b771a65b769" type="range" class="anim-slider"
+    <input id="_anim_slider3cd14a43abc9454f9d6bdbfb9fcfca54" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="animce59a3362a4441bda4f10b771a65b769.set_frame(parseInt(this.value));">
+           oninput="anim3cd14a43abc9454f9d6bdbfb9fcfca54.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="animce59a3362a4441bda4f10b771a65b769.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="animce59a3362a4441bda4f10b771a65b769.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="animce59a3362a4441bda4f10b771a65b769.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="animce59a3362a4441bda4f10b771a65b769.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="animce59a3362a4441bda4f10b771a65b769.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="animce59a3362a4441bda4f10b771a65b769.play_animation()">
+      <button title="Play" aria-label="Play" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="animce59a3362a4441bda4f10b771a65b769.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="animce59a3362a4441bda4f10b771a65b769.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="animce59a3362a4441bda4f10b771a65b769.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="anim3cd14a43abc9454f9d6bdbfb9fcfca54.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectce59a3362a4441bda4f10b771a65b769"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select3cd14a43abc9454f9d6bdbfb9fcfca54"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_ce59a3362a4441bda4f10b771a65b769"
+      <input type="radio" name="state" value="once" id="_anim_radio1_3cd14a43abc9454f9d6bdbfb9fcfca54"
              >
-      <label for="_anim_radio1_ce59a3362a4441bda4f10b771a65b769">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_ce59a3362a4441bda4f10b771a65b769"
+      <label for="_anim_radio1_3cd14a43abc9454f9d6bdbfb9fcfca54">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_3cd14a43abc9454f9d6bdbfb9fcfca54"
              checked>
-      <label for="_anim_radio2_ce59a3362a4441bda4f10b771a65b769">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_ce59a3362a4441bda4f10b771a65b769"
+      <label for="_anim_radio2_3cd14a43abc9454f9d6bdbfb9fcfca54">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_3cd14a43abc9454f9d6bdbfb9fcfca54"
              >
-      <label for="_anim_radio3_ce59a3362a4441bda4f10b771a65b769">Reflect</label>
+      <label for="_anim_radio3_3cd14a43abc9454f9d6bdbfb9fcfca54">Reflect</label>
     </form>
   </div>
 </div>
@@ -829,9 +830,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_imgce59a3362a4441bda4f10b771a65b769";
-    var slider_id = "_anim_sliderce59a3362a4441bda4f10b771a65b769";
-    var loop_select_id = "_anim_loop_selectce59a3362a4441bda4f10b771a65b769";
+    var img_id = "_anim_img3cd14a43abc9454f9d6bdbfb9fcfca54";
+    var slider_id = "_anim_slider3cd14a43abc9454f9d6bdbfb9fcfca54";
+    var loop_select_id = "_anim_loop_select3cd14a43abc9454f9d6bdbfb9fcfca54";
     var frames = new Array(66);
     
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -53520,7 +53521,7 @@ REQiY4JFREREJDImWEREREQiY4JFREREJDImWEREREQi+z/OPCBqrKm8xQAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        animce59a3362a4441bda4f10b771a65b769 = new Animation(frames, img_id, slider_id, 10.0,
+        anim3cd14a43abc9454f9d6bdbfb9fcfca54 = new Animation(frames, img_id, slider_id, 10.0,
                                  loop_select_id);
     }, 0);
   })()
