@@ -784,42 +784,42 @@ input[type=range].anim-slider {
 </style>
 
 <div class="animation">
-  <img id="_anim_img2e5db187a0434c368511f330c45c86d7">
+  <img id="_anim_imgce59a3362a4441bda4f10b771a65b769">
   <div class="anim-controls">
-    <input id="_anim_slider2e5db187a0434c368511f330c45c86d7" type="range" class="anim-slider"
+    <input id="_anim_sliderce59a3362a4441bda4f10b771a65b769" type="range" class="anim-slider"
            name="points" min="0" max="1" step="1" value="0"
-           oninput="anim2e5db187a0434c368511f330c45c86d7.set_frame(parseInt(this.value));">
+           oninput="animce59a3362a4441bda4f10b771a65b769.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim2e5db187a0434c368511f330c45c86d7.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="animce59a3362a4441bda4f10b771a65b769.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="anim2e5db187a0434c368511f330c45c86d7.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="animce59a3362a4441bda4f10b771a65b769.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="anim2e5db187a0434c368511f330c45c86d7.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="animce59a3362a4441bda4f10b771a65b769.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="anim2e5db187a0434c368511f330c45c86d7.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="animce59a3362a4441bda4f10b771a65b769.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="anim2e5db187a0434c368511f330c45c86d7.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="animce59a3362a4441bda4f10b771a65b769.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="anim2e5db187a0434c368511f330c45c86d7.play_animation()">
+      <button title="Play" aria-label="Play" onclick="animce59a3362a4441bda4f10b771a65b769.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="anim2e5db187a0434c368511f330c45c86d7.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="animce59a3362a4441bda4f10b771a65b769.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="anim2e5db187a0434c368511f330c45c86d7.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="animce59a3362a4441bda4f10b771a65b769.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="anim2e5db187a0434c368511f330c45c86d7.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="animce59a3362a4441bda4f10b771a65b769.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select2e5db187a0434c368511f330c45c86d7"
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectce59a3362a4441bda4f10b771a65b769"
           class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_2e5db187a0434c368511f330c45c86d7"
+      <input type="radio" name="state" value="once" id="_anim_radio1_ce59a3362a4441bda4f10b771a65b769"
              >
-      <label for="_anim_radio1_2e5db187a0434c368511f330c45c86d7">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_2e5db187a0434c368511f330c45c86d7"
+      <label for="_anim_radio1_ce59a3362a4441bda4f10b771a65b769">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_ce59a3362a4441bda4f10b771a65b769"
              checked>
-      <label for="_anim_radio2_2e5db187a0434c368511f330c45c86d7">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_2e5db187a0434c368511f330c45c86d7"
+      <label for="_anim_radio2_ce59a3362a4441bda4f10b771a65b769">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_ce59a3362a4441bda4f10b771a65b769"
              >
-      <label for="_anim_radio3_2e5db187a0434c368511f330c45c86d7">Reflect</label>
+      <label for="_anim_radio3_ce59a3362a4441bda4f10b771a65b769">Reflect</label>
     </form>
   </div>
 </div>
@@ -829,9 +829,9 @@ input[type=range].anim-slider {
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img2e5db187a0434c368511f330c45c86d7";
-    var slider_id = "_anim_slider2e5db187a0434c368511f330c45c86d7";
-    var loop_select_id = "_anim_loop_select2e5db187a0434c368511f330c45c86d7";
+    var img_id = "_anim_imgce59a3362a4441bda4f10b771a65b769";
+    var slider_id = "_anim_sliderce59a3362a4441bda4f10b771a65b769";
+    var loop_select_id = "_anim_loop_selectce59a3362a4441bda4f10b771a65b769";
     var frames = new Array(66);
     
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAYAAAC+ZpjcAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -53520,7 +53520,7 @@ REQiY4JFREREJDImWEREREQiY4JFREREJDImWEREREQi+z/OPCBqrKm8xQAAAABJRU5ErkJggg==\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim2e5db187a0434c368511f330c45c86d7 = new Animation(frames, img_id, slider_id, 10.0,
+        animce59a3362a4441bda4f10b771a65b769 = new Animation(frames, img_id, slider_id, 10.0,
                                  loop_select_id);
     }, 0);
   })()
@@ -53604,7 +53604,7 @@ REQiY4JFREREJDImWEREREQiY4JFREREJDImWEREREQi+z/OPCBqrKm8xQAAAABJRU5ErkJggg==\
 <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">maxwell</span>
 
 <span class="c1"># Compute velocity magnitudes before and after thermalization</span>
-<span class="n">vel_initial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">vel_initial</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">velini</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">vel_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">vel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Properly normalized 2D Maxwell-Boltzmann distribution</span>
@@ -53623,12 +53623,13 @@ REQiY4JFREREJDImWEREREQiY4JFREREJDImWEREREQi+z/OPCBqrKm8xQAAAABJRU5ErkJggg==\
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability Density&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Velocity Distribution Before and After Thermalization (2D Maxwell-Boltzmann)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.35</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0541b4cc831e8c8a4bfeb2d4bcd02cf74576fdfbf18c40bcae53bdf908453c7a.png" src="_images/0541b4cc831e8c8a4bfeb2d4bcd02cf74576fdfbf18c40bcae53bdf908453c7a.png" />
+<img alt="_images/9e124ce26445d69cad83cf8644041ed01f667c9b14a6b33e6061b7e458ee81e7.png" src="_images/9e124ce26445d69cad83cf8644041ed01f667c9b14a6b33e6061b7e458ee81e7.png" />
 </div>
 </div>
 </section>
